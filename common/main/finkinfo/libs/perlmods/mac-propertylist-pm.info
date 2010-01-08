@@ -1,0 +1,30 @@
+Info2: <<
+Package: mac-propertylist-pm
+Version: 1.31
+Revision: 1
+Description: Perl .plist parser
+
+UpdatePOD: true
+Type: perl
+License: Artistic
+Maintainer: Benjamin Reed <mac-propertylist-pm@fink.racoonfink.com>
+
+Source: mirror:cpan:modules/by-module/Mac/Mac-PropertyList-%v.tar.gz
+Source-MD5: db7a64a6ba4e4d29d63537bbcdbca1c3
+
+DocFiles: Changes MANIFEST README
+
+DescDetail: <<
+This module is a low-level interface to the Mac OS X
+Property List (plist) format.  You probably shouldn't use
+this in applications -- build interfaces on top of this
+so you don't have to put all the heinous multi-level
+object stuff where people have to look at it.
+
+You can parse a plist file and get back a data structure.
+You can take that data structure and get back the plist
+as XML.  If you want to change the structure inbetween
+that's your business. :)
+<<
+Homepage: http://search.cpan.org/dist/Mac-PropertyList
+<<

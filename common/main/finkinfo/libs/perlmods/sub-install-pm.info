@@ -1,0 +1,31 @@
+Info3: <<
+Package: sub-install-pm%type_pkg[perl]
+Version: 0.925
+Revision: 1
+Depends: <<
+	fink (>= 0.28.0-1),
+	perl%type_pkg[perl]-core,
+<<
+BuildDepends: <<
+	fink (>= 0.28.0-1),
+	perl%type_pkg[perl]-core,
+<<
+Source: mirror:cpan:modules/by-module/Sub/Sub-Install-%v.tar.gz
+Source-MD5: 694aaec771c42280746a9a6279683263
+Type: perl(0)
+InstallScript: <<
+	%{default_script}
+	mv %i/share/man %i/lib/perl5/%type_raw[perl]
+<<
+UpdatePOD: true
+DocFiles: Changes LICENSE README
+Description: Install subroutines into packages easily
+DescDetail: <<
+This module makes it easy to install subroutines into
+packages without the unsightly mess of no strict or
+typeglobs lying about where just anyone can see them.
+<<
+License: Artistic
+Maintainer: Benjamin Reed <sub-install-pm@fink.racoonfink.com>
+Homepage: http://search.cpan.org/dist/Sub-Install
+<<

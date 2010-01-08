@@ -1,0 +1,57 @@
+Package: fam
+Version: 2.7.0
+Revision: 1
+Depends: %N-shlibs (>= %v-%r)
+BuildDepends: libtool14, autoconf (>= 2.60-1), automake1.9
+
+Source: ftp://oss.sgi.com/projects/%n/download/stable/%n-%v.tar.gz
+Source-MD5: 1bf3ae6c0c58d3201afc97c6a4834e39
+Patch: %n.patch
+GCC: 4.0
+
+SetCPPFLAGS: -DHAVE_KQUEUE=1 -DNDEBUG
+SetCFLAGS: -Os
+CompileScript: <<
+#!/bin/sh -ev
+
+	rm -rf configure
+	autoreconf -f -v -i
+	./configure --prefix=%p/lib/%N --mandir=%p/share/man --sysconfdir=%p/etc --bindir=%p/bin --sbindir=%p/sbin --libexecdir=%p/sbin
+	make
+<<
+
+InstallScript: <<
+	make -j1 install DESTDIR=%d
+	perl -pi -e 's,local_only = false,local_only = true,' %i/etc/fam.conf
+<<
+SplitOff: <<
+  Package: %N-shlibs
+  Description: Shared libraries for FAM
+  Files: lib/%N/lib/libfam.*.dylib
+  Shlibs: %p/lib/%N/lib/libfam.0.dylib 1.0.0 fam-shlibs (>= 2.7.0-1)
+<<
+SplitOff2: <<
+  Package: %N-dev
+  Depends: %N-shlibs (= %v-%r)
+  Replaces: %N
+  Description: Development headers and libraries for FAM
+  Files: lib share/man/man3
+<<
+
+ConfFiles: %p/etc/fam.conf
+DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
+Description: File Alteration Monitor
+Maintainer: Benjamin Reed <fam@fink.racoonfink.com>
+Homepage: http://oss.sgi.com/projects/fam/
+License: GPL
+DescPackaging: <<
+Includes patches from NetBSD pkgsrc to use the BSD kqueue APIs instead
+of the (linux- and SGI-only) imon support.
+<<
+DescDetail: <<
+GUI tools should not mislead the user; they should display the current
+state of the system, even when changes to the system originate from
+outside of the tools themselves.  FAM helps make GUI tools more usable
+by notifying them when the files they're interested in are created,
+modified, executed, and removed.
+<<

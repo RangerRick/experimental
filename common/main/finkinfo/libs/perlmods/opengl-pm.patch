@@ -1,0 +1,81 @@
+diff -Nurd OpenGL-0.57/Makefile.PL OpenGL-0.57-new/Makefile.PL
+--- OpenGL-0.57/Makefile.PL	2008-09-27 15:57:20.000000000 -0400
++++ OpenGL-0.57-new/Makefile.PL	2009-02-19 17:53:06.000000000 -0500
+@@ -119,6 +119,7 @@
+ # Look for available libs
+ our @libdirs = qw
+ {
++  -L@PREFIX@/lib
+   -L/usr/lib
+   -L/usr/X11R6/lib
+   -L/usr/local/lib
+@@ -138,10 +139,8 @@
+   -lopengl
+   -lGLX
+   -lglx
+-  -lglitz-glx
+   -lglu
+   -lGLUT
+-  -lOSMesa
+   -lMesaGL
+   -lMesaGLU
+   -lMesaGLX
+@@ -205,7 +204,7 @@
+       }
+       elsif ($interface eq 'AGL')
+       {
+-        if ($^O ne 'darwin' || !$found_libs->{GLUT})
++        if (0)
+         {
+           "AGL interface requires GLUT.framework\n";
+           next;
+@@ -312,7 +311,7 @@
+     die "No suitable interface found for CYGWIN\n";
+   }
+ }
+-elsif ($^O eq 'darwin' && $found_libs->{GLUT})
++elsif (0)
+ {
+   $interface_lib = 'AGL';
+ }
+@@ -437,8 +436,9 @@
+ 
+   my @includes = qw
+   {
+-    -I/usr/include
+-    -I/usr/local/include
++    -I/usr/X11/include
++    -I/usr/X11R6/include
++    -I@PREFIX@/include
+   };
+   $INCS = "@includes";
+ 
+@@ -616,7 +616,7 @@
+   my $libs;
+ 
+   # Mac OS X
+-  if ($^O eq 'darwin' && -d '/System/Library/Frameworks/OpenGL.framework')
++  if (0)
+   {
+     $found->{GL} = 'OpenGL.framework';
+     $found->{GLU} = 'AGL.framework';
+@@ -783,7 +783,7 @@
+     $make_ver = '&nmake -f makefile.mak GLUT_DEF='.$def;
+     #print "MSWin32 glversion: '$make_ver'\n" if $verbose;
+   }
+-  elsif ($^O eq 'darwin')
++  elsif (0)
+   {
+     $make_ver = ";make -f Makefile.macosx GLUT_LIB=$lib GLUT_DEF=$def";
+     #print "MacOSX glversion: '$make_ver'\n" if $verbose;
+@@ -800,8 +800,8 @@
+   }
+   my $exec = 'cd utils'."$make_ver clean".$make_ver;
+   print "glversion: $exec\n" if ($verbose);
+-  my $stat = `$exec`;
+-  print "\n$stat\n\n" if ($verbose);
++  #my $stat = `$exec`;
++  #print "\n$stat\n\n" if ($verbose);
+ 
+ 
+   # Parse glversion.txt file

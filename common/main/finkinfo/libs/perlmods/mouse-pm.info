@@ -1,0 +1,45 @@
+Info4: <<
+Package: mouse-pm%type_pkg[perl]
+Version: 0.17
+Revision: 1
+Description: Object system for Perl based on Moose
+Depends: <<
+	fink (>= 0.28.0-1),
+	perl%type_pkg[perl]-core,
+<<
+BuildDepends: <<
+	fink (>= 0.28.0-1),
+	perl%type_pkg[perl]-core,
+	test-exception-pm,
+<<
+
+Type: perl(0)
+License: Artistic
+Maintainer: Benjamin Reed <mouse-pm@fink.racoonfink.com>
+
+Source: mirror:cpan:authors/id/S/SA/SARTAK/Mouse-%v.tar.gz
+Source-MD5: b7be6042224bc24f9a4f28e9c89c72de
+
+InstallScript: <<
+	%{default_script}
+	find %d -name .packlist -exec rm -rf {} \; || :
+	install -d -m 755 %i/lib/perl5/%type_raw[perl]
+	mv %i/share/man %i/lib/perl5/%type_raw[perl]/
+<<
+
+DocFiles: Changes
+UpdatePOD: true
+
+DescDetail: <<
+Moose is wonderful.
+
+Unfortunately, it's a little slow.  Though significant progress has
+been made over the years, the compile time penalty is a non-starter
+for some applications.
+
+Mouse aims to alleviate this by providing a subset of Moose's
+functionality, faster.  In particular, "has" in Moose is missing
+only a few expert-level features.
+<<
+Homepage: http://search.cpan.org/dist/Mouse
+<<

@@ -1,0 +1,75 @@
+diff -uNr kdemultimedia-3.5.7/akode_artsplugin/Makefile.am kdemultimedia-3.5.7-new/akode_artsplugin/Makefile.am
+--- kdemultimedia-3.5.7/akode_artsplugin/Makefile.am	2006-07-22 04:10:53.000000000 -0400
++++ kdemultimedia-3.5.7-new/akode_artsplugin/Makefile.am	2007-06-21 10:17:18.000000000 -0400
+@@ -1,8 +1,9 @@
+ INCLUDES= $(akode_includes) -I$(kde_includes)/arts $(all_includes)
+ 
+-noinst_HEADERS = akodePlayObject_impl.h
++akodedir = $(libdir)/akode
++akode_LTLIBRARIES = libarts_akode.la
+ 
+-lib_LTLIBRARIES = libarts_akode.la
++noinst_HEADERS = akodePlayObject_impl.h
+ 
+ libarts_akode_la_SOURCES = akodearts.cc akodePlayObject_impl.cpp \
+         akodeMPCPlayObject_impl.cpp akodeMPEGPlayObject_impl.cpp \
+diff -uNr kdemultimedia-3.5.7/arts/tools/Makefile.am kdemultimedia-3.5.7-new/arts/tools/Makefile.am
+--- kdemultimedia-3.5.7/arts/tools/Makefile.am	2005-09-10 04:19:45.000000000 -0400
++++ kdemultimedia-3.5.7-new/arts/tools/Makefile.am	2007-06-21 10:19:24.000000000 -0400
+@@ -32,7 +32,7 @@
+ SOMINOR = 0
+ SOSUBMINOR = 0
+ 
+-libartscontrolapplet_la_LDFLAGS = $(all_libraries) -version-info $(SOMAJOR):$(SOMINOR):$(SOSUBMINOR) -no-undefined -module
++libartscontrolapplet_la_LDFLAGS = $(all_libraries) -version-info $(SOMAJOR):$(SOMINOR):$(SOSUBMINOR) -no-undefined -module -avoid-version
+ libartscontrolsupport_la_LDFLAGS = $(all_libraries) -version-info $(SOMAJOR):$(SOMINOR):$(SOSUBMINOR) -no-undefined
+ 
+ libartscontrolapplet_la_LIBADD = \
+diff -uNr kdemultimedia-3.5.7/audiofile_artsplugin/Makefile.am kdemultimedia-3.5.7-new/audiofile_artsplugin/Makefile.am
+--- kdemultimedia-3.5.7/audiofile_artsplugin/Makefile.am	2006-07-22 04:10:54.000000000 -0400
++++ kdemultimedia-3.5.7-new/audiofile_artsplugin/Makefile.am	2007-06-21 10:17:18.000000000 -0400
+@@ -5,7 +5,7 @@
+ lib_LTLIBRARIES = libarts_audiofile.la
+ libarts_audiofile_la_COMPILE_FIRST = audiofilearts.h
+ libarts_audiofile_la_SOURCES = audiofilearts.cc audiofilePlayObjectI.cpp
+-libarts_audiofile_la_LDFLAGS = $(all_libraries) -module -no-undefined
++libarts_audiofile_la_LDFLAGS = $(all_libraries) -module -no-undefined -avoid-version
+ libarts_audiofile_la_LIBADD =  -lkmedia2_idl -lsoundserver_idl -lartsflow -laudiofile
+ libarts_audiofile_la_METASOURCES = AUTO
+ 
+diff -uNr kdemultimedia-3.5.7/noatun/library/noatunarts/Makefile.am kdemultimedia-3.5.7-new/noatun/library/noatunarts/Makefile.am
+--- kdemultimedia-3.5.7/noatun/library/noatunarts/Makefile.am	2005-09-10 04:19:33.000000000 -0400
++++ kdemultimedia-3.5.7-new/noatun/library/noatunarts/Makefile.am	2007-06-21 13:06:28.000000000 -0400
+@@ -6,7 +6,7 @@
+                            FFTScopes.cpp StereoEffectStack_impl.cpp \
+                            StereoVolumeControl_impl.cpp Session_impl.cpp
+ libnoatunarts_la_COMPILE_FIRST = noatunarts.h
+-libnoatunarts_la_LDFLAGS = $(all_libraries) -avoid-version -no-undefined
++libnoatunarts_la_LDFLAGS = $(all_libraries) -no-undefined -version-info 1:0:0
+ libnoatunarts_la_LIBADD =  -lkmedia2_idl -lsoundserver_idl -lartsflow
+ libnoatunarts_la_METASOURCES = AUTO
+ 
+diff -uNr kdemultimedia-3.5.7/noatun/modules/winskin/Makefile.am kdemultimedia-3.5.7-new/noatun/modules/winskin/Makefile.am
+--- kdemultimedia-3.5.7/noatun/modules/winskin/Makefile.am	2005-09-10 04:19:37.000000000 -0400
++++ kdemultimedia-3.5.7-new/noatun/modules/winskin/Makefile.am	2007-06-21 10:17:18.000000000 -0400
+@@ -8,7 +8,7 @@
+ 					-I$(kde_includes)/arts \
+ 					$(all_includes)
+ 
+-kde_module_LTLIBRARIES 		= 	noatun_winskin.la 
++noatun_modules_winskin_LTLIBRARIES 		= 	noatun_winskin.la 
+ 
+ noatun_winskin_la_SOURCES 		= 	fileInfo.cpp              \
+ 					guiSpectrumAnalyser.cpp   \
+diff -uNr kdemultimedia-3.5.7/xine_artsplugin/Makefile.am kdemultimedia-3.5.7-new/xine_artsplugin/Makefile.am
+--- kdemultimedia-3.5.7/xine_artsplugin/Makefile.am	2006-07-22 04:10:54.000000000 -0400
++++ kdemultimedia-3.5.7-new/xine_artsplugin/Makefile.am	2007-06-21 10:17:18.000000000 -0400
+@@ -7,7 +7,7 @@
+ libarts_xine_la_SOURCES = xinePlayObject.cc \
+ 			  xinePlayObject_impl.cpp \
+ 			  audio_fifo_out.c
+-libarts_xine_la_LDFLAGS = $(all_libraries) -module -no-undefined -pthread
++libarts_xine_la_LDFLAGS = $(all_libraries) -module -no-undefined -pthread -avoid-version
+ libarts_xine_la_LIBADD = $(XINE_LIBS) $(LIB_X11) $(LIB_XEXT) \
+ 			 -lkmedia2_idl -lsoundserver_idl -lartsflow
+ 

@@ -1,0 +1,31 @@
+Info2: <<
+Package: text-csv-xs-pm%type_pkg[perl]
+Version: 0.60
+Revision: 1
+Depends: perl%type_pkg[perl]-core
+BuildDepends: test-simple-pm%type_pkg[perl], fink (>= 0.20.1-1)
+Source: mirror:cpan:modules/by-module/Text/Text-CSV_XS-%v.tgz
+Source-MD5: a9f0934a58bba602a5d447792d9ded04
+Type: perl(0)
+UpdatePOD: True
+DocFiles: ChangeLog MANIFEST META.yml README examples/*
+InstallScript: <<
+	%{default_script}
+	mv %i/share/man %i/lib/perl5/%type_raw[perl]
+<<
+Description: High-performance CSV manipulation
+DescDetail: <<
+Text::CSV_XS provides facilities for the composition and decomposition of
+comma-separated values.  An instance of the Text::CSV_XS class can combine
+fields into a CSV string and parse a CSV string into fields.
+
+The module accepts either strings or files as input and can utilize any
+user-specified characters as delimiters, separators, and escapes so it is
+perhaps better called ASV (anything separated values) rather than just CSV.
+<<
+License: Artistic
+Maintainer: Benjamin Reed <text-csv-xs-pm@lists.sourceforge.net>
+Homepage: http://search.cpan.org/dist/Text-CSV_XS/
+<<
+
+ 	  	 

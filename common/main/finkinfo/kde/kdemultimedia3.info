@@ -1,0 +1,421 @@
+Package: kdemultimedia3
+Version: 3.5.10
+Revision: 1
+Description: KDE Multimedia packages
+License: GPL
+Maintainer: Benjamin Reed <kdemultimedia3@fink.racoonfink.com>
+Depends: %N-akode (>= %v-%r), %N-arts (>= 1.5.9-1), %N-audiofile (>= 0.2.6-11), juk (>= %v-%r), kaboodle (>= %v-%r), %N-kappfinder (>= %v-%r), %N-kfile-plugins (>= %v-%r), kmix (>= %v-%r), krec (>= %v-%r), libkcddb (>= %v-%r), noatun (>= %v-%r), %N-xine (>= %v-%r)
+
+BuildDepends: <<
+	akode (>= 2.0.2-1),
+	libmusicbrainz4,
+	libtunepimp3
+<<
+GCC: 4.0
+
+CustomMirror: RangerMirror
+Source: mirror:kde:stable/%v/src/kdemultimedia-%v.tar.bz2
+Source-MD5: 8e8cd7f41d37f7da8bd239048abf3516
+SourceDirectory: kdemultimedia-%v
+Source2: mirror:custom:kde-admindir/kde-admindir-1605.tar.bz2
+Source2-MD5: e2dccadc3d36718ef9a7e3c7789e2bdf
+Source2ExtractDir: kdemultimedia-%v
+
+PatchScript: <<
+	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g;' admin/*
+<<
+
+NoSetCPPFLAGS: true
+NoSetLDFLAGS: true
+SetCPPFLAGS: -I%p/include/libcdparanoia
+ConfigureParams: --disable-dependency-tracking --with-distribution='Fink/Mac OS X'
+
+CompileScript: <<
+#!/bin/sh -ev
+
+	export PREFIX="%p" USE_UNSERMAKE=1
+	. ./environment-helper.sh
+
+	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
+
+	for package in mpeg mpc xiph; do
+		perl -pi -e "s,have_akode_${package}=no,have_akode_${package}=yes,g" configure
+	done
+
+	export DO_NOT_COMPILE="kmid kscd mpg123_artsplugin oggvorbis_artsplugin"
+	./build-helper.sh configure %N %v %r ./configure %c $CONFIGURE_PARAMS
+	./build-helper.sh make      %N %v %r unsermake $UNSERMAKEFLAGS
+<<
+
+InstallScript: <<
+#!/bin/sh -ev
+
+	export PREFIX="%p" USE_UNSERMAKE=1
+	. ./environment-helper.sh
+
+	./build-helper.sh install %N %v %r unsermake -p -j1 install DESTDIR="%d"
+
+	mkdir -p %i/share/doc/installed-packages
+	touch %i/share/doc/installed-packages/%N
+	touch %i/share/doc/installed-packages/%N-base
+
+	for package in kaudiocdcreator kioslave kmid kscd; do
+		rm -rf %i/share/doc/kde/en/$package
+	done
+<<
+
+PostInstScript: <<
+	if [ -x "%p/bin/kde-update-caches.sh" ]; then
+		%p/bin/kde-update-caches.sh >/dev/null 2>&1 || :
+	fi
+<<
+
+DocFiles: AUTHORS COPYING COPYING-DOCS INSTALL README
+SplitOff: <<
+	Package: %N-dev
+	Description: KDE Multimedia packages, development files
+	Depends: %N (= %v-%r)
+	BuildDependsOnly: true
+	Files: <<
+		include
+		lib/libartsbuilder.dylib
+		lib/libartscontrolsupport.dylib
+		lib/libartsgui.dylib
+		lib/libartsgui_idl.dylib
+		lib/libartsgui_kde.dylib
+		lib/libartsmidi.dylib
+		lib/libartsmidi_idl.dylib
+		lib/libartsmodules.dylib
+		lib/libartsmodulescommon.dylib
+		lib/libartsmoduleseffects.dylib
+		lib/libartsmodulesmixers.dylib
+		lib/libartsmodulessynth.dylib
+		lib/libkcddb.dylib
+		lib/libnoatun.dylib
+		lib/libnoatunarts.dylib
+		lib/libnoatuncontrols.dylib
+		lib/libnoatuntags.dylib
+		lib/*.la
+		lib/kde3/*.la
+	<<
+	DocFiles: COPYING
+<<
+SplitOff2: <<
+	Package: %N-akode
+	Description: KDE Multimedia: akode plugins
+	Depends: <<
+		%N-base (>= %v-%r)
+	<<
+	Files: <<
+		lib/akode/*.so
+		lib/mcop/akode*
+	<<
+<<
+SplitOff3: <<
+	Package: %N-arts
+	Description: KDE Multimedia: aRts tools
+	Depends: <<
+		%N-base (>= %v-%r),
+		kdebase3-unified (>= %v-1)
+	<<
+	Files: <<
+		bin/artsbuilder
+		bin/artscontrol
+		bin/midisend
+		lib/libartsbuilder.0*.dylib
+		lib/libartscontrolapplet*
+		lib/libartscontrolsupport.1*.dylib
+		lib/libartsgui.0*.dylib
+		lib/libartsgui_idl.0*.dylib
+		lib/libartsgui_kde.0*.dylib
+		lib/libartsmidi.0*.dylib
+		lib/libartsmidi_idl.0*.dylib
+		lib/libartsmodules.0*.dylib
+		lib/libartsmodulescommon.0*.dylib
+		lib/libartsmoduleseffects.0*.dylib
+		lib/libartsmodulesmixers.0*.dylib
+		lib/libartsmodulessynth.0*.dylib
+		lib/mcop/Arts/ArtsBuilderLoader.mcopclass
+		lib/mcop/Arts/Button.mcopclass
+		lib/mcop/Arts/Effect_WAVECAPTURE.mcopclass
+		lib/mcop/Arts/EffectRackGuiFactory.mcopclass
+		lib/mcop/Arts/Environment/Container.mcopclass
+		lib/mcop/Arts/Environment/EffectRackItem.mcopclass
+		lib/mcop/Arts/Environment/InstrumentItem.mcopclass
+		lib/mcop/Arts/Environment/InstrumentItemGuiFactory.mcopclass
+		lib/mcop/Arts/Environment/MixerItem.mcopclass
+		lib/mcop/Arts/Fader.mcopclass
+		lib/mcop/Arts/FiveBandMonoComplexEQ.mcopclass
+		lib/mcop/Arts/FiveBandMonoComplexEQGuiFactory.mcopclass
+		lib/mcop/Arts/FreeverbGuiFactory.mcopclass
+		lib/mcop/Arts/GenericGuiFactory.mcopclass
+		lib/mcop/Arts/GraphLine.mcopclass
+		lib/mcop/Arts/HBox.mcopclass
+		lib/mcop/Arts/Label.mcopclass
+		lib/mcop/Arts/LayoutBox.mcopclass
+		lib/mcop/Arts/LevelMeter.mcopclass
+		lib/mcop/Arts/LineEdit.mcopclass
+		lib/mcop/Arts/LittleStereoMixerChannel.mcopclass
+		lib/mcop/Arts/LittleStereoMixerChannelGuiFactory.mcopclass
+		lib/mcop/Arts/LocalFactory.mcopclass
+		lib/mcop/Arts/MidiManager.mcopclass
+		lib/mcop/Arts/MixerGuiFactory.mcopclass
+		lib/mcop/Arts/MonoSimpleMixerChannel.mcopclass
+		lib/mcop/Arts/MonoSimpleMixerChannelGuiFactory.mcopclass
+		lib/mcop/Arts/MonoToStereo.mcopclass
+		lib/mcop/Arts/PopupBox.mcopclass
+		lib/mcop/Arts/Poti.mcopclass
+		lib/mcop/Arts/SimpleMixerChannel.mcopclass
+		lib/mcop/Arts/SimpleMixerChannelGuiFactory.mcopclass
+		lib/mcop/Arts/SpinBox.mcopclass
+		lib/mcop/Arts/StereoBalance.mcopclass
+		lib/mcop/Arts/StereoBalanceGuiFactory.mcopclass
+		lib/mcop/Arts/StereoCompressorGuiFactory.mcopclass
+		lib/mcop/Arts/StereoFirEqualizerGuiFactory.mcopclass
+		lib/mcop/Arts/StereoToMono.mcopclass
+		lib/mcop/Arts/StereoVolumeControlGui.mcopclass
+		lib/mcop/Arts/StereoVolumeControlGuiFactory.mcopclass
+		lib/mcop/Arts/StructureBuilder.mcopclass
+		lib/mcop/Arts/StructureDesc.mcopclass
+		lib/mcop/Arts/Synth_*
+		lib/mcop/Arts/VBox.mcopclass
+		lib/mcop/Arts/VoiceRemovalGuiFactory.mcopclass
+		lib/mcop/Arts/Widget.mcopclass
+		lib/mcop/artsbuilder.*
+		lib/mcop/artsgui.*
+		lib/mcop/artsmidi.*
+		lib/mcop/artsmodules*
+		share/applications/kde/artsbuilder*
+		share/applications/kde/artscontrol*
+		share/apps/artsbuilder
+		share/apps/artscontrol
+		share/apps/kicker/applets
+		share/doc/kde/en/artsbuilder
+		share/icons/crystalsvg/128x128/actions/arts*
+		share/icons/crystalsvg/16x16/actions/arts*
+		share/icons/crystalsvg/22x22/actions/arts*
+		share/icons/crystalsvg/32x32/actions/arts*
+		share/icons/crystalsvg/48x48/actions/arts*
+		share/icons/crystalsvg/64x64/actions/arts*
+		share/icons/crystalsvg/scalable/actions/arts*
+		share/icons/hicolor/128x128/apps/arts*
+		share/icons/hicolor/16x16/apps/arts*
+		share/icons/hicolor/22x22/apps/arts*
+		share/icons/hicolor/32x32/apps/arts*
+		share/icons/hicolor/48x48/apps/arts*
+		share/icons/hicolor/64x64/apps/arts*
+		share/icons/hicolor/scalable/apps/arts*
+		share/mimelnk/application/x-artsbuilder*
+	<<
+<<
+SplitOff4: <<
+	Package: %N-audiofile
+	Description: KDE Multimedia: audiofile interface
+	Depends: <<
+		%N-base (>= %v-%r)
+	<<
+	Files: <<
+		lib/libarts_audiofile.so
+		lib/mcop/Arts/audiofile*
+		lib/mcop/audiofilearts*
+	<<
+<<
+SplitOff5: <<
+	Package: juk
+	Description: KDE - audio jukebox
+	Depends: 
+	Depends: <<
+		%N-base (>= %v-%r),
+		kdebase3-unified (>= %v-1)
+	<<
+	Files: <<
+		bin/juk
+		share/applications/kde/juk*
+		share/apps/juk
+		share/apps/konqueror/servicemenus/juk*
+		share/doc/kde/en/juk
+		share/icons/crystalsvg/22x22/actions/juk*
+		share/icons/hicolor/128x128/apps/juk*
+		share/icons/hicolor/16x16/apps/juk*
+		share/icons/hicolor/32x32/apps/juk*
+		share/icons/hicolor/48x48/apps/juk*
+		share/icons/hicolor/64x64/apps/juk*
+	<<
+<<
+SplitOff6: <<
+	Package: kaboodle
+	Description: KDE - media player
+	Depends: <<
+		%N-base (>= %v-%r)
+	<<
+	Files: <<
+		bin/kaboodle
+		lib/kde3/libkaboodle*
+		share/applications/kde/kaboodle*
+		share/apps/kaboodle/icons/crystalsvg/16x16/actions/kaboodle*
+		share/apps/kaboodle/icons/crystalsvg/22x22/actions/kaboodle*
+		share/apps/kaboodle/kaboodle*
+		share/doc/kde/en/kaboodle
+		share/icons/hicolor/128x128/apps/kaboodle*
+		share/icons/hicolor/16x16/apps/kaboodle*
+		share/icons/hicolor/22x22/apps/kaboodle*
+		share/icons/hicolor/32x32/apps/kaboodle*
+		share/icons/hicolor/48x48/apps/kaboodle*
+		share/icons/hicolor/64x64/apps/kaboodle*
+		share/services/kaboodle*
+	<<
+<<
+SplitOff7: <<
+	Package: %N-kappfinder
+	Description: KAppfinder data for multimedia apps
+	Depends: <<
+		%N-base (>= %v-%r)
+	<<
+	Files: <<
+		etc/xdg/menus/applications-merged/kde-multimedia-music.menu
+		share/apps/kappfinder
+		share/desktop-directories/kde-multimedia-music.directory
+	<<
+<<
+SplitOff8: <<
+	Package: %N-kfile-plugins
+	Description: KDE - multimedia KFile plugins
+	Depends: <<
+		%N-base (>= %v-%r)
+	<<
+	Files: <<
+		lib/kde3/kfile_*
+		share/services/kfile_*
+	<<
+<<
+SplitOff9: <<
+	Package: kmix
+	Description: KDE - volume control
+	Depends: <<
+		%N-base (>= %v-%r)
+	<<
+	Files: <<
+		bin/kmix*
+		lib/kde3/kmix*.so
+		lib/libkdeinit_kmix*
+		share/applications/kde/kmix.desktop
+		share/apps/kmix
+		share/autostart/restore_kmix_volumes.desktop
+		share/doc/kde/en/kmix
+		share/icons/hicolor/128x128/apps/kmix.png
+		share/icons/hicolor/16x16/apps/kmix.png
+		share/icons/hicolor/32x32/apps/kmix.png
+		share/icons/hicolor/48x48/apps/kmix.png
+		share/icons/hicolor/64x64/apps/kmix.png
+		share/services/kmixctrl_restore.desktop
+	<<
+<<
+SplitOff10: <<
+	Package: krec
+	Description: KDE - sound recorder
+	Depends: <<
+		%N-base (>= %v-%r)
+	<<
+	Files: <<
+		bin/krec
+		lib/kde3/*krec*
+		lib/libkdeinit_krec.dylib
+		share/applications/kde/krec*
+		share/apps/krec
+		share/doc/kde/en/krec
+		share/icons/hicolor/128x128/apps/krec*
+		share/icons/hicolor/16x16/apps/krec*
+		share/icons/hicolor/22x22/apps/krec*
+		share/icons/hicolor/32x32/apps/krec*
+		share/icons/hicolor/48x48/apps/krec*
+		share/icons/hicolor/64x64/apps/krec*
+		share/services/kcm_krec*
+		share/services/krec*
+		share/servicetypes/krec*
+	<<
+<<
+SplitOff11: <<
+	Package: libkcddb
+	Description: KDE - CDDB library
+	Depends: <<
+		%N-base (>= %v-%r)
+	<<
+	Files: <<
+		lib/kde3/kcm_cddb*
+		lib/libkcddb.1*.dylib
+		share/applications/kde/libkcddb*
+		share/apps/kconf_update/kcmcddb-emailsettings.upd
+		share/config.kcfg/libkcddb*
+	<<
+<<
+SplitOff12: <<
+	Package: noatun
+	Description: KDE - media player
+	Depends: <<
+		%N-base (>= %v-%r)
+	<<
+	Files: <<
+		bin/noatun
+		lib/kde3/noatun*
+		lib/libartseffects*
+		lib/libkdeinit_noatun.dylib
+		lib/libnoatun.1*.dylib
+		lib/libnoatunarts.1*.dylib
+		lib/libnoatuncontrols.1*.dylib
+		lib/libnoatuntags.1*.dylib
+		lib/libwinskinvis*
+		lib/mcop/ExtraStereo.mcopclass
+		lib/mcop/ExtraStereoGuiFactory.mcopclass
+		lib/mcop/Noatun/Equalizer.mcopclass
+		lib/mcop/Noatun/EqualizerSSE.mcopclass
+		lib/mcop/Noatun/FFTScope.mcopclass
+		lib/mcop/Noatun/FFTScopeStereo.mcopclass
+		lib/mcop/Noatun/Listener.mcopclass
+		lib/mcop/Noatun/RawScope.mcopclass
+		lib/mcop/Noatun/RawScopeStereo.mcopclass
+		lib/mcop/Noatun/Session.mcopclass
+		lib/mcop/Noatun/StereoEffectStack.mcopclass
+		lib/mcop/Noatun/StereoVolumeControl.mcopclass
+		lib/mcop/Noatun/StereoVolumeControlSSE.mcopclass
+		lib/mcop/Noatun/WinSkinFFT.mcopclass
+		lib/mcop/RawWriter.mcopclass
+		lib/mcop/VoiceRemoval.mcopclass
+		lib/mcop/artseffects.*
+		lib/mcop/noatunarts.*
+		lib/mcop/winskinvis.*
+		share/applications/kde/noatun*
+		share/apps/kconf_update/noatun*
+		share/apps/noatun
+		share/doc/kde/en/noatun
+		share/icons/hicolor/128x128/apps/noatun*
+		share/icons/hicolor/16x16/apps/noatun*
+		share/icons/hicolor/22x22/apps/noatun*
+		share/icons/hicolor/32x32/apps/noatun*
+		share/icons/hicolor/48x48/apps/noatun*
+		share/icons/hicolor/64x64/apps/noatun*
+		share/mimelnk/interface/x-winamp-skin*
+	<<
+<<
+SplitOff13: <<
+	Package: %N-xine
+	Description: KDE - XINE plugin
+	Depends: <<
+		%N-base (>= %v-%r)
+	<<
+	Files: <<
+		lib/kde3/videothumbnail*
+		lib/libarts_xine.so
+		lib/mcop/xine*
+		share/apps/videothumbnail
+		share/services/videothumbnail*
+	<<
+<<
+SplitOff14: <<
+	Package: %N-base
+	Description: KDE - kdemultimedia base package
+	Replaces: %N (<< %v-%r), %N-common (<< %v-1), %N-dev (<< %v-%r)
+	Recommends: %N (>= %v-%r)
+	Files: <<
+		share/doc/installed-packages/%N-base
+	<<
+<<

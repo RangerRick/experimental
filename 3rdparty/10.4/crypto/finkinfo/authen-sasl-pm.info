@@ -1,0 +1,32 @@
+Info2: <<
+Package: authen-sasl-pm%type_pkg[perl]
+Version: 2.10
+Revision: 1
+Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
+Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
+Description: Perl module for SASL Authentication
+Type: perl(5.8.1 5.8.4 5.8.6 5.8.8 5.10.0)
+License: Artistic
+Maintainer: Ben Hines <benh57@users.sourceforge.net>
+
+Depends: perl%type_pkg[perl]-core
+
+Source: mirror:cpan:modules/by-module/Authen/Authen-SASL-%v.tar.gz
+Source-MD5: 041ce912640c5dff626a91435a359b88
+
+UpdatePOD: True
+DocFiles: Changes MANIFEST
+SplitOff: <<
+	Package: %N-man
+	Depends: %N (= %v-%r)
+	Files: share/man
+<<
+
+Homepage: http://search.cpan.org/dist/Authen-SASL/
+DescDetail: <<
+ SASL is a generic mechanism for authentication used by several network
+ protocols. Authen::SASL provides an implementation framework that all
+ protocols should be able to share.
+<<
+<<
+

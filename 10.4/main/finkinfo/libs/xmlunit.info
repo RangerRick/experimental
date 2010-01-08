@@ -1,0 +1,35 @@
+Package: xmlunit
+Version: 1.3
+Revision: 1
+Description: Unit testing for XML
+Type: java
+License: BSD
+Maintainer: Benjamin Reed <junit@fink.racoonfink.com>
+
+Depends: <<
+	junit (>= 3.8.1-4),
+	xalan-j (>= 1.0-1),
+	xerces-j (>= 1.0-1),
+	system-java (>= 1.5-1)
+<<
+BuildDepends: <<
+	fink (>= 0.29.7-1),
+	system-java-dev (>= 1.5-1)
+<<
+
+Source: mirror:sourceforge:%n/%n%%20for%%20Java/XMLUnit%%20for%%20Java%%20%v/%n-%v-bin.zip
+Source-MD5: 67b1fa574840360a39867a456cdfe611
+SourceDirectory: %n-%v
+
+CompileScript: echo "none needed"
+
+InstallScript: <<
+#!/bin/sh -ex
+ mkdir -p %i/share/doc/%n
+ mv docs/* %i/share/doc/%n/
+<<
+JarFiles: lib/%n-%v.jar
+DocFiles: *.txt KEYS
+
+Homepage: http://xmlunit.sourceforge.net/
+

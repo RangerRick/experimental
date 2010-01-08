@@ -1,0 +1,46 @@
+Package: mono-debugger
+Version: 2.2
+Revision: 1
+
+Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
+Source-MD5: 77dea7ca844e27654c87a33fed8b0a29
+#Patch: %n.patch
+
+Depends: <<
+	glib2-shlibs (>= 2.14.0-1),
+	mono (>= 2.2-1)
+<<
+BuildDepends: <<
+	glib2-dev (>= 2.14.0-1),
+	libbfd-dev,
+	libiberty-dev,
+	libopcodes-dev,
+	mono-dev (>= 2.2-1)
+<<
+
+ConfigureParams: --mandir=%p/share/man --disable-dependency-tracking
+CompileScript: <<
+#!/bin/sh -ex
+
+	export lt_cv_sys_max_cmd_len=65536
+	export MONO_PATH=%b/browser:$MONO_PATH
+	./configure %c
+	make
+<<
+InstallScript: make -j1 install DESTDIR="%d"
+
+Description: Mono debugger
+DescDetail: <<
+A debugger is an important tool for development. The Mono Debugger
+(MDB) can debug both managed and unmanaged applications. It provides a
+reusable library that can be used to add debugger functionality to
+different frontends. The debugger package includes a console debugger
+named "mdb", and MonoDevelop (http://www.monodevelop.com) provides a
+GUI interface to the debugger.
+<<
+PostInstScript: <<
+	[ -x "%p/bin/monodoc" ] && [ -d "%p/lib/monodoc" ] && "%p/bin/monodoc" --make-index >/dev/null 2>&1 || :
+<<
+License: GPL
+Maintainer: Benjamin Reed <mono-debugger@fink.racoonfink.com>
+Homepage: http://www.mono-project.com/

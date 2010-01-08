@@ -1,0 +1,77 @@
+Package: rpm
+Version: 4.5
+Revision: 1.0.3
+Depends: %N4.4-shlibs (= %v-%r)
+BuildDepends: beecrypt6, neon26, popt
+
+CustomMirror: RangerMirror
+Source: mirror:custom:%n-%v-0.3.tar.gz
+Source-MD5: fd13cd9a59200b2ed2290663601b4aa0
+SourceDirectory: %n-%v
+
+Patch: %n.patch
+PatchScript: <<
+	rm -rf popt
+	perl -pi -e 's,-lsqlite,-lsqlite3,g' configure
+<<
+
+# prefer the /usr/* versions of sqlite
+SetCPPFLAGS: -I/usr/include
+SetLDFLAGS: -L/usr/lib
+
+ConfigureParams: --disable-dependency-tracking --without-perl --without-python --without-lua --without-syck
+CompileScript: <<
+#!/bin/sh -ev
+
+	PATH="/usr/bin:$PATH" ./configure %c
+	perl -pi -e 's,-lpopt,%p/lib/libpopt.la,g' Makefile
+	make
+<<
+InstallScript: <<
+#!/bin/sh -ev
+	make -j1 install DESTDIR="%d"
+	install -d -m 755 %i/etc/rpm
+	echo '%%_dbapi 4' > %i/etc/rpm/macros
+	echo '%%_dbapi_rebuild 4' >> %i/etc/rpm/macros
+<<
+ConfFiles: %p/etc/rpm/macros
+SplitOff: <<
+	Package: %N4.4-shlibs
+	Description: Shared libraries for RPM
+	Files: <<
+		lib/librpm-4.4.dylib
+		lib/librpmbuild-4.4.dylib
+		lib/librpmdb-4.4.dylib
+		lib/librpmio-4.4.dylib
+		share/locale
+	<<
+	Shlibs: <<
+		%p/lib/librpm-4.4.dylib      0.0.0 %n (>= 4.5-1)
+		%p/lib/librpmbuild-4.4.dylib 0.0.0 %n (>= 4.5-1)
+		%p/lib/librpmdb-4.4.dylib    0.0.0 %n (>= 4.5-1)
+		%p/lib/librpmio-4.4.dylib    0.0.0 %n (>= 4.5-1)
+	<<
+	DocFiles: COPYING
+<<
+SplitOff2: <<
+	Package: %N4.4-dev
+	Depends: %N (= %v-%r)
+	Description: Development headers and libraries for RPM
+	Files: <<
+		include lib/*.la lib/*.dylib lib/*.a
+	<<
+	DocFiles: COPYING
+<<
+
+DocFiles: CHANGES COPYING CREDITS GROUPS README
+Description: Package Manager
+Maintainer: Benjamin Reed <rpm@fink.racoonfink.com>
+Homepage: http://www.rpm.org/
+License: GPL/LGPL
+DescDetail: <<
+The RPM Package Manager (RPM) is a powerful command line driven package
+management system capable of installing, uninstalling, verifying,
+querying, and updating computer software packages.  Each software package
+consists of an archive of files along with information about the package
+like its version, a description, and the like. 
+<<

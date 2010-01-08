@@ -1,0 +1,42 @@
+Info2: <<
+Package: eventmachine-rb%type_pkg[ruby]
+Version: 0.10.0
+Revision: 1
+Type: ruby (1.8)
+Description: Event-processing library for Ruby
+License: BSD
+Maintainer: Benjamin Reed <eventmachine-rb@fink.racoonfink.com>
+
+Depends: <<
+	libgems-rb%type_pkg[ruby],
+	ruby%type_pkg[ruby]
+<<
+BuildDepends: <<
+	rubygems-rb%type_pkg[ruby],
+	ruby%type_pkg[ruby]-dev,
+	system-openssl-dev
+<<
+
+SetCPPFLAGS: -I%p/lib/system-openssl/include
+SetLDFLAGS: -I%p/lib/system-openssl/lib
+
+Source: http://rubyforge.org/frs/download.php/28959/eventmachine-%v.gem
+Source-MD5: 950c2d115043d0d8ebe8e34356f539b2
+NoSourceDirectory: true
+
+CompileScript: echo ""
+
+InstallScript: <<
+	install -d -m 755 %i/var/lib/gems/%type_raw[ruby]
+	%p/bin/gem install --local --install-dir %i/var/lib/gems/%type_raw[ruby] --rdoc eventmachine-%v.gem
+	rm -rf %i/var/lib/gems/%type_raw[ruby]/cache
+<<
+
+DescDetail: <<
+Ruby/EventMachine is a fast, simple event-processing library for Ruby
+programs.  It lets you write network clients and servers without handling
+sockets; all you do is send and receive data.  Single-threaded socket
+engine -- scalable and FAST!
+<<
+Homepage: http://rubyforge.org/projects/eventmachine/
+<<

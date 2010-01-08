@@ -1,0 +1,102 @@
+Info4: <<
+Package: kdevelop4-%type_pkg[kde]
+Version: 3.9.94
+Revision: 1
+Description: KDE4 - IDE
+Type: kde (x11 mac)
+License: GPL/LGPL
+Maintainer: Benjamin Reed <kdevelop4@fink.racoonfink.com>
+
+Depends: kdevplatform-%type_pkg[kde] (>= 0.9.93-1)
+BuildDepends: <<
+	aspell-dev,
+	automoc-%type_pkg[kde] (>= 0.9.89-0),
+	avahi-dev,
+	boost1.35.nopython,
+	bzip2-dev,
+	cmake (>= 2.6.3-1),
+	cups-dev,
+	dbus-dev (>= 1.2.12-1),
+	enchant1-dev,
+	expat1,
+	fink (>= 0.29.7-1),
+	freetype219 (>= 2.3.7-7),
+	gettext-tools,
+	giflib,
+	hspell,
+	kde4-buildenv (>= 4.3.1-2),
+	(%type_pkg[kde] = x11) kdebase4-workspace-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kdevplatform-%type_pkg[kde]-dev (>= 0.9.93-1),
+	libgettext3-dev,
+	libidn,
+	libjasper.1,
+	libjpeg,
+	libpng3,
+	libtiff,
+	libxml2,
+	libxslt,
+	openexr-dev,
+	pcre (>= 7.6-1),
+	pkgconfig (>= 0.22-3),
+	qt4-%type_pkg[kde] (>= 4.5.1-1),
+	shared-mime-info (>= 0.51-1),
+	soprano-%type_pkg[kde]-dev (>= 2.3.1-1),
+	strigi-dev (>= 0.6.3-1),
+	(%type_pkg[kde] = x11) x11-dev,
+	system-openssl-dev,
+	xmkmf
+<<
+GCC: 4.0
+
+Source: mirror:kde:unstable/kdevelop/%v/kdevelop-%v.tar.bz2
+Source-MD5: f5c5f042ccc34fb877c6080ae2ff8bc5
+
+CompileScript: <<
+#!/bin/sh -ev
+
+	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[kde]"
+	. %p/sbin/kde4-buildenv.sh
+
+	if [ "%type_pkg[kde]" = "mac" ]; then
+		# why does this not get found the normal way??
+		export KDE4_CMAKE_ARGS="$KDE4_CMAKE_ARGS -DQT_QTHELP_LIBRARY:FILEPATH=%p/lib/qt4-mac/lib/QtHelp.framework"
+	fi
+
+	mkdir -p build
+	pushd build
+		cmake $KDE4_CMAKE_ARGS ..
+		make VERBOSE=1
+	popd
+<<
+
+InstallScript: <<
+#!/bin/sh -ev
+
+	pushd build
+		make -j1 install/fast DESTDIR="%d"
+	popd
+<<
+DocFiles: AUTHORS COPYING* ChangeLog HACKING* INSTALL NEWS README TODO
+Shlibs: <<
+	!%p/opt/kde4/%type_pkg[kde]/lib/libkdev4cmakecommon.dylib
+	!%p/opt/kde4/%type_pkg[kde]/lib/libkdev4cppduchain.dylib
+	!%p/opt/kde4/%type_pkg[kde]/lib/libkdev4cppparser.dylib
+	!%p/opt/kde4/%type_pkg[kde]/lib/libkdev4cpprpp.dylib
+	!%p/opt/kde4/%type_pkg[kde]/lib/libkdevqtest.dylib
+	!%p/opt/kde4/%type_pkg[kde]/lib/libkdevveritascoverage.dylib
+	!%p/opt/kde4/%type_pkg[kde]/lib/libveritascpp.dylib
+<<
+
+PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+
+DescDetail: <<
+KDevelop is an easy to use integrated development environment for KDE.  It
+supports a wide range of programming languages and features project
+management, an advanced editor, a class browser and an integrated debugger.
+
+The application wizard can generate fully functional projects for terminal
+programs and GUI programs using Qt, KDE or GNOME.
+<<
+<<
+

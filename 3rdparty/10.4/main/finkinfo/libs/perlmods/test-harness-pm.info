@@ -1,0 +1,35 @@
+Info2: <<
+Package: test-harness-pm%type_pkg[perl]
+Version: 3.17
+Revision: 1
+Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
+Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5, (%type_pkg[perl] = 5100) 10.5
+Description: Run standard test scripts with statistics
+Type: perl (5.8.1 5.8.4 5.8.6 5.8.8)
+License: Artistic
+Maintainer: Daniel Macks <dmacks@netspace.org>
+
+Depends: perl%type_pkg[perl]-core
+
+Source: mirror:cpan:authors/id/A/AN/ANDYA/Test-Harness-%v.tar.gz
+Source-MD5: d4b9f3bf6bd7fdc9f03c66a352a2c0da
+
+UpdatePOD: true
+InstallScript: <<
+  %{default_script}
+  mkdir %i/lib/perl5/%type_raw[perl]/man
+  mv %i/share/man/man3 %i/lib/perl5/%type_raw[perl]/man
+  mv %i/bin/prove %i/bin/prove-%type_pkg[perl]
+  mv %i/share/man/man1/prove.1 %i/share/man/man1/prove-%type_pkg[perl].1
+<<
+DocFiles: Changes* README
+
+Homepage: http://search.cpan.org/dist/Test-Harness
+DescUsage: <<
+  The "prove" command is renamed to "prove-%type_pkg[perl]" so as not
+  to conflict with the "prove" command that comes with perl itself (in
+  the various perlXXX packages).
+<<
+DescPackaging:   This package has language-version variants for historical reasons.
+<<
+

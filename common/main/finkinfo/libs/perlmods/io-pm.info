@@ -1,0 +1,33 @@
+Info2: <<
+Package: io-pm%type_pkg[perl]
+Version: 1.2301
+Revision: 2
+Description: IO routines for perl
+Depends: perl%type_pkg[perl]-core
+BuildDepends: system-perl
+Replaces: io-pm (<< 1.2301-2)
+
+Type: perl(0)
+License: Artistic
+Maintainer: Benjamin Reed <io-pm@fink.racoonfink.com>
+
+Source: mirror:cpan:modules/by-module/IO/IO-%v.tar.gz
+Source-MD5: 4f209b75851b27f39a4d221d01a19b92
+
+UpdatePOD: true
+DocFiles: ChangeLog README
+
+InstallScript: <<
+	%{default_script}
+	mv %i/share/man %i/lib/perl5/%type_raw[perl]
+<<
+
+DescDetail: <<
+This is the perl5 IO distribution.
+
+This distribution is included in the perl5 core distribution.
+You should only need to install this distribution if it is
+newer than your perl installation.
+<<
+Homepage: http://search.cpan.org/dist/IO
+<<

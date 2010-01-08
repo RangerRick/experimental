@@ -1,0 +1,78 @@
+diff -uNr PyAmanith-0.3.34/changes/include/amanith/geometry/gaxisangle.swig.h PyAmanith-0.3.34-patched/changes/include/amanith/geometry/gaxisangle.swig.h
+--- PyAmanith-0.3.34/changes/include/amanith/geometry/gaxisangle.swig.h	2006-03-22 10:01:20.000000000 -0500
++++ PyAmanith-0.3.34-patched/changes/include/amanith/geometry/gaxisangle.swig.h	2006-11-22 16:40:15.000000000 -0500
+@@ -29,7 +29,7 @@
+ #ifndef GAXISANG_H_
+ #define GAXISANG_H_
+ 
+-#include "gvect.h"
++#include "amanith/geometry/gvect.h"
+ 
+ /*!
+ 	\file gaxisangle.h
+diff -uNr PyAmanith-0.3.34/config.i PyAmanith-0.3.34-patched/config.i
+--- PyAmanith-0.3.34/config.i	2006-05-04 17:23:47.000000000 -0400
++++ PyAmanith-0.3.34-patched/config.i	2006-11-22 15:06:04.000000000 -0500
+@@ -3,4 +3,4 @@
+ %enddef
+ 
+ /* TODO: parse this from the configuration file */
+-#define DOUBLE_REAL_TYPE
++/*#define DOUBLE_REAL_TYPE */
+diff -uNr PyAmanith-0.3.34/include/pyamanith.h PyAmanith-0.3.34-patched/include/pyamanith.h
+--- PyAmanith-0.3.34/include/pyamanith.h	2006-03-27 15:43:22.000000000 -0500
++++ PyAmanith-0.3.34-patched/include/pyamanith.h	2006-11-22 15:05:57.000000000 -0500
+@@ -6,7 +6,10 @@
+ #define PYAMANITH_H
+ 
+ /* TODO: parse this from the configuration file */
+-#define DOUBLE_REAL_TYPE
++//#define DOUBLE_REAL_TYPE
++#if defined(DOUBLE_REAL_TYPE)
++#   error Compile Amanith with floats for better performance
++#endif
+ 
+ #include <amanith/1d/gbeziercurve1d.h>
+ #include <amanith/1d/gbsplinecurve1d.swig.h>
+@@ -33,7 +36,8 @@
+ #include <amanith/geometry/gaabox.h>
+ #include <amanith/geometry/gaffineparts.h>
+ #include <amanith/geometry/garea.h>
+-#include <amanith/geometry/gaxisangle.h>
++//#include <amanith/geometry/gaxisangle.h>
++#include <amanith/geometry/gaxisangle.swig.h>
+ #include <amanith/geometry/gdistance.h>
+ #include <amanith/geometry/gintersect.h>
+ #include <amanith/geometry/ginterval.h>
+@@ -41,7 +45,8 @@
+ #include <amanith/geometry/gmatrix.h>
+ #include <amanith/geometry/goobox.h>
+ #include <amanith/geometry/gplane.h>
+-#include <amanith/geometry/gquat.h>
++//#include <amanith/geometry/gquat.h>
++#include <amanith/geometry/gquat.swig.h>
+ #include <amanith/geometry/gray.h>
+ #include <amanith/geometry/gsphere.h>
+ #include <amanith/geometry/gvect.h>
+@@ -59,7 +64,8 @@
+ #include <amanith/numerics/geigen.h>
+ #include <amanith/numerics/gfilter.h>
+ #include <amanith/numerics/gintegration.h>
+-#include <amanith/rendering/gdrawboard.h>
++//#include <amanith/rendering/gdrawboard.h>
++#include <amanith/rendering/gdrawboard.swig.h>
+ #include <amanith/rendering/gdrawstyle.h>
+ #include <amanith/rendering/gopenglboard.h>
+ #include <amanith/support/gavltree.h>
+diff -uNr PyAmanith-0.3.34/setup.py PyAmanith-0.3.34-patched/setup.py
+--- PyAmanith-0.3.34/setup.py	2006-09-14 15:30:45.000000000 -0400
++++ PyAmanith-0.3.34-patched/setup.py	2006-11-22 16:21:51.000000000 -0500
+@@ -13,7 +13,7 @@
+ 
+ debug = False
+ libs = ["amanith"]
+-inc = [join("changes", "include"), join(amanith_base, "include"), "include"]
++inc = [join("changes", "include"), join(amanith_base, "include"), join(amanith_base, "include", "amanith"), "include"]
+ lib = [join(amanith_base, "lib")]
+ cc_args = []
+ swig_args = ["-Ibuild/amanith"]

@@ -1,0 +1,38 @@
+Package: ilbc
+Version: 1.0
+Revision: 1
+Depends: %N-shlibs (= %v-%r)
+BuildDependsOnly: true
+Source: http://download.savannah.nongnu.org/releases/linphone/1.3.x/source/%n-rfc3951.tar.gz
+Source-MD5: c53bb4f1d7184789ab90d2d33571e78a
+Source2: http://ilbcfreeware.org/documentation/gips_iLBClicense.pdf
+Source2-MD5: 71cee7ed8e5d5440a53845e7043c4cb5
+InstallScript: make install DESTDIR=%d
+SplitOff: <<
+	Package: %N-shlibs
+	Files: lib/libilbc.*.dylib
+	DocFiles: ../gips_iLBClicense.pdf
+	Shlibs: %p/lib/libilbc.0.dylib 1.0.0 %n (>= 1.0-1)
+<<
+DocFiles: AUTHORS ChangeLog INSTALL NEWS README ../gips_iLBClicense.pdf
+Description: Internet Low-Bitrate Codec
+DescDetail: <<
+iLBC (internet Low Bitrate Codec) is a FREE speech codec suitable for
+robust voice communication over IP.  The codec is designed for narrow
+band speech and results in a payload bit rate of 13.33 kbit/s with an
+encoding frame length of 30 ms and 15.20 kbps with an encoding length
+of 20 ms.  The iLBC codec enables graceful speech quality degradation
+in the case of lost frames, which occurs in connection with lost or
+delayed IP packets.
+
+Features:
+ * Bitrate 13.33 kbps (399 bits, packetized in 50 bytes) for the frame
+   size of 30 ms and 15.2 kbps (303 bits, packetized in 38 bytes) for
+   the frame size of 20 ms
+ * Basic quality higher then G.729A, high robustness to packet loss
+ * Computational complexity in a range of G.729A
+ * Royalty Free Codec 
+<<
+License: OSI-Approved
+Maintainer: Benjamin Reed <ilbc@fink.racoonfink.com>
+Homepage: http://ilbcfreeware.org/

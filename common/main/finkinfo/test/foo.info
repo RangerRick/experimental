@@ -1,0 +1,22 @@
+Package: foo
+Version: 1.0
+Revision: 2
+Maintainer: Benjamin Reed <foo@fink.racoonfink.com>
+Type: nosource
+PatchFile: %n.patch
+PatchFile-MD5: 9bbd5708d5a281f2cc0cd3dc0d765340
+PatchFile2: %n-add.patch
+PatchFile2-MD5: 4c6f7ab080d10f6d62874f5e04a3f9dd
+#PatchFile2-MD5: asjdkfl080d10f6d62874f5e04a3f9dd
+Provides: bar
+Depends: bzip2-shlibs
+BuildDepends: fink (>= 0.29.99)
+Replaces: foo (<< 0.9-1)
+Conflicts: baz
+CompileScript: echo none
+InstallScript: install -d -m 755 %i/share/doc/%N; cp foo.txt %i/share/doc/%N/
+Description: Test package
+DescDetail: <<
+	This is some stuff, yo.  %p dude.
+<<
+License: BSD

@@ -1,0 +1,55 @@
+diff -Nurd koffice-2.0.1/kchart/kdchart/kdablibfakes/src/KDABLibFakes.h koffice-2.0.1-new/kchart/kdchart/kdablibfakes/src/KDABLibFakes.h
+--- koffice-2.0.1/kchart/kdchart/kdablibfakes/src/KDABLibFakes.h	2009-06-17 14:31:45.000000000 -0400
++++ koffice-2.0.1-new/kchart/kdchart/kdablibfakes/src/KDABLibFakes.h	2009-06-24 16:55:27.000000000 -0400
+@@ -43,7 +43,7 @@
+ #ifndef KDAB_LIB_FAKES_H
+ #define KDAB_LIB_FAKES_H
+ 
+-#if defined Q_OS_DARWIN
++#if defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
+ /* On Mac OS X, ensure that <cmath> will define std::isnan */
+ #define _GLIBCPP_USE_C99 1
+ #endif
+@@ -72,7 +72,7 @@
+ #include <float.h>
+ #define ISNAN(x ) _isnan(x )
+ #define ISINF(x ) (!(_finite(x ) + _isnan(x ) ) )
+-#elif defined (Q_OS_DARWIN) || defined (Q_OS_CYGWIN)
++#elif defined (Q_OS_DARWIN) || defined(Q_OS_MAC) || defined (Q_OS_CYGWIN)
+ #define ISNAN(x) std::isnan(x)
+ #define ISINF(x) std::isinf(x)
+ #else
+diff -Nurd koffice-2.0.1/krita/plugins/tools/defaulttools/kis_tool_gradient.cc koffice-2.0.1-new/krita/plugins/tools/defaulttools/kis_tool_gradient.cc
+--- koffice-2.0.1/krita/plugins/tools/defaulttools/kis_tool_gradient.cc	2009-06-17 14:20:44.000000000 -0400
++++ koffice-2.0.1-new/krita/plugins/tools/defaulttools/kis_tool_gradient.cc	2009-06-24 17:05:10.000000000 -0400
+@@ -23,6 +23,7 @@
+ #include "kis_tool_gradient.h"
+ 
+ #if defined(HAVE_OPENGL) && defined(HAVE_GLEW)
++#define __APPLE_X11_COMPATIBLE 1
+ #include <GL/glew.h>
+ #include <QGLWidget>
+ #endif
+diff -Nurd koffice-2.0.1/krita/ui/canvas/kis_canvas2.h koffice-2.0.1-new/krita/ui/canvas/kis_canvas2.h
+--- koffice-2.0.1/krita/ui/canvas/kis_canvas2.h	2009-06-17 14:31:24.000000000 -0400
++++ koffice-2.0.1-new/krita/ui/canvas/kis_canvas2.h	2009-06-24 16:56:18.000000000 -0400
+@@ -19,6 +19,8 @@
+ #ifndef KIS_CANVAS_H
+ #define KIS_CANVAS_H
+ 
++#define __APPLE_X11_COMPATIBLE 1
++
+ #include <QObject>
+ #include <QWidget>
+ #include <QSize>
+diff -Nurd koffice-2.0.1/krita/ui/opengl/kis_opengl.h koffice-2.0.1-new/krita/ui/opengl/kis_opengl.h
+--- koffice-2.0.1/krita/ui/opengl/kis_opengl.h	2009-06-17 14:31:13.000000000 -0400
++++ koffice-2.0.1-new/krita/ui/opengl/kis_opengl.h	2009-06-24 16:56:41.000000000 -0400
+@@ -24,6 +24,7 @@
+ 
+ #ifdef HAVE_OPENGL
+ 
++#define __APPLE_X11_COMPATIBLE 1
+ #include "krita_export.h"
+ 
+ class QGLWidget;

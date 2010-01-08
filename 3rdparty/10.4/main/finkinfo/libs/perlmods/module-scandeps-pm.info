@@ -1,0 +1,30 @@
+Package: module-scandeps-pm
+Version: 0.89
+Revision: 1
+Description: Recursively scan Perl code for dependencies
+Type: perl
+License: Artistic/GPL
+Maintainer: Chris Dolan <chrisdolan@users.sourceforge.net>
+
+BuildDepends: module-build-pm
+
+Source: mirror:cpan:modules/by-module/Module/Module-ScanDeps-%v.tar.gz
+Source-MD5: 97eccc0184030d598c84c544f3507a53
+
+UpdatePOD: true
+DocFiles: AUTHORS Changes MANIFEST META.yml README
+SplitOff: <<
+	Package: %N-bin
+	DocFiles: AUTHORS Changes MANIFEST META.yml README
+	Files: bin share/man/man1
+<<
+
+Homepage: http://search.cpan.org/dist/Module-ScanDeps
+DescPackaging: <<
+ Report bugs to the maintainer or the CPAN bug tracker:
+ http://rt.cpan.org/NoAuth/Bugs.html?Dist=Module-ScanDeps
+
+ Some tests are skipped if no Module::Pluggable. Not asserting a
+ TestDepends because module-pluggable-pmXXX is perl-versioned.
+<<
+

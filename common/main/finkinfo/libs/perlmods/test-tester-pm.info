@@ -1,0 +1,22 @@
+Package: test-tester-pm
+Version: 0.107
+Revision: 1
+Type: perl
+Description: Ease testing Test::Builder modules
+License: Artistic/GPL
+Maintainer: Benjamin Reed <test-tester-pm@fink.raccoonfink.com>
+
+Depends: system-perl
+
+Source: mirror:cpan:modules/by-module/Test/Test-Tester-%v.tar.gz
+Source-MD5: 998a8abe241992faaa3e90f330800840
+
+UpdatePOD: True
+DocFiles: Changes README TODO
+
+DescDetail: <<
+If you have written a test module based on Test::Builder
+then Test::Tester allows you to test it with the minimum
+of effort.
+<<
+Homepage: http://search.cpan.org/dist/Test-Tester/

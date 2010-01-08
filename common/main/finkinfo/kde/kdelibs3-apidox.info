@@ -1,0 +1,104 @@
+Package: kdelibs3-apidox
+Version: 3.5.10
+Revision: 2
+Description: KDE - essential libraries (API documentation)
+License: GPL/LGPL
+Maintainer: Benjamin Reed <kdelibs3-apidox@fink.racoonfink.com>
+
+Depends: kdelibs3-unified (>= %v-1)
+BuildDepends: <<
+	arts-dev (>= 1.5.10-1),
+	aspell-dev,
+	audiofile (>= 0.2.6-11),
+	autoconf (>= 2.59-1),
+	automake1.,
+	bzip2-dev,
+	cctools-single-module,
+	cups-dev,
+	doxygen (>= 1.5.6-1),
+	esound,
+	expat1,
+	fink (>= 0.20.2.1-1),
+	flex-devel,
+	freetype219 (>= 2.3.7-7),
+	libgettext3-dev,
+	gettext-tools,
+	glib2-dev (>= 2.14.0-1),
+	libart2 (>= 2.3.19-1),
+	libiconv-dev,
+	libidn (>= 0.5.1-1),
+	libjpeg,
+	libogg,
+	libpng3 (>= 1.2.5-4),
+	libtiff,
+	libvorbis0,
+	libxml2,
+	libxslt,
+	libmad,
+	openexr-dev,
+	openslp-ssl-dev | openslp-dev,
+	pcre,
+	pcre-bin,
+	pkgconfig (>= 0.22-3),
+	qt3 (>= 3.3.5-3),
+	qt3-doc,
+	xdg-base,
+	x11-dev,
+	xmkmf
+<<
+Replaces: kdelibs3-dev, kdelibs3-ssl-dev, kdelibs3-unified-dev, kdelibs3, kdelibs3-ssl, kdelibs3-unified
+BuildConflicts: unsermake
+
+CustomMirror: RangerMirror
+Source: mirror:kde:stable/%v/src/kdelibs-%v.tar.bz2
+Source-MD5: 43cd55ed15f63b5738d620ef9f9fd568
+SourceDirectory: kdelibs-%v
+Source2: mirror:custom:kde-admindir/kde-admindir-1605.tar.bz2
+Source2-MD5: e2dccadc3d36718ef9a7e3c7789e2bdf
+Source2ExtractDir: kdelibs-%v
+
+PatchScript: <<
+	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g;' admin/*
+	perl -pi -e 's,1.7,1.11,g' admin/cvs.sh
+<<
+
+NoSetCPPFLAGS: true
+NoSetLDFLAGS: true
+ConfigureParams: --enable-cups --with-ldap=framework --with-gssapi=framework --with-distribution='Fink/Mac OS X'
+
+CompileScript: <<
+#!/bin/sh -ev
+
+	export HOME=/tmp PREFIX="%p" QTDOCDIR="%p/share/doc/qt3/html" USE_UNSERMAKE=0
+	export lt_cv_sys_max_cmd_len=65536
+	. ./environment-helper.sh
+
+	PRODUCT_VERSION=`uname -r`
+
+	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
+	./build-helper.sh configure %N %v %r ./configure %c $CONFIGURE_PARAMS
+	./build-helper.sh apidox    %N %v %r make apidox all_libraries="$ALL_LIBRARIES"
+<<
+
+InstallScript: <<
+#!/bin/sh -ev
+
+	export HOME=/tmp PREFIX="%p" QTDOCDIR="%p/share/doc/qt3/html"
+	. ./environment-helper.sh
+
+	./build-helper.sh install-apidox %N %v %r make -j1 install-apidox DESTDIR=%d
+
+	mkdir -p %i/share/doc/installed-packages
+	touch %i/share/doc/installed-packages/%N
+<<
+
+DocFiles: COPYING COPYING.LIB INSTALL
+
+DescDetail: <<
+API documentation for the KDE base libraries.
+
+KDE Libraries included: kdecore (KDE core library), kdeui (user interface),
+kfm (file manager), khtmlw (HTML widget), kio (Input/Output, networking),
+kspell (spelling checker), jscript (javascript), kab (addressbook), and
+kimgio (image manipulation).
+<<

@@ -1,0 +1,62 @@
+Info2: <<
+Package: catalyst-plugin-session-pm%type_pkg[perl]
+Version: 0.20
+Revision: 1
+Description: Generic session plugin for Catalyst
+Depends: <<
+	catalyst-pm%type_pkg[perl] (>= 5.7010-1),
+	digest-pm%type_pkg[perl],
+	file-spec-pm%type_pkg[perl],
+	file-temp-pm%type_pkg[perl],
+	fink (>= 0.20.1-1),
+	object-signature-pm%type_pkg[perl],
+	perl%type_pkg[perl]-core,
+	test-deep-pm,
+	test-exception-pm,
+	test-mockobject-pm%type_pkg[perl] (>= 1.01-1),
+	test-simple-pm%type_pkg[perl]
+<<
+BuildDepends: <<
+	catalyst-pm%type_pkg[perl] (>= 5.7010-1),
+	digest-pm%type_pkg[perl],
+	file-spec-pm%type_pkg[perl],
+	file-temp-pm%type_pkg[perl],
+	fink (>= 0.20.2.1-1),
+	object-signature-pm%type_pkg[perl],
+	perl%type_pkg[perl]-core,
+	test-deep-pm,
+	test-exception-pm,
+	test-mockobject-pm%type_pkg[perl] (>= 1.01-1),
+	test-simple-pm%type_pkg[perl]
+<<
+
+Type: perl(0)
+License: Artistic
+Maintainer: Benjamin Reed <catalyst-plugin-session-pm@fink.racoonfink.com>
+
+Source: mirror:cpan:modules/by-module/Catalyst/Catalyst-Plugin-Session-%v.tar.gz
+Source-MD5: 21b71cd5ff088fa9e83ac3b679cfbce8
+
+UpdatePOD: true
+DocFiles: Changes MANIFEST README
+InstallScript: <<
+	%{default_script}
+	mv %i/share/man %i/lib/perl5/%type_raw[perl]
+<<
+
+DescDetail: <<
+The Session plugin is the base of two related parts of functionality
+required for session management in web applications.
+
+The first part, the State, is getting the browser to repeat back a
+session key, so that the web application can identify the client and
+logically string several requests together into a session.
+
+The second part, the Store, deals with the actual storage of
+information about the client.  This data is stored so that the it may
+be revived for every request made by the same client.
+
+This plugin links the two pieces together.
+<<
+Homepage: http://search.cpan.org/dist/Catalyst-Plugin-Session
+<<

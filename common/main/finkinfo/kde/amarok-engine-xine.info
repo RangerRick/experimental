@@ -1,0 +1,112 @@
+Info2: <<
+Package: amarok-engine-xine
+Version: 1.4.8
+Revision: 1
+Replaces: amarok-kde-xine, amarok-kde-gstreamer, amarok-kde-gstreamer-xine, amarok (<< %v-%r)
+Depends: <<
+	amarok-core-shlibs (>= %v-1),
+	libxine1-shlibs
+<<
+BuildDepends: <<
+	amarok-core (>= %v-1),
+	arts-dev (>= 1.5.9-1),
+	autoconf (>= 2.59-1),
+	cctools-single-module,
+	expat1,
+	freetype219 (>= 2.3.7-7),
+	gettext-bin,
+	gettext-tools,
+	libgettext3-dev,
+	glib,
+	glib2 (>= 2.14.0-1),
+	glib2-dev (>= 2.14.0-1),
+	gtk+,
+	kdebase3-unified-dev (>= 3.5.3-1),
+	kdelibs3-unified-dev (>= 3.5.3-1),
+	libart2 (>= 2.3.19-1),
+	libflac8-dev,
+	libgpod3,
+	libiconv-dev,
+	libidn,
+	libjpeg,
+	libmad,
+	libmp4v21-dev,
+	libmusicbrainz4,
+	libogg,
+	libpng3,
+	libtunepimp3,
+	libvorbis0,
+	libxine1,
+	libxml2,
+	pcre,
+	pkgconfig (>= 0.22-3),
+	popt,
+	qt3 (>= 3.3.5-3),
+	ruby18-dev,
+	taglib (>= 1.4-1),
+	unsermake (>= 0.4-0.20060316.1),
+	x11-dev,
+	xmms
+<<
+Maintainer: Benjamin Reed <amarok@fink.racoonfink.com>
+
+CustomMirror: RangerMirror
+Source: mirror:kde:stable/amarok/%v/src/amarok-%v.tar.bz2
+Source-MD5: 7f65c4a8f3f0ff9042a5b5dd21b36cc8
+Source2: mirror:custom:kde-admindir/kde-admindir-1605.tar.bz2
+Source2-MD5: e2dccadc3d36718ef9a7e3c7789e2bdf
+Source2ExtractDir: amarok-%v
+
+PatchScript: <<
+	sed -e 's,@FINKPREFIX@,%p,g' %a/amarok-core.patch | patch -p1
+	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g;' admin/*
+<<
+
+DocFiles: AUTHORS COPYING ChangeLog INSTALL* README
+
+NoSetLDFLAGS: true
+NoSetCPPFLAGS: true
+ConfigureParams: --disable-mysql --disable-postgresql --without-nmm --without-mas --without-helix --without-libvisual --with-distribution='Fink/Mac OS X' --with-libgpod --with-mp4v2 --with-mp4v2-dir=%p --with-xine --without-gstreamer --without-gstreamer10
+
+CompileScript: <<
+#!/bin/sh -ev
+
+	export PREFIX="%p" USE_UNSERMAKE=1 CC=gcc-3.3 CXX=g++-3.3 RUBY=%p/bin/ruby1.8
+	. ./environment-helper.sh
+
+	./build-helper.sh cvs       %{Ni} %v %r make -f admin/Makefile.common cvs
+	./build-helper.sh configure %{Ni} %v %r ./configure %c $CONFIGURE_PARAMS
+
+	unsermake amarok/src/amarokcore/amarokconfig.h
+	pushd amarok/src/engine/xine
+	../../../../build-helper.sh make      %{Ni} %v %r unsermake $UNSERMAKEFLAGS
+	popd
+<<
+
+InstallScript: <<
+#!/bin/sh -ev
+
+	export PREFIX="%p" USE_UNSERMAKE=1
+	. ./environment-helper.sh
+
+	pushd amarok/src/engine/xine
+	../../../../build-helper.sh install %{Ni} %v %r unsermake -p -j1 install DESTDIR=%d
+	popd
+<<
+
+PostInstScript: <<
+	if [ -x "%p/bin/kde-update-caches.sh" ]; then
+		%p/bin/kde-update-caches.sh >/dev/null 2>&1 || :
+	fi
+<<
+
+Description: KDE - music player (Xine output engine)
+DescDetail: <<
+amaroK is a music player for Linux and Unix with an intuitive interface.
+amaroK makes playing the music you love easier than ever before - and looks
+good doing it. 
+
+This package contains the Xine output plugin for amaroK.
+<<
+License: GPL
+<<

@@ -1,0 +1,59 @@
+Info2: <<
+Package: dbd-pg-unified-pm%type_pkg[perl]
+Version: 2.11.8
+Revision: 1
+BuildDepends: <<
+	dbi-pm%type_pkg[perl] (>= 1.52-1),
+	fink (>= 0.20.2.1-1),
+	perl%type_pkg[perl]-core,
+	postgresql82-dev,
+	test-simple-pm%type_pkg[perl] (>= 0.61-1)
+<<
+Depends: <<
+	dbi-pm%type_pkg[perl] (>= 1.52-1),
+	perl%type_pkg[perl]-core,
+	postgresql82-shlibs
+<<
+Conflicts: dbd-pg-pm
+Replaces: dbd-pg-pm
+Suggests: postgresql82
+Source: http://www.cpan.org/modules/by-module/DBD/DBD-Pg-%v.tar.gz
+Source-MD5: 543e8caf0de78423adc9c9bb1c9a023b
+UpdatePOD: true
+Type: perl(0)
+NoPerlTests: true
+DocFiles: README README.win32 MANIFEST Changes
+GCC: 4.0
+CompileScript: <<
+#!/bin/sh -ex
+
+	export POSTGRES_INCLUDE=%p/include/postgresql POSTGRES_LIB=%p/lib
+	%{default_script}
+<<
+InstallScript: <<
+	%{default_script}
+	mv %i/share/man %i/lib/perl5/%type_raw[perl]
+<<
+
+SplitOff: <<
+  Package: dbd-pg-pm%type_pkg[perl]
+  Description: upgrade package for dbd-pg-pm%type_pkg[perl]
+  Depends: dbd-pg-unified-pm%type_pkg[perl] (= %v-%r)
+  DocFiles: README README.win32 MANIFEST Changes
+<<
+SplitOff2: <<
+  Package: dbd-pg-pm%type_pkg[perl]-ssl
+  Description: upgrade package for dbd-pg-pm%type_pkg[perl]-ssl
+  Depends: dbd-pg-unified-pm%type_pkg[perl] (= %v-%r)
+  DocFiles: README README.win32 MANIFEST Changes
+<<
+Description: PostgreSQL Perl DBI module
+DescDetail: <<
+DBD-Pg is a PostgreSQL interface for Perl5 using DBI.
+For further information about DBI look at:
+    http://dbi.symbolstone.org/
+<<
+License: Artistic
+Maintainer: Benjamin Reed <dbd-pg-pm@fink.racoonfink.com>
+Homepage: http://search.cpan.org/search?dist=DBD-Pg
+<<

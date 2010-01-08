@@ -1,0 +1,21 @@
+diff -uNr libpng-1.2.12/png.h libpng-1.2.12-new/png.h
+--- libpng-1.2.12/png.h	2006-06-27 16:22:34.000000000 -0400
++++ libpng-1.2.12-new/png.h	2006-08-06 22:17:13.000000000 -0400
+@@ -1707,7 +1707,7 @@
+    png_ptr_ptr, png_infopp info_ptr_ptr, png_infopp end_info_ptr_ptr));
+ 
+ /* free all memory used by the read (old method - NOT DLL EXPORTED) */
+-extern void png_read_destroy PNGARG((png_structp png_ptr, png_infop info_ptr,
++extern PNG_EXPORT(void,png_read_destroy) PNGARG((png_structp png_ptr, png_infop info_ptr,
+    png_infop end_info_ptr));
+ 
+ /* free any memory associated with the png_struct and the png_info_structs */
+@@ -1715,7 +1715,7 @@
+    PNGARG((png_structpp png_ptr_ptr, png_infopp info_ptr_ptr));
+ 
+ /* free any memory used in png_ptr struct (old method - NOT DLL EXPORTED) */
+-extern void png_write_destroy PNGARG((png_structp png_ptr));
++extern PNG_EXPORT(void,png_write_destroy) PNGARG((png_structp png_ptr));
+ 
+ /* set the libpng method of handling chunk CRC errors */
+ extern PNG_EXPORT(void,png_set_crc_action) PNGARG((png_structp png_ptr,

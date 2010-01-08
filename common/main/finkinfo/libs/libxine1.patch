@@ -1,0 +1,104 @@
+diff -Nurd xine-lib-1.1.16.3/configure xine-lib-1.1.16.3-patched/configure
+--- xine-lib-1.1.16.3/configure	2009-04-02 14:46:08.000000000 -0400
++++ xine-lib-1.1.16.3-patched/configure	2009-10-15 13:14:50.000000000 -0400
+@@ -25580,7 +25580,7 @@
+ 
+ 
+ 
+-host_or_hostalias="$host"
++host_or_hostalias="$target"
+ if test "$host_or_hostalias" = ""; then
+                             host_or_hostalias="$host_alias"
+ fi
+diff -Nurd xine-lib-1.1.16.3/src/audio_out/Makefile.in xine-lib-1.1.16.3-patched/src/audio_out/Makefile.in
+--- xine-lib-1.1.16.3/src/audio_out/Makefile.in	2009-04-02 14:45:51.000000000 -0400
++++ xine-lib-1.1.16.3-patched/src/audio_out/Makefile.in	2009-10-15 10:20:20.000000000 -0400
+@@ -650,11 +650,12 @@
+ # The "-Wl,-framework -Wl,..." is needed for libtool versions before
+ # 1.5.x (1.257): the default version that ships with Mac OS X is 1.5 (1.1220)
+ xineplug_ao_out_coreaudio_la_LDFLAGS = \
++	-isysroot /Developer/SDKs/MacOSX10.5.sdk \
+ 	-Wl,-framework -Wl,Cocoa -framework CoreAudio \
+ 	-Wl,-framework -Wl,AudioUnit -framework AudioUnit \
+ 	-avoid-version -module
+ 
+-xineplug_ao_out_coreaudio_la_CFLAGS = -framework CoreAudio -framework AudioUnit $(VISIBILITY_FLAG)
++xineplug_ao_out_coreaudio_la_CFLAGS = -isysroot /Developer/SDKs/MacOSX10.5.sdk -framework CoreAudio -framework AudioUnit $(VISIBILITY_FLAG)
+ xineplug_ao_out_pulseaudio_la_SOURCES = audio_pulse_out.c
+ xineplug_ao_out_pulseaudio_la_LIBADD = $(XINE_LIB) $(PULSEAUDIO_LIBS) $(LTLIBINTL)
+ xineplug_ao_out_pulseaudio_la_CFLAGS = $(VISIBILITY_FLAG) $(PULSEAUDIO_CFLAGS)
+diff -Nurd xine-lib-1.1.16.3/src/libxinevdec/Makefile.in xine-lib-1.1.16.3-patched/src/libxinevdec/Makefile.in
+--- xine-lib-1.1.16.3/src/libxinevdec/Makefile.in	2009-04-02 14:46:01.000000000 -0400
++++ xine-lib-1.1.16.3-patched/src/libxinevdec/Makefile.in	2009-10-15 12:37:14.000000000 -0400
+@@ -458,7 +458,7 @@
+ xinepostdir = $(XINE_PLUGINDIR)/post
+ vidixdir = $(XINE_PLUGINDIR)/vidix
+ AM_CFLAGS = $(VISIBILITY_FLAG)
+-AM_LDFLAGS = $(xineplug_ldflags)
++AM_LDFLAGS = $(xineplug_ldflags) $(X_LIBS)
+ EXTRA_DIST = foovideo.c
+ @HAVE_WAND_TRUE@image_module = xineplug_decode_image.la
+ @HAVE_GDK_PIXBUF_TRUE@gdkpixbuf_module = xineplug_decode_gdk_pixbuf.la
+diff -Nurd xine-lib-1.1.16.3/src/post/deinterlace/plugins/Makefile.in xine-lib-1.1.16.3-patched/src/post/deinterlace/plugins/Makefile.in
+--- xine-lib-1.1.16.3/src/post/deinterlace/plugins/Makefile.in	2009-04-02 14:46:02.000000000 -0400
++++ xine-lib-1.1.16.3-patched/src/post/deinterlace/plugins/Makefile.in	2009-10-15 10:37:05.000000000 -0400
+@@ -69,9 +69,7 @@
+ 	libdeinterlaceplugins_la-linearblend.lo \
+ 	libdeinterlaceplugins_la-vfir.lo \
+ 	libdeinterlaceplugins_la-weave.lo \
+-	libdeinterlaceplugins_la-greedy2frame.lo \
+ 	libdeinterlaceplugins_la-scalerbob.lo \
+-	libdeinterlaceplugins_la-kdetv_greedyh.lo \
+ 	libdeinterlaceplugins_la-kdetv_tomsmocomp.lo
+ libdeinterlaceplugins_la_OBJECTS =  \
+ 	$(am_libdeinterlaceplugins_la_OBJECTS)
+@@ -452,9 +450,7 @@
+ 	linearblend.c \
+ 	vfir.c \
+ 	weave.c \
+-	greedy2frame.c \
+ 	scalerbob.c \
+-	kdetv_greedyh.c \
+ 	kdetv_tomsmocomp.c
+ 
+ libdeinterlaceplugins_la_CFLAGS = $(VISIBILITY_FLAG) $(AM_CFLAGS)
+@@ -513,8 +509,6 @@
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdeinterlaceplugins_la-double.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdeinterlaceplugins_la-greedy.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdeinterlaceplugins_la-greedy2frame.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdeinterlaceplugins_la-kdetv_greedyh.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdeinterlaceplugins_la-kdetv_tomsmocomp.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdeinterlaceplugins_la-linear.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdeinterlaceplugins_la-linearblend.Plo@am__quote@
+diff -Nurd xine-lib-1.1.16.3/src/xine-engine/demux.c xine-lib-1.1.16.3-patched/src/xine-engine/demux.c
+--- xine-lib-1.1.16.3/src/xine-engine/demux.c	2009-02-25 19:27:03.000000000 -0500
++++ xine-lib-1.1.16.3-patched/src/xine-engine/demux.c	2009-10-15 10:17:21.000000000 -0400
+@@ -50,6 +50,27 @@
+ #include <winsock.h>
+ #endif
+ 
++#ifndef CLOCK_REALTIME
++#include <time.h>
++
++#define  CLOCK_REALTIME 0 
++static int clock_gettime(int clk_id /*ignored*/, struct timespec *tp)
++{
++  struct timeval now;
++  
++  int rv = gettimeofday(&now, NULL);
++  
++  if (rv != 0) {
++    return rv;
++  }
++  
++  tp->tv_sec = now.tv_sec;
++  tp->tv_nsec = now.tv_usec * 1000;
++  
++  return 0;
++}
++#endif
++
+ /* 
+  *  Flush audio and video buffers. It is called from demuxers on
+  *  seek/stop, and may be useful when user input changes a stream and

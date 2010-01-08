@@ -1,0 +1,40 @@
+Package: libjingle
+Version: 0.3.10
+Revision: 1
+Depends: %N-shlibs (= %v-%r)
+BuildDepends: expat1, ilbc
+BuildDependsOnly: true
+CustomMirror: RangerMirror
+Source: mirror:custom:%n-%v.tar.bz2
+Source-MD5: 1aee417af4fd53927af294b00f001784
+Patch: %n.patch
+ConfigureParams: CPPFLAGS="-I%p/lib/system-openssl/include $CPPFLAGS" LDFLAGS="-L%p/lib/system-openssl/lib $LDFLAGS" PKG_CONFIG_PATH="%p/lib/system-openssl/lib/pkgconfig:$PKG_CONFIG_PATH"
+InstallScript: make install DESTDIR=%d
+SplitOff: <<
+	Package: %N-shlibs
+	Files: lib/libjingle*-0.3.*.dylib
+	DocFiles: COPYING
+	Depends: expat1-shlibs
+	Shlibs: <<
+		%p/lib/libjinglebase-0.3.0.dylib          1.0.0 %n (>= 0.3.10-1)
+		%p/lib/libjinglep2pbase-0.3.0.dylib       1.0.0 %n (>= 0.3.10-1)
+		%p/lib/libjinglep2pclient-0.3.0.dylib     1.0.0 %n (>= 0.3.10-1)
+		%p/lib/libjinglesessiontunnel-0.3.0.dylib 1.0.0 %n (>= 0.3.10-1)
+		%p/lib/libjinglexmllite-0.3.0.dylib       1.0.0 %n (>= 0.3.10-1)
+		%p/lib/libjinglexmpp-0.3.0.dylib          1.0.0 %n (>= 0.3.10-1)
+	<<
+<<
+SplitOff2: <<
+	Package: %N-dev
+	Files: lib include
+	DocFiles: COPYING
+<<
+DocFiles: AUTHORS COPYING ChangeLog DOCUMENTATION INSTALL NEWS README
+Description: Google Talk P2P voice APIs
+DescDetail: <<
+Libjingle is a set of components provided by Google to interoperate
+with Google Talk's peer-to-peer and voice capabilities.
+<<
+License: BSD
+Maintainer: Benjamin Reed <libjingle@fink.racoonfink.com>
+Homepage: http://code.google.com/apis/talk/index.html

@@ -1,0 +1,11 @@
+Package: bundle-koffice-i18n
+Version: 1.6.3
+Revision: 1
+Type: bundle
+Depends: 
+Description: KDE - all language support for KOffice
+DescDetail: <<
+This package doesn't install any files of itself, but instead makes
+sure that all KOffice language files get installed.
+<<
+Maintainer: Benjamin Reed <bundle-koffice-i18n@fink.racoonfink.com>

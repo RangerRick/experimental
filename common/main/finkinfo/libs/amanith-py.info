@@ -1,0 +1,38 @@
+Info2: <<
+Package: amanith-py%type_pkg[python]
+Version: 0.3.34
+Revision: 1
+Type: python (0)
+BuildDepends: <<
+	amanith (>= 0.3-2),
+	glew,
+	python%type_pkg[python],
+	swig (>= 1.3.20-1)
+<<
+Depends: <<
+	amanith-shlibs (>= 0.3-2),
+	python%type_pkg[python],
+<<
+Maintainer: Benjamin Reed <amanith-py@fink.racoonfink.com>
+HomePage: http://louhi.kempele.fi/~skyostil/projects/pyamanith/
+Source: http://louhi.kempele.fi/~skyostil/projects/pyamanith/dist/PyAmanith-%v.tar.gz
+Source-MD5: e6d44980ba8d1260f4e8dc73b93c63d4
+Patch: %{ni}.patch
+License: OSI-Approved
+Description: Python binding to Amanith
+DescDetail: <<
+<<
+CompileScript: <<
+#!/bin/bash -ev
+
+	install -d -m 755 amanith/include
+	ln -s %p/include/amanith amanith/include/
+	ln -s %p/lib amanith/
+
+	%p/bin/python%type_raw[python] setup.py build
+<<
+InstallScript: <<
+	%p/bin/python%type_raw[python] setup.py install --root=%d
+<<
+DocFiles: INSTALL PKG-INFO README TODO
+<<

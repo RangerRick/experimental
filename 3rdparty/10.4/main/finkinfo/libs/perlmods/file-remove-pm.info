@@ -1,0 +1,20 @@
+Package: file-remove-pm
+Version: 1.42
+Revision: 1
+Description: Remove files and directories
+Type: perl
+License: Artistic/GPL
+Maintainer: Daniel Macks <dmacks@netspace.org>
+
+Source: mirror:cpan:modules/by-module/File/File-Remove-%v.tar.gz
+Source-MD5: 7eef25044fc3cc60b6faf0522f865ed5
+
+UpdatePOD: true
+DocFiles: Changes LICENSE README
+
+Homepage: http://search.cpan.org/dist/File-Remove
+DescPackaging: <<
+ Report bugs to the maintainer or the CPAN bug tracker:
+ http://rt.cpan.org/NoAuth/Bugs.html?Dist=File-Remove
+<<
+

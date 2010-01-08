@@ -1,0 +1,108 @@
+Package: kdebindings3
+Version: 3.5.2
+Revision: 1
+Description: KDE - language bindings
+License: GPL/LGPL
+Maintainer: Benjamin Reed <kdebindings3@fink.racoonfink.com>
+
+Depends: 
+BuildDepends: <<
+	pcre,
+	arts-dev (>= 1.5.9-1),
+	autoconf2.5,
+	cctools-single-module,
+	fink (>= 0.20.2.1-1),
+	firefox-dev,
+	freetype219,
+	gettext-tools,
+	kdelibs3-unified-dev (>= %v-1),
+	libart2,
+	libgettext3-dev,
+	libiconv-dev,
+	libidn,
+	libjpeg,
+	libpng3 (>= 1.2.5-4),
+	libxml2,
+	libxslt,
+	mono-dev (>= 1.1.14-1),
+	python24,
+	qscintilla,
+	qt3 (>= 3.3.5-3),
+	ruby18-dev,
+	system-java14-dev,
+	x11-dev,
+	unsermake (>= 0.4-0.20060312.1)
+<<
+Conflicts: %N (<< %v-%r)
+Replaces: %N (<< %v-%r)
+GCC: 3.3
+
+CustomMirror: <<
+	nam-US: http://ranger.befunk.com/fink
+	nam-US: http://astrange.ithinksw.net/~astrange/ranger-fink
+	nam-CA: http://www.southofheaven.net/befunk
+<<
+Source: mirror:kde:stable/%v/src/kdebindings-%v.tar.bz2
+Source-MD5: cb26ce2e4efc35ca2c9c7a47807d679a
+SourceDirectory: kdebindings-%v
+Source2: mirror:custom:kde-admindir-3.5.2-2.tar.bz2
+Source2-MD5: 68eb58373b097c997bff91c1e4d48171
+Source2ExtractDir: kdebindings-%v
+
+#FIXME: patch mozilla inc dirs
+PatchScript: <<
+	sed -e 's,@FINKPREFIX@,%p,g' %a/%n.patch | patch -p1 
+	perl -pi.bak -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g;' admin/*
+<<
+
+NoSetCPPFLAGS: true
+NoSetLDFLAGS: true
+ConfigureParams: --enable-qscintilla --with-distribution='Fink/Mac OS X'
+
+CompileScript: <<
+#!/bin/sh -e
+
+	export HOME=/tmp
+	export PREFIX="%p" UNSERMAKE=1
+	. ./environment-helper.sh
+	export lt_cv_sys_max_cmd_len=65536
+
+	export CC=gcc-3.3 CXX=g++-3.3
+
+	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
+	./build-helper.sh configure %N %v %r ./configure %c $CONFIGURE_PARAMS
+	./build-helper.sh make      %N %v %r unsermake -p
+<<
+
+InstallScript: <<
+#!/bin/sh -e
+
+	export PREFIX="%p" UNSERMAKE=1
+	. ./environment-helper.sh
+
+	./build-helper.sh install %N %v %r unsermake -p -j1 install DESTDIR=%d
+
+	mkdir -p %i/share/doc/installed-packages
+	touch %i/share/doc/installed-packages/%N
+	touch %i/share/doc/installed-packages/%N-base
+<<
+
+DocFiles: AUTHORS COPYING INSTALL README
+SplitOff11: <<
+	Package: %N-base
+	Description: KDE - kdebindings base package
+	Depends: kdebase3-unified (>= %v-1)
+	Replaces: %N (<< %v-%r)
+	Recommends: %N (>= %v-%r)
+	Files: <<
+		share/doc/installed-packages/%N-base
+	<<
+<<
+
+DescDetail: <<
+Language bindings for KDE.
+
+Install the kdebindings3 package if you want to install all of the
+kdebindings packages.  kdebindings3 contains:
+
+<<

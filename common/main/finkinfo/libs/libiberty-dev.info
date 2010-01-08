@@ -1,0 +1,42 @@
+Package: libiberty-dev
+Version: 2.18
+Revision: 1
+BuildDepends: libgettext3-dev, libiconv-dev, texinfo
+BuildDependsOnly: true
+Source: mirror:gnu:binutils/binutils-%v.tar.bz2
+Source-MD5: 9d22ee4dafa3a194457caf4706f9cf01
+Patch: %N.patch
+CompileScript: <<
+#!/bin/sh -ev
+
+	pushd libiberty
+	./configure --prefix=%p/lib/libiberty --enable-install-libiberty --mandir=%p/share/man --infodir=%p/share/info
+	make
+	popd
+<<
+InstallScript: <<
+#!/bin/sh -ev
+
+	pushd libiberty
+	make -j1 install DESTDIR="%d"
+	popd
+
+	install -d -m 755 %i/lib/libiberty/include
+	install -c -m 644 include/libiberty.h %i/lib/libiberty/include/
+<<
+DocFiles: libiberty/COPYING* libiberty/ChangeLog libiberty/README
+Description: A collection of subroutines used by GNU software
+DescDetail: <<
+This directory contains the -liberty library of free software.
+It is a collection of subroutines used by various GNU programs.
+Current members include:
+
+        getopt -- get options from command line
+        obstack -- stacks of arbitrarily-sized objects
+        strerror -- error message strings corresponding to errno
+        strtol -- string-to-long conversion
+        strtoul -- string-to-unsigned-long conversion
+<<
+License: LGPL
+Maintainer: Benjamin Reed <libiberty@fink.racoonfink.com>
+Homepage: http://www.gnu.org/software/binutils/

@@ -1,0 +1,34 @@
+Package: pth2-dev
+Version: 2.0.7
+Revision: 1022
+Source: mirror:gnu:pth/pth-%v.tar.gz
+Source-MD5: 9cb4a25331a4c4db866a31cbe507c793
+Depends: pth2-shlibs (>= %v-%r)
+Conflicts: pth
+Replaces: pth
+BuildDependsOnly: true
+NoSetMAKEFLAGS: true
+SetMAKEFLAGS: -j1
+ConfigureParams: --mandir='${prefix}/share/man' --disable-pthread
+CompileScript: <<
+#!/bin/sh -ex
+  ./configure %c
+  make
+  make test
+<<
+InstallScript: make -j1 install DESTDIR=%d
+SplitOff: <<
+  Package: pth2-shlibs
+  Files: lib/libpth.*.dylib
+  Shlibs: %p/lib/libpth.20.dylib 21.0.0 %n (>= 2.0.4-1)
+<<
+DocFiles: ANNOUNCE AUTHORS COPYING ChangeLog HACKING HISTORY INSTALL NEWS PORTING README SUPPORT TESTS THANKS USERS
+#
+Maintainer: Benjamin Reed <pth2@fink.racoonfink.com>
+Homepage: http://www.gnu.org/software/pth/pth.html
+License: LGPL
+Description: Portable library that provides scheduling
+DescDetail: <<
+Pth is a portable library for Unix platforms that provides scheduling for 
+multithreading inside applications.
+<<

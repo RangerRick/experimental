@@ -1,0 +1,54 @@
+Package: spacehulk-mac
+Version: 1.5
+Revision: 0.beta1.2
+Depends: qt3mac-shlibs
+BuildDepends: qt3mac
+Maintainer: Benjamin Reed <spacehulk@fink.racoonfink.com>
+
+CustomMirror: RangerMirror
+Source: http://r.vinot.free.fr/spacehulk/spacehulk-%v-beta1.tar.gz
+Source-MD5: 43eb76b5a2b59e8af2205bff145cbfb2
+SourceDirectory: spacehulk-%v-beta1
+Source2: mirror:custom:kde-admindir/kde-admindir-1605.tar.bz2
+Source2-MD5: e2dccadc3d36718ef9a7e3c7789e2bdf
+Source2ExtractDir: spacehulk-%v-beta1
+GCC: 4.0
+
+DocFiles: AUTHORS COPYING ChangeLog INSTALL* NEWS README TODO
+SetLIBS: -L%p/lib/qt3mac/lib
+ConfigureParams: --prefix=%p --with-qt-dir=%p/lib/qt3mac --with-extra-libs=%p/lib --with-extra-includes=%p/include --enable-mt --with-pic --enable-rpath --enable-shared=yes --enable-static=no --mandir=%i/share/man --enable-mac --disable-final --disable-dependency-tracking
+
+CompileScript: <<
+#!/bin/sh -e
+
+	export HOME=/tmp QTDIR=%p/lib/qt3mac PREFIX="%p"
+	. ./environment-helper.sh
+
+	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
+	./build-helper.sh configure %N %v %r ./configure %c
+	./build-helper.sh make      %N %v %r make
+<<
+
+InstallScript: <<
+#!/bin/sh -e
+
+	export PREFIX="%p"
+	. ./environment-helper.sh
+
+	./build-helper.sh install %N %v %r make -j1 install DESTDIR=%d
+
+	mkdir -p SpaceHulk.app/Contents/MacOS
+	mv %i/bin/qspacehulk SpaceHulk.app/Contents/MacOS/SpaceHulk
+
+	mkdir -p %i/share/doc/installed-packages
+	touch %i/share/doc/installed-packages/%N
+<<
+
+AppBundles: SpaceHulk.app
+Description: Turn-based strategy game (Aqua version)
+DescDetail: <<
+Space Hulk is a great board game of Games Workshop in the world of
+Warhammer 40000.  This videogame is a complete conversion of the board
+game with the 2nd edition rules.
+<<
+License: GPL

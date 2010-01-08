@@ -1,0 +1,26 @@
+Info2: <<
+Package: text-csv-pp-pm%type_pkg[perl]
+Version: 1.10
+Revision: 1
+Depends: perl%type_pkg[perl]-core
+BuildDepends: test-simple-pm%type_pkg[perl], fink (>= 0.20.1-1)
+Source: mirror:cpan:modules/by-module/Text/Text-CSV-%v.tar.gz
+Source-MD5: ea28c3e4d37125b34c68ce2a03e6315a
+Type: perl(0)
+UpdatePOD: True
+DocFiles: MANIFEST README Changes META.yml
+InstallScript: <<
+	%{default_script}
+	mv %i/share/man %i/lib/perl5/%type_raw[perl]
+<<
+Description: Perl for manipulation of CSV files
+DescDetail: <<
+Pure perl module which provides facilities for the composition
+and decomposition of comma-separated values.
+<<
+License: Artistic
+Maintainer: Benjamin Reed <text-csv-pp-pm@fink.racoonfink.com>
+Homepage: http://search.cpan.org/dist/Text-CSV/
+<<
+
+ 	  	 

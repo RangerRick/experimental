@@ -1,0 +1,27 @@
+Info2: <<
+Package: data-dump-pm
+Version: 1.14
+Revision: 1
+Description: Pretty printing of data structures 
+Depends: system-perl
+BuildDepends: system-perl
+
+Type: perl
+License: Artistic
+Maintainer: Benjamin Reed <data-dump-pm@fink.racoonfink.com>
+
+Source: mirror:cpan:modules/by-module/Data/Data-Dump-%v.tar.gz
+Source-MD5: b4f4beb85058cff872f957aee2fbaf08
+
+UpdatePOD: true
+DocFiles: Changes README
+
+DescDetail: <<
+This module provides a single function called dump() that
+takes a list of values as its argument and produces a
+string as its result.  The string contains Perl code that,
+when evaled, produces a deep copy of the original
+arguments.  The string is formatted for easy reading.
+<<
+Homepage: http://search.cpan.org/dist/Data-Dump
+<<

@@ -1,0 +1,84 @@
+Info2: <<
+Package: qt-rb%type_pkg[ruby]
+Version: 3.5.6
+Revision: 1
+Depends: ruby%type_pkg[ruby], libsmoke-shlibs (>= 1:%v-1)
+BuildDepends: <<
+	arts-dev (>= 1.5.9-1),
+	autoconf (>= 2.60-4),
+	automake1.9,
+	kdelibs3-unified-dev (>= %v-1),
+	glut (>= 3.7-3),
+	libpng3 (>= 1.2.5-1),
+	libsmoke (>= 1:%v-1),
+	libtool14 (>= 1.5.10-1),
+	qt3 (>= 3.3.5-1),
+	ruby%type_pkg[ruby]-dev,
+	x11-dev
+<<
+BuildConflicts: unsermake
+Maintainer: Benjamin Reed <qt-rb@fink.racoonfink.com>
+Type: ruby(1.8)
+
+CustomMirror: RangerMirror
+Source: mirror:kde:stable/%v/src/kdebindings-%v.tar.bz2
+Source-MD5: d26b5f54f062b765a949d66657c2ab3c
+SourceDirectory: kdebindings-%v
+Source2: mirror:custom:kde-admindir/kde-admindir-1605.tar.bz2
+Source2-MD5: e2dccadc3d36718ef9a7e3c7789e2bdf
+Source2ExtractDir: kdebindings-%v
+PatchScript: <<
+	patch -p1 < %a/qt-rb.patch
+	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g;' admin/*
+<<
+GCC: 4.0
+UpdatePOD: true
+DocFiles: qtruby/AUTHORS qtruby/COPYING qtruby/ChangeLog qtruby/INSTALL qtruby/README* qtruby/TODO
+CompileScript: <<
+#!/bin/sh -ev
+
+	export PREFIX="%p" RUBY=ruby%type_raw[ruby]
+	. ./environment-helper.sh
+
+	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
+	./build-helper.sh configure %N %v %r ./configure --prefix=%p --with-qt-dir=%p --with-qt-includes=%p/include/qt --with-extra-libs=%p/lib --with-extra-includes=%p/include --enable-mt --with-pic --disable-rpath --enable-shared=yes --enable-static=no --mandir=%p/share/man --with-xinerama --disable-final --disable-dependency-tracking --enable-smoke --with-smoke=qt
+
+	pushd qtruby
+	../build-helper.sh make %N %v %r make
+	popd
+<<
+InstallScript: <<
+#!/bin/sh -ev
+
+	export PREFIX="%p" RUBY=ruby%type_raw[ruby]
+	. ./environment-helper.sh
+
+	pushd qtruby
+		make install DESTDIR="%d"
+		pushd rubylib
+			install -d -m 755 %i/share/doc/%n
+			cp -Rp designer examples tutorial %i/share/doc/%n/
+		popd
+	popd
+<<
+
+#PostInstScript: <<
+#	for file in pqtapi pqtsh puic; do
+#		update-alternatives --install %p/bin/$file $file %p/bin/$file-%type_raw[perl] %type_pkg[perl]
+#	done
+#	for file in puic; do
+#		update-alternatives --install %p/share/man/man1/$file $file %p/share/man/man1/$file-%type_raw[perl] %type_pkg[perl]
+#	done
+#<<
+#PostRmScript: <<
+#	for file in pqtapi pqtsh puic; do
+#		update-alternatives --remove $file %p/bin/$file-%type_raw[perl]
+#	done
+#	for file in puic; do
+#		update-alternatives --remove $file %p/share/man/man1/$file-%type_raw[perl]
+#	done
+#<<
+
+Description: Qt language bindings for Ruby
+License: GPL
+<<

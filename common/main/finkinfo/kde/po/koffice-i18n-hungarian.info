@@ -1,0 +1,20 @@
+Package: koffice-i18n-hungarian
+Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-hu-%v.tar.bz2
+SourceDirectory: koffice-l10n-hu-%v
+Description: KDE - KOffice languages for Hungarian
+DescDetail: Language files for the KDE office suite: Hungarian
+Source-MD5: 088e5c503a9dedfa8d23a3fa11f596ca
+Version: 1.6.3
+Revision: 1
+Replaces: kde-i18n-hungarian
+Depends: kdelibs3-unified (>= 3.5.7-1), xfonts-intl, koffice-base (>= 1.6.3-1)
+BuildDepends: fink (>= 0.17.1-1), arts-dev, kdebase3-unified-dev (>= 3.5.7-1), kdelibs3-unified-dev (>= 3.5.7-1), koffice-dev (>= 1.6.3-1), libxml2, libxslt, xfonts-intl
+Maintainer: Benjamin Reed <koffice-i18n-hungarian@fink.racoonfink.com>
+PatchScript: perl -pi -e 's,doc/HTML,doc/kde,g' configure
+CompileScript: (export HOME=/tmp; export KDEDIR=%p; sh configure %c; find . -name \*.bz2 -exec touch {} \;; make -j2)
+InstallScript: <<
+  make -j2 install DESTDIR=%d
+  mkdir -p %i/share/doc/kde-installed-packages
+  touch %i/share/doc/kde-installed-packages/koffice-i18n-hungarian
+<<
+License: GPL/LGPL

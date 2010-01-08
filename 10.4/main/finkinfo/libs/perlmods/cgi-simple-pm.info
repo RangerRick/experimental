@@ -1,0 +1,63 @@
+Info3: <<
+Package: cgi-simple-pm%type_pkg[perl]
+Version: 1.106
+Revision: 1
+Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
+Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
+Description: Simple OO CGI interface
+Type: perl(5.8.1 5.8.4 5.8.6 5.8.8 5.10.0)
+License: Artistic
+Maintainer: Benjamin Reed <cgi-simple-pm@fink.racoonfink.com>
+
+Depends: perl%type_pkg[perl]-core
+BuildDepends: <<
+	fink (>= 0.29.7-1),
+	module-build-pm%type_pkg[perl],
+	perl%type_pkg[perl]-core
+<<
+Replaces: cgi-simple-pm
+
+Source: mirror:cpan:modules/by-module/CGI/CGI-Simple-%v.tar.gz
+Source-MD5: 2f997bd3ff941fc3001cc271583a81b5
+
+CompileScript: <<
+#!/bin/sh -ex
+	exec 2>&1
+	perlversion=%type_raw[perl]
+	eval "`perl$perlversion -V:archname`"
+	perl$perlversion Build.PL \
+		--install_path arch=%i/lib/perl5/$perlversion/$archname \
+		--install_path bin=%i/bin \
+		--install_path bindoc=%i/lib/perl5/$perlversion/man/man1 \
+		--install_path lib=%i/lib/perl5/$perlversion \
+		--install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
+		--install_path script=%i/bin
+	./Build
+	./Build test
+<<
+
+UpdatePOD: true
+InstallScript: <<
+./Build install
+find %d -name .packlist -exec rm -rf {} \;
+<<
+NoPerlTests: true
+DocFiles: Changes META.yml README
+
+Homepage: http://search.cpan.org/dist/CGI-Simple
+DescDetail: <<
+CGI::Simple provides a relatively lightweight drop in replacement
+for CGI.pm.  It shares an identical OO interface to CGI.pm for
+parameter parsing, file upload, cookie handling and header
+generation.  This module is entirely object oriented, however a
+complete functional interface is available by using the
+CGI::Simple::Standard module.
+
+Essentially everything in CGI.pm that relates to the CGI (not
+HTML) side of things is available.  There are even a few new
+methods and additions to old ones!  If you are interested in what
+has gone on under the hood see the Compatibility with CGI.pm
+section at the end.
+<<
+<<
+

@@ -1,0 +1,103 @@
+Package: kdesdk3-svn
+Version: 3.5.10
+Revision: 1
+Description: KDE - svn ioslave
+License: GPL/LGPL
+Maintainer: Benjamin Reed <kdesdk3-svn@fink.racoonfink.com>
+
+Depends: <<
+	db47-aes-shlibs | db47-shlibs,
+	gdbm3-shlibs,
+	kdelibs3-unified-shlibs (>= %v-1),
+	libapr.0-shlibs,
+	libaprutil.0-shlibs,
+	neon24-shlibs,
+	svn15-shlibs
+<<
+BuildDepends: <<
+	apache2-dev,
+	apache2-common,
+	libapr.0-dev,
+	libaprutil.0-dev,
+	arts-dev (>= 1.5.9-1),
+	autoconf (>= 2.59-1),
+	cctools-single-module,
+	cyrus-sasl2-dev,
+	db47-aes | db47,
+	expat1,
+	fink (>= 0.20.2.1-1),
+	flex-devel (>= 2.5.31-1),
+	freetype219 (>= 2.3.7-7),
+	gdbm3,
+	libgettext3-dev,
+	gettext-tools,
+	kdelibs3-unified-dev (>= %v-1),
+	libart2 (>= 2.3.19-1),
+	libiconv-dev,
+	libidn,
+	libjpeg,
+	libpng3 (>= 1.2.5-4),
+	libxml2,
+	neon24,
+	openldap23-dev,
+	pcre,
+	pkgconfig (>= 0.22-3),
+	qt3 (>= 3.3.5-3),
+	svn15-dev,
+	unsermake (>= 0.4-0.20060316.1),
+	x11-dev
+<<
+Replaces: kdesdk3-dev (<< %v-%r), kdesdk3-svn-ssl, kdesdk3-extra-ioslaves
+Conflicts: kdesdk3-extra-ioslaves
+GCC: 4.0
+
+CustomMirror: RangerMirror
+Source: mirror:kde:stable/%v/src/kdesdk-%v.tar.bz2
+Source-MD5: ad711d1ce09242bd13b73a9a005f3143
+SourceDirectory: kdesdk-%v
+Source2: mirror:custom:kde-admindir/kde-admindir-1605.tar.bz2
+Source2-MD5: e2dccadc3d36718ef9a7e3c7789e2bdf
+Source2ExtractDir: kdesdk-%v
+
+PatchScript: <<
+	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g;' admin/*
+<<
+
+NoSetCPPFLAGS: true
+NoSetLDFLAGS: true
+ConfigureParams: --with-distribution='Fink/Mac OS X'
+
+CompileScript: <<
+#!/bin/sh -ev
+
+	export PREFIX="%p" USE_UNSERMAKE=1
+	. ./environment-helper.sh
+
+	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
+	./build-helper.sh configure %N %v %r ./configure %c $CONFIGURE_PARAMS
+	pushd kioslave
+	../build-helper.sh make     %N %v %r unsermake $UNSERMAKEFLAGS LIB_DBIV=-ldb-4.7 SVN_LIB='-L%p/lib -lapr -laprutil -lpthread -lsvn_client-1 -lsvn_ra-1 -lsvn_subr-1'
+<<
+
+InstallScript: <<
+#!/bin/sh -ev
+
+	export PREFIX="%p" USE_UNSERMAKE=1
+	. ./environment-helper.sh
+
+	pushd kioslave
+	../build-helper.sh install %N %v %r unsermake -p -j1 install DESTDIR=%d
+	popd
+<<
+
+PostInstScript: <<
+	if [ -x "%p/bin/kde-update-caches.sh" ]; then
+		%p/bin/kde-update-caches.sh >/dev/null 2>&1 || :
+	fi
+<<
+
+DocFiles: COPYING README
+
+DescDetail: <<
+An IO slave that lets you connect to subversion repositories.
+<<

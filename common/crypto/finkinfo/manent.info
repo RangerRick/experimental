@@ -1,0 +1,20 @@
+Info3: <<
+Package: manent
+Version: 0.10.18
+Revision: 1
+Type: python (2.5)
+Source: http://%n.googlecode.com/files/%n-%v.tar.bz2
+Source-MD5: b627fc9ab56e392bb7d753e236fa780a
+Depends: paramiko-py25, pycrypto-py25, python25
+
+#InfoTest: TestScript: python2.5 Unittest.py || exit 2
+
+CompileScript: python2.5 setup.py build
+InstallScript: python2.5 setup.py install --prefix "%p" --root "%d"
+DocFiles: TODO.txt
+
+Description: Algorithmically strong backup and archival
+License: GPL
+Homepage: http://trac.manent-backup.com/
+Maintainer: Benjamin Reed <manent@fink.raccoonfink.com>
+<<

@@ -1,0 +1,57 @@
+Info2: <<
+Package: datetime-pm%type_pkg[perl]
+Version: 0.4501
+Revision: 1
+Description: Perl date and time object
+Depends: <<
+	datetime-locale-pm%type_pkg[perl] (>= 0.41-1),
+	datetime-timezone-pm%type_pkg[perl] (>= 0.59-1),
+	fink (>= 0.20.1-1),
+	params-validate-pm%type_pkg[perl] (>= 0.76-1),
+	perl%type_pkg[perl]-core,
+	test-simple-pm%type_pkg[perl] (>= 0.34-1),
+	time-local-pm (>= 1.04-1)
+<<
+BuildDepends: <<
+	datetime-locale-pm%type_pkg[perl] (>= 0.41-1),
+	datetime-timezone-pm%type_pkg[perl] (>= 0.59-1),
+	fink (>= 0.20.2.1-1),
+	params-validate-pm%type_pkg[perl] (>= 0.76-1),
+	perl%type_pkg[perl]-core,
+	test-simple-pm%type_pkg[perl] (>= 0.34-1),
+	time-local-pm (>= 1.04-1)
+<<
+
+Type: perl(0)
+License: Artistic
+Maintainer: Benjamin Reed <datetime-pm@fink.racoonfink.com>
+
+Source: mirror:cpan:modules/by-module/DateTime/DateTime-%v.tar.gz
+Source-MD5: 890270f12eb4eb07dc1ddf8b26794ffe
+
+UpdatePOD: true
+DocFiles: Changes MANIFEST README
+InstallScript: <<
+	%{default_script}
+	mv %i/share/man %i/lib/perl5/%type_raw[perl]
+<<
+
+DescDetail: <<
+DateTime is a class for the representation of date/time combinations,
+and is part of the Perl DateTime project.  For details on this project
+please see http://datetime.perl.org/.  The DateTime site has a FAQ
+which may help answer many "how do I do X?" questions.  The FAQ is at
+http://datetime.perl.org/faq.html.
+
+It represents the Gregorian calendar, extended backwards in time
+before its creation (in 1582).  This is sometimes known as the
+"proleptic Gregorian calendar".  In this calendar, the first day of
+the calendar (the epoch), is the first day of year 1, which
+corresponds to the date which was (incorrectly) believed to be the
+birth of Jesus Christ.
+
+The calendar represented does have a year 0, and in that way differs 
+rom how dates are often written using "BCE/CE" or "BC/AD".
+<<
+Homepage: http://search.cpan.org/dist/DateTime
+<<

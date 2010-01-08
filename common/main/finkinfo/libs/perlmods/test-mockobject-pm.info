@@ -1,0 +1,71 @@
+Info2: <<
+Package: test-mockobject-pm%type_pkg[perl]
+Version: 1.09
+Revision: 1
+Description: Emulate troublesome interfaces
+Depends: <<
+	fink (>= 0.20.1-1),
+	perl%type_pkg[perl]-core,
+	scalar-list-utils-pm%type_pkg[perl],
+	test-exception-pm,
+	test-simple-pm%type_pkg[perl],
+	universal-isa-pm%type_pkg[perl] (>= 0.06-1),
+	universal-can-pm%type_pkg[perl] (>= 1.11-1)
+<<
+BuildDepends: <<
+	fink (>= 0.20.2.1-1),
+	module-build-pm%type_pkg[perl],
+	perl%type_pkg[perl]-core,
+	scalar-list-utils-pm%type_pkg[perl],
+	test-exception-pm,
+	test-simple-pm%type_pkg[perl],
+	universal-isa-pm%type_pkg[perl] (>= 0.06-1),
+	universal-can-pm%type_pkg[perl] (>= 1.11-1)
+<<
+
+Type: perl(0)
+NoPerlTests: true
+License: Artistic
+Maintainer: Benjamin Reed <test-mockobject-pm@fink.racoonfink.com>
+
+Source: mirror:cpan:modules/by-module/Test/Test-MockObject-%v.tar.gz
+Source-MD5: 3c9c2842d40fa8c389563c227804d7d8
+
+UpdatePOD: true
+DocFiles: Changes MANIFEST README
+CompileScript: <<
+#!/bin/sh -ex
+	exec 2>&1
+	perlversion=%type_raw[perl]
+	eval "`perl$perlversion -V:archname`"
+	perl$perlversion Build.PL \
+		--install_path arch=%i/lib/perl5/$perlversion/$archname \
+		--install_path bin=%i/bin \
+		--install_path bindoc=%i/lib/perl5/$perlversion/man/man1 \
+		--install_path lib=%i/lib/perl5/$perlversion \
+		--install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
+		--install_path script=%i/bin
+	./Build
+	./Build test
+<<
+InstallScript: <<
+	./Build install
+	find %d -name .packlist -exec rm -rf {} \;
+<<
+
+DescDetail: <<
+It's a simple program that doesn't use any other modules, and
+those are easy to test.  More often, testing a program
+completely means faking up input to another module, trying to
+coax the right output from something you're not supposed to be
+testing anyway.
+
+Testing is a lot easier when you can control the entire
+environment.  With Test::MockObject, you can get a lot closer.
+
+Test::MockObject allows you to create objects that conform to
+particular interfaces with very little code.  You don't have
+to reimplement the behavior, just the input and the output.
+<<
+Homepage: http://search.cpan.org/dist/Test-MockObject
+<<

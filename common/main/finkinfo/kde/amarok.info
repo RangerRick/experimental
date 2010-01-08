@@ -1,0 +1,12 @@
+Package: amarok
+Version: 1.4.8
+Revision: 1
+# no gstreamer engine for now
+#Depends: amarok-core (>= %v-%r), amarok-engine-xine (>= %v-%r) | amarok-engine-gstreamer (>= %v-%r)
+Depends: amarok-core (>= %v-%r), amarok-engine-xine (>= %v-%r)
+Conflicts: amarok-kde-xine, amarok-kde-gstreamer, amarok-kde-gstreamer-xine
+Replaces: amarok-kde-xine, amarok-kde-gstreamer, amarok-kde-gstreamer-xine
+Maintainer: Benjamin Reed <amarok@fink.racoonfink.com>
+Type: bundle
+
+Description: KDE - music player

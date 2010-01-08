@@ -1,0 +1,89 @@
+diff -uNr beryl-core-0.2.1/libberyldecoration/Makefile.in beryl-core-0.2.1-new/libberyldecoration/Makefile.in
+--- beryl-core-0.2.1/libberyldecoration/Makefile.in	2007-03-17 15:53:59.000000000 -0500
++++ beryl-core-0.2.1-new/libberyldecoration/Makefile.in	2007-08-01 09:50:03.000000000 -0500
+@@ -57,7 +57,7 @@
+ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(pkgconfigdir)"
+ libLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+-libberyldecoration_la_LIBADD =
++libberyldecoration_la_LIBADD = $(LIBBERYLDECORATION_LIBS)
+ am_libberyldecoration_la_OBJECTS = main.lo
+ libberyldecoration_la_OBJECTS = $(am_libberyldecoration_la_OBJECTS)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+diff -uNr beryl-core-0.2.1/libberylsettings/main.c beryl-core-0.2.1-new/libberylsettings/main.c
+--- beryl-core-0.2.1/libberylsettings/main.c	2007-02-07 10:25:28.000000000 -0600
++++ beryl-core-0.2.1-new/libberylsettings/main.c	2007-08-01 09:46:36.000000000 -0500
+@@ -23,7 +23,6 @@
+ #include <stdlib.h>
+ #include <beryl-settings.h>
+ #include <string.h>
+-#include <malloc.h>
+ #include <libintl.h>
+ #include <dlfcn.h>
+ #include <beryl.h>
+diff -uNr beryl-core-0.2.1/settings-backends/gconf.c beryl-core-0.2.1-new/settings-backends/gconf.c
+--- beryl-core-0.2.1/settings-backends/gconf.c	2007-02-09 05:59:11.000000000 -0600
++++ beryl-core-0.2.1-new/settings-backends/gconf.c	2007-08-01 09:46:40.000000000 -0500
+@@ -24,7 +24,6 @@
+ #define _GNU_SOURCE
+ #include <stdlib.h>
+ #include <string.h>
+-#include <malloc.h>
+ #include <libintl.h>
+ #include <string.h>
+ 
+diff -uNr beryl-core-0.2.1/settings-backends/ini.c beryl-core-0.2.1-new/settings-backends/ini.c
+--- beryl-core-0.2.1/settings-backends/ini.c	2007-03-17 13:09:46.000000000 -0500
++++ beryl-core-0.2.1-new/settings-backends/ini.c	2007-08-01 09:46:43.000000000 -0500
+@@ -20,7 +20,6 @@
+ #define _GNU_SOURCE
+ #include <stdlib.h>
+ #include <string.h>
+-#include <malloc.h>
+ #include <libintl.h>
+ #include <beryl-settings-backend.h>
+ 
+diff -uNr beryl-core-0.2.1/src/display.c beryl-core-0.2.1-new/src/display.c
+--- beryl-core-0.2.1/src/display.c	2007-03-17 13:09:46.000000000 -0500
++++ beryl-core-0.2.1-new/src/display.c	2007-08-01 09:51:49.000000000 -0500
+@@ -342,7 +342,7 @@
+ }
+ 
+ static Bool
+-raise(CompDisplay * d,
++beryl_raise(CompDisplay * d,
+ 	  CompAction * action,
+ 	  CompActionState state, CompOption * option, int nOption)
+ {
+@@ -2228,7 +2228,7 @@
+ 	o->value.action.terminate = 0;
+ 
+ 	o = &display->opt[COMP_DISPLAY_OPTION_RAISE_WINDOW];
+-	o->value.action.initiate = raise;
++	o->value.action.initiate = beryl_raise;
+ 	o->value.action.terminate = 0;
+ 
+ 	o = &display->opt[COMP_DISPLAY_OPTION_ACTIVATE_WINDOW];
+diff -uNr beryl-core-0.2.1/src/display_options.c beryl-core-0.2.1-new/src/display_options.c
+--- beryl-core-0.2.1/src/display_options.c	2007-03-17 13:09:46.000000000 -0500
++++ beryl-core-0.2.1-new/src/display_options.c	2007-08-01 09:46:50.000000000 -0500
+@@ -27,7 +27,7 @@
+ #define _GNU_SOURCE				/* for asprintf */
+ 
+ #include <stdio.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <beryl.h>
+diff -uNr beryl-core-0.2.1/src/plugin.c beryl-core-0.2.1-new/src/plugin.c
+--- beryl-core-0.2.1/src/plugin.c	2007-03-17 13:09:46.000000000 -0500
++++ beryl-core-0.2.1-new/src/plugin.c	2007-08-01 09:46:54.000000000 -0500
+@@ -22,7 +22,6 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <dlfcn.h>
+-#include <malloc.h>
+ #include <dirent.h>
+ 
+ #include <beryl.h>

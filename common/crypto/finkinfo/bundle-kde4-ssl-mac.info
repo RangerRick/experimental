@@ -1,0 +1,24 @@
+Info4: <<
+Package: bundle-kde4-ssl-mac
+Version: 4.3.2
+Revision: 1
+BuildDepends: fink
+Description: KDE4 - convenience package: KDE 4.3 (Native)
+Type: bundle
+Maintainer: Benjamin Reed <bundle-kde4@fink.racoonfink.com>
+
+Depends: <<
+	bundle-kde4-mac (>= %v-1),
+	kdegames4-mac (>= %v-1),
+	kdegraphics4-mac (>= %v-1),
+	kdenetwork4-mac (>= %v-1),
+	kdepim4-mac (>= %v-1),
+<<
+
+Homepage: http://www.kde.org/
+DescDetail: <<
+This package doesn't install any files of itself, but makes sure that
+you have a fully-functional KDE 4.3.x system through dependencies, including
+packages with crypto support.
+<<
+<<

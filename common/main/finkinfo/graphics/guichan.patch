@@ -1,0 +1,52 @@
+diff -uNr guichan-0.7.1/configure guichan-0.7.1-patched/configure
+--- guichan-0.7.1/configure	2007-07-11 07:45:33.000000000 -0500
++++ guichan-0.7.1-patched/configure	2007-07-29 00:10:09.000000000 -0500
+@@ -20772,7 +20772,7 @@
+ if test x$enable_opengl = xyes; then
+   if test x$enable_force_opengl = xno; then
+ 
+-for ac_header in GL/gl.h
++for ac_header in OpenGL/gl.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if { as_var=$as_ac_Header; eval "test \"\${$as_var+set}\" = set"; }; then
+@@ -20916,13 +20916,13 @@
+ 
+ done
+ 
+-    { echo "$as_me:$LINENO: checking for glBegin in -lGL" >&5
+-echo $ECHO_N "checking for glBegin in -lGL... $ECHO_C" >&6; }
++    { echo "$as_me:$LINENO: checking for glBegin in -framework OpenGL" >&5
++echo $ECHO_N "checking for glBegin in -framework OpenGL... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_GL_glBegin+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lGL  $LIBS"
++LIBS="-framework OpenGL  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+diff -uNr guichan-0.7.1/src/opengl/Makefile.in guichan-0.7.1-patched/src/opengl/Makefile.in
+--- guichan-0.7.1/src/opengl/Makefile.in	2007-07-11 07:45:32.000000000 -0500
++++ guichan-0.7.1-patched/src/opengl/Makefile.in	2007-07-29 00:20:25.000000000 -0500
+@@ -12,6 +12,8 @@
+ # even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+ # PARTICULAR PURPOSE.
+ 
++AM_LDFLAGS="-framework OpenGL"
++
+ @SET_MAKE@
+ 
+ VPATH = @srcdir@
+diff -uNr guichan-0.7.1/src/sdl/Makefile.in guichan-0.7.1-patched/src/sdl/Makefile.in
+--- guichan-0.7.1/src/sdl/Makefile.in	2007-07-11 07:45:32.000000000 -0500
++++ guichan-0.7.1-patched/src/sdl/Makefile.in	2007-07-29 00:21:04.000000000 -0500
+@@ -12,6 +12,7 @@
+ # even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+ # PARTICULAR PURPOSE.
+ 
++AM_LDFLAGS = "-lSDL -lSDL_image"
+ @SET_MAKE@
+ 
+ #noinst_LTLIBRARIES = libsdl.la
