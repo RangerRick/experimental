@@ -1,82 +1,82 @@
-diff -Nurd kde-qt/config.tests/unix/3dnow/3dnow.pro kde-qt-new/config.tests/unix/3dnow/3dnow.pro
---- kde-qt/config.tests/unix/3dnow/3dnow.pro	2009-06-25 12:37:50.000000000 -0400
-+++ kde-qt-new/config.tests/unix/3dnow/3dnow.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/3dnow/3dnow.pro qt-kde-qt-new/config.tests/unix/3dnow/3dnow.pro
+--- qt-kde-qt/config.tests/unix/3dnow/3dnow.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/3dnow/3dnow.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,3 +1,2 @@
  SOURCES = 3dnow.cpp
 -CONFIG -= x11 qt
 -mac:CONFIG -= app_bundle
 +CONFIG -= x11 qt app_bundle
-diff -Nurd kde-qt/config.tests/unix/clock-gettime/clock-gettime.pro kde-qt-new/config.tests/unix/clock-gettime/clock-gettime.pro
---- kde-qt/config.tests/unix/clock-gettime/clock-gettime.pro	2009-06-25 12:37:50.000000000 -0400
-+++ kde-qt-new/config.tests/unix/clock-gettime/clock-gettime.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/clock-gettime/clock-gettime.pro qt-kde-qt-new/config.tests/unix/clock-gettime/clock-gettime.pro
+--- qt-kde-qt/config.tests/unix/clock-gettime/clock-gettime.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/clock-gettime/clock-gettime.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = clock-gettime.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
  include(clock-gettime.pri)
-diff -Nurd kde-qt/config.tests/unix/clock-monotonic/clock-monotonic.pro kde-qt-new/config.tests/unix/clock-monotonic/clock-monotonic.pro
---- kde-qt/config.tests/unix/clock-monotonic/clock-monotonic.pro	2009-06-25 12:37:50.000000000 -0400
-+++ kde-qt-new/config.tests/unix/clock-monotonic/clock-monotonic.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/clock-monotonic/clock-monotonic.pro qt-kde-qt-new/config.tests/unix/clock-monotonic/clock-monotonic.pro
+--- qt-kde-qt/config.tests/unix/clock-monotonic/clock-monotonic.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/clock-monotonic/clock-monotonic.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = clock-monotonic.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
  include(../clock-gettime/clock-gettime.pri)
-diff -Nurd kde-qt/config.tests/unix/cups/cups.pro kde-qt-new/config.tests/unix/cups/cups.pro
---- kde-qt/config.tests/unix/cups/cups.pro	2009-06-25 12:37:50.000000000 -0400
-+++ kde-qt-new/config.tests/unix/cups/cups.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/cups/cups.pro qt-kde-qt-new/config.tests/unix/cups/cups.pro
+--- qt-kde-qt/config.tests/unix/cups/cups.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/cups/cups.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = cups.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
  LIBS += -lcups
-diff -Nurd kde-qt/config.tests/unix/db2/db2.pro kde-qt-new/config.tests/unix/db2/db2.pro
---- kde-qt/config.tests/unix/db2/db2.pro	2009-06-25 12:37:50.000000000 -0400
-+++ kde-qt-new/config.tests/unix/db2/db2.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/db2/db2.pro qt-kde-qt-new/config.tests/unix/db2/db2.pro
+--- qt-kde-qt/config.tests/unix/db2/db2.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/db2/db2.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = db2.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
  LIBS += -ldb2
-diff -Nurd kde-qt/config.tests/unix/dbus/dbus.pro kde-qt-new/config.tests/unix/dbus/dbus.pro
---- kde-qt/config.tests/unix/dbus/dbus.pro	2009-06-25 12:37:50.000000000 -0400
-+++ kde-qt-new/config.tests/unix/dbus/dbus.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/dbus/dbus.pro qt-kde-qt-new/config.tests/unix/dbus/dbus.pro
+--- qt-kde-qt/config.tests/unix/dbus/dbus.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/dbus/dbus.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,3 +1,2 @@
  SOURCES = dbus.cpp
 -CONFIG -= qt
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt app_bundle
-diff -Nurd kde-qt/config.tests/unix/doubleformat/doubleformattest.pro kde-qt-new/config.tests/unix/doubleformat/doubleformattest.pro
---- kde-qt/config.tests/unix/doubleformat/doubleformattest.pro	2009-06-25 12:37:50.000000000 -0400
-+++ kde-qt-new/config.tests/unix/doubleformat/doubleformattest.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/doubleformat/doubleformattest.pro qt-kde-qt-new/config.tests/unix/doubleformat/doubleformattest.pro
+--- qt-kde-qt/config.tests/unix/doubleformat/doubleformattest.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/doubleformat/doubleformattest.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,3 +1,2 @@
  SOURCES = doubleformattest.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
-diff -Nurd kde-qt/config.tests/unix/endian/endiantest.pro kde-qt-new/config.tests/unix/endian/endiantest.pro
---- kde-qt/config.tests/unix/endian/endiantest.pro	2009-06-25 12:37:50.000000000 -0400
-+++ kde-qt-new/config.tests/unix/endian/endiantest.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/endian/endiantest.pro qt-kde-qt-new/config.tests/unix/endian/endiantest.pro
+--- qt-kde-qt/config.tests/unix/endian/endiantest.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/endian/endiantest.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,3 +1,2 @@
  SOURCES = endiantest.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
-diff -Nurd kde-qt/config.tests/unix/floatmath/floatmath.pro kde-qt-new/config.tests/unix/floatmath/floatmath.pro
---- kde-qt/config.tests/unix/floatmath/floatmath.pro	2009-06-25 12:37:50.000000000 -0400
-+++ kde-qt-new/config.tests/unix/floatmath/floatmath.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/floatmath/floatmath.pro qt-kde-qt-new/config.tests/unix/floatmath/floatmath.pro
+--- qt-kde-qt/config.tests/unix/floatmath/floatmath.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/floatmath/floatmath.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,3 +1,2 @@
  SOURCES = floatmath.cpp
 -CONFIG -= x11 qt
 -
 +CONFIG -= x11 qt app_bundle
-diff -Nurd kde-qt/config.tests/unix/freetype/freetype.pro kde-qt-new/config.tests/unix/freetype/freetype.pro
---- kde-qt/config.tests/unix/freetype/freetype.pro	2009-06-25 12:37:50.000000000 -0400
-+++ kde-qt-new/config.tests/unix/freetype/freetype.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/freetype/freetype.pro qt-kde-qt-new/config.tests/unix/freetype/freetype.pro
+--- qt-kde-qt/config.tests/unix/freetype/freetype.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/freetype/freetype.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,5 +1,5 @@
  SOURCES = freetype.cpp
  CONFIG += x11
@@ -84,18 +84,18 @@ diff -Nurd kde-qt/config.tests/unix/freetype/freetype.pro kde-qt-new/config.test
 +CONFIG -= qt app_bundle
  LIBS += -lfreetype
  include(freetype.pri)
-diff -Nurd kde-qt/config.tests/unix/getaddrinfo/getaddrinfo.pro kde-qt-new/config.tests/unix/getaddrinfo/getaddrinfo.pro
---- kde-qt/config.tests/unix/getaddrinfo/getaddrinfo.pro	2009-06-25 12:37:50.000000000 -0400
-+++ kde-qt-new/config.tests/unix/getaddrinfo/getaddrinfo.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/getaddrinfo/getaddrinfo.pro qt-kde-qt-new/config.tests/unix/getaddrinfo/getaddrinfo.pro
+--- qt-kde-qt/config.tests/unix/getaddrinfo/getaddrinfo.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/getaddrinfo/getaddrinfo.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = getaddrinfotest.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
  LIBS += $$QMAKE_LIBS_NETWORK
-diff -Nurd kde-qt/config.tests/unix/getifaddrs/getifaddrs.pro kde-qt-new/config.tests/unix/getifaddrs/getifaddrs.pro
---- kde-qt/config.tests/unix/getifaddrs/getifaddrs.pro	2009-06-25 12:37:50.000000000 -0400
-+++ kde-qt-new/config.tests/unix/getifaddrs/getifaddrs.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/getifaddrs/getifaddrs.pro qt-kde-qt-new/config.tests/unix/getifaddrs/getifaddrs.pro
+--- qt-kde-qt/config.tests/unix/getifaddrs/getifaddrs.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/getifaddrs/getifaddrs.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,5 +1,4 @@
  SOURCES = getifaddrs.cpp
 -CONFIG -= qt
@@ -103,66 +103,66 @@ diff -Nurd kde-qt/config.tests/unix/getifaddrs/getifaddrs.pro kde-qt-new/config.
 +CONFIG -= qt app_bundle
  QT =
  LIBS += $$QMAKE_LIBS_NETWORK
-diff -Nurd kde-qt/config.tests/unix/glib/glib.pro kde-qt-new/config.tests/unix/glib/glib.pro
---- kde-qt/config.tests/unix/glib/glib.pro	2009-06-25 12:37:50.000000000 -0400
-+++ kde-qt-new/config.tests/unix/glib/glib.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/glib/glib.pro qt-kde-qt-new/config.tests/unix/glib/glib.pro
+--- qt-kde-qt/config.tests/unix/glib/glib.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/glib/glib.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,2 +1,2 @@
  SOURCES = glib.cpp
 -CONFIG -= qt
 +CONFIG -= qt app_bundle
-diff -Nurd kde-qt/config.tests/unix/gnu-libiconv/gnu-libiconv.pro kde-qt-new/config.tests/unix/gnu-libiconv/gnu-libiconv.pro
---- kde-qt/config.tests/unix/gnu-libiconv/gnu-libiconv.pro	2009-06-25 12:37:50.000000000 -0400
-+++ kde-qt-new/config.tests/unix/gnu-libiconv/gnu-libiconv.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/gnu-libiconv/gnu-libiconv.pro qt-kde-qt-new/config.tests/unix/gnu-libiconv/gnu-libiconv.pro
+--- qt-kde-qt/config.tests/unix/gnu-libiconv/gnu-libiconv.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/gnu-libiconv/gnu-libiconv.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = gnu-libiconv.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
  LIBS += -liconv
-diff -Nurd kde-qt/config.tests/unix/gstreamer/gstreamer.pro kde-qt-new/config.tests/unix/gstreamer/gstreamer.pro
---- kde-qt/config.tests/unix/gstreamer/gstreamer.pro	2009-06-25 12:37:50.000000000 -0400
-+++ kde-qt-new/config.tests/unix/gstreamer/gstreamer.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/gstreamer/gstreamer.pro qt-kde-qt-new/config.tests/unix/gstreamer/gstreamer.pro
+--- qt-kde-qt/config.tests/unix/gstreamer/gstreamer.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/gstreamer/gstreamer.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,3 +1,3 @@
  SOURCES = gstreamer.cpp
 -CONFIG -= qt
 +CONFIG -= qt app_bundle
  LIBS += -lgstinterfaces-0.10 -lgstvideo-0.10 -lgstbase-0.10
-diff -Nurd kde-qt/config.tests/unix/ibase/ibase.pro kde-qt-new/config.tests/unix/ibase/ibase.pro
---- kde-qt/config.tests/unix/ibase/ibase.pro	2009-06-25 12:37:50.000000000 -0400
-+++ kde-qt-new/config.tests/unix/ibase/ibase.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/ibase/ibase.pro qt-kde-qt-new/config.tests/unix/ibase/ibase.pro
+--- qt-kde-qt/config.tests/unix/ibase/ibase.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/ibase/ibase.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = ibase.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
  LIBS += -lgds
-diff -Nurd kde-qt/config.tests/unix/iconv/iconv.pro kde-qt-new/config.tests/unix/iconv/iconv.pro
---- kde-qt/config.tests/unix/iconv/iconv.pro	2009-06-25 12:37:50.000000000 -0400
-+++ kde-qt-new/config.tests/unix/iconv/iconv.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/iconv/iconv.pro qt-kde-qt-new/config.tests/unix/iconv/iconv.pro
+--- qt-kde-qt/config.tests/unix/iconv/iconv.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/iconv/iconv.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,3 +1,4 @@
  SOURCES = iconv.cpp
  CONFIG -= qt dylib app_bundle
  mac:LIBS += -liconv
 +darwin-*:LIBS += -liconv
-diff -Nurd kde-qt/config.tests/unix/inotify/inotify.pro kde-qt-new/config.tests/unix/inotify/inotify.pro
---- kde-qt/config.tests/unix/inotify/inotify.pro	2009-06-25 12:37:50.000000000 -0400
-+++ kde-qt-new/config.tests/unix/inotify/inotify.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/inotify/inotify.pro qt-kde-qt-new/config.tests/unix/inotify/inotify.pro
+--- qt-kde-qt/config.tests/unix/inotify/inotify.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/inotify/inotify.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,3 +1,2 @@
  SOURCES = inotifytest.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
-diff -Nurd kde-qt/config.tests/unix/ipv6/ipv6.pro kde-qt-new/config.tests/unix/ipv6/ipv6.pro
---- kde-qt/config.tests/unix/ipv6/ipv6.pro	2009-06-25 12:37:50.000000000 -0400
-+++ kde-qt-new/config.tests/unix/ipv6/ipv6.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/ipv6/ipv6.pro qt-kde-qt-new/config.tests/unix/ipv6/ipv6.pro
+--- qt-kde-qt/config.tests/unix/ipv6/ipv6.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/ipv6/ipv6.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,3 +1,2 @@
  SOURCES = ipv6test.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
-diff -Nurd kde-qt/config.tests/unix/ipv6ifname/ipv6ifname.pro kde-qt-new/config.tests/unix/ipv6ifname/ipv6ifname.pro
---- kde-qt/config.tests/unix/ipv6ifname/ipv6ifname.pro	2009-06-25 12:37:51.000000000 -0400
-+++ kde-qt-new/config.tests/unix/ipv6ifname/ipv6ifname.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/ipv6ifname/ipv6ifname.pro qt-kde-qt-new/config.tests/unix/ipv6ifname/ipv6ifname.pro
+--- qt-kde-qt/config.tests/unix/ipv6ifname/ipv6ifname.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/ipv6ifname/ipv6ifname.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,5 +1,4 @@
  SOURCES = ipv6ifname.cpp
 -CONFIG -= qt
@@ -170,87 +170,87 @@ diff -Nurd kde-qt/config.tests/unix/ipv6ifname/ipv6ifname.pro kde-qt-new/config.
 +CONFIG -= qt app_bundle
  QT =
  LIBS += $$QMAKE_LIBS_NETWORK
-diff -Nurd kde-qt/config.tests/unix/largefile/largefile.pro kde-qt-new/config.tests/unix/largefile/largefile.pro
---- kde-qt/config.tests/unix/largefile/largefile.pro	2009-06-25 12:37:51.000000000 -0400
-+++ kde-qt-new/config.tests/unix/largefile/largefile.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/largefile/largefile.pro qt-kde-qt-new/config.tests/unix/largefile/largefile.pro
+--- qt-kde-qt/config.tests/unix/largefile/largefile.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/largefile/largefile.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,3 +1,2 @@
  SOURCES=largefiletest.cpp
 -CONFIG-=qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG-=qt dylib app_bundle
-diff -Nurd kde-qt/config.tests/unix/libjpeg/libjpeg.pro kde-qt-new/config.tests/unix/libjpeg/libjpeg.pro
---- kde-qt/config.tests/unix/libjpeg/libjpeg.pro	2009-06-25 12:37:51.000000000 -0400
-+++ kde-qt-new/config.tests/unix/libjpeg/libjpeg.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/libjpeg/libjpeg.pro qt-kde-qt-new/config.tests/unix/libjpeg/libjpeg.pro
+--- qt-kde-qt/config.tests/unix/libjpeg/libjpeg.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/libjpeg/libjpeg.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = libjpeg.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
  LIBS += -ljpeg
-diff -Nurd kde-qt/config.tests/unix/libmng/libmng.pro kde-qt-new/config.tests/unix/libmng/libmng.pro
---- kde-qt/config.tests/unix/libmng/libmng.pro	2009-06-25 12:37:51.000000000 -0400
-+++ kde-qt-new/config.tests/unix/libmng/libmng.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/libmng/libmng.pro qt-kde-qt-new/config.tests/unix/libmng/libmng.pro
+--- qt-kde-qt/config.tests/unix/libmng/libmng.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/libmng/libmng.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = libmng.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
  LIBS += -lmng
-diff -Nurd kde-qt/config.tests/unix/libpng/libpng.pro kde-qt-new/config.tests/unix/libpng/libpng.pro
---- kde-qt/config.tests/unix/libpng/libpng.pro	2009-06-25 12:37:51.000000000 -0400
-+++ kde-qt-new/config.tests/unix/libpng/libpng.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/libpng/libpng.pro qt-kde-qt-new/config.tests/unix/libpng/libpng.pro
+--- qt-kde-qt/config.tests/unix/libpng/libpng.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/libpng/libpng.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = libpng.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
  LIBS += -lpng
-diff -Nurd kde-qt/config.tests/unix/libtiff/libtiff.pro kde-qt-new/config.tests/unix/libtiff/libtiff.pro
---- kde-qt/config.tests/unix/libtiff/libtiff.pro	2009-06-25 12:37:51.000000000 -0400
-+++ kde-qt-new/config.tests/unix/libtiff/libtiff.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/libtiff/libtiff.pro qt-kde-qt-new/config.tests/unix/libtiff/libtiff.pro
+--- qt-kde-qt/config.tests/unix/libtiff/libtiff.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/libtiff/libtiff.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = libtiff.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
  LIBS += -ltiff
-diff -Nurd kde-qt/config.tests/unix/mmx/mmx.pro kde-qt-new/config.tests/unix/mmx/mmx.pro
---- kde-qt/config.tests/unix/mmx/mmx.pro	2009-06-25 12:37:51.000000000 -0400
-+++ kde-qt-new/config.tests/unix/mmx/mmx.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/mmx/mmx.pro qt-kde-qt-new/config.tests/unix/mmx/mmx.pro
+--- qt-kde-qt/config.tests/unix/mmx/mmx.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/mmx/mmx.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,3 +1,2 @@
  SOURCES = mmx.cpp
 -CONFIG -= x11 qt
 -mac:CONFIG -= app_bundle
 +CONFIG -= x11 qt app_bundle
-diff -Nurd kde-qt/config.tests/unix/mremap/mremap.pro kde-qt-new/config.tests/unix/mremap/mremap.pro
---- kde-qt/config.tests/unix/mremap/mremap.pro	2009-06-25 12:37:51.000000000 -0400
-+++ kde-qt-new/config.tests/unix/mremap/mremap.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/mremap/mremap.pro qt-kde-qt-new/config.tests/unix/mremap/mremap.pro
+--- qt-kde-qt/config.tests/unix/mremap/mremap.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/mremap/mremap.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,3 +1,2 @@
  SOURCES = mremap.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
-diff -Nurd kde-qt/config.tests/unix/mysql/mysql.pro kde-qt-new/config.tests/unix/mysql/mysql.pro
---- kde-qt/config.tests/unix/mysql/mysql.pro	2009-06-25 12:37:51.000000000 -0400
-+++ kde-qt-new/config.tests/unix/mysql/mysql.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/mysql/mysql.pro qt-kde-qt-new/config.tests/unix/mysql/mysql.pro
+--- qt-kde-qt/config.tests/unix/mysql/mysql.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/mysql/mysql.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = mysql.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
  LIBS += -lmysqlclient
-diff -Nurd kde-qt/config.tests/unix/mysql_r/mysql_r.pro kde-qt-new/config.tests/unix/mysql_r/mysql_r.pro
---- kde-qt/config.tests/unix/mysql_r/mysql_r.pro	2009-06-25 12:37:51.000000000 -0400
-+++ kde-qt-new/config.tests/unix/mysql_r/mysql_r.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/mysql_r/mysql_r.pro qt-kde-qt-new/config.tests/unix/mysql_r/mysql_r.pro
+--- qt-kde-qt/config.tests/unix/mysql_r/mysql_r.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/mysql_r/mysql_r.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = ../mysql/mysql.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
  LIBS += -lmysqlclient_r
-diff -Nurd kde-qt/config.tests/unix/nis/nis.pro kde-qt-new/config.tests/unix/nis/nis.pro
---- kde-qt/config.tests/unix/nis/nis.pro	2009-06-25 12:37:51.000000000 -0400
-+++ kde-qt-new/config.tests/unix/nis/nis.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/nis/nis.pro qt-kde-qt-new/config.tests/unix/nis/nis.pro
+--- qt-kde-qt/config.tests/unix/nis/nis.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/nis/nis.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,5 +1,4 @@
  SOURCES = nis.cpp
 -CONFIG -= qt dylib
@@ -258,130 +258,130 @@ diff -Nurd kde-qt/config.tests/unix/nis/nis.pro kde-qt-new/config.tests/unix/nis
 +CONFIG -= qt dylib app_bundle
  solaris-*:LIBS += -lnsl
  else:LIBS += $$QMAKE_LIBS_NIS
-diff -Nurd kde-qt/config.tests/unix/oci/oci.pro kde-qt-new/config.tests/unix/oci/oci.pro
---- kde-qt/config.tests/unix/oci/oci.pro	2009-06-25 12:37:51.000000000 -0400
-+++ kde-qt-new/config.tests/unix/oci/oci.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/oci/oci.pro qt-kde-qt-new/config.tests/unix/oci/oci.pro
+--- qt-kde-qt/config.tests/unix/oci/oci.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/oci/oci.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = oci.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
  LIBS += -lclntsh
-diff -Nurd kde-qt/config.tests/unix/odbc/odbc.pro kde-qt-new/config.tests/unix/odbc/odbc.pro
---- kde-qt/config.tests/unix/odbc/odbc.pro	2009-06-25 12:37:51.000000000 -0400
-+++ kde-qt-new/config.tests/unix/odbc/odbc.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/odbc/odbc.pro qt-kde-qt-new/config.tests/unix/odbc/odbc.pro
+--- qt-kde-qt/config.tests/unix/odbc/odbc.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/odbc/odbc.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = odbc.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
  LIBS += -lodbc
-diff -Nurd kde-qt/config.tests/unix/openssl/openssl.pro kde-qt-new/config.tests/unix/openssl/openssl.pro
---- kde-qt/config.tests/unix/openssl/openssl.pro	2009-06-25 12:37:51.000000000 -0400
-+++ kde-qt-new/config.tests/unix/openssl/openssl.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/openssl/openssl.pro qt-kde-qt-new/config.tests/unix/openssl/openssl.pro
+--- qt-kde-qt/config.tests/unix/openssl/openssl.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/openssl/openssl.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = openssl.cpp
 -CONFIG -= x11 qt
 -mac:CONFIG -= app_bundle
 +CONFIG -= x11 qt app_bundle
  include(openssl.pri)
-diff -Nurd kde-qt/config.tests/unix/psql/psql.pro kde-qt-new/config.tests/unix/psql/psql.pro
---- kde-qt/config.tests/unix/psql/psql.pro	2009-06-25 12:37:51.000000000 -0400
-+++ kde-qt-new/config.tests/unix/psql/psql.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/psql/psql.pro qt-kde-qt-new/config.tests/unix/psql/psql.pro
+--- qt-kde-qt/config.tests/unix/psql/psql.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/psql/psql.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = psql.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
  LIBS += -lpq
-diff -Nurd kde-qt/config.tests/unix/ptrsize/ptrsizetest.pro kde-qt-new/config.tests/unix/ptrsize/ptrsizetest.pro
---- kde-qt/config.tests/unix/ptrsize/ptrsizetest.pro	2009-06-25 12:37:51.000000000 -0400
-+++ kde-qt-new/config.tests/unix/ptrsize/ptrsizetest.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/ptrsize/ptrsizetest.pro qt-kde-qt-new/config.tests/unix/ptrsize/ptrsizetest.pro
+--- qt-kde-qt/config.tests/unix/ptrsize/ptrsizetest.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/ptrsize/ptrsizetest.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,3 +1,2 @@
  SOURCES = ptrsizetest.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
-diff -Nurd kde-qt/config.tests/unix/sqlite/sqlite.pro kde-qt-new/config.tests/unix/sqlite/sqlite.pro
---- kde-qt/config.tests/unix/sqlite/sqlite.pro	2009-06-25 12:37:51.000000000 -0400
-+++ kde-qt-new/config.tests/unix/sqlite/sqlite.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/sqlite/sqlite.pro qt-kde-qt-new/config.tests/unix/sqlite/sqlite.pro
+--- qt-kde-qt/config.tests/unix/sqlite/sqlite.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/sqlite/sqlite.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,3 +1,2 @@
  SOURCES = sqlite.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
-diff -Nurd kde-qt/config.tests/unix/sqlite2/sqlite2.pro kde-qt-new/config.tests/unix/sqlite2/sqlite2.pro
---- kde-qt/config.tests/unix/sqlite2/sqlite2.pro	2009-06-25 12:37:51.000000000 -0400
-+++ kde-qt-new/config.tests/unix/sqlite2/sqlite2.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/sqlite2/sqlite2.pro qt-kde-qt-new/config.tests/unix/sqlite2/sqlite2.pro
+--- qt-kde-qt/config.tests/unix/sqlite2/sqlite2.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/sqlite2/sqlite2.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = sqlite2.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
  LIBS += -lsqlite
-diff -Nurd kde-qt/config.tests/unix/sse/sse.pro kde-qt-new/config.tests/unix/sse/sse.pro
---- kde-qt/config.tests/unix/sse/sse.pro	2009-06-25 12:37:51.000000000 -0400
-+++ kde-qt-new/config.tests/unix/sse/sse.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/sse/sse.pro qt-kde-qt-new/config.tests/unix/sse/sse.pro
+--- qt-kde-qt/config.tests/unix/sse/sse.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/sse/sse.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,3 +1,2 @@
  SOURCES = sse.cpp
 -CONFIG -= x11 qt
 -mac:CONFIG -= app_bundle
 +CONFIG -= x11 qt app_bundle
-diff -Nurd kde-qt/config.tests/unix/sse2/sse2.pro kde-qt-new/config.tests/unix/sse2/sse2.pro
---- kde-qt/config.tests/unix/sse2/sse2.pro	2009-06-25 12:37:52.000000000 -0400
-+++ kde-qt-new/config.tests/unix/sse2/sse2.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/sse2/sse2.pro qt-kde-qt-new/config.tests/unix/sse2/sse2.pro
+--- qt-kde-qt/config.tests/unix/sse2/sse2.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/sse2/sse2.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,3 +1,2 @@
  SOURCES = sse2.cpp
 -CONFIG -= x11 qt
 -mac:CONFIG -= app_bundle
 +CONFIG -= x11 qt app_bundle
-diff -Nurd kde-qt/config.tests/unix/stl/stl.pro kde-qt-new/config.tests/unix/stl/stl.pro
---- kde-qt/config.tests/unix/stl/stl.pro	2009-06-25 12:37:52.000000000 -0400
-+++ kde-qt-new/config.tests/unix/stl/stl.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/stl/stl.pro qt-kde-qt-new/config.tests/unix/stl/stl.pro
+--- qt-kde-qt/config.tests/unix/stl/stl.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/stl/stl.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,3 +1,2 @@
  SOURCES = stltest.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
-diff -Nurd kde-qt/config.tests/unix/tds/tds.pro kde-qt-new/config.tests/unix/tds/tds.pro
---- kde-qt/config.tests/unix/tds/tds.pro	2009-06-25 12:37:52.000000000 -0400
-+++ kde-qt-new/config.tests/unix/tds/tds.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/tds/tds.pro qt-kde-qt-new/config.tests/unix/tds/tds.pro
+--- qt-kde-qt/config.tests/unix/tds/tds.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/tds/tds.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = tds.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
  LIBS += -lsybdb
-diff -Nurd kde-qt/config.tests/unix/tslib/tslib.pro kde-qt-new/config.tests/unix/tslib/tslib.pro
---- kde-qt/config.tests/unix/tslib/tslib.pro	2009-06-25 12:37:52.000000000 -0400
-+++ kde-qt-new/config.tests/unix/tslib/tslib.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/tslib/tslib.pro qt-kde-qt-new/config.tests/unix/tslib/tslib.pro
+--- qt-kde-qt/config.tests/unix/tslib/tslib.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/tslib/tslib.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,3 +1,3 @@
  SOURCES = tslib.cpp
 -CONFIG -= qt 
 +CONFIG -= qt app_bundle 
  LIBS += -lts
-diff -Nurd kde-qt/config.tests/unix/zlib/zlib.pro kde-qt-new/config.tests/unix/zlib/zlib.pro
---- kde-qt/config.tests/unix/zlib/zlib.pro	2009-06-25 12:37:52.000000000 -0400
-+++ kde-qt-new/config.tests/unix/zlib/zlib.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/unix/zlib/zlib.pro qt-kde-qt-new/config.tests/unix/zlib/zlib.pro
+--- qt-kde-qt/config.tests/unix/zlib/zlib.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/unix/zlib/zlib.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -1,4 +1,3 @@
  SOURCES = zlib.cpp
 -CONFIG -= qt dylib
 -mac:CONFIG -= app_bundle
 +CONFIG -= qt dylib app_bundle
  LIBS += -lz
-diff -Nurd kde-qt/config.tests/x11/opengl/opengl.pro kde-qt-new/config.tests/x11/opengl/opengl.pro
---- kde-qt/config.tests/x11/opengl/opengl.pro	2009-06-25 12:37:52.000000000 -0400
-+++ kde-qt-new/config.tests/x11/opengl/opengl.pro	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/config.tests/x11/opengl/opengl.pro qt-kde-qt-new/config.tests/x11/opengl/opengl.pro
+--- qt-kde-qt/config.tests/x11/opengl/opengl.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/config.tests/x11/opengl/opengl.pro	2009-12-26 20:17:30.000000000 +0100
 @@ -7,4 +7,4 @@
  }
  
  CONFIG -= qt
 -LIBS += -lGL -lGLU
 +LIBS += -lGL -lGLU -Wl,-dylib_file,/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
-diff -Nurd kde-qt/configure kde-qt-new/configure
---- kde-qt/configure	2009-06-25 12:37:53.000000000 -0400
-+++ kde-qt-new/configure	2009-06-28 10:49:10.000000000 -0400
-@@ -105,6 +105,7 @@
+diff -Nurd qt-kde-qt/configure qt-kde-qt-new/configure
+--- qt-kde-qt/configure	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/configure	2009-12-26 20:17:30.000000000 +0100
+@@ -165,6 +165,7 @@
  #-------------------------------------------------------------------------------
  
  PLATFORM_X11=no
@@ -389,7 +389,7 @@ diff -Nurd kde-qt/configure kde-qt-new/configure
  PLATFORM_MAC=no
  PLATFORM_QWS=no
  
-@@ -162,7 +163,7 @@
+@@ -222,7 +223,7 @@
  #-------------------------------------------------------------------------------
  # check the license
  #-------------------------------------------------------------------------------
@@ -398,7 +398,7 @@ diff -Nurd kde-qt/configure kde-qt-new/configure
  CFG_DEV=no
  CFG_NOKIA=no
  CFG_EMBEDDED=no
-@@ -1176,6 +1177,7 @@
+@@ -1269,6 +1270,7 @@
      x11)
          if [ "$PLATFORM_MAC" = "yes" ]; then
              PLATFORM_MAC=no
@@ -406,7 +406,7 @@ diff -Nurd kde-qt/configure kde-qt-new/configure
          elif [ "$PLATFORM_QWS" = "yes" ]; then
              PLATFORM_QWS=no
          fi
-@@ -2747,7 +2749,7 @@
+@@ -2920,7 +2922,7 @@
  fi
  
  QMAKE_CONF_COMPILER=`getQMakeConf "$XQMAKESPEC" | grep "^QMAKE_CXX[^_A-Z0-9]" | sed "s,.* *= *\(.*\)$,\1," | tail -1`
@@ -415,7 +415,7 @@ diff -Nurd kde-qt/configure kde-qt-new/configure
  [ -z "$TEST_COMPILER" ] && TEST_COMPILER=$QMAKE_CONF_COMPILER
  
  # auto-detect precompiled header support
-@@ -4160,6 +4162,9 @@
+@@ -4390,6 +4392,9 @@
  		EXTRA_LFLAGS="$EXTRA_LFLAGS \$(SDK_LFLAGS)"
              fi
          fi
@@ -425,7 +425,7 @@ diff -Nurd kde-qt/configure kde-qt-new/configure
          [ "$CFG_EMBEDDED" != "no" ] && EXTRA_CFLAGS="$EXTRA_CFLAGS -DQWS"
          if [ '!' -z "$D_FLAGS" ]; then
              for DEF in $D_FLAGS; do
-@@ -5082,7 +5087,7 @@
+@@ -5367,7 +5372,7 @@
  fi # X11
  
  
@@ -434,7 +434,7 @@ diff -Nurd kde-qt/configure kde-qt-new/configure
      if [ "$CFG_PHONON" != "no" ]; then
          # Always enable Phonon (unless it was explicitly disabled)
          CFG_PHONON=yes
-@@ -5218,7 +5223,7 @@
+@@ -5510,7 +5515,7 @@
  fi
  
  if [ "$CFG_ENDIAN" = "auto" ]; then
@@ -443,7 +443,7 @@ diff -Nurd kde-qt/configure kde-qt-new/configure
  	true #leave as auto
      else
          "$unixtests/endian.test" "$XQMAKESPEC" $OPT_VERBOSE "$relpath" "$outpath"
-@@ -5239,7 +5244,7 @@
+@@ -5531,7 +5536,7 @@
  fi
  
  if [ "$CFG_HOST_ENDIAN" = "auto" ]; then
@@ -452,7 +452,7 @@ diff -Nurd kde-qt/configure kde-qt-new/configure
  	true #leave as auto
      else
          "$unixtests/endian.test" "$QMAKESPEC" $OPT_VERBOSE "$relpath" "$outpath"
-@@ -5762,7 +5767,7 @@
+@@ -6175,7 +6180,7 @@
      QT_CONFIG="$QT_CONFIG freetype"
  fi
  
@@ -461,7 +461,7 @@ diff -Nurd kde-qt/configure kde-qt-new/configure
      #On Mac we implicitly link against libz, so we
      #never use the 3rdparty stuff.
      [ "$CFG_ZLIB" = "yes" ] && CFG_ZLIB="system"
-@@ -5839,7 +5844,7 @@
+@@ -6255,7 +6260,7 @@
  [ '!' -z "$L_FLAGS" ] && QMakeVar add QMAKE_LIBDIR_FLAGS "$L_FLAGS"
  [ '!' -z "$l_FLAGS" ] && QMakeVar add LIBS "$l_FLAGS"
  
@@ -470,7 +470,7 @@ diff -Nurd kde-qt/configure kde-qt-new/configure
      if [ "$CFG_RPATH" = "yes" ]; then
         QMAKE_CONFIG="$QMAKE_CONFIG absolute_library_soname"
      fi
-@@ -6370,7 +6375,7 @@
+@@ -6860,7 +6865,7 @@
      echo "#define QT_MAC_FRAMEWORK_BUILD" >>"$outpath/src/corelib/global/qconfig.h.new"
  fi
  
@@ -479,9 +479,9 @@ diff -Nurd kde-qt/configure kde-qt-new/configure
      cat >>"$outpath/src/corelib/global/qconfig.h.new" <<EOF
  #if defined(__LP64__)
  # define QT_POINTER_SIZE 8
-diff -Nurd kde-qt/configure-for-fink.sh kde-qt-new/configure-for-fink.sh
---- kde-qt/configure-for-fink.sh	1969-12-31 19:00:00.000000000 -0500
-+++ kde-qt-new/configure-for-fink.sh	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/configure-for-fink.sh qt-kde-qt-new/configure-for-fink.sh
+--- qt-kde-qt/configure-for-fink.sh	1970-01-01 01:00:00.000000000 +0100
++++ qt-kde-qt-new/configure-for-fink.sh	2009-12-26 20:17:30.000000000 +0100
 @@ -0,0 +1,57 @@
 +#!/bin/sh -e
 +
@@ -540,10 +540,30 @@ diff -Nurd kde-qt/configure-for-fink.sh kde-qt-new/configure-for-fink.sh
 +	FixifiedSW=`/bin/pwd`;
 +popd
 +/usr/bin/find . -name Makefile -print0 | xargs -0 perl -pi -e "s,\\$\\(INSTALL_ROOT\\)$FixifiedSW,\\$\\(INSTALL_ROOT\\)$FINKPREFIX,g"
-diff -Nurd kde-qt/mkspecs/common/mac.conf kde-qt-new/mkspecs/common/mac.conf
---- kde-qt/mkspecs/common/mac.conf	2009-06-25 13:23:36.000000000 -0400
-+++ kde-qt-new/mkspecs/common/mac.conf	2009-06-28 09:57:30.000000000 -0400
-@@ -18,7 +18,7 @@
+diff -Nurd qt-kde-qt/mkspecs/common/mac-g++.conf qt-kde-qt-new/mkspecs/common/mac-g++.conf
+--- qt-kde-qt/mkspecs/common/mac-g++.conf	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/mkspecs/common/mac-g++.conf	2009-12-29 23:43:49.000000000 +0100
+@@ -55,7 +55,7 @@
+ QMAKE_LFLAGS_DEBUG	+=
+ QMAKE_LFLAGS_APP	+=
+ QMAKE_LFLAGS_SHLIB	+= -single_module -dynamiclib
+-QMAKE_LFLAGS_PLUGIN	+= $$QMAKE_LFLAGS_SHLIB
++QMAKE_LFLAGS_PLUGIN	+= -bundle -flat_namespace
+ QMAKE_LFLAGS_THREAD	+=
+ QMAKE_LFLAGS_INCREMENTAL+= -undefined suppress -flat_namespace
+ QMAKE_LFLAGS_SONAME	+= -install_name$${LITERAL_WHITESPACE}
+diff -Nurd qt-kde-qt/mkspecs/common/mac.conf qt-kde-qt-new/mkspecs/common/mac.conf
+--- qt-kde-qt/mkspecs/common/mac.conf	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/mkspecs/common/mac.conf	2009-12-29 23:42:31.000000000 +0100
+@@ -5,6 +5,7 @@
+ QMAKE_RESOURCE		= /Developer/Tools/Rez
+ 
+ QMAKE_EXTENSION_SHLIB	= dylib
++QMAKE_EXTENSION_PLUGIN = bundle
+ 
+ QMAKE_LIBDIR		=
+ QMAKE_INCDIR_QT		= $$[QT_INSTALL_HEADERS]
+@@ -17,7 +18,7 @@
  QMAKE_RPATH		=
  
  QMAKE_LIBS_DYNLOAD	=
@@ -552,9 +572,9 @@ diff -Nurd kde-qt/mkspecs/common/mac.conf kde-qt-new/mkspecs/common/mac.conf
  QMAKE_LIBS_OPENGL_QT	= $$QMAKE_LIBS_OPENGL
  QMAKE_LIBS_THREAD	=
  
-diff -Nurd kde-qt/mkspecs/darwin-g++/qmake.conf kde-qt-new/mkspecs/darwin-g++/qmake.conf
---- kde-qt/mkspecs/darwin-g++/qmake.conf	2009-06-25 12:38:25.000000000 -0400
-+++ kde-qt-new/mkspecs/darwin-g++/qmake.conf	2009-06-28 09:57:30.000000000 -0400
+diff -Nurd qt-kde-qt/mkspecs/darwin-g++/qmake.conf qt-kde-qt-new/mkspecs/darwin-g++/qmake.conf
+--- qt-kde-qt/mkspecs/darwin-g++/qmake.conf	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/mkspecs/darwin-g++/qmake.conf	2009-12-26 20:17:30.000000000 +0100
 @@ -6,7 +6,7 @@
  
  MAKEFILE_GENERATOR	= UNIX
@@ -580,9 +600,9 @@ diff -Nurd kde-qt/mkspecs/darwin-g++/qmake.conf kde-qt-new/mkspecs/darwin-g++/qm
  QMAKE_LIBS_THREAD	=
  
  QMAKE_MOC		= $$[QT_INSTALL_BINS]/moc
-diff -Nurd kde-qt/qmake/generators/mac/pbuilder_pbx.cpp kde-qt-new/qmake/generators/mac/pbuilder_pbx.cpp
---- kde-qt/qmake/generators/mac/pbuilder_pbx.cpp	2009-06-25 12:38:26.000000000 -0400
-+++ kde-qt-new/qmake/generators/mac/pbuilder_pbx.cpp	2009-06-28 09:57:32.000000000 -0400
+diff -Nurd qt-kde-qt/qmake/generators/mac/pbuilder_pbx.cpp qt-kde-qt-new/qmake/generators/mac/pbuilder_pbx.cpp
+--- qt-kde-qt/qmake/generators/mac/pbuilder_pbx.cpp	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/qmake/generators/mac/pbuilder_pbx.cpp	2009-12-26 20:17:30.000000000 +0100
 @@ -52,7 +52,7 @@
  #  include <sys/types.h>
  #  include <sys/stat.h>
@@ -601,9 +621,9 @@ diff -Nurd kde-qt/qmake/generators/mac/pbuilder_pbx.cpp kde-qt-new/qmake/generat
              ret = QLatin1String("34");
              QCFType<CFURLRef> cfurl;
              OSStatus err = LSFindApplicationForInfo(0, CFSTR("com.apple.Xcode"), 0, 0, &cfurl);
-diff -Nurd kde-qt/qmake/main.cpp kde-qt-new/qmake/main.cpp
---- kde-qt/qmake/main.cpp	2009-06-25 12:38:26.000000000 -0400
-+++ kde-qt-new/qmake/main.cpp	2009-06-28 09:57:32.000000000 -0400
+diff -Nurd qt-kde-qt/qmake/main.cpp qt-kde-qt-new/qmake/main.cpp
+--- qt-kde-qt/qmake/main.cpp	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/qmake/main.cpp	2009-12-26 20:17:30.000000000 +0100
 @@ -59,8 +59,6 @@
  
  // for Borland, main is defined to qMain which breaks qmake
@@ -613,10 +633,10 @@ diff -Nurd kde-qt/qmake/main.cpp kde-qt-new/qmake/main.cpp
  
  /* This is to work around lame implementation on Darwin. It has been noted that the getpwd(3) function
     is much too slow, and called much too often inside of Qt (every fileFixify). With this we use a locally
-diff -Nurd kde-qt/src/3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp kde-qt-new/src/3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp
---- kde-qt/src/3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp	2009-06-25 12:38:57.000000000 -0400
-+++ kde-qt-new/src/3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp	2009-06-28 09:57:32.000000000 -0400
-@@ -2368,7 +2368,7 @@
+diff -Nurd qt-kde-qt/src/3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp qt-kde-qt-new/src/3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp
+--- qt-kde-qt/src/3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp	2009-12-26 20:17:30.000000000 +0100
+@@ -3097,7 +3097,7 @@
      "AIX"
  #elif defined Q_OS_WIN32
      "%2"
@@ -625,10 +645,10 @@ diff -Nurd kde-qt/src/3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp kde-qt-new/src/
  #ifdef __i386__ || __x86_64__
      "Intel Mac OS X"
  #else
-diff -Nurd kde-qt/src/corelib/codecs/codecs.pri kde-qt-new/src/corelib/codecs/codecs.pri
---- kde-qt/src/corelib/codecs/codecs.pri	2009-06-25 12:38:59.000000000 -0400
-+++ kde-qt-new/src/corelib/codecs/codecs.pri	2009-06-28 09:57:32.000000000 -0400
-@@ -24,6 +24,7 @@
+diff -Nurd qt-kde-qt/src/corelib/codecs/codecs.pri qt-kde-qt-new/src/corelib/codecs/codecs.pri
+--- qt-kde-qt/src/corelib/codecs/codecs.pri	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/corelib/codecs/codecs.pri	2009-12-26 20:17:30.000000000 +0100
+@@ -25,6 +25,7 @@
          contains(QT_CONFIG,iconv) {
                  HEADERS += codecs/qiconvcodec_p.h
                  SOURCES += codecs/qiconvcodec.cpp
@@ -636,55 +656,46 @@ diff -Nurd kde-qt/src/corelib/codecs/codecs.pri kde-qt-new/src/corelib/codecs/co
          } else:contains(QT_CONFIG,gnu-libiconv) {
                  HEADERS += codecs/qiconvcodec_p.h
                  SOURCES += codecs/qiconvcodec.cpp
-diff -Nurd kde-qt/src/corelib/codecs/qiconvcodec.cpp kde-qt-new/src/corelib/codecs/qiconvcodec.cpp
---- kde-qt/src/corelib/codecs/qiconvcodec.cpp	2009-06-25 12:38:59.000000000 -0400
-+++ kde-qt-new/src/corelib/codecs/qiconvcodec.cpp	2009-06-28 09:57:32.000000000 -0400
+diff -Nurd qt-kde-qt/src/corelib/codecs/qiconvcodec.cpp qt-kde-qt-new/src/corelib/codecs/qiconvcodec.cpp
+--- qt-kde-qt/src/corelib/codecs/qiconvcodec.cpp	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/corelib/codecs/qiconvcodec.cpp	2009-12-26 20:47:43.000000000 +0100
 @@ -62,7 +62,7 @@
  #elif defined(Q_OS_AIX)
  #  define NO_BOM
  #  define UTF16 "UCS-2"
--#elif defined(Q_OS_MAC)
-+#elif defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
+-#elif defined(Q_OS_FREEBSD) || defined(Q_OS_MAC)
++#elif defined(Q_OS_FREEBSD) || defined(Q_OS_MAC) || defined(Q_OS_DARWIN)
  #  define NO_BOM
  #  if Q_BYTE_ORDER == Q_BIG_ENDIAN
  #    define UTF16 "UTF-16BE"
-diff -Nurd kde-qt/src/corelib/concurrent/qtconcurrentiteratekernel.cpp kde-qt-new/src/corelib/concurrent/qtconcurrentiteratekernel.cpp
---- kde-qt/src/corelib/concurrent/qtconcurrentiteratekernel.cpp	2009-06-25 12:38:59.000000000 -0400
-+++ kde-qt-new/src/corelib/concurrent/qtconcurrentiteratekernel.cpp	2009-06-28 09:57:32.000000000 -0400
-@@ -41,7 +41,7 @@
- 
- #include "qtconcurrentiteratekernel.h"
- 
--#if defined(Q_OS_MAC)
-+#if defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
- 
- #include <mach/mach.h>
- #include <mach/mach_time.h>
-@@ -68,7 +68,7 @@
+diff -Nurd qt-kde-qt/src/corelib/concurrent/qtconcurrentiteratekernel.cpp qt-kde-qt-new/src/corelib/concurrent/qtconcurrentiteratekernel.cpp
+--- qt-kde-qt/src/corelib/concurrent/qtconcurrentiteratekernel.cpp	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/corelib/concurrent/qtconcurrentiteratekernel.cpp	2009-12-26 20:17:30.000000000 +0100
+@@ -64,7 +64,7 @@
      MedianSize = 7
  };
  
 -#if defined(Q_OS_MAC)
-+#if defined(Q_OS_DARWIN) | defined(Q_OS_MAC)
++#if defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
  
  static qint64 getticks()
  {
-diff -Nurd kde-qt/src/corelib/corelib.pro kde-qt-new/src/corelib/corelib.pro
---- kde-qt/src/corelib/corelib.pro	2009-06-25 12:38:59.000000000 -0400
-+++ kde-qt-new/src/corelib/corelib.pro	2009-06-28 09:57:32.000000000 -0400
-@@ -16,7 +16,7 @@
- include(codecs/codecs.pri)
+diff -Nurd qt-kde-qt/src/corelib/corelib.pro qt-kde-qt-new/src/corelib/corelib.pro
+--- qt-kde-qt/src/corelib/corelib.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/corelib/corelib.pro	2009-12-26 20:46:55.000000000 +0100
+@@ -18,7 +18,7 @@
+ include(statemachine/statemachine.pri)
  include(xml/xml.pri)
  
--mac|darwin:LIBS += -framework ApplicationServices
-+mac:LIBS += -framework ApplicationServices
+-mac|darwin:LIBS_PRIVATE += -framework ApplicationServices
++mac:LIBS_PRIVATE += -framework ApplicationServices
  
  mac:lib_bundle:DEFINES += QT_NO_DEBUG_PLUGIN_CHECK
  win32:DEFINES-=QT_NO_CAST_TO_ASCII
-diff -Nurd kde-qt/src/corelib/global/qglobal.cpp kde-qt-new/src/corelib/global/qglobal.cpp
---- kde-qt/src/corelib/global/qglobal.cpp	2009-06-25 12:38:59.000000000 -0400
-+++ kde-qt-new/src/corelib/global/qglobal.cpp	2009-06-28 10:05:03.000000000 -0400
-@@ -1176,7 +1176,7 @@
+diff -Nurd qt-kde-qt/src/corelib/global/qglobal.cpp qt-kde-qt-new/src/corelib/global/qglobal.cpp
+--- qt-kde-qt/src/corelib/global/qglobal.cpp	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/corelib/global/qglobal.cpp	2009-12-26 20:17:30.000000000 +0100
+@@ -1259,7 +1259,7 @@
      \macro Q_OS_DARWIN
      \relates <QtGlobal>
  
@@ -693,9 +704,9 @@ diff -Nurd kde-qt/src/corelib/global/qglobal.cpp kde-qt-new/src/corelib/global/q
  */
  
  /*!
-diff -Nurd kde-qt/src/corelib/global/qglobal.h kde-qt-new/src/corelib/global/qglobal.h
---- kde-qt/src/corelib/global/qglobal.h	2009-06-25 12:38:59.000000000 -0400
-+++ kde-qt-new/src/corelib/global/qglobal.h	2009-06-28 10:06:23.000000000 -0400
+diff -Nurd qt-kde-qt/src/corelib/global/qglobal.h qt-kde-qt-new/src/corelib/global/qglobal.h
+--- qt-kde-qt/src/corelib/global/qglobal.h	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/corelib/global/qglobal.h	2009-12-26 20:23:13.000000000 +0100
 @@ -128,7 +128,7 @@
  
  #endif /* __cplusplus */
@@ -711,10 +722,10 @@ diff -Nurd kde-qt/src/corelib/global/qglobal.h kde-qt-new/src/corelib/global/qgl
  
 -     DARWIN   - Darwin OS (synonym for Q_OS_MAC)
 +     DARWIN   - Darwin OS (pure Darwin or Mac OS X using X11)
+      SYMBIAN  - Symbian
       MSDOS    - MS-DOS and Windows
       OS2      - OS/2
-      OS2EMX   - XFree86 on OS/2 (not PM)
-@@ -260,12 +260,15 @@
+@@ -265,12 +265,15 @@
  #  define Q_OS_WIN
  #endif
  
@@ -731,7 +742,7 @@ diff -Nurd kde-qt/src/corelib/global/qglobal.h kde-qt-new/src/corelib/global/qgl
  #     define Q_OS_MAC32
  #  endif
  #endif
-@@ -285,11 +288,11 @@
+@@ -294,11 +297,11 @@
  #  define Q_OS_UNIX
  #endif
  
@@ -745,7 +756,7 @@ diff -Nurd kde-qt/src/corelib/global/qglobal.h kde-qt-new/src/corelib/global/qgl
  #  ifdef MAC_OS_X_VERSION_MIN_REQUIRED
  #    undef MAC_OS_X_VERSION_MIN_REQUIRED
  #  endif
-@@ -476,7 +479,7 @@
+@@ -485,7 +488,7 @@
  #    define Q_NO_TEMPLATE_FRIENDS
  #  endif
  /* Apple's GCC 3.1 chokes on our streaming qDebug() */
@@ -754,7 +765,7 @@ diff -Nurd kde-qt/src/corelib/global/qglobal.h kde-qt-new/src/corelib/global/qgl
  #    define Q_BROKEN_DEBUG_STREAM
  #  endif
  #  if (defined(Q_CC_GNU) || defined(Q_CC_INTEL)) && !defined(QT_MOC_CPP)
-@@ -751,7 +754,7 @@
+@@ -804,7 +807,7 @@
  #  define Q_WS_PM
  #  error "Qt does not work with OS/2 Presentation Manager or Workplace Shell"
  #elif defined(Q_OS_UNIX)
@@ -763,7 +774,7 @@ diff -Nurd kde-qt/src/corelib/global/qglobal.h kde-qt-new/src/corelib/global/qgl
  #    define Q_WS_MAC
  #    define Q_WS_MACX
  #    if defined(Q_OS_MAC64)
-@@ -1330,7 +1333,7 @@
+@@ -1463,7 +1466,7 @@
      static WinVersion windowsVersion();
  
  #endif
@@ -772,7 +783,7 @@ diff -Nurd kde-qt/src/corelib/global/qglobal.h kde-qt-new/src/corelib/global/qgl
      enum MacVersion {
          MV_Unknown = 0x0000,
  
-@@ -1904,7 +1907,7 @@
+@@ -2076,7 +2079,7 @@
  Q_DECLARE_TYPEINFO(quint64, Q_PRIMITIVE_TYPE);
  Q_DECLARE_TYPEINFO(float, Q_PRIMITIVE_TYPE);
  Q_DECLARE_TYPEINFO(double, Q_PRIMITIVE_TYPE);
@@ -781,10 +792,10 @@ diff -Nurd kde-qt/src/corelib/global/qglobal.h kde-qt-new/src/corelib/global/qgl
  Q_DECLARE_TYPEINFO(long double, Q_PRIMITIVE_TYPE);
  #endif
  
-diff -Nurd kde-qt/src/corelib/io/qfile.cpp kde-qt-new/src/corelib/io/qfile.cpp
---- kde-qt/src/corelib/io/qfile.cpp	2009-06-25 12:38:59.000000000 -0400
-+++ kde-qt-new/src/corelib/io/qfile.cpp	2009-06-28 09:57:32.000000000 -0400
-@@ -66,7 +66,7 @@
+diff -Nurd qt-kde-qt/src/corelib/io/qfile.cpp qt-kde-qt-new/src/corelib/io/qfile.cpp
+--- qt-kde-qt/src/corelib/io/qfile.cpp	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/corelib/io/qfile.cpp	2009-12-26 20:17:30.000000000 +0100
+@@ -62,7 +62,7 @@
  
  static QByteArray locale_encode(const QString &f)
  {
@@ -793,7 +804,7 @@ diff -Nurd kde-qt/src/corelib/io/qfile.cpp kde-qt-new/src/corelib/io/qfile.cpp
      return f.toLocal8Bit();
  #else
      // Mac always expects UTF-8... and decomposed...
-@@ -76,7 +76,7 @@
+@@ -72,7 +72,7 @@
  
  static QString locale_decode(const QByteArray &f)
  {
@@ -802,43 +813,43 @@ diff -Nurd kde-qt/src/corelib/io/qfile.cpp kde-qt-new/src/corelib/io/qfile.cpp
      return QString::fromLocal8Bit(f);
  #else
      // Mac always gives us UTF-8 and decomposed, we want that composed...
-diff -Nurd kde-qt/src/corelib/io/qfilesystemwatcher.cpp kde-qt-new/src/corelib/io/qfilesystemwatcher.cpp
---- kde-qt/src/corelib/io/qfilesystemwatcher.cpp	2009-06-25 12:38:59.000000000 -0400
-+++ kde-qt-new/src/corelib/io/qfilesystemwatcher.cpp	2009-06-28 09:57:32.000000000 -0400
+diff -Nurd qt-kde-qt/src/corelib/io/qfilesystemwatcher.cpp qt-kde-qt-new/src/corelib/io/qfilesystemwatcher.cpp
+--- qt-kde-qt/src/corelib/io/qfilesystemwatcher.cpp	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/corelib/io/qfilesystemwatcher.cpp	2009-12-26 20:27:23.000000000 +0100
 @@ -57,7 +57,7 @@
  #elif defined(Q_OS_LINUX)
  #  include "qfilesystemwatcher_inotify_p.h"
  #  include "qfilesystemwatcher_dnotify_p.h"
 -#elif defined(Q_OS_FREEBSD) || defined(Q_OS_MAC)
 +#elif defined(Q_OS_FREEBSD) || defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
- #  include "qfilesystemwatcher_kqueue_p.h"
- #endif
- 
-@@ -242,7 +242,7 @@
+ #  if (defined Q_OS_MAC) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5)
+ #  include "qfilesystemwatcher_fsevents_p.h"
+ #  endif //MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5)
+@@ -247,7 +247,7 @@
      if(!eng)
          eng = QDnotifyFileSystemWatcherEngine::create();
      return eng;
 -#elif defined(Q_OS_FREEBSD) || defined(Q_OS_MAC)
 +#elif defined(Q_OS_FREEBSD) || defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
-     return QKqueueFileSystemWatcherEngine::create();
- #else
-     return 0;
-diff -Nurd kde-qt/src/corelib/io/qfsfileengine_unix.cpp kde-qt-new/src/corelib/io/qfsfileengine_unix.cpp
---- kde-qt/src/corelib/io/qfsfileengine_unix.cpp	2009-06-25 12:38:59.000000000 -0400
-+++ kde-qt-new/src/corelib/io/qfsfileengine_unix.cpp	2009-06-28 09:57:32.000000000 -0400
-@@ -424,7 +424,7 @@
+ #  if 0 && (defined Q_OS_MAC) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5)
+     if (QSysInfo::MacintoshVersion >= QSysInfo::MV_10_5)
+         return QFSEventsFileSystemWatcherEngine::create();
+diff -Nurd qt-kde-qt/src/corelib/io/qfsfileengine_unix.cpp qt-kde-qt-new/src/corelib/io/qfsfileengine_unix.cpp
+--- qt-kde-qt/src/corelib/io/qfsfileengine_unix.cpp	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/corelib/io/qfsfileengine_unix.cpp	2009-12-26 20:28:05.000000000 +0100
+@@ -480,7 +480,7 @@
          }
          return true;
      }
 -#if defined(Q_OS_DARWIN)  // Mac X doesn't support trailing /'s
-+#if defined(Q_OS_DARWIN) || defined(Q_OS_MAC) // Mac X doesn't support trailing /'s
-     if (dirName[dirName.length() - 1] == QLatin1Char('/'))
-         dirName = dirName.left(dirName.length() - 1);
++#if defined(Q_OS_DARWIN) || defined(Q_OS_MAC)  // Mac X doesn't support trailing /'s
+     if (dirName.endsWith(QLatin1Char('/')))
+         dirName.chop(1);
  #endif
-diff -Nurd kde-qt/src/corelib/io/qprocess.cpp kde-qt-new/src/corelib/io/qprocess.cpp
---- kde-qt/src/corelib/io/qprocess.cpp	2009-06-25 12:38:59.000000000 -0400
-+++ kde-qt-new/src/corelib/io/qprocess.cpp	2009-06-28 09:57:32.000000000 -0400
-@@ -1793,7 +1793,7 @@
+diff -Nurd qt-kde-qt/src/corelib/io/qprocess.cpp qt-kde-qt-new/src/corelib/io/qprocess.cpp
+--- qt-kde-qt/src/corelib/io/qprocess.cpp	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/corelib/io/qprocess.cpp	2009-12-26 20:17:30.000000000 +0100
+@@ -2165,7 +2165,7 @@
  }
  
  QT_BEGIN_INCLUDE_NAMESPACE
@@ -846,11 +857,11 @@ diff -Nurd kde-qt/src/corelib/io/qprocess.cpp kde-qt-new/src/corelib/io/qprocess
 +#if defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
  # include <crt_externs.h>
  # define environ (*_NSGetEnviron())
- #elif defined(Q_OS_WINCE)
-diff -Nurd kde-qt/src/corelib/io/qprocess_unix.cpp kde-qt-new/src/corelib/io/qprocess_unix.cpp
---- kde-qt/src/corelib/io/qprocess_unix.cpp	2009-06-25 12:38:59.000000000 -0400
-+++ kde-qt-new/src/corelib/io/qprocess_unix.cpp	2009-06-28 09:57:32.000000000 -0400
-@@ -527,7 +527,7 @@
+ #elif defined(Q_OS_WINCE) || defined(Q_OS_SYMBIAN)
+diff -Nurd qt-kde-qt/src/corelib/io/qprocess_unix.cpp qt-kde-qt-new/src/corelib/io/qprocess_unix.cpp
+--- qt-kde-qt/src/corelib/io/qprocess_unix.cpp	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/corelib/io/qprocess_unix.cpp	2009-12-26 20:17:30.000000000 +0100
+@@ -471,7 +471,7 @@
      // if LD_LIBRARY_PATH exists in the current environment, but
      // not in the environment list passed by the programmer, then
      // copy it over.
@@ -859,7 +870,7 @@ diff -Nurd kde-qt/src/corelib/io/qprocess_unix.cpp kde-qt-new/src/corelib/io/qpr
      static const char libraryPath[] = "DYLD_LIBRARY_PATH";
  #else
      static const char libraryPath[] = "LD_LIBRARY_PATH";
-@@ -642,7 +642,7 @@
+@@ -584,7 +584,7 @@
      // Add every argument to the list
      for (int i = 0; i < arguments.count(); ++i) {
          QString arg = arguments.at(i);
@@ -868,7 +879,7 @@ diff -Nurd kde-qt/src/corelib/io/qprocess_unix.cpp kde-qt-new/src/corelib/io/qpr
          // Mac OS X uses UTF8 for exec, regardless of the system locale.
          argv[i + 1] = ::strdup(arg.toUtf8().constData());
  #else
-@@ -1278,7 +1278,7 @@
+@@ -1207,7 +1207,7 @@
  
              char **argv = new char *[arguments.size() + 2];
              for (int i = 0; i < arguments.size(); ++i) {
@@ -877,10 +888,10 @@ diff -Nurd kde-qt/src/corelib/io/qprocess_unix.cpp kde-qt-new/src/corelib/io/qpr
                  argv[i + 1] = ::strdup(arguments.at(i).toUtf8().constData());
  #else
                  argv[i + 1] = ::strdup(arguments.at(i).toLocal8Bit().constData());
-diff -Nurd kde-qt/src/corelib/plugin/qlibrary.cpp kde-qt-new/src/corelib/plugin/qlibrary.cpp
---- kde-qt/src/corelib/plugin/qlibrary.cpp	2009-06-25 12:38:59.000000000 -0400
-+++ kde-qt-new/src/corelib/plugin/qlibrary.cpp	2009-06-28 09:57:32.000000000 -0400
-@@ -522,7 +522,7 @@
+diff -Nurd qt-kde-qt/src/corelib/plugin/qlibrary.cpp qt-kde-qt-new/src/corelib/plugin/qlibrary.cpp
+--- qt-kde-qt/src/corelib/plugin/qlibrary.cpp	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/corelib/plugin/qlibrary.cpp	2009-12-26 20:17:30.000000000 +0100
+@@ -556,7 +556,7 @@
      if (completeSuffix.isEmpty())
          return false;
      QStringList suffixes = completeSuffix.split(QLatin1Char('.'));
@@ -889,10 +900,10 @@ diff -Nurd kde-qt/src/corelib/plugin/qlibrary.cpp kde-qt-new/src/corelib/plugin/
  
      // On Mac, libs look like libmylib.1.0.0.dylib
      const QString lastSuffix = suffixes.at(suffixes.count() - 1);
-diff -Nurd kde-qt/src/corelib/plugin/qlibrary_unix.cpp kde-qt-new/src/corelib/plugin/qlibrary_unix.cpp
---- kde-qt/src/corelib/plugin/qlibrary_unix.cpp	2009-06-25 12:38:59.000000000 -0400
-+++ kde-qt-new/src/corelib/plugin/qlibrary_unix.cpp	2009-06-28 09:57:32.000000000 -0400
-@@ -123,7 +123,7 @@
+diff -Nurd qt-kde-qt/src/corelib/plugin/qlibrary_unix.cpp qt-kde-qt-new/src/corelib/plugin/qlibrary_unix.cpp
+--- qt-kde-qt/src/corelib/plugin/qlibrary_unix.cpp	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/corelib/plugin/qlibrary_unix.cpp	2009-12-26 20:17:30.000000000 +0100
+@@ -143,7 +143,7 @@
              suffixes << QLatin1String(".so");
          }
  #endif
@@ -901,9 +912,9 @@ diff -Nurd kde-qt/src/corelib/plugin/qlibrary_unix.cpp kde-qt-new/src/corelib/pl
          if (!fullVersion.isEmpty()) {
              suffixes << QString::fromLatin1(".%1.bundle").arg(fullVersion);
              suffixes << QString::fromLatin1(".%1.dylib").arg(fullVersion);
-diff -Nurd kde-qt/src/corelib/thread/qthread.cpp kde-qt-new/src/corelib/thread/qthread.cpp
---- kde-qt/src/corelib/thread/qthread.cpp	2009-06-25 12:38:59.000000000 -0400
-+++ kde-qt-new/src/corelib/thread/qthread.cpp	2009-06-28 09:57:32.000000000 -0400
+diff -Nurd qt-kde-qt/src/corelib/thread/qthread.cpp qt-kde-qt-new/src/corelib/thread/qthread.cpp
+--- qt-kde-qt/src/corelib/thread/qthread.cpp	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/corelib/thread/qthread.cpp	2009-12-26 20:17:30.000000000 +0100
 @@ -64,7 +64,7 @@
  /*
  #  elif defined(Q_OS_HPUX)
@@ -913,19 +924,19 @@ diff -Nurd kde-qt/src/corelib/thread/qthread.cpp kde-qt-new/src/corelib/thread/q
  #   include <sys/sysctl.h>
  #  endif
  #endif
-diff -Nurd kde-qt/src/corelib/thread/qthread_unix.cpp kde-qt-new/src/corelib/thread/qthread_unix.cpp
---- kde-qt/src/corelib/thread/qthread_unix.cpp	2009-06-25 12:38:59.000000000 -0400
-+++ kde-qt-new/src/corelib/thread/qthread_unix.cpp	2009-06-28 09:57:32.000000000 -0400
-@@ -352,7 +352,7 @@
+diff -Nurd qt-kde-qt/src/corelib/thread/qthread_unix.cpp qt-kde-qt-new/src/corelib/thread/qthread_unix.cpp
+--- qt-kde-qt/src/corelib/thread/qthread_unix.cpp	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/corelib/thread/qthread_unix.cpp	2009-12-26 20:29:37.000000000 +0100
+@@ -449,7 +449,7 @@
  
      d->priority = priority;
  
--#if defined(Q_OS_DARWIN) || !defined(Q_OS_OPENBSD) && defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && (_POSIX_THREAD_PRIORITY_SCHEDULING-0 >= 0)
-+#if defined(Q_OS_DARWIN) || defined(Q_OS_MAC) || ( !defined(Q_OS_OPENBSD) && defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && (_POSIX_THREAD_PRIORITY_SCHEDULING-0 >= 0) )
+-#if defined(Q_OS_DARWIN) || !defined(Q_OS_OPENBSD) && !defined(Q_OS_SYMBIAN) && defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && (_POSIX_THREAD_PRIORITY_SCHEDULING-0 >= 0)
++#if defined(Q_OS_DARWIN) || defined(Q_OS_MAC) || ( !defined(Q_OS_OPENBSD) && !defined(Q_OS_SYMBIAN) && defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && (_POSIX_THREAD_PRIORITY_SCHEDULING-0 >= 0) )
+ // ### Need to implement thread sheduling and priorities for symbian os. Implementation removed for now
      switch (priority) {
      case InheritPriority:
-         {
-@@ -509,7 +509,7 @@
+@@ -657,7 +657,7 @@
  
      // copied from start() with a few modifications:
  
@@ -934,22 +945,10 @@ diff -Nurd kde-qt/src/corelib/thread/qthread_unix.cpp kde-qt-new/src/corelib/thr
      int sched_policy;
      sched_param param;
  
-diff -Nurd kde-qt/src/corelib/tools/qdumper.cpp kde-qt-new/src/corelib/tools/qdumper.cpp
---- kde-qt/src/corelib/tools/qdumper.cpp	2009-06-25 12:38:59.000000000 -0400
-+++ kde-qt-new/src/corelib/tools/qdumper.cpp	2009-06-28 09:57:32.000000000 -0400
-@@ -481,7 +481,7 @@
-         S(d, "completeBaseName", info.completeBaseName());
-         S(d, "completeSuffix", info.completeSuffix());
-         S(d, "baseName", info.baseName());
--#ifdef Q_OS_MACX
-+#if defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
-         BL(d, "isBundle", info.isBundle());
-         S(d, "bundleName", info.bundleName());
- #endif
-diff -Nurd kde-qt/src/corelib/tools/qsharedpointer.cpp kde-qt-new/src/corelib/tools/qsharedpointer.cpp
---- kde-qt/src/corelib/tools/qsharedpointer.cpp	2009-06-25 12:38:59.000000000 -0400
-+++ kde-qt-new/src/corelib/tools/qsharedpointer.cpp	2009-06-28 09:57:32.000000000 -0400
-@@ -739,7 +739,7 @@
+diff -Nurd qt-kde-qt/src/corelib/tools/qsharedpointer.cpp qt-kde-qt-new/src/corelib/tools/qsharedpointer.cpp
+--- qt-kde-qt/src/corelib/tools/qsharedpointer.cpp	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/corelib/tools/qsharedpointer.cpp	2009-12-26 20:34:20.000000000 +0100
+@@ -1281,7 +1281,7 @@
  #  ifdef QT_SHARED_POINTER_BACKTRACE_SUPPORT
  #    if defined(__GLIBC__) && (__GLIBC__ >= 2) && !defined(__UCLIBC__) && !defined(QT_LINUXBASE)
  #      define BACKTRACE_SUPPORTED
@@ -958,10 +957,10 @@ diff -Nurd kde-qt/src/corelib/tools/qsharedpointer.cpp kde-qt-new/src/corelib/to
  #      define BACKTRACE_SUPPORTED
  #    endif
  #  endif
-diff -Nurd kde-qt/src/corelib/xml/qxmlstream.h kde-qt-new/src/corelib/xml/qxmlstream.h
---- kde-qt/src/corelib/xml/qxmlstream.h	2009-06-25 12:38:59.000000000 -0400
-+++ kde-qt-new/src/corelib/xml/qxmlstream.h	2009-06-28 09:57:32.000000000 -0400
-@@ -84,7 +84,7 @@
+diff -Nurd qt-kde-qt/src/corelib/xml/qxmlstream.h qt-kde-qt-new/src/corelib/xml/qxmlstream.h
+--- qt-kde-qt/src/corelib/xml/qxmlstream.h	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/corelib/xml/qxmlstream.h	2009-12-26 20:34:20.000000000 +0100
+@@ -85,7 +85,7 @@
  // We are taking the optimist scenario here to avoid creating more
  // symbols to be supported.
  
@@ -970,22 +969,22 @@ diff -Nurd kde-qt/src/corelib/xml/qxmlstream.h kde-qt-new/src/corelib/xml/qxmlst
  # if !defined QT_BUILD_XML_LIB
  #  define Q_XMLSTREAM_RENAME_SYMBOLS
  # endif
-diff -Nurd kde-qt/src/network/kernel/qhostinfo_unix.cpp kde-qt-new/src/network/kernel/qhostinfo_unix.cpp
---- kde-qt/src/network/kernel/qhostinfo_unix.cpp	2009-06-25 12:39:03.000000000 -0400
-+++ kde-qt-new/src/network/kernel/qhostinfo_unix.cpp	2009-06-28 09:57:32.000000000 -0400
+diff -Nurd qt-kde-qt/src/network/kernel/qhostinfo_unix.cpp qt-kde-qt-new/src/network/kernel/qhostinfo_unix.cpp
+--- qt-kde-qt/src/network/kernel/qhostinfo_unix.cpp	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/network/kernel/qhostinfo_unix.cpp	2009-12-26 20:35:35.000000000 +0100
 @@ -148,7 +148,7 @@
      if (address.setAddress(hostName)) {
          // Reverse lookup
  // Reverse lookups using getnameinfo are broken on darwin, use gethostbyaddr instead.
--#if !defined (QT_NO_GETADDRINFO) && !defined (Q_OS_DARWIN)
-+#if !defined (QT_NO_GETADDRINFO) && !defined (Q_OS_DARWIN) && !defined (Q_OS_MAC)
+-#if !defined (QT_NO_GETADDRINFO) && !defined (Q_OS_DARWIN) && !defined (Q_OS_SYMBIAN)
++#if !defined (QT_NO_GETADDRINFO) && !defined (Q_OS_DARWIN) && !defined (Q_OS_MAC ) && !defined (Q_OS_SYMBIAN)
          sockaddr_in sa4;
  #ifndef QT_NO_IPV6
          sockaddr_in6 sa6;
-diff -Nurd kde-qt/src/network/ssl/qsslsocket_openssl_symbols.cpp kde-qt-new/src/network/ssl/qsslsocket_openssl_symbols.cpp
---- kde-qt/src/network/ssl/qsslsocket_openssl_symbols.cpp	2009-06-25 12:39:04.000000000 -0400
-+++ kde-qt-new/src/network/ssl/qsslsocket_openssl_symbols.cpp	2009-06-28 09:57:32.000000000 -0400
-@@ -288,7 +288,7 @@
+diff -Nurd qt-kde-qt/src/network/ssl/qsslsocket_openssl_symbols.cpp qt-kde-qt-new/src/network/ssl/qsslsocket_openssl_symbols.cpp
+--- qt-kde-qt/src/network/ssl/qsslsocket_openssl_symbols.cpp	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/network/ssl/qsslsocket_openssl_symbols.cpp	2009-12-26 20:34:20.000000000 +0100
+@@ -320,7 +320,7 @@
  static QStringList findAllLibSsl()
  {
      QStringList paths;
@@ -994,10 +993,10 @@ diff -Nurd kde-qt/src/network/ssl/qsslsocket_openssl_symbols.cpp kde-qt-new/src/
      paths = QString::fromLatin1(qgetenv("DYLD_LIBRARY_PATH"))
              .split(QLatin1Char(':'), QString::SkipEmptyParts);
  #  else
-diff -Nurd kde-qt/src/qt3support/other/q3process_unix.cpp kde-qt-new/src/qt3support/other/q3process_unix.cpp
---- kde-qt/src/qt3support/other/q3process_unix.cpp	2009-06-25 12:39:06.000000000 -0400
-+++ kde-qt-new/src/qt3support/other/q3process_unix.cpp	2009-06-28 09:57:32.000000000 -0400
-@@ -789,7 +789,7 @@
+diff -Nurd qt-kde-qt/src/qt3support/other/q3process_unix.cpp qt-kde-qt-new/src/qt3support/other/q3process_unix.cpp
+--- qt-kde-qt/src/qt3support/other/q3process_unix.cpp	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/qt3support/other/q3process_unix.cpp	2009-12-26 20:34:20.000000000 +0100
+@@ -790,7 +790,7 @@
  	} else { // start process with environment settins as specified in env
  	    // construct the environment for exec
  	    int numEntries = env->count();
@@ -1006,8 +1005,8 @@ diff -Nurd kde-qt/src/qt3support/other/q3process_unix.cpp kde-qt-new/src/qt3supp
  	    QString ld_library_path(QLatin1String("DYLD_LIBRARY_PATH"));
  #else
  	    QString ld_library_path(QLatin1String("LD_LIBRARY_PATH"));
-@@ -831,7 +831,7 @@
- 			QFileInfo fileInfo( dir + "/" + command );
+@@ -832,7 +832,7 @@
+ 			QFileInfo fileInfo( dir + QLatin1Char('/') + command );
  #endif
  			if ( fileInfo.isExecutable() ) {
 -#if defined(Q_OS_MACX)
@@ -1015,32 +1014,20 @@ diff -Nurd kde-qt/src/qt3support/other/q3process_unix.cpp kde-qt-new/src/qt3supp
  			    arglistQ[0] = fileInfo.absFilePath().local8Bit();
  #else
  			    arglistQ[0] = fileInfo.filePath().local8Bit();
-diff -Nurd kde-qt/src/qt3support/qt3support.pro kde-qt-new/src/qt3support/qt3support.pro
---- kde-qt/src/qt3support/qt3support.pro	2009-06-25 12:39:06.000000000 -0400
-+++ kde-qt-new/src/qt3support/qt3support.pro	2009-06-28 09:57:32.000000000 -0400
+diff -Nurd qt-kde-qt/src/qt3support/qt3support.pro qt-kde-qt-new/src/qt3support/qt3support.pro
+--- qt-kde-qt/src/qt3support/qt3support.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/qt3support/qt3support.pro	2009-12-26 20:36:49.000000000 +0100
 @@ -26,6 +26,7 @@
     QMAKE_PKGCONFIG_REQUIRES = QtCore QtGui QtNetwork QtSql
  }
- mac:LIBS += -framework Carbon
-+darwin-*:LIBS += -lresolv
+ mac:LIBS_PRIVATE += -framework Carbon
++darwin-*:LIBS_PRIVATE += -lresolv
  
  QMAKE_LIBS += $$QMAKE_LIBS_COMPAT $$QMAKE_LIBS_NETWORK
  DEFINES -= QT3_SUPPORT_WARNINGS
-diff -Nurd kde-qt/src/script/qscriptengine_p.cpp kde-qt-new/src/script/qscriptengine_p.cpp
---- kde-qt/src/script/qscriptengine_p.cpp	2009-06-25 12:39:07.000000000 -0400
-+++ kde-qt-new/src/script/qscriptengine_p.cpp	2009-06-28 09:57:32.000000000 -0400
-@@ -1702,7 +1702,7 @@
-     m_callDepth = 0;
- #if defined(Q_OS_WIN)
-     m_maxCallDepth = 88;
--#elif defined(Q_OS_MAC)
-+#elif defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
-     m_maxCallDepth = 640;
- #elif defined(QT_ARCH_ARM) || defined(QT_ARCH_ARMV6)
-     m_maxCallDepth = 360;
-diff -Nurd kde-qt/src/sql/drivers/odbc/qsql_odbc.h kde-qt-new/src/sql/drivers/odbc/qsql_odbc.h
---- kde-qt/src/sql/drivers/odbc/qsql_odbc.h	2009-06-25 12:39:09.000000000 -0400
-+++ kde-qt-new/src/sql/drivers/odbc/qsql_odbc.h	2009-06-28 10:32:45.000000000 -0400
+diff -Nurd qt-kde-qt/src/sql/drivers/odbc/qsql_odbc.h qt-kde-qt-new/src/sql/drivers/odbc/qsql_odbc.h
+--- qt-kde-qt/src/sql/drivers/odbc/qsql_odbc.h	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/src/sql/drivers/odbc/qsql_odbc.h	2009-12-26 20:40:14.000000000 +0100
 @@ -49,7 +49,7 @@
  #include <QtCore/qt_windows.h>
  #endif
@@ -1050,10 +1037,10 @@ diff -Nurd kde-qt/src/sql/drivers/odbc/qsql_odbc.h kde-qt-new/src/sql/drivers/od
  // assume we use iodbc on MACX
  // comment next line out if you use a
  // unicode compatible manager
-diff -Nurd kde-qt/tools/assistant/lib/fulltextsearch/qclucene-config_p.h kde-qt-new/tools/assistant/lib/fulltextsearch/qclucene-config_p.h
---- kde-qt/tools/assistant/lib/fulltextsearch/qclucene-config_p.h	2009-06-25 12:40:22.000000000 -0400
-+++ kde-qt-new/tools/assistant/lib/fulltextsearch/qclucene-config_p.h	2009-06-28 09:57:32.000000000 -0400
-@@ -347,7 +347,7 @@
+diff -Nurd qt-kde-qt/tools/assistant/lib/fulltextsearch/qclucene-config_p.h qt-kde-qt-new/tools/assistant/lib/fulltextsearch/qclucene-config_p.h
+--- qt-kde-qt/tools/assistant/lib/fulltextsearch/qclucene-config_p.h	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/tools/assistant/lib/fulltextsearch/qclucene-config_p.h	2009-12-26 20:40:14.000000000 +0100
+@@ -354,7 +354,7 @@
  #endif
  
  #if !defined(__SUNPRO_CC) && !defined(__SUNPRO_C) && !defined(__MINGW32__) && \
@@ -1062,9 +1049,9 @@ diff -Nurd kde-qt/tools/assistant/lib/fulltextsearch/qclucene-config_p.h kde-qt-
      /* Define to 1 if you have the `wcscasecmp' function. */
  #   ifndef _CL_HAVE_WCSCASECMP
  #   define _CL_HAVE_WCSCASECMP  1
-diff -Nurd kde-qt/tools/designer/src/plugins/plugins.pro kde-qt-new/tools/designer/src/plugins/plugins.pro
---- kde-qt/tools/designer/src/plugins/plugins.pro	2009-06-25 12:40:26.000000000 -0400
-+++ kde-qt-new/tools/designer/src/plugins/plugins.pro	2009-06-28 09:57:32.000000000 -0400
+diff -Nurd qt-kde-qt/tools/designer/src/plugins/plugins.pro qt-kde-qt-new/tools/designer/src/plugins/plugins.pro
+--- qt-kde-qt/tools/designer/src/plugins/plugins.pro	2009-12-01 19:16:41.000000000 +0100
++++ qt-kde-qt-new/tools/designer/src/plugins/plugins.pro	2009-12-26 20:40:14.000000000 +0100
 @@ -1,5 +1,7 @@
  TEMPLATE = subdirs
  CONFIG += ordered

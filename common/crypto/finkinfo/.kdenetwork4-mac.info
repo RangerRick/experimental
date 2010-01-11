@@ -247,7 +247,6 @@ SplitOff6: <<
 		opt/kde4/%type_pkg[kde]/lib/libkopeteidentity.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkopeteprivacy.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkopetestatusmenu.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkrdccore.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkyahoo.dylib
 		opt/kde4/%type_pkg[kde]/lib/liboscar.dylib
 		opt/kde4/%type_pkg[kde]/lib/libqgroupwise.dylib

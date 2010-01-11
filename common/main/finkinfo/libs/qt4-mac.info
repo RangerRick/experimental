@@ -1,20 +1,13 @@
 Info4: <<
 Package: qt4-mac
-Version: 4.5.2
-Revision: 2
+Version: 4.6.0
+Revision: 3
 GCC: 4.0
-CustomMirror: <<
-	Primary: http://ranger.users.finkproject.org/distfiles
-	eur-NL: http://ranger.users.finkproject.org/distfiles
-	nam-US: http://ranger.befunk.com/fink
-	nam-US: http://astrange.ithinksw.net/~astrange/ranger-fink
-	nam-CA: http://www.southofheaven.net/befunk
-<<
-Source: mirror:custom:qt/kde-qt-%v-patched-mac.tar.bz2
-Source-MD5: c55b70322916e0c62f438aa1c45d7c5a
-SourceDirectory: kde-qt
+Source: http://w-nz.com/~sjorsg/kde-qt-%v-patched.tar.gz
+Source-MD5: 77c5c59befbff52a0508d0e7722fd796
+SourceDirectory: qt-kde-qt
 PatchFile: %n.patch
-PatchFile-MD5: 8ddcec0dfe15b8568a9f1874cc797516
+PatchFile-MD5: 93bb327634250a0adc397995695cf855
 PatchScript: <<
 	patch -p1 --fuzz=4 < %{PatchFile}
 	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp
@@ -39,7 +32,7 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	glib2-dev (>= 2.12.0-1),
 	kde4-buildenv (>= 4.2.4-2),
-	libgettext3-dev,
+	libgettext8-dev,
 	libiconv-dev,
 	libjpeg,
 	libmng2,
@@ -64,11 +57,6 @@ CompileScript: <<
 	if [ -x /usr/bin/gcc-4.2 ]; then
 		export CC=gcc-4.2
 		export CXX=g++-4.2
-		if [ -x %p/bin/ccache ]; then
-			export CC="%p/bin/ccache $CC"
-			export CXX="%p/bin/ccache $CXX"
-			export CCACHE_DIR="/tmp/ccache-qt4"
-		fi
 	fi
 	EXTRA_ARGS="-confirm-license -no-pch -verbose"
 	if [ "%m" = "x86_64" ]; then
@@ -110,24 +98,52 @@ InstallScript: <<
 	/usr/bin/find %i/share/doc/%N/examples -name Makefile -print0 | xargs -0 rm -rf >/dev/null 2>&1 || :
 
 	%p/sbin/normalize-filenames.sh "%i/lib/%N/include"
-	if [ -d "%i/lib/%N/include/Phonon" ]; then
+	if [ -d "%i/lib/%N/include/Phonon" -a ! -d "%i/lib/%N/include/phonon" ]; then
+    /bin/rm -f "%i/lib/%N/include/phonon"
 		/bin/mv "%i/lib/%N/include/Phonon" "%i/lib/%N/include/phonon"
 	fi
+
+  if [ -f "%i/lib/%N/lib/phonon.framework/Headers/Phonon" ]; then
+    /bin/mv "%i/lib/%N/lib/phonon.framework/Headers/Phonon" \
+            "%i/lib/%N/lib/phonon.framework/Headers/phonon"
+  fi
+
+  if [ -f "%i/lib/%N/include/phonon/phonon" -a \
+       -d "%i/lib/%N/include/phonon/Phonon" ]; then
+    # Building on case sensitive FS means there's both a phonon file and
+    # a Phonon dir - rename the file, or the package can't be used on
+    # case insensitive file systems
+    # also rename the directory so this package matches with the old one;
+    # the PostInst script will create symlinks if needed so it works anyway
+    /bin/mv "%i/lib/%N/include/phonon/phonon" \
+            "%i/lib/%N/include/phonon/phonon.h"
+    /bin/mv "%i/lib/%N/include/phonon/Phonon" \
+            "%i/lib/%N/include/phonon/phonon"
+  fi
 
 	install -d -m 755 %i/share/doc/installed-packages
 	touch %i/share/doc/installed-packages/%N
 <<
 PostInstScript: <<
-	if [ "$1" = "configure" ] && [ ! -f "%p/lib/%N/include/Phonon/phononnamespace.h" ]; then
+	if [ "$1" = "configure" ] && [ ! -f "%p/lib/%N/include/phonon/Phonon/MediaNode" ]; then
 		# case-sensitive filesystem, make various build-system stuff happy
-		/bin/ln -sf phonon "%p/lib/%N/include/Phonon"
+		/bin/ln -sf phonon "%p/lib/%N/include/phonon/Phonon"
 	fi
+<<
+PreRmScript: <<
+  # remove the symlinks we created earlier
+  if [ -h "%p/lib/%N/include/Phonon" ]; then
+    /bin/rm "%p/lib/%N/include/Phonon"
+  fi
+  if [ -h "%p/lib/%N/include/phonon/Phonon" ]; then
+    /bin/rm "%p/lib/%N/include/phonon/Phonon"
+  fi
 <<
 SplitOff: <<
 	Package: %N-gui-shlibs
 	DocFiles: LGPL* LICENSE*
 	Suggests: %N-designer, %N-linguist, %N-doc
-	Replaces: %N-core-shlibs (<< 4.5.0-5), %N (<< 4.5.1-2)
+	Replaces: %N-core-shlibs (<< 4.6.0-1), %N (<< 4.6.0-1)
 	Depends: <<
 		%N-core-shlibs (= %v-%r),
 		libmng2-shlibs,
@@ -187,24 +203,24 @@ SplitOff: <<
 		lib/%N/plugins/script
 	<<
 	Shlibs: <<
-		(%m != x86_64) %p/lib/%N/lib/Qt3Support.framework/Versions/4/Qt3Support       4.5.0 %n (>= 4.5.0-1)
-		(%m != x86_64) %p/lib/%N/lib/Qt3Support.framework/Versions/4/Qt3Support_debug 4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtAssistant.framework/Versions/4/QtAssistant           4.5.0 %n (>= 4.5.1-1)
-		%p/lib/%N/lib/QtAssistant.framework/Versions/4/QtAssistant_debug     4.5.0 %n (>= 4.5.1-1)
-		%p/lib/%N/lib/QtGui.framework/Versions/4/QtGui                       4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtGui.framework/Versions/4/QtGui_debug                 4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtHelp.framework/Versions/4/QtHelp                     4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtHelp.framework/Versions/4/QtHelp_debug               4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtOpenGL.framework/Versions/4/QtOpenGL                 4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtOpenGL.framework/Versions/4/QtOpenGL_debug           4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtScriptTools.framework/Versions/4/QtScriptTools       4.5.0 %n (>= 4.5.0-5)
-		%p/lib/%N/lib/QtScriptTools.framework/Versions/4/QtScriptTools_debug 4.5.0 %n (>= 4.5.0-5)
-		%p/lib/%N/lib/QtSvg.framework/Versions/4/QtSvg                       4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtSvg.framework/Versions/4/QtSvg_debug                 4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtWebKit.framework/Versions/4/QtWebKit                 4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtWebKit.framework/Versions/4/QtWebKit_debug           4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/phonon.framework/Versions/4/phonon                     4.3.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/phonon.framework/Versions/4/phonon_debug               4.3.0 %n (>= 4.5.0-1)
+		(%m != x86_64) %p/lib/%N/lib/Qt3Support.framework/Versions/4/Qt3Support       4.6.0 %n (>= 4.6.0-1)
+		(%m != x86_64) %p/lib/%N/lib/Qt3Support.framework/Versions/4/Qt3Support_debug 4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtAssistant.framework/Versions/4/QtAssistant           4.6.0 %n (>= 4.6.1-1)
+		%p/lib/%N/lib/QtAssistant.framework/Versions/4/QtAssistant_debug     4.6.0 %n (>= 4.6.1-1)
+		%p/lib/%N/lib/QtGui.framework/Versions/4/QtGui                       4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtGui.framework/Versions/4/QtGui_debug                 4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtHelp.framework/Versions/4/QtHelp                     4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtHelp.framework/Versions/4/QtHelp_debug               4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtOpenGL.framework/Versions/4/QtOpenGL                 4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtOpenGL.framework/Versions/4/QtOpenGL_debug           4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtScriptTools.framework/Versions/4/QtScriptTools       4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtScriptTools.framework/Versions/4/QtScriptTools_debug 4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtSvg.framework/Versions/4/QtSvg                       4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtSvg.framework/Versions/4/QtSvg_debug                 4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtWebKit.framework/Versions/4/QtWebKit                 4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtWebKit.framework/Versions/4/QtWebKit_debug           4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/phonon.framework/Versions/4/phonon                     4.3.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/phonon.framework/Versions/4/phonon_debug               4.3.0 %n (>= 4.6.0-1)
 	<<
 	PostInstScript: <<
 		(/%p/lib/fontconfig2/bin/fc-cache -f || :) >/tmp/fc-cache.log 2>&1 || :
@@ -271,24 +287,24 @@ SplitOff2: <<
 		lib/%N/plugins/sqldrivers
 	<<
 	Shlibs: <<
-		%p/lib/qt4-mac/lib/libQtCLucene.4.dylib                              4.5.0 %n (>= 4.5.0-1)
-		%p/lib/qt4-mac/lib/libQtCLucene_debug.4.dylib                        4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtCore.framework/Versions/4/QtCore                     4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtCore.framework/Versions/4/QtCore_debug               4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtDBus.framework/Versions/4/QtDBus                     4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtDBus.framework/Versions/4/QtDBus_debug               4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtNetwork.framework/Versions/4/QtNetwork               4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtNetwork.framework/Versions/4/QtNetwork_debug         4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtScript.framework/Versions/4/QtScript                 4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtScript.framework/Versions/4/QtScript_debug           4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtSql.framework/Versions/4/QtSql                       4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtSql.framework/Versions/4/QtSql_debug                 4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtTest.framework/Versions/4/QtTest                     4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtTest.framework/Versions/4/QtTest_debug               4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtXml.framework/Versions/4/QtXml                       4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtXml.framework/Versions/4/QtXml_debug                 4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtXmlPatterns.framework/Versions/4/QtXmlPatterns       4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtXmlPatterns.framework/Versions/4/QtXmlPatterns_debug 4.5.0 %n (>= 4.5.0-1)
+		%p/lib/qt4-mac/lib/libQtCLucene.4.dylib                              4.6.0 %n (>= 4.6.0-1)
+		%p/lib/qt4-mac/lib/libQtCLucene_debug.4.dylib                        4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtCore.framework/Versions/4/QtCore                     4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtCore.framework/Versions/4/QtCore_debug               4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtDBus.framework/Versions/4/QtDBus                     4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtDBus.framework/Versions/4/QtDBus_debug               4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtNetwork.framework/Versions/4/QtNetwork               4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtNetwork.framework/Versions/4/QtNetwork_debug         4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtScript.framework/Versions/4/QtScript                 4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtScript.framework/Versions/4/QtScript_debug           4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtSql.framework/Versions/4/QtSql                       4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtSql.framework/Versions/4/QtSql_debug                 4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtTest.framework/Versions/4/QtTest                     4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtTest.framework/Versions/4/QtTest_debug               4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtXml.framework/Versions/4/QtXml                       4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtXml.framework/Versions/4/QtXml_debug                 4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtXmlPatterns.framework/Versions/4/QtXmlPatterns       4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtXmlPatterns.framework/Versions/4/QtXmlPatterns_debug 4.6.0 %n (>= 4.6.0-1)
 	<<
 <<
 
@@ -320,10 +336,10 @@ SplitOff4: <<
 		lib/%N/plugins/designer
 	<<
 	Shlibs: <<
-		%p/lib/%N/lib/QtDesigner.framework/Versions/4/QtDesigner                           4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtDesigner.framework/Versions/4/QtDesigner_debug                     4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtDesignerComponents.framework/Versions/4/QtDesignerComponents       4.5.0 %n (>= 4.5.0-1)
-		%p/lib/%N/lib/QtDesignerComponents.framework/Versions/4/QtDesignerComponents_debug 4.5.0 %n (>= 4.5.0-1)
+		%p/lib/%N/lib/QtDesigner.framework/Versions/4/QtDesigner                           4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtDesigner.framework/Versions/4/QtDesigner_debug                     4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtDesignerComponents.framework/Versions/4/QtDesignerComponents       4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtDesignerComponents.framework/Versions/4/QtDesignerComponents_debug 4.6.0 %n (>= 4.6.0-1)
 	<<
 <<
 SplitOff5: <<
@@ -365,7 +381,7 @@ DescUsage: <<
 		%p/lib/%N/bin/qmake %p/share/doc/%N/examples/examples.pro
 		make
 <<
-DocFiles: FAQ* LGPL* LICENSE* README*
+DocFiles: LGPL* LICENSE* README*
 License: LGPL
 Maintainer: Benjamin Reed <qt4-mac@fink.racoonfink.com>
 Homepage: http://www.trolltech.com/
