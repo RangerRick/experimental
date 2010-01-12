@@ -10,7 +10,7 @@ BuildDepends: <<
 	dbus-dev (>= 1.2.12-1),
 	expat1,
 	gettext-tools,
-	libgettext3-dev,
+	libgettext8-dev,
 	libiconv-dev,
 	pkgconfig (>= 0.22-3),
 	qt3,

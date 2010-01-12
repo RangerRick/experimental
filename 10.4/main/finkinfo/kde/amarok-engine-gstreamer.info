@@ -19,7 +19,7 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	gettext-bin,
 	gettext-tools,
-	libgettext3-dev,
+	libgettext8-dev,
 	glib,
 	glib2-dev (>= 2.18.4-1),
 	gst-plugins-base-0.10-dev,

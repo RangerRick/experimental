@@ -17,7 +17,7 @@ BuildDepends: <<
 	libxml2 (>= 2.6.32-1),
 	pkgconfig (>= 0.23-0),
 	intltool40,
-	libgettext3-dev,
+	libgettext8-dev,
 	gettext-tools,
 	libiconv-dev,
 	gtk-doc (>= 1.8-1),
@@ -58,7 +58,7 @@ SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for gstreamer
 	Depends: <<
-		libgettext3-shlibs,
+		libgettext8-shlibs,
 		glib2-shlibs (>= 2.18.4-1),
 		libiconv,
 		libxml2-shlibs (>= 2.6.32-1)

@@ -11,7 +11,7 @@ BuildDepends: <<
 	gettext-tools,
 	jack-dev,
 	libflac8-dev,
-	libgettext3-dev,
+	libgettext8-dev,
 	libmad,
 	libogg (>= 1.1.3-1),
 	libsamplerate0-dev,

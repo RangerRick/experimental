@@ -31,7 +31,7 @@ BuildDepends: <<
 	flex-devel,
 	fontconfig2-dev,
 	freetype219,
-	libgettext3-dev,
+	libgettext8-dev,
 	gettext-tools,
 	glib2-dev (>= 2.18.4-1),
 	imagemagick1-dev (>= 6.4.1-1013),

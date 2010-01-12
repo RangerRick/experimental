@@ -41,7 +41,7 @@ BuildDepends: <<
 	lcms,
 	libart2 (>= 2.3.19-1),
 	libexif12,
-	libgettext3-dev,
+	libgettext8-dev,
 	libgphoto2,
 	libiconv-dev,
 	libidn,

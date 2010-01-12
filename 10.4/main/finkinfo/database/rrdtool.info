@@ -15,7 +15,7 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	glib2-dev (>= 2.18.4-1),
 	glitz,
-	libgettext3-dev,
+	libgettext8-dev,
 	libiconv-dev,
 	libpng3,
 	pango1-xft2-ft219-dev (>= 1.20.5-1),

@@ -131,6 +131,8 @@ my $package_lookup = {
 	},
 	'all' => {
 		'^automake1\..*$'             => 'automake1.11',
+		'^libgettext3-dev$'           => 'libgettext8-dev',
+		'^libgettext3-shlibs$'        => 'libgettext8-shlibs',
 	},
 };
 
@@ -144,7 +146,7 @@ my $version_lookup = {
 		'^blitz-(mac|x11)(-dev|-shlibs)?$'    => [ '0.0.4',        '3'    ],
 		'^cairo(-dev|-shlibs)?$'              => [ '1.8.8',        '1'    ],
 		'^cairomm1.*$'                        => [ '1.8.2',        '1'    ],
-		'^cmake$'                             => [ '2.6.3',        '1'    ],
+		'^cmake$'                             => [ '2.6.4',        '1'    ],
 		'^cocoa-sharp$'                       => [ '0.9.5',        '1'    ],
 		'^dbus(-dev|-shlibs)?$'               => [ '1.2.12',       '1'    ],
 		'^fink$'                              => [ '0.29.7',       '1'    ],
@@ -193,9 +195,9 @@ my $version_lookup = {
 		'^qca2.*$'                            => [ '2.0.2',        '1'    ],
 		'^qgpgme1.*$'                         => [ '4.3.2',        '1'    ],
 		'^qt3.*$'                             => [ '3.3.8',        '1027' ],
-		'^qt4-.*$'                            => [ '4.5.1',        '1'    ],
+		'^qt4-.*$'                            => [ '4.6.0',        '1'    ],
 		'^shared-mime-info$'                  => [ '0.51',         '1'    ],
-		'^soprano.*?(-dev|-shlibs)?$'         => [ '2.3.1',        '1'    ],
+		'^soprano.*?(-dev|-shlibs)?$'         => [ '2.3.70',       '1'    ],
 		'^strigi-gui.*?(-dev|-shlibs)?$'      => [ '0.6.5',        '1'    ],
 		'^taglib-extras.*$'                   => [ '0.1.3',        '2'    ],
 		'^unsermake$'                         => [ '0.4',          '0.20060316.1' ],

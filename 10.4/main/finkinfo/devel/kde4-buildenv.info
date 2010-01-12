@@ -6,7 +6,7 @@ License: BSD
 Maintainer: Benjamin Reed <kde4-buildenv@fink.racoonfink.com>
 
 Depends: <<
-	cmake (>= 2.6.3-1),
+	cmake (>= 2.6.4-1),
 	fink (>= 0.29.7-1)
 <<
 

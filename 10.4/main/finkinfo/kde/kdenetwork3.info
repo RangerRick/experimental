@@ -26,7 +26,7 @@ BuildDepends: <<
 	expat1,
 	fink (>= 0.29.7-1),
 	freetype219 (>= 2.3.7-7),
-	libgettext3-dev,
+	libgettext8-dev,
 	gettext-tools,
 	gtk+,
 	kdelibs3-unified-dev (>= %v-1),

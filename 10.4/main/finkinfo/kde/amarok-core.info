@@ -15,7 +15,7 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	gettext-bin,
 	gettext-tools,
-	libgettext3-dev,
+	libgettext8-dev,
 	glib,
 	glib2-dev (>= 2.18.4-1),
 	gtk+,
@@ -100,7 +100,7 @@ SplitOff: <<
 	Depends: <<
 		expat1-shlibs,
 		libflac8,
-		libgettext3-shlibs,
+		libgettext8-shlibs,
 		glib-shlibs,
 		glib2-shlibs (>= 2.18.4-1),
 		gtk+-shlibs,

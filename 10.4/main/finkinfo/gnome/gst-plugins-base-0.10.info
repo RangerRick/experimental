@@ -26,7 +26,7 @@ BuildDepends: <<
 	libavahi-glib1-dev,
 	libbonobo2-dev (>= 2.20.0-1),
 	libcdparanoia0-dev (>= 3a9.8-11),
-	libgettext3-dev,
+	libgettext8-dev,
 	libiconv-dev,
 	liboil-0.3 (>= 0.3.14-1),
 	libxml2 (>= 2.6.32-1),

@@ -34,7 +34,7 @@ BuildDepends: <<
 	kdelibs3-unified-dev (>= %v-1),
 	kworldclock (>= %v-1),
 	libart2 (>= 2.3.19-1),
-	libgettext3-dev,
+	libgettext8-dev,
 	libiconv-dev,
 	libidn,
 	libjpeg,

@@ -46,7 +46,7 @@ BuildDepends: <<
 	kdelibs3-unified-dev (>= %v-1),
 	libart2 (>= 2.3.19-1),
 	libiconv-dev,
-	libgettext3-dev,
+	libgettext8-dev,
 	gettext-tools,
 	libgpg-error,
 	libidn,
@@ -1531,7 +1531,7 @@ SplitOff22: <<
 	Depends: <<
 		%N-base (>= %v-%r),
 		cyrus-sasl2-shlibs,
-		libgettext3-shlibs,
+		libgettext8-shlibs,
 		gnokii3-shlibs,
 		gpgme11-shlibs (>= 1.0.3-1),
 		opensync-shlibs,

@@ -19,7 +19,7 @@ BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
 	blitz-%type_pkg[kde]-dev (>= 0.0.3-1),
 	bzip2-dev,
-	cmake (>= 2.6.3-1),
+	cmake (>= 2.6.4-1),
 	cups-dev,
 	cyrus-sasl2-dev,
 	dbus-dev (>= 1.2.12-1),
@@ -33,7 +33,7 @@ BuildDepends: <<
 	kde4-buildenv (>= 4.3.1-2),
 	kdebase4-runtime-%type_pkg[kde] (>= 4.3.2-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
-	libgettext3-dev,
+	libgettext8-dev,
 	libidn,
 	libjasper.1,
 	libjpeg,
@@ -47,8 +47,8 @@ BuildDepends: <<
 	openldap24-dev,
 	pcre,
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.5.1-1),
-	soprano-%type_pkg[kde]-dev (>= 2.3.1-1),
+	qt4-%type_pkg[kde] (>= 4.6.0-1),
+	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	strigi-dev (>= 0.6.3-1),
 	strigi-gui-%type_pkg[kde]-dev (>= 0.6.5-1),
 	(-%type_pkg[kde] = x11) x11-dev,
@@ -89,7 +89,7 @@ SplitOff: <<
 		glib2-shlibs (>= 2.18.4-1),
 		libknotificationitem1-%type_pkg[kde]-shlibs (>= 4.3.2-1),
 		(%type_pkg[kde] = x11) libxklavier12-shlibs,
-		soprano-%type_pkg[kde]-shlibs (>= 2.3.1-1),
+		soprano-%type_pkg[kde]-shlibs (>= 2.3.70-1),
 		strigi-gui-%type_pkg[kde]-shlibs (>= 0.6.5-1)
 	<<
 	Recommends: %N (>= %v-%r)

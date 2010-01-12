@@ -32,7 +32,7 @@ BuildDepends: <<
 	libcdio-dev,
 	libdv4,
 	libflac8-dev,
-	libgettext3-dev,
+	libgettext8-dev,
 	libhal1-dev,
 	libiconv-dev,
 	libjpeg,

@@ -26,7 +26,7 @@ BuildDepends: <<
 	glib2-dev (>= 2.18.4-1),
 	gnome-sharp2 (>= 2.20.0-1),
 	gtk-sharp2 (>= 2.12.8-2),
-	libgettext3-dev,
+	libgettext8-dev,
 	mono-addins (>= 0.4-1),
 	mono-dev (>= 2.4-1),
 	mono-tools (>= 2.4-1),

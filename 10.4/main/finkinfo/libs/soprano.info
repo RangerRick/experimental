@@ -1,6 +1,6 @@
 Info3: <<
 Package: soprano-%type_pkg[soprano]
-Version: 2.3.1
+Version: 2.3.70
 Revision: 1
 Description: C++ RDF framework
 Type: soprano (x11 mac)
@@ -10,7 +10,7 @@ Maintainer: Benjamin Reed <soprano@fink.racoonfink.com>
 Depends: %N-shlibs (= %v-%r)
 BuildDepends: <<
 	clucene-core (>= 0.9.20-1),
-	cmake (>= 2.6.3-1),
+	cmake (>= 2.6.4-1),
 	db47-aes | db47,
 	dbus-dev (>= 1.2.12-1),
 	fink (>= 0.29.7-1),
@@ -29,12 +29,12 @@ BuildDepends: <<
 	redland-dev (>= 1.0.8-3),
 	sqlite3-dev,
 	system-openssl-dev,
-	qt4-%type_pkg[soprano] (>= 4.5.1-1)
+	qt4-%type_pkg[soprano] (>= 4.6.0-1)
 <<
 GCC: 4.0
 
 Source: mirror:sourceforge:soprano/soprano-%v.tar.bz2
-Source-MD5: c9a2c008b80cd5d76599e9d48139dfe9
+Source-MD5: de5cf230a95fc7218425aafdfb4a5e47
 PatchScript: <<
 	%{default_script}
 	find . -name CMakeLists.txt | xargs perl -pi -e 's,include/Soprano,include/soprano,g'
@@ -81,7 +81,7 @@ SplitOff: <<
 		dbus-shlibs (>= 1.2.12-1),
 		librasqal-shlibs (>= 0.9.16-2),
 		redland-shlibs (>= 1.0.8-3),
-		qt4-%type_pkg[soprano]-core-shlibs (>= 4.5.1-1)
+		qt4-%type_pkg[soprano]-core-shlibs (>= 4.6.0-1)
 	<<
 	Recommends: %N (>= %v-%r)
 	DocFiles: COPYING*
