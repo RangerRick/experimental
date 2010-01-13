@@ -56,7 +56,7 @@ BuildDepends: <<
 BuildConflicts: gamin-dev
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/kdelibs-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kdelibs-%v.tar.bz2
 Source-MD5: 45c42bfcaa5a968a38e20a0599c4e8e9
 SourceDirectory: kdelibs-%v
 PatchScript: sed -e 's,@KDEPREFIX@,%p,g' -e 's,@KDETYPE@,%type_pkg[kde],g' %{PatchFile} | patch -p1

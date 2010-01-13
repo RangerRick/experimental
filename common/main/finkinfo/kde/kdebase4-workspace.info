@@ -60,7 +60,7 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/kdebase-workspace-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kdebase-workspace-%v.tar.bz2
 Source-MD5: 21c77cd85d4c47553678d6fde8300947
 SourceDirectory: kdebase-workspace-%v
 PatchFile: kdebase4-workspace.patch

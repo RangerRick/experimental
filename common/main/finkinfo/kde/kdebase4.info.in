@@ -61,7 +61,7 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/kdebase-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kdebase-%v.tar.bz2
 Source-MD5: 441a29ddea621374b7bf9439bc24fd3e
 SourceDirectory: kdebase-%v
 
