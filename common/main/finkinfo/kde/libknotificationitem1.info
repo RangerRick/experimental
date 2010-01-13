@@ -1,6 +1,6 @@
 Info3: <<
 Package: libknotificationitem1-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.4
 Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - notification lib
@@ -45,7 +45,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdelibs-experimental-%v.tar.bz2
-Source-MD5: d473afb133b5b7d3ead9699c17fe6761
+Source-MD5: ee3eb713d703b8bba9de61197f6943c4
 SourceDirectory: kdelibs-experimental-%v
 
 CompileScript: <<

@@ -1,6 +1,6 @@
 Info3: <<
 Package: libknotificationitem1-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.4
 Revision: 1
 Description: KDE4 - notification lib
 Type: kde (x11 mac)
@@ -25,7 +25,7 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	gettext-tools,
 	giflib,
-	kde4-buildenv (>= 4.3.1-2),
+	kde4-buildenv (>= 4.3.90-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
 	libgettext8-dev,
 	libidn,
@@ -45,7 +45,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdelibs-experimental-%v.tar.bz2
-Source-MD5: d473afb133b5b7d3ead9699c17fe6761
+Source-MD5: ee3eb713d703b8bba9de61197f6943c4
 SourceDirectory: kdelibs-experimental-%v
 
 CompileScript: <<

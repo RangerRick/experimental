@@ -37,8 +37,8 @@ BuildDepends: <<
 	glib2-dev (>= 2.18.4-1),
 	gmm,
 	gsl,
-	kde4-buildenv (>= 4.3.1-2),
-	kdebase4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kde4-buildenv (>= 4.3.90-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
 	libgettext8-dev,
 	libxml2,
@@ -292,7 +292,7 @@ SplitOff17: <<
 SplitOff19: <<
 	Package: %N-base-shlibs
 	Description: KDE4 - base kdeedu shared libraries
-	Depends: kdebase4-%type_pkg[kde]-shlibs (>= 4.3.2-1)
+	Depends: kdebase4-%type_pkg[kde]-shlibs (>= 4.3.90-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/libkdeeduui.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkeduvocdocument.4*.dylib
@@ -344,7 +344,7 @@ SplitOff21: <<
 	Description: KDE4 - kdeedu base package
 	Depends: <<
 		%N-base-shlibs (>= %v-%r),
-		kdebase4-runtime-%type_pkg[kde] (>= 4.3.2-1)
+		kdebase4-runtime-%type_pkg[kde] (>= 4.3.90-1)
 	<<
 	Files: opt
 <<

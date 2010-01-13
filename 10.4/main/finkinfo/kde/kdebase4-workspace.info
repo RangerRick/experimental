@@ -1,6 +1,6 @@
 Info3: <<
 Package: kdebase4-workspace-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 Description: KDE4 - base applications and tools
 Type: kde (x11)
@@ -10,8 +10,8 @@ Maintainer: Benjamin Reed <kdebase4-workspace@fink.racoonfink.com>
 Depends: <<
 	%N-shlibs (= %v-%r),
 	kdelibs4-%type_pkg[kde] (>= 4.3.2-1),
-	kdepimlibs4-%type_pkg[kde] (>= 4.3.2-1),
-	libknotificationitem1-%type_pkg[kde] (>= 4.3.2-1),
+	kdepimlibs4-%type_pkg[kde] (>= 4.3.90-1),
+	libknotificationitem1-%type_pkg[kde] (>= 4.3.4-1),
 	pyqt4-py26
 <<
 BuildDepends: <<
@@ -30,14 +30,14 @@ BuildDepends: <<
 	gettext-tools,
 	giflib,
 	glib2-dev (>= 2.18.4-1),
-	kde4-buildenv (>= 4.3.1-2),
+	kde4-buildenv (>= 4.3.90-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	libgettext8-dev,
 	libidn,
 	libjasper.1,
 	libjpeg,
-	libknotificationitem1-%type_pkg[kde]-dev (>= 4.3.2-1),
+	libknotificationitem1-%type_pkg[kde]-dev (>= 4.3.4-1),
 	libpng3,
 	libtiff,
 	libusb,
@@ -61,7 +61,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdebase-workspace-%v.tar.bz2
-Source-MD5: 2966168f421b3093a119a7c7089b87fb
+Source-MD5: 21c77cd85d4c47553678d6fde8300947
 SourceDirectory: kdebase-workspace-%v
 PatchScript: sed -e 's,@FINKPREFIX@,%p,g; s,@FINKTYPE@,%type_pkg[kde],g' %{PatchFile} | patch -p1
 PatchFile: kdebase4-workspace.patch
@@ -100,8 +100,8 @@ SplitOff: <<
 	Depends: <<
 		glib2-shlibs (>= 2.18.4-1),
 		kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.2-1),
-		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.3.2-1),
-		libknotificationitem1-%type_pkg[kde]-shlibs (>= 4.3.2-1),
+		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.3.90-1),
+		libknotificationitem1-%type_pkg[kde]-shlibs (>= 4.3.4-1),
 		libusb-shlibs,
 		(%type_pkg[kde] = x11) libxklavier12-shlibs,
 		strigi-gui-%type_pkg[kde]-shlibs (>= 0.6.5-1),

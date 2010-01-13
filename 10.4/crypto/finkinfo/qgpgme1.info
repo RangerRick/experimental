@@ -25,7 +25,7 @@ BuildDepends: <<
 	gettext-tools,
 	giflib,
 	gpgme11,
-	kde4-buildenv (>= 4.3.1-2),
+	kde4-buildenv (>= 4.3.90-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
 	libgettext8-dev,
 	libgpg-error,

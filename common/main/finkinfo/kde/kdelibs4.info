@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdelibs4-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - essential libraries
@@ -13,7 +13,8 @@ Depends: <<
 	dbus (>= 1.2.12-1),
 	default-icon-theme (>= 0.5-2),
 	hspell,
-	shared-mime-info (>= 0.51-1)
+	shared-desktop-ontologies,
+	shared-mime-info (>= 0.51-1),
 <<
 BuildDepends: <<
 	aspell-dev,
@@ -44,6 +45,7 @@ BuildDepends: <<
 	pcre (>= 7.6-1),
 	pkgconfig (>= 0.22-3),
 	qt4-%type_pkg[kde] (>= 4.5.0-1),
+	shared-desktop-ontologies,
 	shared-mime-info (>= 0.51-1),
 	soprano-%type_pkg[kde]-dev (>= 2.2.1-1),
 	strigi-dev (>= 0.6.3-1),
@@ -55,10 +57,10 @@ BuildConflicts: gamin-dev
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdelibs-%v.tar.bz2
-Source-MD5: 0564ed8ba804a0f3f1cee9732a3d2d72
+Source-MD5: 45c42bfcaa5a968a38e20a0599c4e8e9
 SourceDirectory: kdelibs-%v
 PatchFile: kdelibs4.patch
-PatchFile-MD5: a4e206402fdda7249930f0a25e4aad71
+PatchFile-MD5: 5e079725d6d616e8a9d49fd341461b24
 PatchScript: sed -e 's,@KDEPREFIX@,%p,g' -e 's,@KDETYPE@,%type_pkg[kde],g' %{PatchFile} | patch -p1
 
 CompileScript: <<
@@ -141,6 +143,7 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libkdefakes.5*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdesu.5*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdeui.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkdewebkit.5*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdnssd.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkfile.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkhtml.5*.dylib
@@ -151,6 +154,7 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libkjsembed.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkmediaplayer.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libknewstuff2.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libknewstuff3.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libknotifyconfig.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkntlm.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkparts.4*.dylib
@@ -159,9 +163,11 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libkrossqtsplugin.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkrossui.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libktexteditor.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkunitconversion.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkunittest.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkutils.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libnepomuk.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libnepomukquery.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libplasma.3*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libsolid.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libthreadweaver.4*.dylib
@@ -172,6 +178,7 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libkdefakes.5.dylib            5.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkdesu.5.dylib               5.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkdeui.5.dylib               5.0.0 %n (>= 4.2.4-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkdewebkit.5.dylib           5.0.0 %n (>= 4.3.90-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkdnssd.4.dylib              4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkfile.4.dylib               4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkhtml.5.dylib               5.0.0 %n (>= 4.2.4-1)
@@ -182,6 +189,7 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libkjsembed.4.dylib            4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkmediaplayer.4.dylib        4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libknewstuff2.4.dylib          4.0.0 %n (>= 4.2.4-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libknewstuff3.4.dylib          4.0.0 %n (>= 4.3.90-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libknotifyconfig.4.dylib       4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkntlm.4.dylib               4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkparts.4.dylib              4.0.0 %n (>= 4.2.4-1)
@@ -190,9 +198,11 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libkrossqtsplugin.4.dylib      4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkrossui.4.dylib             4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libktexteditor.4.dylib         4.0.0 %n (>= 4.2.4-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkunitconversion.4.dylib     4.0.0 %n (>= 4.3.90-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkunittest.4.dylib           4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkutils.4.dylib              4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libnepomuk.4.dylib             4.0.0 %n (>= 4.2.4-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libnepomukquery.4.dylib        4.0.0 %n (>= 4.3.90-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libplasma.3.dylib              3.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libsolid.4.dylib               4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libthreadweaver.4.dylib        4.0.0 %n (>= 4.2.4-1)
@@ -211,6 +221,7 @@ SplitOff2: <<
 		opt/kde4/%type_pkg[kde]/lib/libkdefakes.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdesu.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdeui.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkdewebkit.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdnssd.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkfile.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkhtml.dylib
@@ -221,6 +232,7 @@ SplitOff2: <<
 		opt/kde4/%type_pkg[kde]/lib/libkjsembed.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkmediaplayer.dylib
 		opt/kde4/%type_pkg[kde]/lib/libknewstuff2.dylib
+		opt/kde4/%type_pkg[kde]/lib/libknewstuff3.dylib
 		opt/kde4/%type_pkg[kde]/lib/libknotifyconfig.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkntlm.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkparts.dylib
@@ -229,9 +241,11 @@ SplitOff2: <<
 		opt/kde4/%type_pkg[kde]/lib/libkrossqtsplugin.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkrossui.dylib
 		opt/kde4/%type_pkg[kde]/lib/libktexteditor.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkunitconversion.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkunittest.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkutils.dylib
 		opt/kde4/%type_pkg[kde]/lib/libnepomuk.dylib
+		opt/kde4/%type_pkg[kde]/lib/libnepomukquery.dylib
 		opt/kde4/%type_pkg[kde]/lib/libplasma.dylib
 		opt/kde4/%type_pkg[kde]/lib/libsolid.dylib
 		opt/kde4/%type_pkg[kde]/lib/libthreadweaver.dylib

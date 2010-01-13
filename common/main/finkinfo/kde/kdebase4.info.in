@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdebase4-mac
 Type: kde (mac)
 #endif
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 Description: KDE4 - base runtime
 License: GPL/LGPL
@@ -62,7 +62,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdebase-%v.tar.bz2
-Source-MD5: 7d6b968d8d8dd3730522389dabbb23e2
+Source-MD5: 441a29ddea621374b7bf9439bc24fd3e
 SourceDirectory: kdebase-%v
 
 PatchScript: <<

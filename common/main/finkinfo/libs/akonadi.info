@@ -1,6 +1,6 @@
 Info3: <<
 Package: akonadi-%type_pkg[akonadi]
-Version: 1.2.1
+Version: 1.2.90
 Revision: 1
 Type: akonadi (x11 mac)
 Description: PIM Storage Service
@@ -20,14 +20,14 @@ BuildDepends: <<
 	mysql-unified (>= 5.0-1),
 	mysql-unified-dev (>= 5.0-1),
 	shared-mime-info (>= 0.20-1),
-	soprano-%type_pkg[akonadi]-dev (>= 2.3.0-1),
+	soprano-%type_pkg[akonadi]-dev (>= 2.3.70-1),
 	system-openssl-dev,
 	qt4-%type_pkg[akonadi] (>= 4.4.0-1)
 <<
 GCC: 4.0
 
 Source: http://download.akonadi-project.org/akonadi-%v.tar.bz2
-Source-MD5: f9c1d000844f31c67360078ddf60bec2
+Source-MD5: 81b59bb00888dfe58b79fe38e3d936f8
 
 CompileScript: <<
 #!/bin/sh -ev

@@ -8,7 +8,7 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <kipi-plugins4@fink.racoonfink.com>
 
 Depends: <<
-	kdebase4-runtime-%type_pkg[kde] (>= 4.3.2-1),
+	kdebase4-runtime-%type_pkg[kde] (>= 4.3.90-1),
 	%N-shlibs (>= %v-%r)
 <<
 BuildDepends: <<
@@ -21,10 +21,10 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	glib2-dev (>= 2.18.4-1),
 	gtk+2-dev (>= 2.14.7-1),
-	kde4-buildenv (>= 4.3.1-2),
-	kdebase4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kde4-buildenv (>= 4.3.90-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	libjasper.1,
 	libjpeg,
 	libgettext8-dev,

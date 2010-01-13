@@ -126,11 +126,13 @@ SplitOff2: <<
 	Package: %N-dev
 	Description: Development headers and libraries for soprano
 	Depends: %N (= %v-%r)
+	Replaces: %N (<< 2.3.70-1)
 	BuildDependsOnly: true
 	Files: <<
 		opt/soprano/%type_pkg[soprano]/include
 		opt/soprano/%type_pkg[soprano]/lib/*.dylib
 		opt/soprano/%type_pkg[soprano]/lib/pkgconfig
+		opt/soprano/%type_pkg[soprano]/share/soprano/cmake
 	<<
 	PreInstScript: <<
 		/bin/rm -rf "%p/opt/soprano/%type_pkg[soprano]/include/Soprano"

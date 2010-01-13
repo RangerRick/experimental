@@ -9,7 +9,7 @@ Maintainer: Benjamin Reed <amarok2@fink.racoonfink.com>
 
 Depends: <<
 	dbus (>= 1.2.12-1),
-	kdebase4-%type_pkg[kde] (>= 4.3.2-1),
+	kdebase4-%type_pkg[kde] (>= 4.3.90-1),
 	kdemultimedia4-%type_pkg[kde]-base-shlibs (>= 4.3.2-1),
 	libmp4v21-shlibs,
 	loudmouth-shlibs,
@@ -31,8 +31,8 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	glib2-dev (>= 2.18.4-1),
 	gtk+2-dev (>= 2.14.7-1),
-	kde4-buildenv (>= 4.3.1-2),
-	kdebase4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kde4-buildenv (>= 4.3.90-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
 	kdemultimedia4-%type_pkg[kde]-dev (>= 4.3.2-1),
 	libgettext8-dev,

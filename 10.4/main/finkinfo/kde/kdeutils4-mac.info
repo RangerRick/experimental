@@ -29,8 +29,8 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	glib2-dev (>= 2.18.4-1),
 	gmp,
-	kde4-buildenv (>= 4.3.1-2),
-	kdebase4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kde4-buildenv (>= 4.3.90-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
 	libarchive,
 	libgettext8-dev,
@@ -178,7 +178,7 @@ SplitOff2: <<
 SplitOff20: <<
 	Package: %N-base
 	Description: KDE4 - kdeutils base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.3.2-1)
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.3.90-1)
 	Files: opt share/doc/installed-packages/%n
 <<
 SplitOff3: <<

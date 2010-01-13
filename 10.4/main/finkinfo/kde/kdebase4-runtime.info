@@ -1,6 +1,6 @@
 Info3: <<
 Package: kdebase4-runtime-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 Description: KDE4 - base applications and tools (runtime)
 Type: kde (x11 mac)
@@ -9,9 +9,9 @@ Maintainer: Benjamin Reed <kdebase4-runtime@fink.racoonfink.com>
 
 Depends: <<
 	dbus (>= 1.2.12-1),
-	kdepimlibs4-%type_pkg[kde] (>= 4.3.2-1),
+	kdepimlibs4-%type_pkg[kde] (>= 4.3.90-1),
 	libxine1-shlibs,
-	oxygen-icons-%type_pkg[kde] (>= %v-1),
+	oxygen-icons-%type_pkg[kde] (>= 4.3.90-1),
 	strigi-gui-%type_pkg[kde] (>= 0.6.5-1)
 <<
 BuildDepends: <<
@@ -30,14 +30,14 @@ BuildDepends: <<
 	gettext-tools,
 	giflib,
 	glib2-dev (>= 2.18.4-1),
-	kde4-buildenv (>= 4.3.1-2),
+	kde4-buildenv (>= 4.3.90-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	libgettext8-dev,
 	libidn,
 	libjasper.1,
 	libjpeg,
-	libknotificationitem1-%type_pkg[kde]-dev (>= 4.3.2-1),
+	libknotificationitem1-%type_pkg[kde]-dev (>= 4.3.4-1),
 	libpng3,
 	libtiff,
 	libxine1,
@@ -51,7 +51,7 @@ BuildDepends: <<
 	qt4-%type_pkg[kde] (>= 4.6.0-1),
 	strigi-dev (>= 0.6.3-1),
 	strigi-gui-%type_pkg[kde]-dev (>= 0.6.5-1),
-	(-%type_pkg[kde] = x11) x11-dev,
+	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev
 <<
 Replaces: <<
@@ -62,10 +62,10 @@ Replaces: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdebase-runtime-%v.tar.bz2
-Source-MD5: b0dfe65bc6d18c259c236889f92e2817
+Source-MD5: 1aa49251d4951c36cc148a648442aa80
 SourceDirectory: kdebase-runtime-%v
 PatchFile: kdebase4-runtime.patch
-PatchFile-MD5: 05b544631e26281e91dd99c45be469dc
+PatchFile-MD5: 4dd9be27d3bd3b1c3aff060fd6cb91ed
 
 CompileScript: <<
 #!/bin/sh -ev

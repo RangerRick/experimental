@@ -1,6 +1,6 @@
 Info3: <<
 Package: kdepimlibs4-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 Description: KDE4 - PIM support libraries
 Type: kde (x11 mac)
@@ -13,8 +13,8 @@ Depends: <<
 	libkholidays4-%type_pkg[kde] (>= %v-%r)
 <<
 BuildDepends: <<
-	akonadi-%type_pkg[kde] (>= 1.2.1-1),
-	akonadi-%type_pkg[kde]-dev (>= 1.2.1-1),
+	akonadi-%type_pkg[kde] (>= 1.2.90-1),
+	akonadi-%type_pkg[kde]-dev (>= 1.2.90-1),
 	aspell-dev,
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
 	boost1.35.systempython,
@@ -28,7 +28,7 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	gettext-tools,
 	giflib,
-	kde4-buildenv (>= 4.3.1-2),
+	kde4-buildenv (>= 4.3.90-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
 	libgettext8-dev,
 	libical,
@@ -51,7 +51,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdepimlibs-%v.tar.bz2
-Source-MD5: 5206959536c1a7abd58f6d2b6eb1c952
+Source-MD5: b1dcb7dd3cea90bbc54984ae46896390
 SourceDirectory: kdepimlibs-%v
 PatchFile: kdepimlibs4.patch
 PatchFile-MD5: 6a1f3a69064c496038d34afad6e2eb36
@@ -80,7 +80,7 @@ SplitOff: <<
 	Package: %N-shlibs
 	Description: KDE4 - PIM support shared libraries
 	Depends: <<
-		akonadi-%type_pkg[kde]-shlibs (>= 1.2.1-1),
+		akonadi-%type_pkg[kde]-shlibs (>= 1.2.90-1),
 		boost1.35.systempython-shlibs,
 		cyrus-sasl2-shlibs,
 		kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.2-1),
@@ -91,7 +91,9 @@ SplitOff: <<
 	Recommends: %N (>= %v-%r)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4
+		opt/kde4/%type_pkg[kde]/lib/libakonadi-contact.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libakonadi-kabc.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libakonadi-kcal.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libakonadi-kde.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libakonadi-kmime.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkabc.4*.dylib
@@ -101,6 +103,7 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libkimap.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkldap.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkmime.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkontactinterface.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkpimidentities.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkpimtextedit.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkpimutils.4*.dylib
@@ -112,7 +115,9 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libsyndication.4*.dylib
 	<<
 	Shlibs: <<
+		%p/opt/kde4/%type_pkg[kde]/lib/libakonadi-contact.4.dylib  4.0.0 %n (>= 4.3.90-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libakonadi-kabc.4.dylib     4.0.0 %n (>= 4.2.4-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libakonadi-kcal.4.dylib     4.0.0 %n (>= 4.3.90-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libakonadi-kde.4.dylib      4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libakonadi-kmime.4.dylib    4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkabc.4.dylib             4.0.0 %n (>= 4.2.4-1)
@@ -122,6 +127,7 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libkimap.4.dylib            4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkldap.4.dylib            4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkmime.4.dylib            4.0.0 %n (>= 4.2.4-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkontactinterface.4.dylib 4.0.0 %n (>= 4.3.90-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkpimidentities.4.dylib   4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkpimtextedit.4.dylib     4.0.0 %n (>= 4.3.0-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkpimutils.4.dylib        4.0.0 %n (>= 4.2.4-1)

@@ -15,7 +15,7 @@ BuildDepends: <<
 	dbus-dev (>= 1.2.12-1),
 	fink (>= 0.29.7-1),
 	gmp,
-	kde4-buildenv (>= 4.3.1-2),
+	kde4-buildenv (>= 4.3.90-1),
 	libcurl4,
 	libiconv,
 	libmpfr1,
@@ -102,11 +102,13 @@ SplitOff2: <<
 	Package: %N-dev
 	Description: Development headers and libraries for soprano
 	Depends: %N (= %v-%r)
+	Replaces: %N (<< 2.3.70-1)
 	BuildDependsOnly: true
 	Files: <<
 		opt/soprano/%type_pkg[soprano]/include
 		opt/soprano/%type_pkg[soprano]/lib/*.dylib
 		opt/soprano/%type_pkg[soprano]/lib/pkgconfig
+		opt/soprano/%type_pkg[soprano]/share/soprano/cmake
 	<<
 	PreInstScript: <<
 /bin/rm -rf "%p/opt/soprano/%type_pkg[soprano]/include/Soprano"

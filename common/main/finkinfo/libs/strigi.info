@@ -1,6 +1,6 @@
 Info3: <<
 Package: strigi
-Version: 0.7.0
+Version: 0.7.1
 Revision: 1
 Depends: %N-shlibs (= %v-%r), dbus (>= 1.0.2-1027)
 BuildDepends: <<
@@ -17,7 +17,7 @@ BuildDepends: <<
 
 GCC: 4.0
 Source: http://www.vandenoever.info/software/strigi/strigi-%v.tar.bz2
-Source-MD5: 6a6b939a70725d5c77bb69eca347889d
+Source-MD5: c60147f5acd53ac5102ed0c972b279fb
 SourceDirectory: strigi-%v
 PatchFile: strigi.patch
 PatchFile-MD5: b6c8ac9b1e48381edd080dc611515a23
