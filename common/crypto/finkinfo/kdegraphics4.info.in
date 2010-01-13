@@ -52,6 +52,7 @@ BuildDepends: <<
 	kdelibs4-%type_pkg[kde]-dev (>= 4.2.0-1),
 	lcms,
 	libdjvulibre21-dev,
+	libepub,
 	libexiv2-0.18,
 	libgettext3-dev,
 	libgphoto2,
@@ -227,6 +228,7 @@ SplitOff8: <<
 		blitz-%type_pkg[kde]-shlibs,
 		freetype219-shlibs,
 		libdjvulibre21-shlibs,
+		libepub-shlibs,
 		poppler2-qt4-%type_pkg[kde]-shlibs (>= 0.6.4-4),
 		qca2-%type_pkg[kde]-shlibs (>= 2.0.2-1),
 		%N-base (>= %v-%r)
