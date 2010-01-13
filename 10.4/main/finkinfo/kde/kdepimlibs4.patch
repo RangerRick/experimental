@@ -19,3 +19,23 @@ diff -Nurd kdepimlibs-4.3.0/CMakeLists.txt kdepimlibs-4.3.0-new/CMakeLists.txt
  
  if (NOT KDEPIM_ONLY_KLEO)
    add_subdirectory(akonadi)
+diff -Nurd kdepimlibs-4.3.90/kioslave/imap4/imapparser.cpp kdepimlibs-4.3.90-new/kioslave/imap4/imapparser.cpp
+--- kdepimlibs-4.3.90/kioslave/imap4/imapparser.cpp	2009-08-12 05:59:15.000000000 -0400
++++ kdepimlibs-4.3.90-new/kioslave/imap4/imapparser.cpp	2010-01-13 12:05:07.000000000 -0500
+@@ -262,13 +262,12 @@
+   }
+   cmd = sendCommand (CommandPtr(new imapCommand ("AUTHENTICATE", firstCommand.toLatin1())));
+ 
+-  while ( true )
+-  {
++  int pl = 0;
++  while ( pl != -1 && !cmd->isComplete () ) {
+     //read the next line
+-    while (parseLoop() == 0) {
++    while ( ( pl = parseLoop() ) == 0) {
+       ;
+     }
+-    if ( cmd->isComplete() ) break;
+ 
+     if (!continuation.isEmpty())
+     {

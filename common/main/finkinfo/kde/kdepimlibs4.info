@@ -54,7 +54,7 @@ Source: mirror:kde:stable/%v/src/kdepimlibs-%v.tar.bz2
 Source-MD5: b1dcb7dd3cea90bbc54984ae46896390
 SourceDirectory: kdepimlibs-%v
 PatchFile: kdepimlibs4.patch
-PatchFile-MD5: 6a1f3a69064c496038d34afad6e2eb36
+PatchFile-MD5: 95190ed34847705b6f6467452106fb0d
 
 CompileScript: <<
 #!/bin/sh -ev

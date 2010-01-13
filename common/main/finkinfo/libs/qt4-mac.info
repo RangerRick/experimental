@@ -1,17 +1,20 @@
 Info4: <<
 Package: qt4-mac
 Version: 4.6.0
-Revision: 3
+Revision: 4
 GCC: 4.0
 Source: http://w-nz.com/~sjorsg/kde-qt-%v-patched.tar.gz
 Source-MD5: 77c5c59befbff52a0508d0e7722fd796
 SourceDirectory: qt-kde-qt
+Source2: http://ranger.befunk.com/fink/qt/kubuntu_07_phonon_4.3.80.diff
+Source2-MD5: a77531fa9af711e4eef823e225c54cf6
 PatchFile: %n.patch
 PatchFile-MD5: 93bb327634250a0adc397995695cf855
 PatchScript: <<
 	patch -p1 --fuzz=4 < %{PatchFile}
 	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp
 	perl -pi -e 's,CFG_MAC_XARCH=auto,CFG_MAC_XARCH=no,g' configure
+	patch -p1 --fuzz=4 < ../kubuntu_07_phonon_4.3.80.diff
 <<
 Description: Cross-Platform framework (Mac version)
 Depends: <<
@@ -205,8 +208,8 @@ SplitOff: <<
 	Shlibs: <<
 		(%m != x86_64) %p/lib/%N/lib/Qt3Support.framework/Versions/4/Qt3Support       4.6.0 %n (>= 4.6.0-1)
 		(%m != x86_64) %p/lib/%N/lib/Qt3Support.framework/Versions/4/Qt3Support_debug 4.6.0 %n (>= 4.6.0-1)
-		%p/lib/%N/lib/QtAssistant.framework/Versions/4/QtAssistant           4.6.0 %n (>= 4.6.1-1)
-		%p/lib/%N/lib/QtAssistant.framework/Versions/4/QtAssistant_debug     4.6.0 %n (>= 4.6.1-1)
+		%p/lib/%N/lib/QtAssistant.framework/Versions/4/QtAssistant           4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/QtAssistant.framework/Versions/4/QtAssistant_debug     4.6.0 %n (>= 4.6.0-1)
 		%p/lib/%N/lib/QtGui.framework/Versions/4/QtGui                       4.6.0 %n (>= 4.6.0-1)
 		%p/lib/%N/lib/QtGui.framework/Versions/4/QtGui_debug                 4.6.0 %n (>= 4.6.0-1)
 		%p/lib/%N/lib/QtHelp.framework/Versions/4/QtHelp                     4.6.0 %n (>= 4.6.0-1)
