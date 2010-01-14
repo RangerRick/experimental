@@ -17,7 +17,7 @@ Replaces: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/oxygen-icons-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/oxygen-icons-%v.tar.bz2
 Source-MD5: 919c0799f1384634362b895ea5e79c56
 SourceDirectory: oxygen-icons-%v
 
