@@ -1427,7 +1427,7 @@ index 8147c22..aa948d5 100644
  }
  
 -#if ((_POSIX_MONOTONIC_CLOCK-0 <= 0) && !defined(Q_OS_MAC)) || defined(QT_BOOTSTRAPPED)
-+#if ((_POSIX_MONOTONIC_CLOCK-0 <= 0) && !defined(Q_OS_MAC) && !defined(Q_OS_MAC)) || defined(QT_BOOTSTRAPPED)
++#if ((_POSIX_MONOTONIC_CLOCK-0 <= 0) && !defined(Q_OS_DARWIN) && !defined(Q_OS_MAC)) || defined(QT_BOOTSTRAPPED)
  
  template <>
  timeval qAbs(const timeval &t)
