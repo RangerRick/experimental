@@ -4,7 +4,7 @@ Version: 0.1.1
 Revision: 1
 Type: attica (x11 mac)
 Depends: <<
-	%N-shlibs (= %v-%r),
+	libattica-%type_pkg[attica]-shlibs (= %v-%r),
 	pkgconfig (>= 0.23-1),
 <<
 BuildDepends: <<
@@ -44,7 +44,7 @@ InstallScript: <<
 <<
 
 SplitOff: <<
-	Package: %N-shlibs
+	Package: libattica-%type_pkg[attica]-shlibs
 	Description: Shared libraries for Attica
 	Depends: <<
 		qt4-%type_pkg[attica]-core-shlibs (>= 4.4.1-1),
