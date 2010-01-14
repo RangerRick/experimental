@@ -209,7 +209,10 @@ SplitOff2: <<
 		%N (= %v-%r),
 		xmkmf
 	<<
-	Replaces: kdebase4-workspace-%type_pkg[kde]-dev (<< 4.3.0-1)
+	Replaces: <<
+		kdebase4-runtime-%type_pkg[kde] (<< 4.3.90-1),
+		kdebase4-workspace-%type_pkg[kde]-dev (<< 4.3.0-1)
+	<<
 	BuildDependsOnly: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include

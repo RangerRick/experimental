@@ -213,7 +213,10 @@ SplitOff2: <<
 	Description: KDE4 - essential development libraries and headers
 	Depends: %N (= %v-%r), xmkmf
 	BuildDependsOnly: true
-	Replaces: kdebase4-workspace-%type_pkg[kde]-dev (<< 4.3.0-1)
+	Replaces: <<
+		kdebase4-runtime-%type_pkg[kde] (<< 4.3.90-1),
+		kdebase4-workspace-%type_pkg[kde]-dev (<< 4.3.0-1),
+	<<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
 		opt/kde4/%type_pkg[kde]/lib/libkde3support.dylib
