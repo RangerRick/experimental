@@ -12,7 +12,7 @@ BuildDepends: <<
 	fink (>= 0.29.7-1),
 	glitz,
 	kde4-buildenv (>= 4.3.90-1),
-	qt4-%type_pkg[qt] (>= 4.6.0-1),
+	qt4-%type_pkg[qt] (>= 4.6.0-4),
 	poppler4 (>= %v-1)
 <<
 Conflicts: <<
@@ -73,7 +73,7 @@ SplitOff: <<
 	Package: %N-shlibs
 	Depends: <<
 		poppler4-shlibs (>= %v-1),
-		qt4-%type_pkg[qt]-gui-shlibs (>= 4.6.0-1)
+		qt4-%type_pkg[qt]-gui-shlibs (>= 4.6.0-4)
 	<<
 	Files: opt/kde4/%type_pkg[qt]/lib/libpoppler-qt4.3*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[qt]/lib/libpoppler-qt4.3.dylib 5.0.0 %n (>= 0.10.5-2)

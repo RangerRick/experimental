@@ -1,7 +1,7 @@
 Info4: <<
 Package: qt4-x11
 Version: 4.6.0
-Revision: 1
+Revision: 4
 GCC: 4.0
 Source: http://get.qt.nokia.com/qt/source/qt-everywhere-opensource-src-%v.tar.gz
 Source-MD5: 2a7b5126f2450d8525af355fc4c12ad6

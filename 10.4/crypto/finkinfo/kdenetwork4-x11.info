@@ -41,7 +41,7 @@ BuildDepends: <<
 	libxslt,
 	pkgconfig (>= 0.22-3),
 	qca2-%type_pkg[kde] (>= 2.0.2-1),
-	qt4-%type_pkg[kde] (>= 4.6.0-1),
+	qt4-%type_pkg[kde] (>= 4.6.0-4),
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	speex3,
 	sqlite3-dev,

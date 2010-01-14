@@ -22,7 +22,7 @@ BuildDepends: <<
 	libiconv-dev,
 	libxml2 (>= 2.6.32-1),
 	strigi-dev (>= %v-1),
-	qt4-%type_pkg[strigi] (>= 4.6.0-1)
+	qt4-%type_pkg[strigi] (>= 4.6.0-4)
 <<
 GCC: 4.0
 
@@ -67,7 +67,7 @@ SplitOff: <<
 	Depends: <<
 		clucene-core-shlibs (>= 0.9.20-1),
 		dbus-shlibs (>= 1.2.12-1),
-		qt4-%type_pkg[strigi]-gui-shlibs (>= 4.6.0-1),
+		qt4-%type_pkg[strigi]-gui-shlibs (>= 4.6.0-4),
 		strigi-shlibs (>= %v-1)
 	<<
 	DocFiles: COPYING

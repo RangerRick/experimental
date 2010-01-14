@@ -39,7 +39,7 @@ BuildDepends: <<
 	libxml2,
 	libxslt,
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.6.0-1),
+	qt4-%type_pkg[kde] (>= 4.6.0-4),
 	sane-backends-dev,
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	strigi-dev (>= 0.6.3-1),
