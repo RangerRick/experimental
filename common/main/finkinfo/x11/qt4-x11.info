@@ -4,9 +4,9 @@ Version: 4.6.0
 Revision: 1
 GCC: 4.0
 Source: http://get.qt.nokia.com/qt/source/qt-everywhere-opensource-src-%v.tar.gz
-Source-MD5: c55b70322916e0c62f438aa1c45d7c5a
+Source-MD5: 2a7b5126f2450d8525af355fc4c12ad6
 PatchFile: %n.patch
-PatchFile-MD5: cd685340f4d39f4c302f46d7501d20dd
+PatchFile-MD5: 0bd43af260dac1f9e9e4c30d43502677
 PatchScript: <<
 	patch -p1 --fuzz=4 < %{PatchFile}
 	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp
