@@ -971,6 +971,21 @@ index ea4842a..ac54854 100644
      if(!ok) {
          QString version = qmake_version();
          if(slash != -1) {
+diff --git a/src/3rdparty/webkit/WebCore/WebCore.pro b/src/3rdparty/webkit/WebCore/WebCore.pro
+index 9239089..7d51c2b 100644
+--- a/src/3rdparty/webkit/WebCore/WebCore.pro
++++ b/src/3rdparty/webkit/WebCore/WebCore.pro
+@@ -50,8 +50,8 @@ unix {
+     lessThan(QT_MINOR_VERSION, 4): QMAKE_PKGCONFIG_REQUIRES += QtXml
+ }
+ 
+-unix:!mac:*-g++*:QMAKE_CXXFLAGS += -ffunction-sections -fdata-sections 
+-unix:!mac:*-g++*:QMAKE_LFLAGS += -Wl,--gc-sections
++unix:!mac:!darwin-*:*-g++*:QMAKE_CXXFLAGS += -ffunction-sections -fdata-sections 
++unix:!mac:!darwin-*:*-g++*:QMAKE_LFLAGS += -Wl,--gc-sections
+ 
+ CONFIG(release):!CONFIG(QTDIR_build) {
+     contains(QT_CONFIG, reduce_exports):CONFIG += hide_symbols
 diff --git a/src/3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp b/src/3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp
 index aedf95a..13736af 100644
 --- a/src/3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp

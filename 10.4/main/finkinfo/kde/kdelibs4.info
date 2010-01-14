@@ -1,7 +1,7 @@
 Info4: <<
 Package: kdelibs4-%type_pkg[kde]
 Version: 4.3.90
-Revision: 1
+Revision: 2
 Description: KDE4 - essential libraries
 Type: kde (x11 mac)
 License: GPL/LGPL
@@ -62,7 +62,7 @@ Source-MD5: 45c42bfcaa5a968a38e20a0599c4e8e9
 SourceDirectory: kdelibs-%v
 PatchScript: sed -e 's,@KDEPREFIX@,%p,g' -e 's,@KDETYPE@,%type_pkg[kde],g' %{PatchFile} | patch -p1
 PatchFile: kdelibs4.patch
-PatchFile-MD5: 06d9ec4cddc95edd744b7ce4851802c0
+PatchFile-MD5: 865e8208d6cc252a595eb8d2797891bb
 
 CompileScript: <<
 #!/bin/sh -ev

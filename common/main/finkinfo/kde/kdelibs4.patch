@@ -267,7 +267,7 @@ diff -Nurd kdelibs-4.3.90/kdecore/kernel/kcmdlineargs.cpp kdelibs-4.3.90-new/kde
              KCmdLineArgs::enable_i18n();
 diff -Nurd kdelibs-4.3.90/kdecore/kernel/kkernel_mac.cpp kdelibs-4.3.90-new/kdecore/kernel/kkernel_mac.cpp
 --- kdelibs-4.3.90/kdecore/kernel/kkernel_mac.cpp	2009-01-06 12:27:48.000000000 -0500
-+++ kdelibs-4.3.90-new/kdecore/kernel/kkernel_mac.cpp	2010-01-13 16:52:47.000000000 -0500
++++ kdelibs-4.3.90-new/kdecore/kernel/kkernel_mac.cpp	2010-01-14 14:21:27.000000000 -0500
 @@ -21,7 +21,7 @@
  
  #include <config.h>
@@ -304,7 +304,7 @@ diff -Nurd kdelibs-4.3.90/kdecore/kernel/kkernel_mac.cpp kdelibs-4.3.90-new/kdec
 -                    kDebug() << externalProc << "unsuccessful:" << qp.readAllStandardError();
 -                    return;
 -                }
-+		qp.start(externalProc, QStringList() << "load" << "@KDEPREFIX@/opt/kde4/@KDETYPE@/share/dbus/launchd/org.finkproject.dbus-session.plist");
++		qp.start(externalProc, QStringList() << "load" << "@KDEPREFIX@/share/dbus/launchd/org.finkproject.dbus-session.plist");
 +		if (!qp.waitForFinished(timeout)) {
 +			kDebug() << "error running" << externalProc << qp.errorString();
 +		}
@@ -355,6 +355,65 @@ diff -Nurd kdelibs-4.3.90/kdecore/kernel/kkernel_mac.h kdelibs-4.3.90-new/kdecor
 -#endif  // Q_OS_MACX
 +#endif  // MAC
  #endif  // KKERNEL_MAC_H
+diff -Nurd kdelibs-4.3.90/kdecore/kernel/kstandarddirs.cpp kdelibs-4.3.90-new/kdecore/kernel/kstandarddirs.cpp
+--- kdelibs-4.3.90/kdecore/kernel/kstandarddirs.cpp	2009-12-10 18:14:42.000000000 -0500
++++ kdelibs-4.3.90-new/kdecore/kernel/kstandarddirs.cpp	2010-01-14 12:46:47.000000000 -0500
+@@ -1215,10 +1215,19 @@
+     QString bundle = path;
+     bundle += ".app/Contents/MacOS/" + bundle.section('/', -1);
+     info.setFile( bundle );
+-    if ( info.exists() && ( ignore || info.isExecutable() )
+-         && ( info.isFile() || info.isSymLink() ) ) {
+-        kDebug(180) << "getBundle(): returning " << bundle;
+-        return bundle;
++    FILE *file;
++    if (file = fopen(info.absoluteFilePath().toUtf8().constData(), "r")) {
++        fclose(file);
++        struct stat _stat;
++        if ((stat(info.absoluteFilePath().toUtf8().constData(), &_stat)) < 0) {
++            return QString();
++        }
++        if ( ignore || (_stat.st_mode & S_IXUSR) ) {
++            if ( ((_stat.st_mode & S_IFMT) == S_IFREG) || ((_stat.st_mode & S_IFMT) == S_IFLNK) ) {
++                kDebug(180) << "getBundle(): returning " << bundle;
++                return bundle;
++            }
++        }
+     }
+     return QString();
+ }
+@@ -1235,6 +1244,23 @@
+ #endif
+     QFileInfo info( path );
+     QFileInfo orig = info;
++#if defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
++    FILE *file;
++    if (file = fopen(orig.absoluteFilePath().toUtf8().constData(), "r")) {
++        fclose(file);
++        struct stat _stat;
++        if ((stat(orig.absoluteFilePath().toUtf8().constData(), &_stat)) < 0) {
++            return QString();
++        }
++        if ( ignoreExecBit || (_stat.st_mode & S_IXUSR) ) {
++            if ( ((_stat.st_mode & S_IFMT) == S_IFREG) || ((_stat.st_mode & S_IFMT) == S_IFLNK) ) {
++                orig.makeAbsolute();
++                return orig.filePath();
++            }
++        }
++    }
++    return QString();
++#else
+     if( info.exists() && info.isSymLink() )
+         info = QFileInfo( info.canonicalFilePath() );
+     if( info.exists() && ( ignoreExecBit || info.isExecutable() ) && info.isFile() ) {
+@@ -1246,6 +1272,7 @@
+     }
+     //kDebug(180) << "checkExecutable(): failed, returning empty string";
+     return QString();
++#endif
+ }
+ 
+ QString KStandardDirs::findExe( const QString& appname,
 diff -Nurd kdelibs-4.3.90/kdecore/localization/klocale.cpp kdelibs-4.3.90-new/kdecore/localization/klocale.cpp
 --- kdelibs-4.3.90/kdecore/localization/klocale.cpp	2009-12-10 18:14:43.000000000 -0500
 +++ kdelibs-4.3.90-new/kdecore/localization/klocale.cpp	2010-01-13 16:48:43.000000000 -0500
@@ -725,7 +784,7 @@ diff -Nurd kdelibs-4.3.90/kinit/Info.plist.template kdelibs-4.3.90-new/kinit/Inf
 +</plist>
 diff -Nurd kdelibs-4.3.90/kinit/helper.cpp kdelibs-4.3.90-new/kinit/helper.cpp
 --- kdelibs-4.3.90/kinit/helper.cpp	1969-12-31 19:00:00.000000000 -0500
-+++ kdelibs-4.3.90-new/kinit/helper.cpp	2010-01-13 16:48:51.000000000 -0500
++++ kdelibs-4.3.90-new/kinit/helper.cpp	2010-01-14 14:15:57.000000000 -0500
 @@ -0,0 +1,42 @@
 +#include <stdio.h>
 +#include <stdlib.h>
@@ -771,7 +830,7 @@ diff -Nurd kdelibs-4.3.90/kinit/helper.cpp kdelibs-4.3.90-new/kinit/helper.cpp
 +
 diff -Nurd kdelibs-4.3.90/kinit/kinit.cpp kdelibs-4.3.90-new/kinit/kinit.cpp
 --- kdelibs-4.3.90/kinit/kinit.cpp	2009-12-31 08:29:16.000000000 -0500
-+++ kdelibs-4.3.90-new/kinit/kinit.cpp	2010-01-13 16:49:51.000000000 -0500
++++ kdelibs-4.3.90-new/kinit/kinit.cpp	2010-01-14 14:15:57.000000000 -0500
 @@ -72,7 +72,7 @@
  #endif
  #endif
@@ -907,6 +966,31 @@ diff -Nurd kdelibs-4.3.90/kinit/kinit.cpp kdelibs-4.3.90-new/kinit/kinit.cpp
        mac_fork_and_reexec_self();
  #else
        if (pipe(d.initpipe) != 0) {
+diff -Nurd kdelibs-4.3.90/kinit/klauncher_main.cpp kdelibs-4.3.90-new/kinit/klauncher_main.cpp
+--- kdelibs-4.3.90/kinit/klauncher_main.cpp	2009-08-28 12:03:07.000000000 -0400
++++ kdelibs-4.3.90-new/kinit/klauncher_main.cpp	2010-01-14 14:15:57.000000000 -0500
+@@ -48,6 +48,10 @@
+ }
+ #endif
+ 
++#if defined(Q_OS_DARWIN) || defined (Q_OS_MAC)
++#include <kkernel_mac.h>
++#endif
++
+ extern "C" KDE_EXPORT int kdemain( int argc, char**argv )
+ {
+ #ifndef Q_WS_WIN
+@@ -61,6 +65,10 @@
+    }
+ #endif
+ 
++#if defined(Q_OS_DARWIN) || defined (Q_OS_MAC)
++   mac_initialize_dbus();
++#endif
++
+    KComponentData componentData("klauncher", "kdelibs4");
+    KGlobal::locale();
+ 
 diff -Nurd kdelibs-4.3.90/kio/kfile/kfsprocess.cpp kdelibs-4.3.90-new/kio/kfile/kfsprocess.cpp
 --- kdelibs-4.3.90/kio/kfile/kfsprocess.cpp	2008-05-21 07:08:03.000000000 -0400
 +++ kdelibs-4.3.90-new/kio/kfile/kfsprocess.cpp	2010-01-13 16:48:43.000000000 -0500
