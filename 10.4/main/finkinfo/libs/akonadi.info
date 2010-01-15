@@ -14,7 +14,7 @@ Depends: <<
 BuildDepends: <<
 	fink (>= 0.29.7-1),
 	automoc-%type_pkg[akonadi],
-	boost1.35.nopython,
+	boost1.35.systempython,
 	cmake (>= 2.6.4-1),
 	kde4-buildenv (>= 4.3.90-1),
 	mysql-unified (>= 5.0-1),
@@ -55,7 +55,7 @@ SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for Akonadi
 	Depends: <<
-		boost1.35.nopython-shlibs,
+		boost1.35.systempython-shlibs,
 		mysql-unified-shlibs (>= 5.0-1),
 		qt4-%type_pkg[akonadi]-gui-shlibs (>= 4.6.0-4),
 		soprano-%type_pkg[akonadi]-shlibs (>= 2.3.70-1)

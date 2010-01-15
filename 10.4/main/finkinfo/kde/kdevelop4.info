@@ -12,7 +12,7 @@ BuildDepends: <<
 	aspell-dev,
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
 	avahi-dev,
-	boost1.35.nopython,
+	boost1.35.systempython,
 	bzip2-dev,
 	cmake (>= 2.6.4-1),
 	cups-dev,

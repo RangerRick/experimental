@@ -15,7 +15,7 @@ BuildDepends: <<
 	aspell-dev,
 	automoc-%type_pkg[kde] (>= 0.9.88-1),
 	avahi-dev,
-	boost1.35.nopython,
+	boost1.35.systempython,
 	bzip2-dev,
 	cmake (>= 2.6.1-2),
 	cups-dev,
@@ -91,6 +91,7 @@ SplitOff: <<
 	Package: %N-shlibs
 	Description: KDE4 - shared libraries for kdevplatform
 	Depends: <<
+		boost1.35.systempython-shlibs,
 		kdelibs4-%type_pkg[kde]-shlibs (>= 4.2.4-1),
 		svn15-shlibs (>= 1.6.0-1),
 	<<
