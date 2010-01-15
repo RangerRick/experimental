@@ -58,8 +58,7 @@ CompileScript: <<
 	esac
 
 	./configure %c
-	perl -pi -e "s,pod2man,$PERLBIN /usr/bin/pod2man,g" doc/Makefile
-	make POD2MAN_EXE="$PERLBIN /usr/bin/pod2man" TCL_SHLIB_LD='${CC} -dynamiclib -Wl,-single_module'
+	make TCL_SHLIB_LD='${CC} -dynamiclib -Wl,-single_module'
 <<
 
 InstallScript: <<
@@ -75,6 +74,7 @@ InstallScript: <<
 	find %i -name RRDp\* -o -name RRDs\* -exec rm -rf {} \;
 	rm -rf %i/share/man/man1/RRDp.1 %i/share/man/man1/RRDs.1
 	install_name_tool -id %p/lib/tclrrd%v.dylib %i/lib/tclrrd%v.dylib
+	find %i -name \*.la | xargs perl -pi -e 's,-L%b/src/.libs,,'
 <<
 DocFiles: CHANGES CONTRIBUTORS COPYING COPYRIGHT NEWS README THREADS TODO
 SplitOff: <<
@@ -90,8 +90,8 @@ SplitOff: <<
 	Suggests: %N
 	Files: lib/librrd*.*.dylib
 	Shlibs: <<
-		%p/lib/librrd.4.dylib    5.0.0 %n (>= 1.3.7-1)
-		%p/lib/librrd_th.4.dylib 5.0.0 %n (>= 1.3.7-1)
+		%p/lib/librrd.4.dylib    6.0.0 %n (>= 1.4.2-1)
+		%p/lib/librrd_th.4.dylib 6.0.0 %n (>= 1.4.2-1)
 	<<
 <<
 SplitOff3: <<
