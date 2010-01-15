@@ -19,7 +19,7 @@ Depends: <<
   qt4-x11-core-shlibs, 
   qt4-x11-designer-shlibs,
   qt4-x11-gui-shlibs,
-  sip-py%type_pkg[python] (>= 4.8.2-1),
+  sip-py%type_pkg[python] (>= 4.10-1),
   x11-shlibs
 <<
 BuildDepends:<<
@@ -31,7 +31,7 @@ BuildDepends:<<
   libpng3,
   qscintilla2-qt4-x11,
   qt4-x11,
-  sip-py%type_pkg[python]-bin (>= 4.8.2-1),
+  sip-py%type_pkg[python]-bin (>= 4.10-1),
   x11-dev
 <<
 Type: python (2.4 2.5 2.6)
