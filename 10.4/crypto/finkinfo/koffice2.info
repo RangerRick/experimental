@@ -32,12 +32,12 @@ BuildDepends: <<
 	gsl (>= 1.7-1),
 	kde4-buildenv (>= 4.3.90-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.3.90-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	kdepimlibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	lcms,
 	libexiv2-0.18,
 	libgettext8-dev,
-	libkdcraw-7-%type_pkg[kde]-dev (>= 4.3.2-1),
+	libkdcraw-7-%type_pkg[kde]-dev (>= 4.3.90-1),
 	libwpd-0.8-dev (>= 0.8.14-1),
 	libxml2,
 	libxslt,
@@ -131,7 +131,7 @@ SplitOff10: <<
 	Depends: <<
 		karbon2-%type_pkg[kde]-shlibs (>= %v-%r),
 		kdebase4-%type_pkg[kde]-shlibs (>= 4.3.90-1),
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.2-1),
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.90-1),
 		kdepimlibs4-%type_pkg[kde]-shlibs,
 		lcms-shlibs,
 		libwpd-0.8-shlibs (>= 0.8.14-1),
@@ -309,7 +309,7 @@ SplitOff4: <<
 		glew-shlibs (>= 1.5.1-1),
 		graphicsmagick-shlibs (>= 1.1-1),
 		libexiv2-shlibs-0.18,
-		libkdcraw-7-%type_pkg[kde]-shlibs (>= 4.3.2-1),
+		libkdcraw-7-%type_pkg[kde]-shlibs (>= 4.3.90-1),
 		poppler2-qt4-%type_pkg[kde]-shlibs (>= 0.6.4-4),
 		%N-base (>= %v-%r)
 	<<

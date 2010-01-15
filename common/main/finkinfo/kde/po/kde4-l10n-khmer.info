@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-khmer-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 
 Description: KDE4 - languages for Khmer
@@ -24,10 +24,10 @@ BuildDepends: <<
 	(%type_pkg[kde] = x11) xfonts-intl,
 <<
 
-Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-km-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-km-%v.tar.bz2
 
 SourceDirectory: kde-l10n-km-%v
-Source-MD5: 81715c650925f13710a8d1b392bebe12
+Source-MD5: 5b21491055e6c1e7516bf6f456a308f8
 
 CompileScript: <<
 #!/bin/sh -ev

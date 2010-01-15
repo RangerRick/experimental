@@ -23,17 +23,17 @@ BuildDepends: <<
 	gtk+2-dev (>= 2.14.7-1),
 	kde4-buildenv (>= 4.3.90-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.3.90-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	kdepimlibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	libjasper.1,
 	libjpeg,
 	libgettext8-dev,
 	libgphoto2,
 	libgpod4,
-	libkdcraw-7-%type_pkg[kde]-dev (>= 4.3.2-1),
-	libkexiv2-7-%type_pkg[kde]-dev (>= 4.3.2-1),
-	libkipi-6-%type_pkg[kde]-dev (>= 4.3.2-1),
-	libksane-0-%type_pkg[kde]-dev (>= 4.3.2-1),
+	libkdcraw-7-%type_pkg[kde]-dev (>= 4.3.90-1),
+	libkexiv2-7-%type_pkg[kde]-dev (>= 4.3.90-1),
+	libkipi-6-%type_pkg[kde]-dev (>= 4.3.90-1),
+	libksane-0-%type_pkg[kde]-dev (>= 4.3.90-1),
 	libpng3,
 	libtiff,
 	libxml2,
@@ -81,10 +81,10 @@ InstallScript: <<
 SplitOff: <<
 	Package: %N-shlibs
 	Depends: <<
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.2-1),
-		libkdcraw-7-%type_pkg[kde]-shlibs (>= 4.3.2-1),
-		libkexiv2-7-%type_pkg[kde]-shlibs (>= 4.3.2-1),
-		libkipi-6-%type_pkg[kde]-shlibs (>= 4.3.2-1)
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.90-1),
+		libkdcraw-7-%type_pkg[kde]-shlibs (>= 4.3.90-1),
+		libkexiv2-7-%type_pkg[kde]-shlibs (>= 4.3.90-1),
+		libkipi-6-%type_pkg[kde]-shlibs (>= 4.3.90-1)
 	<<
 	Files: opt/kde4/%type_pkg[kde]/lib/libkipiplugins.1*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkipiplugins.1.dylib 1.0.0 %n (>= 0.2.0-2)

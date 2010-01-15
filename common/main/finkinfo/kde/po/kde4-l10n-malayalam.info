@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-malayalam-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 
 Description: KDE4 - languages for Malayalam
@@ -24,10 +24,10 @@ BuildDepends: <<
 	(%type_pkg[kde] = x11) xfonts-intl,
 <<
 
-Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-ml-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-ml-%v.tar.bz2
 
 SourceDirectory: kde-l10n-ml-%v
-Source-MD5: f67feb93c8623950e764e2462797194c
+Source-MD5: 92f18af7d950f3c527fee54ecf10cfe8
 
 CompileScript: <<
 #!/bin/sh -ev

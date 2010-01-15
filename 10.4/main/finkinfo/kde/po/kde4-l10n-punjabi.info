@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-punjabi-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 Description: KDE4 - languages for Punjabi
 Type: kde (x11 mac)
@@ -8,7 +8,7 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <kde4-l10n-punjabi@fink.raccoonfink.com>
 
 Depends: <<
-	kdelibs4-%type_pkg[kde] (>= 4.3.2-1),
+	kdelibs4-%type_pkg[kde] (>= 4.3.90-1),
 	(%type_pkg[kde] = x11) xfonts-intl
 <<
 BuildDepends: <<
@@ -16,13 +16,13 @@ BuildDepends: <<
 	cmake (>= 2.6.4-1),
 	fink (>= 0.29.7-1),
 	gettext-tools-0.17,
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	libgettext8-dev,
 	(%type_pkg[kde] = x11) xfonts-intl
 <<
 
-Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-pa-%v.tar.bz2
-Source-MD5: c59e70fc4a903465e5c249001d0da9a9
+Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-pa-%v.tar.bz2
+Source-MD5: 0728e62e782437196ae9ccec03d87125
 SourceDirectory: kde-l10n-pa-%v
 
 CompileScript: <<

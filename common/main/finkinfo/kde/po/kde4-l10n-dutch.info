@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-dutch-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 
 Description: KDE4 - languages for Dutch
@@ -24,10 +24,10 @@ BuildDepends: <<
 	(%type_pkg[kde] = x11) xfonts-intl,
 <<
 
-Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-nl-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-nl-%v.tar.bz2
 
 SourceDirectory: kde-l10n-nl-%v
-Source-MD5: dcfae722fdffbf206f1eca58351929b8
+Source-MD5: 5d5fe6c1658c7eedcfcd62d507725eda
 
 CompileScript: <<
 #!/bin/sh -ev

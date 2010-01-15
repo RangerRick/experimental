@@ -1,7 +1,7 @@
 Info4: <<
 Package: kdeaccessibility4-x11
 Type: kde (x11)
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 Description: KDE4 - accessibility software
 License: GPL/LGPL
@@ -17,7 +17,7 @@ This is the set of tools created by the KDEAP.
 <<
 
 Source: mirror:kde:stable/%v/src/kdeaccessibility-%v.tar.bz2
-Source-MD5: 52ab06324f1d47ce5d14638e74b206ed
+Source-MD5: 7671a58404a6eabb3a2de957bb1861b2
 
 Depends: <<
 	kmag4-%type_pkg[kde] (>= %v-%r),

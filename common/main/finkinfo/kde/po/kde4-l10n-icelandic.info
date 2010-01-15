@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-icelandic-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 
 Description: KDE4 - languages for Icelandic
@@ -24,10 +24,10 @@ BuildDepends: <<
 	(%type_pkg[kde] = x11) xfonts-intl,
 <<
 
-Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-is-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-is-%v.tar.bz2
 
 SourceDirectory: kde-l10n-is-%v
-Source-MD5: 900a15881c7377f7921bbb0df3caf729
+Source-MD5: cc0d0a90c3d60ded8ccef7d2ac713505
 
 CompileScript: <<
 #!/bin/sh -ev

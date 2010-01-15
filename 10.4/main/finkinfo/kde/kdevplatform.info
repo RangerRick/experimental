@@ -9,7 +9,7 @@ Maintainer: Benjamin Reed <kdevplatform@fink.racoonfink.com>
 
 Depends: <<
 	%N-shlibs (= %v-%r),
-	kdelibs4-%type_pkg[kde] (>= 4.3.2-1)
+	kdelibs4-%type_pkg[kde] (>= 4.3.90-1)
 <<
 BuildDepends: <<
 	aspell-dev,
@@ -28,7 +28,7 @@ BuildDepends: <<
 	giflib,
 	hspell,
 	kde4-buildenv (>= 4.3.90-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	libapr.0-dev,
 	libaprutil.0-dev,
 	libgettext8-dev,
@@ -81,7 +81,7 @@ SplitOff: <<
 	Package: %N-shlibs
 	Description: KDE4 - shared libraries for kdevplatform
 	Depends: <<
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.2-1),
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.90-1),
 		svn15-shlibs (>= 1.6.0-1)
 	<<
 	DocFiles: COPYING*

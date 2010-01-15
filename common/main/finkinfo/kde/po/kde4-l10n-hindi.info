@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-hindi-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 
 Description: KDE4 - languages for Hindi
@@ -24,10 +24,10 @@ BuildDepends: <<
 	(%type_pkg[kde] = x11) xfonts-intl,
 <<
 
-Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-hi-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-hi-%v.tar.bz2
 
 SourceDirectory: kde-l10n-hi-%v
-Source-MD5: bc4225d8eeb2c648354eec1a79bb3558
+Source-MD5: 6cf4f3755ebbfb7780148dd1c07421e0
 
 CompileScript: <<
 #!/bin/sh -ev

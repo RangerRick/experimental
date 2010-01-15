@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
-my $KDEVERSION              = '4.3.2';
-my $KDEDIRECTORY            = 'stable/%v/src/';
+my $KDEVERSION              = '4.3.90';
+my $KDEDIRECTORY            = 'unstable/%v/src/';
 my $KDERELNUM               = 1;
 my $KDEI18NRELNUM           = 1;
 my $SOURCEDIRECTORYAPPEND   = "";

@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-korean-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 Description: KDE4 - languages for Korean
 Type: kde (x11 mac)
@@ -8,7 +8,7 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <kde4-l10n-korean@fink.raccoonfink.com>
 
 Depends: <<
-	kdelibs4-%type_pkg[kde] (>= 4.3.2-1),
+	kdelibs4-%type_pkg[kde] (>= 4.3.90-1),
 	(%type_pkg[kde] = x11) xfonts-intl
 <<
 BuildDepends: <<
@@ -16,13 +16,13 @@ BuildDepends: <<
 	cmake (>= 2.6.4-1),
 	fink (>= 0.29.7-1),
 	gettext-tools-0.17,
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	libgettext8-dev,
 	(%type_pkg[kde] = x11) xfonts-intl
 <<
 
-Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-ko-%v.tar.bz2
-Source-MD5: 7d647e695d3d2876a7e13505b031d5db
+Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-ko-%v.tar.bz2
+Source-MD5: f1b981347a37f8c3a3df3405e6f03064
 SourceDirectory: kde-l10n-ko-%v
 
 CompileScript: <<

@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-galician-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 
 Description: KDE4 - languages for Galician
@@ -24,10 +24,10 @@ BuildDepends: <<
 	(%type_pkg[kde] = x11) xfonts-intl,
 <<
 
-Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-gl-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-gl-%v.tar.bz2
 
 SourceDirectory: kde-l10n-gl-%v
-Source-MD5: a8056265e3838efca737abd6986718be
+Source-MD5: 519b2c9980ab1caee594a483416205fe
 
 CompileScript: <<
 #!/bin/sh -ev

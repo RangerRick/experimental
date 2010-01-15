@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-danish-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 
 Description: KDE4 - languages for Danish
@@ -24,10 +24,10 @@ BuildDepends: <<
 	(%type_pkg[kde] = x11) xfonts-intl,
 <<
 
-Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-da-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-da-%v.tar.bz2
 
 SourceDirectory: kde-l10n-da-%v
-Source-MD5: 5cd8285c55d39c0d74f74bdda3634f69
+Source-MD5: ae7b837711f8be092573ba5e36a755a2
 
 CompileScript: <<
 #!/bin/sh -ev

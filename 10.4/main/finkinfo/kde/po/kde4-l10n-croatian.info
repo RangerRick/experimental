@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-croatian-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 Description: KDE4 - languages for Croatian
 Type: kde (x11 mac)
@@ -8,7 +8,7 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <kde4-l10n-croatian@fink.raccoonfink.com>
 
 Depends: <<
-	kdelibs4-%type_pkg[kde] (>= 4.3.2-1),
+	kdelibs4-%type_pkg[kde] (>= 4.3.90-1),
 	(%type_pkg[kde] = x11) xfonts-intl
 <<
 BuildDepends: <<
@@ -16,13 +16,13 @@ BuildDepends: <<
 	cmake (>= 2.6.4-1),
 	fink (>= 0.29.7-1),
 	gettext-tools-0.17,
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	libgettext8-dev,
 	(%type_pkg[kde] = x11) xfonts-intl
 <<
 
-Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-hr-%v.tar.bz2
-Source-MD5: 2628f02cb3e1fd20d678437101470645
+Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-hr-%v.tar.bz2
+Source-MD5: 3b0dccd7ad2e038ae32227a9af56d578
 SourceDirectory: kde-l10n-hr-%v
 
 CompileScript: <<

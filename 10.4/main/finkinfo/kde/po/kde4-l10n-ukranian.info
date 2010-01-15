@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-ukranian-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 Description: KDE4 - languages for Ukranian
 Type: kde (x11 mac)
@@ -8,7 +8,7 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <kde4-l10n-ukranian@fink.raccoonfink.com>
 
 Depends: <<
-	kdelibs4-%type_pkg[kde] (>= 4.3.2-1),
+	kdelibs4-%type_pkg[kde] (>= 4.3.90-1),
 	(%type_pkg[kde] = x11) xfonts-intl
 <<
 BuildDepends: <<
@@ -16,13 +16,13 @@ BuildDepends: <<
 	cmake (>= 2.6.4-1),
 	fink (>= 0.29.7-1),
 	gettext-tools-0.17,
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	libgettext8-dev,
 	(%type_pkg[kde] = x11) xfonts-intl
 <<
 
-Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-uk-%v.tar.bz2
-Source-MD5: cdaa98c18c7c484fa1133e35e188f18d
+Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-uk-%v.tar.bz2
+Source-MD5: 9317e00eba316085487dedbb6c5693fa
 SourceDirectory: kde-l10n-uk-%v
 
 CompileScript: <<

@@ -36,7 +36,7 @@ BuildDepends: <<
 	gnokii3-dev,
 	kde4-buildenv (>= 4.3.90-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.3.90-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	kdepimlibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	libassuan,
 	libgettext8-dev,
@@ -47,7 +47,7 @@ BuildDepends: <<
 	pilot-link09,
 	pkgconfig (>= 0.22-3),
 	qca2-%type_pkg[kde] (>= 2.0.2-1),
-	qgpgme1-%type_pkg[kde] (>= 4.3.2-1),
+	qgpgme1-%type_pkg[kde] (>= 4.3.90-1),
 	qt4-%type_pkg[kde] (>= 4.6.0-4),
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	speex3,
@@ -102,7 +102,7 @@ SplitOff: <<
 SplitOff11: <<
 	Package: libmimelib4-%type_pkg[kde]-shlibs
 	Description: KDE4 - MIME shared libraries
-	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.2-1)
+	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.90-1)
 	Files: opt/kde4/%type_pkg[kde]/lib/libmimelib.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libmimelib.4.dylib 4.0.0 %n (>= 4.2.4-1)
 <<
@@ -756,7 +756,7 @@ SplitOff6: <<
 SplitOff7: <<
 	Package: libkpgp4-%type_pkg[kde]-shlibs
 	Description: KDE4 - PGP shared libraries
-	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.2-1)
+	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.90-1)
 	Files: opt/kde4/%type_pkg[kde]/lib/libkpgp.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkpgp.4.dylib 4.0.0 %n (>= 4.2.4-1)
 <<
@@ -773,7 +773,7 @@ SplitOff8: <<
 SplitOff9: <<
 	Package: libksieve4-%type_pkg[kde]-shlibs
 	Description: KDE4 - sieve mail filter shared libraries
-	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.2-1)
+	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.90-1)
 	Files: opt/kde4/%type_pkg[kde]/lib/libksieve.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libksieve.4.dylib 4.0.0 %n (>= 4.2.4-1)
 <<

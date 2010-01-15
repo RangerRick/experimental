@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-tajik-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 
 Description: KDE4 - languages for Tajik
@@ -24,10 +24,10 @@ BuildDepends: <<
 	(%type_pkg[kde] = x11) xfonts-intl,
 <<
 
-Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-tg-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-tg-%v.tar.bz2
 
 SourceDirectory: kde-l10n-tg-%v
-Source-MD5: c9d0fad8838646d324390d60ff61ae3f
+Source-MD5: 9c0f7fc3c8d0442b3d00b7e956598a57
 
 CompileScript: <<
 #!/bin/sh -ev

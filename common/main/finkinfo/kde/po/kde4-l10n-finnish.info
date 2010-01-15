@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-finnish-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 
 Description: KDE4 - languages for Finnish
@@ -24,10 +24,10 @@ BuildDepends: <<
 	(%type_pkg[kde] = x11) xfonts-intl,
 <<
 
-Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-fi-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-fi-%v.tar.bz2
 
 SourceDirectory: kde-l10n-fi-%v
-Source-MD5: 9bfd2944045e87b005f6c67e6f70b228
+Source-MD5: d43da81f5cfab69358a8a632c97f3a80
 
 CompileScript: <<
 #!/bin/sh -ev

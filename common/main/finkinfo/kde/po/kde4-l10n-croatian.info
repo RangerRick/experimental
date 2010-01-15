@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-croatian-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 
 Description: KDE4 - languages for Croatian
@@ -24,10 +24,10 @@ BuildDepends: <<
 	(%type_pkg[kde] = x11) xfonts-intl,
 <<
 
-Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-hr-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-hr-%v.tar.bz2
 
 SourceDirectory: kde-l10n-hr-%v
-Source-MD5: 2628f02cb3e1fd20d678437101470645
+Source-MD5: 3b0dccd7ad2e038ae32227a9af56d578
 
 CompileScript: <<
 #!/bin/sh -ev

@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-marathi-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 
 Description: KDE4 - languages for Marathi
@@ -24,10 +24,10 @@ BuildDepends: <<
 	(%type_pkg[kde] = x11) xfonts-intl,
 <<
 
-Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-mr-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-mr-%v.tar.bz2
 
 SourceDirectory: kde-l10n-mr-%v
-Source-MD5: d5bce17fb1035cd120c9ae010210ddf9
+Source-MD5: f250fc79b36774dc451c3861ec2a60d2
 
 CompileScript: <<
 #!/bin/sh -ev

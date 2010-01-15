@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-chinese-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 
 Description: KDE4 - languages for Chinese
@@ -24,10 +24,10 @@ BuildDepends: <<
 	(%type_pkg[kde] = x11) xfonts-intl,
 <<
 
-Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-zh_TW-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-zh_TW-%v.tar.bz2
 
 SourceDirectory: kde-l10n-zh_TW-%v
-Source-MD5: ccf254b30c4286a7980aebf2e3b98cc1
+Source-MD5: 668de0a7cb2a8a630d45e082393bcf02
 
 CompileScript: <<
 #!/bin/sh -ev

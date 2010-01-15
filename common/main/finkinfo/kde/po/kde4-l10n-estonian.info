@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-estonian-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 
 Description: KDE4 - languages for Estonian
@@ -24,10 +24,10 @@ BuildDepends: <<
 	(%type_pkg[kde] = x11) xfonts-intl,
 <<
 
-Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-et-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-et-%v.tar.bz2
 
 SourceDirectory: kde-l10n-et-%v
-Source-MD5: 7528c8189ed344e129ca87474c908d7b
+Source-MD5: c15128a707e656c72a649dd1a0afd4d9
 
 CompileScript: <<
 #!/bin/sh -ev

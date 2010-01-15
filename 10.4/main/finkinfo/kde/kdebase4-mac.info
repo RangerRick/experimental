@@ -10,7 +10,7 @@ Maintainer: Benjamin Reed <kdebase4@fink.racoonfink.com>
 Depends: <<
 	%N-shlibs (= %v-%r),
 	kdebase4-runtime-%type_pkg[kde] (>= 4.3.90-1),
-	kdelibs4-%type_pkg[kde] (>= 4.3.2-1),
+	kdelibs4-%type_pkg[kde] (>= 4.3.90-1),
 	libknotificationitem1-%type_pkg[kde] (>= 4.3.4-1),
 	strigi-gui-%type_pkg[kde] (>= 0.6.5-1)
 <<
@@ -32,7 +32,7 @@ BuildDepends: <<
 	glib2-dev (>= 2.18.4-1),
 	kde4-buildenv (>= 4.3.90-1),
 	kdebase4-runtime-%type_pkg[kde] (>= 4.3.90-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	libgettext8-dev,
 	libidn,
 	libjasper.1,

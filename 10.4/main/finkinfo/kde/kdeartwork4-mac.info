@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdeartwork4-mac
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 Description: KDE4 - Styles and themes
 Type: kde (mac)
@@ -26,7 +26,7 @@ BuildDepends: <<
 	glib2-dev (>= 2.18.4-1),
 	kde4-buildenv (>= 4.3.90-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.3.90-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	libgettext8-dev,
 	pkgconfig (>= 0.22-3),
 	qt4-%type_pkg[kde] (>= 4.6.0-4),
@@ -39,7 +39,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdeartwork-%v.tar.bz2
-Source-MD5: e4e51be6fe0eaf1290604884a64d28a3
+Source-MD5: f5954a7a6fd0b99db7a6c2cbd30b5547
 
 CompileScript: <<
 #!/bin/sh -ev

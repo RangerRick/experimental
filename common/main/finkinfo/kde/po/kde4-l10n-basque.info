@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-basque-%type_pkg[kde]
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 
 Description: KDE4 - languages for Basque
@@ -24,10 +24,10 @@ BuildDepends: <<
 	(%type_pkg[kde] = x11) xfonts-intl,
 <<
 
-Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-eu-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-eu-%v.tar.bz2
 
 SourceDirectory: kde-l10n-eu-%v
-Source-MD5: c313a881d5d4275e78da42624c7d2b72
+Source-MD5: 9ee78ac2a2dae194ed79480b2e601584
 
 CompileScript: <<
 #!/bin/sh -ev

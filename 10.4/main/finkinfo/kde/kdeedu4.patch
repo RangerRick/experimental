@@ -1,64 +1,22 @@
-diff -Nurd kdeedu-4.3.1/kstars/kstars/binfilehelper.cpp kdeedu-4.3.1-new/kstars/kstars/binfilehelper.cpp
---- kdeedu-4.3.1/kstars/kstars/binfilehelper.cpp	2009-08-03 18:38:17.000000000 -0400
-+++ kdeedu-4.3.1-new/kstars/kstars/binfilehelper.cpp	2009-09-23 21:47:39.000000000 -0400
-@@ -37,6 +37,10 @@
- #include <sys/endian.h>
- #define bswap_16(x) bswap16(x)
- #define bswap_32(x) bswap32(x)
-+#elif defined(__APPLE__)
-+#include <libkern/OSByteOrder.h>
-+#define bswap_16(x) OSSwapInt16(x)
-+#define bswap_32(x) OSSwapInt32(x)
- #else
- #include <byteswap.h>
- #endif
-diff -Nurd kdeedu-4.3.1/kstars/kstars/skycomponents/deepstarcomponent.cpp kdeedu-4.3.1-new/kstars/kstars/skycomponents/deepstarcomponent.cpp
---- kdeedu-4.3.1/kstars/kstars/skycomponents/deepstarcomponent.cpp	2009-08-03 18:38:17.000000000 -0400
-+++ kdeedu-4.3.1-new/kstars/kstars/skycomponents/deepstarcomponent.cpp	2009-09-23 20:28:19.000000000 -0400
-@@ -52,6 +52,10 @@
- #include <sys/endian.h>
- #define bswap_16(x) bswap16(x)
- #define bswap_32(x) bswap32(x)
-+#elif defined(__APPLE__)
-+#include <libkern/OSByteOrder.h>
-+#define bswap_16(x) OSSwapInt16(x) 
-+#define bswap_32(x) OSSwapInt32(x)
- #else
- #include <byteswap.h>
- #endif
-diff -Nurd kdeedu-4.3.1/kstars/kstars/skycomponents/starcomponent.cpp kdeedu-4.3.1-new/kstars/kstars/skycomponents/starcomponent.cpp
---- kdeedu-4.3.1/kstars/kstars/skycomponents/starcomponent.cpp	2009-08-03 18:38:17.000000000 -0400
-+++ kdeedu-4.3.1-new/kstars/kstars/skycomponents/starcomponent.cpp	2009-09-23 20:28:19.000000000 -0400
-@@ -42,6 +42,10 @@
- #include <sys/endian.h>
- #define bswap_16(x) bswap16(x)
- #define bswap_32(x) bswap32(x)
-+#elif defined(__APPLE__)
-+#include <libkern/OSByteOrder.h>
-+#define bswap_16(x) OSSwapInt16(x)
-+#define bswap_32(x) OSSwapInt32(x)
- #else
- #include <byteswap.h>
- #endif
-diff -Nurd kdeedu-4.3.1/parley/src/practiceold/practicedialog.cpp kdeedu-4.3.1-new/parley/src/practiceold/practicedialog.cpp
---- kdeedu-4.3.1/parley/src/practiceold/practicedialog.cpp	2009-05-14 13:26:40.000000000 -0400
-+++ kdeedu-4.3.1-new/parley/src/practiceold/practicedialog.cpp	2009-09-23 20:18:58.000000000 -0400
-@@ -34,7 +34,6 @@
- #include <Phonon/MediaObject>
- #include <Phonon/Path>
- #include <Phonon/AudioOutput>
--#include <Phonon/Global>
- #include <QTextEdit>
- #include <QRadioButton>
- #include <QCloseEvent>
-diff -Nurd kdeedu-4.3.1/parley/src/practiceold/showsolutiondialog.cpp kdeedu-4.3.1-new/parley/src/practiceold/showsolutiondialog.cpp
---- kdeedu-4.3.1/parley/src/practiceold/showsolutiondialog.cpp	2008-07-21 20:03:55.000000000 -0400
-+++ kdeedu-4.3.1-new/parley/src/practiceold/showsolutiondialog.cpp	2009-09-23 20:18:58.000000000 -0400
-@@ -20,7 +20,6 @@
- #include <Phonon/MediaObject>
- #include <Phonon/Path>
- #include <Phonon/AudioOutput>
--#include <Phonon/Global>
+diff -Nurd kdeedu-4.3.90/cantor/src/CMakeLists.txt kdeedu-4.3.90-new/cantor/src/CMakeLists.txt
+--- kdeedu-4.3.90/cantor/src/CMakeLists.txt	2009-12-10 18:14:14.000000000 -0500
++++ kdeedu-4.3.90-new/cantor/src/CMakeLists.txt	2010-01-14 23:51:22.000000000 -0500
+@@ -3,6 +3,9 @@
+ #########################################################################
+ add_subdirectory(lib)
  
- ShowSolutionDialog::ShowSolutionDialog(TestEntry* entry, QWidget* parent)
-     :KDialog(parent)
++set(GENERIC_LIB_VERSION "0.0.1")
++set(GENERIC_LIB_SOVERSION "1")
++
+ include_directories( lib ${CMAKE_CURRENT_BINARY_DIR}/lib)
+ if(LIBSPECTRE_FOUND)
+    include_directories(${LIBSPECTRE_INCLUDE_DIR})
+@@ -16,6 +19,8 @@
+ target_link_libraries( cantor_config ${KDE4_KDEUI_LIBS} ${KDE4_KPARTS_LIBS} ${KDE4_KNEWSTUFF2_LIBS} )
+ install( TARGETS cantor_config  ${INSTALL_TARGETS_DEFAULT_ARGS} )
+ 
++set_target_properties( cantor_config PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
++
+ set(cantor_SRCS
+    main.cpp
+    cantor.cpp

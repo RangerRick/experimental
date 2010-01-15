@@ -33,7 +33,7 @@ BuildDepends: <<
 	gmp,
 	kde4-buildenv (>= 4.3.90-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.3.90-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	libarchive,
 	libgettext8-dev,
 	libzip1,

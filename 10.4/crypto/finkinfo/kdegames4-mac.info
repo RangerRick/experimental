@@ -54,7 +54,7 @@ BuildDepends: <<
 	glib2-dev (>= 2.18.4-1),
 	kde4-buildenv (>= 4.3.90-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.3.90-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	libgettext8-dev,
 	pkgconfig (>= 0.22-3),
 	qca2-%type_pkg[kde] (>= 2.0.2-1),
@@ -654,7 +654,7 @@ SplitOff40: <<
 SplitOff41: <<
 	Package: %N-base-shlibs
 	Description: KDE4 - kdegames base shared libraries
-	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.2-1)
+	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.90-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/libkdegames.5*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkggzgames.4*.dylib
