@@ -14,7 +14,7 @@ A collection of fun and educational apps for KDE.
 Source: mirror:kde:stable/%v/src/kdeedu-%v.tar.bz2
 Source-MD5: 438077bf09f6f6e2843014f8ad2d027a
 PatchFile: kdeedu4.patch
-PatchFile-MD5: 8f15d6679a926053eb844e56cb993d4b
+PatchFile-MD5: 42365374a43d1dab3ac379b9ca7a1363
 
 Depends: <<
 	blinken4-%type_pkg[kde]    (>= %v-%r),
@@ -37,10 +37,8 @@ Depends: <<
 	parley4-%type_pkg[kde]     (>= %v-%r),
 <<
 
-# xplanet r-base eigen2 openbabel-dev
 BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.88-1),
-	boost1.35.systempython,
 	cfitsio,
 	cmake (>= 2.6.3-1),
 	dbus-dev (>= 1.2.12-1),
@@ -49,6 +47,7 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	glib2-dev (>= 2.14.0-1),
 	gmm,
+	gpsd (>= 2.35-1),
 	gsl,
 	kde4-buildenv (>= 4.2-3),
 	kdebase4-%type_pkg[kde]-dev (>= 4.2.0-1),
@@ -73,12 +72,12 @@ CompileScript: <<
 
 	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[kde]"
 	. %p/sbin/kde4-buildenv.sh
-	export CPPFLAGS="-F%p/Library/Frameworks $CPPFLAGS"
-	export LDFLAGS="-F%p/Library/Frameworks $CPPFLAGS"
+	export CMAKE_INCLUDE_PATH="%p/Library/Frameworks/R.framework/Headers:$CMAKE_INCLUDE_PATH"
+	export CMAKE_LIBRARY_PATH="%p/Library/Frameworks/R.framework/Libraries:$CMAKE_LIBRARY_PATH"
 
 	mkdir -p build
 	pushd build
-		cmake $KDE4_CMAKE_ARGS ..
+		cmake -DR_INCLUDEDIR="%p/Library/Frameworks/R.framework/Headers" -DXPLANET_EXECUTABLE=%p/bin/xplanet $KDE4_CMAKE_ARGS ..
 		make VERBOSE=1
 	popd
 <<
@@ -371,7 +370,10 @@ SplitOff11: <<
 SplitOff12: <<
 	Package: kstars4-%type_pkg[kde]
 	Description: KDE4 - desktop planetarium
-	Depends: %N-base (>= %v-%r)
+	Depends: <<
+		xplanet,
+		%N-base (>= %v-%r),
+	<<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kstars*
 		opt/kde4/%type_pkg[kde]/lib/libSatLib.4*.dylib
@@ -452,7 +454,10 @@ SplitOff15: <<
 SplitOff16: <<
 	Package: marble4-%type_pkg[kde]
 	Description: KDE4 - virtual globe and world atlas
-	Depends: %N-base (>= %v-%r)
+	Depends: <<
+		gpsd-shlibs (>= 2.35-1),
+		%N-base (>= %v-%r),
+	<<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/geodatatest*
 		opt/kde4/%type_pkg[kde]/bin/marble*
@@ -555,7 +560,6 @@ SplitOff30: <<
 	Package: %N-base-shlibs
 	Description: KDE4 - base kdeedu shared libraries
 	Depends: <<
-		boost1.35.systempython-shlibs,
 		kdebase4-%type_pkg[kde]-shlibs (>= 4.2.4-1),
 	<<
 	Files: <<
