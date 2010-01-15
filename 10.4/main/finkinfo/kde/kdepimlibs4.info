@@ -17,7 +17,7 @@ BuildDepends: <<
 	akonadi-%type_pkg[kde]-dev (>= 1.2.90-1),
 	aspell-dev,
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
-	boost1.35.systempython,
+	boost1.41.cmake,
 	bzip2-dev,
 	cmake (>= 2.6.4-1),
 	cups-dev,
@@ -81,7 +81,7 @@ SplitOff: <<
 	Description: KDE4 - PIM support shared libraries
 	Depends: <<
 		akonadi-%type_pkg[kde]-shlibs (>= 1.2.90-1),
-		boost1.35.systempython-shlibs,
+		boost1.41.cmake-shlibs,
 		cyrus-sasl2-shlibs,
 		kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.2-1),
 		libical-shlibs,
