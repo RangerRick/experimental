@@ -14,7 +14,7 @@ BuildDepends: <<
 	glib2-dev (>= 2.14.0-1),
 	glitz,
 	intltool40,
-	libgettext3-dev,
+	libgettext8-dev,
 	libiconv-dev,
 	libpng3,
 	pango1-xft2-ft219-dev (>= 1.20.5-1),
@@ -41,7 +41,7 @@ ConfigureParams: <<
 CompileScript: <<
 #!/bin/sh -ex
 
-	export PKG_CONFIG_PATH="%p/lib/freetype219/lib/pkgconfig:%p/lib/pango-ft219/lib/pkgconfig:$PKG_CONFIG_PATH" lt_cv_sys_max_cmd_len=65536 PERLBIN="/usr/bin/perl"
+	export PKG_CONFIG_PATH="%p/lib/freetype219/lib/pkgconfig:%p/lib/pango-ft219/lib/pkgconfig:$PKG_CONFIG_PATH" lt_cv_sys_max_cmd_len=65536 PERLBIN="/usr/bin/perl" POD2MAN="/usr/bin/pod2man" POD2HTML="/usr/bin/pod2html"
 
 	case `sw_vers -productVersion` in
 		10.[01234]*)

@@ -13,6 +13,10 @@ BuildDepends: <<
 Replaces: squid (<< %v-%r), squid-ssl (<< %v-%r)
 PatchFile: %n.patch
 PatchFile-MD5: 0764b028ddccf6969711548dfac0d1b8
+PatchScript: <<
+	%{default_script}
+	perl -pi -e 's,-Werror,,' configure
+<<
 
 NoSetCPPFLAGS: true
 SetCPPFLAGS: -I%p/lib/system-openssl/include -I%p/include
