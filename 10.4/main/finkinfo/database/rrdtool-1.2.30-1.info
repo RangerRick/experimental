@@ -8,11 +8,12 @@ Maintainer: Benjamin Reed <rrdtool@fink.racoonfink.com>
 Depends: librrd2-shlibs (>= %v-%r)
 BuildDepends: <<
 	freetype219,
+	intltool40,
 	libart2,
 	libpng3,
 	tcltk,
 	tcltk-dev,
-	perl580-core | perl581-core | perl584-core | perl586-core | perl588-core
+	perl580-core | perl581-core | perl584-core | perl586-core | perl588-core | perl5100-core
 <<
 Conflicts: %N-bin
 Replaces: %N-bin

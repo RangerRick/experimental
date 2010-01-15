@@ -1,12 +1,12 @@
 diff -Nurd kdeedu-4.3.90/cantor/src/CMakeLists.txt kdeedu-4.3.90-new/cantor/src/CMakeLists.txt
 --- kdeedu-4.3.90/cantor/src/CMakeLists.txt	2009-12-10 18:14:14.000000000 -0500
-+++ kdeedu-4.3.90-new/cantor/src/CMakeLists.txt	2010-01-14 23:51:22.000000000 -0500
++++ kdeedu-4.3.90-new/cantor/src/CMakeLists.txt	2010-01-15 12:31:13.000000000 -0500
 @@ -3,6 +3,9 @@
  #########################################################################
  add_subdirectory(lib)
  
 +set(GENERIC_LIB_VERSION "0.0.1")
-+set(GENERIC_LIB_SOVERSION "1")
++set(GENERIC_LIB_SOVERSION "0")
 +
  include_directories( lib ${CMAKE_CURRENT_BINARY_DIR}/lib)
  if(LIBSPECTRE_FOUND)
@@ -20,6 +20,16 @@ diff -Nurd kdeedu-4.3.90/cantor/src/CMakeLists.txt kdeedu-4.3.90-new/cantor/src/
  set(cantor_SRCS
     main.cpp
     cantor.cpp
+diff -Nurd kdeedu-4.3.90/cantor/src/lib/CMakeLists.txt kdeedu-4.3.90-new/cantor/src/lib/CMakeLists.txt
+--- kdeedu-4.3.90/cantor/src/lib/CMakeLists.txt	2009-10-26 05:15:03.000000000 -0400
++++ kdeedu-4.3.90-new/cantor/src/lib/CMakeLists.txt	2010-01-15 12:31:32.000000000 -0500
+@@ -1,5 +1,5 @@
+ set(GENERIC_LIB_VERSION "0.0.1")
+-set(GENERIC_LIB_SOVERSION "1")
++set(GENERIC_LIB_SOVERSION "0")
+ 
+ set( cantor_LIB_SRCS
+   session.cpp
 diff -Nurd kdeedu-4.3.90/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt kdeedu-4.3.90-new/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt
 --- kdeedu-4.3.90/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt	2009-05-27 15:53:49.000000000 -0400
 +++ kdeedu-4.3.90-new/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt	2010-01-15 11:09:04.000000000 -0500

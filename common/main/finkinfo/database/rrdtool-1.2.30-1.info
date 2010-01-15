@@ -4,7 +4,15 @@ Revision: 1
 Conflicts: %N-bin
 Replaces: %N-bin
 Depends: librrd2-shlibs (>= %v-%r)
-BuildDepends: freetype219, libart2, libpng3, tcltk, tcltk-dev, perl580-core | perl581-core | perl584-core | perl586-core | perl588-core
+BuildDepends: <<
+	freetype219,
+	intltool40,
+	libart2,
+	libpng3,
+	tcltk,
+	tcltk-dev,
+	perl580-core | perl581-core | perl584-core | perl586-core | perl588-core | perl5100-core
+<<
 Source: http://oss.oetiker.ch/%n/pub/%n-%v.tar.gz
 Source-MD5: 19b24f7184a8dbf7b48c1bbb565ad9fb
 NoSetMAKEFLAGS: true

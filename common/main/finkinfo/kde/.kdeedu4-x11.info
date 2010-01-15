@@ -14,7 +14,7 @@ A collection of fun and educational apps for KDE.
 Source: mirror:kde:stable/%v/src/kdeedu-%v.tar.bz2
 Source-MD5: 438077bf09f6f6e2843014f8ad2d027a
 PatchFile: kdeedu4.patch
-PatchFile-MD5: 42365374a43d1dab3ac379b9ca7a1363
+PatchFile-MD5: 5d209912b0f0854d11c44a9965c6729f
 
 Depends: <<
 	blinken4-%type_pkg[kde]    (>= %v-%r),
