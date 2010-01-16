@@ -9940,6 +9940,16 @@ index 0469839..f62e958 100644
  
  contains(QT_CONFIG, dbus) {
         QT      += dbus
+diff --git a/src/plugins/plugins.pro b/src/plugins/plugins.pro
+index 004b816..5dc7847 100644
+--- a/src/plugins/plugins.pro
++++ b/src/plugins/plugins.pro
+@@ -10,5 +10,4 @@ unix:!symbian {
+ embedded:SUBDIRS *=  gfxdrivers decorations mousedrivers kbddrivers
+ !win32:!embedded:!mac:!symbian:SUBDIRS *= inputmethods
+ symbian:SUBDIRS += s60
+-contains(QT_CONFIG, phonon): SUBDIRS *= phonon
+ contains(QT_CONFIG, multimedia): SUBDIRS *= audio
 diff --git a/src/qt3support/other/q3process_unix.cpp b/src/qt3support/other/q3process_unix.cpp
 index 88cb73a..dde8a2a 100644
 --- a/src/qt3support/other/q3process_unix.cpp

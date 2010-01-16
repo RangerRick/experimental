@@ -202,7 +202,8 @@ my $version_lookup = {
 		'^shared-mime-info$'                  => [ '0.51',         '1'    ],
 		'^soprano.*?(-dev|-shlibs)?$'         => [ '2.3.70',       '1'    ],
 		'^strigi-gui.*?(-dev|-shlibs)?$'      => [ '0.6.5',        '1'    ],
-		'^taglib-extras.*$'                   => [ '0.1.3',        '2'    ],
+		'^taglib-extras.*$'                   => [ '1.0.1',        '1'    ],
+		'^taglib(-shlibs)?$'                  => [ '1.6.1',        '1'    ],
 		'^unsermake$'                         => [ '0.4',          '0.20060316.1' ],
 	},
 };

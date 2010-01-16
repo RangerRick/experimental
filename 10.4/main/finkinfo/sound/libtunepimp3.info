@@ -17,7 +17,7 @@ BuildDepends: <<
 	libogg,
 	libvorbis0,
 	readline5,
-	taglib (>= 1.4-1)
+	taglib (>= 1.6.1-1)
 <<
 Conflicts: libtunepimp2
 Replaces: libtunepimp2
@@ -57,7 +57,7 @@ SplitOff: <<
 		libogg-shlibs,
 		libvorbis0-shlibs,
 		readline5-shlibs,
-		taglib-shlibs (>= 1.4-1)
+		taglib-shlibs (>= 1.6.1-1)
 	<<
 	Files: <<
 		lib/libtunepimp.*.dylib
