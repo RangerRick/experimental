@@ -45,7 +45,7 @@ BuildDepends: <<
 	poppler2,
 	poppler2-qt4-%type_pkg[kde] (>= 0.6.4-4),
 	qca2-%type_pkg[kde] (>= 2.0.2-1),
-	qt4-%type_pkg[kde] (>= 4.6.0-4),
+	qt4-%type_pkg[kde] (>= 4.6.0-5),
 	sane-backends-dev,
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	strigi-dev (>= 0.6.3-1),

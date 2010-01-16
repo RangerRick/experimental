@@ -1,7 +1,7 @@
 Info4: <<
 Package: kdemultimedia4-x11
 Type: kde (x11)
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 Description: KDE4 - Multimedia Apps
 License: GPL/LGPL
@@ -11,7 +11,7 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:stable/%v/src/kdemultimedia-%v.tar.bz2
-Source-MD5: c32305e0d17198387a495e75f3d844ac
+Source-MD5: 3e50a341591c45968169a43f4a94ba0c
 PatchFile: kdemultimedia4.patch
 PatchFile-MD5: 585ccb0fa9592bbab477ff50969d18b9
 

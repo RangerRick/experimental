@@ -25,7 +25,7 @@ BuildDepends: <<
 	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	libgettext8-dev,
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.6.0-4),
+	qt4-%type_pkg[kde] (>= 4.6.0-5),
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,

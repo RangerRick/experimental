@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdemultimedia4-mac
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 Description: KDE4 - Multimedia Apps
 Type: kde (mac)
@@ -33,7 +33,7 @@ BuildDepends: <<
 	libvorbis0,
 	libxine1,
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.6.0-4),
+	qt4-%type_pkg[kde] (>= 4.6.0-5),
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	strigi-dev (>= 0.6.3-1),
 	taglib (>= 1.5-1),
@@ -43,7 +43,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdemultimedia-%v.tar.bz2
-Source-MD5: c32305e0d17198387a495e75f3d844ac
+Source-MD5: 3e50a341591c45968169a43f4a94ba0c
 PatchFile: kdemultimedia4.patch
 PatchFile-MD5: 585ccb0fa9592bbab477ff50969d18b9
 

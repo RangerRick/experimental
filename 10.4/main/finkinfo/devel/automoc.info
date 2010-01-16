@@ -12,7 +12,7 @@ BuildDepends: <<
 	fink (>= 0.29.7-1),
 	kde4-buildenv (>= 4.3.90-1),
 	system-openssl-dev,
-	qt4-%type_pkg[automoc] (>= 4.6.0-4)
+	qt4-%type_pkg[automoc] (>= 4.6.0-5)
 <<
 GCC: 4.0
 

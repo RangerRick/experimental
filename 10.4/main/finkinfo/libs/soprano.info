@@ -29,7 +29,7 @@ BuildDepends: <<
 	redland-dev (>= 1.0.8-3),
 	sqlite3-dev,
 	system-openssl-dev,
-	qt4-%type_pkg[soprano] (>= 4.6.0-4)
+	qt4-%type_pkg[soprano] (>= 4.6.0-5)
 <<
 GCC: 4.0
 
@@ -81,7 +81,7 @@ SplitOff: <<
 		dbus-shlibs (>= 1.2.12-1),
 		librasqal-shlibs (>= 0.9.16-2),
 		redland-shlibs (>= 1.0.8-3),
-		qt4-%type_pkg[soprano]-core-shlibs (>= 4.6.0-4)
+		qt4-%type_pkg[soprano]-core-shlibs (>= 4.6.0-5)
 	<<
 	Recommends: %N (>= %v-%r)
 	DocFiles: COPYING*

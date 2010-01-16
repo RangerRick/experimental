@@ -26,7 +26,7 @@ BuildDepends: <<
 	libxml2,
 	libxslt,
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.6.0-4),
+	qt4-%type_pkg[kde] (>= 4.6.0-5),
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev,
 	taglib (>= 1.5-1)

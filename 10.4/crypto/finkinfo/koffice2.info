@@ -46,7 +46,7 @@ BuildDepends: <<
 	poppler2-qt4-%type_pkg[kde] (>= 0.6.4-4),
 	pstoedit-bin,
 	qca2-%type_pkg[kde] (>= 2.0.2-1),
-	qt4-%type_pkg[kde] (>= 4.6.0-4),
+	qt4-%type_pkg[kde] (>= 4.6.0-5),
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
