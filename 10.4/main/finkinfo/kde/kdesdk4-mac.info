@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdesdk4-mac
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 Description: KDE4 - Developer Utilities
 Type: kde (mac)
@@ -37,6 +37,7 @@ BuildDepends: <<
 	kdepimlibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
 	libgettext8-dev,
+	libhunspell (>= 1.2.8-1004),
 	libxslt,
 	libxml2,
 	pkgconfig (>= 0.22-3),
@@ -49,8 +50,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/kdesdk-%v.tar.bz2
-Source-MD5: 326da443b4fed01141f7954464678de2
+Source: mirror:kde:unstable/%v/src/kdesdk-%v.tar.bz2
+Source-MD5: 5e0d82615961a7dd82b8dc6e76fe0db7
 
 CompileScript: <<
 #!/bin/sh -ev
@@ -252,6 +253,7 @@ SplitOff3: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/kate*
 		opt/kde4/%type_pkg[kde]/lib/kde4/plasma_applet_kate*
 		opt/kde4/%type_pkg[kde]/lib/libkateinterfaces.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libktexteditor_codesnippets_core.0*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kate.dylib
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kate*
 		opt/kde4/%type_pkg[kde]/share/apps/kate*
@@ -273,6 +275,7 @@ SplitOff3: <<
 	Shlibs: <<
 		!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kate.dylib
 		%p/opt/kde4/%type_pkg[kde]/lib/libkateinterfaces.4.dylib 4.0.0 %n (>= 4.2.4-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libktexteditor_codesnippets_core.0.dylib 0.0.0 %n (>= 4.3.90-1)
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
@@ -367,7 +370,10 @@ SplitOff7: <<
 SplitOff8: <<
 	Package: lokalize4-%type_pkg[kde]
 	Description: KDE4 - translation system
-	Depends: %N-base (>= %v-%r)
+	Depends: <<
+		libhunspell-shlibs (>= 1.2.8-1004),
+		%N-base (>= %v-%r)
+	<<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/lokalize*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/lokalize*
