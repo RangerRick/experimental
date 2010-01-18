@@ -1,7 +1,7 @@
 Info4: <<
 Package: qtscriptgenerator-%type_pkg[qt]
 Version: 0.1.0
-Revision: 2
+Revision: 3
 Type: qt (x11 mac)
 Description: QtScript binding generator
 License: GPL/LGPL
@@ -10,7 +10,7 @@ Maintainer: Benjamin Reed <qtscriptgenerator@fink.racoonfink.com>
 Source: http://qtscriptgenerator.googlecode.com/files/qtscriptgenerator-src-%v.tar.gz
 Source-MD5: ca4046ad4bda36cd4e21649d4b98886d
 PatchFile: qtscriptgenerator.patch
-PatchFile-MD5: 226e6658b8f8a39b31af1d8c95d43c93
+PatchFile-MD5: 0641e03b1964e5c8fcdcdc730ff9053a
 
 Depends: <<
 	qt4-%type_pkg[qt]-designer-shlibs (>= 4.5.0-1),

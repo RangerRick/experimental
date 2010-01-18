@@ -3,18 +3,14 @@ Package: qt4-mac
 Version: 4.6.0
 Revision: 5
 GCC: 4.0
-Source: http://w-nz.com/~sjorsg/kde-qt-%v-patched.tar.gz
-Source-MD5: 77c5c59befbff52a0508d0e7722fd796
-SourceDirectory: qt-kde-qt
-Source2: http://ranger.befunk.com/fink/qt/kubuntu_07_phonon_4.3.80.diff
-Source2-MD5: a77531fa9af711e4eef823e225c54cf6
+Source: http://get.qt.nokia.com/qt/source/qt-everywhere-opensource-src-%v.tar.gz
+Source-MD5: 2a7b5126f2450d8525af355fc4c12ad6
 PatchFile: %n.patch
-PatchFile-MD5: 93bb327634250a0adc397995695cf855
+PatchFile-MD5: af1f441e8d158eede4fe80e263130072
 PatchScript: <<
 	patch -p1 --fuzz=4 < %{PatchFile}
 	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp
 	perl -pi -e 's,CFG_MAC_XARCH=auto,CFG_MAC_XARCH=no,g' configure
-	patch -p1 --fuzz=4 < ../kubuntu_07_phonon_4.3.80.diff
 <<
 Description: Cross-Platform framework (Mac version)
 Depends: <<
@@ -60,14 +56,24 @@ CompileScript: <<
 	if [ -x /usr/bin/gcc-4.2 ]; then
 		export CC=gcc-4.2
 		export CXX=g++-4.2
+			if [ -x %p/bin/ccache ]; then
+				export CC="%p/bin/ccache $CC"
+				export CXX="%p/bin/ccache $CXX"
+				export CCACHE_DIR="/tmp/ccache-qt4"
+			fi
 	fi
 	EXTRA_ARGS="-confirm-license -no-pch -verbose"
 	if [ "%m" = "x86_64" ]; then
 		EXTRA_ARGS="$EXTRA_ARGS -arch x86_64"
 	fi
+	find . -name ._\* -exec rm -rf {} \;
 	sh ./configure-for-fink.sh "%p" "%N" $EXTRA_ARGS -make "libs tools docs"
 	find . -name Makefile\* -print0 | xargs -0 perl -pi -e 's,-I%p/include,-isystem %p/include,g'
 	make LINK="$CXX"
+
+	pushd src/plugins/phonon/qt7
+		make LINK="$CXX"
+	popd
 <<
 InstallScript: <<
 #!/bin/sh -ev
@@ -75,11 +81,25 @@ InstallScript: <<
 	#### MAIN INSTALL ####
 
 	make -j1 install INSTALL_ROOT="%d"
+
+	pushd src/plugins/phonon/qt7
+		make -j1 install LINK="$CXX" INSTALL_ROOT="%d"
+	popd
+
 	install -d -m 755 %i/bin
 	for bin in linguist designer qtconfig; do
 		if [ -f "%p/lib/%N/bin/$bin" ]; then
 			ln -sf %p/lib/%N/bin/$bin %i/bin/${bin}4-mac
 		fi
+	done
+
+	# for some reason, phonon install misses some headers
+	for header in \
+		audiodataoutput.h \
+		audiodataoutputinterface.h \
+		globalconfig.h \
+	; do
+		install -m 644 -c src/3rdparty/phonon/phonon/$header %i/lib/%N/include/phonon/
 	done
 
 	#### FIX LA, PRL and PC FILES ####
@@ -100,9 +120,11 @@ InstallScript: <<
 	/usr/bin/find %i/share/doc/%N/ -name \*.obj -print0 | xargs -0 rm -rf {} >/dev/null 2>&1 || :
 	/usr/bin/find %i/share/doc/%N/examples -name Makefile -print0 | xargs -0 rm -rf >/dev/null 2>&1 || :
 
+	perl -pi -e 's/-framework ApplicationServices/-Wl,-framework,ApplicationServices/g' %i/lib/%N/lib/pkgconfig/*.pc
+
 	%p/sbin/normalize-filenames.sh "%i/lib/%N/include"
 	if [ -d "%i/lib/%N/include/Phonon" -a ! -d "%i/lib/%N/include/phonon" ]; then
-    /bin/rm -f "%i/lib/%N/include/phonon"
+		/bin/rm -f "%i/lib/%N/include/phonon"
 		/bin/mv "%i/lib/%N/include/Phonon" "%i/lib/%N/include/phonon"
 	fi
 
@@ -111,17 +133,14 @@ InstallScript: <<
             "%i/lib/%N/lib/phonon.framework/Headers/phonon"
   fi
 
-  if [ -f "%i/lib/%N/include/phonon/phonon" -a \
-       -d "%i/lib/%N/include/phonon/Phonon" ]; then
+  if [ -f "%i/lib/%N/include/phonon/phonon" -a -d "%i/lib/%N/include/phonon/Phonon" ]; then
     # Building on case sensitive FS means there's both a phonon file and
     # a Phonon dir - rename the file, or the package can't be used on
     # case insensitive file systems
     # also rename the directory so this package matches with the old one;
     # the PostInst script will create symlinks if needed so it works anyway
-    /bin/mv "%i/lib/%N/include/phonon/phonon" \
-            "%i/lib/%N/include/phonon/phonon.h"
-    /bin/mv "%i/lib/%N/include/phonon/Phonon" \
-            "%i/lib/%N/include/phonon/phonon"
+    /bin/mv "%i/lib/%N/include/phonon/phonon" "%i/lib/%N/include/phonon/phonon.h"
+    /bin/mv "%i/lib/%N/include/phonon/Phonon" "%i/lib/%N/include/phonon/phonon"
   fi
 
 	install -d -m 755 %i/share/doc/installed-packages

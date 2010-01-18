@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdewebdev4-mac
 Type: kde (mac)
 #endif
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 Description: KDE4 - Web Development
 License: GPL/LGPL
@@ -16,16 +16,15 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:stable/%v/src/kdewebdev-%v.tar.bz2
-Source-MD5: 23af90f4d5977531ca8eca5f297d54b9
-PatchFile: kdewebdev4.patch
-PatchFile-MD5: 07ced1828f9aa79f0ef340034277eab1
+Source-MD5: ae8a78dc0d41c50afda0165801dd8e90
+#PatchFile: kdewebdev4.patch
+#PatchFile-MD5: 07ced1828f9aa79f0ef340034277eab1
 
 Depends: <<
 	kfilereplace4-%type_pkg[kde] (>= %v-%r),
 	kimagemapeditor4-%type_pkg[kde] (>= %v-%r),
 	klinkstatus4-%type_pkg[kde] (>= %v-%r),
 	kommander4-%type_pkg[kde] (>= %v-%r),
-	kxsldbg4-%type_pkg[kde] (>= %v-%r),
 <<
 
 BuildConflicts: libtidy-dev
@@ -153,29 +152,6 @@ SplitOff4: <<
 	Shlibs: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libkommandercore.4.dylib    4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkommanderwidgets.4.dylib 4.0.0 %n (>= 4.2.4-1)
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff5: <<
-	Package: kxsldbg4-%type_pkg[kde]
-	Description: KDE4 - graphical XSLT debugger
-	Depends: <<
-		libxml2-shlibs (>= 2.6.2-1),
-		libxslt-shlibs (>= 1.1.0-1),
-		%N-base (>= %v-%r)
-	<<
-	Replaces: %N-base (<< 4.2.4-1)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/*xsldbg*
-		opt/kde4/%type_pkg[kde]/lib/kde4/libkxsldbg*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kxsldbg*
-		opt/kde4/%type_pkg[kde]/share/apps/*xsldbg*
-		opt/kde4/%type_pkg[kde]/share/dbus-1/interfaces/org.kde.*xsldbg*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/*xsldbg*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kxsldbg*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kxsldbg*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/kxsldbg*
-		opt/kde4/%type_pkg[kde]/share/man/man1/xsldbg*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
