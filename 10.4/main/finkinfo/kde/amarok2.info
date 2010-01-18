@@ -1,7 +1,7 @@
 Info4: <<
 Package: amarok2-%type_pkg[kde]
-Version: 2.1
-Revision: 2
+Version: 2.2.2
+Revision: 1
 Description: KDE4 - music player
 Type: kde (x11 mac)
 License: GPL/LGPL
@@ -13,14 +13,14 @@ Depends: <<
 	kdemultimedia4-%type_pkg[kde]-base-shlibs (>= 4.3.90-1),
 	libmp4v21-shlibs,
 	loudmouth-shlibs,
-	mysql15-shlibs,
+	mysql-unified-shlibs,
 	qt4-%type_pkg[kde]-gui-shlibs (>= 4.6.0-5),
 	qtscriptgenerator-%type_pkg[kde]-runtime (>= 0.1.0-2),
 	soprano-%type_pkg[kde]-shlibs (>= 2.3.70-1),
 	strigi-shlibs (>= 0.6.3-1),
-	strigi-%type_pkg[kde]-shlibs (>= 0.6.3-1),
+	strigi-gui-%type_pkg[kde]-shlibs (>= 0.6.5-1),
 	taglib-shlibs (>= 1.6.1-1),
-	taglib-extras-%type_pkg[kde]-shlibs (>= 1.0.1-1)
+	taglib-extras1-%type_pkg[kde]-shlibs
 <<
 BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
@@ -41,24 +41,23 @@ BuildDepends: <<
 	libxml2,
 	libxslt,
 	loudmouth,
-	mysql15-dev,
+	mysql-unified-dev,
 	pkgconfig (>= 0.22-3),
 	qt4-%type_pkg[kde] (>= 4.6.0-5),
 	qtscriptgenerator-%type_pkg[kde] (>= 0.1.0-2),
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	strigi-dev (>= 0.6.3-1),
-	strigi-%type_pkg[kde]-dev (>= 0.6.3-1),
+	strigi-gui-%type_pkg[kde]-dev (>= 0.6.5-1),
 	taglib (>= 1.6.1-1),
-	taglib-extras-%type_pkg[kde] (>= 1.0.1-1),
+	taglib-extras1-%type_pkg[kde],
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev
 <<
 GCC: 4.0
 
-Source: mirror:kde:stable/amarok/%v/src/amarok-%v.tar.bz2
-Source-MD5: 76e5496a1bf2a8116210143f6479c1fb
-PatchFile: amarok2.patch
-PatchFile-MD5: 1426d956efc05b10cabd612f2ff71510
+Source: mirror:kde:stable/amarok/%v/src/amarok-%v-patched.tar.bz2
+Source-MD5: 9b4453597e4affb1a6bebe715499782f
+SourceDirectory: amarok-%v
 
 CompileScript: <<
 #!/bin/sh -ev

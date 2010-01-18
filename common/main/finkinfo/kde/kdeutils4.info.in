@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdeutils4-mac
 Type: kde (mac)
 #endif
-Version: 4.3.2
+Version: 4.3.90
 Revision: 1
 Description: KDE4 - Utilities
 License: GPL/LGPL
@@ -15,23 +15,22 @@ Maintainer: Benjamin Reed <kdeutils4@fink.racoonfink.com>
 DescDetail: <<
 <<
 
-Source: mirror:kde:stable/%v/src/kdeutils-%v.tar.bz2
-Source-MD5: b5e72292ed1504f8ee5a82a388af3b04
+Source: mirror:kde:unstable/%v/src/kdeutils-%v.tar.bz2
+Source-MD5: 0128f64e54f3b610a5284afd5b274c2b
 PatchFile: kdeutils4.patch
 PatchFile-MD5: 2e679d1fe33c92f5a353b7a6c4ee590a
 
 Depends: <<
 	ark4-%type_pkg[kde] (>= %v-%r),
-	irkick4-%type_pkg[kde] (>= %v-%r),
 	kcalc4-%type_pkg[kde] (>= %v-%r),
 	kcharselect4-%type_pkg[kde] (>= %v-%r),
-	kdessh4-%type_pkg[kde] (>= %v-%r),
 	kdf4-%type_pkg[kde] (>= %v-%r),
 	kfloppy4-%type_pkg[kde] (>= %v-%r),
 	ktimer4-%type_pkg[kde] (>= %v-%r),
 	kwallet4-%type_pkg[kde] (>= %v-%r),
 	okteta4-%type_pkg[kde] (>= %v-%r),
 #ifdef TYPE_X11
+	irkick4-%type_pkg[kde] (>= %v-%r),
 	sweeper4-%type_pkg[kde] (>= %v-%r),
 	superkaramba4-%type_pkg[kde] (>= %v-%r),
 #endif
@@ -82,8 +81,14 @@ InstallScript: <<
 		make -j1 install/fast DESTDIR="%d"
 	popd
 
+	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libkastencontrollers.dylib
+	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libkastencore.dylib
+	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libkastengui.dylib
 	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libkdelirc_shared.dylib
 	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libkerfuffle.dylib
+	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/liboktetakastencontrollers.dylib
+	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/liboktetakastencore.dylib
+	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/liboktetakastengui.dylib
 	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/liboktetacore.dylib
 	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/liboktetagui.dylib
 	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libsuperkaramba.dylib
@@ -105,8 +110,8 @@ SplitOff: <<
 	<<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/ark*
+		opt/kde4/%type_pkg[kde]/lib/kde4/arkpart*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kerfuffle*
-		opt/kde4/%type_pkg[kde]/lib/kde4/libark*
 		opt/kde4/%type_pkg[kde]/lib/libkerfuffle.4*.dylib
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/ark*
 		opt/kde4/%type_pkg[kde]/share/apps/ark
@@ -152,14 +157,6 @@ SplitOff3: <<
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kcharselect
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff4: <<
-	Package: kdessh4-%type_pkg[kde]
-	Description: KDE4 - SSH utility
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/kdessh*
-	<<
 <<
 SplitOff5: <<
 	Package: kdf4-%type_pkg[kde]
@@ -207,7 +204,6 @@ SplitOff6: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kfloppy*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kfloppy*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kfloppy*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/ServiceMenus/floppy*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
@@ -253,6 +249,12 @@ SplitOff9: <<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/okteta*
 		opt/kde4/%type_pkg[kde]/lib/kde4/libkbytearray*
+		opt/kde4/%type_pkg[kde]/lib/libkastencontrollers.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkastencore.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkastengui.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/liboktetakastencontrollers.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/liboktetakastencore.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/liboktetakastengui.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/liboktetacore.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/liboktetagui.4*.dylib
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/okteta*
@@ -265,6 +267,12 @@ SplitOff9: <<
 		opt/kde4/%type_pkg[kde]/share/kde4/services/okteta*
 	<<
 	Shlibs: <<
+		!%p/opt/kde4/%type_pkg[kde]/lib/libkastencontrollers.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/libkastencore.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/libkastengui.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetakastencontrollers.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetakastencore.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetakastengui.4.dylib
 		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetacore.4.dylib
 		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetagui.4.dylib
 	<<
@@ -312,6 +320,7 @@ SplitOff11: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
+#ifdef TYPE_X11
 SplitOff12: <<
 	Package: irkick4-%type_pkg[kde]
 	Description: KDE4 - infrared remote support
@@ -349,6 +358,7 @@ SplitOff12: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
+#endif
 
 SplitOff20: <<
 	Package: %N-base

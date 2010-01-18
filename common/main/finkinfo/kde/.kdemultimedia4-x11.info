@@ -10,7 +10,7 @@ Maintainer: Benjamin Reed <kdemultimedia4@fink.racoonfink.com>
 DescDetail: <<
 <<
 
-Source: mirror:kde:stable/%v/src/kdemultimedia-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kdemultimedia-%v.tar.bz2
 Source-MD5: 3e50a341591c45968169a43f4a94ba0c
 PatchFile: kdemultimedia4.patch
 PatchFile-MD5: 585ccb0fa9592bbab477ff50969d18b9
