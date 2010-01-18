@@ -1136,6 +1136,16 @@ diff -Nurd kdebase-workspace-4.3.90/kwin/lib/CMakeLists.txt kdebase-workspace-4.
  endif(OPENGL_FOUND)
  if (X11_Xrender_FOUND)
    target_link_libraries(kwineffects ${X11_Xrender_LIB})
+diff -Nurd kdebase-workspace-4.3.90/libs/CMakeLists.txt kdebase-workspace-4.3.90-new/libs/CMakeLists.txt
+--- kdebase-workspace-4.3.90/libs/CMakeLists.txt	2009-11-13 05:57:37.000000000 -0500
++++ kdebase-workspace-4.3.90-new/libs/CMakeLists.txt	2010-01-18 10:05:09.000000000 -0500
+@@ -1,5 +1,5 @@
+ add_subdirectory(kdm)
+-add_subdirectory(kephal)
++#add_subdirectory(kephal)
+ add_subdirectory(plasmaclock)
+ add_subdirectory(plasmagenericshell)
+ add_subdirectory(solid)
 diff -Nurd kdebase-workspace-4.3.90/libs/ksysguard/processcore/processes_local_p.cpp kdebase-workspace-4.3.90-new/libs/ksysguard/processcore/processes_local_p.cpp
 --- kdebase-workspace-4.3.90/libs/ksysguard/processcore/processes_local_p.cpp	2009-12-14 05:43:38.000000000 -0500
 +++ kdebase-workspace-4.3.90-new/libs/ksysguard/processcore/processes_local_p.cpp	2010-01-18 09:51:36.000000000 -0500
