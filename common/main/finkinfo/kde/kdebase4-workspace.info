@@ -30,6 +30,7 @@ BuildDepends: <<
 	gettext-tools,
 	giflib,
 	glib2-dev (>= 2.14.0-1),
+	gpsd-dev,
 	kde4-buildenv (>= 4.2-3),
 	kdelibs4-%type_pkg[kde]-dev (>= %v-1),
 	kdepimlibs4-%type_pkg[kde]-dev (>= %v-1),
@@ -64,7 +65,7 @@ Source: mirror:kde:unstable/%v/src/kdebase-workspace-%v.tar.bz2
 Source-MD5: 21c77cd85d4c47553678d6fde8300947
 SourceDirectory: kdebase-workspace-%v
 PatchFile: kdebase4-workspace.patch
-PatchFile-MD5: 1a63ab9bd4a81ad3980b276a01bb6456
+PatchFile-MD5: bae959b0bda709758d7dd86e36fc7367
 PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g; s,@FINKTYPE@,%type_pkg[kde],g' %{PatchFile} | patch -p1
 <<
@@ -102,6 +103,7 @@ SplitOff: <<
 	Description: KDE4 - base shared libraries
 	Depends: <<
 		glib2-shlibs (>= 2.14.0-1),
+		gpsd-shlibs,
 		kdelibs4-%type_pkg[kde]-shlibs (>= %v-1),
 		kdepimlibs4-%type_pkg[kde]-shlibs (>= %v-1),
 		libknotificationitem1-%type_pkg[kde]-shlibs (>= 4.3.0-1),
