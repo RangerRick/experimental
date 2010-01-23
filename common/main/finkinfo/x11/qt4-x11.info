@@ -1,12 +1,12 @@
 Info4: <<
 Package: qt4-x11
-Version: 4.6.0
-Revision: 5
+Version: 4.6.1
+Revision: 1
 GCC: 4.0
 Source: http://get.qt.nokia.com/qt/source/qt-everywhere-opensource-src-%v.tar.gz
-Source-MD5: 2a7b5126f2450d8525af355fc4c12ad6
+Source-MD5: 0542a4be6425451ab5f668c6899cac36
 PatchFile: %n.patch
-PatchFile-MD5: e2c806503acd4dbe293053207788f374
+PatchFile-MD5: b2c2559af7a9b7f14824b27d50436e3a
 PatchScript: <<
 	patch -p1 --fuzz=4 < %{PatchFile}
 	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp
