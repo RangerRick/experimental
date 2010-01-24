@@ -67,7 +67,7 @@ CompileScript: <<
 		EXTRA_ARGS="$EXTRA_ARGS -arch x86_64"
 	fi
 	find . -name ._\* -exec rm -rf {} \;
-	sh ./configure-for-fink.sh "%p" "%N" $EXTRA_ARGS -make "libs tools docs"
+	sh ./configure-for-fink.sh "%p" "%N" $EXTRA_ARGS -make "libs tools docs translations"
 	find . -name Makefile\* -print0 | xargs -0 perl -pi -e 's,-I%p/include,-isystem %p/include,g'
 	make LINK="$CXX"
 
