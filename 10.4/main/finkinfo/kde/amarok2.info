@@ -19,7 +19,7 @@ Depends: <<
 	soprano-%type_pkg[kde]-shlibs (>= 2.3.70-1),
 	strigi-shlibs (>= 0.6.3-1),
 	strigi-gui-%type_pkg[kde]-shlibs (>= 0.6.5-1),
-	taglib-shlibs (>= 1.6.1-1),
+	taglib-shlibs (>= 1.6.1-2),
 	taglib-extras1-%type_pkg[kde]-shlibs
 <<
 BuildDepends: <<
@@ -48,7 +48,7 @@ BuildDepends: <<
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	strigi-dev (>= 0.6.3-1),
 	strigi-gui-%type_pkg[kde]-dev (>= 0.6.5-1),
-	taglib (>= 1.6.1-1),
+	taglib (>= 1.6.1-2),
 	taglib-extras1-%type_pkg[kde],
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev

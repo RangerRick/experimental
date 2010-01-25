@@ -203,7 +203,7 @@ my $version_lookup = {
 		'^soprano.*?(-dev|-shlibs)?$'         => [ '2.3.70',       '1'    ],
 		'^strigi-gui.*?(-dev|-shlibs)?$'      => [ '0.6.5',        '1'    ],
 		'^taglib-extras.*$'                   => [ '1.0.1',        '1'    ],
-		'^taglib(-shlibs)?$'                  => [ '1.6.1',        '1'    ],
+		'^taglib(-shlibs)?$'                  => [ '1.6.1',        '2'    ],
 		'^unsermake$'                         => [ '0.4',          '0.20060316.1' ],
 	},
 };

@@ -41,7 +41,7 @@ BuildDepends: <<
 	popt,
 	qt3 (>= 3.3.8-1027),
 	ruby18-dev,
-	taglib (>= 1.6.1-1),
+	taglib (>= 1.6.1-2),
 	unsermake (>= 0.4-0.20060316.1),
 	x11-dev,
 	xmms
@@ -124,7 +124,7 @@ SplitOff: <<
 		popt-shlibs,
 		qt3-shlibs (>= 3.3.8-1027),
 		ruby18-shlibs,
-		taglib-shlibs (>= 1.6.1-1),
+		taglib-shlibs (>= 1.6.1-2),
 		xmms-shlibs
 	<<
 	Replaces: <<
