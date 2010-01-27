@@ -40,6 +40,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	libgphoto2,
 	libjpeg,
+	libpgf,
 	libtiff,
 	pkgconfig (>= 0.22-3),
 	poppler2,
