@@ -19395,14 +19395,15 @@ index b3ca106..327ddd7 100644
  
  Backend::~Backend()
 diff --git a/src/3rdparty/phonon/qt7/backendinfo.mm b/src/3rdparty/phonon/qt7/backendinfo.mm
-index 0d51db0..e173f05 100644
+index 0d51db0..938359c 100644
 --- a/src/3rdparty/phonon/qt7/backendinfo.mm
 +++ b/src/3rdparty/phonon/qt7/backendinfo.mm
-@@ -22,7 +22,6 @@
+@@ -22,7 +22,7 @@
  #include <AudioUnit/AudioUnit.h>
  #include <CoreServices/CoreServices.h>
  
 -#include <QtGui/qmacdefines_mac.h>
++#undef slots
  #import <QTKit/QTMovie.h>
  
  #ifdef QUICKTIME_C_API_AVAILABLE
@@ -20209,18 +20210,20 @@ index 2dcc152..851e707 100644
  {
      if (m_videoPlayer && m_videoPlayer->hasMovie() && m_movieChanged)
 diff --git a/src/3rdparty/phonon/qt7/quicktimevideoplayer.h b/src/3rdparty/phonon/qt7/quicktimevideoplayer.h
-index 98eacb5..0b3aec2 100644
+index 98eacb5..8e73cde 100644
 --- a/src/3rdparty/phonon/qt7/quicktimevideoplayer.h
 +++ b/src/3rdparty/phonon/qt7/quicktimevideoplayer.h
-@@ -20,7 +20,6 @@
+@@ -20,8 +20,8 @@
  
  #include "backendheader.h"
  
 -#include <QtGui/qmacdefines_mac.h>
  #import <QTKit/QTDataReference.h>
++#undef slots
  #import <QTKit/QTMovie.h>
  
-@@ -39,7 +38,6 @@ namespace Phonon
+ #include <phonon/mediasource.h>
+@@ -39,7 +39,6 @@ namespace Phonon
  namespace QT7
  {
      class QuickTimeStreamReader;
@@ -20228,7 +20231,7 @@ index 98eacb5..0b3aec2 100644
  	class VideoRenderWidgetQTMovieView;
  
      class QuickTimeVideoPlayer : QObject
-@@ -57,7 +55,7 @@ namespace QT7
+@@ -57,7 +56,7 @@ namespace QT7
  
              void setMediaSource(const MediaSource &source);
              MediaSource mediaSource() const;
@@ -20237,7 +20240,7 @@ index 98eacb5..0b3aec2 100644
  
              void play();
              void pause();
-@@ -68,13 +66,11 @@ namespace QT7
+@@ -68,13 +67,11 @@ namespace QT7
              GLuint currentFrameAsGLTexture();
  			void *currentFrameAsCIImage();
              QImage currentFrameAsQImage();
@@ -20251,7 +20254,7 @@ index 98eacb5..0b3aec2 100644
              QString currentTimeString();
  
              void setColors(qreal brightness = 0, qreal contrast = 1, qreal hue = 0, qreal saturation = 1);
-@@ -87,7 +83,6 @@ namespace QT7
+@@ -87,7 +84,6 @@ namespace QT7
              bool setAudioDevice(int id);
              void setPlaybackRate(float rate);
              QTMovie *qtMovie() const;
@@ -20259,7 +20262,7 @@ index 98eacb5..0b3aec2 100644
  
              float playbackRate() const;
              float prefferedPlaybackRate() const;
-@@ -107,12 +102,6 @@ namespace QT7
+@@ -107,12 +103,6 @@ namespace QT7
              float percentageLoaded();
              quint64 timeLoaded();
  
@@ -20272,7 +20275,7 @@ index 98eacb5..0b3aec2 100644
              static QString timeToString(quint64 ms);
  
  			// Help functions when drawing to more that one widget in cocoa 64:
-@@ -126,10 +115,6 @@ namespace QT7
+@@ -126,10 +116,6 @@ namespace QT7
              QTMovie *m_QTMovie;
              State m_state;
              QGLPixelBuffer *m_QImagePixelBuffer;
@@ -20283,7 +20286,7 @@ index 98eacb5..0b3aec2 100644
  
              bool m_playbackRateSat;
              bool m_isDrmProtected;
-@@ -140,18 +125,13 @@ namespace QT7
+@@ -140,18 +126,13 @@ namespace QT7
              float m_masterVolume;
              float m_relativeVolume;
              float m_playbackRate;
@@ -20302,7 +20305,7 @@ index 98eacb5..0b3aec2 100644
  
  #ifdef QUICKTIME_C_API_AVAILABLE
              QTVisualContextRef m_visualContext;
-@@ -159,26 +139,20 @@ namespace QT7
+@@ -159,26 +140,20 @@ namespace QT7
              VideoFrame m_currentFrame;
              QuickTimeStreamReader *m_streamReader;
  
@@ -22146,3 +22149,19 @@ index baf5261..9f3a4ce 100644
  
  REQUIRES = !CONFIG(static,shared|static)
  contains(QT_CONFIG, qt3support): SUBDIRS += widgets
+diff --git a/translations/translations.pro b/translations/translations.pro
+index 05dd968..c59e3d1 100644
+--- a/translations/translations.pro
++++ b/translations/translations.pro
+@@ -5,9 +5,9 @@ LRELEASE ~= s,/,$$QMAKE_DIR_SEP,
+ 
+ contains(TEMPLATE_PREFIX, vc):vcproj = 1
+ 
+-TEMPLATE = app
++TEMPLATE = lib
+ TARGET = qm_phony_target
+-CONFIG -= qt separate_debug_info
++CONFIG -= qt separate_debug_info app_bundle
+ QT =
+ LIBS =
+ 

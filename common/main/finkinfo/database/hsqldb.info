@@ -3,16 +3,7 @@ Version: 1.8.1.1
 Revision: 1
 Type: java(1.5)
 Maintainer: Benjamin Reed <hsqldb@fink.racoonfink.com>
-BuildDepends: <<
-	fink (>= 0.28.0-1),
-	ant-base (>= 1.7.0-1),
-	ant-contrib (>= 1.0-2),
-	ant-optional (>= 1.7.0-1),
-	docbook-xsl (>= 1.65.1-1),
-	fop (>= 0.20.5-1),
-	junit,
-	system-java-dev (>= 1.5-1)
-<<
+BuildDepends: fink (>= 0.24.12-1)
 Depends: system-java (>= 1.5-1)
 
 Source: mirror:sourceforge:%n/%n_1_8_1_1.zip
@@ -20,14 +11,7 @@ Source-MD5: 4114ba2e6aba58e6bfd3fa283d7dbc37
 SourceDirectory: %n
 PatchFile: %n.patch
 PatchFile-MD5: 2839d0480f0aafc7ccd4d77d31c5be55
-CompileScript: <<
-#!/bin/sh -ex
-
-	mkdir -p %b/lib %b/build
-	pushd build
-	ant docbook hsqldb hsqldbutil hsqljdbc hsqltool javadoc -Ddocbook.xsl.home=%p/share/xml/xsl/docbook-xsl -Dfop.home=%b
-	popd
-<<
+CompileScript: echo "none needed"
 InstallScript: <<
 #!/bin/sh -ex
 

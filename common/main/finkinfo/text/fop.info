@@ -1,41 +1,32 @@
 Package: fop
-Version: 0.95
-Revision: 1
-Source: mirror:apache:/xmlgraphics/%n/source/%n-%v-src.tar.gz
-Source-MD5: 58593e6c86be17d7dc03c829630fd152
+Version: 0.20.5
+Revision: 11
+Source: mirror:apache:/xml/%n/%n-%v-src.tar.gz
+Source-MD5: 1a31eb1357e5d4b8d32d4cb3edae2da2
 SourceDirectory: %n-%v
-Type: java
-BuildDepends: <<
-	apache-forrest,
-	fink (>= 0.24.12-1),
-	xmlunit,
-	system-java-dev (>= 1.5)
-<<
-Depends: <<
-	xmlunit,
-	system-java (>= 1.5)
-<<
+Type: java (1.5)
+Depends: system-java (>= 1.5-1)
+BuildDepends: fink (>= 0.24.12-1), system-java-dev (>= 1.5-1)
 PatchFile: %n.patch
-Patchfile-MD5: c96a9db0b01e82c6eb81e06778b5b54f
+Patchfile-MD5: 4016a1a4103360e310ee789e49f2ddb6
 PatchScript: <<
 	sed 's|@PREFIX@|%p|g' < %{PatchFile} | patch -p1
-	perl -pi -e 's/package, servlet, transcoder-pkg, junit/package, servlet, transcoder-pkg/' build.xml
+	perl -pi -e 's,<javac,<javac target="1.5" source="1.4",g' build.xml
 <<
 CompileScript: <<
-	perl -pi -e "s,@BUILDPREFIX@,`pwd`,g" *.properties
-	ant -Djava.target=1.5 -Djava.awt.headless=true -Djunit.present=false dist
-	rm -f lib/ant*.jar
+ ./build.sh
+ rm -f lib/ant*.jar
 <<
 JarFiles: build/fop.jar lib/*.jar
 InstallScript: <<
-	mkdir -p %i/bin
-	install -m 0755 fop.sh %i/bin/fop
-#	install -m 0755 fop_pfmreader.sh %i/bin/fop_pfmreader
-#	install -m 0755 fop_ttfreader.sh %i/bin/fop_ttfreader
-	install -m 0755 xalan.sh %i/bin/xalan
-	mkdir -p %i/share/doc/%n/xslfoRef
-	cp -r docs/* %i/share/doc/%n/xslfoRef/
-	cp -r build/site/* %i/share/doc/%n/
+ mkdir -p %i/bin
+ install -m 0755 fop.sh %i/bin/fop
+ install -m 0755 fop_pfmreader.sh %i/bin/fop_pfmreader
+ install -m 0755 fop_ttfreader.sh %i/bin/fop_ttfreader
+ install -m 0755 xalan.sh %i/bin/xalan
+ mkdir -p %i/share/doc/%n/xslfoRef
+ cp -r docs/* %i/share/doc/%n/xslfoRef/
+ cp -r build/site/* %i/share/doc/%n/
 <<
 DocFiles: CHANGES LICENSE README ReleaseNotes.html STATUS 
 Description: Formatting Objects (FO) Processor
@@ -61,6 +52,6 @@ Modified by Benjamin Reed <rangerrick@users.sourceforge.net>
 Changed <javac> ant call to force source="1.4" to be sure the bytecode
 is generated properly.
 <<
-Maintainer: Benjamin Reed <fop@lists.sourceforge.net>
+Maintainer: None <fink-devel@lists.sourceforge.net>
 License: BSD
 Homepage: http://xmlgraphics.apache.org/fop/
