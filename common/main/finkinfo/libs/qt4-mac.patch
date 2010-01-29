@@ -4238,7 +4238,7 @@ index 3afcafa..7e0b3cd 100644
  
          void BackendNode::setMediaObject(MediaObject *mo)
 diff --git a/src/3rdparty/phonon/ds9/ds9.desktop b/src/3rdparty/phonon/ds9/ds9.desktop
-index 764390e..515f024 100644
+index 764390e..91877a7 100644
 --- a/src/3rdparty/phonon/ds9/ds9.desktop
 +++ b/src/3rdparty/phonon/ds9/ds9.desktop
 @@ -5,12 +5,13 @@ MimeType=application/x-annodex;video/quicktime;video/x-quicktime;audio/x-m4a;app
@@ -4256,7 +4256,7 @@ index 764390e..515f024 100644
  Name[cs]=DirectShow9
  Name[da]=DirectShow9
  Name[de]=DirectShow9
-@@ -19,11 +20,13 @@ Name[en_GB]=DirectShow9
+@@ -19,11 +20,14 @@ Name[en_GB]=DirectShow9
  Name[es]=DirectShow9
  Name[et]=DirectShow9
  Name[eu]=DirectShow9
@@ -4264,13 +4264,14 @@ index 764390e..515f024 100644
  Name[fr]=DirectShow9
  Name[ga]=DirectShow9
  Name[gl]=DirectShow9
++Name[hr]=DirectShow9
  Name[hsb]=DirectShow9
  Name[hu]=DirectShow9
 +Name[id]=DirectShow9
  Name[is]=DirectShow9
  Name[it]=DirectShow9
  Name[ja]=DirectShow9
-@@ -31,6 +34,7 @@ Name[ko]=DirectShow9
+@@ -31,6 +35,7 @@ Name[ko]=DirectShow9
  Name[ku]=DirectShow9
  Name[lt]=DirectShow9
  Name[lv]=DirectShow9
@@ -4278,7 +4279,7 @@ index 764390e..515f024 100644
  Name[nds]=DirectShow9
  Name[nl]=DirectShow9
  Name[nn]=DirectShow9
-@@ -38,41 +42,41 @@ Name[pa]=ਡਾਇਰੈਕਸ਼ੋ9
+@@ -38,41 +43,41 @@ Name[pa]=ਡਾਇਰੈਕਸ਼ੋ9
  Name[pl]=DirectShow9
  Name[pt]=DirectShow9
  Name[pt_BR]=DirectShow9
@@ -4327,7 +4328,7 @@ index 764390e..515f024 100644
  Comment[nds]=Phonon-Hülpprogrmm DirectShow9
  Comment[nl]=DirectShow9-backend (Phonon)
  Comment[nn]=Phonon-motor for DirectShow9
-@@ -80,10 +84,13 @@ Comment[pa]=ਫੋਨੋਨ ਡਾਇਰੈਕਟਸ਼ੋ9 ਬੈਕਐਂਡ
+@@ -80,10 +85,13 @@ Comment[pa]=ਫੋਨੋਨ ਡਾਇਰੈਕਟਸ਼ੋ9 ਬੈਕਐਂਡ
  Comment[pl]=Obsługa DirectShow9 przez Phonon
  Comment[pt]=Infra-estrutura do DirectShow9 para o Phonon
  Comment[pt_BR]=Infraestrutura Phonon DirectShow9
@@ -6966,7 +6967,7 @@ index 641ff6b..f3137b2 100644
          if (root()) {
              QMetaObject::invokeMethod(root(), "setState", Qt::QueuedConnection, Q_ARG(State, StoppedState));
 diff --git a/src/3rdparty/phonon/gstreamer/backend.cpp b/src/3rdparty/phonon/gstreamer/backend.cpp
-index dab6f35..cae1bb1 100644
+index dab6f35..1f07236 100644
 --- a/src/3rdparty/phonon/gstreamer/backend.cpp
 +++ b/src/3rdparty/phonon/gstreamer/backend.cpp
 @@ -18,6 +18,7 @@
@@ -6981,7 +6982,7 @@ index dab6f35..cae1bb1 100644
  #include "message.h"
  #include "volumefadereffect.h"
  #include <gst/interfaces/propertyprobe.h>
-+#include <phonon/pulsesupport_p.h>
++#include <phonon/pulsesupport.h>
  
  #include <QtCore/QSet>
  #include <QtCore/QVariant>
@@ -7090,7 +7091,23 @@ index dab6f35..cae1bb1 100644
              klass == QLatin1String("Codec/Parser/Video")) {
  
              const GList *static_templates;
-@@ -258,6 +258,10 @@ QList<int> Backend::objectDescriptionIndexes(ObjectDescriptionType type) const
+@@ -244,6 +244,15 @@ QStringList Backend::availableMimeTypes() const
+         }
+     }
+     g_list_free(factoryList);
++    if (availableMimeTypes.contains("audio/x-vorbis")
++        && availableMimeTypes.contains("application/x-ogm-audio")) {
++        if (!availableMimeTypes.contains("audio/x-vorbis+ogg"))
++            availableMimeTypes.append("audio/x-vorbis+ogg");
++        if (!availableMimeTypes.contains("application/ogg"))  /* *.ogg */
++            availableMimeTypes.append("application/ogg");
++        if (!availableMimeTypes.contains("audio/ogg")) /* *.oga */
++            availableMimeTypes.append("audio/ogg");
++    }
+     availableMimeTypes.sort();
+     return availableMimeTypes;
+ }
+@@ -258,6 +267,10 @@ QList<int> Backend::objectDescriptionIndexes(ObjectDescriptionType type) const
      if (!isValid())
          return list;
  
@@ -7101,7 +7118,7 @@ index dab6f35..cae1bb1 100644
      switch (type) {
      case Phonon::AudioOutputDeviceType: {
              QList<AudioDevice> deviceList = deviceManager()->audioOutputDevices();
-@@ -291,16 +295,17 @@ QHash<QByteArray, QVariant> Backend::objectDescriptionProperties(ObjectDescripti
+@@ -291,16 +304,17 @@ QHash<QByteArray, QVariant> Backend::objectDescriptionProperties(ObjectDescripti
      if (!isValid())
          return ret;
  
@@ -7127,7 +7144,7 @@ index dab6f35..cae1bb1 100644
              }
          }
          break;
-@@ -429,7 +434,7 @@ EffectManager* Backend::effectManager() const
+@@ -429,7 +443,7 @@ EffectManager* Backend::effectManager() const
  
  /**
   * Returns a debuglevel that is determined by the
@@ -7149,14 +7166,14 @@ index 2aab6fa..d157f11 100644
      DeviceManager *m_deviceManager;
      EffectManager *m_effectManager;
 diff --git a/src/3rdparty/phonon/gstreamer/devicemanager.cpp b/src/3rdparty/phonon/gstreamer/devicemanager.cpp
-index 60e860f..2e1e405 100644
+index 60e860f..e62d281 100644
 --- a/src/3rdparty/phonon/gstreamer/devicemanager.cpp
 +++ b/src/3rdparty/phonon/gstreamer/devicemanager.cpp
 @@ -24,6 +24,7 @@
  #include "widgetrenderer.h"
  #include "x11renderer.h"
  #include "artssink.h"
-+#include "pulsesupport_p.h"
++#include "pulsesupport.h"
  
  #ifdef USE_ALSASINK2
  #include "alsasink2.h"
@@ -7509,7 +7526,7 @@ index 7257972..1a84592 100644
          if (sink->description() & (AudioSink)) {
              GstPad *sinkPad = gst_element_get_pad(sink->audioElement(), "sink");
 diff --git a/src/3rdparty/phonon/gstreamer/mediaobject.cpp b/src/3rdparty/phonon/gstreamer/mediaobject.cpp
-index b6d23ec..509e749 100644
+index b6d23ec..11b67b5 100644
 --- a/src/3rdparty/phonon/gstreamer/mediaobject.cpp
 +++ b/src/3rdparty/phonon/gstreamer/mediaobject.cpp
 @@ -16,6 +16,7 @@
@@ -7724,7 +7741,16 @@ index b6d23ec..509e749 100644
                          // Error state requires that state() will return the new value
      m_pendingState = newstate;
      emit stateChanged(newstate, oldState);
-@@ -861,7 +906,7 @@ void MediaObject::setSource(const MediaSource &source)
+@@ -696,6 +741,8 @@ void MediaObject::changeState(State newstate)
+ 
+     case Phonon::StoppedState:
+         m_backend->logMessage("phonon state changed: Stopped", Backend::Info, this);
++        // We must reset the pipeline when playing again
++        m_resetNeeded = true;
+         m_tickTimer->stop();
+         break;
+ 
+@@ -861,7 +908,7 @@ void MediaObject::setSource(const MediaSource &source)
      // such as failing duration queries etc
      GstState state;
      gst_element_set_state(m_pipeline, GST_STATE_NULL);
@@ -7733,7 +7759,7 @@ index b6d23ec..509e749 100644
  
      m_source = source;
      emit currentSourceChanged(m_source);
-@@ -871,7 +916,9 @@ void MediaObject::setSource(const MediaSource &source)
+@@ -871,7 +918,9 @@ void MediaObject::setSource(const MediaSource &source)
      // Go into to loading state
      changeState(Phonon::LoadingState);
      m_loading = true;
@@ -7744,7 +7770,7 @@ index b6d23ec..509e749 100644
      m_resumeState = false;
      m_pendingState = Phonon::StoppedState;
  
-@@ -884,8 +931,8 @@ void MediaObject::setSource(const MediaSource &source)
+@@ -884,8 +933,8 @@ void MediaObject::setSource(const MediaSource &source)
      // Clear any existing errors
      m_aboutToFinishEmitted = false;
      m_error = NoError;
@@ -7755,7 +7781,7 @@ index b6d23ec..509e749 100644
      m_bufferPercent = 0;
      m_prefinishMarkReachedNotEmitted = true;
      m_aboutToFinishEmitted = false;
-@@ -894,22 +941,23 @@ void MediaObject::setSource(const MediaSource &source)
+@@ -894,22 +943,23 @@ void MediaObject::setSource(const MediaSource &source)
      setTotalTime(-1);
      m_atEndOfStream = false;
  
@@ -7787,7 +7813,7 @@ index b6d23ec..509e749 100644
                  setError(tr("Could not open media source."));
          }
          break;
-@@ -922,17 +970,15 @@ void MediaObject::setSource(const MediaSource &source)
+@@ -922,17 +972,15 @@ void MediaObject::setSource(const MediaSource &source)
          break;
  
      case MediaSource::Stream:
@@ -7809,7 +7835,7 @@ index b6d23ec..509e749 100644
                  qWarning() << "I should never get to see a MediaSource that is a disc but doesn't specify which one";
                  return;
              case Phonon::Cd:  // CD tracks can be specified by setting the url in the following way uri=cdda:4
-@@ -948,9 +994,7 @@ void MediaObject::setSource(const MediaSource &source)
+@@ -948,9 +996,7 @@ void MediaObject::setSource(const MediaSource &source)
                  qWarning() <<  "media " << source.discType() << " not implemented";
                  return;
              }
@@ -7820,7 +7846,7 @@ index b6d23ec..509e749 100644
                  setError(tr("Could not open media source."));
          }
          break;
-@@ -966,8 +1010,7 @@ void MediaObject::setSource(const MediaSource &source)
+@@ -966,8 +1012,7 @@ void MediaObject::setSource(const MediaSource &source)
  
      // We need to link this node to ensure that fake sinks are connected
      // before loading, otherwise the stream will be blocked
@@ -7830,7 +7856,7 @@ index b6d23ec..509e749 100644
      beginLoad();
  }
  
-@@ -1004,13 +1047,10 @@ void MediaObject::getStreamInfo()
+@@ -1004,13 +1049,10 @@ void MediaObject::getStreamInfo()
          emit hasVideoChanged(m_hasVideo);
      }
  
@@ -7848,7 +7874,7 @@ index b6d23ec..509e749 100644
              int oldAvailableTitles = m_availableTitles;
              m_availableTitles = (int)titleCount;
              if (m_availableTitles != oldAvailableTitles) {
-@@ -1077,7 +1117,7 @@ void MediaObject::seek(qint64 time)
+@@ -1077,7 +1119,7 @@ void MediaObject::seek(qint64 time)
          }
  
          quint64 current = currentTime();
@@ -7857,7 +7883,7 @@ index b6d23ec..509e749 100644
  
          if (current < total - m_prefinishMark)
              m_prefinishMarkReachedNotEmitted = true;
-@@ -1098,7 +1138,7 @@ void MediaObject::emitTick()
+@@ -1098,7 +1140,7 @@ void MediaObject::emitTick()
  
      if (m_tickInterval > 0 && currentTime != m_previousTickTime) {
          emit tick(currentTime);
@@ -7866,7 +7892,7 @@ index b6d23ec..509e749 100644
      }
      if (m_state == Phonon::PlayingState) {
          if (currentTime >= totalTime - m_prefinishMark) {
-@@ -1109,7 +1149,12 @@ void MediaObject::emitTick()
+@@ -1109,7 +1151,12 @@ void MediaObject::emitTick()
          }
          // Prepare load of next source
          if (currentTime >= totalTime - ABOUT_TO_FINNISH_TIME) {
@@ -7880,7 +7906,7 @@ index b6d23ec..509e749 100644
                  m_aboutToFinishEmitted = true; // track is about to finish
                  emit aboutToFinish();
              }
-@@ -1213,8 +1258,8 @@ void MediaObject::handleBusMessage(const Message &message)
+@@ -1213,8 +1260,8 @@ void MediaObject::handleBusMessage(const Message &message)
  
      switch (GST_MESSAGE_TYPE (gstMessage)) {
  
@@ -7891,7 +7917,7 @@ index b6d23ec..509e749 100644
          handleEndOfStream();
          break;
  
-@@ -1222,14 +1267,98 @@ void MediaObject::handleBusMessage(const Message &message)
+@@ -1222,14 +1269,98 @@ void MediaObject::handleBusMessage(const Message &message)
              GstTagList* tag_list = 0;
              gst_message_parse_tag(gstMessage, &tag_list);
              if (tag_list) {
@@ -7996,7 +8022,7 @@ index b6d23ec..509e749 100644
          }
          break;
  
-@@ -1255,6 +1384,9 @@ void MediaObject::handleBusMessage(const Message &message)
+@@ -1255,6 +1386,9 @@ void MediaObject::handleBusMessage(const Message &message)
                  m_backend->logMessage("gstreamer: pipeline state set to playing", Backend::Info, this);
                  m_tickTimer->start();
                  changeState(Phonon::PlayingState);
@@ -8006,7 +8032,7 @@ index b6d23ec..509e749 100644
                  if (m_resumeState && m_oldState == Phonon::PlayingState) {
                      seek(m_oldPos);
                      m_resumeState = false;
-@@ -1290,6 +1422,9 @@ void MediaObject::handleBusMessage(const Message &message)
+@@ -1290,6 +1424,9 @@ void MediaObject::handleBusMessage(const Message &message)
                      changeState(Phonon::StoppedState);
                  m_backend->logMessage("gstreamer: pipeline state set to ready", Backend::Debug, this);
                  m_tickTimer->stop();
@@ -8016,7 +8042,7 @@ index b6d23ec..509e749 100644
                  break;
  
              case GST_STATE_VOID_PENDING :
-@@ -1328,7 +1463,7 @@ void MediaObject::handleBusMessage(const Message &message)
+@@ -1328,7 +1465,7 @@ void MediaObject::handleBusMessage(const Message &message)
                              setError(err->message, Phonon::FatalError);
                          gst_caps_unref (caps);
                          gst_object_unref (sinkPad);
@@ -8025,7 +8051,7 @@ index b6d23ec..509e749 100644
                 } else {
                      setError(QString(err->message), Phonon::FatalError);
                 }
-@@ -1400,8 +1535,8 @@ void MediaObject::handleBusMessage(const Message &message)
+@@ -1400,8 +1537,8 @@ void MediaObject::handleBusMessage(const Message &message)
          //case GST_MESSAGE_STEP_DONE:
          //case GST_MESSAGE_LATENCY: only from 0.10.12
          //case GST_MESSAGE_ASYNC_DONE: only from 0.10.13
@@ -8036,7 +8062,7 @@ index b6d23ec..509e749 100644
      }
  }
  
-@@ -1417,7 +1552,8 @@ void MediaObject::handleEndOfStream()
+@@ -1417,7 +1554,8 @@ void MediaObject::handleEndOfStream()
      if (!m_seekable)
          m_atEndOfStream = true;
  
@@ -8046,7 +8072,22 @@ index b6d23ec..509e749 100644
          m_availableTitles > 1 &&
          m_currentTitle < m_availableTitles) {
          _iface_setCurrentTitle(m_currentTitle + 1);
-@@ -1502,15 +1638,30 @@ int MediaObject::_iface_currentTitle() const
+@@ -1444,6 +1582,14 @@ void MediaObject::handleEndOfStream()
+     }
+ }
+ 
++void MediaObject::invalidateGraph()
++{
++    m_resetNeeded = true;
++    if (m_state == Phonon::PlayingState || m_state == Phonon::PausedState) {
++        changeState(Phonon::StoppedState);
++    }
++}
++
+ // Notifes the pipeline about state changes in the media object
+ void MediaObject::notifyStateChange(Phonon::State newstate, Phonon::State oldstate)
+ {
+@@ -1502,15 +1648,30 @@ int MediaObject::_iface_currentTitle() const
  
  void MediaObject::_iface_setCurrentTitle(int title)
  {
@@ -8082,7 +8123,7 @@ index b6d23ec..509e749 100644
          m_atEndOfStream = false;
          emit titleChanged(title);
 diff --git a/src/3rdparty/phonon/gstreamer/mediaobject.h b/src/3rdparty/phonon/gstreamer/mediaobject.h
-index 64b3510..2db596d 100644
+index 64b3510..d588ffc 100644
 --- a/src/3rdparty/phonon/gstreamer/mediaobject.h
 +++ b/src/3rdparty/phonon/gstreamer/mediaobject.h
 @@ -55,6 +55,7 @@ class MediaObject : public QObject, public MediaObjectInterface
@@ -8093,7 +8134,22 @@ index 64b3510..2db596d 100644
      Q_OBJECT
      Q_INTERFACES(Phonon::MediaObjectInterface
  #ifndef QT_NO_PHONON_MEDIACONTROLLER
-@@ -236,6 +237,7 @@ private:
+@@ -144,12 +145,8 @@ public:
+     void handleBusMessage(const Message &msg);
+     void handleEndOfStream();
+     void addMissingCodecName(const QString &codec) { m_missingCodecs.append(codec); }
+-    void invalidateGraph() {
+-        m_resetNeeded = true;
+-        if (m_state == Phonon::PlayingState || m_state == Phonon::PausedState) {
+-            changeState(Phonon::StoppedState);
+-        }
+-    }
++    void invalidateGraph();
++
+     static void cb_newpad (GstElement *decodebin, GstPad *pad, gboolean last, gpointer data);
+     static void cb_pad_added (GstElement *decodebin, GstPad *pad, gpointer data);
+     static void cb_unknown_type (GstElement *decodebin, GstPad *pad, GstCaps *caps, gpointer data);
+@@ -236,6 +233,7 @@ private:
      int _iface_availableTitles() const;
      int _iface_currentTitle() const;
      void _iface_setCurrentTitle(int title);
@@ -8101,7 +8157,7 @@ index 64b3510..2db596d 100644
  
      bool m_resumeState;
      State m_oldState;
-@@ -250,6 +252,7 @@ private:
+@@ -250,6 +248,7 @@ private:
      MediaSource m_nextSource;
      qint32 m_prefinishMark;
      qint32 m_transitionTime;
@@ -8109,7 +8165,7 @@ index 64b3510..2db596d 100644
  
      qint64 m_posAtSeek;
  
-@@ -285,6 +288,7 @@ private:
+@@ -285,6 +284,7 @@ private:
      bool m_autoplayTitles;
      int m_availableTitles;
      int m_currentTitle;
@@ -15650,10 +15706,10 @@ index 45845db..0000000
 -
 -#endif
 diff --git a/src/3rdparty/phonon/phonon/CMakeLists.txt b/src/3rdparty/phonon/phonon/CMakeLists.txt
-index 11d7913..c68e5c1 100644
+index 11d7913..d669ef0 100644
 --- a/src/3rdparty/phonon/phonon/CMakeLists.txt
 +++ b/src/3rdparty/phonon/phonon/CMakeLists.txt
-@@ -1,12 +1,40 @@
+@@ -1,12 +1,48 @@
 -if (PHONON_BUILD_TESTS)
 -    add_subdirectory(tests)
 -endif (PHONON_BUILD_TESTS)
@@ -15665,15 +15721,23 @@ index 11d7913..c68e5c1 100644
 -add_subdirectory(experimental)
 +#add_subdirectory(experimental)
 +
-+set(PULSEAUDIO_MINIMUM_VERSION "0.9.21")
++set(PULSEAUDIO_MINIMUM_VERSION "0.9.15")
 +macro_optional_find_package(PulseAudio)
++if (PULSEAUDIO_FOUND)
++    # PULSEAUDIO_DEVICE_MANAGER feature check could be moved to FindPulseAudio.cmake, hint hint. -- Rex
++    macro_ensure_version("0.9.21" "${PULSEAUDIO_VERSION}" PULSEAUDIO_DEVICE_MANAGER)
++endif (PULSEAUDIO_FOUND)
 +macro_log_feature(PULSEAUDIO_FOUND "PulseAudio" "A cross-platform, networked sound server." "http://www.pulseaudio.org" FALSE "" "Allows audio playback via the PulseAudio soundserver when it is running")
 +macro_optional_find_package(GLIB2)
 +macro_log_feature(GLIB2_FOUND "GLib2" "GLib 2 is required to compile the pulseaudio for Phonon" "http://www.gtk.org/download/" FALSE)
 +
++
 +if (GLIB2_FOUND AND PULSEAUDIO_FOUND)
 +   add_definitions(-DHAVE_PULSEAUDIO)
 +   include_directories(${GLIB2_INCLUDE_DIR} ${PULSEAUDIO_INCLUDE_DIR})
++   if (PULSEAUDIO_DEVICE_MANAGER)
++      add_definitions(-DHAVE_PULSEAUDIO_DEVICE_MANAGER)
++   endif(PULSEAUDIO_DEVICE_MANAGER)
 +else(GLIB2_FOUND AND PULSEAUDIO_FOUND)
 +   set(PULSEAUDIO_INCLUDE_DIR "")
 +   set(PULSEAUDIO_LIBRARY "")
@@ -15699,7 +15763,7 @@ index 11d7913..c68e5c1 100644
  
  set(phonon_LIB_SRCS
     objectdescription.cpp
-@@ -35,9 +63,12 @@ set(phonon_LIB_SRCS
+@@ -35,9 +71,12 @@ set(phonon_LIB_SRCS
     videowidget.cpp
     videoplayer.cpp
     seekslider.cpp
@@ -15712,7 +15776,7 @@ index 11d7913..c68e5c1 100644
     )
  
  if (QT_QTDBUS_FOUND)
-@@ -50,6 +81,10 @@ endif (QT_QTDBUS_FOUND)
+@@ -50,6 +89,10 @@ endif (QT_QTDBUS_FOUND)
  add_definitions(-DPHONON_LIBRARY_PATH="${PLUGIN_INSTALL_DIR}/plugins")
  automoc4_add_library(phonon SHARED ${phonon_LIB_SRCS})
  target_link_libraries(phonon ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY})
@@ -15723,14 +15787,14 @@ index 11d7913..c68e5c1 100644
  if (QT_QTDBUS_FOUND)
    target_link_libraries(phonon ${QT_QTDBUS_LIBRARY})
  endif (QT_QTDBUS_FOUND)
-@@ -99,6 +134,10 @@ install(FILES
+@@ -99,6 +142,10 @@ install(FILES
     volumeslider.h
     effectwidget.h
     platformplugin.h
 +   audiodataoutput.h
 +   audiodataoutputinterface.h
 +   globalconfig.h
-+   pulsesupport_p.h
++   pulsesupport.h
     DESTINATION ${INCLUDE_INSTALL_DIR}/phonon COMPONENT Devel)
  
  install(FILES org.kde.Phonon.AudioOutput.xml  DESTINATION  ${DBUS_INTERFACES_INSTALL_DIR})
@@ -15855,10 +15919,10 @@ index 0000000..efbaa3e
 +// vim: sw=4 ts=4 tw=80
 diff --git a/src/3rdparty/phonon/phonon/audiodataoutput.h b/src/3rdparty/phonon/phonon/audiodataoutput.h
 new file mode 100644
-index 0000000..8e8f8e0
+index 0000000..fefd68e
 --- /dev/null
 +++ b/src/3rdparty/phonon/phonon/audiodataoutput.h
-@@ -0,0 +1,129 @@
+@@ -0,0 +1,135 @@
 +/*  This file is part of the KDE project
 +    Copyright (C) 2005-2006 Matthias Kretz <kretz@kde.org>
 +
@@ -15891,6 +15955,9 @@ index 0000000..8e8f8e0
 +template<typename T> class QVector;
 +template<typename Key, typename T> class QMap;
 +#endif
++
++QT_BEGIN_HEADER
++QT_BEGIN_NAMESPACE
 +
 +namespace Phonon
 +{
@@ -15985,6 +16052,9 @@ index 0000000..8e8f8e0
 +            void endOfMedia(int remainingSamples);
 +    };
 +} // namespace Phonon
++
++QT_END_NAMESPACE
++QT_END_HEADER
 +
 +// vim: sw=4 ts=4 tw=80
 +#endif // Phonon_AUDIODATAOUTPUT_H
@@ -16093,7 +16163,7 @@ index 0000000..bc1aad0
 +
 +#endif // PHONON_AUDIODATAOUTPUTINTERFACE_H
 diff --git a/src/3rdparty/phonon/phonon/audiooutput.cpp b/src/3rdparty/phonon/phonon/audiooutput.cpp
-index 0f6a49b..87e9b30 100644
+index 0f6a49b..89b24bd 100644
 --- a/src/3rdparty/phonon/phonon/audiooutput.cpp
 +++ b/src/3rdparty/phonon/phonon/audiooutput.cpp
 @@ -24,10 +24,11 @@
@@ -16105,7 +16175,7 @@ index 0f6a49b..87e9b30 100644
  #include "audiooutputinterface.h"
  #include "phononnamespace_p.h"
  #include "platform_p.h"
-+#include "pulsesupport_p.h"
++#include "pulsesupport.h"
  
  #include <QtCore/qmath.h>
  
@@ -16779,7 +16849,7 @@ index dee2b56..41b8c5b 100644
       */
      PHONON_EXPORT QObject *backend(bool createWhenNull = true);
 diff --git a/src/3rdparty/phonon/phonon/globalconfig.cpp b/src/3rdparty/phonon/phonon/globalconfig.cpp
-index 3b77a18..68c48f7 100644
+index 3b77a18..44bf49a 100644
 --- a/src/3rdparty/phonon/phonon/globalconfig.cpp
 +++ b/src/3rdparty/phonon/phonon/globalconfig.cpp
 @@ -20,6 +20,7 @@
@@ -16794,7 +16864,7 @@ index 3b77a18..68c48f7 100644
  #include "backendinterface.h"
  #include "qsettingsgroup_p.h"
  #include "phononnamespace_p.h"
-+#include "pulsesupport_p.h"
++#include "pulsesupport.h"
  
  #include <QtCore/QList>
  #include <QtCore/QVariant>
@@ -17481,14 +17551,14 @@ index be22dc3..c8db1e6 100644
  #endif //QT_NO_PHONON_ABSTRACTMEDIASTREAM
  }
 diff --git a/src/3rdparty/phonon/phonon/objectdescription.cpp b/src/3rdparty/phonon/phonon/objectdescription.cpp
-index e058b89..9da74f3 100644
+index e058b89..4afd9dd 100644
 --- a/src/3rdparty/phonon/phonon/objectdescription.cpp
 +++ b/src/3rdparty/phonon/phonon/objectdescription.cpp
 @@ -29,6 +29,7 @@
  #include <QtCore/QStringList>
  #include "backendinterface.h"
  #include "platformplugin.h"
-+#include "pulsesupport_p.h"
++#include "pulsesupport.h"
  
  QT_BEGIN_NAMESPACE
  
@@ -17815,10 +17885,10 @@ index ec42d51..89ff21d 100644
      enum MetaData {
 diff --git a/src/3rdparty/phonon/phonon/pulsesupport.cpp b/src/3rdparty/phonon/phonon/pulsesupport.cpp
 new file mode 100644
-index 0000000..b203e9e
+index 0000000..497e6a2
 --- /dev/null
 +++ b/src/3rdparty/phonon/phonon/pulsesupport.cpp
-@@ -0,0 +1,968 @@
+@@ -0,0 +1,1013 @@
 +/*  This file is part of the KDE project
 +    Copyright (C) 2009 Colin Guthrie <cguthrie@mandriva.org>
 +
@@ -17851,10 +17921,12 @@ index 0000000..b203e9e
 +#include <pulse/pulseaudio.h>
 +#include <pulse/xmalloc.h>
 +#include <pulse/glib-mainloop.h>
-+#include <pulse/ext-device-manager.h>
++#ifdef HAVE_PULSEAUDIO_DEVICE_MANAGER
++#  include <pulse/ext-device-manager.h>
++#endif
 +#endif // HAVE_PULSEAUDIO
 +
-+#include "pulsesupport_p.h"
++#include "pulsesupport.h"
 +
 +QT_BEGIN_NAMESPACE
 +
@@ -17972,7 +18044,34 @@ index 0000000..b203e9e
 +static QMap<QString, uint32_t> s_captureStreamIndexMap;
 +static QMap<QString, int> s_captureStreamMoveQueue;
 +
++static void createGenericDevices()
++{
++    // OK so we don't have the device manager extension, but we can show a single device and fake it.
++    int index;
++    s_outputDeviceIndexes.clear();
++    s_outputDevices.clear();
++    s_outputDevicePriorities.clear();
++    index = s_deviceIndexCounter++;
++    s_outputDeviceIndexes.insert("sink:default", index);
++    s_outputDevices.insert(index, AudioDevice("sink:default", QObject::tr("PulseAudio Sound Server").toUtf8(), "audio-backend-pulseaudio", 0));
++    for (int i = Phonon::NoCategory; i <= Phonon::LastCategory; ++i) {
++        Phonon::Category cat = static_cast<Phonon::Category>(i);
++        s_outputDevicePriorities[cat].insert(0, index);
++    }
 +
++    s_captureDeviceIndexes.clear();
++    s_captureDevices.clear();
++    s_captureDevicePriorities.clear();
++    index = s_deviceIndexCounter++;
++    s_captureDeviceIndexes.insert("source:default", index);
++    s_captureDevices.insert(index, AudioDevice("source:default", QObject::tr("PulseAudio Sound Server").toUtf8(), "audio-backend-pulseaudio", 0));
++    for (int i = Phonon::NoCategory; i <= Phonon::LastCategory; ++i) {
++        Phonon::Category cat = static_cast<Phonon::Category>(i);
++        s_captureDevicePriorities[cat].insert(0, index);
++    }
++}
++
++#ifdef HAVE_PULSEAUDIO_DEVICE_MANAGER
 +static void ext_device_manager_subscribe_cb(pa_context *, void *);
 +static void ext_device_manager_read_cb(pa_context *c, const pa_ext_device_manager_info *info, int eol, void *userdata) {
 +    Q_ASSERT(c);
@@ -17980,6 +18079,7 @@ index 0000000..b203e9e
 +
 +    // If this is our first iteration, set things up properly
 +    if (s_connectionEventloop) {
++        logMessage("Exiting connection event loop (PulseAudio server found)");
 +        s_connectionEventloop->exit(0);
 +        s_connectionEventloop = NULL;
 +        s_pulseActive = true;
@@ -17992,30 +18092,7 @@ index 0000000..b203e9e
 +
 +    if (eol < 0) {
 +        logMessage(QString("Failed to initialize device manager extension: %1").arg(pa_strerror(pa_context_errno(c))));
-+        // OK so we don't have the device manager extension, but we can show a single device and fake it.
-+        int index;
-+        s_outputDeviceIndexes.clear();
-+        s_outputDevices.clear();
-+        s_outputDevicePriorities.clear();
-+        index = s_deviceIndexCounter++;
-+        s_outputDeviceIndexes.insert("sink:default", index);
-+        s_outputDevices.insert(index, AudioDevice("sink:default", QObject::tr("PulseAudio Sound Server").toUtf8(), "audio-backend-pulseaudio", 0));
-+        for (int i = Phonon::NoCategory; i <= Phonon::LastCategory; ++i) {
-+            Phonon::Category cat = static_cast<Phonon::Category>(i);
-+            s_outputDevicePriorities[cat].insert(0, index);
-+        }
-+
-+        s_captureDeviceIndexes.clear();
-+        s_captureDevices.clear();
-+        s_captureDevicePriorities.clear();
-+        index = s_deviceIndexCounter++;
-+        s_captureDeviceIndexes.insert("source:default", index);
-+        s_captureDevices.insert(index, AudioDevice("source:default", QObject::tr("PulseAudio Sound Server").toUtf8(), "audio-backend-pulseaudio", 0));
-+        for (int i = Phonon::NoCategory; i <= Phonon::LastCategory; ++i) {
-+            Phonon::Category cat = static_cast<Phonon::Category>(i);
-+            s_captureDevicePriorities[cat].insert(0, index);
-+        }
-+
++        createGenericDevices();
 +        return;
 +    }
 +
@@ -18190,6 +18267,7 @@ index 0000000..b203e9e
 +        }
 +    }
 +}
++#endif
 +
 +static void set_output_device(QString streamUuid)
 +{
@@ -18376,10 +18454,12 @@ index 0000000..b203e9e
 +    Q_ASSERT(c);
 +
 +    pa_operation *o;
++#ifdef HAVE_PULSEAUDIO_DEVICE_MANAGER 
 +    PulseUserData *u = new PulseUserData; /** @todo Make some object to receive the info... */
 +    if (!(o = pa_ext_device_manager_read(c, ext_device_manager_read_cb, u))) {
 +        // We need to deal with failure on first iteration
 +        if (s_connectionEventloop) {
++            logMessage("Entering connection eventloop (initialisation failed)");
 +            s_connectionEventloop->exit(0);
 +            s_connectionEventloop = NULL;
 +        }
@@ -18387,6 +18467,17 @@ index 0000000..b203e9e
 +        return;
 +    }
 +    pa_operation_unref(o);
++#else
++    // If we do not have Device Manager support. We just bail out now
++    // and say we are active with our single "devices" for playback and capture
++    s_pulseActive = true;
++    logMessage("Entering connection eventloop (successfully detected PulseAudio)");
++    if (s_connectionEventloop) {
++        s_connectionEventloop->exit(0);
++        s_connectionEventloop = NULL;
++    }
++    createGenericDevices();
++#endif
 +
 +
 +    // Register for the stream changes...
@@ -18401,10 +18492,30 @@ index 0000000..b203e9e
 +    pa_operation_unref(o);
 +}
 +
++
++static const char* statename(pa_context_state_t state)
++{
++    switch (state)
++    {
++        case PA_CONTEXT_UNCONNECTED:  return "Unconnected";
++        case PA_CONTEXT_CONNECTING:   return "Connecting";
++        case PA_CONTEXT_AUTHORIZING:  return "Authorizing";
++        case PA_CONTEXT_SETTING_NAME: return "Setting Name";
++        case PA_CONTEXT_READY:        return "Ready";
++        case PA_CONTEXT_FAILED:       return "Failed";
++        case PA_CONTEXT_TERMINATED:   return "Terminated";
++    }
++
++    static QString unknown;
++    unknown = QString("Unknown state: %0").arg(state);
++    return unknown.toAscii().constData();
++}
++
 +static void context_state_callback(pa_context *c, void *)
 +{
 +    Q_ASSERT(c);
 +
++    logMessage(QString("context_state_callback %1").arg(statename(pa_context_get_state(c))));
 +    switch (pa_context_get_state(c)) {
 +        case PA_CONTEXT_UNCONNECTED:
 +        case PA_CONTEXT_CONNECTING:
@@ -18420,6 +18531,7 @@ index 0000000..b203e9e
 +        case PA_CONTEXT_FAILED:
 +            s_pulseActive = false;
 +            if (s_connectionEventloop) {
++                logMessage("Entering connection eventloop (connection failed)");
 +                s_connectionEventloop->exit(0);
 +                s_connectionEventloop = NULL;
 +            }
@@ -18486,6 +18598,7 @@ index 0000000..b203e9e
 +    if (pa_context_connect(s_context, NULL, static_cast<pa_context_flags_t>(0), 0) >= 0) {
 +        pa_context_set_state_callback(s_context, &context_state_callback, s_connectionEventloop);
 +        // Now we block until we connect or otherwise...
++        logMessage("Entering connection eventloop...");
 +        s_connectionEventloop->exec();
 +    }
 +#endif
@@ -18642,11 +18755,13 @@ index 0000000..b203e9e
 +    }
 +    devices[list.size()] = NULL;
 +
++#ifdef HAVE_PULSEAUDIO_DEVICE_MANAGER 
 +    pa_operation *o;
 +    if (!(o = pa_ext_device_manager_reorder_devices_for_role(s_context, role.toUtf8().constData(), (const char**)devices, NULL, NULL)))
 +        logMessage(QString("pa_ext_device_manager_reorder_devices_for_role() failed"));
 +    else
 +        pa_operation_unref(o);
++#endif
 +
 +    for (i = 0; i < list.size(); ++i)
 +        pa_xfree(devices[i]);
@@ -18784,14 +18899,14 @@ index 0000000..b203e9e
 +
 +QT_END_NAMESPACE
 +
-+#include "moc_pulsesupport_p.cpp"
++#include "moc_pulsesupport.cpp"
 +
 +// vim: sw=4 ts=4
-diff --git a/src/3rdparty/phonon/phonon/pulsesupport_p.h b/src/3rdparty/phonon/phonon/pulsesupport_p.h
+diff --git a/src/3rdparty/phonon/phonon/pulsesupport.h b/src/3rdparty/phonon/phonon/pulsesupport.h
 new file mode 100644
 index 0000000..ad711ed
 --- /dev/null
-+++ b/src/3rdparty/phonon/phonon/pulsesupport_p.h
++++ b/src/3rdparty/phonon/phonon/pulsesupport.h
 @@ -0,0 +1,73 @@
 +/*  This file is part of the KDE project
 +    Copyright (C) 2009 Colin Guthrie <cguthrie@mandriva.org>
@@ -19280,14 +19395,15 @@ index b3ca106..327ddd7 100644
  
  Backend::~Backend()
 diff --git a/src/3rdparty/phonon/qt7/backendinfo.mm b/src/3rdparty/phonon/qt7/backendinfo.mm
-index 0d51db0..e173f05 100644
+index 0d51db0..938359c 100644
 --- a/src/3rdparty/phonon/qt7/backendinfo.mm
 +++ b/src/3rdparty/phonon/qt7/backendinfo.mm
-@@ -22,7 +22,6 @@
+@@ -22,7 +22,7 @@
  #include <AudioUnit/AudioUnit.h>
  #include <CoreServices/CoreServices.h>
  
 -#include <QtGui/qmacdefines_mac.h>
++#undef slots
  #import <QTKit/QTMovie.h>
  
  #ifdef QUICKTIME_C_API_AVAILABLE
@@ -20094,18 +20210,20 @@ index 2dcc152..851e707 100644
  {
      if (m_videoPlayer && m_videoPlayer->hasMovie() && m_movieChanged)
 diff --git a/src/3rdparty/phonon/qt7/quicktimevideoplayer.h b/src/3rdparty/phonon/qt7/quicktimevideoplayer.h
-index 98eacb5..0b3aec2 100644
+index 98eacb5..8e73cde 100644
 --- a/src/3rdparty/phonon/qt7/quicktimevideoplayer.h
 +++ b/src/3rdparty/phonon/qt7/quicktimevideoplayer.h
-@@ -20,7 +20,6 @@
+@@ -20,8 +20,8 @@
  
  #include "backendheader.h"
  
 -#include <QtGui/qmacdefines_mac.h>
  #import <QTKit/QTDataReference.h>
++#undef slots
  #import <QTKit/QTMovie.h>
  
-@@ -39,7 +38,6 @@ namespace Phonon
+ #include <phonon/mediasource.h>
+@@ -39,7 +39,6 @@ namespace Phonon
  namespace QT7
  {
      class QuickTimeStreamReader;
@@ -20113,7 +20231,7 @@ index 98eacb5..0b3aec2 100644
  	class VideoRenderWidgetQTMovieView;
  
      class QuickTimeVideoPlayer : QObject
-@@ -57,7 +55,7 @@ namespace QT7
+@@ -57,7 +56,7 @@ namespace QT7
  
              void setMediaSource(const MediaSource &source);
              MediaSource mediaSource() const;
@@ -20122,7 +20240,7 @@ index 98eacb5..0b3aec2 100644
  
              void play();
              void pause();
-@@ -68,13 +66,11 @@ namespace QT7
+@@ -68,13 +67,11 @@ namespace QT7
              GLuint currentFrameAsGLTexture();
  			void *currentFrameAsCIImage();
              QImage currentFrameAsQImage();
@@ -20136,7 +20254,7 @@ index 98eacb5..0b3aec2 100644
              QString currentTimeString();
  
              void setColors(qreal brightness = 0, qreal contrast = 1, qreal hue = 0, qreal saturation = 1);
-@@ -87,7 +83,6 @@ namespace QT7
+@@ -87,7 +84,6 @@ namespace QT7
              bool setAudioDevice(int id);
              void setPlaybackRate(float rate);
              QTMovie *qtMovie() const;
@@ -20144,7 +20262,7 @@ index 98eacb5..0b3aec2 100644
  
              float playbackRate() const;
              float prefferedPlaybackRate() const;
-@@ -107,12 +102,6 @@ namespace QT7
+@@ -107,12 +103,6 @@ namespace QT7
              float percentageLoaded();
              quint64 timeLoaded();
  
@@ -20157,7 +20275,7 @@ index 98eacb5..0b3aec2 100644
              static QString timeToString(quint64 ms);
  
  			// Help functions when drawing to more that one widget in cocoa 64:
-@@ -126,10 +115,6 @@ namespace QT7
+@@ -126,10 +116,6 @@ namespace QT7
              QTMovie *m_QTMovie;
              State m_state;
              QGLPixelBuffer *m_QImagePixelBuffer;
@@ -20168,7 +20286,7 @@ index 98eacb5..0b3aec2 100644
  
              bool m_playbackRateSat;
              bool m_isDrmProtected;
-@@ -140,18 +125,13 @@ namespace QT7
+@@ -140,18 +126,13 @@ namespace QT7
              float m_masterVolume;
              float m_relativeVolume;
              float m_playbackRate;
@@ -20187,7 +20305,7 @@ index 98eacb5..0b3aec2 100644
  
  #ifdef QUICKTIME_C_API_AVAILABLE
              QTVisualContextRef m_visualContext;
-@@ -159,26 +139,20 @@ namespace QT7
+@@ -159,26 +140,20 @@ namespace QT7
              VideoFrame m_currentFrame;
              QuickTimeStreamReader *m_streamReader;
  
@@ -21799,7 +21917,7 @@ index c5543db..90bf18e 100644
      Q_ASSERT(QGLContext::currentContext());
      QX11PixmapData *pixmapData = static_cast<QX11PixmapData*>(pmd);
 diff --git a/src/phonon/phonon.pro b/src/phonon/phonon.pro
-index 0469839..a1756d1 100644
+index 0469839..f62e958 100644
 --- a/src/phonon/phonon.pro
 +++ b/src/phonon/phonon.pro
 @@ -3,7 +3,7 @@ include(../qbase.pri)
@@ -21833,7 +21951,7 @@ index 0469839..a1756d1 100644
             $$PHONON_DIR/phononnamespace_p.h \
             $$PHONON_DIR/platform_p.h \
             $$PHONON_DIR/platformplugin.h \
-+           $$PHONON_DIR/pulsesupport_p.h \
++           $$PHONON_DIR/pulsesupport.h \
             $$PHONON_DIR/qsettingsgroup_p.h \
             $$PHONON_DIR/seekslider.h \
             $$PHONON_DIR/seekslider_p.h \
@@ -22031,3 +22149,19 @@ index baf5261..9f3a4ce 100644
  
  REQUIRES = !CONFIG(static,shared|static)
  contains(QT_CONFIG, qt3support): SUBDIRS += widgets
+diff --git a/translations/translations.pro b/translations/translations.pro
+index 05dd968..c59e3d1 100644
+--- a/translations/translations.pro
++++ b/translations/translations.pro
+@@ -5,9 +5,9 @@ LRELEASE ~= s,/,$$QMAKE_DIR_SEP,
+ 
+ contains(TEMPLATE_PREFIX, vc):vcproj = 1
+ 
+-TEMPLATE = app
++TEMPLATE = lib
+ TARGET = qm_phony_target
+-CONFIG -= qt separate_debug_info
++CONFIG -= qt separate_debug_info app_bundle
+ QT =
+ LIBS =
+ 
