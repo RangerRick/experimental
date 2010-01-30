@@ -9,7 +9,7 @@ use vars qw(
 	$PREFIX
 );
 
-$PREFIX='/64sw';
+$PREFIX='/32sw';
 
 GetOptions(
 	'prefix=s' => \$PREFIX,
