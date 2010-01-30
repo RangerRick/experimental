@@ -22023,6 +22023,19 @@ index 0469839..f62e958 100644
  
  contains(QT_CONFIG, dbus) {
         QT      += dbus
+diff --git a/src/plugins/phonon/gstreamer/gstreamer.pro b/src/plugins/phonon/gstreamer/gstreamer.pro
+index ae597fa..62ce680 100644
+--- a/src/plugins/phonon/gstreamer/gstreamer.pro
++++ b/src/plugins/phonon/gstreamer/gstreamer.pro
+@@ -3,6 +3,8 @@ DESTDIR = $$QT_BUILD_TREE/plugins/phonon_backend
+ 
+ DEPENDPATH += .
+ INCLUDEPATH += .
++INCLUDEPATH += $$QT_SOURCE_TREE/src/3rdparty/phonon
++INCLUDEPATH += $$QT_SOURCE_TREE/src/3rdparty/phonon/phonon
+ 
+ QT += phonon
+ contains(QT_CONFIG, opengl):QT += opengl
 diff --git a/src/plugins/plugins.pro b/src/plugins/plugins.pro
 index 004b816..a7d8d88 100644
 --- a/src/plugins/plugins.pro
