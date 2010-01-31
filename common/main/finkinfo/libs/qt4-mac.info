@@ -70,8 +70,13 @@ CompileScript: <<
 	find . -name ._\* -exec rm -rf {} \;
 	sh ./configure-for-fink.sh "%p" "%N" $EXTRA_ARGS -make "libs tools docs translations"
 	find . -name Makefile\* -print0 | xargs -0 perl -pi -e 's,-I%p/include,-isystem %p/include,g'
-	perl -pi -e 's,^(CFLAGS .*),$1 -isysroot /Developer/SDKs/MacOSX10.4u.sdk,g'   src/plugins/phonon/qt7/Makefile.*
-	perl -pi -e 's,^(CXXFLAGS .*),$1 -isysroot /Developer/SDKs/MacOSX10.4u.sdk,g' src/plugins/phonon/qt7/Makefile.*
+	case `sw_vers -productVersion` in
+		10.6*)
+			perl -pi -e 's,-pipe,-pipe -isysroot /Developer/SDKs/MacOSX10.5.sdk,g'            src/plugins/phonon/qt7/Makefile.*
+			perl -pi -e 's,^(LIBS .*),$1 -isysroot /Developer/SDKs/MacOSX10.5.sdk,g'          src/plugins/phonon/qt7/Makefile.*
+			perl -pi -e 's,MACOSX_DEPLOYMENT_TARGET = 10.4,MACOSX_DEPLOYMENT_TARGET = 10.5,g' src/plugins/phonon/qt7/Makefile.*
+			;;
+	esac
 	touch src/3rdparty/phonon/gstreamer/phonon-config-gstreamer.h
 	make LINK="$CXX"
 <<
