@@ -72,7 +72,7 @@ CompileScript: <<
 	find . -name Makefile\* -print0 | xargs -0 perl -pi -e 's,-I%p/include,-isystem %p/include,g'
 	perl -pi -e 's,^(CFLAGS .*),$1 -isysroot /Developer/SDKs/MacOSX10.4u.sdk,g'   src/plugins/phonon/qt7/Makefile.*
 	perl -pi -e 's,^(CXXFLAGS .*),$1 -isysroot /Developer/SDKs/MacOSX10.4u.sdk,g' src/plugins/phonon/qt7/Makefile.*
-	touch gstreamer/phonon-config-gstreamer.h
+	touch src/3rdparty/phonon/gstreamer/phonon-config-gstreamer.h
 	make LINK="$CXX"
 <<
 InstallScript: <<

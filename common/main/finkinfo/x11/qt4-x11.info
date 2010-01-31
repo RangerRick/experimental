@@ -72,7 +72,7 @@ CompileScript: <<
 	find . -name ._\* -exec rm -rf {} \;
 	sh ./configure-for-fink.sh "%p" "%N" $EXTRA_ARGS -make "libs tools docs translations"
 	find . -name Makefile\* -print0 | xargs -0 perl -pi -e 's,-I%p/include,-isystem %p/include,g'
-	touch gstreamer/phonon-config-gstreamer.h
+	touch src/3rdparty/phonon/gstreamer/phonon-config-gstreamer.h
 	make LINK="$CXX"
 <<
 InstallScript: <<
