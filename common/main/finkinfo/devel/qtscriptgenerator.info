@@ -10,7 +10,7 @@ Maintainer: Benjamin Reed <qtscriptgenerator@fink.racoonfink.com>
 Source: http://qtscriptgenerator.googlecode.com/files/qtscriptgenerator-src-%v.tar.gz
 Source-MD5: ca4046ad4bda36cd4e21649d4b98886d
 PatchFile: qtscriptgenerator.patch
-PatchFile-MD5: 0641e03b1964e5c8fcdcdc730ff9053a
+PatchFile-MD5: f3144aa211895d542539cc109c9b7a22
 
 Depends: <<
 	qt4-%type_pkg[qt]-designer-shlibs (>= 4.5.0-1),
