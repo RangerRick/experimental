@@ -52,7 +52,7 @@ BuildDepends: <<
 	kde4-buildenv (>= 4.2-3),
 	kdebase4-%type_pkg[kde]-dev (>= 4.2.0-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.2.0-1),
-	libattica-dev (>= 0.1.2-1),
+	libattica-%type_pkg[kde]-dev (>= 0.1.2-1),
 	libgettext3-dev,
 	libxml2,
 	libxslt,
@@ -481,7 +481,7 @@ SplitOff17: <<
 	Package: parley4-%type_pkg[kde]
 	Description: KDE4 - memorization program
 	Depends: <<
-		libattica-shlibs (>= 0.1.2-1),
+		libattica-%type_pkg[kde]-shlibs (>= 0.1.2-1),
 		libxml2-shlibs (>= 2.6.1-1),
 		libxslt-shlibs (>= 1.1.0-1),
 		%N-base (>= %v-%r),
