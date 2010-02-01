@@ -1,6 +1,6 @@
 Info4: <<
 Package: libattica-%type_pkg[attica]-dev
-Version: 0.1.1
+Version: 0.1.2
 Revision: 1
 Type: attica (x11 mac)
 Depends: <<
@@ -16,7 +16,7 @@ BuildDepends: <<
 
 GCC: 4.0
 Source: mirror:kde:stable/attica/attica-%v.tar.bz2
-Source-MD5: 4011ebc19fe6b12b8de9f10ccc341125
+Source-MD5: 8b4207dbc0a826d422632bdb9c50d51a
 SourceDirectory: attica-%v
 
 PatchFile: libattica-dev.patch
