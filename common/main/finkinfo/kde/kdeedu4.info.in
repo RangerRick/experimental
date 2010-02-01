@@ -19,7 +19,7 @@ A collection of fun and educational apps for KDE.
 Source: mirror:kde:unstable/%v/src/kdeedu-%v.tar.bz2
 Source-MD5: 8f509d8cf2b8b9820fc3c802c2078c0a
 PatchFile: kdeedu4.patch
-PatchFile-MD5: 5d209912b0f0854d11c44a9965c6729f
+PatchFile-MD5: 0bb99b8a0f784a49bd1b0cb53f7e5280
 
 Depends: <<
 	blinken4-%type_pkg[kde]    (>= %v-%r),
@@ -515,6 +515,7 @@ SplitOff18: <<
 	Package: cantor4-%type_pkg[kde]
 	Description: KDE4 - math application
 	Depends: <<
+		libattica-%type_pkg[kde]-shlibs (>= 0.1.2-1),
 		%N-base (>= %v-%r),
 	<<
 	Files: <<
