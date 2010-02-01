@@ -2,9 +2,8 @@
 
 use strict;
 
-use lib '/sw/lib/perl5';
-use lib '/fink/lib/perl5';
-#use lib '/Users/ranger/cvs/fink/perlmod';
+use lib '/32sw/lib/perl5';
+use lib '/32sw/lib/perl5/darwin';
 
 use Clone qw(clone);
 use File::Basename;
@@ -139,7 +138,7 @@ my $package_lookup = {
 
 my $version_lookup = {
 	'all' => {
-		'^akonadi-.*?(-dev|-shlibs)?$'        => [ '1.2.90',       '1'    ],
+		'^akonadi-.*?(-dev|-shlibs)?$'        => [ '1.3.0',        '1'    ],
 		'^ant-base.*$'                        => [ '1.7.1',        '3'    ],
 		'^arts(-dev|-shlibs)?$'               => [ '1.5.10',       '1'    ],
 		'^autoconf$'                          => [ '2.63',         '1'    ],
@@ -164,21 +163,21 @@ my $version_lookup = {
 		'^gtk-doc$'                           => [ '1.8',          '1'    ],
 		'^gtk-sharp(2|-monodoc)$'             => [ '2.12.8',       '2'    ],
 		'^kde4-buildenv$'                     => [ '4.3.90',       '1'    ],
-		'^kdebase4.*$'                        => [ '4.3.90',       '1'    ],
-		'^kdeedu4.*$'                         => [ '4.3.90',       '1'    ],
-		'^kdegraphics4.*$'                    => [ '4.3.90',       '1'    ],
-		'^kdelibs4.*$'                        => [ '4.3.90',       '1'    ],
-		'^kdemultimedia4.*$'                  => [ '4.3.90',       '1'    ],
-		'^kdepim4.*$'                         => [ '4.3.90',       '1'    ],
-		'^kdepimlibs4.*$'                     => [ '4.3.90',       '1'    ],
+		'^kdebase4.*$'                        => [ '4.3.98',       '1'    ],
+		'^kdeedu4.*$'                         => [ '4.3.98',       '1'    ],
+		'^kdegraphics4.*$'                    => [ '4.3.98',       '1'    ],
+		'^kdelibs4.*$'                        => [ '4.3.98',       '1'    ],
+		'^kdemultimedia4.*$'                  => [ '4.3.98',       '1'    ],
+		'^kdepim4.*$'                         => [ '4.3.98',       '1'    ],
+		'^kdepimlibs4.*$'                     => [ '4.3.98',       '1'    ],
 		'^kipi-plugins4.*$'                   => [ '0.5.0',        '1'    ],
 		'^libgdiplus.*$'                      => [ '2.4',          '1'    ],
-		'^libkdcraw-7.*$'                     => [ '4.3.90',       '1'    ],
-		'^libkexiv2-7.*$'                     => [ '4.3.90',       '1'    ],
-		'^libkholiday.*$'                     => [ '4.3.90',       '1'    ],
-		'^libkipi-6.*$'                       => [ '4.3.90',       '1'    ],
+		'^libkdcraw-7.*$'                     => [ '4.3.98',       '1'    ],
+		'^libkexiv2-7.*$'                     => [ '4.3.98',       '1'    ],
+		'^libkholiday.*$'                     => [ '4.3.98',       '1'    ],
+		'^libkipi-6.*$'                       => [ '4.3.98',       '1'    ],
 		'^libknotificationitem1.*$'           => [ '4.3.4',        '1'    ],
-		'^libksane-0.*$'                      => [ '4.3.90',       '1'    ],
+		'^libksane-0.*$'                      => [ '4.3.98',       '1'    ],
 		'^libmal10(-shlibs)?$'                => [ undef,          '+'    ],
 		'^libcdparanoia0-dev$'                => [ '3a9.8',        '11'   ],
 		'^libmath\+\+(-dev|-shlibs)?$'        => [ '0.0.4',        '1001' ],
@@ -186,19 +185,19 @@ my $version_lookup = {
 		'^libpqxx2(-dev|-shlibs)?$'           => [ '1:2.6.8',      '1'    ],
 		'^libwpd-0.8.*$'                      => [ '0.8.14',       '1'    ],
 		'^libxml2(-shlibs)?$'                 => [ '2.6.32',       '1'    ],
-		'^marble4.*$'                         => [ '4.3.90',       '1'    ],
+		'^marble4.*$'                         => [ '4.3.98',       '1'    ],
 		'^mono(-dev|-shlibs|-tools)?$'        => [ '2.4',          '1'    ],
 		'^monodevelop.*$'                     => [ '2.0',          '1'    ],
-		'^oxygen-icons.*$'                    => [ '4.3.90',       '1'    ],
+		'^oxygen-icons.*$'                    => [ '4.3.98',       '1'    ],
 		'^pango1-xft2-ft219(-dev|-shlibs)?$'  => [ '1.20.5',       '1'    ],
 		'^pcre(-bin|-shlibs)?$'               => [ '7.6',          '1'    ],
 		'^pixman(-shlibs)?$'                  => [ '0.16.0',       '1'    ],
 		'^poppler[24]-qt4$'                   => [ '0.6.4',        '4'    ],
 		'^postgresql\S+$'                     => [ undef,          '+'    ],
 		'^qca2.*$'                            => [ '2.0.2',        '1'    ],
-		'^qgpgme1.*$'                         => [ '4.3.90',       '1'    ],
+		'^qgpgme1.*$'                         => [ '4.3.98',       '1'    ],
 		'^qt3.*$'                             => [ '3.3.8',        '1027' ],
-		'^qt4-.*$'                            => [ '4.6.0',        '5'    ],
+		'^qt4-.*$'                            => [ '4.6.1',        '1'    ],
 		'^shared-mime-info$'                  => [ '0.51',         '1'    ],
 		'^soprano.*?(-dev|-shlibs)?$'         => [ '2.3.70',       '1'    ],
 		'^strigi-gui.*?(-dev|-shlibs)?$'      => [ '0.6.5',        '1'    ],

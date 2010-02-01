@@ -1,7 +1,7 @@
 Info4: <<
 Package: kdeutils4-mac
 Type: kde (mac)
-Version: 4.3.90
+Version: 4.3.98
 Revision: 1
 Description: KDE4 - Utilities
 License: GPL/LGPL
@@ -11,7 +11,7 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:unstable/%v/src/kdeutils-%v.tar.bz2
-Source-MD5: 0128f64e54f3b610a5284afd5b274c2b
+Source-MD5: 8b27bc785c27eda1b09735dd0998ac98
 PatchFile: kdeutils4.patch
 PatchFile-MD5: 2e679d1fe33c92f5a353b7a6c4ee590a
 

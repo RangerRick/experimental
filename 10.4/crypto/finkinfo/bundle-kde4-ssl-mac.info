@@ -9,9 +9,9 @@ Maintainer: Benjamin Reed <bundle-kde4@fink.racoonfink.com>
 Depends: <<
 	bundle-kde4-mac (>= %v-1),
 	kdegames4-mac (>= %v-1),
-	kdegraphics4-mac (>= 4.3.90-1),
+	kdegraphics4-mac (>= 4.3.98-1),
 	kdenetwork4-mac (>= %v-1),
-	kdepim4-mac (>= 4.3.90-1)
+	kdepim4-mac (>= 4.3.98-1)
 <<
 BuildDepends: fink
 

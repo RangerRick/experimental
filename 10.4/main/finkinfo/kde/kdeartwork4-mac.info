@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdeartwork4-mac
-Version: 4.3.90
+Version: 4.3.98
 Revision: 1
 Description: KDE4 - Styles and themes
 Type: kde (mac)
@@ -25,11 +25,11 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	glib2-dev (>= 2.18.4-1),
 	kde4-buildenv (>= 4.3.90-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.3.90-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.3.98-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
 	libgettext8-dev,
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.6.0-5),
+	qt4-%type_pkg[kde] (>= 4.6.1-1),
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
@@ -38,8 +38,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/kdeartwork-%v.tar.bz2
-Source-MD5: f5954a7a6fd0b99db7a6c2cbd30b5547
+Source: mirror:kde:unstable/%v/src/kdeartwork-%v.tar.bz2
+Source-MD5: 9c6b65517694009c838d2627a0653087
 
 CompileScript: <<
 #!/bin/sh -ev
@@ -114,7 +114,7 @@ SplitOff7: <<
 SplitOff9: <<
 	Package: %N-base
 	Description: KDE4 - kdeartwork base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.3.90-1)
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.3.98-1)
 	Files: opt share/doc/installed-packages/%N-base
 <<
 

@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdeutils4-x11
-Version: 4.3.90
+Version: 4.3.98
 Revision: 1
 Description: KDE4 - Utilities
 Type: kde (x11)
@@ -31,13 +31,13 @@ BuildDepends: <<
 	glib2-dev (>= 2.18.4-1),
 	gmp,
 	kde4-buildenv (>= 4.3.90-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.3.90-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.3.98-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
 	libarchive,
 	libgettext8-dev,
 	libzip1,
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.6.0-5),
+	qt4-%type_pkg[kde] (>= 4.6.1-1),
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
@@ -46,7 +46,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:unstable/%v/src/kdeutils-%v.tar.bz2
-Source-MD5: 0128f64e54f3b610a5284afd5b274c2b
+Source-MD5: 8b27bc785c27eda1b09735dd0998ac98
 PatchFile: kdeutils4.patch
 PatchFile-MD5: 2e679d1fe33c92f5a353b7a6c4ee590a
 
@@ -213,7 +213,7 @@ SplitOff2: <<
 SplitOff20: <<
 	Package: %N-base
 	Description: KDE4 - kdeutils base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.3.90-1)
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.3.98-1)
 	Files: opt share/doc/installed-packages/%n
 <<
 SplitOff3: <<

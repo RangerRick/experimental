@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdesdk4-mac
-Version: 4.3.90
+Version: 4.3.98
 Revision: 1
 Description: KDE4 - Developer Utilities
 Type: kde (mac)
@@ -33,15 +33,15 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	glib2-dev (>= 2.18.4-1),
 	kde4-buildenv (>= 4.3.90-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.3.90-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.3.98-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
 	libgettext8-dev,
 	libhunspell (>= 1.2.8-1004),
 	libxslt,
 	libxml2,
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.6.0-5),
+	qt4-%type_pkg[kde] (>= 4.6.1-1),
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
@@ -51,7 +51,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:unstable/%v/src/kdesdk-%v.tar.bz2
-Source-MD5: 5e0d82615961a7dd82b8dc6e76fe0db7
+Source-MD5: 4e0e0391c8e0dfa0e9253ab12251f3d2
 
 CompileScript: <<
 #!/bin/sh -ev
@@ -241,7 +241,7 @@ SplitOff20: <<
 SplitOff21: <<
 	Package: %N-base
 	Description: KDE4 - kdesdk base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.3.90-1)
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.3.98-1)
 	Files: opt
 <<
 SplitOff3: <<
@@ -283,7 +283,7 @@ SplitOff4: <<
 	Package: kbugbuster4-%type_pkg[kde]
 	Description: KDE4 - bugzilla client
 	Depends: <<
-		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.3.90-1),
+		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.3.98-1),
 		%N-base (>= %v-%r)
 	<<
 	Files: <<
@@ -350,7 +350,7 @@ SplitOff7: <<
 	Package: kuiviewer4-%type_pkg[kde]
 	Description: KDE4 - Qt Designer interface viewer
 	Depends: <<
-		qt4-%type_pkg[kde]-designer-shlibs (>= 4.6.0-5),
+		qt4-%type_pkg[kde]-designer-shlibs (>= 4.6.1-1),
 		%N-base (>= %v-%r)
 	<<
 	Files: <<

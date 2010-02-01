@@ -1,7 +1,7 @@
 Info3: <<
 Package: kdebase4-mac
 Type: kde (mac)
-Version: 4.3.90
+Version: 4.3.98
 Revision: 1
 Description: KDE4 - base runtime
 License: GPL/LGPL
@@ -57,7 +57,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:unstable/%v/src/kdebase-%v.tar.bz2
-Source-MD5: 441a29ddea621374b7bf9439bc24fd3e
+Source-MD5: 0de28416f594a18ed092842ecda068b9
 SourceDirectory: kdebase-%v
 
 PatchScript: <<

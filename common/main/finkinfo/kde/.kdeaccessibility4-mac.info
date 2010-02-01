@@ -1,7 +1,7 @@
 Info4: <<
 Package: kdeaccessibility4-mac
 Type: kde (mac)
-Version: 4.3.90
+Version: 4.3.98
 Revision: 1
 Description: KDE4 - accessibility software
 License: GPL/LGPL
@@ -16,8 +16,8 @@ of us with physical handicaps.
 This is the set of tools created by the KDEAP.
 <<
 
-Source: mirror:kde:stable/%v/src/kdeaccessibility-%v.tar.bz2
-Source-MD5: 7671a58404a6eabb3a2de957bb1861b2
+Source: mirror:kde:unstable/%v/src/kdeaccessibility-%v.tar.bz2
+Source-MD5: 60bfd7e3b18c7aff66d29c283ed7f8c1
 
 Depends: <<
 	kmouth4-%type_pkg[kde] (>= %v-%r),

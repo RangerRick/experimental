@@ -8,7 +8,7 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <kipi-plugins4@fink.racoonfink.com>
 
 Depends: <<
-	kdebase4-runtime-%type_pkg[kde] (>= 4.3.90-1),
+	kdebase4-runtime-%type_pkg[kde] (>= 4.3.98-1),
 	%N-shlibs (>= %v-%r)
 <<
 BuildDepends: <<
@@ -22,24 +22,24 @@ BuildDepends: <<
 	glib2-dev (>= 2.18.4-1),
 	gtk+2-dev (>= 2.14.7-1),
 	kde4-buildenv (>= 4.3.90-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.3.90-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.3.98-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
 	libjasper.1,
 	libjpeg,
 	libgettext8-dev,
 	libgphoto2,
 	libgpod4,
-	libkdcraw-7-%type_pkg[kde]-dev (>= 4.3.90-1),
-	libkexiv2-7-%type_pkg[kde]-dev (>= 4.3.90-1),
-	libkipi-6-%type_pkg[kde]-dev (>= 4.3.90-1),
-	libksane-0-%type_pkg[kde]-dev (>= 4.3.90-1),
+	libkdcraw-7-%type_pkg[kde]-dev (>= 4.3.98-1),
+	libkexiv2-7-%type_pkg[kde]-dev (>= 4.3.98-1),
+	libkipi-6-%type_pkg[kde]-dev (>= 4.3.98-1),
+	libksane-0-%type_pkg[kde]-dev (>= 4.3.98-1),
 	libpng3,
 	libtiff,
 	libxml2,
 	libxslt,
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.6.0-5),
+	qt4-%type_pkg[kde] (>= 4.6.1-1),
 	sane-backends-dev,
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	strigi-dev (>= 0.6.3-1),
@@ -81,10 +81,10 @@ InstallScript: <<
 SplitOff: <<
 	Package: %N-shlibs
 	Depends: <<
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.90-1),
-		libkdcraw-7-%type_pkg[kde]-shlibs (>= 4.3.90-1),
-		libkexiv2-7-%type_pkg[kde]-shlibs (>= 4.3.90-1),
-		libkipi-6-%type_pkg[kde]-shlibs (>= 4.3.90-1)
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.98-1),
+		libkdcraw-7-%type_pkg[kde]-shlibs (>= 4.3.98-1),
+		libkexiv2-7-%type_pkg[kde]-shlibs (>= 4.3.98-1),
+		libkipi-6-%type_pkg[kde]-shlibs (>= 4.3.98-1)
 	<<
 	Files: opt/kde4/%type_pkg[kde]/lib/libkipiplugins.1*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkipiplugins.1.dylib 1.0.0 %n (>= 0.2.0-2)

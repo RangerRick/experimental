@@ -1,7 +1,7 @@
 Info4: <<
 Package: kdewebdev4-mac
 Type: kde (mac)
-Version: 4.3.90
+Version: 4.3.98
 Revision: 1
 Description: KDE4 - Web Development
 License: GPL/LGPL
@@ -10,8 +10,8 @@ Maintainer: Benjamin Reed <kdewebdev4@fink.racoonfink.com>
 DescDetail: <<
 <<
 
-Source: mirror:kde:stable/%v/src/kdewebdev-%v.tar.bz2
-Source-MD5: ae8a78dc0d41c50afda0165801dd8e90
+Source: mirror:kde:unstable/%v/src/kdewebdev-%v.tar.bz2
+Source-MD5: 4c20f1fc8520727a2a9cb90f5d20145f
 #PatchFile: kdewebdev4.patch
 #PatchFile-MD5: 07ced1828f9aa79f0ef340034277eab1
 

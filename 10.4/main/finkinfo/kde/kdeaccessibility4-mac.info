@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdeaccessibility4-mac
-Version: 4.3.90
+Version: 4.3.98
 Revision: 1
 Description: KDE4 - accessibility software
 Type: kde (mac)
@@ -22,11 +22,11 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	glib2-dev (>= 2.18.4-1),
 	kde4-buildenv (>= 4.3.90-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.3.90-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.3.98-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
 	libgettext8-dev,
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.6.0-5),
+	qt4-%type_pkg[kde] (>= 4.6.1-1),
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
@@ -34,8 +34,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/kdeaccessibility-%v.tar.bz2
-Source-MD5: 7671a58404a6eabb3a2de957bb1861b2
+Source: mirror:kde:unstable/%v/src/kdeaccessibility-%v.tar.bz2
+Source-MD5: 60bfd7e3b18c7aff66d29c283ed7f8c1
 
 CompileScript: <<
 #!/bin/sh -ev
@@ -97,7 +97,7 @@ SplitOff6: <<
 SplitOff7: <<
 	Package: %N-base
 	Description: KDE4 - kdeaccessibility base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.3.90-1)
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.3.98-1)
 	Files: opt share/doc/installed-packages/%N-base
 <<
 

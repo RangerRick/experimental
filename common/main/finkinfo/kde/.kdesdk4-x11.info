@@ -1,7 +1,7 @@
 Info4: <<
 Package: kdesdk4-x11
 Type: kde (x11)
-Version: 4.3.90
+Version: 4.3.98
 Revision: 1
 Description: KDE4 - Developer Utilities
 License: GPL/LGPL
@@ -11,7 +11,7 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:unstable/%v/src/kdesdk-%v.tar.bz2
-Source-MD5: 5e0d82615961a7dd82b8dc6e76fe0db7
+Source-MD5: 4e0e0391c8e0dfa0e9253ab12251f3d2
 
 Depends: <<
 	cervisia4-%type_pkg[kde] (>= %v-%r),

@@ -1,8 +1,8 @@
 Package: fop
 Version: 0.95
-Revision: 2
-Source: mirror:apache:/xmlgraphics/%n/binaries/%n-%v-bin.tar.gz
-Source-MD5: 7af50bf58924dd22d71d22d8ad90b268
+Revision: 4
+Source: http://ranger.befunk.com/fink/%n/%n-%v-bin-patched.tar.gz
+Source-MD5: 97e07f1da76f312cdb8c409fb14105f5
 SourceDirectory: %n-%v
 Type: java (1.5)
 Depends: <<
@@ -21,7 +21,7 @@ InstallScript: <<
 
 	# $FOP_HOME
 	install -d -m 755 %i/share/%N
-	mv build conf fop lib %i/share/%N/
+	mv conf fop %i/share/%N/
 	install -d -m 755 %i/etc
 	cat <<END >%i/etc/fop.conf
 FOP_HOME="%p/share/fop"
@@ -29,9 +29,10 @@ export FOP_HOME
 END
 
 	# fink java path
-	install -d -m 755 %i/share/java/%N
-	ln -sf %p/share/fop/build/fop.jar %i/share/java/%N/fop.jar
-	pushd %i/share/%N/lib
+	install -d -m 755 %i/share/%N/lib
+	mkdir jarfiles
+	mv build/fop.jar jarfiles/
+	pushd lib
 		for file in \
 			avalon-framework*.jar \
 			batik*.jar \
@@ -39,9 +40,13 @@ END
 			serializer*.jar \
 			xmlgraphics-common*.jar \
 		; do
-			ln -sf %p/share/%N/lib/$file %i/share/java/%N/$file
+			ln -sf "%p/share/java/%N/$file" "%i/share/%N/lib/$file"
+			mv "$file" ../jarfiles
 		done
 	popd
+	mv lib/* %i/share/%N/lib/
+	install -d -m 755 %i/share/%N/build
+	ln -sf "%p/share/java/%N/fop.jar" "%i/share/%N/build/fop.jar"
 
 	# documentation
 	install -d -m 755 %i/share/doc/%N
@@ -76,6 +81,8 @@ END
 
 <<
 ConfFiles: %p/etc/fop.conf
+JarFiles: jarfiles/*.jar
+RuntimeVars: FOP_HOME: %p/share/fop
 DocFiles: KEYS LICENSE NOTICE README status.xml
 Description: Formatting Objects (FO) Processor
 DescDetail: <<

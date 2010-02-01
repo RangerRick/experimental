@@ -8,7 +8,7 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <digikam@fink.racoonfink.com>
 
 Depends: <<
-	kdebase4-runtime-%type_pkg[kde] (>= 4.3.90-1),
+	kdebase4-runtime-%type_pkg[kde] (>= 4.3.98-1),
 	kipi-plugins4-%type_pkg[kde] (>= 0.5.0-1),
 	%N-shlibs (>= %v-%r)
 <<
@@ -21,10 +21,10 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	glib2-dev (>= 2.18.4-1),
 	kde4-buildenv (>= 4.3.90-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.3.90-1),
-	kdeedu4-%type_pkg[kde]-dev (>= 4.3.90-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.3.98-1),
+	kdeedu4-%type_pkg[kde]-dev (>= 4.3.98-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
 	kipi-plugins4-%type_pkg[kde] (>= 0.5.0-1),
 	lcms,
 	lensfun,
@@ -32,11 +32,11 @@ BuildDepends: <<
 	libjasper.1,
 	libgettext8-dev,
 	libgphoto2,
-	libkdcraw-7-%type_pkg[kde]-dev (>= 4.3.90-1),
-	libkexiv2-7-%type_pkg[kde]-dev (>= 4.3.90-1),
-	libkipi-6-%type_pkg[kde]-dev (>= 4.3.90-1),
+	libkdcraw-7-%type_pkg[kde]-dev (>= 4.3.98-1),
+	libkexiv2-7-%type_pkg[kde]-dev (>= 4.3.98-1),
+	libkipi-6-%type_pkg[kde]-dev (>= 4.3.98-1),
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.6.0-5),
+	qt4-%type_pkg[kde] (>= 4.6.1-1),
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
@@ -72,15 +72,15 @@ InstallScript: <<
 SplitOff: <<
 	Package: %N-shlibs
 	Depends: <<
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.90-1),
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.98-1),
 		kipi-plugins4-%type_pkg[kde]-shlibs (>= 0.5.0-1),
 		lcms-shlibs,
 		libjasper.1-shlibs,
 		lensfun-shlibs,
-		libkdcraw-7-%type_pkg[kde]-shlibs (>= 4.3.90-1),
-		libkexiv2-7-%type_pkg[kde]-shlibs (>= 4.3.90-1),
-		libkipi-6-%type_pkg[kde]-shlibs (>= 4.3.90-1),
-		marble4-%type_pkg[kde] (>= 4.3.90-1)
+		libkdcraw-7-%type_pkg[kde]-shlibs (>= 4.3.98-1),
+		libkexiv2-7-%type_pkg[kde]-shlibs (>= 4.3.98-1),
+		libkipi-6-%type_pkg[kde]-shlibs (>= 4.3.98-1),
+		marble4-%type_pkg[kde] (>= 4.3.98-1)
 	<<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/libdigikamcore.1*.dylib

@@ -1,7 +1,7 @@
 Info4: <<
 Package: kdeartwork4-x11
 Type: kde (x11)
-Version: 4.3.90
+Version: 4.3.98
 Revision: 1
 Description: KDE4 - Styles and themes
 License: GPL/LGPL
@@ -13,8 +13,8 @@ styles, screen savers, wallpaper, icons, emoticons and so on)
 provided with the official release of KDE.
 <<
 
-Source: mirror:kde:stable/%v/src/kdeartwork-%v.tar.bz2
-Source-MD5: f5954a7a6fd0b99db7a6c2cbd30b5547
+Source: mirror:kde:unstable/%v/src/kdeartwork-%v.tar.bz2
+Source-MD5: 9c6b65517694009c838d2627a0653087
 
 Depends: <<
 	%N-color-schemes (>= %v-%r),

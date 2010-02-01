@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdeadmin4-x11
-Version: 4.3.90
+Version: 4.3.98
 Revision: 1
 Description: KDE4 - UNIX admin tools
 Type: kde (x11)
@@ -22,11 +22,11 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	glib2-dev (>= 2.18.4-1),
 	kde4-buildenv (>= 4.3.90-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.3.90-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.3.98-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
 	libgettext8-dev,
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.6.0-5),
+	qt4-%type_pkg[kde] (>= 4.6.1-1),
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
@@ -34,8 +34,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/kdeadmin-%v.tar.bz2
-Source-MD5: 9f227d0c00c5402858d6132960ae1a77
+Source: mirror:kde:unstable/%v/src/kdeadmin-%v.tar.bz2
+Source-MD5: 0b3fb8da3a547b8dc4e20090ea8e4275
 PatchFile: kdeadmin4.patch
 PatchFile-MD5: c3a334a921c615dff51f79c38b8cec31
 
@@ -125,7 +125,7 @@ SplitOff5: <<
 SplitOff6: <<
 	Package: %N-base
 	Description: KDE4 - kdeadmin base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.3.90-1)
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.3.98-1)
 	Files: opt share/doc/installed-packages/%n
 <<
 

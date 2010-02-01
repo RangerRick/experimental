@@ -18,7 +18,7 @@ BuildDepends: <<
 	gettext-tools,
 	giflib,
 	kde4-buildenv (>= 4.3.90-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.90-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
 	libgettext8-dev,
 	libjpeg,
 	libpng3,
@@ -26,7 +26,7 @@ BuildDepends: <<
 	libxml2,
 	libxslt,
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.6.0-5),
+	qt4-%type_pkg[kde] (>= 4.6.1-1),
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev,
 	taglib (>= 1.6.1-2)
@@ -63,7 +63,7 @@ SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for taglib-extras
 	Depends: <<
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.90-1),
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.98-1),
 		taglib-shlibs (>= 1.6.1-2)
 	<<
 	Files: opt/kde4/%type_pkg[kde]/lib/libtag-extras.0*.dylib
