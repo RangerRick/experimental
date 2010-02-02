@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-%type_pkg[kde]
-Version: 2.0.1
+Version: 2.1.1
 Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - office suite
@@ -12,7 +12,7 @@ KOffice is a free, integrated office suite for KDE, the K Desktop Environment.
 <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-%v.tar.bz2
-Source-MD5: 86fb3660c2b87495d1bf84da9044d441
+Source-MD5: 9955f30f43ed3f6970870f55015a1a18
 PatchFile: koffice2.patch
 PatchFile-MD5: cd3770043a8dae8c06feb6d512b61242
 

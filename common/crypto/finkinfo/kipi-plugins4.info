@@ -1,6 +1,6 @@
 Info4: <<
 Package: kipi-plugins4-%type_pkg[kde]
-Version: 0.6.0
+Version: 1.1.0
 Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - image plugins
@@ -28,9 +28,9 @@ within host programs.
 <<
 
 Source: mirror:sourceforge:kipi/kipi-plugins-%v.tar.bz2
-Source-MD5: 105cc1f802db4b082c0ad8ee31262fd5
+Source-MD5: f1a92d0fe29bd68de08551a5e607015e
 PatchFile: kipi-plugins4.patch
-PatchFile-MD5: bbe094080205801d63c5def96add13a3
+PatchFile-MD5: 0f306dbdc5f99ce385fa91ec15c0b3ba
 
 Depends: <<
 	kdebase4-runtime-%type_pkg[kde] (>= 4.2.1-1),

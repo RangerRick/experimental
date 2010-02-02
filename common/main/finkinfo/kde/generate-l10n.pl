@@ -1,12 +1,12 @@
 #!/usr/bin/perl
 
-my $KDEVERSION              = '4.3.90';
+my $KDEVERSION              = '4.3.98';
 my $KDEDIRECTORY            = 'unstable/%v/src/';
 my $KDERELNUM               = 1;
 my $KDEI18NRELNUM           = 1;
 my $SOURCEDIRECTORYAPPEND   = "";
-my $KOVERSION               = '2.0.2';
-my $KODIRECTORY             = 'stable/koffice-%v/src/koffice-l10n/';
+my $KOVERSION               = '2.1.1';
+my $KODIRECTORY             = 'stable/koffice-%v/src/';
 my $KORELNUM                = '1';
 my $KOI18NRELNUM            = 1;
 my $KOSOURCEDIRECTORYAPPEND = "";
@@ -28,12 +28,19 @@ for my $arg (@ARGV) {
 
 die "run 'fink install md5deep'" if (not -x $MD5DEEP);
 
+my (@KDEI18N, @KOI18N);
 opendir(DIR, "/sw/src") or die "can't read from /sw/src: $!\n";
-my @KDEI18N = sort(grep(/kde-l10n-.*-${KDEVERSION}.*.tar.(gz|bz2)/, readdir(DIR)));
+while (my $file = readdir(DIR)) {
+	next unless ($file =~ /kde-l10n-.*-${KDEVERSION}.tar.(gz|bz2)/);
+	push(@KDEI18N, $file);
+}
 closedir(DIR);
 
 opendir(DIR, "/sw/src") or die "can't read from /sw/src: $!\n";
-my @KOI18N = sort(grep(/koffice-l10n-.*-${KOVERSION}.*.tar.(gz|bz2)/, readdir(DIR)));
+while (my $file = readdir(DIR)) {
+	next unless ($file =~ /koffice-l10n-.*-${KOVERSION}.tar.(gz|bz2)/);
+	push(@KOI18N, $file);
+}
 closedir(DIR);
 
 open(MAPPING, "i18n-mappings.txt") or die "can't read i18n-mappings.txt: $!\n";
@@ -56,10 +63,6 @@ for my $i18n (@KDEI18N) {
 #		$replaces .= ", kde-i18n-serbian"              if ($normalized eq "serbian-latin-script");
 		my $filename = $i18n;
 		$filename =~ s#${KDEVERSION}#\%v#g;
-		my $sourcerename = "";
-		if ($KDERENAME) {
-			$sourcerename = 'SourceRename: ' . $KDERENAME;
-		}
 		push(@kdepackages, "kde4-l10n-${normalized}");
 		my $contents = <<END;
 Info4: <<
@@ -89,8 +92,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:${KDEDIRECTORY}kde-l10n/${filename}
-$sourcerename
-SourceDirectory: kde-l10n-${shortname}-%v${SOURCEDIRECTORYAPPEND}
+#SourceDirectory: kde-l10n-${shortname}-%v${SOURCEDIRECTORYAPPEND}
 Source-MD5: $md5
 
 CompileScript: <<
@@ -129,51 +131,80 @@ END
 	}
 }
 
-#for my $i18n (@KOI18N) {
-#	my ($shortname) = $i18n =~ /koffice-l10n-([^\-]+)-${KOVERSION}.*.tar.(gz|bz2)/;
-#	if (exists $MAPPINGS{$shortname}) {
-#		my ($md5) = `$MD5DEEP /sw/src/$i18n` =~ /^\s*(\S+)\s+/;
-#		my $normalized = lc($MAPPINGS{$shortname});
-#		$normalized =~ s#[^a-zA-Z]+#-#g;
-#		$normalized =~ s#-*$##;
-#		my $replaces = "kde-i18n-${normalized}";
-#		$replaces .= ", koffice-i18n-norwegian-nyorsk" if ($normalized eq "norwegian-nynorsk");
-#		my $filename = $i18n;
-#		$filename =~ s#${KOVERSION}#\%v#g;
-#		push(@kopackages, "koffice-i18n-${normalized}");
-#		my $contents = <<END;
-#Package: koffice-i18n-${normalized}
-#Source: mirror:kde:${KODIRECTORY}${filename}
-#SourceDirectory: koffice-l10n-${shortname}-%v${KOSOURCEDIRECTORYAPPEND}
-#Description: KDE - KOffice languages for $MAPPINGS{$shortname}
-#DescDetail: Language files for the KDE office suite: $MAPPINGS{$shortname}
-#Source-MD5: $md5
-#Version: ${KOVERSION}
-#Revision: ${KOI18NRELNUM}
-#Replaces: $replaces
-#Depends: kdelibs3-unified (>= ${KDEVERSION}-${KDERELNUM}), xfonts-intl, koffice-base (>= ${KOVERSION}-${KORELNUM})
-#BuildDepends: fink (>= 0.17.1-1), arts-dev, kdebase3-unified-dev (>= ${KDEVERSION}-${KDERELNUM}), kdelibs3-unified-dev (>= ${KDEVERSION}-${KDERELNUM}), koffice-dev (>= ${KOVERSION}-${KORELNUM}), libxml2, libxslt, xfonts-intl
-#Maintainer: Benjamin Reed <koffice-i18n-${normalized}\@fink.raccoonfink.com>
-#PatchScript: perl -pi -e 's,doc/HTML,doc/kde,g' configure
-#CompileScript: (export HOME=/tmp; export KDEDIR=%p; sh configure %c; find . -name \\*.bz2 -exec touch {} \\;; make)
-#InstallScript: <<
-#  make -j1 install DESTDIR=%d
-#  mkdir -p %i/share/doc/kde-installed-packages
-#  touch %i/share/doc/kde-installed-packages/koffice-i18n-${normalized}
-#<<
-#License: GPL/LGPL
-#END
-#		print $contents if ($VERBOSE);
-#		my $infofile = "koffice-i18n-${normalized}.info";
-#		unless ($DRYRUN) {
-#			open(FILEOUT, ">$infofile") or die "can't write to $infofile: $!\n";
-#			print FILEOUT $contents;
-#			close(FILEOUT);
-#		}
-#	} else {
-#		print "ERROR: no name mapping for $i18n!\n";
-#	}
-#}
+for my $i18n (@KOI18N) {
+	my ($shortname) = $i18n =~ /koffice-l10n-([^\-]+)-${KOVERSION}.*.tar.(gz|bz2)/;
+	if (exists $MAPPINGS{$shortname}) {
+		my ($md5) = `$MD5DEEP /sw/src/$i18n` =~ /^\s*(\S+)\s+/;
+		my $normalized = lc($MAPPINGS{$shortname});
+		$normalized =~ s#[^a-zA-Z]+#-#g;
+		$normalized =~ s#-*$##;
+		my $filename = $i18n;
+		$filename =~ s#${KOVERSION}#\%v#g;
+		push(@kopackages, "koffice2-l10n-${normalized}");
+		my $contents = <<END;
+Info4: <<
+Package: koffice2-l10n-${normalized}-\%type_pkg\[kde\]
+Version: ${KDEVERSION}
+Revision: ${KDEI18NRELNUM}
+
+Description: KDE4 - KOffice languages for $MAPPINGS{$shortname}
+DescDetail: Language files for the KDE office suite: $MAPPINGS{$shortname}
+
+Type: kde (x11 mac)
+License: GPL/LGPL
+Maintainer: Benjamin Reed <koffice2-l10n-${normalized}\@fink.raccoonfink.com>
+
+Depends: <<
+	koffice2-\%type_pkg\[kde\]-base (>= %v-${KORELNUM}),
+<<
+BuildDepends: <<
+	automoc-\%type_pkg\[kde\] (>= 0.9.89-0),
+	cmake (>= 2.6.3-1),
+	fink (>= 0.28.0-1),
+	gettext-tools (>= 0.17-1),
+	koffice2-\%type_pkg\[kde\]-dev (>= %v-${KORELNUM}),
+	libgettext3-dev,
+<<
+
+Source: mirror:kde:${KODIRECTORY}koffice-l10n/${filename}
+#SourceDirectory: koffice-l10n-${shortname}-%v${SOURCEDIRECTORYAPPEND}
+Source-MD5: $md5
+
+CompileScript: <<
+#!/bin/sh -ev
+
+	export KDE4_PREFIX="\%p" KDE4_TYPE="\%type_pkg\[kde\]"
+	. \%p/sbin/kde4-buildenv.sh
+
+	mkdir -p build
+	pushd build
+		cmake \$KDE4_CMAKE_ARGS ..
+		make
+	popd
+<<
+InstallScript: <<
+#!/bin/sh -ev
+
+	pushd build
+		make -j1 install/fast DESTDIR="\%d"
+	popd
+
+	mkdir -p \%i/share/doc/kde-installed-packages
+	touch \%i/share/doc/kde-installed-packages/koffice2-l10n-${normalized}-\%type_pkg\[kde\]
+<<
+<<
+END
+		print $contents if ($VERBOSE);
+		my $infofile = "po/koffice2-l10n-${normalized}.info";
+		unless ($DRYRUN) {
+			open(FILEOUT, ">$infofile") or die "can't write to $infofile: $!\n";
+			print FILEOUT $contents;
+			close(FILEOUT);
+		}
+	} else {
+		print "ERROR: no name mapping for $i18n!\n";
+	}
+}
 
 unless ($DRYRUN) {
 	for my $type ('x11', 'mac') {
@@ -193,22 +224,23 @@ sure that all KDE4 language files get installed.
 Maintainer: Benjamin Reed <bundle-kde4-l10n\@fink.raccoonfink.com>
 END
 		close(FILEOUT);
+
+		$packagelist = join(', ', map { $_ . '-' . $type . " (>= ${KOVERSION}-${KOI18NRELNUM})" } @kopackages);
+		open(FILEOUT, ">po/bundle-koffice2-l10n-$type.info") or die "can't write to bundle-koffice2-l10n-$type.info: $!\n";
+		print FILEOUT <<END;
+Package: bundle-koffice2-l10n-$type
+Version: ${KOVERSION}
+Revision: ${KOI18NRELNUM}
+Type: bundle
+Depends: $packagelist
+Description: KOffice2 - all language support
+DescDetail: <<
+This package doesn't install any files of itself, but instead makes
+sure that all KOffice language files get installed.
+<<
+Maintainer: Benjamin Reed <bundle-koffice2-l10n\@fink.raccoonfink.com>
+END
+		close(FILEOUT);
 	}
 
-#	$packagelist = join(', ', map { $_ . " (>= ${KOVERSION}-${KOI18NRELNUM})" } @kopackages);
-#	open(FILEOUT, ">bundle-koffice-i18n.info") or die "can't write to bundle-koffice-i18n.info: $!\n";
-#	print FILEOUT <<END;
-#Package: bundle-koffice-i18n
-#Version: ${KOVERSION}
-#Revision: ${KOI18NRELNUM}
-#Type: bundle
-#Depends: $packagelist
-#Description: KDE - all language support for KOffice
-#DescDetail: <<
-#This packabundle
-#sure that all KOffice language files get installed.
-#<<
-#Maintainer: Benjamin Reed <bundle-koffice-i18n\@fink.raccoonfink.com>
-#END
-#	close(FILEOUT);
 }

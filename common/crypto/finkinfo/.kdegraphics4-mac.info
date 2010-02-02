@@ -1,14 +1,14 @@
 Info4: <<
 Package: kdegraphics4-mac
 Type: kde (mac)
-Version: 4.3.2
+Version: 4.3.98
 Revision: 1
 Description: KDE4 - Graphics applications
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdegraphics4@fink.racoonfink.com>
 
 Source: mirror:kde:stable/%v/src/kdegraphics-%v.tar.bz2
-Source-MD5: a364a8c0f5ab0c0d41088c92890e6adb
+Source-MD5: fc442a46b5102fb00064bb52d8a57100
 PatchFile: kdegraphics4.patch
 PatchFile-MD5: df513008247ac28a210e22554b30627e
 

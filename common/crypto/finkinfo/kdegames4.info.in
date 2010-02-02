@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdegames4-mac
 Type: kde (mac)
 #endif
-Version: 4.3.2
+Version: 4.3.98
 Revision: 1
 Description: KDE4 - Games
 License: GPL/LGPL
@@ -16,7 +16,7 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:stable/%v/src/kdegames-%v.tar.bz2
-Source-MD5: 7ddf38fb2aa84bd14d176d5a9f45ed3f
+Source-MD5: a44baaaeae4e8921db522c38723caeb9
 #PatchFile: kdegames4.patch
 #PatchFile-MD5: db0daf5cb355d99ac3454cbd926d3781
 

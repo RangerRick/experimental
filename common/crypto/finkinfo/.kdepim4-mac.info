@@ -1,7 +1,7 @@
 Info4: <<
 Package: kdepim4-mac
 Type: kde (mac)
-Version: 4.3.2
+Version: 4.3.98
 Revision: 1
 Description: KDE4 - Personal Information Management
 License: GPL/LGPL
@@ -11,7 +11,7 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:stable/%v/src/kdepim-%v.tar.bz2
-Source-MD5: 7e6a672bd681b2f19502798d7ed73fe8
+Source-MD5: 24d655b6d21d53d120536762186eb23c
 PatchFile: kdepim4.patch
 PatchFile-MD5: 0273ca41fffe0f3c959d995c51432d6a
 

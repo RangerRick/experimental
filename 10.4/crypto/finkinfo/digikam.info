@@ -1,7 +1,7 @@
 Info4: <<
 Package: digikam-%type_pkg[kde]
-Version: 0.10.0
-Revision: 4
+Version: 1.1.0
+Revision: 1
 Description: KDE4 - photo management
 Type: kde (x11 mac)
 License: GPL/LGPL
@@ -9,7 +9,7 @@ Maintainer: Benjamin Reed <digikam@fink.racoonfink.com>
 
 Depends: <<
 	kdebase4-runtime-%type_pkg[kde] (>= 4.3.98-1),
-	kipi-plugins4-%type_pkg[kde] (>= 0.5.0-1),
+	kipi-plugins4-%type_pkg[kde] (>= 1.1.0-1),
 	%N-shlibs (>= %v-%r)
 <<
 BuildDepends: <<
@@ -25,7 +25,7 @@ BuildDepends: <<
 	kdeedu4-%type_pkg[kde]-dev (>= 4.3.98-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
 	kdepimlibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
-	kipi-plugins4-%type_pkg[kde] (>= 0.5.0-1),
+	kipi-plugins4-%type_pkg[kde] (>= 1.1.0-1),
 	lcms,
 	lensfun,
 	libexiv2-0.18,
@@ -45,7 +45,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:sourceforge:digikam/digikam-%v.tar.bz2
-Source-MD5: 6c6daf958ff4fe93974f1074ba967cd9
+Source-MD5: 94a536e7387325c7b73ab2ac7b0a9a62
 PatchFile: digikam.patch
 PatchFile-MD5: 066618ee8a44c560ff0a347be08567ca
 
@@ -73,7 +73,7 @@ SplitOff: <<
 	Package: %N-shlibs
 	Depends: <<
 		kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.98-1),
-		kipi-plugins4-%type_pkg[kde]-shlibs (>= 0.5.0-1),
+		kipi-plugins4-%type_pkg[kde]-shlibs (>= 1.1.0-1),
 		lcms-shlibs,
 		libjasper.1-shlibs,
 		lensfun-shlibs,
