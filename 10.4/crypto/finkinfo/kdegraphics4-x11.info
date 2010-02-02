@@ -298,6 +298,7 @@ SplitOff29: <<
 		libtiff-shlibs,
 		%N-base (>= %v-%r)
 	<<
+	Files: opt/kde4/%type_pkg[kde]/lib/strigi
 <<
 SplitOff3: <<
 	Package: kamera4-%type_pkg[kde]
