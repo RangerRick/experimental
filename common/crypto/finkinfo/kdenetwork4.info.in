@@ -15,7 +15,7 @@ Maintainer: Benjamin Reed <kdenetwork4@fink.racoonfink.com>
 DescDetail: <<
 <<
 
-Source: mirror:kde:stable/%v/src/kdenetwork-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kdenetwork-%v.tar.bz2
 Source-MD5: 1c0cd950fb2f0d33dd8393890ffdeded
 PatchFile: kdenetwork4.patch
 PatchFile-MD5: 8877e9ca18febeae0584ba5d6672ac62

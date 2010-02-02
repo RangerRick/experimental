@@ -7,7 +7,7 @@ Description: KDE4 - Graphics applications
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdegraphics4@fink.racoonfink.com>
 
-Source: mirror:kde:stable/%v/src/kdegraphics-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kdegraphics-%v.tar.bz2
 Source-MD5: fc442a46b5102fb00064bb52d8a57100
 PatchFile: kdegraphics4.patch
 PatchFile-MD5: 58db7d2be3e24f2ebb52b2f83599aa2b

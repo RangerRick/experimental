@@ -15,7 +15,7 @@ Maintainer: Benjamin Reed <kdegames4@fink.racoonfink.com>
 DescDetail: <<
 <<
 
-Source: mirror:kde:stable/%v/src/kdegames-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kdegames-%v.tar.bz2
 Source-MD5: a44baaaeae4e8921db522c38723caeb9
 #PatchFile: kdegames4.patch
 #PatchFile-MD5: db0daf5cb355d99ac3454cbd926d3781

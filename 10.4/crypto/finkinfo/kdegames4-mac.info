@@ -66,7 +66,7 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/kdegames-%v.tar.bz2
+Source: mirror:kde:unstable/%v/src/kdegames-%v.tar.bz2
 Source-MD5: a44baaaeae4e8921db522c38723caeb9
 
 CompileScript: <<
