@@ -8,7 +8,7 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <kdegraphics4@fink.racoonfink.com>
 
 Depends: <<
-	gsthumbnail4-%type_pkg[kde] (>= %v-%r),
+	thumbnailers4-%type_pkg[kde] (>= %v-%r),
 	gwenview4-%type_pkg[kde] (>= %v-%r),
 	kamera4-%type_pkg[kde] (>= %v-%r),
 	kcolorchooser4-%type_pkg[kde] (>= %v-%r),
@@ -16,7 +16,8 @@ Depends: <<
 	kruler4-%type_pkg[kde] (>= %v-%r),
 	ksaneplugin4-%type_pkg[kde] (>= %v-%r),
 	okular4-%type_pkg[kde] (>= %v-%r),
-	svgpart4-%type_pkg[kde] (>= %v-%r)
+	svgpart4-%type_pkg[kde] (>= %v-%r),
+	%N-strigi-analyzers-%type_pkg[kde] (>= %v-%r)
 <<
 BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
@@ -87,13 +88,13 @@ InstallScript: <<
 	touch %i/share/doc/installed-packages/%N
 <<
 SplitOff: <<
-	Package: gsthumbnail4-%type_pkg[kde]
+	Package: thumbnailers4-%type_pkg[kde]
 	Description: KDE4 - PostScript & PDF thumbnail support
 	Depends: %N-base (>= %v-%r)
+	Replaces: gsthumbnail4-%type_pkg[kde]
 	Files: <<
-		opt/kde4/%type_pkg[kde]/lib/kde4/gsthumbnail*
-		opt/kde4/%type_pkg[kde]/lib/strigi/strigita_dvi.so
-		opt/kde4/%type_pkg[kde]/share/kde4/services/gsthumbnail*
+		opt/kde4/%type_pkg[kde]/lib/kde4/*thumbnail.so
+		opt/kde4/%type_pkg[kde]/share/kde4/services/*thumbnail.desktop
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
@@ -255,11 +256,13 @@ SplitOff20: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff23: <<
-	Package: %N-base
-	Description: KDE4 - kdegraphics base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.3.98-1)
-	Files: opt
+SplitOff29: <<
+	Package: %N-strigi-analyzers-%type_pkg[kde]
+	Description: KDE4 - kdegraphics strigi analyzers
+	Depends: <<
+		libtiff-shlibs,
+		%N-base (>= %v-%r)
+	<<
 <<
 SplitOff3: <<
 	Package: kamera4-%type_pkg[kde]
@@ -275,6 +278,13 @@ SplitOff3: <<
 		opt/kde4/%type_pkg[kde]/share/kde4/services/kamera*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff30: <<
+	Package: %N-base
+	Description: KDE4 - kdegraphics base package
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.3.98-1)
+	Replaces: gsthumbnail4-%type_pkg[kde]
+	Files: opt
 <<
 SplitOff4: <<
 	Package: kcolorchooser4-%type_pkg[kde]
@@ -363,7 +373,6 @@ SplitOff8: <<
 		opt/kde4/%type_pkg[kde]/lib/libokularcore.1*.dylib
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/okular*
 		opt/kde4/%type_pkg[kde]/share/apps/okular
-		opt/kde4/%type_pkg[kde]/share/config/okular*
 		opt/kde4/%type_pkg[kde]/share/config.kcfg/okular*
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/okular
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/okular*
@@ -374,6 +383,7 @@ SplitOff8: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/okular*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/okular*
 		opt/kde4/%type_pkg[kde]/share/kde4/services/*okular*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/msits.*
 		opt/kde4/%type_pkg[kde]/share/kde4/servicetypes/okular*
 	<<
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libokularcore.1.dylib 1.0.0 %n (>= 4.2.4-1)

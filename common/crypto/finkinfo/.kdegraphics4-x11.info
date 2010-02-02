@@ -13,7 +13,7 @@ PatchFile: kdegraphics4.patch
 PatchFile-MD5: 58db7d2be3e24f2ebb52b2f83599aa2b
 
 Depends: <<
-	gsthumbnail4-%type_pkg[kde] (>= %v-%r),
+	thumbnailers4-%type_pkg[kde] (>= %v-%r),
 	gwenview4-%type_pkg[kde] (>= %v-%r),
 	kamera4-%type_pkg[kde] (>= %v-%r),
 	kcolorchooser4-%type_pkg[kde] (>= %v-%r),
@@ -24,6 +24,7 @@ Depends: <<
 	svgpart4-%type_pkg[kde] (>= %v-%r),
 	kgamma4-%type_pkg[kde] (>= %v-%r),
 	ksnapshot4-%type_pkg[kde] (>= %v-%r),
+	%N-strigi-analyzers-%type_pkg[kde] (>= %v-%r),
 <<
 
 # TODO: package these
@@ -93,13 +94,13 @@ InstallScript: <<
 <<
 
 SplitOff: <<
-	Package: gsthumbnail4-%type_pkg[kde]
+	Package: thumbnailers4-%type_pkg[kde]
 	Description: KDE4 - PostScript & PDF thumbnail support
+	Replaces: gsthumbnail4-%type_pkg[kde]
 	Depends: %N-base (>= %v-%r)
 	Files: <<
-		opt/kde4/%type_pkg[kde]/lib/kde4/gsthumbnail*
-		opt/kde4/%type_pkg[kde]/lib/strigi/strigita_dvi.so
-		opt/kde4/%type_pkg[kde]/share/kde4/services/gsthumbnail*
+		opt/kde4/%type_pkg[kde]/lib/kde4/*thumbnail.so
+		opt/kde4/%type_pkg[kde]/share/kde4/services/*thumbnail.desktop
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
@@ -234,7 +235,6 @@ SplitOff8: <<
 		opt/kde4/%type_pkg[kde]/lib/libokularcore.1*.dylib
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/okular*
 		opt/kde4/%type_pkg[kde]/share/apps/okular
-		opt/kde4/%type_pkg[kde]/share/config/okular*
 		opt/kde4/%type_pkg[kde]/share/config.kcfg/okular*
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/okular
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/okular*
@@ -245,6 +245,7 @@ SplitOff8: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/okular*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/okular*
 		opt/kde4/%type_pkg[kde]/share/kde4/services/*okular*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/msits.*
 		opt/kde4/%type_pkg[kde]/share/kde4/servicetypes/okular*
 	<<
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libokularcore.1.dylib 1.0.0 %n (>= 4.2.4-1)
@@ -425,11 +426,22 @@ SplitOff22: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff23: <<
+SplitOff29: <<
+	Package: %N-strigi-analyzers-%type_pkg[kde]
+	Description: KDE4 - kdegraphics strigi analyzers
+	Depends: <<
+		libtiff-shlibs,
+		%N-base (>= %v-%r)
+	<<
+<<
+SplitOff30: <<
 	Package: %N-base
 	Description: KDE4 - kdegraphics base package
 	Depends: <<
 		kdebase4-runtime-%type_pkg[kde] (>= 4.2.1-1),
+	<<
+	Replaces: <<
+		gsthumbnail4-%type_pkg[kde]
 	<<
 	Files: opt
 <<
