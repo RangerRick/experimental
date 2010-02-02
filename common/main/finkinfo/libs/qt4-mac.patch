@@ -22223,6 +22223,19 @@ index ffa5f5d..3a20995 100644
      /* Define to 1 if you have the `wcscasecmp' function. */
  #   ifndef _CL_HAVE_WCSCASECMP
  #   define _CL_HAVE_WCSCASECMP  1
+diff --git a/tools/assistant/lib/lib.pro b/tools/assistant/lib/lib.pro
+index 51933de..ad07bfe 100644
+--- a/tools/assistant/lib/lib.pro
++++ b/tools/assistant/lib/lib.pro
+@@ -22,7 +22,7 @@ linux-lsb-g++:LIBS_PRIVATE += --lsb-shared-libs=$$qclucene
+ unix:QMAKE_PKGCONFIG_REQUIRES += QtNetwork \
+     QtSql \
+     QtXml
+-LIBS_PRIVATE += -l$$qclucene
++LIBS += -l$$qclucene
+ 
+ RESOURCES += helpsystem.qrc
+ SOURCES += qhelpenginecore.cpp \
 diff --git a/tools/designer/src/plugins/plugins.pro b/tools/designer/src/plugins/plugins.pro
 index baf5261..9f3a4ce 100644
 --- a/tools/designer/src/plugins/plugins.pro
