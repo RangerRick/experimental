@@ -34,6 +34,7 @@ BuildDepends: <<
 	kdebase4-%type_pkg[kde]-dev (>= 4.3.98-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
 	lcms,
+	libchm,
 	libdjvulibre21-dev,
 	libepub,
 	libexiv2-0.18,
@@ -59,7 +60,7 @@ GCC: 4.0
 Source: mirror:kde:stable/%v/src/kdegraphics-%v.tar.bz2
 Source-MD5: fc442a46b5102fb00064bb52d8a57100
 PatchFile: kdegraphics4.patch
-PatchFile-MD5: df513008247ac28a210e22554b30627e
+PatchFile-MD5: 58db7d2be3e24f2ebb52b2f83599aa2b
 
 CompileScript: <<
 #!/bin/sh -ev
@@ -111,20 +112,22 @@ SplitOff10: <<
 	<<
 <<
 SplitOff11: <<
-	Package: libkdcraw-7-%type_pkg[kde]-shlibs
+	Package: libkdcraw-8-%type_pkg[kde]-shlibs
 	Description: KDE4 - decode RAW images
 	Depends: <<
 		lcms-shlibs,
 		libkdcraw-data-%type_pkg[kde] (>= %v-%r),
 		%N-base (>= %v-%r)
 	<<
-	Files: opt/kde4/%type_pkg[kde]/lib/libkdcraw.7*.dylib
-	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkdcraw.7.dylib 7.0.0 %n (>= 4.2.4-1)
+	Files: opt/kde4/%type_pkg[kde]/lib/libkdcraw.8*.dylib
+	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkdcraw.8.dylib 8.0.0 %n (>= 4.3.98-1)
 <<
 SplitOff12: <<
-	Package: libkdcraw-7-%type_pkg[kde]-dev
+	Package: libkdcraw-8-%type_pkg[kde]-dev
 	Description: KDE4 - libkdcraw development headers and libs
-	Depends: libkdcraw-7-%type_pkg[kde]-shlibs (>= %v-%r)
+	Depends: libkdcraw-8-%type_pkg[kde]-shlibs (>= %v-%r)
+	Conflicts: libkdcraw-7-%type_pkg[kde]-dev
+	Replaces: libkdcraw-7-%type_pkg[kde]-dev
 	BuildDependsOnly: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include/libkdcraw
@@ -133,19 +136,21 @@ SplitOff12: <<
 	<<
 <<
 SplitOff13: <<
-	Package: libkexiv2-7-%type_pkg[kde]-shlibs
+	Package: libkexiv2-8-%type_pkg[kde]-shlibs
 	Description: KDE4 - image metadata library
 	Depends: <<
 		libexiv2-shlibs-0.18,
 		%N-base (>= %v-%r)
 	<<
-	Files: opt/kde4/%type_pkg[kde]/lib/libkexiv2.7*.dylib
-	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkexiv2.7.dylib 7.0.0 %n (>= 4.2.4-1)
+	Files: opt/kde4/%type_pkg[kde]/lib/libkexiv2.8*.dylib
+	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkexiv2.8.dylib 8.0.0 %n (>= 4.3.98-1)
 <<
 SplitOff14: <<
-	Package: libkexiv2-7-%type_pkg[kde]-dev
+	Package: libkexiv2-8-%type_pkg[kde]-dev
 	Description: KDE4 - libkexiv2 development headers and libs
-	Depends: libkexiv2-7-%type_pkg[kde]-shlibs (>= %v-%r)
+	Depends: libkexiv2-8-%type_pkg[kde]-shlibs (>= %v-%r)
+	Conflicts: libkexiv2-7-%type_pkg[kde]-dev
+	Replaces: libkexiv2-7-%type_pkg[kde]-dev
 	BuildDependsOnly: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include/libkexiv2
@@ -168,19 +173,21 @@ SplitOff15: <<
 	<<
 <<
 SplitOff16: <<
-	Package: libkipi-6-%type_pkg[kde]-shlibs
+	Package: libkipi-7-%type_pkg[kde]-shlibs
 	Description: KDE4 - image plugin library
 	Depends: <<
 		%N-base (>= %v-%r),
 		libkipi-data-%type_pkg[kde] (>= %v-%r)
 	<<
-	Files: opt/kde4/%type_pkg[kde]/lib/libkipi.6*.dylib
-	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkipi.6.dylib 6.0.0 %n (>= 4.2.4-1)
+	Files: opt/kde4/%type_pkg[kde]/lib/libkipi.7*.dylib
+	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkipi.7.dylib 7.0.0 %n (>= 4.3.98-1)
 <<
 SplitOff17: <<
-	Package: libkipi-6-%type_pkg[kde]-dev
+	Package: libkipi-7-%type_pkg[kde]-dev
 	Description: KDE4 - libkipi development headers and libs
-	Depends: libkipi-6-%type_pkg[kde]-shlibs (>= %v-%r)
+	Depends: libkipi-7-%type_pkg[kde]-shlibs (>= %v-%r)
+	Conflicts: libkipi-6-%type_pkg[kde]-dev
+	Replaces: libkipi-6-%type_pkg[kde]-dev
 	BuildDependsOnly: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include/libkipi
@@ -215,7 +222,7 @@ SplitOff2: <<
 	Description: KDE4 - image viewer
 	Depends: <<
 		libexiv2-shlibs-0.18,
-		libkipi-6-%type_pkg[kde]-shlibs (>= %v-%r),
+		libkipi-7-%type_pkg[kde]-shlibs (>= %v-%r),
 		%N-base (>= %v-%r)
 	<<
 	Files: <<
@@ -377,6 +384,7 @@ SplitOff8: <<
 	Depends: <<
 		blitz-%type_pkg[kde]-shlibs,
 		freetype219-shlibs,
+		libchm-shlibs,
 		libdjvulibre21-shlibs,
 		libepub-shlibs,
 		poppler2-qt4-%type_pkg[kde]-shlibs (>= 0.6.4-4),
