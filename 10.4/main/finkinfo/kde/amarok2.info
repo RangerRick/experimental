@@ -11,7 +11,10 @@ Depends: <<
 	dbus (>= 1.2.12-1),
 	kdebase4-%type_pkg[kde] (>= 4.3.98-1),
 	kdemultimedia4-%type_pkg[kde]-base-shlibs (>= 4.3.98-1),
+	libgpod4-shlibs,
+	liblastfm-%type_pkg[kde]-shlibs,
 	libmp4v21-shlibs,
+	libmtp-shlibs,
 	loudmouth-shlibs,
 	mysql-unified-shlibs,
 	qt4-%type_pkg[kde]-gui-shlibs (>= 4.6.1-1),
@@ -19,7 +22,7 @@ Depends: <<
 	soprano-%type_pkg[kde]-shlibs (>= 2.3.70-1),
 	strigi-shlibs (>= 0.6.3-1),
 	strigi-gui-%type_pkg[kde]-shlibs (>= 0.6.5-1),
-	taglib-shlibs (>= 1.6.1-2),
+	taglib-shlibs (>= 1.6.1-3),
 	taglib-extras1-%type_pkg[kde]-shlibs
 <<
 BuildDepends: <<
@@ -37,7 +40,9 @@ BuildDepends: <<
 	kdemultimedia4-%type_pkg[kde]-dev (>= 4.3.98-1),
 	libgettext8-dev,
 	libgpod4,
+	liblastfm-%type_pkg[kde]-dev,
 	libmp4v21-dev,
+	libmtp-dev,
 	libxml2,
 	libxslt,
 	loudmouth,
@@ -48,7 +53,7 @@ BuildDepends: <<
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	strigi-dev (>= 0.6.3-1),
 	strigi-gui-%type_pkg[kde]-dev (>= 0.6.5-1),
-	taglib (>= 1.6.1-2),
+	taglib (>= 1.6.1-3),
 	taglib-extras1-%type_pkg[kde],
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev
@@ -64,8 +69,8 @@ CompileScript: <<
 
 	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[kde]"
 	. %p/sbin/kde4-buildenv.sh
-	export CMAKE_INCLUDE_PATH="%p/include/mysql:$CMAKE_INCLUDE_PATH"
-	export CMAKE_LIBRARY_PATH="%p/lib/mysql:$CMAKE_LIBRARY_PATH"
+	export CMAKE_INCLUDE_PATH="%p/include/mysql:%p/opt/lastfm/%type_pkg[kde]/include:$CMAKE_INCLUDE_PATH"
+	export CMAKE_LIBRARY_PATH="%p/lib/mysql:%p/opt/lastfm/%type_pkg[kde]/lib:$CMAKE_LIBRARY_PATH"
 
 	mkdir -p build
 	pushd build
@@ -89,14 +94,13 @@ InstallScript: <<
 	fi
 
 	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libamaroklib.dylib
+	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libamarokocsclient.dylib
 	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libamarokpud.dylib
-	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libmediadevicelib.dylib
 <<
 Shlibs: <<
-	!%p/opt/kde4/%type_pkg[kde]/lib/libamarok_service_liblastfm.dylib
 	!%p/opt/kde4/%type_pkg[kde]/lib/libamaroklib.1.dylib
+	!%p/opt/kde4/%type_pkg[kde]/lib/libamarokocsclient.4.dylib
 	!%p/opt/kde4/%type_pkg[kde]/lib/libamarokpud.1.dylib
-	!%p/opt/kde4/%type_pkg[kde]/lib/libmediadevicelib.1.dylib
 <<
 
 PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
