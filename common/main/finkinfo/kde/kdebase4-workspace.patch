@@ -1449,14 +1449,16 @@ diff -Nurd kdebase-workspace-4.3.98/plasma/desktop/shell/plasmaapp.cpp kdebase-w
      static int mib[] = { CTL_HW, HW_PHYSMEM };
 diff -Nurd kdebase-workspace-4.3.98/plasma/generic/dataengines/geolocation/CMakeLists.txt kdebase-workspace-4.3.98-new/plasma/generic/dataengines/geolocation/CMakeLists.txt
 --- kdebase-workspace-4.3.98/plasma/generic/dataengines/geolocation/CMakeLists.txt	2009-09-16 07:40:54.000000000 -0400
-+++ kdebase-workspace-4.3.98-new/plasma/generic/dataengines/geolocation/CMakeLists.txt	2010-02-03 12:06:53.000000000 -0500
-@@ -1,5 +1,6 @@
- project(geolocation)
- 
-+include_directories( ${LIBGPS_INCLUDE_DIR} )
- # -------------------------------------------------------------------------------------------------
- 
- set(plasma_geolocation_interface_SRCS geolocationprovider.cpp)
++++ kdebase-workspace-4.3.98-new/plasma/generic/dataengines/geolocation/CMakeLists.txt	2010-02-03 14:36:49.000000000 -0500
+@@ -49,7 +49,7 @@
+ find_package(libgps)
+ macro_log_feature(LIBGPS_FOUND "libgps" "GPS support for geolocation" "http://gpsd.berlios.de/" FALSE "" "")
+ if(LIBGPS_FOUND)
+-    include_directories(${LIBGPS_INCLUDES})
++    include_directories(${LIBGPS_INCLUDES} ${LIBGPS_INCLUDE_DIR})
+     set(plasma_geolocation_gps_SRCS location_gps.cpp)
+     kde4_add_plugin(plasma-geolocation-gps ${plasma_geolocation_gps_SRCS})
+     target_link_libraries(plasma-geolocation-gps plasma-geolocation-interface ${LIBGPS_LIBRARIES})
 diff -Nurd kdebase-workspace-4.3.98/plasma/screensaver/shell/plasmaapp.cpp kdebase-workspace-4.3.98-new/plasma/screensaver/shell/plasmaapp.cpp
 --- kdebase-workspace-4.3.98/plasma/screensaver/shell/plasmaapp.cpp	2009-12-31 08:28:29.000000000 -0500
 +++ kdebase-workspace-4.3.98-new/plasma/screensaver/shell/plasmaapp.cpp	2010-02-03 12:09:45.000000000 -0500
