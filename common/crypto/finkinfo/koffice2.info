@@ -11,10 +11,10 @@ DescDetail: <<
 KOffice is a free, integrated office suite for KDE, the K Desktop Environment.
 <<
 
-Source: mirror:kde:stable/koffice-%v/src/koffice-%v.tar.bz2
+Source: mirror:kde:stable/koffice-%v/koffice-%v.tar.bz2
 Source-MD5: 9955f30f43ed3f6970870f55015a1a18
 PatchFile: koffice2.patch
-PatchFile-MD5: cd3770043a8dae8c06feb6d512b61242
+PatchFile-MD5: de4783d117fc57f30f84c4d32aef91ae
 
 Depends: <<
 	karbon2-%type_pkg[kde] (>= %v-%r),

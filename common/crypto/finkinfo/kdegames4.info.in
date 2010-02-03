@@ -23,6 +23,7 @@ Source-MD5: a44baaaeae4e8921db522c38723caeb9
 Depends: <<
 	bomber4-%type_pkg[kde] (>= %v-%r),
 	bovo4-%type_pkg[kde] (>= %v-%r),
+	granatier4-%type_pkg[kde] (>= %v-%r),
 	kapman4-%type_pkg[kde] (>= %v-%r),
 	katomic4-%type_pkg[kde] (>= %v-%r),
 	kbattleship4-%type_pkg[kde] (>= %v-%r),
@@ -33,6 +34,7 @@ Depends: <<
 	kdiamond4-%type_pkg[kde] (>= %v-%r),
 	kfourinline4-%type_pkg[kde] (>= %v-%r),
 	kgoldrunner4-%type_pkg[kde] (>= %v-%r),
+	kigo4-%type_pkg[kde] (>= %v-%r),
 	killbots4-%type_pkg[kde] (>= %v-%r),
 	kiriki4-%type_pkg[kde] (>= %v-%r),
 	kjumpingcube4-%type_pkg[kde] (>= %v-%r),
@@ -51,6 +53,7 @@ Depends: <<
 	kspaceduel4-%type_pkg[kde] (>= %v-%r),
 	ksquares4-%type_pkg[kde] (>= %v-%r),
 	ksudoku4-%type_pkg[kde] (>= %v-%r),
+	ktron4-%type_pkg[kde] (>= %v-%r),
 	ktuberling4-%type_pkg[kde] (>= %v-%r),
 	kubrick4-%type_pkg[kde] (>= %v-%r),
 	lskat4-%type_pkg[kde] (>= %v-%r),
@@ -111,6 +114,20 @@ InstallScript: <<
 	else
 		rm -rf %i/opt/kde4/%type_pkg[kde]/bin/kwin4.app/Contents/Resources/kwin4.icns
 	fi
+	if [ -d "%i/opt/kde4/%type_pkg[kde]/bin/granatierSources.app" ]; then
+		install -d -m 755 "%i/opt/kde4/%type_pkg[kde]/bin/granatier.app/Contents/Resources"
+		mv "%i/opt/kde4/%type_pkg[kde]/bin/granatierSources.app/Contents/Resources/granatierSources.icns" \
+			"%i/opt/kde4/%type_pkg[kde]/bin/granatier.app/Contents/Resources/"
+	fi
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/bin/granatierSources.app"
+
+	if [ -d "%i/opt/kde4/%type_pkg[kde]/bin/ktron.app" ]; then
+		install -d -m 755 "%i/opt/kde4/%type_pkg[kde]/bin/kdesnake.app/Contents/MacOS"
+		install -d -m 755 "%i/opt/kde4/%type_pkg[kde]/bin/kdesnake.app/Contents/Resources"
+		mv "%i/opt/kde4/%type_pkg[kde]/bin/kdesnake" "%i/opt/kde4/%type_pkg[kde]/bin/kdesnake.app/Contents/MacOS/"
+		cp "%i/opt/kde4/%type_pkg[kde]/bin/ktron.app/Contents/Info.plist" "%i/opt/kde4/%type_pkg[kde]/bin/kdesnake.app/Contents/"
+		cp "%i/opt/kde4/%type_pkg[kde]/bin/ktron.app/Contents/Resources/ktron.icns" "%i/opt/kde4/%type_pkg[kde]/bin/kdesnake.app/Contents/Resources/"
+	fi
 
 	mkdir -p %i/share/doc/installed-packages
 	touch %i/share/doc/installed-packages/%N
@@ -170,11 +187,14 @@ SplitOff4: <<
 	Package: katomic4-%type_pkg[kde]
 	Description: KDE4 - atomix puzzle game
 	Depends: %N-base (>= %v-%r)
+	Replaces: %N-base (<< 4.3.98-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/katomic*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/katomic*
 		opt/kde4/%type_pkg[kde]/share/apps/katomic
+		opt/kde4/%type_pkg[kde]/share/apps/kconf_update/katomic*
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/katomic
+		opt/kde4/%type_pkg[kde]/share/config/katomic*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/katomic*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/katomic*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/katomic*
@@ -188,6 +208,7 @@ SplitOff5: <<
 	Package: kbattleship4-%type_pkg[kde]
 	Description: KDE4 - battleship board game
 	Depends: %N-base (>= %v-%r)
+	Replaces: %N-base (<< 4.3.98-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kbattleship*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kbattleship*
@@ -199,6 +220,7 @@ SplitOff5: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kbattleship*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kbattleship*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kbattleship*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/kbattleship*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
@@ -414,10 +436,11 @@ SplitOff17: <<
 	Package: kmahjongg4-%type_pkg[kde]
 	Description: KDE4 - Mahjongg solitaire game
 	Depends: %N-base (>= %v-%r)
+	Replaces: %N-base (<< 4.3.98-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kmahjongg*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kmahjongg*
-		opt/kde4/%type_pkg[kde]/share/apps/kmahjongg
+		opt/kde4/%type_pkg[kde]/share/apps/kmahjongg*
 		opt/kde4/%type_pkg[kde]/share/config.kcfg/kmahjongg*
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kmahjongg
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kmahjongg*
@@ -565,6 +588,11 @@ SplitOff24: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kreversi*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kreversi*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kreversi*
+		opt/kde4/%type_pkg[kde]/share/icons/oxygen/16x16/actions/*moves*
+		opt/kde4/%type_pkg[kde]/share/icons/oxygen/22x22/actions/*moves*
+		opt/kde4/%type_pkg[kde]/share/icons/oxygen/32x32/actions/*moves*
+		opt/kde4/%type_pkg[kde]/share/icons/oxygen/48x48/actions/*moves*
+		opt/kde4/%type_pkg[kde]/share/icons/oxygen/scalable/actions/*moves*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
@@ -602,6 +630,7 @@ SplitOff26: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kshisen*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kshisen*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kshisen*
+		opt/kde4/%type_pkg[kde]/share/sounds/kshisen
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
@@ -612,6 +641,7 @@ SplitOff27: <<
 		qca2-%type_pkg[kde]-shlibs (>= 2.0.2-1),
 		%N-base (>= %v-%r)
 	<<
+	Replaces: %N-base (<< 4.3.98-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/ksirk*
 		opt/kde4/%type_pkg[kde]/lib/libiris_ksirk.2*.dylib
@@ -619,7 +649,7 @@ SplitOff27: <<
 		opt/kde4/%type_pkg[kde]/share/apps/ksirk*
 		opt/kde4/%type_pkg[kde]/share/config.kcfg/ksirk*
 		opt/kde4/%type_pkg[kde]/share/config/ksirk*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/ksirk
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/ksirk*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/ksirk*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/ksirk*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/ksirk*
@@ -701,6 +731,12 @@ SplitOff31: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/ktuberling*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/ktuberling*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/ktuberling*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/mimetypes/*tuberling*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/mimetypes/*tuberling*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/mimetypes/*tuberling*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/mimetypes/*tuberling*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/mimetypes/*tuberling*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/mimetypes/*tuberling*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
@@ -740,6 +776,94 @@ SplitOff33: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
+SplitOff34: <<
+	Package: granatier4-%type_pkg[kde]
+	Description: KDE4 - ClanBomber clone
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/granatier*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/granatier*
+		opt/kde4/%type_pkg[kde]/share/apps/granatier
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/granatier*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/granatier
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/granatier*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/granatier*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/granatier*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/granatier*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/granatier*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/granatier*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/granatier*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff35: <<
+	Package: ktron4-%type_pkg[kde]
+	Description: KDE4 - Lightcycle game
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/kdesnake*
+		opt/kde4/%type_pkg[kde]/bin/ktron*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/kdesnake*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/ktron*
+		opt/kde4/%type_pkg[kde]/share/apps/ktron
+		opt/kde4/%type_pkg[kde]/share/config/ktron*
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/ktron*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/ktron
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kdesnake*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/ktron*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kdesnake*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/ktron*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kdesnake*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/ktron*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/256x256/apps/kdesnake*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kdesnake*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/ktron*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kdesnake*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/ktron*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kdesnake*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/ktron*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff36: <<
+	Package: kigo4-%type_pkg[kde]
+	Description: KDE4 - Go board game
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/kigo*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/kigo*
+		opt/kde4/%type_pkg[kde]/share/apps/kigo
+		opt/kde4/%type_pkg[kde]/share/config/kigo*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kigo
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kigo*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kigo*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kigo*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kigo*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kigo*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kigo*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff37: <<
+	Package: palapeli-%type_pkg[kde]
+	Description: KDE4 - Jigsaw puzzle game
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/*pala*
+		opt/kde4/%type_pkg[kde]/lib/kde4/pala*
+		opt/kde4/%type_pkg[kde]/lib/libpala.0*.dylib
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/pala*
+		opt/kde4/%type_pkg[kde]/share/apps/pala*
+		opt/kde4/%type_pkg[kde]/share/config/pala*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/pala*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/ServiceMenus/*pala*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/*pala*
+		opt/kde4/%type_pkg[kde]/share/kde4/servicetypes/*pala*
+		opt/kde4/%type_pkg[kde]/share/mime/packages/pala*
+	<<
+	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libpala.0.dylib 0.0.0 %n (>= 4.3.98-1)
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
 
 SplitOff40: <<
 	Package: %N-dev
@@ -753,6 +877,7 @@ SplitOff40: <<
 		opt/kde4/%type_pkg[kde]/lib/libkggzmod.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkggznet.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkmahjongglib.dylib
+		opt/kde4/%type_pkg[kde]/lib/libpala*
 		opt/kde4/%type_pkg[kde]/share/apps/cmake
 	<<
 <<
