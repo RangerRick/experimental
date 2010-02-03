@@ -30,7 +30,7 @@ within host programs.
 Source: mirror:sourceforge:kipi/kipi-plugins-%v.tar.bz2
 Source-MD5: f1a92d0fe29bd68de08551a5e607015e
 PatchFile: kipi-plugins4.patch
-PatchFile-MD5: 0f306dbdc5f99ce385fa91ec15c0b3ba
+PatchFile-MD5: 13e237e1cf48e325eb5c42f057360b51
 
 Depends: <<
 	kdebase4-runtime-%type_pkg[kde] (>= 4.2.1-1),
