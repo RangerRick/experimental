@@ -124,8 +124,6 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libkwinnvidiahack.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkworkspace.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/liblsofui.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libnepomukquery.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libnepomukqueryclient.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libplasma_applet-system-monitor.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libplasma-geolocation-interface.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libplasmaclock.4*.dylib
@@ -153,8 +151,6 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libkwinnvidiahack.4.dylib                4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkworkspace.4.dylib                    4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/liblsofui.4.dylib                        4.0.0 %n (>= 4.2.4-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libnepomukquery.4.dylib                  4.0.0 %n (>= 4.2.4-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libnepomukqueryclient.4.dylib            4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libplasma_applet-system-monitor.4.dylib  4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libplasma-geolocation-interface.4.dylib  4.0.0 %n (>= 4.3.0-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libplasmaclock.4.dylib                   4.0.0 %n (>= 4.2.4-1)
