@@ -133,7 +133,6 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libsolidcontrolifaces.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libsystemsettingsview.dylib
 		opt/kde4/%type_pkg[kde]/lib/libtaskmanager.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libtime_solar.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libweather_ion.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/strigi
 	<<
@@ -159,7 +158,6 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libsolidcontrol.4.dylib                  4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libsolidcontrolifaces.4.dylib            4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libtaskmanager.4.dylib                   4.0.0 %n (>= 4.2.4-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libtime_solar.4.dylib                    4.0.0 %n (>= 4.3.0-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libweather_ion.4.dylib                   4.0.0 %n (>= 4.2.4-1)
 	<<
 <<

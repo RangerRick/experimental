@@ -333,7 +333,6 @@ SplitOff12: <<
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/irkick*
 		opt/kde4/%type_pkg[kde]/share/apps/irkick
 		opt/kde4/%type_pkg[kde]/share/apps/profiles
-		opt/kde4/%type_pkg[kde]/share/apps/remotes
 		opt/kde4/%type_pkg[kde]/share/autostart/irkick*
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/irkick
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kcmlirc
