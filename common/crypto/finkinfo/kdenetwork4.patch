@@ -1,20 +1,21 @@
-diff -Nurd kdenetwork-4.3.2/CMakeLists.txt kdenetwork-4.3.2-new/CMakeLists.txt
---- kdenetwork-4.3.2/CMakeLists.txt	2009-07-21 11:21:47.000000000 -0400
-+++ kdenetwork-4.3.2-new/CMakeLists.txt	2009-10-08 20:20:12.000000000 -0400
-@@ -74,7 +74,9 @@
+diff -Nurd kdenetwork-4.3.98/CMakeLists.txt kdenetwork-4.3.98-new/CMakeLists.txt
+--- kdenetwork-4.3.98/CMakeLists.txt	2010-01-06 12:01:06.000000000 -0500
++++ kdenetwork-4.3.98-new/CMakeLists.txt	2010-02-03 18:21:47.000000000 -0500
+@@ -78,9 +78,9 @@
  
- if(Q_WS_X11)
-   macro_optional_add_subdirectory(krdc)
--  macro_optional_add_subdirectory(kppp)
-+  if (NOT APPLE)
-+    macro_optional_add_subdirectory(kppp)
-+  endif (NOT APPLE)
+   # kppp is broken on FreeBSD >= 8.0
+   # disabling until a fix appears
+-  if(NOT CMAKE_SYSTEM_NAME MATCHES FreeBSD)
++  if(NOT CMAKE_SYSTEM_NAME MATCHES FreeBSD AND NOT APPLE)
+     macro_optional_add_subdirectory(kppp)
+-  endif(NOT CMAKE_SYSTEM_NAME MATCHES FreeBSD)
++  endif(NOT CMAKE_SYSTEM_NAME MATCHES FreeBSD AND NOT APPLE)
  
    if(LIBVNCSERVER_FOUND)
      macro_optional_add_subdirectory(krfb)
-diff -Nurd kdenetwork-4.3.2/kopete/protocols/gadu/CMakeLists.txt kdenetwork-4.3.2-new/kopete/protocols/gadu/CMakeLists.txt
---- kdenetwork-4.3.2/kopete/protocols/gadu/CMakeLists.txt	2009-01-16 10:06:42.000000000 -0500
-+++ kdenetwork-4.3.2-new/kopete/protocols/gadu/CMakeLists.txt	2009-10-08 20:20:53.000000000 -0400
+diff -Nurd kdenetwork-4.3.98/kopete/protocols/gadu/CMakeLists.txt kdenetwork-4.3.98-new/kopete/protocols/gadu/CMakeLists.txt
+--- kdenetwork-4.3.98/kopete/protocols/gadu/CMakeLists.txt	2009-01-16 10:06:42.000000000 -0500
++++ kdenetwork-4.3.98-new/kopete/protocols/gadu/CMakeLists.txt	2010-02-03 18:21:24.000000000 -0500
 @@ -4,8 +4,7 @@
  
  add_subdirectory( icons ) 
@@ -25,9 +26,9 @@ diff -Nurd kdenetwork-4.3.2/kopete/protocols/gadu/CMakeLists.txt kdenetwork-4.3.
  
  
  ########### next target ###############
-diff -Nurd kdenetwork-4.3.2/kopete/protocols/groupwise/libgroupwise/CMakeLists.txt kdenetwork-4.3.2-new/kopete/protocols/groupwise/libgroupwise/CMakeLists.txt
---- kdenetwork-4.3.2/kopete/protocols/groupwise/libgroupwise/CMakeLists.txt	2009-03-10 08:25:36.000000000 -0400
-+++ kdenetwork-4.3.2-new/kopete/protocols/groupwise/libgroupwise/CMakeLists.txt	2009-10-08 20:20:12.000000000 -0400
+diff -Nurd kdenetwork-4.3.98/kopete/protocols/groupwise/libgroupwise/CMakeLists.txt kdenetwork-4.3.98-new/kopete/protocols/groupwise/libgroupwise/CMakeLists.txt
+--- kdenetwork-4.3.98/kopete/protocols/groupwise/libgroupwise/CMakeLists.txt	2009-03-10 08:25:36.000000000 -0400
++++ kdenetwork-4.3.98-new/kopete/protocols/groupwise/libgroupwise/CMakeLists.txt	2010-02-03 18:21:24.000000000 -0500
 @@ -85,6 +85,7 @@
  kde4_add_library( qgroupwise SHARED ${libqgroupwise_tasks_SRCS} ${libqgroupwise_SRCS} )
  
@@ -36,9 +37,9 @@ diff -Nurd kdenetwork-4.3.2/kopete/protocols/groupwise/libgroupwise/CMakeLists.t
  
  ########### install files ###############
  
-diff -Nurd kdenetwork-4.3.2/kopete/protocols/jabber/libiris/CMakeLists.txt kdenetwork-4.3.2-new/kopete/protocols/jabber/libiris/CMakeLists.txt
---- kdenetwork-4.3.2/kopete/protocols/jabber/libiris/CMakeLists.txt	2009-03-10 08:25:37.000000000 -0400
-+++ kdenetwork-4.3.2-new/kopete/protocols/jabber/libiris/CMakeLists.txt	2009-10-08 20:20:12.000000000 -0400
+diff -Nurd kdenetwork-4.3.98/kopete/protocols/jabber/libiris/CMakeLists.txt kdenetwork-4.3.98-new/kopete/protocols/jabber/libiris/CMakeLists.txt
+--- kdenetwork-4.3.98/kopete/protocols/jabber/libiris/CMakeLists.txt	2009-03-10 08:25:37.000000000 -0400
++++ kdenetwork-4.3.98-new/kopete/protocols/jabber/libiris/CMakeLists.txt	2010-02-03 18:21:24.000000000 -0500
 @@ -32,7 +32,7 @@
   
  
@@ -48,9 +49,9 @@ diff -Nurd kdenetwork-4.3.2/kopete/protocols/jabber/libiris/CMakeLists.txt kdene
  ${ZLIB_INCLUDE_DIR}
  ${DNSSD_INCLUDE_DIR}
  )
-diff -Nurd kdenetwork-4.3.2/kopete/protocols/jabber/libiris/iris/xmpp/xmpp-im/filetransfer.cpp.orig kdenetwork-4.3.2-new/kopete/protocols/jabber/libiris/iris/xmpp/xmpp-im/filetransfer.cpp.orig
---- kdenetwork-4.3.2/kopete/protocols/jabber/libiris/iris/xmpp/xmpp-im/filetransfer.cpp.orig	2009-02-18 11:29:29.000000000 -0500
-+++ kdenetwork-4.3.2-new/kopete/protocols/jabber/libiris/iris/xmpp/xmpp-im/filetransfer.cpp.orig	1969-12-31 19:00:00.000000000 -0500
+diff -Nurd kdenetwork-4.3.98/kopete/protocols/jabber/libiris/iris/xmpp/xmpp-im/filetransfer.cpp.orig kdenetwork-4.3.98-new/kopete/protocols/jabber/libiris/iris/xmpp/xmpp-im/filetransfer.cpp.orig
+--- kdenetwork-4.3.98/kopete/protocols/jabber/libiris/iris/xmpp/xmpp-im/filetransfer.cpp.orig	2009-02-18 11:29:29.000000000 -0500
++++ kdenetwork-4.3.98-new/kopete/protocols/jabber/libiris/iris/xmpp/xmpp-im/filetransfer.cpp.orig	1969-12-31 19:00:00.000000000 -0500
 @@ -1,783 +0,0 @@
 -/*
 - * filetransfer.cpp - File Transfer
@@ -835,9 +836,9 @@ diff -Nurd kdenetwork-4.3.2/kopete/protocols/jabber/libiris/iris/xmpp/xmpp-im/fi
 -	incoming(r);
 -	return true;
 -}
-diff -Nurd kdenetwork-4.3.2/kopete/protocols/jabber/libiris/iris/xmpp/xmpp-im/filetransfer.h.orig kdenetwork-4.3.2-new/kopete/protocols/jabber/libiris/iris/xmpp/xmpp-im/filetransfer.h.orig
---- kdenetwork-4.3.2/kopete/protocols/jabber/libiris/iris/xmpp/xmpp-im/filetransfer.h.orig	2009-02-18 11:29:29.000000000 -0500
-+++ kdenetwork-4.3.2-new/kopete/protocols/jabber/libiris/iris/xmpp/xmpp-im/filetransfer.h.orig	1969-12-31 19:00:00.000000000 -0500
+diff -Nurd kdenetwork-4.3.98/kopete/protocols/jabber/libiris/iris/xmpp/xmpp-im/filetransfer.h.orig kdenetwork-4.3.98-new/kopete/protocols/jabber/libiris/iris/xmpp/xmpp-im/filetransfer.h.orig
+--- kdenetwork-4.3.98/kopete/protocols/jabber/libiris/iris/xmpp/xmpp-im/filetransfer.h.orig	2009-02-18 11:29:29.000000000 -0500
++++ kdenetwork-4.3.98-new/kopete/protocols/jabber/libiris/iris/xmpp/xmpp-im/filetransfer.h.orig	1969-12-31 19:00:00.000000000 -0500
 @@ -1,183 +0,0 @@
 -/*
 - * filetransfer.h - File Transfer
