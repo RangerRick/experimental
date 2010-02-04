@@ -126,7 +126,6 @@ SplitOff3: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/plasma_kget_*
 		opt/kde4/%type_pkg[kde]/lib/libkgetcore.4*.dylib
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kget*
-		opt/kde4/%type_pkg[kde]/share/apps/desktoptheme/default/widgets/kget*
 		opt/kde4/%type_pkg[kde]/share/apps/kget
 		opt/kde4/%type_pkg[kde]/share/apps/khtml/kpartplugins/kget_*
 		opt/kde4/%type_pkg[kde]/share/config.kcfg/kget*
