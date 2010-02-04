@@ -1,6 +1,6 @@
 diff -Nurd fop-0.20.5/fop.sh fop-0.20.5-new/fop.sh
 --- fop-0.20.5/fop.sh	2003-07-14 22:03:23.000000000 -0400
-+++ fop-0.20.5-new/fop.sh	2010-01-30 14:08:08.000000000 -0500
++++ fop-0.20.5-new/fop.sh	2010-02-03 21:49:04.000000000 -0500
 @@ -11,7 +11,11 @@
  darwin=false;
  case "`uname`" in
@@ -45,7 +45,7 @@ diff -Nurd fop-0.20.5/fop.sh fop-0.20.5-new/fop.sh
  
 diff -Nurd fop-0.20.5/fop_pfmreader.sh fop-0.20.5-new/fop_pfmreader.sh
 --- fop-0.20.5/fop_pfmreader.sh	1969-12-31 19:00:00.000000000 -0500
-+++ fop-0.20.5-new/fop_pfmreader.sh	2010-01-30 14:08:08.000000000 -0500
++++ fop-0.20.5-new/fop_pfmreader.sh	2010-02-03 21:49:04.000000000 -0500
 @@ -0,0 +1,110 @@
 +#! /bin/sh
 +#
@@ -159,7 +159,7 @@ diff -Nurd fop-0.20.5/fop_pfmreader.sh fop-0.20.5-new/fop_pfmreader.sh
 +
 diff -Nurd fop-0.20.5/fop_ttfreader.sh fop-0.20.5-new/fop_ttfreader.sh
 --- fop-0.20.5/fop_ttfreader.sh	1969-12-31 19:00:00.000000000 -0500
-+++ fop-0.20.5-new/fop_ttfreader.sh	2010-01-30 14:08:08.000000000 -0500
++++ fop-0.20.5-new/fop_ttfreader.sh	2010-02-03 21:49:04.000000000 -0500
 @@ -0,0 +1,110 @@
 +#! /bin/sh
 +#
@@ -273,7 +273,7 @@ diff -Nurd fop-0.20.5/fop_ttfreader.sh fop-0.20.5-new/fop_ttfreader.sh
 +
 diff -Nurd fop-0.20.5/src/org/apache/fop/fonts/apps/PFMReader.java fop-0.20.5-new/src/org/apache/fop/fonts/apps/PFMReader.java
 --- fop-0.20.5/src/org/apache/fop/fonts/apps/PFMReader.java	2003-07-14 22:03:25.000000000 -0400
-+++ fop-0.20.5-new/src/org/apache/fop/fonts/apps/PFMReader.java	2010-01-30 14:08:42.000000000 -0500
++++ fop-0.20.5-new/src/org/apache/fop/fonts/apps/PFMReader.java	2010-02-03 21:49:04.000000000 -0500
 @@ -370,16 +370,16 @@
  
  
@@ -297,7 +297,7 @@ diff -Nurd fop-0.20.5/src/org/apache/fop/fonts/apps/PFMReader.java fop-0.20.5-ne
                  Integer val = (Integer)h2.get(kpx2);
 diff -Nurd fop-0.20.5/src/org/apache/fop/fonts/apps/TTFReader.java fop-0.20.5-new/src/org/apache/fop/fonts/apps/TTFReader.java
 --- fop-0.20.5/src/org/apache/fop/fonts/apps/TTFReader.java	2003-07-14 22:03:13.000000000 -0400
-+++ fop-0.20.5-new/src/org/apache/fop/fonts/apps/TTFReader.java	2010-01-30 14:08:50.000000000 -0500
++++ fop-0.20.5-new/src/org/apache/fop/fonts/apps/TTFReader.java	2010-02-03 21:49:04.000000000 -0500
 @@ -423,14 +423,14 @@
          }
  
@@ -331,7 +331,7 @@ diff -Nurd fop-0.20.5/src/org/apache/fop/fonts/apps/TTFReader.java fop-0.20.5-ne
                      el2.setAttribute("kpx2", kpx2.toString());
 diff -Nurd fop-0.20.5/src/org/apache/fop/messaging/MessageHandler.java fop-0.20.5-new/src/org/apache/fop/messaging/MessageHandler.java
 --- fop-0.20.5/src/org/apache/fop/messaging/MessageHandler.java	2003-07-14 22:03:14.000000000 -0400
-+++ fop-0.20.5-new/src/org/apache/fop/messaging/MessageHandler.java	2010-01-30 14:09:16.000000000 -0500
++++ fop-0.20.5-new/src/org/apache/fop/messaging/MessageHandler.java	2010-02-03 21:49:04.000000000 -0500
 @@ -156,9 +156,9 @@
              break;
          case EVENT:
@@ -362,7 +362,7 @@ diff -Nurd fop-0.20.5/src/org/apache/fop/messaging/MessageHandler.java fop-0.20.
          case NONE:
 diff -Nurd fop-0.20.5/src/org/apache/fop/render/ps/PSRenderer.java fop-0.20.5-new/src/org/apache/fop/render/ps/PSRenderer.java
 --- fop-0.20.5/src/org/apache/fop/render/ps/PSRenderer.java	2003-07-14 22:03:16.000000000 -0400
-+++ fop-0.20.5-new/src/org/apache/fop/render/ps/PSRenderer.java	2010-01-30 14:09:29.000000000 -0500
++++ fop-0.20.5-new/src/org/apache/fop/render/ps/PSRenderer.java	2010-02-03 21:49:04.000000000 -0500
 @@ -303,9 +303,9 @@
          // write("/gfF1{/Helvetica findfont} bd");
          // write("/gfF3{/Helvetica-Bold findfont} bd");
@@ -389,9 +389,41 @@ diff -Nurd fop-0.20.5/src/org/apache/fop/render/ps/PSRenderer.java fop-0.20.5-ne
              Font fm = (Font)fonts.get(key);
              if (null == fm.encoding()) {
                  //ignore (ZapfDingbats and Symbol run through here
+diff -Nurd fop-0.20.5/src/org/apache/fop/svg/PDFGraphics2D.java fop-0.20.5-new/src/org/apache/fop/svg/PDFGraphics2D.java
+--- fop-0.20.5/src/org/apache/fop/svg/PDFGraphics2D.java	2003-07-14 22:03:16.000000000 -0400
++++ fop-0.20.5-new/src/org/apache/fop/svg/PDFGraphics2D.java	2010-02-03 21:59:27.000000000 -0500
+@@ -1322,11 +1322,26 @@
+             return new PDFGraphicsDevice(this);
+         }
+ 
+-        // needed for compiling under jdk1.4
+         @jdk14codestart@
++        
+         public java.awt.image.VolatileImage createCompatibleVolatileImage(int width, int height) {
+-            return null;
++            try {
++                return super.createCompatibleVolatileImage(width, height, new ImageCapabilities(false));
++            } catch (java.awt.AWTException e) {
++                e.printStackTrace();
++                return null;
++            }
+         }
++        
++        public java.awt.image.VolatileImage createCompatibleVolatileImage(int width, int height, int transparency) {
++            try {
++                return super.createCompatibleVolatileImage(width, height, new ImageCapabilities(false), transparency);
++            } catch (java.awt.AWTException e) {
++                e.printStackTrace();
++                return null;
++            }
++        }
++        
+         @jdk14codeend@
+     }
+ 
 diff -Nurd fop-0.20.5/xalan.sh fop-0.20.5-new/xalan.sh
 --- fop-0.20.5/xalan.sh	2003-07-14 22:03:25.000000000 -0400
-+++ fop-0.20.5-new/xalan.sh	2010-01-30 14:08:08.000000000 -0500
++++ fop-0.20.5-new/xalan.sh	2010-02-03 21:49:04.000000000 -0500
 @@ -11,7 +11,11 @@
  darwin=false;
  case "`uname`" in
