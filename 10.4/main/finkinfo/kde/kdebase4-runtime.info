@@ -9,9 +9,9 @@ Maintainer: Benjamin Reed <kdebase4-runtime@fink.racoonfink.com>
 
 Depends: <<
 	dbus (>= 1.2.12-1),
-	kdepimlibs4-%type_pkg[kde] (>= 4.3.98-1),
+	kdepimlibs4-%type_pkg[kde] (>= 4.4.0-1),
 	libxine1-shlibs,
-	oxygen-icons-%type_pkg[kde] (>= 4.3.98-1),
+	oxygen-icons-%type_pkg[kde] (>= 4.4.0-1),
 	strigi-gui-%type_pkg[kde] (>= 0.6.5-1)
 <<
 BuildDepends: <<
@@ -31,8 +31,8 @@ BuildDepends: <<
 	giflib,
 	glib2-dev (>= 2.18.4-1),
 	kde4-buildenv (>= 4.3.90-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.4.0-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.4.0-1),
 	libgettext8-dev,
 	libidn,
 	libjasper.1,

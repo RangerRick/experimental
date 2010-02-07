@@ -31,9 +31,9 @@ BuildDepends: <<
 	graphicsmagick-dev (>= 1.1-1),
 	gsl (>= 1.7-1),
 	kde4-buildenv (>= 4.3.90-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.3.98-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.4.0-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.4.0-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.4.0-1),
 	lcms,
 	libexiv2-0.18,
 	libgettext8-dev,
@@ -130,8 +130,8 @@ SplitOff10: <<
 	Description: KDE4 - koffice base shared libraries
 	Depends: <<
 		karbon2-%type_pkg[kde]-shlibs (>= %v-%r),
-		kdebase4-%type_pkg[kde]-shlibs (>= 4.3.98-1),
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.98-1),
+		kdebase4-%type_pkg[kde]-shlibs (>= 4.4.0-1),
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.0-1),
 		kdepimlibs4-%type_pkg[kde]-shlibs,
 		lcms-shlibs,
 		libwpd-0.8-shlibs (>= 0.8.14-1),
@@ -201,7 +201,7 @@ SplitOff12: <<
 	Package: %N-base
 	Description: KDE4 - koffice base package
 	Depends: <<
-		kdebase4-runtime-%type_pkg[kde] (>= 4.3.98-1),
+		kdebase4-runtime-%type_pkg[kde] (>= 4.4.0-1),
 		%N-base-shlibs (>= %v-%r)
 	<<
 	Files: <<

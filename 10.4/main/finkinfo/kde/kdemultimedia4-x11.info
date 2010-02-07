@@ -21,8 +21,8 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	glib2-dev (>= 2.18.4-1),
 	kde4-buildenv (>= 4.3.90-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.3.98-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.4.0-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.4.0-1),
 	lame,
 	lame-dev,
 	libflac8-dev,
@@ -164,7 +164,7 @@ SplitOff6: <<
 	Package: %N-base-shlibs
 	Description: KDE4 - kdemultimedia base shared libraries
 	Depends: <<
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.3.98-1),
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.0-1),
 		libmusicbrainz4-shlibs
 	<<
 	Files: <<
@@ -181,7 +181,7 @@ SplitOff7: <<
 	Description: KDE4 - kdemultimedia base package
 	Depends: <<
 		%N-base-shlibs (>= %v-%r),
-		kdebase4-runtime-%type_pkg[kde] (>= 4.3.98-1)
+		kdebase4-runtime-%type_pkg[kde] (>= 4.4.0-1)
 	<<
 	Files: opt
 <<

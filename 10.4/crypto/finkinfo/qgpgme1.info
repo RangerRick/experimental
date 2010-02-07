@@ -26,7 +26,7 @@ BuildDepends: <<
 	giflib,
 	gpgme11,
 	kde4-buildenv (>= 4.3.90-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.3.98-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.4.0-1),
 	libgettext8-dev,
 	libgpg-error,
 	libical,
