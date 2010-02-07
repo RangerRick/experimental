@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-kannada-%type_pkg[kde]
-Version: 4.3.90
+Version: 4.4.0
 Revision: 1
 Description: KDE4 - languages for Kannada
 Type: kde (x11 mac)
@@ -22,8 +22,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-kn-%v.tar.bz2
-Source-MD5: 81c39d776ed7a9bcaf93a76f39a2b468
-SourceDirectory: kde-l10n-kn-%v
+Source-MD5: faaa699381bedd0a779596b1c76a5eb6
 
 CompileScript: <<
 #!/bin/sh -ev

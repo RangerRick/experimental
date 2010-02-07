@@ -1,6 +1,6 @@
 Info3: <<
 Package: kdebase4-runtime-%type_pkg[kde]
-Version: 4.3.98
+Version: 4.4.0
 Revision: 1
 Description: KDE4 - base applications and tools (runtime)
 Type: kde (x11 mac)
@@ -61,8 +61,8 @@ Replaces: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:unstable/%v/src/kdebase-runtime-%v.tar.bz2
-Source-MD5: b90fe0661ac6c826598ffcea05a5cb18
+Source: mirror:kde:stable/%v/src/kdebase-runtime-%v.tar.bz2
+Source-MD5: 54b28d1ea9fc93953e1863c06d7b7780
 SourceDirectory: kdebase-runtime-%v
 PatchFile: kdebase4-runtime.patch
 PatchFile-MD5: 4dd9be27d3bd3b1c3aff060fd6cb91ed

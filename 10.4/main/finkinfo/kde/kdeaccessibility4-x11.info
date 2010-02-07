@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdeaccessibility4-x11
-Version: 4.3.98
+Version: 4.4.0
 Revision: 1
 Description: KDE4 - accessibility software
 Type: kde (x11)
@@ -37,8 +37,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:unstable/%v/src/kdeaccessibility-%v.tar.bz2
-Source-MD5: 60bfd7e3b18c7aff66d29c283ed7f8c1
+Source: mirror:kde:stable/%v/src/kdeaccessibility-%v.tar.bz2
+Source-MD5: ef786373f2b83070cd100c0414cf669b
 
 CompileScript: <<
 #!/bin/sh -ev

@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdeartwork4-mac
 Type: kde (mac)
 #endif
-Version: 4.3.98
+Version: 4.4.0
 Revision: 1
 Description: KDE4 - Styles and themes
 License: GPL/LGPL
@@ -18,8 +18,8 @@ styles, screen savers, wallpaper, icons, emoticons and so on)
 provided with the official release of KDE.
 <<
 
-Source: mirror:kde:unstable/%v/src/kdeartwork-%v.tar.bz2
-Source-MD5: 9c6b65517694009c838d2627a0653087
+Source: mirror:kde:stable/%v/src/kdeartwork-%v.tar.bz2
+Source-MD5: ee1a736960f47641cc65f7a1b3483445
 
 Depends: <<
 #if 0

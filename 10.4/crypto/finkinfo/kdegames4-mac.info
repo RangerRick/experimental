@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdegames4-mac
-Version: 4.3.98
+Version: 4.4.0
 Revision: 1
 Description: KDE4 - Games
 Type: kde (mac)
@@ -69,8 +69,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:unstable/%v/src/kdegames-%v.tar.bz2
-Source-MD5: a44baaaeae4e8921db522c38723caeb9
+Source: mirror:kde:stable/%v/src/kdegames-%v.tar.bz2
+Source-MD5: f19b44427efc9751bef34ea0c4512b3f
 
 CompileScript: <<
 #!/bin/sh -ev

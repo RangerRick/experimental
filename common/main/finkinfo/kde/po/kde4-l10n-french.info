@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-french-%type_pkg[kde]
-Version: 4.3.90
+Version: 4.4.0
 Revision: 1
 
 Description: KDE4 - languages for French
@@ -25,9 +25,8 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-fr-%v.tar.bz2
-
-SourceDirectory: kde-l10n-fr-%v
-Source-MD5: 11e3099431e4d94d5c87b0507b791d6f
+#SourceDirectory: kde-l10n-fr-%v
+Source-MD5: cf18416e2ab7785b74855d4ad3fe32d8
 
 CompileScript: <<
 #!/bin/sh -ev

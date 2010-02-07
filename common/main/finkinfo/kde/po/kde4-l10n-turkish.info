@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-turkish-%type_pkg[kde]
-Version: 4.3.90
+Version: 4.4.0
 Revision: 1
 
 Description: KDE4 - languages for Turkish
@@ -25,9 +25,8 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-tr-%v.tar.bz2
-
-SourceDirectory: kde-l10n-tr-%v
-Source-MD5: d326423b0002937638280896a0482761
+#SourceDirectory: kde-l10n-tr-%v
+Source-MD5: fb41587dc8b7742ef2327ecc18d8b3f4
 
 CompileScript: <<
 #!/bin/sh -ev

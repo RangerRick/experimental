@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-low-saxon-%type_pkg[kde]
-Version: 4.3.90
+Version: 4.4.0
 Revision: 1
 Description: KDE4 - languages for Low Saxon
 Type: kde (x11 mac)
@@ -22,8 +22,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-nds-%v.tar.bz2
-Source-MD5: 78b3fe2ea054e01f2f5566920e5cf12f
-SourceDirectory: kde-l10n-nds-%v
+Source-MD5: 6880a966e428197ba7b3c2a590dffc35
 
 CompileScript: <<
 #!/bin/sh -ev

@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-greek-%type_pkg[kde]
-Version: 4.3.90
+Version: 4.4.0
 Revision: 1
 
 Description: KDE4 - languages for Greek
@@ -25,9 +25,8 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-el-%v.tar.bz2
-
-SourceDirectory: kde-l10n-el-%v
-Source-MD5: 890d29616c05b73a06ce78381246f083
+#SourceDirectory: kde-l10n-el-%v
+Source-MD5: 6015772a6b422407a0ce33e0a5d5a6a8
 
 CompileScript: <<
 #!/bin/sh -ev

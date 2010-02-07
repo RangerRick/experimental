@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-my $KDEVERSION              = '4.3.98';
+my $KDEVERSION              = '4.4.0';
 my $KDEDIRECTORY            = 'unstable/%v/src/';
 my $KDERELNUM               = 1;
 my $KDEI18NRELNUM           = 1;
@@ -144,8 +144,8 @@ for my $i18n (@KOI18N) {
 		my $contents = <<END;
 Info4: <<
 Package: koffice2-l10n-${normalized}-\%type_pkg\[kde\]
-Version: ${KDEVERSION}
-Revision: ${KDEI18NRELNUM}
+Version: ${KOVERSION}
+Revision: ${KOI18NRELNUM}
 
 Description: KDE4 - KOffice languages for $MAPPINGS{$shortname}
 DescDetail: Language files for the KDE office suite: $MAPPINGS{$shortname}
@@ -195,7 +195,7 @@ InstallScript: <<
 <<
 END
 		print $contents if ($VERBOSE);
-		my $infofile = "po/koffice2-l10n-${normalized}.info";
+		my $infofile = "../../../crypto/finkinfo/po/koffice2-l10n-${normalized}.info";
 		unless ($DRYRUN) {
 			open(FILEOUT, ">$infofile") or die "can't write to $infofile: $!\n";
 			print FILEOUT $contents;
@@ -226,7 +226,7 @@ END
 		close(FILEOUT);
 
 		$packagelist = join(', ', map { $_ . '-' . $type . " (>= ${KOVERSION}-${KOI18NRELNUM})" } @kopackages);
-		open(FILEOUT, ">po/bundle-koffice2-l10n-$type.info") or die "can't write to bundle-koffice2-l10n-$type.info: $!\n";
+		open(FILEOUT, ">../../../crypto/finkinfo/po/bundle-koffice2-l10n-$type.info") or die "can't write to bundle-koffice2-l10n-$type.info: $!\n";
 		print FILEOUT <<END;
 Package: bundle-koffice2-l10n-$type
 Version: ${KOVERSION}

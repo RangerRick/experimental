@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-brazilian-portugese-%type_pkg[kde]
-Version: 4.3.90
+Version: 4.4.0
 Revision: 1
 Description: KDE4 - languages for Brazilian Portugese
 Type: kde (x11 mac)
@@ -22,8 +22,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-pt_BR-%v.tar.bz2
-Source-MD5: b187e8f4ee0604ccd107bdba252e10a7
-SourceDirectory: kde-l10n-pt_BR-%v
+Source-MD5: 1197dcf9c81d15593c815172d3f86717
 
 CompileScript: <<
 #!/bin/sh -ev

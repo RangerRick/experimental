@@ -1,6 +1,6 @@
 Info3: <<
 Package: kdebase4-x11
-Version: 4.3.98
+Version: 4.4.0
 Revision: 1
 Description: KDE4 - base runtime
 Type: kde (x11)
@@ -56,8 +56,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:unstable/%v/src/kdebase-%v.tar.bz2
-Source-MD5: 0de28416f594a18ed092842ecda068b9
+Source: mirror:kde:stable/%v/src/kdebase-%v.tar.bz2
+Source-MD5: ddfc358aebe5dc8f5de6f5d1ff7cb018
 SourceDirectory: kdebase-%v
 PatchScript: perl -pi -e 's,Phonon/Global,Phonon/MediaObject,g' apps/dolphin/src/panels/information/*.h apps/dolphin/src/panels/information/*.cpp
 

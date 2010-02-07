@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-hebrew-%type_pkg[kde]
-Version: 4.3.90
+Version: 4.4.0
 Revision: 1
 Description: KDE4 - languages for Hebrew
 Type: kde (x11 mac)
@@ -22,8 +22,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-he-%v.tar.bz2
-Source-MD5: a7361e734b51534084b8c6f1202d13c8
-SourceDirectory: kde-l10n-he-%v
+Source-MD5: b3b8dea3e17a0048a70b3df5d893d247
 
 CompileScript: <<
 #!/bin/sh -ev

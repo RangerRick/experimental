@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-hindi-%type_pkg[kde]
-Version: 4.3.90
+Version: 4.4.0
 Revision: 1
 Description: KDE4 - languages for Hindi
 Type: kde (x11 mac)
@@ -22,8 +22,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-hi-%v.tar.bz2
-Source-MD5: 6cf4f3755ebbfb7780148dd1c07421e0
-SourceDirectory: kde-l10n-hi-%v
+Source-MD5: 22f3cdfac7bf20ec25365e69b4dfd854
 
 CompileScript: <<
 #!/bin/sh -ev

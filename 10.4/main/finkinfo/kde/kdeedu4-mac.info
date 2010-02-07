@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdeedu4-mac
-Version: 4.3.98
+Version: 4.4.0
 Revision: 1
 Description: KDE4 - Edutainment software
 Type: kde (mac)
@@ -58,8 +58,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:unstable/%v/src/kdeedu-%v.tar.bz2
-Source-MD5: 8f509d8cf2b8b9820fc3c802c2078c0a
+Source: mirror:kde:stable/%v/src/kdeedu-%v.tar.bz2
+Source-MD5: ce6a1b694e881f12553b2409504b8694
 PatchFile: kdeedu4.patch
 PatchFile-MD5: 0bb99b8a0f784a49bd1b0cb53f7e5280
 

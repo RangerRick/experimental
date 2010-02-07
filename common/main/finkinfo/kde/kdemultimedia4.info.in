@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdemultimedia4-mac
 Type: kde (mac)
 #endif
-Version: 4.3.98
+Version: 4.4.0
 Revision: 1
 Description: KDE4 - Multimedia Apps
 License: GPL/LGPL
@@ -15,8 +15,8 @@ Maintainer: Benjamin Reed <kdemultimedia4@fink.racoonfink.com>
 DescDetail: <<
 <<
 
-Source: mirror:kde:unstable/%v/src/kdemultimedia-%v.tar.bz2
-Source-MD5: e5a31e4a811909cb563acc7739b14fcb
+Source: mirror:kde:stable/%v/src/kdemultimedia-%v.tar.bz2
+Source-MD5: b3c160790ddd06d64d833a8c9a85c164
 PatchFile: kdemultimedia4.patch
 PatchFile-MD5: 585ccb0fa9592bbab477ff50969d18b9
 

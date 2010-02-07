@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdeaccessibility4-mac
 Type: kde (mac)
 #endif
-Version: 4.3.98
+Version: 4.4.0
 Revision: 1
 Description: KDE4 - accessibility software
 License: GPL/LGPL
@@ -21,8 +21,8 @@ of us with physical handicaps.
 This is the set of tools created by the KDEAP.
 <<
 
-Source: mirror:kde:unstable/%v/src/kdeaccessibility-%v.tar.bz2
-Source-MD5: 60bfd7e3b18c7aff66d29c283ed7f8c1
+Source: mirror:kde:stable/%v/src/kdeaccessibility-%v.tar.bz2
+Source-MD5: ef786373f2b83070cd100c0414cf669b
 
 Depends: <<
 #ifdef TYPE_X11

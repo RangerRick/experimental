@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-kashubian-%type_pkg[kde]
-Version: 4.3.90
+Version: 4.4.0
 Revision: 1
 Description: KDE4 - languages for Kashubian
 Type: kde (x11 mac)
@@ -22,8 +22,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-csb-%v.tar.bz2
-Source-MD5: 88651202888c0b1d362136a17c9fea5e
-SourceDirectory: kde-l10n-csb-%v
+Source-MD5: 67dc7836158b64575f6e3bc1c72b13c8
 
 CompileScript: <<
 #!/bin/sh -ev

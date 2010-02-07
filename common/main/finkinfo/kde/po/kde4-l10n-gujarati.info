@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-gujarati-%type_pkg[kde]
-Version: 4.3.90
+Version: 4.4.0
 Revision: 1
 
 Description: KDE4 - languages for Gujarati
@@ -25,9 +25,8 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-gu-%v.tar.bz2
-
-SourceDirectory: kde-l10n-gu-%v
-Source-MD5: 4b27f75ad9fc33729bea76c054d092b8
+#SourceDirectory: kde-l10n-gu-%v
+Source-MD5: 1aa52c16a1ceae2502e36ba57650347f
 
 CompileScript: <<
 #!/bin/sh -ev

@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-ukranian-%type_pkg[kde]
-Version: 4.3.90
+Version: 4.4.0
 Revision: 1
 Description: KDE4 - languages for Ukranian
 Type: kde (x11 mac)
@@ -22,8 +22,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-uk-%v.tar.bz2
-Source-MD5: 9317e00eba316085487dedbb6c5693fa
-SourceDirectory: kde-l10n-uk-%v
+Source-MD5: 8050c22e7421ab6ddf569b89995e5c9a
 
 CompileScript: <<
 #!/bin/sh -ev

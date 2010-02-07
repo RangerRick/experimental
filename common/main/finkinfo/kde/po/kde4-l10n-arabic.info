@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-arabic-%type_pkg[kde]
-Version: 4.3.90
+Version: 4.4.0
 Revision: 1
 
 Description: KDE4 - languages for Arabic
@@ -25,9 +25,8 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-ar-%v.tar.bz2
-
-SourceDirectory: kde-l10n-ar-%v
-Source-MD5: 56bb2a573e444a9d740b75be86febcf5
+#SourceDirectory: kde-l10n-ar-%v
+Source-MD5: 93dc4a4adca4135785f1813ae4cafd26
 
 CompileScript: <<
 #!/bin/sh -ev

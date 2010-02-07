@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-italian-%type_pkg[kde]
-Version: 4.3.90
+Version: 4.4.0
 Revision: 1
 Description: KDE4 - languages for Italian
 Type: kde (x11 mac)
@@ -22,8 +22,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-it-%v.tar.bz2
-Source-MD5: 84774414c8c083f8222d2a78648fcb3f
-SourceDirectory: kde-l10n-it-%v
+Source-MD5: 89088367b5d00eb8be597b5828d7d793
 
 CompileScript: <<
 #!/bin/sh -ev

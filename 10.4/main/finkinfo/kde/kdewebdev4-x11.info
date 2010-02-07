@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdewebdev4-x11
-Version: 4.3.98
+Version: 4.4.0
 Revision: 1
 Description: KDE4 - Web Development
 Type: kde (x11)
@@ -39,8 +39,8 @@ BuildDepends: <<
 BuildConflicts: libtidy-dev
 GCC: 4.0
 
-Source: mirror:kde:unstable/%v/src/kdewebdev-%v.tar.bz2
-Source-MD5: 4c20f1fc8520727a2a9cb90f5d20145f
+Source: mirror:kde:stable/%v/src/kdewebdev-%v.tar.bz2
+Source-MD5: 2dcc71e90d6592ff88d2f7e983247e02
 
 CompileScript: <<
 #!/bin/sh -ev

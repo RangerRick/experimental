@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-chinese-simplified-%type_pkg[kde]
-Version: 4.3.90
+Version: 4.4.0
 Revision: 1
 Description: KDE4 - languages for Chinese Simplified
 Type: kde (x11 mac)
@@ -22,8 +22,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-zh_CN-%v.tar.bz2
-Source-MD5: 436c523cd26b110635b8eecf7a1510ec
-SourceDirectory: kde-l10n-zh_CN-%v
+Source-MD5: c8c0b1fd87ed8e40448aca97f541496e
 
 CompileScript: <<
 #!/bin/sh -ev
