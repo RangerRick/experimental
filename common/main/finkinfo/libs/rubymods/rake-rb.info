@@ -1,6 +1,6 @@
 Info2: <<
 Package: rake-rb%type_pkg[ruby]
-Version: 0.8.2
+Version: 0.8.7
 Revision: 1
 Type: ruby (1.8)
 Description: Make-like utility for Ruby
@@ -12,8 +12,8 @@ Depends: libgems-rb%type_pkg[ruby], ruby%type_pkg[ruby]
 BuildDepends: rubygems-rb%type_pkg[ruby], ruby%type_pkg[ruby]-dev
 
 # Unpack Phase:
-Source: http://rubyforge.org/frs/download.php/43098/rake-%v.gem
-Source-MD5: 109e2f924b8e6de5cafee292b5b1b82d
+Source: http://rubyforge.org/frs/download.php/56871/rake-%v.gem
+Source-MD5: d9eb83525310ad1a0e8a3eeddfe3c65f
 NoSourceDirectory: true
 
 CompileScript: echo ""

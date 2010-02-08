@@ -70,7 +70,7 @@ CompileScript: <<
 		EXTRA_ARGS="$EXTRA_ARGS -arch x86_64"
 	fi
 	find . -name ._\* -exec rm -rf {} \;
-	sh ./configure-for-fink.sh "%p" "%N" $EXTRA_ARGS -make "libs tools docs translations"
+	sh ./configure-for-fink.sh "%p" "%N" $EXTRA_ARGS -make "libs tools docs"
 	find . -name Makefile\* -print0 | xargs -0 perl -pi -e 's,-I%p/include,-isystem %p/include,g'
 	touch src/3rdparty/phonon/gstreamer/phonon-config-gstreamer.h
 	make LINK="$CXX"
@@ -284,7 +284,6 @@ SplitOff3: <<
 		bin/designer*
 		share/applnk/Development/designer4.desktop
 		lib/%N/bin/designer
-		lib/%N/translations/designer_*
 	<<
 <<
 SplitOff4: <<
@@ -310,7 +309,6 @@ SplitOff5: <<
 		share/applnk/Development/linguist4.desktop
 		lib/%N/bin/l*
 		lib/%N/phrasebooks
-		lib/%N/translations/linguist_*
 	<<
 <<
 SplitOff6: <<

@@ -1,6 +1,6 @@
 Info2: <<
 Package: rubyforge-rb%type_pkg[ruby]
-Version: 1.0.0
+Version: 2.0.3
 Revision: 1
 Type: ruby (1.8)
 Description: Rubyforge automation
@@ -8,16 +8,18 @@ License: BSD
 Maintainer: Benjamin Reed <rubyforge-rb@fink.racoonfink.com>
 
 Depends: <<
-	libgems-rb%type_pkg[ruby],
+	json-pure-rb%type_pkg[ruby] (>= 1.1.7-1),
+	libgems-rb%type_pkg[ruby] (>= 1.3.5-1),
 	ruby%type_pkg[ruby]
 <<
 BuildDepends: <<
-	rubygems-rb%type_pkg[ruby],
+	json-pure-rb%type_pkg[ruby] (>= 1.1.7-1),
+	rubygems-rb%type_pkg[ruby] (>= 1.3.5-1),
 	ruby%type_pkg[ruby]-dev
 <<
 
-Source: http://rubyforge.org/frs/download.php/37245/rubyforge-%v.gem
-Source-MD5: f62026740e57c513744ec76d6885c56d
+Source: http://rubyforge.org/frs/download.php/65351/rubyforge-%v.gem
+Source-MD5: ed81b2f1d82dce6fd3f5be56a8f2f739
 NoSourceDirectory: true
 
 CompileScript: echo ""

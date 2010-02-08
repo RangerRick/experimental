@@ -1,6 +1,6 @@
 Info2: <<
 Package: hoe-rb%type_pkg[ruby]
-Version: 1.5.3
+Version: 2.5.0
 Revision: 1
 Type: ruby (1.8)
 Description: Rakefile helper
@@ -8,20 +8,20 @@ License: BSD
 Maintainer: Benjamin Reed <hoe-rb@fink.racoonfink.com>
 
 Depends: <<
-	libgems-rb%type_pkg[ruby],
-	rake-rb%type_pkg[ruby] (>= 0.8.1-1),
+	libgems-rb%type_pkg[ruby] (>= 1.3.5-1),
+	rake-rb%type_pkg[ruby] (>= 0.8.7-1),
 	ruby%type_pkg[ruby],
-	rubyforge-rb%type_pkg[ruby] (>= 1.0.0-1)
+	rubyforge-rb%type_pkg[ruby] (>= 2.0.3-1)
 <<
 BuildDepends: <<
-	rake-rb%type_pkg[ruby] (>= 0.8.1-1),
-	rubygems-rb%type_pkg[ruby],
+	rake-rb%type_pkg[ruby] (>= 0.8.7-1),
+	rubygems-rb%type_pkg[ruby] (>= 1.3.5-1),
 	ruby%type_pkg[ruby]-dev,
-	rubyforge-rb%type_pkg[ruby] (>= 1.0.0-1)
+	rubyforge-rb%type_pkg[ruby] (>= 2.0.3-1)
 <<
 
-Source: http://rubyforge.org/frs/download.php/37247/hoe-%v.gem
-Source-MD5: bfb42e0bd9b31a1bd43dddbbe12fcb7f
+Source: http://rubyforge.org/frs/download.php/68445/hoe-%v.gem
+Source-MD5: 7afb2f143fbeff68d0bfa46cd1d51623
 NoSourceDirectory: true
 
 CompileScript: echo ""

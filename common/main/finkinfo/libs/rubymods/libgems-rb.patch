@@ -1,20 +1,57 @@
-diff -Nurd rubygems-1.3.0/lib/rubygems/defaults.rb rubygems-1.3.0-new/lib/rubygems/defaults.rb
---- rubygems-1.3.0/lib/rubygems/defaults.rb	2008-09-18 20:59:00.000000000 -0400
-+++ rubygems-1.3.0-new/lib/rubygems/defaults.rb	2008-09-26 19:08:44.000000000 -0400
-@@ -16,8 +16,7 @@
-       File.join File.dirname(ConfigMap[:sitedir]), 'Gems',
-                 ConfigMap[:ruby_version]
-     else
--      File.join(ConfigMap[:libdir], ruby_engine, 'gems',
--                ConfigMap[:ruby_version])
-+		File.join('@PREFIX@', 'var', 'lib', 'gems', ConfigMap[:ruby_version])
+diff -Nurd rubygems-1.3.5/lib/rubygems/commands/setup_command.rb rubygems-1.3.5-new/lib/rubygems/commands/setup_command.rb
+--- rubygems-1.3.5/lib/rubygems/commands/setup_command.rb	2009-06-25 20:43:45.000000000 -0400
++++ rubygems-1.3.5-new/lib/rubygems/commands/setup_command.rb	2010-02-08 10:08:19.000000000 -0500
+@@ -117,7 +117,7 @@
+ 
+     say "RubyGems #{Gem::VERSION} installed"
+ 
+-    install_rdoc
++    install_rdoc(install_destdir)
+ 
+     say
+     if @verbose then
+@@ -228,8 +228,8 @@
      end
    end
  
-diff -Nurd rubygems-1.3.0/lib/rubygems/source_index.rb rubygems-1.3.0-new/lib/rubygems/source_index.rb
---- rubygems-1.3.0/lib/rubygems/source_index.rb	2008-09-15 19:30:25.000000000 -0400
-+++ rubygems-1.3.0-new/lib/rubygems/source_index.rb	2008-09-26 19:06:59.000000000 -0400
-@@ -276,7 +276,7 @@
+-  def install_rdoc
+-    gem_doc_dir = File.join Gem.dir, 'doc'
++  def install_rdoc(install_destdir)
++    gem_doc_dir = File.join install_destdir, Gem.dir, '/doc'
+     rubygems_name = "rubygems-#{Gem::RubyGemsVersion}"
+     rubygems_doc_dir = File.join gem_doc_dir, rubygems_name
+ 
+@@ -237,7 +237,7 @@
+        (not File.exist? rubygems_doc_dir or
+         File.writable? rubygems_doc_dir) then
+       say "Removing old RubyGems RDoc and ri" if @verbose
+-      Dir[File.join(Gem.dir, 'doc', 'rubygems-[0-9]*')].each do |dir|
++      Dir[File.join(gem_doc_dir, 'rubygems-[0-9]*')].each do |dir|
+         rm_rf dir
+       end
+ 
+diff -Nurd rubygems-1.3.5/lib/rubygems/defaults.rb rubygems-1.3.5-new/lib/rubygems/defaults.rb
+--- rubygems-1.3.5/lib/rubygems/defaults.rb	2009-06-22 18:54:36.000000000 -0400
++++ rubygems-1.3.5-new/lib/rubygems/defaults.rb	2010-02-08 10:01:05.000000000 -0500
+@@ -20,13 +20,8 @@
+     if defined? RUBY_FRAMEWORK_VERSION then
+       File.join File.dirname(ConfigMap[:sitedir]), 'Gems',
+                 ConfigMap[:ruby_version]
+-    # 1.9.2dev reverted to 1.8 style path
+-    elsif RUBY_VERSION > '1.9' and RUBY_VERSION < '1.9.2' then
+-      File.join(ConfigMap[:libdir], ConfigMap[:ruby_install_name], 'gems',
+-                ConfigMap[:ruby_version])
+     else
+-      File.join(ConfigMap[:libdir], ruby_engine, 'gems',
+-                ConfigMap[:ruby_version])
++      File.join('@PREFIX@', 'var', 'lib', 'gems', ConfigMap[:ruby_version])
+     end
+   end
+ 
+diff -Nurd rubygems-1.3.5/lib/rubygems/source_index.rb rubygems-1.3.5-new/lib/rubygems/source_index.rb
+--- rubygems-1.3.5/lib/rubygems/source_index.rb	2009-06-22 19:00:52.000000000 -0400
++++ rubygems-1.3.5-new/lib/rubygems/source_index.rb	2010-02-08 10:01:40.000000000 -0500
+@@ -313,7 +313,7 @@
                      end
      else
        version_requirement = platform_only || Gem::Requirement.default
@@ -23,24 +60,3 @@ diff -Nurd rubygems-1.3.0/lib/rubygems/source_index.rb rubygems-1.3.0-new/lib/ru
      end
  
      unless Gem::Requirement === version_requirement then
-diff -Nurd rubygems-1.3.0/setup.rb rubygems-1.3.0-new/setup.rb
---- rubygems-1.3.0/setup.rb	2008-07-11 04:08:08.000000000 -0400
-+++ rubygems-1.3.0-new/setup.rb	2008-09-26 19:13:01.000000000 -0400
-@@ -262,7 +262,7 @@
- 
- # install RDoc
- 
--gem_doc_dir = File.join Gem.dir, 'doc'
-+gem_doc_dir = File.join install_destdir, Gem.dir, '/doc'
- rubygems_name = "rubygems-#{Gem::RubyGemsVersion}"
- rubygems_doc_dir = File.join gem_doc_dir, rubygems_name
- 
-@@ -270,7 +270,7 @@
-    (not File.exist? rubygems_doc_dir or
-     File.writable? rubygems_doc_dir) then
-   puts "Removing old RubyGems RDoc and ri"
--  Dir[File.join(Gem.dir, 'doc', 'rubygems-[0-9]*')].each do |dir|
-+  Dir[File.join(gem_doc_dir, 'rubygems-[0-9]*')].each do |dir|
-     rm_rf dir
-   end
- 

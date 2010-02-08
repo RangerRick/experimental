@@ -62,7 +62,7 @@ Replaces: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdebase-runtime-%v.tar.bz2
-Source-MD5: 54b28d1ea9fc93953e1863c06d7b7780
+Source-MD5: 066f1de9029e237aaa75d40c3bb3fcd2
 SourceDirectory: kdebase-runtime-%v
 PatchFile: kdebase4-runtime.patch
 PatchFile-MD5: 4dd9be27d3bd3b1c3aff060fd6cb91ed
