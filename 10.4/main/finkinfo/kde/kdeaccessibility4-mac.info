@@ -58,8 +58,6 @@ InstallScript: <<
 		make -j1 install/fast DESTDIR="%d"
 	popd
 
-	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libkttsd.dylib
-
 	mkdir -p %i/share/doc/installed-packages
 	touch %i/share/doc/installed-packages/%N
 	touch %i/share/doc/installed-packages/%N-base
