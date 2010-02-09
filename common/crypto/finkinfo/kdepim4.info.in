@@ -578,12 +578,10 @@ SplitOff27: <<
 	Replaces: %N-base (<< 4.2.4-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kmail*
-		opt/kde4/%type_pkg[kde]/bin/ksendmail*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kcm_kmail*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kmail*
 		opt/kde4/%type_pkg[kde]/lib/libkmailprivate.4*.dylib
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/KMail*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kmail*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/*ail*
 		opt/kde4/%type_pkg[kde]/share/apps/kconf_update/kmail*
 		opt/kde4/%type_pkg[kde]/share/apps/kconf_update/upgrade-signature*
 		opt/kde4/%type_pkg[kde]/share/apps/kconf_update/upgrade-transport*
