@@ -410,9 +410,6 @@ SplitOff21: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/*kgamma*
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kcontrol/kgamma
 		opt/kde4/%type_pkg[kde]/share/apps/kgamma
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kgamma*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kgamma*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kgamma*
 		opt/kde4/%type_pkg[kde]/share/kde4/services/kgamma*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
