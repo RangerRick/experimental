@@ -1,9 +1,9 @@
 Info4: <<
 Package: bundle-kde4-ssl-x11
-Version: 4.3.2
+Version: 4.4.0
 Revision: 1
 BuildDepends: fink
-Description: KDE4 - convenience package: KDE 4.3 (X11)
+Description: KDE4 - convenience package: KDE 4.4 (X11)
 Type: bundle
 Maintainer: Benjamin Reed <bundle-kde4@fink.racoonfink.com>
 
@@ -18,7 +18,7 @@ Depends: <<
 Homepage: http://www.kde.org/
 DescDetail: <<
 This package doesn't install any files of itself, but makes sure that
-you have a fully-functional KDE 4.3.x system through dependencies, including
+you have a fully-functional KDE 4.4.x system through dependencies, including
 packages with crypto support.
 <<
 <<
