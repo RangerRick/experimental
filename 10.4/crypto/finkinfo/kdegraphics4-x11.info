@@ -265,7 +265,7 @@ SplitOff21: <<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/xf86gammacfg*
 		opt/kde4/%type_pkg[kde]/lib/kde4/*kgamma*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kgamma
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kcontrol/kgamma
 		opt/kde4/%type_pkg[kde]/share/apps/kgamma
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kgamma*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kgamma*
