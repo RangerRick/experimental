@@ -10,7 +10,8 @@ Maintainer: Benjamin Reed <kdemultimedia4@fink.racoonfink.com>
 Depends: <<
 	dragonplayer4-%type_pkg[kde] (>= %v-%r),
 	juk4-%type_pkg[kde] (>= %v-%r),
-	kmix4-%type_pkg[kde] (>= %v-%r)
+	kmix4-%type_pkg[kde] (>= %v-%r),
+	mplayerthumbs4-%type_pkg[kde] (>= %v-%r)
 <<
 BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
@@ -121,8 +122,45 @@ SplitOff2: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/juk*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/juk*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/juk*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/ServiceMenus/jukservicemenu*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff20: <<
+	Package: %N-dev
+	Description: KDE4 - kdemultimedia dev headers and libs
+	Depends: %N (>= %v-%r)
+	BuildDependsOnly: true
+	Files: <<
+		opt/kde4/%type_pkg[kde]/include
+		opt/kde4/%type_pkg[kde]/lib/libkcddb.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkcompactdisc.dylib
+	<<
+<<
+SplitOff21: <<
+	Package: %N-base-shlibs
+	Description: KDE4 - kdemultimedia base shared libraries
+	Depends: <<
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.0-1),
+		libmusicbrainz4-shlibs
+	<<
+	Files: <<
+		opt/kde4/%type_pkg[kde]/lib/libkcddb.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkcompactdisc.4*.dylib
+	<<
+	Shlibs: <<
+		%p/opt/kde4/%type_pkg[kde]/lib/libkcddb.4.dylib        4.0.0 %n (>= 4.2.4-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkcompactdisc.4.dylib 4.0.0 %n (>= 4.2.4-1)
+	<<
+<<
+SplitOff22: <<
+	Package: %N-base
+	Description: KDE4 - kdemultimedia base package
+	Depends: <<
+		%N-base-shlibs (>= %v-%r),
+		kdebase4-runtime-%type_pkg[kde] (>= 4.4.0-1)
+	<<
+	Files: opt
 <<
 SplitOff4: <<
 	Package: kmix4-%type_pkg[kde]
@@ -150,40 +188,24 @@ SplitOff4: <<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
 SplitOff5: <<
-	Package: %N-dev
-	Description: KDE4 - kdemultimedia dev headers and libs
-	Depends: %N (>= %v-%r)
-	BuildDependsOnly: true
-	Files: <<
-		opt/kde4/%type_pkg[kde]/include
-		opt/kde4/%type_pkg[kde]/lib/libkcddb.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkcompactdisc.dylib
-	<<
-<<
-SplitOff6: <<
-	Package: %N-base-shlibs
-	Description: KDE4 - kdemultimedia base shared libraries
+	Package: mplayerthumbs4-%type_pkg[kde]
+	Description: KDE4 - thumbnail generator
 	Depends: <<
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.0-1),
-		libmusicbrainz4-shlibs
+		mplayer,
+		%N-base (>= %v-%r)
 	<<
 	Files: <<
-		opt/kde4/%type_pkg[kde]/lib/libkcddb.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkcompactdisc.4*.dylib
+		opt/kde4/%type_pkg[kde]/bin/mplayerthumbs*
+		opt/kde4/%type_pkg[kde]/lib/kde4/videopreview*
+		opt/kde4/%type_pkg[kde]/share/apps/videothumb*
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/mplayerthumbs*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/videopreview*
 	<<
 	Shlibs: <<
-		%p/opt/kde4/%type_pkg[kde]/lib/libkcddb.4.dylib        4.0.0 %n (>= 4.2.4-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkcompactdisc.4.dylib 4.0.0 %n (>= 4.2.4-1)
+		!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kmix.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kmixctrl.dylib
 	<<
-<<
-SplitOff7: <<
-	Package: %N-base
-	Description: KDE4 - kdemultimedia base package
-	Depends: <<
-		%N-base-shlibs (>= %v-%r),
-		kdebase4-runtime-%type_pkg[kde] (>= 4.4.0-1)
-	<<
-	Files: opt
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
 
 DescDetail: 

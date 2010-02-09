@@ -95,6 +95,9 @@ InstallScript: <<
 
 	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libgwenviewlib.dylib
 	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libkolourpaint_lgpl.dylib
+#ifdef TYPE_MAC
+	rm -rf %i/opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kcontrol/kgamma
+#endif
 
 	mkdir -p %i/share/doc/installed-packages
 	touch %i/share/doc/installed-packages/%N
@@ -119,6 +122,7 @@ SplitOff2: <<
 		libkipi-7-%type_pkg[kde]-shlibs (>= %v-%r),
 		%N-base (>= %v-%r)
 	<<
+	Replaces: %N-base (<< 4.4.0-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/gwenview*
 		opt/kde4/%type_pkg[kde]/lib/kde4/gvpart*
@@ -126,6 +130,7 @@ SplitOff2: <<
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/gwenview*
 		opt/kde4/%type_pkg[kde]/share/apps/gvpart
 		opt/kde4/%type_pkg[kde]/share/apps/gwenview
+		opt/kde4/%type_pkg[kde]/share/apps/solid/actions/gwenview*
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/gwenview
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/gwenview*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/gwenview*
@@ -149,6 +154,7 @@ SplitOff3: <<
 	<<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/*kamera*
+		opt/kde4/%type_pkg[kde]/share/apps/solid/actions/solid_camera*
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kcontrol/kamera
 		opt/kde4/%type_pkg[kde]/share/kde4/services/camera*
 		opt/kde4/%type_pkg[kde]/share/kde4/services/kamera*
@@ -238,6 +244,7 @@ SplitOff8: <<
 	Replaces: %N-base (<< 4.2.2-2)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/okular*
+		opt/kde4/%type_pkg[kde]/lib/kde4/kio_msits*
 		opt/kde4/%type_pkg[kde]/lib/kde4/okular*
 		opt/kde4/%type_pkg[kde]/lib/libokularcore.1*.dylib
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/okular*
@@ -272,9 +279,7 @@ SplitOff9: <<
 SplitOff10: <<
 	Package: libkdcraw-data-%type_pkg[kde]
 	Description: KDE4 - data for libkdcraw
-	Depends: <<
-		%N-base (>= %v-%r)
-	<<
+	Depends: %N-base (>= %v-%r)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/share/apps/libkdcraw
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kdcraw*
@@ -308,16 +313,23 @@ SplitOff12: <<
 	<<
 <<
 SplitOff13: <<
+	Package: libkexiv2-data-%type_pkg[kde]
+	Description: KDE4 - data for libkexiv2
+	Depends: %N-base (>= %v-%r)
+	Files: opt/kde4/%type_pkg[kde]/share/apps/libkexiv2
+<<
+SplitOff14: <<
 	Package: libkexiv2-8-%type_pkg[kde]-shlibs
 	Description: KDE4 - image metadata library
 	Depends: <<
 		libexiv2-shlibs-0.18,
+		libkexiv2-data-%type_pkg[kde],
 		%N-base (>= %v-%r),
 	<<
 	Files: opt/kde4/%type_pkg[kde]/lib/libkexiv2.8*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkexiv2.8.dylib 8.0.0 %n (>= 4.3.98-1)
 <<
-SplitOff14: <<
+SplitOff15: <<
 	Package: libkexiv2-8-%type_pkg[kde]-dev
 	Description: KDE4 - libkexiv2 development headers and libs
 	Depends: libkexiv2-8-%type_pkg[kde]-shlibs (>= %v-%r)
@@ -330,7 +342,7 @@ SplitOff14: <<
 		opt/kde4/%type_pkg[kde]/lib/pkgconfig/libkexiv2.pc
 	<<
 <<
-SplitOff15: <<
+SplitOff16: <<
 	Package: libkipi-data-%type_pkg[kde]
 	Description: KDE4 - data for libkipi
 	Depends: %N-base (>= %v-%r)
@@ -344,7 +356,7 @@ SplitOff15: <<
 		opt/kde4/%type_pkg[kde]/share/kde4/servicetypes/kipi*
 	<<
 <<
-SplitOff16: <<
+SplitOff17: <<
 	Package: libkipi-7-%type_pkg[kde]-shlibs
 	Description: KDE4 - image plugin library
 	Depends: <<
@@ -354,7 +366,7 @@ SplitOff16: <<
 	Files: opt/kde4/%type_pkg[kde]/lib/libkipi.7*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkipi.7.dylib 7.0.0 %n (>= 4.3.98-1)
 <<
-SplitOff17: <<
+SplitOff18: <<
 	Package: libkipi-7-%type_pkg[kde]-dev
 	Description: KDE4 - libkipi development headers and libs
 	Depends: libkipi-7-%type_pkg[kde]-shlibs (>= %v-%r)
@@ -367,7 +379,7 @@ SplitOff17: <<
 		opt/kde4/%type_pkg[kde]/lib/pkgconfig/libkipi.pc
 	<<
 <<
-SplitOff18: <<
+SplitOff19: <<
 	Package: libksane-0-%type_pkg[kde]-shlibs
 	Description: KDE4 - scanner libraries
 	Depends: <<
@@ -377,7 +389,7 @@ SplitOff18: <<
 	Files: opt/kde4/%type_pkg[kde]/lib/libksane.0*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libksane.0.dylib 0.0.0 %n (>= 4.2.4-1)
 <<
-SplitOff19: <<
+SplitOff20: <<
 	Package: libksane-0-%type_pkg[kde]-dev
 	Description: KDE4 - libksane development headers and libs
 	Depends: libksane-0-%type_pkg[kde]-shlibs (>= %v-%r)
@@ -389,7 +401,7 @@ SplitOff19: <<
 		opt/kde4/%type_pkg[kde]/share/apps/cmake/modules/FindKSane*
 	<<
 <<
-SplitOff20: <<
+SplitOff21: <<
 	Package: svgpart4-%type_pkg[kde]
 	Description: KDE4 - SVG support
 	Depends: %N-base (>= %v-%r)
@@ -401,7 +413,7 @@ SplitOff20: <<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
 #ifdef TYPE_X11
-SplitOff21: <<
+SplitOff22: <<
 	Package: kgamma4-%type_pkg[kde]
 	Description: KDE4 - adjust gamma configuration
 	Depends: %N-base (>= %v-%r)
@@ -414,7 +426,7 @@ SplitOff21: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff22: <<
+SplitOff23: <<
 	Package: ksnapshot4-%type_pkg[kde]
 	Description: KDE4 - screen capture tool
 	Depends: %N-base (>= %v-%r)
@@ -432,7 +444,7 @@ SplitOff22: <<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
 #endif
-SplitOff29: <<
+SplitOff30: <<
 	Package: %N-strigi-analyzers-%type_pkg[kde]
 	Description: KDE4 - kdegraphics strigi analyzers
 	Depends: <<
@@ -441,7 +453,7 @@ SplitOff29: <<
 	<<
 	Files: opt/kde4/%type_pkg[kde]/lib/strigi
 <<
-SplitOff30: <<
+SplitOff31: <<
 	Package: %N-base
 	Description: KDE4 - kdegraphics base package
 	Depends: <<
@@ -452,5 +464,4 @@ SplitOff30: <<
 	<<
 	Files: opt
 <<
-
 <<

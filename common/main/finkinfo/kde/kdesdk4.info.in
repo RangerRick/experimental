@@ -161,6 +161,7 @@ SplitOff3: <<
 		opt/kde4/%type_pkg[kde]/share/apps/kate*
 		opt/kde4/%type_pkg[kde]/share/apps/kconf_update/kate*
 		opt/kde4/%type_pkg[kde]/share/config/kate*
+		opt/kde4/%type_pkg[kde]/share/config/ktexteditor*
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kate*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kate*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kate*
@@ -173,6 +174,7 @@ SplitOff3: <<
 		opt/kde4/%type_pkg[kde]/share/kde4/services/plasma-applet-kate*
 		opt/kde4/%type_pkg[kde]/share/kde4/servicetypes/kate*
 		opt/kde4/%type_pkg[kde]/share/man/man1/kate*
+		opt/kde4/%type_pkg[kde]/share/mime/packages/kateplugin*
 	<<
 	Shlibs: <<
 		!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kate.dylib
@@ -394,6 +396,7 @@ SplitOff20: <<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
 		opt/kde4/%type_pkg[kde]/lib/libkateinterfaces.dylib
+		opt/kde4/%type_pkg[kde]/lib/libktexteditor_codesnippets_core.dylib
 	<<
 <<
 

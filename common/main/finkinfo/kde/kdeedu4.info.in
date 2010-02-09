@@ -40,6 +40,8 @@ Depends: <<
 	kwordquiz4-%type_pkg[kde]  (>= %v-%r),
 	marble4-%type_pkg[kde]     (>= %v-%r),
 	parley4-%type_pkg[kde]     (>= %v-%r),
+	rocs4-%type_pkg[kde]       (>= %v-%r),
+	step4-%type_pkg[kde]       (>= %v-%r),
 <<
 
 BuildDepends: <<
@@ -510,6 +512,7 @@ SplitOff17: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/parley*
 		opt/kde4/%type_pkg[kde]/share/kde4/services/*parley*
 	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
 SplitOff18: <<
 	Package: cantor4-%type_pkg[kde]
@@ -524,9 +527,10 @@ SplitOff18: <<
 		opt/kde4/%type_pkg[kde]/lib/libcantor_config.0*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libcantorlibs.0*.dylib
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/cantor*
-		opt/kde4/%type_pkg[kde]/share/apps/cantor
+		opt/kde4/%type_pkg[kde]/share/apps/cantor*
 		opt/kde4/%type_pkg[kde]/share/config.kcfg/cantor*
 		opt/kde4/%type_pkg[kde]/share/config.kcfg/maximabackend*
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/rserver*
 		opt/kde4/%type_pkg[kde]/share/config.kcfg/sagebackend*
 		opt/kde4/%type_pkg[kde]/share/config/cantor*
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/cantor
@@ -543,6 +547,7 @@ SplitOff18: <<
 		!%p/opt/kde4/%type_pkg[kde]/lib/libcantor_config.0.dylib
 		!%p/opt/kde4/%type_pkg[kde]/lib/libcantorlibs.0.dylib
 	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
 SplitOff19: <<
 	Package: rocs4-%type_pkg[kde]
@@ -562,6 +567,31 @@ SplitOff19: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/actions/rocs*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/actions/rocs*
 	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff19: <<
+	Package: step4-%type_pkg[kde]
+	Description: KDE4 - Interactive physics simulator
+	Depends: <<
+		%N-base (>= %v-%r),
+	<<
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/step*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/step*
+		opt/kde4/%type_pkg[kde]/share/apps/step
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/step*
+		opt/kde4/%type_pkg[kde]/share/config/step*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/step
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/step*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/step*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/step*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/step*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/step*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/step*
+		opt/kde4/%type_pkg[kde]/share/icons/oxygen/22x22/actions/pointer*
+		opt/kde4/%type_pkg[kde]/share/icons/oxygen/22x22/actions/step_object_*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
 
 SplitOff30: <<

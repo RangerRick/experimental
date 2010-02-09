@@ -139,6 +139,18 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libsyndication.4.dylib      4.0.0 %n (>= 4.2.4-1)
 	<<
 <<
+SplitOff10: <<
+	Package: %N-dev
+	Description: KDE4 - PIM support development libraries and headers
+	Depends: %N (= %v-%r)
+	Replaces: kdepim4-%type_pkg[kde]-dev (<< 4.3.0-1)
+	BuildDependsOnly: true
+	Files: <<
+		opt/kde4/%type_pkg[kde]/include
+		opt/kde4/%type_pkg[kde]/lib
+		opt/kde4/%type_pkg[kde]/share/apps/cmake
+	<<
+<<
 SplitOff2: <<
 	Package: libkholidays4-%type_pkg[kde]-shlibs
 	Description: KDE4 - holiday calendar shared libraries
@@ -151,18 +163,6 @@ SplitOff3: <<
 	Description: KDE4 - holiday calendar support
 	Depends: %n-shlibs (>= %v-%r)
 	Files: opt/kde4/%type_pkg[kde]/share/apps/libkholidays
-<<
-SplitOff4: <<
-	Package: %N-dev
-	Description: KDE4 - PIM support development libraries and headers
-	Depends: %N (= %v-%r)
-	Replaces: kdepim4-%type_pkg[kde]-dev (<< 4.3.0-1)
-	BuildDependsOnly: true
-	Files: <<
-		opt/kde4/%type_pkg[kde]/include
-		opt/kde4/%type_pkg[kde]/lib
-		opt/kde4/%type_pkg[kde]/share/apps/cmake
-	<<
 <<
 
 PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :

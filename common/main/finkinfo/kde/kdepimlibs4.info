@@ -159,7 +159,7 @@ SplitOff3: <<
 	<<
 	Files: opt/kde4/%type_pkg[kde]/share/apps/libkholidays
 <<
-SplitOff4: <<
+SplitOff10: <<
 	Package: %N-dev
 	Description: KDE4 - PIM support development libraries and headers
 	Depends: %N (= %v-%r)

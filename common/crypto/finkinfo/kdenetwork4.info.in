@@ -135,8 +135,7 @@ SplitOff3: <<
 		opt/kde4/%type_pkg[kde]/bin/kget*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kcm_kget_*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kget_*
-		opt/kde4/%type_pkg[kde]/lib/kde4/khtml_kget.so
-		opt/kde4/%type_pkg[kde]/lib/kde4/plasma_engine_kget.so
+		opt/kde4/%type_pkg[kde]/lib/kde4/*_kget.*
 		opt/kde4/%type_pkg[kde]/lib/kde4/plasma_kget_*
 		opt/kde4/%type_pkg[kde]/lib/libkgetcore.4*.dylib
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kget*
@@ -153,7 +152,7 @@ SplitOff3: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/kget*
 		opt/kde4/%type_pkg[kde]/share/kde4/services/ServiceMenus/kget*
 		opt/kde4/%type_pkg[kde]/share/kde4/services/kget*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/plasma-engine-kget.desktop
+		opt/kde4/%type_pkg[kde]/share/kde4/services/plasma-*-kget.*
 		opt/kde4/%type_pkg[kde]/share/kde4/servicetypes/kget*
 	<<
 	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libkgetcore.4.dylib
@@ -178,6 +177,7 @@ SplitOff4: <<
 		opt/kde4/%type_pkg[kde]/bin/winpopup*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kcm_kopete_*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kopete_*
+		opt/kde4/%type_pkg[kde]/lib/kde4/*chattextedit*
 		opt/kde4/%type_pkg[kde]/lib/libkopete.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkopete_oscar.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkopete_otr_shared.1*.dylib
@@ -270,6 +270,7 @@ SplitOff6: <<
 		opt/kde4/%type_pkg[kde]/lib/libkopete_videodevice.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkopeteaddaccountwizard.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkopetechatwindow_shared.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkopetecontactlist.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkopeteidentity.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkopeteprivacy.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkopetestatusmenu.dylib

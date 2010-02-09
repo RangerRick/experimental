@@ -112,7 +112,7 @@ InstallScript: <<
 		mv "%i/opt/kde4/%type_pkg[kde]/bin/kwin4.app/Contents/Resources/kwin4.icns" \
 			"%i/opt/kde4/%type_pkg[kde]/bin/kfourinline.app/Contents/Resources/kfourinline.icns"
 	else
-		rm -rf %i/opt/kde4/%type_pkg[kde]/bin/kwin4.app/Contents/Resources/kwin4.icns
+		rm -rf "%i/opt/kde4/%type_pkg[kde]/bin/kwin4.app"
 	fi
 	if [ -d "%i/opt/kde4/%type_pkg[kde]/bin/granatierSources.app" ]; then
 		install -d -m 755 "%i/opt/kde4/%type_pkg[kde]/bin/granatier.app/Contents/Resources"
@@ -373,6 +373,7 @@ SplitOff13: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/killbots*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/killbots*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/killbots*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/killbots*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
@@ -833,6 +834,7 @@ SplitOff36: <<
 		opt/kde4/%type_pkg[kde]/bin/kigo*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kigo*
 		opt/kde4/%type_pkg[kde]/share/apps/kigo
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/kigo*
 		opt/kde4/%type_pkg[kde]/share/config/kigo*
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kigo
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kigo*

@@ -100,6 +100,7 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/bin/ark*
 		opt/kde4/%type_pkg[kde]/lib/kde4/arkpart*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kerfuffle*
+		opt/kde4/%type_pkg[kde]/lib/kde4/*extracthere*
 		opt/kde4/%type_pkg[kde]/lib/libkerfuffle.4*.dylib
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/ark*
 		opt/kde4/%type_pkg[kde]/share/apps/ark
@@ -319,6 +320,7 @@ SplitOff9: <<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/okteta*
 		opt/kde4/%type_pkg[kde]/lib/kde4/libkbytearray*
+		opt/kde4/%type_pkg[kde]/lib/kde4/oktetapart*
 		opt/kde4/%type_pkg[kde]/lib/libkastencontrollers.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkastencore.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkastengui.4*.dylib

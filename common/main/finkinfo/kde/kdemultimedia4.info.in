@@ -24,6 +24,7 @@ Depends: <<
 	dragonplayer4-%type_pkg[kde] (>= %v-%r),
 	juk4-%type_pkg[kde] (>= %v-%r),
 	kmix4-%type_pkg[kde] (>= %v-%r),
+	mplayerthumbs4-%type_pkg[kde] (>= %v-%r),
 <<
 
 BuildDepends: <<
@@ -131,6 +132,7 @@ SplitOff2: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/juk*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/juk*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/juk*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/ServiceMenus/jukservicemenu*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
@@ -160,6 +162,27 @@ SplitOff4: <<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
 SplitOff5: <<
+	Package: mplayerthumbs4-%type_pkg[kde]
+	Description: KDE4 - thumbnail generator
+	Depends: <<
+		mplayer,
+		%N-base (>= %v-%r),
+	<<
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/mplayerthumbs*
+		opt/kde4/%type_pkg[kde]/lib/kde4/videopreview*
+		opt/kde4/%type_pkg[kde]/share/apps/videothumb*
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/mplayerthumbs*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/videopreview*
+	<<
+	Shlibs: <<
+		!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kmix.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kmixctrl.dylib
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+
+SplitOff20: <<
 	Package: %N-dev
 	Description: KDE4 - kdemultimedia dev headers and libs
 	BuildDependsOnly: true
@@ -171,7 +194,7 @@ SplitOff5: <<
 	<<
 <<
 
-SplitOff6: <<
+SplitOff21: <<
 	Package: %N-base-shlibs
 	Description: KDE4 - kdemultimedia base shared libraries
 	Depends: <<
@@ -188,7 +211,7 @@ SplitOff6: <<
 	<<
 <<
 
-SplitOff7: <<
+SplitOff22: <<
 	Package: %N-base
 	Description: KDE4 - kdemultimedia base package
 	Depends: <<
