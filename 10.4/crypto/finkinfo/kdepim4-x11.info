@@ -382,7 +382,6 @@ SplitOff24: <<
 		opt/kde4/%type_pkg[kde]/share/icons/oxygen/48x48/apps/kalarm*
 		opt/kde4/%type_pkg[kde]/share/icons/oxygen/64x64/apps/kalarm*
 		opt/kde4/%type_pkg[kde]/share/icons/oxygen/scalable/apps/kalarm*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/kresources/*alarm*
 	<<
 	Shlibs: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libkalarm_calendar.4.dylib  4.0.0 %n (>= 4.3.98-1)
@@ -562,7 +561,6 @@ SplitOff29: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/knotes*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/knotes*
 		opt/kde4/%type_pkg[kde]/share/kde4/services/knote*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/kresources/knotes*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
