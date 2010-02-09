@@ -38,7 +38,7 @@ BuildDepends: <<
 	libtiff,
 	libxml2,
 	libxslt,
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	qt4-%type_pkg[kde] (>= 4.6.1-1),
 	sane-backends-dev,
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),

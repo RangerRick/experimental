@@ -10,7 +10,7 @@ Depends: libgadu3-shlibs (>= %v-%r)
 BuildDepends: <<
 	system-openssl-dev,
 	fink (>= 0.29.7-1),
-	pkgconfig (>= 0.1-1),
+	pkgconfig (>= 0.23-1),
 	bind9-ssl-dev | bind9-dev
 <<
 Replaces: <<

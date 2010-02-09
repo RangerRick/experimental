@@ -25,7 +25,7 @@ BuildDepends: <<
 	libgdiplus (>= 2.4-1),
 	mono-dev (>= 2.4-1),
 	monodoc (>= 2.0-1),
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	webkit-sharp
 <<
 

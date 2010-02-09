@@ -15,7 +15,7 @@ BuildDepends: <<
 	glib2-dev (>= 2.18.4-1),
 	libtool2,
 	libxml2 (>= 2.6.32-1),
-	pkgconfig (>= 0.23-0),
+	pkgconfig (>= 0.23-1),
 	intltool40,
 	libgettext8-dev,
 	gettext-tools,

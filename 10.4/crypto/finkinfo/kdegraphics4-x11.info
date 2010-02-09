@@ -44,7 +44,7 @@ BuildDepends: <<
 	libjpeg,
 	libpgf,
 	libtiff,
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	poppler2,
 	poppler2-qt4-%type_pkg[kde] (>= 0.6.4-4),
 	qca2-%type_pkg[kde] (>= 2.0.2-1),

@@ -10,7 +10,7 @@ Depends: <<
 	%N-designer (= %v-%r),
 	%N-linguist (= %v-%r),
 	%N-doc (= %v-%r),
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	macosx (>= 10.4.3-1)
 <<
 BuildDepends: <<
@@ -23,7 +23,7 @@ BuildDepends: <<
 	libpng3 (>= 1.2.8-1),
 	libjpeg,
 	macosx (>= 10.4.3-1),
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	x11-dev
 <<
 BuildConflicts: autogen-dev

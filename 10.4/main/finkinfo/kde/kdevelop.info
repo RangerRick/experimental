@@ -41,7 +41,7 @@ BuildDepends: <<
 	libpng3 (>= 1.2.8-1),
 	libusb,
 	pcre,
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	qt3 (>= 3.3.8-1027),
 	svn15-dev,
 	x11-dev

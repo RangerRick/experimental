@@ -23,7 +23,7 @@ BuildDepends: <<
 	libiconv-dev,
 	libtool2,
 	passwd (>= 20060201-1),
-	pkgconfig (>= 0.22-1)
+	pkgconfig (>= 0.23-1)
 <<
 
 Source: http://%n.freedesktop.org/releases/%n/%n-%v.tar.gz
@@ -173,7 +173,7 @@ SplitOff2: <<
 	Package: %N-dev
 	Depends: <<
 		%N-shlibs (= %v-%r),
-		pkgconfig (>= 0.22-1)
+		pkgconfig (>= 0.23-1)
 	<<
 	Replaces: %N (<< %v-%r)
 	BuildDependsOnly: true

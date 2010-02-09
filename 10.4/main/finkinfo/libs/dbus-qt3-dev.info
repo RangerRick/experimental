@@ -12,7 +12,7 @@ BuildDepends: <<
 	gettext-tools,
 	libgettext8-dev,
 	libiconv-dev,
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	qt3,
 	x11-dev
 <<

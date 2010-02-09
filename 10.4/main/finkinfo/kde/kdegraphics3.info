@@ -56,7 +56,7 @@ BuildDepends: <<
 	libxml2,
 	openexr-dev,
 	pcre,
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	poppler2,
 	poppler2-qt3,
 	qt3 (>= 3.3.8-1027),

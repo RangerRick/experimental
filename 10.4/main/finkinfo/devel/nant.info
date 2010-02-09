@@ -8,7 +8,7 @@ Maintainer: Benjamin Reed <nant@fink.racoonfink.com>
 Depends: mono (>= 2.4-1)
 BuildDepends: <<
 	mono-dev (>= 2.4-1),
-	pkgconfig (>= 0.22-3)
+	pkgconfig (>= 0.23-1)
 <<
 
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v-beta1-src.tar.gz

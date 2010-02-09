@@ -40,7 +40,7 @@ BuildDepends: <<
 	openexr-dev,
 	openldap24-dev,
 	pcre,
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	pth2-dev,
 	qt4-%type_pkg[kde] (>= 4.6.1-1),
 	(%type_pkg[kde] = x11) x11-dev,

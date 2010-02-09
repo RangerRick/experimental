@@ -17,7 +17,7 @@ BuildDepends: <<
 	mono-dev (>= 2.4-1),
 	monodoc (>= 2.0-1),
 	mono-tools (>= 2.4-1),
-	pkgconfig (>= 0.22-3)
+	pkgconfig (>= 0.23-1)
 <<
 
 Source: http://finch.finkproject.org/~ranger/distfiles/%n-%v.tar.bz2

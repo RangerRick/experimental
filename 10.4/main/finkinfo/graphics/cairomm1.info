@@ -18,7 +18,7 @@ BuildDepends: <<
 	libpng3,
 	libsigc++2,
 	pixman (>= 0.16.0-1),
-	pkgconfig (>= 0.23-0),
+	pkgconfig (>= 0.23-1),
 	x11-dev,
 	xft2-dev
 <<

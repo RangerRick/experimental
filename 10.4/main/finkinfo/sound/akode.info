@@ -17,7 +17,7 @@ BuildDepends: <<
 	libsamplerate0-dev,
 	libtool14,
 	libvorbis0,
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	speex3
 <<
 BuildDependsOnly: true

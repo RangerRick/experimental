@@ -22,7 +22,7 @@ BuildDepends: <<
 	libiconv-dev,
 	libsigc++2,
 	libxslt-bin,
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	sed
 <<
 GCC: 4.0

@@ -21,7 +21,7 @@ BuildDepends: <<
 	libiconv-dev,
 	libidn,
 	libpng3 (>= 1.2.8-1),
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	qt3 (>= 3.3.8-1027),
 	x11-dev
 <<
