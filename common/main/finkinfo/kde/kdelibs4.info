@@ -58,7 +58,7 @@ BuildConflicts: gamin-dev
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdelibs-%v.tar.bz2
-Source-MD5: c62c4ed763d439737847d7b404df2c7f
+Source-MD5: 957bca85de744a9ddd316fd85e882b40
 SourceDirectory: kdelibs-%v
 PatchFile: kdelibs4.patch
 PatchFile-MD5: ba64367d31e16416efc1f554bcb96ea3

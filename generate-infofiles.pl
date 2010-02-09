@@ -140,7 +140,7 @@ my $package_lookup = {
 
 my $version_lookup = {
 	'all' => {
-		'^akonadi-.*?(-dev|-shlibs)?$'        => [ '1.3.0',        '1'    ],
+		'^akonadi-.*?(-dev|-shlibs)?$'        => [ '1.3.1',        '1'    ],
 		'^ant-base.*$'                        => [ '1.7.1',        '3'    ],
 		'^arts(-dev|-shlibs)?$'               => [ '1.5.10',       '1'    ],
 		'^autoconf$'                          => [ '2.63',         '1'    ],
