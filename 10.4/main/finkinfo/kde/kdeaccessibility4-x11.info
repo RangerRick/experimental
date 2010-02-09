@@ -10,7 +10,6 @@ Maintainer: Benjamin Reed <kdeaccessibility4@fink.racoonfink.com>
 Depends: <<
 	kmag4-%type_pkg[kde] (>= %v-%r),
 	kmousetool4-%type_pkg[kde] (>= %v-%r),
-	ktts4-%type_pkg[kde] (>= %v-%r),
 	kmouth4-%type_pkg[kde] (>= %v-%r),
 	%N-color-schemes (>= %v-%r),
 	%N-icon-themes (>= %v-%r)
@@ -61,8 +60,6 @@ InstallScript: <<
 		make -j1 install/fast DESTDIR="%d"
 	popd
 
-	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libkttsd.dylib
-
 	mkdir -p %i/share/doc/installed-packages
 	touch %i/share/doc/installed-packages/%N
 	touch %i/share/doc/installed-packages/%N-base
@@ -83,23 +80,6 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kmouth*
 		opt/kde4/%type_pkg[kde]/share/man/man1/kmouth*
 	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff2: <<
-	Package: ktts4-%type_pkg[kde]
-	Description: KDE4 - text-to-speech system
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/ktts*
-		opt/kde4/%type_pkg[kde]/lib/kde4/*tts*
-		opt/kde4/%type_pkg[kde]/lib/libkttsd.4*.dylib
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kttsmgr*
-		opt/kde4/%type_pkg[kde]/share/apps/kttsd
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kttsd
-		opt/kde4/%type_pkg[kde]/share/kde4/services/*tts*
-		opt/kde4/%type_pkg[kde]/share/kde4/servicetypes/*tts*
-	<<
-	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkttsd.4.dylib 4.0.0 %n (>= 4.2.1-1)
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
 SplitOff3: <<
