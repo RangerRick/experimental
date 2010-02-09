@@ -20,6 +20,9 @@ provided with the official release of KDE.
 
 Source: mirror:kde:stable/%v/src/kdeartwork-%v.tar.bz2
 Source-MD5: ee1a736960f47641cc65f7a1b3483445
+PatchFile: kdeartwork4.patch
+PatchFile-MD5: a3a0af0369300f8037e93d1389a311de
+PatchScript: sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1
 
 Depends: <<
 #if 0
@@ -38,6 +41,7 @@ BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.88-1),
 	cmake (>= 2.6.3-1),
 	dbus-dev (>= 1.2.12-1),
+	eigen2,
 	fink (>= 0.28.0-1),
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.7-7),
@@ -145,7 +149,8 @@ SplitOff8: <<
 	Description: KDE4 - screen savers
 	Depends: <<
 		%N-base (>= %v-%r),
-		xscreensaver
+		eigen2,
+		xscreensaver,
 	<<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/*.kss
