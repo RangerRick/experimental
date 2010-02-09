@@ -41,7 +41,7 @@ BuildDepends: <<
 	neon24,
 	openldap23-dev,
 	pcre,
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	qt3 (>= 3.3.8-1027),
 	svn15-dev,
 	unsermake (>= 0.4-0.20060316.1),

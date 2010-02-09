@@ -43,7 +43,7 @@ BuildDepends: <<
 	libxine1,
 	libxml2,
 	pcre,
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	popt,
 	qt3 (>= 3.3.8-1027),
 	ruby18-dev,

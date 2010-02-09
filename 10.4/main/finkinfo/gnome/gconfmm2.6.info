@@ -7,7 +7,7 @@ Maintainer: Benjamin Reed <gconfmm2.6@fink.racoonfink.com>
 
 Depends: %N-shlibs (>= %v-%r)
 BuildDepends: <<
-	atk1 (>= 1.20.0-1),
+	atk1 (>= 1.24.0-1),
 	cairo (>= 1.8.8-1),
 	cairomm1,
 	expat1,
@@ -25,9 +25,9 @@ BuildDepends: <<
 	libpng3,
 	libsigc++2 (>= 2.0.11-1003),
 	orbit2-dev (>= 2.14.9-1),
-	pango1-xft2-ft219-dev (>= 1.20.5-1),
+	pango1-xft2-ft219-dev (>= 1.22.4-1),
 	pixman (>= 0.16.0-1),
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	x11-dev,
 	xft2-dev
 <<
@@ -44,7 +44,7 @@ SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for GConf--
 	Depends: <<
-		atk1-shlibs (>= 1.20.0-1),
+		atk1-shlibs (>= 1.24.0-1),
 		cairomm1-shlibs,
 		gconf2-shlibs (>= 2.20.0-1),
 		glib2-shlibs (>= 2.18.4-1),
@@ -53,7 +53,7 @@ SplitOff: <<
 		libiconv,
 		libsigc++2-shlibs (>= 2.0.11-1003),
 		orbit2-shlibs (>= 2.14.9-1),
-		pango1-xft2-ft219-shlibs (>= 1.20.5-1),
+		pango1-xft2-ft219-shlibs (>= 1.22.4-1),
 		x11-shlibs
 	<<
 	Files: lib/libgconfmm-2.6.*.dylib

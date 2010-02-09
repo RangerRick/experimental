@@ -20,7 +20,7 @@ BuildDepends: <<
 	libjpeg,
 	libpng3 (>= 1.2.8-1),
 	pcre,
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	qt3 (>= 3.3.8-1027),
 	unsermake (>= 0.4-0.20060316.1),
 	x11-dev

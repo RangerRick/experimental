@@ -20,7 +20,7 @@ BuildDepends: <<
 	mono-tools (>= 2.4-1),
 	monodevelop (>= 2.0-1),
 	monodoc (>= 2.0-1),
-	pkgconfig (>= 0.22-3)
+	pkgconfig (>= 0.23-1)
 <<
 
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2

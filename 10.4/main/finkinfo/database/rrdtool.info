@@ -19,9 +19,9 @@ BuildDepends: <<
 	libgettext8-dev,
 	libiconv-dev,
 	libpng3,
-	pango1-xft2-ft219-dev (>= 1.20.5-1),
+	pango1-xft2-ft219-dev (>= 1.22.4-1),
 	pixman (>= 0.16.0-1),
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	tcltk,
 	tcltk-dev,
 	x11-dev,
@@ -85,7 +85,7 @@ SplitOff: <<
 		glib2-shlibs (>= 2.18.4-1),
 		libpng3-shlibs (>= 1.2.8-1),
 		libxml2-shlibs (>= 2.6.32-1),
-		pango1-xft2-ft219-shlibs (>= 1.20.5-1)
+		pango1-xft2-ft219-shlibs (>= 1.22.4-1)
 	<<
 	Suggests: %N
 	Files: lib/librrd*.*.dylib

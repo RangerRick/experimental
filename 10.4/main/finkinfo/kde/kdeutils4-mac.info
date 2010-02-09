@@ -33,7 +33,7 @@ BuildDepends: <<
 	libarchive,
 	libgettext8-dev,
 	libzip1,
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	qt4-%type_pkg[kde] (>= 4.6.1-1),
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	strigi-dev (>= 0.6.3-1),

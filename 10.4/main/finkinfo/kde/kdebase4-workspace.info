@@ -48,7 +48,7 @@ BuildDepends: <<
 	openexr-dev,
 	openldap24-dev,
 	pcre,
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	# not until we have pykde4
 	#	python26,
 	#	pyqt4-py26,

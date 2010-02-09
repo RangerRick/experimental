@@ -61,7 +61,7 @@ BuildDepends: <<
 	libxml2,
 	opensync-dev,
 	pcre,
-	pkgconfig (>= 0.21-1),
+	pkgconfig (>= 0.23-1),
 	pilot-link09,
 	readline5,
 	qt3 (>= 3.3.8-1027),

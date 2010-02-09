@@ -47,7 +47,7 @@ BuildDepends: <<
 	libxslt,
 	loudmouth,
 	mysql-unified-dev,
-	pkgconfig (>= 0.22-3),
+	pkgconfig (>= 0.23-1),
 	qt4-%type_pkg[kde] (>= 4.6.1-1),
 	qtscriptgenerator-%type_pkg[kde] (>= 0.1.0-3),
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),

@@ -15,7 +15,7 @@ BuildDepends: <<
 	libgsf1.114-dev,
 	libxml2,
 	libiconv-dev,
-	pkgconfig (>= 0.22-3)
+	pkgconfig (>= 0.23-1)
 <<
 Conflicts: libwpd-1
 Replaces: libwpd-1

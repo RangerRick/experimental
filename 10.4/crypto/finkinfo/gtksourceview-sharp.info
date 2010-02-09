@@ -13,7 +13,7 @@ Depends: <<
 	mono-tools (>= 2.4-1)
 <<
 BuildDepends: <<
-	atk1 (>= 1.20.0-1),
+	atk1 (>= 1.24.0-1),
 	glib2-dev (>= 2.18.4-1),
 	gtk+2-dev (>= 2.14.7-1),
 	gtk-sharp2 (>= 2.12.8-2),
@@ -22,8 +22,8 @@ BuildDepends: <<
 	libgnomeprint2.2-dev (>= 2.18.0-1),
 	mono-dev (>= 2.4-1),
 	mono-tools (>= 2.4-1),
-	pango1-xft2-ft219-dev (>= 1.20.5-1),
-	pkgconfig (>= 0.22-3)
+	pango1-xft2-ft219-dev (>= 1.22.4-1),
+	pkgconfig (>= 0.23-1)
 <<
 
 Source: http://ftp.novell.com/pub/mono/sources/%n-%v/%n-%v-0.12.tar.bz2
