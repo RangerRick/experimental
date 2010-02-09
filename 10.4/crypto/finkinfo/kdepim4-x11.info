@@ -25,7 +25,6 @@ Depends: <<
 	knode4-%type_pkg[kde] (>= %v-%r),
 	knotes4-%type_pkg[kde] (>= %v-%r),
 	korganizer4-%type_pkg[kde] (>= %v-%r),
-	kpilot4-%type_pkg[kde] (>= %v-%r),
 	ktimetracker4-%type_pkg[kde] (>= %v-%r)
 <<
 BuildDepends: <<
@@ -118,6 +117,44 @@ InstallScript: <<
 
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/bin/kabcclient.app"
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/bin/konsolekalendar.app"
+
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libakregatorinterfaces.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libgwsoap.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkabc_groupdav.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkabc_slox.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkabc_xmlrpc.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkabcommon.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkabcgroupwise.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkabckolab.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkabcscalix.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkabinterfaces.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkalarm_resources.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkcal_groupdav.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkcal_resourceblog.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkcal_resourceremote.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkcal_slox.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkcal_xmlrpc.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkcalgroupwise.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkcalkolab.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkcalscalix.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkdepim.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkgroupwarebase.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkgroupwaredav.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkleo.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkleopatraclientcore.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkleopatraclientgui.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libknodecommon.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libknotes_xmlrpc.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libknoteskolab.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libknotesscalix.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkorg_stdprinting.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkorganizer_calendar.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkorganizer_eventviewer.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkorganizer_interfaces.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkpgp.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libksieve.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkslox.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libmimelib.dylib"
 
 	mkdir -p %i/share/doc/installed-packages
 	touch %i/share/doc/installed-packages/%N
@@ -635,54 +672,6 @@ SplitOff30: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff31: <<
-	Package: kpilot4-%type_pkg[kde]
-	Description: KDE4 - Palm Pilot hot-sync client
-	Depends: <<
-		pilot-link09-shlibs,
-		%N-base (>= %v-%r)
-	<<
-	Replaces: %N-base (<< 4.2.4-1)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/kpilot*
-		opt/kde4/%type_pkg[kde]/lib/kde4/kcm_kpilot*
-		opt/kde4/%type_pkg[kde]/lib/kde4/kpilot_conduit_*
-		opt/kde4/%type_pkg[kde]/lib/libkpilot.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkpilot_akonadibase.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkpilot_conduit_base.dylib
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kpilot.desktop
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kpilotdaemon.desktop
-		opt/kde4/%type_pkg[kde]/share/apps/kconf_update/kpilot.upd
-		opt/kde4/%type_pkg[kde]/share/apps/kpilot/kpilotui.rc
-		opt/kde4/%type_pkg[kde]/share/config.kcfg/calendarsettings*
-		opt/kde4/%type_pkg[kde]/share/config.kcfg/contactssettings*
-		opt/kde4/%type_pkg[kde]/share/config.kcfg/kpilot*
-		opt/kde4/%type_pkg[kde]/share/config.kcfg/memofileconduit*
-		opt/kde4/%type_pkg[kde]/share/config.kcfg/timeconduit*
-		opt/kde4/%type_pkg[kde]/share/config.kcfg/todosettings*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kpilot
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/actions/kpilot*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kpilot*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/actions/kpilot*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kpilot*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/actions/kpilot*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kpilot*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/actions/kpilot*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kpilot*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/actions/kpilot*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/kpilot-conduit-*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/kpilot_config*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/memofile-conduit*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/time_conduit*
-		opt/kde4/%type_pkg[kde]/share/kde4/servicetypes/kpilotconduit*
-	<<
-	Shlibs: <<
-		!%p/opt/kde4/%type_pkg[kde]/lib/libkpilot_akonadibase.dylib
-		!%p/opt/kde4/%type_pkg[kde]/lib/libkpilot_conduit_base.dylib
-		%p/opt/kde4/%type_pkg[kde]/lib/libkpilot.4.dylib 4.0.0 %n (>= 4.2.4-1)
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
 SplitOff32: <<
 	Package: ktimetracker4-%type_pkg[kde]
 	Description: KDE4 - time management tool
@@ -803,52 +792,6 @@ SplitOff4: <<
 	<<
 <<
 SplitOff40: <<
-	Package: %N-dev
-	Description: KDE4 - kdepim development headers and libraries
-	Depends: %N (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/include
-		opt/kde4/%type_pkg[kde]/lib/libakregatorinterfaces.dylib
-		opt/kde4/%type_pkg[kde]/lib/libgwsoap.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkabc_groupdav.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkabc_slox.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkabc_xmlrpc.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkabcommon.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkabcgroupwise.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkabckolab.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkabcscalix.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkabinterfaces.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkalarm_resources.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkcal_groupdav.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkcal_resourceblog.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkcal_resourceremote.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkcal_slox.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkcal_xmlrpc.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkcalgroupwise.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkcalkolab.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkcalscalix.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkdepim.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkgroupwarebase.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkgroupwaredav.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkleo.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkleopatraclientcore.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkleopatraclientgui.dylib
-		opt/kde4/%type_pkg[kde]/lib/libknodecommon.dylib
-		opt/kde4/%type_pkg[kde]/lib/libknotes_xmlrpc.dylib
-		opt/kde4/%type_pkg[kde]/lib/libknoteskolab.dylib
-		opt/kde4/%type_pkg[kde]/lib/libknotesscalix.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkorg_stdprinting.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkorganizer_calendar.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkorganizer_eventviewer.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkorganizer_interfaces.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkpgp.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkpilot.dylib
-		opt/kde4/%type_pkg[kde]/lib/libksieve.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkslox.dylib
-		opt/kde4/%type_pkg[kde]/lib/libmimelib.dylib
-	<<
-<<
-SplitOff41: <<
 	Package: %N-base
 	Description: KDE4 - kdepim base package
 	Depends: <<
