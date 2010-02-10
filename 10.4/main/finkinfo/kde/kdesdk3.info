@@ -37,7 +37,7 @@ BuildDepends: <<
 	libart2 (>= 2.3.19-1),
 	libiconv-dev,
 	libidn,
-	libjpeg,
+	libjpeg8,
 	libpng3 (>= 1.2.8-1),
 	libxml2,
 	pcre,
@@ -121,7 +121,7 @@ SplitOff: <<
 		fink (>= 0.29.7-1),
 		kdelibs3-unified-dev (>= %v-1),
 		libart2,
-		libjpeg,
+		libjpeg8,
 		libpng3 (>= 1.2.8-1),
 		qt3 (>= 3.3.8-1027)
 	<<

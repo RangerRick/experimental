@@ -66,6 +66,7 @@ CompileScript: <<
 	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[kde]"
 	. %p/sbin/kde4-buildenv.sh
 	export CMAKE_INCLUDE_PATH="%p/include/libwpd-0.8:$CMAKE_INCLUDE_PATH"
+	find . -type f -name DEBUG -exec rm -rf {} \; || :
 
 	mkdir -p build
 	pushd build

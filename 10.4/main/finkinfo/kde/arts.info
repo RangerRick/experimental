@@ -31,7 +31,7 @@ BuildDepends: <<
 	gettext-tools,
 	glib2-dev (>= 2.18.4-1),
 	libiconv-dev,
-	libjpeg,
+	libjpeg8,
 	libogg,
 	libpng3 (>= 1.2.8-1),
 	libvorbis0,

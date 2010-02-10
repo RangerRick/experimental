@@ -26,7 +26,7 @@ BuildDepends: <<
 	kdelibs4-%type_pkg[kde]-dev (>= 4.4.0-1),
 	kdepimlibs4-%type_pkg[kde]-dev (>= 4.4.0-1),
 	libjasper.1,
-	libjpeg,
+	libjpeg8,
 	libgettext8-dev,
 	libgphoto2,
 	libgpod4,

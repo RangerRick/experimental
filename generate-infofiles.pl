@@ -138,6 +138,8 @@ my $package_lookup = {
 		'^intltool$'                  => 'intltool40',
 		'^libgettext3-dev$'           => 'libgettext8-dev',
 		'^libgettext3-shlibs$'        => 'libgettext8-shlibs',
+		'^libjpeg$'                   => 'libjpeg8',
+		'^libjpeg-shlibs$'            => 'libjpeg8-shlibs',
 	},
 };
 

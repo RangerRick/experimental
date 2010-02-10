@@ -41,7 +41,7 @@ BuildDepends: <<
 	libexiv2-0.18,
 	libgettext8-dev,
 	libgphoto2,
-	libjpeg,
+	libjpeg8,
 	libpgf,
 	libtiff,
 	pkgconfig (>= 0.23-1),

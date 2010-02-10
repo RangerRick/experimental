@@ -23,7 +23,7 @@ BuildDepends: <<
 	glib2-dev (>= 2.18.4-1),
 	libgettext8-dev,
 	libexif12,
-	libjpeg,
+	libjpeg8,
 	libpng3,
 	libtiff,
 	mono-dev (>= 2.4-1),

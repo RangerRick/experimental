@@ -43,7 +43,7 @@ BuildDepends: <<
 	libgsf1.114-dev (>= 1.14.8-1),
 	libiconv-dev,
 	libidn,
-	libjpeg,
+	libjpeg8,
 	libogg,
 	libpaper1-dev,
 	libpng3 (>= 1.2.8-1),

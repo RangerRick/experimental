@@ -19,7 +19,7 @@ BuildDepends: <<
 	intltool40,
 	libgettext8-dev,
 	libiconv-dev,
-	libjpeg,
+	libjpeg8,
 	libpng3 (>= 1.2.8-1),
 	libtiff,
 	pango1-xft2-ft219-dev (>= 1.22.4-1),

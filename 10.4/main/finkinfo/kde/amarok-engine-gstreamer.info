@@ -32,7 +32,7 @@ BuildDepends: <<
 	libgpod3,
 	libiconv-dev,
 	libidn,
-	libjpeg,
+	libjpeg8,
 	libmad,
 	libmp4v21-dev,
 	libmusicbrainz4,

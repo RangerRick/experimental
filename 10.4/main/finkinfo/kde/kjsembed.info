@@ -17,7 +17,7 @@ BuildDepends: <<
 	libart2 (>= 2.3.19-1),
 	libiconv-dev,
 	libidn,
-	libjpeg,
+	libjpeg8,
 	libpng3 (>= 1.2.8-1),
 	pcre,
 	pkgconfig (>= 0.23-1),

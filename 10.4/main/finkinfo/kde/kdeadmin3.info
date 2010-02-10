@@ -25,7 +25,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	libiconv-dev,
 	libidn,
-	libjpeg,
+	libjpeg8,
 	libpng3 (>= 1.2.8-1),
 	pkgconfig (>= 0.23-1),
 	qt3 (>= 3.3.8-1027),

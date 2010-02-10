@@ -32,7 +32,7 @@ BuildDepends: <<
 	libgcrypt,
 	libgettext8-dev,
 	libidn,
-	libjpeg,
+	libjpeg8,
 	libmeanwhile,
 	libmsn-0.3,
 	libortp,

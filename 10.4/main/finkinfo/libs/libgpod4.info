@@ -22,7 +22,7 @@ BuildDepends: <<
 	intltool40,
 	libgettext8-dev,
 	libiconv-dev,
-	libjpeg,
+	libjpeg8,
 	libpng3 (>= 1.2.8-1),
 	libtiff,
 	libxml2 (>= 2.6.32-1),

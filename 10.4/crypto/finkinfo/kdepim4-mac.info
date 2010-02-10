@@ -46,7 +46,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	libgpg-error,
 	libidn,
-	libjpeg,
+	libjpeg8,
 	libmal10 (>= 0.44-1),
 	pilot-link09,
 	pkgconfig (>= 0.23-1),
@@ -117,6 +117,8 @@ InstallScript: <<
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/bin/kabcclient.app"
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/bin/konsolekalendar.app"
 
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libakonadi-kcal_next.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libakonadi_next.dylib"
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libakregatorinterfaces.dylib"
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libgwsoap.dylib"
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkabc_groupdav.dylib"
@@ -127,6 +129,7 @@ InstallScript: <<
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkabckolab.dylib"
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkabcscalix.dylib"
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkabinterfaces.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkalarm_calendar.dylib"
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkalarm_resources.dylib"
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkcal_groupdav.dylib"
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkcal_resourceblog.dylib"
@@ -148,11 +151,15 @@ InstallScript: <<
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libknotesscalix.dylib"
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkorg_stdprinting.dylib"
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkorganizer_calendar.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkorganizer_core.dylib"
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkorganizer_eventviewer.dylib"
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkorganizer_interfaces.dylib"
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkpgp.dylib"
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libksieve.dylib"
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libkslox.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libmessagecore.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libmessagelist.dylib"
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libmessageviewer.dylib"
 	rm -rf "%i/opt/kde4/%type_pkg[kde]/lib/libmimelib.dylib"
 
 	mkdir -p %i/share/doc/installed-packages
@@ -246,12 +253,12 @@ SplitOff20: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/kcm_todosummary*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kontact_*plugin*
 		opt/kde4/%type_pkg[kde]/lib/libkontactprivate.4*.dylib
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/Kontact*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/*ontact*
 		opt/kde4/%type_pkg[kde]/share/apps/knotes/knotes_part*
 		opt/kde4/%type_pkg[kde]/share/apps/kontact*
 		opt/kde4/%type_pkg[kde]/share/config.kcfg/kontact*
 		opt/kde4/%type_pkg[kde]/share/dbus-1/interfaces/org.kde.kontact.*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kontact
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kontact*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kontact*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kontact*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kontact*
@@ -677,6 +684,8 @@ SplitOff33: <<
 		opt/kde4/%type_pkg[kde]/bin/akonadiconsole*
 		opt/kde4/%type_pkg[kde]/lib/libakonadi-kcal_next.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libakonadi_next.4*.dylib
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/akonadiconsole*
+		opt/kde4/%type_pkg[kde]/share/apps/akonadi*
 	<<
 	Shlibs: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libakonadi-kcal_next.4.dylib 4.0.0 %n (>= 4.3.98-1)

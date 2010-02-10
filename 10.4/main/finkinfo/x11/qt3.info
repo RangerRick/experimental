@@ -21,7 +21,7 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	libgl-dev,
 	libpng3 (>= 1.2.8-1),
-	libjpeg,
+	libjpeg8,
 	macosx (>= 10.4.3-1),
 	pkgconfig (>= 0.23-1),
 	x11-dev
@@ -43,7 +43,7 @@ Replaces: <<
 <<
 Suggests: <<
 	libpng3,
-	libjpeg,
+	libjpeg8,
 	%N-mysql (>= %v-1),
 	%N-postgresql (>= %v-1)
 <<
@@ -315,7 +315,7 @@ SplitOff: <<
 		freetype219-shlibs (>= 2.3.7-7),
 		libgl-shlibs,
 		libpng3-shlibs (>= 1.2.8-1),
-		libjpeg-shlibs,
+		libjpeg8-shlibs,
 		x11-shlibs
 	<<
 	Conflicts: <<
@@ -405,7 +405,7 @@ SplitOff4: <<
 	Package: %N-linguist
 	Depends: <<
 		%N-shlibs (= %v-%r),
-		libjpeg-shlibs,
+		libjpeg8-shlibs,
 		libpng3-shlibs (>= 1.2.8-1),
 		x11
 	<<

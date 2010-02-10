@@ -57,7 +57,7 @@ BuildDepends: <<
 	libiconv-dev,
 	libidn,
 	libmad,
-	libjpeg,
+	libjpeg8,
 	libmath++-dev (>= 0.0.4-1001),
 	libogg,
 	libpng3 (>= 1.2.8-1),

@@ -32,7 +32,7 @@ BuildDepends: <<
 	libical,
 	libidn,
 	libjasper.1,
-	libjpeg,
+	libjpeg8,
 	libpng3,
 	libtiff,
 	libxml2,

@@ -36,7 +36,7 @@ BuildDepends: <<
 	libgnomecanvas2-dev (>= 2.20.0-1),
 	libgnomeprint2.2-dev (>= 2.18.2-1),
 	libgnomeprintui2.2-dev (>= 2.18.1-1),
-	libjpeg,
+	libjpeg8,
 	libxml2 (>= 2.6.32-1),
 	mono-dev (>= 2.4-1),
 	orbit2-dev (>= 2.14.10-1),

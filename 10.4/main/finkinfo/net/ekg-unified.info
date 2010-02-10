@@ -7,7 +7,7 @@ Maintainer: Benjamin Reed <ekg@fink.racoonfink.com>
 
 Depends: <<
 	libgadu3-shlibs,
-	libjpeg-shlibs,
+	libjpeg8-shlibs,
 	readline5-shlibs (>= 5.0-1004),
 	libncurses5-shlibs (>= 5.4-20041023-1006),
 	libbind6
@@ -15,7 +15,7 @@ Depends: <<
 BuildDepends: <<
 	gsm,
 	libgadu3-dev,
-	libjpeg,
+	libjpeg8,
 	libtool14,
 	libncurses5 (>= 5.4-20041023-1006),
 	system-openssl-dev,

@@ -37,7 +37,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	libidn,
 	libjasper.1,
-	libjpeg,
+	libjpeg8,
 	libknotificationitem1-%type_pkg[kde]-dev (>= 4.3.4-1),
 	libpng3,
 	libtiff,

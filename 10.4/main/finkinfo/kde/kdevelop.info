@@ -37,7 +37,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	libidn,
 	libiconv-dev,
-	libjpeg,
+	libjpeg8,
 	libpng3 (>= 1.2.8-1),
 	libusb,
 	pcre,
