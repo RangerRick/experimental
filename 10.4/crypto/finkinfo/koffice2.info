@@ -20,6 +20,7 @@ BuildDepends: <<
 	blitz-%type_pkg[kde]-dev,
 	boost1.35.systempython,
 	cmake (>= 2.6.4-1),
+	create-resources (>= 0.1-1),
 	dbus-dev (>= 1.2.12-1),
 	eigen2,
 	fink (>= 0.29.7-1),
@@ -202,6 +203,7 @@ SplitOff12: <<
 	Package: %N-base
 	Description: KDE4 - koffice base package
 	Depends: <<
+		create-resources (>= 0.1-1),
 		kdebase4-runtime-%type_pkg[kde] (>= 4.4.0-1),
 		%N-base-shlibs (>= %v-%r)
 	<<

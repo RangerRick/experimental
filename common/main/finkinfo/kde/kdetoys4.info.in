@@ -131,6 +131,20 @@ SplitOff3: <<
 	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kweatherreport.dylib
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
+SplitOff4: <<
+	Package: ktux4-%type_pkg[kde]
+	Description: KDE4 - tux screensaver
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/ktux*
+		opt/kde4/%type_pkg[kde]/share/apps/ktux*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/ktux*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/ktux*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/ScreenSavers/ktux*
+	<<
+	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kweatherreport.dylib
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
 #endif
 
 SplitOff10: <<

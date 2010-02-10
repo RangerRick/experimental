@@ -81,6 +81,12 @@ SplitOff2: <<
 	Depends: %N-base (>= %v-%r)
 	Files: opt/kde4/%type_pkg[kde]/share/apps/desktoptheme
 <<
+SplitOff20: <<
+	Package: %N-base
+	Description: KDE4 - kdeartwork base package
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.4.0-1)
+	Files: opt share/doc/installed-packages/%N-base
+<<
 SplitOff3: <<
 	Package: %N-emoticons
 	Description: KDE4 - extra emoticons
@@ -114,12 +120,6 @@ SplitOff7: <<
 	Description: KDE4 - extra wallpapers
 	Depends: %N-base (>= %v-%r)
 	Files: opt/kde4/%type_pkg[kde]/share/wallpapers
-<<
-SplitOff9: <<
-	Package: %N-base
-	Description: KDE4 - kdeartwork base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.4.0-1)
-	Files: opt share/doc/installed-packages/%N-base
 <<
 
 DescDetail: <<

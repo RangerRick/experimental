@@ -569,7 +569,7 @@ SplitOff19: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff19: <<
+SplitOff20: <<
 	Package: step4-%type_pkg[kde]
 	Description: KDE4 - Interactive physics simulator
 	Depends: <<

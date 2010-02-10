@@ -25,11 +25,46 @@ Depends: <<
 	kword2-%type_pkg[kde] (>= %v-%r),
 <<
 
+#-----------------------------------------------------------------------------
+#-- The following OPTIONAL packages could NOT be located on your system.
+#-- Consider installing them to enable more features from this software.
+#-----------------------------------------------------------------------------
+#   * Create Resources  <http://create.freedesktop.org>
+#     Create Resources (brushes, palettes etc.)
+#     Required by KOffice for optional extra resources.
+#   * OpenCTL (0.9.10 or higher)  <http://www.openctl.org>
+#     Free Color Transformation Language implementation
+#     Required for High Dynamic Range Color Spaces, YCbCr and LMS support
+#   * OpenShiva  <http://www.openshiva.org>
+#     OpenShiva interpreter for the Shiva Kernel Language
+#     Required for Shiva based Generators and Filters
+#   * QtShiva  <http://www.openshiva.org>
+#     Qt bindings for the OpenShiva interpreter
+#     Required for Shiva based Generators and Filters
+#   * GraphicsMagick (1.1 or higher)  <http://www.graphicsmagick.org>
+#     GraphicsMagick Image Processing System
+#     Required by the Krita GraphicsMagick filter for various file formats (including PSD, XCF). Version 1.2 is broken!
+#   * Spnav  <http://spacenav.sourceforge.net/>
+#     3Dconnexion device driver and SDK
+#     Required by SpaceNavigator 3D mouse plugin
+#   * wv2 libraries  <http://sf.net/projects/wvware/>
+#     Library that interprets MS Office files. You need this for reading word/powerpoint files
+#   * wvWare  <http://sourceforge.net/projects/wvware>
+#     Microsoft Word .doc Library
+#     Required by the KWord .doc filter
+#   * WPG  <http://libwpg.sourceforge.net/>
+#     WordPerfect Graphics Library
+#     Required by the Karbon WPG import filter
+#   * KDE PIM iCalendar  <http://www.kde.org/>
+#     KDE Personal Information Management iCalendar Libraries
+#     Required by KPlato filter (available as a module in KDE)
+
 BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.88-1),
 	blitz-%type_pkg[kde]-dev,
 	boost1.35.systempython,
 	cmake (>= 2.6.3-1),
+	create-resources (>= 0.1-1),
 	dbus-dev (>= 1.2.12-1),
 	eigen2,
 	fink (>= 0.28.0-1),
@@ -404,6 +439,7 @@ SplitOff12: <<
 	Package: %N-base
 	Description: KDE4 - koffice base package
 	Depends: <<
+		create-resources (>= 0.1-1),
 		kdebase4-runtime-%type_pkg[kde] (>= 4.2.1-1),
 		%N-base-shlibs (>= %v-%r),
 	<<

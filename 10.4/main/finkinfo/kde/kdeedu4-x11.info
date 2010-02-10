@@ -343,24 +343,20 @@ SplitOff18: <<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
 SplitOff19: <<
-	Package: step4-%type_pkg[kde]
-	Description: KDE4 - Interactive physics simulator
+	Package: rocs4-%type_pkg[kde]
+	Description: KDE4 - Graph editor and environment
 	Depends: %N-base (>= %v-%r)
 	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/step*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/step*
-		opt/kde4/%type_pkg[kde]/share/apps/step
-		opt/kde4/%type_pkg[kde]/share/config.kcfg/step*
-		opt/kde4/%type_pkg[kde]/share/config/step*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/step
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/step*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/step*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/step*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/step*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/step*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/step*
-		opt/kde4/%type_pkg[kde]/share/icons/oxygen/22x22/actions/pointer*
-		opt/kde4/%type_pkg[kde]/share/icons/oxygen/22x22/actions/step_object_*
+		opt/kde4/%type_pkg[kde]/bin/rocs*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/rocs*
+		opt/kde4/%type_pkg[kde]/share/apps/rocs
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/rocs*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/rocs
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/actions/rocs*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/actions/rocs*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/actions/rocs*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/actions/rocs*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/actions/rocs*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
@@ -389,6 +385,28 @@ SplitOff2: <<
 	Shlibs: <<
 		!%p/opt/kde4/%type_pkg[kde]/lib/libanalitza.4.dylib
 		!%p/opt/kde4/%type_pkg[kde]/lib/libanalitzagui.4.dylib
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff20: <<
+	Package: step4-%type_pkg[kde]
+	Description: KDE4 - Interactive physics simulator
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/step*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/step*
+		opt/kde4/%type_pkg[kde]/share/apps/step
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/step*
+		opt/kde4/%type_pkg[kde]/share/config/step*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/step
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/step*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/step*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/step*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/step*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/step*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/step*
+		opt/kde4/%type_pkg[kde]/share/icons/oxygen/22x22/actions/pointer*
+		opt/kde4/%type_pkg[kde]/share/icons/oxygen/22x22/actions/step_object_*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<

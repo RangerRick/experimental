@@ -143,7 +143,7 @@ SplitOff7: <<
 		opt/kde4/%type_pkg[kde]/share/wallpapers
 	<<
 <<
-#if 0
+#ifdef TYPE_X11
 SplitOff8: <<
 	Package: %N-screensavers
 	Description: KDE4 - screen savers
@@ -161,7 +161,7 @@ SplitOff8: <<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
 #endif
-SplitOff9: <<
+SplitOff20: <<
 	Package: %N-base
 	Description: KDE4 - kdeartwork base package
 	Depends: <<

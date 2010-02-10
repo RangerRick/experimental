@@ -120,6 +120,7 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libkickoff.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkscreensaver.5*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libksgrd.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libksignalplotter.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkwineffects.1*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkwinnvidiahack.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkworkspace.4*.dylib
@@ -127,6 +128,7 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libplasma_applet-system-monitor.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libplasma-geolocation-interface.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libplasmaclock.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libplasmagenericshell.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libprocesscore.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libprocessui.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libsolidcontrol.4*.dylib
@@ -146,6 +148,7 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libkhotkeysprivate.4.dylib               4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkscreensaver.5.dylib                  5.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libksgrd.4.dylib                         4.0.0 %n (>= 4.2.4-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libksignalplotter.4.dylib                4.0.0 %n (>= 4.4.0-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkwineffects.1.dylib                   1.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkwinnvidiahack.4.dylib                4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkworkspace.4.dylib                    4.0.0 %n (>= 4.2.4-1)
@@ -153,6 +156,7 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libplasma_applet-system-monitor.4.dylib  4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libplasma-geolocation-interface.4.dylib  4.0.0 %n (>= 4.3.0-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libplasmaclock.4.dylib                   4.0.0 %n (>= 4.2.4-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libplasmagenericshell.4.dylib            4.0.0 %n (>= 4.4.0-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libprocesscore.4.dylib                   4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libprocessui.4.dylib                     4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libsolidcontrol.4.dylib                  4.0.0 %n (>= 4.2.4-1)
@@ -175,12 +179,15 @@ SplitOff2: <<
 		opt/kde4/%type_pkg[kde]/lib/libkfontinstui.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkscreensaver.dylib
 		opt/kde4/%type_pkg[kde]/lib/libksgrd.dylib
+		opt/kde4/%type_pkg[kde]/lib/libksignalplotter.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkwineffects.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkwinnvidiahack.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkworkspace.dylib
 		opt/kde4/%type_pkg[kde]/lib/liblsofui.dylib
+		opt/kde4/%type_pkg[kde]/lib/libplasma-geolocation-interface.dylib
 		opt/kde4/%type_pkg[kde]/lib/libplasma_applet-system-monitor.dylib
 		opt/kde4/%type_pkg[kde]/lib/libplasmaclock.dylib
+		opt/kde4/%type_pkg[kde]/lib/libplasmagenericshell.dylib
 		opt/kde4/%type_pkg[kde]/lib/libprocesscore.dylib
 		opt/kde4/%type_pkg[kde]/lib/libprocessui.dylib
 		opt/kde4/%type_pkg[kde]/lib/libsolidcontrol.dylib
