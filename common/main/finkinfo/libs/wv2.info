@@ -1,6 +1,6 @@
 Package: wv2
 Version: 0.2.3
-Revision: 1
+Revision: 2
 Description: MSWord parsing library
 License: LGPL
 Maintainer: Benjamin Reed <wv2@fink.racoonfink.com>
@@ -17,8 +17,8 @@ BuildDepends: <<
 	libxml2,
 	pkgconfig
 <<
-Conflicts: libwv1
-Replaces: libwv1
+Conflicts: libwv1, wv2.4
+Replaces: libwv1, wv2.4
 BuildDependsOnly: true
 GCC: 4.0
 

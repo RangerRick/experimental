@@ -14,7 +14,7 @@ KOffice is a free, integrated office suite for KDE, the K Desktop Environment.
 Source: mirror:kde:stable/koffice-%v/koffice-%v.tar.bz2
 Source-MD5: 9955f30f43ed3f6970870f55015a1a18
 PatchFile: koffice2.patch
-PatchFile-MD5: de4783d117fc57f30f84c4d32aef91ae
+PatchFile-MD5: 600f503702af7e42b51c6a69604931c6
 
 Depends: <<
 	karbon2-%type_pkg[kde] (>= %v-%r),
@@ -29,9 +29,6 @@ Depends: <<
 #-- The following OPTIONAL packages could NOT be located on your system.
 #-- Consider installing them to enable more features from this software.
 #-----------------------------------------------------------------------------
-#   * Create Resources  <http://create.freedesktop.org>
-#     Create Resources (brushes, palettes etc.)
-#     Required by KOffice for optional extra resources.
 #   * OpenCTL (0.9.10 or higher)  <http://www.openctl.org>
 #     Free Color Transformation Language implementation
 #     Required for High Dynamic Range Color Spaces, YCbCr and LMS support
@@ -47,8 +44,6 @@ Depends: <<
 #   * Spnav  <http://spacenav.sourceforge.net/>
 #     3Dconnexion device driver and SDK
 #     Required by SpaceNavigator 3D mouse plugin
-#   * wv2 libraries  <http://sf.net/projects/wvware/>
-#     Library that interprets MS Office files. You need this for reading word/powerpoint files
 #   * wvWare  <http://sourceforge.net/projects/wvware>
 #     Microsoft Word .doc Library
 #     Required by the KWord .doc filter
@@ -96,7 +91,7 @@ BuildDepends: <<
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev,
-	wv2 (>= 0.2.3-1),
+	wv2.4,
 <<
 GCC: 4.0
 
@@ -375,7 +370,7 @@ SplitOff10: <<
 		libxml2-shlibs (>= 2.6.1-1),
 		libxslt-shlibs (>= 1.1.0-1),
 		qca2-%type_pkg[kde]-shlibs (>= 2.0.2-1),
-		wv2-shlibs (>= 0.2.3-1),
+		wv2.4-shlibs,
 	<<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4
