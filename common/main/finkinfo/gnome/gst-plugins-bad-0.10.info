@@ -46,6 +46,7 @@ BuildDepends: <<
 	wavpack-dev,
 	x11-dev,
 	xft2-dev,
+	xmkmf,
 	xvidcore
 <<
 BuildDependsOnly: true
@@ -53,7 +54,7 @@ BuildDependsOnly: true
 Source: http://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-%v.tar.bz2
 Source-MD5: c0c3e79430d4441c4825436387d200f4
 PatchFile: %n.patch
-PatchFile-MD5: 237a792d8cde8df4741ac66e6bc1a849
+PatchFile-MD5: 8f6d31f41f6d798c299f23ada3268fb6
 PatchScript: <<
   %{default_script}
   # Case-sensitivity typo
@@ -77,6 +78,7 @@ CompileScript: <<
 
 	export PKG_CONFIG_PATH="%p/lib/system-openssl/lib/pkgconfig:$PKG_CONFIG_PATH"
 	export ac_cv_path_PYTHON=%p/bin/python2.5
+	export PATH="%p/lib/xmkmf/bin:$PATH"
 	./configure %c
 	perl -pi -e 's,-no-undefined,,' ext/mpeg2enc/Makefile
 	make

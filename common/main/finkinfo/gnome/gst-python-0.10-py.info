@@ -36,7 +36,8 @@ BuildDepends: <<
 	pango1-xft2-ft219-dev (>= 1.18.4-4),
 	pixman (>= 0.10.0-1),
 	x11-dev,
-	xft2-dev
+	xft2-dev,
+	xmkmf
 <<
 Replaces: <<
 	gst-python-0.10-py23,
@@ -63,6 +64,7 @@ CompileScript: <<
 #!/bin/sh -ex
 
 	export ac_cv_path_PYTHON=%p/bin/python%type_raw[python]
+	export PATH="%p/lib/xmkmf/bin:$PATH"
 	./configure %c
 	make CCLD=g++
 <<

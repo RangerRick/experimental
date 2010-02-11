@@ -38,7 +38,8 @@ BuildDepends: <<
 	popt,
 	python25,
 	pyxml-py25,
-	x11-dev
+	x11-dev,
+	xmkmf
 <<
 BuildConflicts: coreutils-default (<< 5.96-1)
 Replaces: gst-plugins-bad-0.10 (<< 0.10.10-1)
@@ -66,6 +67,7 @@ CompileScript: <<
 #!/bin/sh -ex
 
 	export ac_cv_path_PYTHON=%p/bin/python2.5
+	export PATH="%p/lib/xmkmf/bin:$PATH"
 	./configure %c
 	make
 <<
