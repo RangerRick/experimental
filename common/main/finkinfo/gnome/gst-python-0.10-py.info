@@ -1,6 +1,6 @@
 Info2: <<
 Package: gst-python-0.10-py%type_pkg[python]
-Version: 0.10.16
+Version: 0.10.18
 Revision: 1
 Distribution: (%type_pkg[python] = 23) 10.3, (%type_pkg[python] = 23) 10.4
 Description: Python interface to GStreamer
@@ -47,7 +47,7 @@ Replaces: <<
 GCC: 4.0
 
 Source: http://gstreamer.freedesktop.org/src/gst-python/gst-python-%v.tar.bz2
-Source-MD5: 00cceddc81ff6cdc9838a5c40bbcf305
+Source-MD5: a931eab9da6476925de757f6f0a4e80f
 PatchFile: gst-python-0.10-py.patch
 PatchFile-MD5: 635d08d545863f4515023d5ee9445943
 

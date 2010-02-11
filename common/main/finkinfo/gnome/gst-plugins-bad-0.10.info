@@ -1,5 +1,5 @@
 Package: gst-plugins-bad-0.10
-Version: 0.10.13
+Version: 0.10.17
 Revision: 1
 Description: "Bad" plugins for GStreamer
 License: Restrictive
@@ -51,7 +51,7 @@ BuildDepends: <<
 BuildDependsOnly: true
 
 Source: http://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-%v.tar.bz2
-Source-MD5: bc77146c6af89b52f26ebfc8f06d0dfe
+Source-MD5: c0c3e79430d4441c4825436387d200f4
 PatchFile: %n.patch
 PatchFile-MD5: 237a792d8cde8df4741ac66e6bc1a849
 PatchScript: <<

@@ -1,5 +1,5 @@
 Package: gstreamer-0.10
-Version: 0.10.24
+Version: 0.10.26
 Revision: 1
 Description: Streaming-media framework
 License: GPL/LGPL
@@ -29,7 +29,7 @@ BuildConflicts: coreutils-default (<< 5.96-1)
 Replaces: gstreamer (<< 0.8.11-1023)
 
 Source: http://gstreamer.freedesktop.org/src/gstreamer/gstreamer-%v.tar.bz2
-Source-MD5: 178d3326c96c360c9a15751bd5d73a6c
+Source-MD5: 133b622d078bd3afc779f3f05237ec67
 PatchFile: %n.patch
 PatchFile-MD5: a311e40a94c729186dcad126c8299ce9
 
