@@ -1,5 +1,5 @@
 Package: gst-plugins-good-0.10
-Version: 0.10.15
+Version: 0.10.18
 Revision: 1
 Description: "Good" plugins for GStreamer
 License: LGPL
@@ -23,8 +23,8 @@ BuildDepends: <<
 	glib2-dev (>= 2.18.4-1),
 	glitz (>= 0.5.6-1),
 	gnome-vfs2-unified-dev (>= 1:2.20.0-1),
-	gstreamer-0.10-dev (>= 0.10.24-1),
-	gst-plugins-base-0.10-dev (>= 0.10.24-1),
+	gstreamer-0.10-dev (>= 0.10.26-1),
+	gst-plugins-base-0.10-dev (>= 0.10.26-1),
 	gtk+2-dev (>= 2.14.7-1),
 	gtk-doc (>= 1.8-1),
 	ladspa-dev,
@@ -61,7 +61,7 @@ BuildDepends: <<
 <<
 
 Source: http://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-%v.tar.bz2
-Source-MD5: 19bc6cc07951b3382d1ac8525b20e83f
+Source-MD5: 9519530e6021698fa1e12a29f16e2feb
 PatchScript: perl -pi -e 's/CFLAGS -Werror/CFLAGS/g' configure
 
 SetCFLAGS: -Os -fno-common
@@ -95,7 +95,7 @@ SplitOff: <<
 		audiofile-shlibs,
 		cairo-shlibs (>= 1.8.8-1),
 		esound-shlibs (>= 0.2.38-1),
-		gst-plugins-base-0.10-shlibs (>= 0.10.24-1),
+		gst-plugins-base-0.10-shlibs (>= 0.10.26-1),
 		libcaca-shlibs (>= 0.99-1),
 		libcdio7-shlibs,
 		libdv4-shlibs,
@@ -115,8 +115,8 @@ SplitOff: <<
 	<<
 	Recommends: <<
 		gconf2 (>= 2.16.0-1),
-		gstreamer-0.10 (>= 0.10.24-1),
-		gst-plugins-base-0.10 (>= 0.10.24-1)
+		gstreamer-0.10 (>= 0.10.26-1),
+		gst-plugins-base-0.10 (>= 0.10.26-1)
 	<<
 	Files: lib
 <<
