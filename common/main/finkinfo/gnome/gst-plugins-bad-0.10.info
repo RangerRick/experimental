@@ -54,13 +54,11 @@ BuildDependsOnly: true
 Source: http://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-%v.tar.bz2
 Source-MD5: c0c3e79430d4441c4825436387d200f4
 PatchFile: %n.patch
-PatchFile-MD5: 8f6d31f41f6d798c299f23ada3268fb6
+PatchFile-MD5: 4eb5a7221a70c07d5292bb085bd4efe5
 PatchScript: <<
-  %{default_script}
-  # Case-sensitivity typo
-  perl -pi -e 's,Quicktime,QuickTime,' sys/qtwrapper/{{qt{wrapper,utils},codecmapping}.h,audiodecoders.c}
-#  # For _SC_NPROCESSORS_ONLN in sysconf call on line 288 :  ## (doesn't suffice, at least on 10.4)
-#  perl -pi -e 's,\.hh"$,$&\n#include <unistd.h>,' ext/mpeg2enc/gstmpeg2encoptions.cc
+	%{default_script}
+	# Case-sensitivity typo
+	perl -pi -e 's,Quicktime,QuickTime,' sys/qtwrapper/{{qt{wrapper,utils},codecmapping}.h,audiodecoders.c}
 <<
 
 SetCFLAGS: -Os -funroll-loops -fstrict-aliasing -fno-common

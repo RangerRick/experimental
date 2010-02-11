@@ -57,11 +57,9 @@ PatchScript: <<
 	%{default_script}
 	# Case-sensitivity typo
 	perl -pi -e 's,Quicktime,QuickTime,' sys/qtwrapper/{{qt{wrapper,utils},codecmapping}.h,audiodecoders.c}
-	#  # For _SC_NPROCESSORS_ONLN in sysconf call on line 288 :  ## (doesn't suffice, at least on 10.4)
-	#  perl -pi -e 's,\.hh"$,$&\n#include <unistd.h>,' ext/mpeg2enc/gstmpeg2encoptions.cc
 <<
 PatchFile: %n.patch
-PatchFile-MD5: 8f6d31f41f6d798c299f23ada3268fb6
+PatchFile-MD5: 4eb5a7221a70c07d5292bb085bd4efe5
 
 SetCFLAGS: -Os -funroll-loops -fstrict-aliasing -fno-common
 SetCPPFLAGS: -fno-common -I%p/lib/system-openssl/include -I%p/lib/freetype219/include/freetype2 -I%p/lib/freetype219/include -I%p/include -I/usr/X11R6/include
