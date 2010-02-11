@@ -21,7 +21,7 @@ BuildDepends: <<
 	mysql-unified-dev (>= 5.0-1),
 	python25,
 	shared-mime-info (>= 0.51-1),
-	soprano-%type_pkg[akonadi]-dev (>= 2.3.70-1),
+	soprano-%type_pkg[akonadi]-dev (>= 2.4.0-1),
 	system-openssl-dev,
 	qt4-%type_pkg[akonadi] (>= 4.6.1-1)
 <<
@@ -59,7 +59,7 @@ SplitOff: <<
 		boost1.41.cmake-shlibs,
 		mysql-unified-shlibs (>= 5.0-1),
 		qt4-%type_pkg[akonadi]-gui-shlibs (>= 4.6.1-1),
-		soprano-%type_pkg[akonadi]-shlibs (>= 2.3.70-1)
+		soprano-%type_pkg[akonadi]-shlibs (>= 2.4.0-1)
 	<<
 	Recommends: %N (>= %v-%r)
 	DocFiles: lgpl-license

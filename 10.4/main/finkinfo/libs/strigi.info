@@ -1,6 +1,6 @@
 Info3: <<
 Package: strigi
-Version: 0.7.1
+Version: 0.7.2
 Revision: 1
 Description: Desktop Search
 License: LGPL
@@ -24,7 +24,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: http://www.vandenoever.info/software/strigi/strigi-%v.tar.bz2
-Source-MD5: c60147f5acd53ac5102ed0c972b279fb
+Source-MD5: ca09ba176cf3ffe9afce4d92f38f9a85
 SourceDirectory: strigi-%v
 PatchFile: strigi.patch
 PatchFile-MD5: b6c8ac9b1e48381edd080dc611515a23
