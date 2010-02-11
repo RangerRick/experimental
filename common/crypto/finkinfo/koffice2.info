@@ -85,6 +85,7 @@ BuildDepends: <<
 	poppler2,
 	poppler2-qt4-%type_pkg[kde] (>= 0.6.4-4),
 	pstoedit-bin,
+	python25,
 	qca2-%type_pkg[kde] (>= 2.0.2-1),
 	qt4-%type_pkg[kde] (>= 4.4.0-1),
 	soprano-%type_pkg[kde]-dev (>= 2.2.1-1),

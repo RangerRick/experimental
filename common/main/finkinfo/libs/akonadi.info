@@ -19,6 +19,7 @@ BuildDepends: <<
 	kde4-buildenv (>= 4.2-3),
 	mysql-unified (>= 5.0-1),
 	mysql-unified-dev (>= 5.0-1),
+	python25,
 	shared-mime-info (>= 0.20-1),
 	soprano-%type_pkg[akonadi]-dev (>= 2.3.70-1),
 	system-openssl-dev,

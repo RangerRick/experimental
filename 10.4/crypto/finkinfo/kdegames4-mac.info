@@ -55,7 +55,7 @@ BuildDepends: <<
 	ggz-client-libs2-dev,
 	libggz2,
 	glib2-dev (>= 2.18.4-1),
-	kde4-buildenv (>= 4.3.90-1),
+	kde4-buildenv (>= 4.4.0-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.4.0-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.4.0-1),
 	libgettext8-dev,

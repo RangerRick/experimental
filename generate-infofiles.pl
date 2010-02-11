@@ -126,20 +126,22 @@ my $translate = [
 
 my $package_lookup = {
 	'10.4' => {
-		'^autoconf2.5'                => 'autoconf',
-		'^pango1-xft2-shlibs$'        => 'pango1-xft2-ft219-shlibs',
-		'^pango1-xft2-dev$'           => 'pango1-xft2-ft219-dev',
-		'^pango1-xft2$'               => 'pango1-xft2-ft219',
-		'^vte-dev$'                   => 'vte9-dev',
-		'^vte-shlibs$'                => 'vte9-shlibs',
+		'^autoconf2.5'                    => 'autoconf',
+		'^pango1-xft2-shlibs$'            => 'pango1-xft2-ft219-shlibs',
+		'^pango1-xft2-dev$'               => 'pango1-xft2-ft219-dev',
+		'^pango1-xft2$'                   => 'pango1-xft2-ft219',
+		'^vte-dev$'                       => 'vte9-dev',
+		'^vte-shlibs$'                    => 'vte9-shlibs',
 	},
 	'all' => {
-		'^automake1\..*$'             => 'automake1.11',
-		'^intltool$'                  => 'intltool40',
-		'^libgettext3-dev$'           => 'libgettext8-dev',
-		'^libgettext3-shlibs$'        => 'libgettext8-shlibs',
-		'^libjpeg$'                   => 'libjpeg8',
-		'^libjpeg-shlibs$'            => 'libjpeg8-shlibs',
+		'^automake1\..*$'                 => 'automake1.11',
+		'^boost1.35.systempython$'        => 'boost1.41.cmake',
+		'^boost1.35.systempython-shlibs$' => 'boost1.41.cmake-shlibs',
+		'^intltool$'                      => 'intltool40',
+		'^libgettext3-dev$'               => 'libgettext8-dev',
+		'^libgettext3-shlibs$'            => 'libgettext8-shlibs',
+		'^libjpeg$'                       => 'libjpeg8',
+		'^libjpeg-shlibs$'                => 'libjpeg8-shlibs',
 	},
 };
 
@@ -170,7 +172,7 @@ my $version_lookup = {
 		'^gtk.2(-dev|-shlibs)?$'              => [ '2.14.7',       '1'    ],
 		'^gtk-doc$'                           => [ '1.8',          '1'    ],
 		'^gtk-sharp(2|-monodoc)$'             => [ '2.12.8',       '2'    ],
-		'^kde4-buildenv$'                     => [ '4.3.90',       '1'    ],
+		'^kde4-buildenv$'                     => [ '4.4.0',        '1'    ],
 		'^kdebase4.*$'                        => [ '4.4.0',        '1'    ],
 		'^kdeedu4.*$'                         => [ '4.4.0',        '1'    ],
 		'^kdegraphics4.*$'                    => [ '4.4.0',        '1'    ],

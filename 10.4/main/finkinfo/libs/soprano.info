@@ -15,7 +15,7 @@ BuildDepends: <<
 	dbus-dev (>= 1.2.12-1),
 	fink (>= 0.29.7-1),
 	gmp,
-	kde4-buildenv (>= 4.3.90-1),
+	kde4-buildenv (>= 4.4.0-1),
 	libcurl4,
 	libiconv,
 	libmpfr1,

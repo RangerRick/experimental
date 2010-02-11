@@ -10,7 +10,7 @@ Maintainer: Benjamin Reed <automoc@fink.racoonfink.com>
 BuildDepends: <<
 	cmake (>= 2.6.4-1),
 	fink (>= 0.29.7-1),
-	kde4-buildenv (>= 4.3.90-1),
+	kde4-buildenv (>= 4.4.0-1),
 	system-openssl-dev,
 	qt4-%type_pkg[automoc] (>= 4.6.1-1)
 <<

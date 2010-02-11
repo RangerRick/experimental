@@ -9,7 +9,7 @@ Maintainer: Benjamin Reed <oxygen-icons@fink.racoonfink.com>
 
 BuildDepends: <<
 	cmake (>= 2.6.4-1),
-	kde4-buildenv (>= 4.3.90-1)
+	kde4-buildenv (>= 4.4.0-1)
 <<
 Replaces: <<
 	kdebase4-runtime-%type_pkg[kde] (<< 4.3.0-1),

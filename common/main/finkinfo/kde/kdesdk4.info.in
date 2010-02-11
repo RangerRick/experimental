@@ -53,6 +53,7 @@ BuildDepends: <<
 	libxslt,
 	libxml2,
 	pkgconfig (>= 0.22-3),
+	python25,
 	qt4-%type_pkg[kde] (>= 4.4.0-1),
 	soprano-%type_pkg[kde]-dev (>= 2.2.1-1),
 	strigi-dev (>= 0.6.3-1),

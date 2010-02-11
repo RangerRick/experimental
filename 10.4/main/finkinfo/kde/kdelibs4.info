@@ -31,7 +31,7 @@ BuildDepends: <<
 	gettext-tools,
 	giflib,
 	hspell,
-	kde4-buildenv (>= 4.3.90-1),
+	kde4-buildenv (>= 4.4.0-1),
 	libattica-%type_pkg[kde]-dev,
 	libgettext8-dev,
 	libidn,

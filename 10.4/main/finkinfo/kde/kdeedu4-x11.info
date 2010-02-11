@@ -41,7 +41,7 @@ BuildDepends: <<
 	gmm,
 	gpsd (>= 2.35-1),
 	gsl,
-	kde4-buildenv (>= 4.3.90-1),
+	kde4-buildenv (>= 4.4.0-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.4.0-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.4.0-1),
 	libattica-%type_pkg[kde]-dev (>= 0.1.2-1),

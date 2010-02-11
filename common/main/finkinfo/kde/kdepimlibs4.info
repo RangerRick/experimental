@@ -44,6 +44,7 @@ BuildDepends: <<
 	pcre,
 	pkgconfig (>= 0.22-3),
 	pth2-dev,
+	python25,
 	qt4-%type_pkg[kde] (>= 4.4.1-1),
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev

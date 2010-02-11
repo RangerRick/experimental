@@ -71,6 +71,7 @@ BuildDepends: <<
 	libmal10 (>= 0.44-1),
 	pilot-link09,
 	pkgconfig (>= 0.22-3),
+	python25,
 	qca2-%type_pkg[kde] (>= 2.0.2-1),
 	qgpgme1-%type_pkg[kde] (>= 4.2.4-2),
 	qt4-%type_pkg[kde] (>= 4.4.0-1),

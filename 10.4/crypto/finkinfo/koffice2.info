@@ -18,7 +18,7 @@ Depends: <<
 BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
 	blitz-%type_pkg[kde]-dev,
-	boost1.35.systempython,
+	boost1.41.cmake,
 	cmake (>= 2.6.4-1),
 	create-resources (>= 0.1-1),
 	dbus-dev (>= 1.2.12-1),
@@ -31,7 +31,7 @@ BuildDepends: <<
 	gmm,
 	graphicsmagick-dev (>= 1.1-1),
 	gsl (>= 1.7-1),
-	kde4-buildenv (>= 4.3.90-1),
+	kde4-buildenv (>= 4.4.0-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.4.0-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.4.0-1),
 	kdepimlibs4-%type_pkg[kde]-dev (>= 4.4.0-1),
@@ -46,20 +46,21 @@ BuildDepends: <<
 	poppler2,
 	poppler2-qt4-%type_pkg[kde] (>= 0.6.4-4),
 	pstoedit-bin,
+	python25,
 	qca2-%type_pkg[kde] (>= 2.0.2-1),
 	qt4-%type_pkg[kde] (>= 4.6.1-1),
 	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev,
-	wv2 (>= 0.2.3-1)
+	wv2.4
 <<
 GCC: 4.0
 
 Source: mirror:kde:stable/koffice-%v/koffice-%v.tar.bz2
 Source-MD5: 9955f30f43ed3f6970870f55015a1a18
 PatchFile: koffice2.patch
-PatchFile-MD5: de4783d117fc57f30f84c4d32aef91ae
+PatchFile-MD5: 600f503702af7e42b51c6a69604931c6
 
 CompileScript: <<
 #!/bin/sh -ev
@@ -140,7 +141,7 @@ SplitOff10: <<
 		libxml2-shlibs (>= 2.6.32-1),
 		libxslt-shlibs (>= 1.1.0-1),
 		qca2-%type_pkg[kde]-shlibs (>= 2.0.2-1),
-		wv2-shlibs (>= 0.2.3-1)
+		wv2.4-shlibs
 	<<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4
