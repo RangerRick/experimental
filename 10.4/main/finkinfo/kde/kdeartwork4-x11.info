@@ -126,7 +126,6 @@ SplitOff8: <<
 	Description: KDE4 - screen savers
 	Depends: <<
 		%N-base (>= %v-%r),
-		eigen2,
 		xscreensaver
 	<<
 	Files: <<
