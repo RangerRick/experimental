@@ -1,0 +1,78 @@
+Info2: <<
+Package: llvm
+Version: 2.6
+Revision: 1
+Depends: %N-shlibs (>= %v-1)
+Source: http://llvm.org/releases/%v/llvm-%v.tar.gz
+Source-MD5: 34a11e807add0f4555f691944e1a404a
+ConfigureParams: --prefix=%p/lib/llvm --mandir=%p/share/man --infodir=%p/share/info --with-gmp=%p --with-libiconv-prefix=/usr --with-system-zlib --with-as=`xcode-select  -print-path`/usr/bin/as --with-ld=`xcode-select  -print-path`/usr/bin/ld --with-nm=`xcode-select  -print-path`/usr/bin/nm
+CompileScript: <<
+#!/bin/bash -ev
+	export LD=`xcode-select  -print-path`/usr/bin/ld
+	ulimit -s `ulimit -s`
+	darwinvers=`uname -r|cut -f1 -d.`
+	mkdir ../llvm_objdir
+	cd ../llvm_objdir
+	if [ "%m" = "powerpc" ]; then
+		TRIPLE=powerpc-apple-darwin$darwinvers
+	elif [ "%m" = "i386" ]; then
+		TRIPLE=i686-apple-darwin$darwinvers
+	elif [ "%m" = "x86_64" ]; then
+		TRIPLE=x86_64-apple-darwin$darwinvers
+	else
+		echo "unknown platform"
+		exit 1
+	fi
+	../llvm-%v/configure %c --build=$TRIPLE --target=$TRIPLE --host=$TRIPLE --enable-optimized --enable-assertions --enable-pic --enable-targets=host-only
+	num_cpu=$(echo `sysctl -n hw.ncpu`)
+	make -j $num_cpu
+<<
+InstallScript: <<
+#!/bin/sh -ev
+	export LD=`xcode-select  -print-path`/usr/bin/ld
+	cd ../llvm_objdir
+	make -j1 install DESTDIR=%d 
+	mkdir -p %i/bin
+	pushd %i/lib/llvm/bin
+		for file in *; do
+			ln -sf %p/lib/llvm/bin/$file %i/bin/$file
+		done
+	popd
+	# remove build path from .la files
+	find %i/lib/llvm/lib -name '*.la' | xargs perl -pi -e "s, \-L[^ ']*/%n-%v-%r/llvm_objdir/[^ ']*,,g; s,src/fink.build/%n-%v-%r/llvm_objdir/Release/,,g"
+	for lib in LLVMHello LTO profile_rt; do
+		install_name_tool -id "%p/lib/llvm/lib/lib$lib.dylib" "%i/lib/llvm/lib/lib$lib.dylib"
+	done
+<<
+SplitOff: <<
+	Package: %N-shlibs
+	Files: <<
+		lib/llvm/lib/libLLVMHello.dylib
+		lib/llvm/lib/libLTO.dylib
+		lib/llvm/lib/libprofile_rt.dylib
+	<<
+	Shlibs: <<
+		%p/lib/llvm/lib/libLLVMHello.dylib  0.0.0 %n (>= 2.6-1)
+		%p/lib/llvm/lib/libLTO.dylib        0.0.0 %n (>= 2.6-1)
+		%p/lib/llvm/lib/libprofile_rt.dylib 0.0.0 %n (>= 2.6-1)
+	<<
+<<
+License: GPL
+Description: Low Level Virtual Machine Compiler
+DescDetail: <<
+A compilation strategy designed to enable effective program optimization across
+the entire lifetime of a program. LLVM supports effective optimization at
+compile time, link-time (particularly interprocedural), run-time and offline 
+(i.e., after software is installed), while remaining transparent to developers
+and maintaining compatibility with existing build scripts.
+<<
+DescPackaging: <<
+The file libLTO.dylib in %p/lib/llvm/lib can be used to replace the libLTO.dylib
+in /Developer/usr/lib from Xcode 3.1.2 to enable full LTO support at -O4 in
+the compilers of the llvm-gcc42 package. Note that the fink maintainer mode
+doesn't understand the @executable_path/../lib/libLTO.dylib syntax in libLTO.dylib's
+otool -L output.
+<<
+Homepage: http://llvm.org/
+Maintainer: None <fink-devel@lists.sourceforge.net>
+<<
