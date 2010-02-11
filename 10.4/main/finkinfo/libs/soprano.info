@@ -1,6 +1,6 @@
 Info3: <<
 Package: soprano-%type_pkg[soprano]
-Version: 2.3.70
+Version: 2.4.0.1
 Revision: 1
 Description: C++ RDF framework
 Type: soprano (x11 mac)
@@ -34,7 +34,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:sourceforge:soprano/soprano-%v.tar.bz2
-Source-MD5: de5cf230a95fc7218425aafdfb4a5e47
+Source-MD5: 6175a3b342a77a7adc6f157cf4968f6d
 PatchScript: <<
 	%{default_script}
 	find . -name CMakeLists.txt | xargs perl -pi -e 's,include/Soprano,include/soprano,g'
@@ -102,7 +102,7 @@ SplitOff2: <<
 	Package: %N-dev
 	Description: Development headers and libraries for soprano
 	Depends: %N (= %v-%r)
-	Replaces: %N (<< 2.3.70-1)
+	Replaces: %N (<< 2.4.0.1-1)
 	BuildDependsOnly: true
 	Files: <<
 		opt/soprano/%type_pkg[soprano]/include

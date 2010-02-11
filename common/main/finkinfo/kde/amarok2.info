@@ -16,8 +16,8 @@ looks good doing it.
 Source: mirror:kde:stable/amarok/%v/src/amarok-%v-patched.tar.bz2
 Source-MD5: 9b4453597e4affb1a6bebe715499782f
 SourceDirectory: amarok-%v
-#PatchFile: amarok2.patch
-#PatchFile-MD5: 1426d956efc05b10cabd612f2ff71510
+PatchFile: amarok2.patch
+PatchFile-MD5: 8b800d79d954c8ad6ce516d8e009d658
 
 Depends: <<
 	dbus (>= 1.2.12-1),
@@ -85,7 +85,7 @@ CompileScript: <<
 	pushd build
 		touch config.h
 		#cmake $KDE4_CMAKE_ARGS -DBUILD_po:BOOL=OFF __KDE_HAVE_GCC_VISIBILITY:BOOL=OFF ..
-		cmake $KDE4_CMAKE_ARGS -DBUILD_po:BOOL=OFF ..
+		cmake $KDE4_CMAKE_ARGS -DBUILD_po:BOOL=OFF -DSTRIGI_GUI_INCLUDE_DIR:PATH="%p/opt/strigi/%type_pkg[kde]/include" ..
 		make VERBOSE=1
 	popd
 <<

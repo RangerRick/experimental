@@ -12,7 +12,7 @@ Depends: <<
 	kdebase4-runtime-%type_pkg[kde] (>= 4.4.0-1),
 	kdelibs4-%type_pkg[kde] (>= 4.4.0-1),
 	libknotificationitem1-%type_pkg[kde] (>= 4.3.4-1),
-	strigi-gui-%type_pkg[kde] (>= 0.6.5-1)
+	strigi-gui-%type_pkg[kde] (>= 0.7.2-1)
 <<
 BuildDepends: <<
 	aspell-dev,
@@ -48,9 +48,9 @@ BuildDepends: <<
 	pcre,
 	pkgconfig (>= 0.23-1),
 	qt4-%type_pkg[kde] (>= 4.6.1-1),
-	soprano-%type_pkg[kde]-dev (>= 2.3.70-1),
+	soprano-%type_pkg[kde]-dev (>= 2.4.0-1),
 	strigi-dev (>= 0.6.3-1),
-	strigi-gui-%type_pkg[kde]-dev (>= 0.6.5-1),
+	strigi-gui-%type_pkg[kde]-dev (>= 0.7.2-1),
 	(-%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev
 <<
@@ -89,8 +89,8 @@ SplitOff: <<
 		glib2-shlibs (>= 2.18.4-1),
 		libknotificationitem1-%type_pkg[kde]-shlibs (>= 4.3.4-1),
 		(%type_pkg[kde] = x11) libxklavier12-shlibs,
-		soprano-%type_pkg[kde]-shlibs (>= 2.3.70-1),
-		strigi-gui-%type_pkg[kde]-shlibs (>= 0.6.5-1)
+		soprano-%type_pkg[kde]-shlibs (>= 2.4.0-1),
+		strigi-gui-%type_pkg[kde]-shlibs (>= 0.7.2-1)
 	<<
 	Recommends: %N (>= %v-%r)
 	Files: <<
