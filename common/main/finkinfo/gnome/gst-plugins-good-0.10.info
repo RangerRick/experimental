@@ -6,8 +6,8 @@ License: LGPL
 Maintainer: Benjamin Reed <gst-plugins-good-0.10@fink.racoonfink.com>
 
 Depends: <<
-        %N-shlibs (= %v-%r),
-        gconf2 (>= 2.20.0-1)
+	%N-shlibs (= %v-%r),
+	gconf2 (>= 2.20.0-1)
 <<
 BuildDepends: <<
 	aalib,
@@ -60,6 +60,7 @@ BuildDepends: <<
 	xft2-dev,
 	xmkmf
 <<
+Replaces: gst-plugins-bad-0.10
 
 Source: http://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-%v.tar.bz2
 Source-MD5: 9519530e6021698fa1e12a29f16e2feb
@@ -127,6 +128,7 @@ SplitOff: <<
 		wavpack1-shlibs,
 		x11-shlibs
 	<<
+	Replaces: gst-plugins-bad-0.10-shlibs
 	Recommends: <<
 		gconf2 (>= 2.16.0-1),
 		gstreamer-0.10 (>= 0.10.22-1),
