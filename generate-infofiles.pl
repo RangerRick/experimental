@@ -75,6 +75,7 @@ my $translate = [
 	'libmal',
 	'libmath',
 	'libmusicbrainz4',
+	'liboil',
 	'libpostproc',
 	'libsmoke',
 	'libtheora',
@@ -134,6 +135,7 @@ my $package_lookup = {
 		'^vte-shlibs$'                    => 'vte9-shlibs',
 	},
 	'all' => {
+		'^autoconf(2.5|2.6)?$'            => 'autoconf2.6',
 		'^automake1\..*$'                 => 'automake1.11',
 		'^boost1.35.systempython$'        => 'boost1.41.cmake',
 		'^boost1.35.systempython-shlibs$' => 'boost1.41.cmake-shlibs',
@@ -142,6 +144,7 @@ my $package_lookup = {
 		'^libgettext3-shlibs$'            => 'libgettext8-shlibs',
 		'^libjpeg$'                       => 'libjpeg8',
 		'^libjpeg-shlibs$'                => 'libjpeg8-shlibs',
+		'^libtool14$',                    => 'libtool2',
 	},
 };
 

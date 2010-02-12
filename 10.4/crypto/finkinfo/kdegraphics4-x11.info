@@ -140,6 +140,7 @@ SplitOff13: <<
 	Package: libkexiv2-data-%type_pkg[kde]
 	Description: KDE4 - data for libkexiv2
 	Depends: %N-base (>= %v-%r)
+	Replaces: %N-base (<< 4.4.0-1)
 	Files: opt/kde4/%type_pkg[kde]/share/apps/libkexiv2
 <<
 SplitOff14: <<
@@ -304,6 +305,7 @@ SplitOff3: <<
 		libgphoto2-shlibs,
 		%N-base (>= %v-%r)
 	<<
+	Replaces: %N-base (<< 4.4.0-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/*kamera*
 		opt/kde4/%type_pkg[kde]/share/apps/solid/actions/solid_camera*
@@ -409,7 +411,7 @@ SplitOff8: <<
 		qca2-%type_pkg[kde]-shlibs (>= 2.0.2-1),
 		%N-base (>= %v-%r)
 	<<
-	Replaces: %N-base (<< 4.2.2-2)
+	Replaces: %N-base (<< 4.4.0-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/okular*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kio_msits*

@@ -13,13 +13,13 @@ Depends: <<
 <<
 BuildDepends: <<
 	arts-dev (>= 1.5.10-1),
-	autoconf (>= 2.63-1),
+	autoconf2.6 (>= 2.60-4),
 	automake1.11,
 	kdelibs3-unified-dev (>= %v-1),
 	glut (>= 3.7-3),
 	libpng3 (>= 1.2.8-1),
 	libsmoke (>= 1:%v-1),
-	libtool14 (>= 1.5.10-1),
+	libtool2 (>= 1.5.10-1),
 	qt3 (>= 3.3.8-1027),
 	ruby%type_pkg[ruby]-dev,
 	x11-dev

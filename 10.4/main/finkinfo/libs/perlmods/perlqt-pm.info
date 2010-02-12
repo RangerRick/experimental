@@ -16,13 +16,13 @@ Depends: <<
 <<
 BuildDepends: <<
 	arts-dev,
-	autoconf (>= 2.63-1),
+	autoconf2.6 (>= 2.60-1),
 	automake1.11,
 	kdelibs3-unified-dev (>= 3.5.2-1021),
 	freeglut (>= 2.4.0-1),
 	libpng3 (>= 1.2.8-1),
 	libsmoke (>= 1:3.5.2-1),
-	libtool14 (>= 1.5.10-1),
+	libtool2 (>= 1.5.10-1),
 	perl%type_pkg[perl]-core,
 	qt3 (>= 3.3.8-1027),
 	x11-dev,

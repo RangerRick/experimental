@@ -13,7 +13,7 @@ Depends: <<
 BuildDepends: <<
 	amarok-core (>= %v-1),
 	arts-dev (>= 1.5.10-1),
-	autoconf (>= 2.63-1),
+	autoconf2.6 (>= 2.59-1),
 	cctools-single-module,
 	expat1,
 	freetype219 (>= 2.3.7-7),

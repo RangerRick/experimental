@@ -19,7 +19,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	audiofile (>= 0.2.6-11),
-	autoconf (>= 2.63-1),
+	autoconf2.6 (>= 2.60-1),
 	cctools-single-module,
 	esound,
 	expat1,
@@ -208,7 +208,7 @@ SplitOff2: <<
 	Replaces: %N (<< %v-%r)
 	Recommends: <<
 		audiofile,
-		autoconf (>= 2.63-1),
+		autoconf2.6 (>= 2.60-1),
 		esound-bin,
 		fink (>= 0.29.7-1),
 		glib2-dev,
