@@ -1,6 +1,6 @@
 Package: gst-plugins-bad-0.10
 Version: 0.10.17
-Revision: 1
+Revision: 2
 Description: "Bad" plugins for GStreamer
 License: Restrictive
 Maintainer: Benjamin Reed <gst-plugins-bad-0.10@fink.racoonfink.com>
@@ -117,11 +117,16 @@ SplitOff: <<
 		gst-plugins-base-0.10 (>= 0.10.23-1),
 		sdl
 	<<
+	Replaces: %N (<< 0.10.17-2)
 	Files: <<
 		lib/gstreamer-0.10
-		lib/libgstphotography-0.10.0*.dylib
+		lib/libgst*-0.10.0*.dylib
 	<<
-	Shlibs: %p/lib/libgstphotography-0.10.0.dylib 1.0.0 %n (>= 0.10.11-1)
+	Shlibs: <<
+		%p/lib/libgstphotography-0.10.0.dylib     1.0.0 %n (>= 0.10.11-1)
+		%p/lib/libgstbasevideo-0.10.0.dylib       1.0.0 %n (>= 0.10.17-1)
+		%p/lib/libgstsignalprocessor-0.10.0.dylib 1.0.0 %n (>= 0.10.17-1)
+	<<
 <<
 
 Homepage: http://www.gstreamer.net/
