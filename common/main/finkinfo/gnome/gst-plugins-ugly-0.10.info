@@ -1,6 +1,6 @@
 Package: gst-plugins-ugly-0.10
 Version: 0.10.13
-Revision: 1
+Revision: 2
 Description: "Good enough" plugins for GStreamer
 License: LGPL
 Maintainer: Benjamin Reed <gst-plugins-ugly-0.10@fink.racoonfink.com>

@@ -195,6 +195,7 @@ my $version_lookup = {
 		'^libmal10(-shlibs)?$'                => [ undef,          '+'    ],
 		'^libcdparanoia0-dev$'                => [ '3a9.8',        '11'   ],
 		'^libmath\+\+(-dev|-shlibs)?$'        => [ '0.0.4',        '1001' ],
+		'^liboil-0.3(-dev|-shlibs)?$'         => [ '0.3.17',       '2'    ],
 		'^libpng3(-shlibs)?$'                 => [ '1.2.8',        '1'    ],
 		'^libpqxx2(-dev|-shlibs)?$'           => [ '1:2.6.8',      '1'    ],
 		'^libwpd-0.8.*$'                      => [ '0.8.14',       '1'    ],
