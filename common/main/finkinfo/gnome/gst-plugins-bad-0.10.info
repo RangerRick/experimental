@@ -30,6 +30,7 @@ BuildDepends: <<
 	libgl-dev,
 	libgnugetopt,
 	libiconv-dev,
+	libjasper.1,
 	libmpcdec3,
 	libmusicbrainz4,
 	liboil-0.3 (>= 0.3.14-1),
@@ -70,7 +71,7 @@ NoSetCFLAGS: true
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
 NoSetMAKEFLAGS: true
-ConfigureParams: --without-check --libexecdir=%p/lib/%n --mandir=%p/share/man --enable-gtk-doc --disable-static --disable-dependency-tracking --disable-sdltest --disable-directfb --disable-dts --disable-divx --disable-libmms --disable-swfdec --disable-ivorbis --disable-xvid --disable-opengl --enable-tests --enable-failing-tests PKG_CONFIG_PATH="%p/lib/fontconfig2/lib/pkgconfig:%p/lib/freetype219/lib/pkgconfig:$PKG_CONFIG_PATH" FREETYPE_CONFIG=%p/lib/freetype219/bin/freetype-config (%m = x86_64) --disable-osx_video
+ConfigureParams: --without-check --libexecdir=%p/lib/%n --mandir=%p/share/man --enable-gtk-doc --disable-static --disable-dependency-tracking --disable-sdltest --disable-directfb --disable-dts --disable-divx --disable-libmms --disable-swfdec --disable-ivorbis --disable-xvid --disable-opengl --enable-tests --enable-failing-tests PKG_CONFIG_PATH="%p/lib/fontconfig2/lib/pkgconfig:%p/lib/freetype219/lib/pkgconfig:$PKG_CONFIG_PATH" FREETYPE_CONFIG=%p/lib/freetype219/bin/freetype-config (%m = x86_64) --disable-osx_video (%m = x86_64) --disable-quicktime
 CompileScript: <<
 #!/bin/sh -ex
 
@@ -102,6 +103,7 @@ SplitOff: <<
 		libgl-shlibs,
 		libgnugetopt-shlibs,
 		libiconv,
+		libjasper.1-shlibs,
 		libmpcdec3-shlibs,
 		libmusicbrainz4-shlibs (>= 2.1.1-1001),
 		libxml2-shlibs (>= 2.6.27-1),
