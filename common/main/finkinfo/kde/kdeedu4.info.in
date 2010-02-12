@@ -83,6 +83,14 @@ CompileScript: <<
 	export CMAKE_INCLUDE_PATH="%p/Library/Frameworks/R.framework/Headers:$CMAKE_INCLUDE_PATH"
 	export CMAKE_LIBRARY_PATH="%p/Library/Frameworks/R.framework/Libraries:$CMAKE_LIBRARY_PATH"
 
+	# work around eigen2 bug
+	case `sw_vers -productVersion` in
+		10.5*)
+			export CC="gcc"
+			export CXX="g++"
+			;;
+	esac
+
 	mkdir -p build
 	pushd build
 		cmake -DR_INCLUDEDIR="%p/Library/Frameworks/R.framework/Headers" -DXPLANET_EXECUTABLE=%p/bin/xplanet $KDE4_CMAKE_ARGS ..
