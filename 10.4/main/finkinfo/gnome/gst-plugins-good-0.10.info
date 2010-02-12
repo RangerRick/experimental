@@ -1,6 +1,6 @@
 Package: gst-plugins-good-0.10
 Version: 0.10.18
-Revision: 1
+Revision: 2
 Description: "Good" plugins for GStreamer
 License: LGPL
 Maintainer: Benjamin Reed <gst-plugins-good-0.10@fink.racoonfink.com>
@@ -67,6 +67,7 @@ PatchScript: <<
 	perl -pi -e 's,CFLAGS -Werror,CFLAGS,g' configure
 	if [ "%m" = "x86_64" ]; then
 	perl -pi -e 's,^MMX_FILES =.*$,MMX_FILES =,g; s,-DBUILD_MMX,,g' gst/goom/Makefile.in
+	perl -pi -e 's,QuickTime,QTKit,g' sys/osxvideo/Makefile.in
 	fi
 <<
 
