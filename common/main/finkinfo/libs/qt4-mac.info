@@ -65,7 +65,7 @@ CompileScript: <<
 	fi
 	EXTRA_ARGS="-confirm-license -no-pch -verbose"
 	if [ "%m" = "x86_64" ]; then
-		EXTRA_ARGS="$EXTRA_ARGS -arch x86_64"
+		EXTRA_ARGS="$EXTRA_ARGS -arch x86_64 -cocoa"
 	fi
 	find . -name ._\* -exec rm -rf {} \;
 	sh ./configure-for-fink.sh "%p" "%N" $EXTRA_ARGS -make "libs tools docs"
