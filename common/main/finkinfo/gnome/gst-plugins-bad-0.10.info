@@ -55,7 +55,7 @@ BuildDependsOnly: true
 Source: http://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-%v.tar.bz2
 Source-MD5: c0c3e79430d4441c4825436387d200f4
 PatchFile: %n.patch
-PatchFile-MD5: 4eb5a7221a70c07d5292bb085bd4efe5
+PatchFile-MD5: b86814242b83a86e17fe58e3c9cc17cf
 PatchScript: <<
 	%{default_script}
 	# Case-sensitivity typo
