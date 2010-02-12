@@ -20,6 +20,7 @@ SourceDirectory: liboil-%v
 Source-MD5: 47dc734f82faeb2964d97771cfd2e701
 PatchFile: %n.patch
 PatchFile-MD5: ac16df74f0a8954a3c974f612cadffb0
+InfoTest: TestScript: make check || exit 2
 SetCPPFLAGS: -Os
 SetCFLAGS: -Os
 NoSetMAKEFLAGS: true

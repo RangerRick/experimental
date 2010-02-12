@@ -19,6 +19,7 @@ BuildDepends: <<
 	pkgconfig (>= 0.23-1)
 <<
 BuildDependsOnly: true
+InfoTest: TestScript: make check || exit 2
 
 Source: http://liboil.freedesktop.org/download/liboil-%v.tar.gz
 Source-MD5: 47dc734f82faeb2964d97771cfd2e701
