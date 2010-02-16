@@ -21,7 +21,6 @@ BuildDepends: <<
 	faac-dev,
 	fink (>= 0.29.7-1),
 	ffmpeg-dev,
-	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.7-7),
 	gconf2-dev (>= 2.20.0-1),
