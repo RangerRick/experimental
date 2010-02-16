@@ -26,11 +26,9 @@ BuildDepends: <<
 GCC: 4.0
 
 CustomMirror: <<
-	Primary: http://ranger.users.finkproject.org/distfiles
-	eur-NL: http://ranger.users.finkproject.org/distfiles
+	Primary: http://www.finkproject.org/~ranger/distfiles
+	eur-NL: http://www.finkproject.org/~ranger/distfiles
 	nam-US: http://ranger.befunk.com/fink
-	nam-US: http://astrange.ithinksw.net/~astrange/ranger-fink
-	nam-CA: http://www.southofheaven.net/befunk
 <<
 Source: mirror:sourceforge:%n/%n-%vb.tar.gz
 Source-MD5: bae7a2d39fd6658d4aa181ddc73bd5d5

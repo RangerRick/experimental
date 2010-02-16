@@ -12,8 +12,13 @@ Depends: <<
 <<
 BuildDependsOnly: true
 
+CustomMirror: <<
+	Primary: http://www.finkproject.org/~ranger/distfiles
+	eur-NL: http://www.finkproject.org/~ranger/distfiles
+	nam-US: http://ranger.befunk.com/fink
+<<
 NoSourceDirectory: true
-Source: http://ranger.befunk.com/fink/%N/make-crappy-la-files-if-necessary-thanks-apple-really.sh
+Source: mirror:custom:%N/make-crappy-la-files-if-necessary-thanks-apple-really.sh
 Source-MD5: a40205643df9744b4f421938283f1645
 
 CompileScript: echo "no compilation necessary"

@@ -2,8 +2,8 @@ Info4: <<
 Package: fuppes
 Version: 0.650
 Revision: 1
-#Source: mirror:sourceforge:%n/SVN-640/%n-%v.tar.gz
-Source: http://ranger.befunk.com/fink/%n/%n-%v.tar.bz2
+CustomMirror: RangerMirror
+Source: mirror:custom:%n/%n-%v.tar.bz2
 Source-MD5: d009ac47e72781536e00c8a36a7d520b
 PatchFile: %n.patch
 PatchFile-MD5: d8fa0137ea414f6da291fe66d3792d5d

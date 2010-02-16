@@ -26,9 +26,9 @@ BuildDepends: <<
 
 GCC: 4.0
 
-#Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
+CustomMirror: RangerMirror
+Source: mirror:custom:fink/postgresql/postgresql-%v-snapshot-20090901.tar.bz2
 SourceDirectory: postgresql-snapshot
-Source: http://ranger.befunk.com/fink/postgresql/postgresql-%v-snapshot-20090901.tar.bz2
 Source-MD5: 223fb2ec70ac7a1e6df6de95b1c4c8a7
 PatchFile: %n.patch
 PatchFile-MD5: e42fbdad63059b801b016b33742f1512
