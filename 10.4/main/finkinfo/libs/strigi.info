@@ -1,7 +1,7 @@
 Info3: <<
 Package: strigi
 Version: 0.7.2
-Revision: 2
+Revision: 3
 Description: Desktop Search
 License: LGPL
 Maintainer: Benjamin Reed <strig@fink.racoonfink.com>
@@ -27,7 +27,7 @@ Source: http://www.vandenoever.info/software/strigi/strigi-%v.tar.bz2
 Source-MD5: ca09ba176cf3ffe9afce4d92f38f9a85
 SourceDirectory: strigi-%v
 PatchFile: strigi.patch
-PatchFile-MD5: 3090e254a94f7db881f6c9765977ef60
+PatchFile-MD5: d41626107f8fa320fb25057b71164b92
 
 CompileScript: <<
 #!/bin/sh -ev

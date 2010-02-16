@@ -1,6 +1,6 @@
 diff -Nurd strigi-0.7.2/src/daemon/dbus/dbuscpp/dbusmessagereader.cpp strigi-0.7.2-new/src/daemon/dbus/dbuscpp/dbusmessagereader.cpp
 --- strigi-0.7.2/src/daemon/dbus/dbuscpp/dbusmessagereader.cpp	2010-02-03 14:03:07.000000000 -0500
-+++ strigi-0.7.2-new/src/daemon/dbus/dbuscpp/dbusmessagereader.cpp	2010-02-13 10:09:03.000000000 -0500
++++ strigi-0.7.2-new/src/daemon/dbus/dbuscpp/dbusmessagereader.cpp	2010-02-13 10:25:09.000000000 -0500
 @@ -52,7 +52,7 @@
      return *this;
  }
@@ -21,7 +21,7 @@ diff -Nurd strigi-0.7.2/src/daemon/dbus/dbuscpp/dbusmessagereader.cpp strigi-0.7
          close();
 diff -Nurd strigi-0.7.2/src/daemon/dbus/dbuscpp/dbusmessagereader.h strigi-0.7.2-new/src/daemon/dbus/dbuscpp/dbusmessagereader.h
 --- strigi-0.7.2/src/daemon/dbus/dbuscpp/dbusmessagereader.h	2010-02-03 14:03:07.000000000 -0500
-+++ strigi-0.7.2-new/src/daemon/dbus/dbuscpp/dbusmessagereader.h	2010-02-13 10:09:11.000000000 -0500
++++ strigi-0.7.2-new/src/daemon/dbus/dbuscpp/dbusmessagereader.h	2010-02-13 10:25:09.000000000 -0500
 @@ -62,8 +62,8 @@
      DBusMessageReader& operator>>(std::string& s);
      DBusMessageReader& operator>>(dbus_int32_t& s);
@@ -33,3 +33,15 @@ diff -Nurd strigi-0.7.2/src/daemon/dbus/dbuscpp/dbusmessagereader.h strigi-0.7.2
      DBusMessageReader& operator>>(std::multimap<int, std::string>&);
      DBusMessageReader& operator>>(std::vector<std::pair<bool, std::string> >&);
      bool isOk() const { return ok; }
+diff -Nurd strigi-0.7.2/src/luceneindexer/CMakeLists.txt strigi-0.7.2-new/src/luceneindexer/CMakeLists.txt
+--- strigi-0.7.2/src/luceneindexer/CMakeLists.txt	2010-02-03 14:03:07.000000000 -0500
++++ strigi-0.7.2-new/src/luceneindexer/CMakeLists.txt	2010-02-16 09:22:22.000000000 -0500
+@@ -10,6 +10,8 @@
+     ${ICONV_INCLUDE_DIR}
+ )
+ 
++add_definitions(-I${CLUCENE_LIBRARY_DIR})
++
+ IF(WIN32)
+     # why only here and not for the complete project?
+     ADD_DEFINITIONS(-D_UNICODE)
