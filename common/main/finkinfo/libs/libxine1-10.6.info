@@ -1,7 +1,7 @@
 Info4: <<
 Package: libxine1
 Version: 1.1.16.3
-Revision: 1
+Revision: 2
 Description: Xine video/media player library
 License: LGPL
 Maintainer: Benjamin Reed <libxine1@fink.raccoonfink.com>
@@ -48,7 +48,7 @@ BuildDepends: <<
 	libgnugetopt,
 	libiconv-dev,
 	libiso9660-dev,
-	libjpeg,
+	libjpeg8,
 	libmad,
 	libmng2,
 	libmodplug,
@@ -85,7 +85,7 @@ BuildDependsOnly: true
 Source: mirror:sourceforge:xine/xine-lib-%v.tar.bz2
 Source-MD5: 4f508abf088cf427a731f85634c8260d
 PatchFile: libxine1.patch
-PatchFile-MD5: 9a2a9103138fc16f32c32a17ca1d1277
+PatchFile-MD5: 630f55e102108174c95ae21675e0cd64
 PatchScript: <<
 	%{default_script}
 	perl -pi -e 's,libXv.so,libXv.dylib,g; s,x\*\.so\),x*.dylib),; s,s/\\\.so\$//,s/\.dylib\$//,' configure
@@ -200,7 +200,7 @@ SplitOff: <<
 		libgnugetopt-shlibs,
 		libiconv,
 		libiso96605-shlibs,
-		libjpeg-shlibs,
+		libjpeg8-shlibs,
 		libmad-shlibs,
 		libmng2-shlibs,
 		libmodplug-shlibs,

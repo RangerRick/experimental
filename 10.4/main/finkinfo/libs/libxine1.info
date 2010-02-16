@@ -1,7 +1,7 @@
 Info4: <<
 Package: libxine1
 Version: 1.1.16.3
-Revision: 1
+Revision: 2
 Distribution: 10.4, 10.5
 Description: Xine video/media player library
 License: LGPL
@@ -96,7 +96,7 @@ PatchScript: <<
 	if [ `sw_vers -productVersion | cut -d. -f1-2` = "10.4" ]; then perl -pi -e 's,MacOSX10.5.sdk,MacOSX10.4u.sdk,g' src/audio_out/Makefile.in; fi
 <<
 PatchFile: libxine1.patch
-PatchFile-MD5: 9a2a9103138fc16f32c32a17ca1d1277
+PatchFile-MD5: 630f55e102108174c95ae21675e0cd64
 
 SetCFLAGS: -Os -fomit-frame-pointer -fexpensive-optimizations -ffast-math
 SetLDFLAGS: -Wl,-dylib_file,/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
