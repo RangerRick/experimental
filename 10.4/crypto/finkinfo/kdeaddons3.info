@@ -54,11 +54,9 @@ Replaces: %N-dev (<< %v-%r)
 GCC: 4.0
 
 CustomMirror: <<
-	Primary: http://ranger.users.finkproject.org/distfiles
-	eur-NL: http://ranger.users.finkproject.org/distfiles
+	Primary: http://www.finkproject.org/~ranger/distfiles
+	eur-NL: http://www.finkproject.org/~ranger/distfiles
 	nam-US: http://ranger.befunk.com/fink
-	nam-US: http://astrange.ithinksw.net/~astrange/ranger-fink
-	nam-CA: http://www.southofheaven.net/befunk
 <<
 Source: mirror:kde:stable/%v/src/kdeaddons-%v.tar.bz2
 Source-MD5: c69d082407b2c1bb46d078f8ac5d2bea

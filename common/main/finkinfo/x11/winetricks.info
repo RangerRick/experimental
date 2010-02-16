@@ -4,7 +4,8 @@ Revision: 1
 
 BuildDepends: fink (>= 0.28.0-1)
 Depends: cabextract, wine
-Source: http://ranger.befunk.com/fink/%n/%n-%v
+CustomMirror: RangerMirror
+Source: mirror:custom:%n/%n-%v
 Source-MD5: 15732a514f354942c6eb596b74b26782
 NoSourceDirectory: true
 PatchFile: %n.patch

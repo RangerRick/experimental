@@ -5,7 +5,8 @@ Distribution: 10.5
 Description: Font configuration library
 License: Restrictive/Distributable
 Maintainer: Benjamin Reed <fontconfig2@fink.racoonfink.com>
-Source: http://ranger.befunk.com/fink/%N/make-crappy-la-files-if-necessary-thanks-apple-really.sh
+CustomMirror: RangerMirror
+Source: mirror:custom:%N/make-crappy-la-files-if-necessary-thanks-apple-really.sh
 Source-MD5: a40205643df9744b4f421938283f1645
 NoSourceDirectory: true
 

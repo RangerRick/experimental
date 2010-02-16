@@ -44,11 +44,9 @@ Replaces: %N (<< %v-%r)
 GCC: 4.0
 
 CustomMirror: <<
-	Primary: http://ranger.users.finkproject.org/distfiles
-	eur-NL: http://ranger.users.finkproject.org/distfiles
+	Primary: http://www.finkproject.org/~ranger/distfiles
+	eur-NL: http://www.finkproject.org/~ranger/distfiles
 	nam-US: http://ranger.befunk.com/fink
-	nam-US: http://astrange.ithinksw.net/~astrange/ranger-fink
-	nam-CA: http://www.southofheaven.net/befunk
 <<
 Source: mirror:kde:stable/%v/src/kdetoys-%v.tar.bz2
 Source-MD5: 1da4383e2d520dfd572edb33b708822d
