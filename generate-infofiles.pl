@@ -2,8 +2,8 @@
 
 use strict;
 
-use lib '/32sw/lib/perl5';
-use lib '/32sw/lib/perl5/darwin';
+#use lib '/32sw/lib/perl5';
+#use lib '/32sw/lib/perl5/darwin';
 
 use Clone qw(clone);
 use File::Basename;
