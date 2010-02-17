@@ -1,6 +1,8 @@
 #!/usr/bin/env perl -w
 
 use strict;
+use Cwd qw(abs_path);
+use File::Basename;
 use File::Temp;
 use IO::Handle;
 use Getopt::Long;
@@ -9,7 +11,8 @@ use vars qw(
 	$PREFIX
 );
 
-$PREFIX='/32sw';
+$PREFIX=&File::Basename::dirname(abs_path($0));
+($PREFIX) = split(m#/fink/#, $PREFIX);
 
 GetOptions(
 	'prefix=s' => \$PREFIX,
