@@ -1,7 +1,7 @@
 Info3: <<
 Package: gecko-sharp1%type_pkg[gecko]
 Version: 0.6
-Revision: 1032
+Revision: 1033
 Type: gecko (-firefox3 -firefox2 -seamonkey)
 Source: http://ftp.novell.com/pub/mono/sources/gecko-sharp/gecko-sharp-%v.tar.gz
 Source-MD5: 9ce9bb08125f7c7eecf8bd696a3345bd

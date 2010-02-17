@@ -1,9 +1,9 @@
 Info3: <<
 Package: gnome-desktop-sharp2
-Version: 2.20.1
-Revision: 4
+Version: 2.24.0
+Revision: 1
 Source: http://ftp.novell.com/pub/mono/sources/%n/gnome-desktop-sharp-%v.tar.bz2
-Source-MD5: 874cfcf8a6547476906b638355a0ed2f
+Source-MD5: 2d36f04223a52e09908ddbdc1c767f5e
 BuildDepends: <<
 	atk1 (>= 1.20.0-1),
 	audiofile (>= 0.2.6-11),
@@ -14,12 +14,13 @@ BuildDepends: <<
 	gconf2-dev (>= 2.20.1-1),
 	glib2-dev (>= 2.14.0-1),
 	gnome-keyring-dev (>= 0.8.1-1),
+	gnome-panel-dev (>= 2.24.0-1),
 	gnome-sharp2 (>= 2.20.0-1),
 	gnome-vfs2-unified-dev (>= 1:2.20.0-1),
-	gtk+2-dev (>= 2.12.0-1),
-	gtk-sharp2 (>= 2.12.0-1),
+	gtk+2-dev (>= 2.12.2-1),
+	gtk-sharp2 (>= 2.12.2-1),
 	gtkhtml3.14-dev,
-	gtksourceview2-dev,
+	gtksourceview2-dev (>= 2.6.0-1),
 	libart2 (>= 2.3.19-1),
 	libbonobo2-dev (>= 2.20.0-1),
 	libbonoboui2-dev (>= 2.20.0-1),
@@ -31,7 +32,7 @@ BuildDepends: <<
 	libhal1-dev,
 	libnautilus-burn4-dev,
 	librsvg2 (>= 2.18.2-1),
-	libwnck1.22,
+	libwnck1.22 (>= 2.26.0-1),
 	mono-dev (>= 2.0-1),
 	orbit2-dev (>= 2.14.10-1),
 	pango1-xft2-ft219-dev (>= 1.18.4-4),
@@ -41,15 +42,16 @@ BuildDepends: <<
 	vte9-dev (>= 0.16.3-3),
 <<
 Depends: <<
+	gnome-panel-shlibs (>= 2.24.0-1),
 	gnome-sharp2 (>= 2.20.0-1),
-	gtk-sharp2 (>= 2.12.0-1),
+	gtk-sharp2 (>= 2.12.2-1),
 	gtkhtml3.14-shlibs,
-	gtksourceview2-shlibs,
+	gtksourceview2-shlibs (>= 2.6.0-1),
 	libgnomeprint2.2-shlibs (>= 2.18.2-1),
 	libgnomeprintui2.2-shlibs (>= 2.18.1-1),
 	libnautilus-burn4-shlibs,
 	librsvg2-shlibs (>= 2.18.2-1),
-	libwnck1.22-shlibs,
+	libwnck1.22-shlibs (>= 2.26.0-1),
 	mono (>= 2.0-1),
 	vte (>= 0.16.3-3),
 <<

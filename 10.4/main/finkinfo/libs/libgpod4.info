@@ -8,7 +8,7 @@ Maintainer: Benjamin Reed <libgpod4@fink.racoonfink.com>
 
 Depends: %N-shlibs (>= %v-%r)
 BuildDepends: <<
-	atk1 (>= 1.24.0-1),
+	atk1 (>= 1.26.0-1),
 	cairo (>= 1.8.8-1),
 	expat1,
 	fink (>= 0.29.7-1),
@@ -26,7 +26,7 @@ BuildDepends: <<
 	libpng3 (>= 1.2.8-1),
 	libtiff,
 	libxml2 (>= 2.6.32-1),
-	pango1-xft2-ft219-dev (>= 1.22.4-1),
+	pango1-xft2-ft219-dev (>= 1.24.0-1),
 	pkgconfig (>= 0.23-1),
 	x11-dev,
 	xft2-dev

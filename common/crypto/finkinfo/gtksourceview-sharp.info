@@ -1,7 +1,7 @@
 Info3: <<
 Package: gtksourceview-sharp
 Version: 2.0
-Revision: 1032
+Revision: 1033
 Source: http://ftp.novell.com/pub/mono/sources/%n-%v/%n-%v-0.12.tar.bz2
 Source-MD5: f0c9c6dc24b677d9208b0c8c38e769a4
 DocFiles: AUTHORS COPYING* ChangeLog INSTALL NEWS README

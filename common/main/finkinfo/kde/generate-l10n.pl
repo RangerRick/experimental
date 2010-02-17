@@ -85,7 +85,7 @@ BuildDepends: <<
 	automoc-\%type_pkg\[kde\] (>= 0.9.89-0),
 	cmake (>= 2.6.3-1),
 	fink (>= 0.28.0-1),
-	gettext-tools-0.17,
+	gettext-tools (>= 0.17-1),
 	kdelibs4-\%type_pkg\[kde\]-dev (>= %v-${KDERELNUM}),
 	libgettext3-dev,
 	(\%type_pkg\[kde\] = x11) xfonts-intl,

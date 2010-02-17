@@ -7,12 +7,12 @@ License: BSD
 Maintainer: Benjamin Reed <ndesk-dbus-glib@fink.racoonfink.com>
 
 Depends: <<
-	mono (>= 2.4-1),
+	mono (>= 2.6.1-1),
 	ndesk-dbus
 <<
 BuildDepends: <<
 	glib2-dev (>= 2.18.4-1),
-	mono-dev (>= 2.4-1),
+	mono-dev (>= 2.6.1-1),
 	ndesk-dbus,
 	pkgconfig (>= 0.23-1)
 <<

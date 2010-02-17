@@ -1,7 +1,7 @@
 Info3: <<
 Package: mono-addins
 Version: 0.4
-Revision: 1
+Revision: 2
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
 Source-MD5: 3b7f3f6e55c95413df184d0e4c9233e4
 BuildDepends: <<

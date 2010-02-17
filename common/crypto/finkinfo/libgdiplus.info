@@ -1,10 +1,10 @@
 Info3: <<
 Package: libgdiplus
-Version: 2.4
+Version: 2.6
 Revision: 1
 
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
-Source-MD5: ddf40d6f21ab7e8942abd063d460e4fa
+Source-MD5: 9107b4429fdafde914bd23405544c58d
 PatchFile: %n.patch
 PatchFile-MD5: 0a1c19b9413d1f98fb04b319b5ef6f79
 PatchScript: <<

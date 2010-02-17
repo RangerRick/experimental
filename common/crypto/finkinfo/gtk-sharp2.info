@@ -1,9 +1,9 @@
 Info3: <<
 Package: gtk-sharp2
-Version: 2.12.8
-Revision: 2
+Version: 2.12.9
+Revision: 1
 Source: http://ftp.novell.com/pub/mono/sources/gtk-sharp212/gtk-sharp-%v.tar.bz2
-Source-MD5: 1b12a33df2ab87448848c0cc0733ca77
+Source-MD5: 2619f6cbba514f10582f8961ed84063b
 BuildDepends: <<
 	atk1 (>= 1.20.0-1),
 	audiofile (>= 0.2.6-11),
@@ -16,7 +16,7 @@ BuildDepends: <<
 	gnome-keyring-dev (>= 0.8.1-1),
 	gnome-vfs2-unified-dev (>= 1:2.20.0-1),
 	gtk+2-dev (>= 2.12.0-1),
-	gtkhtml3.14-dev,
+	gtkhtml3.14-dev (>= 3.26-1),
 	libart2 (>= 2.3.19-1),
 	libbonobo2-dev (>= 2.20.0-1),
 	libbonoboui2-dev (>= 2.20.0-1),
@@ -39,7 +39,7 @@ BuildDepends: <<
 	vte9-dev (>= 0.16.3-3),
 <<
 Depends: <<
-	gtkhtml3.14-shlibs,
+	gtkhtml3.14-shlibs (>= 3.26-1),
 	libglade2-shlibs (>= 2.6.2-1),
 	libgnomeui2-shlibs (>= 2.20.0-1),
 	librsvg2-shlibs (>= 2.20.0-1),

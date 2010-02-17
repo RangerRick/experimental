@@ -16,7 +16,7 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	gconf2-dev (>= 2.20.0-1),
 	gettext-tools,
-	gnome-vfs2-unified-dev (>= 1:2.20.0-1),
+	gnome-vfs2-unified-dev (>= 1:2.24.0-1),
 	glib2-dev (>= 2.18.4-1),
 	gstreamer-0.10-dev (>= 0.10.26-1),
 	gst-plugins-base-0.10-dev (>= 0.10.26-1),
@@ -38,7 +38,7 @@ BuildDepends: <<
 	pyxml-py25,
 	mpeg2dec-dev,
 	pkgconfig,
-	pango1-xft2-ft219-dev (>= 1.22.4-1),
+	pango1-xft2-ft219-dev (>= 1.24.0-1),
 	pixman (>= 0.16.0-1),
 	x11-dev,
 	xmkmf

@@ -1,9 +1,9 @@
 Info3: <<
 Package: libapache2-mod-mono
-Version: 2.4
+Version: 2.6
 Revision: 1
-Source: http://ftp.novell.com/pub/mono/sources/%n/mod_mono-%v.tar.bz2
-Source-MD5: 4dc8e93baa22211e858bff84d3ffabd4
+Source: http://ftp.novell.com/pub/mono/sources/mod_mono/mod_mono-%v.tar.bz2
+Source-MD5: 7484f8aebdd8b13bc005941277e3f485
 PatchFile: %n.patch
 PatchFile-MD5: 13d8f4ae42173a6bd8d035530247d90a
 PatchScript: sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1

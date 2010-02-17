@@ -1,14 +1,12 @@
 Info4: <<
 Package: mono
-Version: 2.4
+Version: 2.6.1
 Revision: 1
-# Damn, x86_64 no workie  :(
-Architecture: i386, powerpc
 
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
-Source-MD5: da2bf1c0aba2958d26c5e8a9a49fd9d1
+Source-MD5: 4cd2157c9eabbe9f49232d5ee3a2a57e
 PatchFile: %n.patch
-PatchFile-MD5: c4ed22de8fd4fa31cee29051361a23ec
+PatchFile-MD5: 6aae64cc988ad8f4e18d6ef1eb71b050
 PatchScript: sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1
 DocFiles: AUTHORS COPYING* ChangeLog NEWS README
 Depends: <<

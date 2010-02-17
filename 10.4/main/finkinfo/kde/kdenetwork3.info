@@ -30,7 +30,7 @@ BuildDepends: <<
 	gettext-tools,
 	gtk+,
 	kdelibs3-unified-dev (>= %v-1),
-	libart2 (>= 2.3.19-1),
+	libart2 (>= 2.3.20-1),
 	libbind6-dev,
 	libiconv-dev,
 	libjpeg8,

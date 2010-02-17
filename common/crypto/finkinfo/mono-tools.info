@@ -1,10 +1,10 @@
 Info3: <<
 Package: mono-tools
-Version: 2.4
+Version: 2.6.1
 Revision: 1
 
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
-Source-MD5: 6379a7aa220de807f118dbab32741206
+Source-MD5: b16305c2dbbc53211018ed07364abccf
 PatchFile: %n.patch
 PatchFile-MD5: 643a3c40e343919e641eefcf1cd1b01c
 

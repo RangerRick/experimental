@@ -52,7 +52,7 @@ BuildDepends: <<
 	gettext-tools,
 	glib2-dev (>= 2.18.4-1),
 	kdelibs3-unified-dev (>= %v-1),
-	libart2 (>= 2.3.19-1),
+	libart2 (>= 2.3.20-1),
 	libcapsinetwork-dev,
 	libiconv-dev,
 	libidn,
