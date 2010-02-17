@@ -108,6 +108,7 @@ my $translate = [
 	'qgpg',
 	'qt-rb',
 	'/qt3',
+	'/qt4-(mac|x11)',
 	'qtscriptgen',
 	'readline-java',
 	'rpm',
