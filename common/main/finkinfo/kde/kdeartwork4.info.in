@@ -7,7 +7,7 @@ Package: kdeartwork4-mac
 Type: kde (mac)
 #endif
 Version: 4.4.0
-Revision: 1
+Revision: 2
 Description: KDE4 - Styles and themes
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdeartwork4@fink.racoonfink.com>
@@ -25,7 +25,7 @@ PatchFile-MD5: b94a13ece2796d7bc4f5382fd8b7da38
 PatchScript: sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1
 
 Depends: <<
-#if 0
+#ifdef TYPE_X11
 	%N-screensavers (>= %v-%r),
 #endif
 	%N-color-schemes (>= %v-%r),
@@ -47,6 +47,9 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	glib2-dev (>= 2.14.0-1),
 	kde4-buildenv (>= 4.2-3),
+#ifdef TYPE_X11
+	kdebase4-workspace-%type_pkg[kde]-dev (>= 4.2.0-1),
+#endif
 	kdebase4-%type_pkg[kde]-dev (>= 4.2.0-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.2.0-1),
 	libgettext3-dev,
@@ -149,6 +152,7 @@ SplitOff8: <<
 	Description: KDE4 - screen savers
 	Depends: <<
 		%N-base (>= %v-%r),
+		kdebase4-workspace-%type_pkg[kde] (>= 4.2.0-1),
 		xscreensaver,
 	<<
 	Files: <<
