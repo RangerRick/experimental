@@ -11,7 +11,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	boo (>= 0.7.9-1),
-	gecko-sharp-firefox3 (>= 2.0-1044),
+	gecko-sharp (>= 2.0-1044),
 	gnome-sharp2 (>= 2.24.0-1),
 	gtk-sharp2 (>= 2.12.9-1),
 	gtksourceview-sharp (>= 2.0-1031),
