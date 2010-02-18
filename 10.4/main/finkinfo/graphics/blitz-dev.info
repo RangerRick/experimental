@@ -1,7 +1,7 @@
 Info4: <<
 Package: blitz-%type_pkg[blitz]-dev
 Version: 0.0.4
-Revision: 3
+Revision: 4
 Description: Image Effect Library
 Type: blitz (x11 mac)
 License: BSD

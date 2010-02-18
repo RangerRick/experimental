@@ -29,6 +29,7 @@ Maintainer: Benjamin Reed <gtksourceview-sharp@fink.racoonfink.com>
 Description: C# bindings for GTKSourceView
 PatchScript: <<
 	perl -pi -e 's/hardcode_direct=yes/hardcode_direct=no/g' configure
+	perl -pi -e 's, sample , ,g' Makefile.in
 <<
 ConfigureParams: --mandir=%p/share/man --disable-dependency-tracking PKG_CONFIG_PATH="%p/lib/pango-ft219/lib/pkgconfig:$PKG_CONFIG_PATH" lt_cv_sys_max_cmd_len=65536
 InstallScript: <<

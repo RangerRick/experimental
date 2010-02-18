@@ -28,7 +28,10 @@ BuildDepends: <<
 
 Source: http://ftp.novell.com/pub/mono/sources/%n-%v/%n-%v-0.12.tar.bz2
 Source-MD5: f0c9c6dc24b677d9208b0c8c38e769a4
-PatchScript: perl -pi -e 's/hardcode_direct=yes/hardcode_direct=no/g' configure
+PatchScript: <<
+	perl -pi -e 's/hardcode_direct=yes/hardcode_direct=no/g' configure
+	perl -pi -e 's, sample , ,g' Makefile.in
+<<
 
 ConfigureParams: --mandir=%p/share/man --disable-dependency-tracking PKG_CONFIG_PATH="%p/lib/pango-ft219/lib/pkgconfig:$PKG_CONFIG_PATH" lt_cv_sys_max_cmd_len=65536
 
