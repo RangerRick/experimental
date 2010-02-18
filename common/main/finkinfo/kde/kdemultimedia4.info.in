@@ -7,7 +7,7 @@ Package: kdemultimedia4-mac
 Type: kde (mac)
 #endif
 Version: 4.4.0
-Revision: 1
+Revision: 2
 Description: KDE4 - Multimedia Apps
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdemultimedia4@fink.racoonfink.com>
@@ -77,6 +77,7 @@ InstallScript: <<
 		make -j1 install/fast DESTDIR="%d"
 	popd
 
+	rm -rf "%i/opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kioslave"
 	mkdir -p %i/share/doc/installed-packages
 	touch %i/share/doc/installed-packages/%N
 <<
