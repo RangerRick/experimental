@@ -7,6 +7,7 @@ CustomMirror: RangerMirror
 Source: mirror:custom:qt/qt-%v-mac-eee74602dae3693d86aa8972e4ca4e198ad8969f.tar.gz
 Source-MD5: 1862bbdd8342a8f163a58cf3ced0905d
 SourceDirectory: qt-kde-qt-mac
+Distribution: 10.4, 10.5
 #PatchFile: %n.patch
 #PatchFile-MD5: 0999a71cb375df0feab46aea2a6dd8e3
 PatchScript: <<

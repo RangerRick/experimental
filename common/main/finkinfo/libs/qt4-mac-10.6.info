@@ -2,59 +2,50 @@ Info4: <<
 Package: qt4-mac
 Version: 4.6.2
 Revision: 1
-Distribution: 10.4, 10.5
+GCC: 4.0
+CustomMirror: RangerMirror
+Source: mirror:custom:qt/qt-%v-mac-eee74602dae3693d86aa8972e4ca4e198ad8969f.tar.gz
+Source-MD5: 1862bbdd8342a8f163a58cf3ced0905d
+SourceDirectory: qt-kde-qt-mac
+Distribution: 10.6
+PatchScript: <<
+#	patch -p1 --fuzz=4 < %{PatchFile}
+	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp
+	perl -pi -e 's,CFG_MAC_XARCH=auto,CFG_MAC_XARCH=no,g' configure
+<<
 Description: Cross-Platform framework (Mac version)
-License: LGPL
-Maintainer: Benjamin Reed <qt4-mac@fink.racoonfink.com>
-
 Depends: <<
 	%N-core-shlibs (= %v-%r),
 	%N-gui-shlibs (= %v-%r),
 	%N-designer (= %v-%r),
 	%N-linguist (= %v-%r),
 	%N-doc (= %v-%r),
-	pkgconfig (>= 0.23-1),
+	pkgconfig (>= 0.22-1),
 	macosx (>= 10.4.3-1)
 <<
 BuildDepends: <<
 	cups-dev,
 	dbus-dev (>= 1.2.12-1),
 	expat1,
-	fink (>= 0.29.7-1),
+	fink (>= 0.28.0-1),
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.7-7),
-	glib2-dev (>= 2.18.4-1),
-	kde4-buildenv (>= 4.4.0-1),
+	glib2-dev (>= 2.12.0-1),
+	kde4-buildenv (>= 4.2.4-2),
 	libgettext8-dev,
 	libiconv-dev,
-	libjpeg8,
+	libjpeg,
 	libmng2,
-	libpng3 (>= 1.2.8-1),
+	libpng3 (>= 1.2.5-4),
 	libtiff,
 	macosx (>= 10.4.3-1),
-	pkgconfig (>= 0.23-1),
+	pkgconfig (>= 0.22-1),
 	sqlite3-dev,
 	system-openssl-dev,
-	system-sdk-10.4-universal
+	system-sdk-10.5,
 <<
 BuildConflicts: kdelibs3-dev, kdelibs3-ssl-dev, kdelibs3-unified-dev, libevent1, pcre, clucene-core
 BuildDependsOnly: true
-GCC: 4.0
-
-CustomMirror: <<
-	Primary: http://www.finkproject.org/~ranger/distfiles
-	eur-NL: http://www.finkproject.org/~ranger/distfiles
-	nam-US: http://ranger.befunk.com/fink
-<<
-Source: mirror:custom:qt/qt-%v-mac-eee74602dae3693d86aa8972e4ca4e198ad8969f.tar.gz
-Source-MD5: 1862bbdd8342a8f163a58cf3ced0905d
-SourceDirectory: qt-kde-qt-mac
-PatchScript: <<
-	#	patch -p1 --fuzz=4 < %{PatchFile}
-	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp
-	perl -pi -e 's,CFG_MAC_XARCH=auto,CFG_MAC_XARCH=no,g' configure
-<<
-
 NoSetLDFLAGS: true
 CompileScript: <<
 #!/bin/sh -ev
@@ -90,7 +81,6 @@ CompileScript: <<
 	touch src/3rdparty/phonon/gstreamer/phonon-config-gstreamer.h
 	make LINK="$CXX"
 <<
-
 InstallScript: <<
 #!/bin/sh -ev
 
@@ -158,24 +148,31 @@ InstallScript: <<
 	install -d -m 755 %i/share/doc/installed-packages
 	touch %i/share/doc/installed-packages/%N
 <<
-DocFiles: LGPL* LICENSE* README*
+PostInstScript: <<
+	if [ "$1" = "configure" ] && [ ! -f "%p/lib/%N/include/phonon/Phonon/MediaNode" ]; then
+		# case-sensitive filesystem, make various build-system stuff happy
+		/bin/ln -sf phonon "%p/lib/%N/include/phonon/Phonon"
+	fi
+<<
+PreRmScript: <<
+  # remove the symlinks we created earlier
+  if [ -h "%p/lib/%N/include/Phonon" ]; then
+    /bin/rm "%p/lib/%N/include/Phonon"
+  fi
+  if [ -h "%p/lib/%N/include/phonon/Phonon" ]; then
+    /bin/rm "%p/lib/%N/include/phonon/Phonon"
+  fi
+<<
 SplitOff: <<
 	Package: %N-gui-shlibs
+	DocFiles: LGPL* LICENSE*
+	Suggests: %N-designer, %N-linguist, %N-doc
+	Replaces: %N-core-shlibs (<< 4.6.0-1), %N (<< 4.6.0-1)
 	Depends: <<
 		%N-core-shlibs (= %v-%r),
 		libmng2-shlibs,
-		libjpeg8-shlibs
+		libjpeg-shlibs,
 	<<
-	Replaces: <<
-		%N-core-shlibs (<< 4.6.0-1),
-		%N (<< 4.6.0-1)
-	<<
-	Suggests: <<
-		%N-designer,
-		%N-linguist,
-		%N-doc
-	<<
-	DocFiles: LGPL* LICENSE*
 	Files: <<
 		(%m != x86_64) lib/%N/lib/Qt3Support.framework/Qt3Support
 		(%m != x86_64) lib/%N/lib/Qt3Support.framework/Qt3Support_debug
@@ -249,22 +246,24 @@ SplitOff: <<
 		%p/lib/%N/lib/phonon.framework/Versions/4/phonon                     4.3.0 %n (>= 4.6.0-1)
 		%p/lib/%N/lib/phonon.framework/Versions/4/phonon_debug               4.3.0 %n (>= 4.6.0-1)
 	<<
-	PostInstScript: (/%p/lib/fontconfig2/bin/fc-cache -f || :) >/tmp/fc-cache.log 2>&1 || :
+	PostInstScript: <<
+		(/%p/lib/fontconfig2/bin/fc-cache -f || :) >/tmp/fc-cache.log 2>&1 || :
+	<<
 <<
 SplitOff2: <<
 	Package: %N-core-shlibs
+	DocFiles: LGPL* LICENSE*
 	Depends: <<
 		dbus-shlibs (>= 1.2.12-1),
-		fink (>= 0.29.7-1),
+		fink (>= 0.28.0-1),
 		fontconfig2-shlibs (>= 2.4.1-1),
-		freetype219-shlibs (>= 2.3.7-7),
-		glib2-shlibs (>= 2.18.4-1),
-		libjpeg8-shlibs,
-		libpng3-shlibs (>= 1.2.8-1),
+		freetype219-shlibs (>= 2.3.5-1),
+		glib2-shlibs (>= 2.12.0-1),
+		libjpeg-shlibs,
+		libpng3-shlibs (>= 1.2.5-4),
 		libtiff-shlibs,
-		sqlite3-shlibs
+		sqlite3-shlibs,
 	<<
-	DocFiles: LGPL* LICENSE*
 	Files: <<
 		lib/qt4-mac/lib/libQtCLucene.4*.dylib
 		lib/qt4-mac/lib/libQtCLucene_debug.4*.dylib
@@ -332,17 +331,20 @@ SplitOff2: <<
 		%p/lib/%N/lib/QtXmlPatterns.framework/Versions/4/QtXmlPatterns_debug 4.6.0 %n (>= 4.6.0-1)
 	<<
 <<
+
 SplitOff3: <<
 	Package: %N-designer
 	Depends: %N-designer-shlibs (= %v-%r)
 	Replaces: %N (<< %v-1)
-	Files: lib/%N/bin/Designer*
+	Files: <<
+		lib/%N/bin/Designer*
+	<<
 <<
 SplitOff4: <<
 	Package: %N-designer-shlibs
+	DocFiles: LGPL* LICENSE*
 	Depends: %N-gui-shlibs (= %v-%r)
 	Replaces: %N (<< 4.5.1-2)
-	DocFiles: LGPL* LICENSE*
 	Files: <<
 		lib/%N/lib/QtDesigner.framework/QtDesigner
 		lib/%N/lib/QtDesigner.framework/QtDesigner_debug
@@ -377,45 +379,32 @@ SplitOff6: <<
 	Package: %N-doc
 	Files: share/doc/%N
 <<
-
-PostInstScript: <<
-if [ "$1" = "configure" ] && [ ! -f "%p/lib/%N/include/phonon/Phonon/MediaNode" ]; then
-	# case-sensitive filesystem, make various build-system stuff happy
-	/bin/ln -sf phonon "%p/lib/%N/include/phonon/Phonon"
-fi
+DescPackaging: <<
+	This package is dedicated to Boo Fulbright.
 <<
-PreRmScript: <<
-# remove the symlinks we created earlier
-if [ -h "%p/lib/%N/include/Phonon" ]; then
-  /bin/rm "%p/lib/%N/include/Phonon"
-fi
-if [ -h "%p/lib/%N/include/phonon/Phonon" ]; then
-  /bin/rm "%p/lib/%N/include/phonon/Phonon"
-fi
-<<
-
-Homepage: http://www.trolltech.com/
 DescUsage: <<
-To compile against this package, you need to make sure that
-%p/lib/%N/bin is first in your PATH.  $QTDIR is no longer necessary;
-instead, qmake contains the information necessary to find your Qt
-environment, and when you generate a project using qmake it knows
-what to do.
+	To compile against this package, you need to make sure that
+	%p/lib/%N/bin is first in your PATH.  $QTDIR is no longer necessary;
+	instead, qmake contains the information necessary to find your Qt
+	environment, and when you generate a project using qmake it knows
+	what to do.
 
-If you need to manually find this package for whatever reason, you
-need -I%p/lib/%N/include in your compiler flags, and
--L%p/lib/%N/lib in your linker flags.  In this case, it's still a
-good idea to set your PATH to %p/lib/%N/bin as well.
+	If you need to manually find this package for whatever reason, you
+	need -I%p/lib/%N/include in your compiler flags, and
+	-L%p/lib/%N/lib in your linker flags.  In this case, it's still a
+	good idea to set your PATH to %p/lib/%N/bin as well.
 
-To build the demos and examples, it's enough to just run qmake on
-the .pro file in the %p/share/doc/%N directory in the %N-doc
-package:
+	To build the demos and examples, it's enough to just run qmake on
+	the .pro file in the %p/share/doc/%N directory in the %N-doc
+	package:
 
-	mkdir /tmp/build-examples
-	cd /tmp/build-examples
-	%p/lib/%N/bin/qmake %p/share/doc/%N/examples/examples.pro
-	make
+		mkdir /tmp/build-examples
+		cd /tmp/build-examples
+		%p/lib/%N/bin/qmake %p/share/doc/%N/examples/examples.pro
+		make
 <<
-DescPackaging: This package is dedicated to Boo Fulbright.
+DocFiles: LGPL* LICENSE* README*
+License: LGPL
+Maintainer: Benjamin Reed <qt4-mac@fink.racoonfink.com>
+Homepage: http://www.trolltech.com/
 <<
-
