@@ -96,6 +96,7 @@ my $translate = [
 	'mplayer',
 	'mysql-java',
 	'nant',
+	'ndesk',
 	'openexr',
 	'oxygen-icons',
 	'pango',

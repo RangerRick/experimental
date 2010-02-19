@@ -1,7 +1,7 @@
 Info3: <<
 Package: ndesk-dbus
 Version: 0.6.1a
-Revision: 1
+Revision: 2
 Description: C# Clean-Room D-Bus Implementation
 License: BSD
 Maintainer: Benjamin Reed <ndesk-dbus@fink.racoonfink.com>
