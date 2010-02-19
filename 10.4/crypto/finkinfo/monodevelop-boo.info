@@ -1,6 +1,7 @@
 Package: monodevelop-boo
 Version: 2.2
 Revision: 1
+Distribution: 10.5, 10.6
 Description: Boo language support for MonoDevelop
 License: GPL
 Maintainer: Benjamin Reed <monodevelop-boo@fink.racoonfink.com>

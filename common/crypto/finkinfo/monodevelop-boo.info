@@ -2,6 +2,7 @@ Package: monodevelop-boo
 Version: 2.2
 Revision: 1
 
+Distribution: 10.5, 10.6
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
 Source-MD5: 25abd742dc4a0ffcf17c537dea6d791f
 
