@@ -28,7 +28,7 @@ BuildDepends: <<
 	kipi-plugins4-%type_pkg[kde] (>= 1.1.0-1),
 	lcms,
 	lensfun,
-	libexiv2-0.18,
+	libexiv2-0.19,
 	libjasper.1,
 	libgettext8-dev,
 	libgphoto2,

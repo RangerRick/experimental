@@ -22,7 +22,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
-	blitz-%type_pkg[kde]-dev,
+	qimageblitz-unified-%type_pkg[kde],
 	cmake (>= 2.6.4-1),
 	dbus-dev (>= 1.2.12-1),
 	fink (>= 0.29.7-1),
@@ -119,7 +119,7 @@ SplitOff10: <<
 	Package: superkaramba4-%type_pkg[kde]
 	Description: KDE4 - theme engine
 	Depends: <<
-		blitz-%type_pkg[kde]-shlibs,
+		qimageblitz-unified-%type_pkg[kde]-shlibs,
 		%N-base (>= %v-%r)
 	<<
 	Files: <<

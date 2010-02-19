@@ -16,7 +16,7 @@ BuildDepends: <<
 	cmake (>= 2.6.4-1),
 	dbus-dev (>= 1.2.12-1),
 	fink (>= 0.29.7-1),
-	libexiv2,
+	libexiv2-0.19,
 	libiconv-dev,
 	libxml2 (>= 2.6.32-1),
 	pkgconfig (>= 0.23-1)
@@ -55,7 +55,7 @@ SplitOff: <<
 	Depends: <<
 		bzip2-shlibs,
 		clucene-core-shlibs (>= 0.9.20-1),
-		libexiv2-shlibs,
+		libexiv2-0.19-shlibs,
 		libiconv,
 		libxml2-shlibs (>= 2.6.32-1)
 	<<

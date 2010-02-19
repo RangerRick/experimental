@@ -1,7 +1,7 @@
 Info4: <<
 Package: kdegraphics4-mac
 Version: 4.4.0
-Revision: 1
+Revision: 2
 Description: KDE4 - Graphics applications
 Type: kde (mac)
 License: GPL/LGPL
@@ -21,7 +21,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
-	blitz-%type_pkg[kde]-dev,
+	qimageblitz-unified-%type_pkg[kde],
 	cairo (>= 1.8.8-1),
 	cmake (>= 2.6.4-1),
 	dbus-dev (>= 1.2.12-1),
@@ -36,7 +36,7 @@ BuildDepends: <<
 	libchm,
 	libdjvulibre21-dev,
 	libepub,
-	libexiv2-0.18,
+	libexiv2-0.19,
 	libgettext8-dev,
 	libgphoto2,
 	libjpeg8,
@@ -146,7 +146,7 @@ SplitOff14: <<
 	Package: libkexiv2-8-%type_pkg[kde]-shlibs
 	Description: KDE4 - image metadata library
 	Depends: <<
-		libexiv2-shlibs-0.18,
+		libexiv2-0.19-shlibs,
 		libkexiv2-data-%type_pkg[kde],
 		%N-base (>= %v-%r)
 	<<
@@ -217,7 +217,7 @@ SplitOff2: <<
 	Package: gwenview4-%type_pkg[kde]
 	Description: KDE4 - image viewer
 	Depends: <<
-		libexiv2-shlibs-0.18,
+		libexiv2-0.19-shlibs,
 		libkipi-7-%type_pkg[kde]-shlibs (>= %v-%r),
 		%N-base (>= %v-%r)
 	<<
@@ -316,7 +316,7 @@ SplitOff5: <<
 	Package: kolourpaint4-%type_pkg[kde]
 	Description: KDE4 - simple image editor
 	Depends: <<
-		blitz-%type_pkg[kde]-shlibs,
+		qimageblitz-unified-%type_pkg[kde]-shlibs,
 		%N-base (>= %v-%r)
 	<<
 	Files: <<
@@ -371,7 +371,7 @@ SplitOff8: <<
 	Package: okular4-%type_pkg[kde]
 	Description: KDE4 - document viewer
 	Depends: <<
-		blitz-%type_pkg[kde]-shlibs,
+		qimageblitz-unified-%type_pkg[kde]-shlibs,
 		freetype219-shlibs,
 		libchm-shlibs,
 		libdjvulibre21-shlibs,

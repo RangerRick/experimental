@@ -22,7 +22,7 @@ Depends: <<
 BuildDepends: <<
 	aspell-dev,
 	automoc-%type_pkg[kde] (>= 0.9.88-1),
-	blitz-%type_pkg[kde]-dev,
+	qimageblitz-unified-%type_pkg[kde] (>= 0.0.4-2000),
 	bzip2-dev,
 	cmake (>= 2.6.1-2),
 	cups-dev,

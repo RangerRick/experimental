@@ -7,7 +7,7 @@ Package: kdegraphics4-mac
 Type: kde (mac)
 #endif
 Version: 4.4.0
-Revision: 1
+Revision: 2
 Description: KDE4 - Graphics applications
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdegraphics4@fink.racoonfink.com>
@@ -38,7 +38,7 @@ Depends: <<
 # libspectre
 BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.88-1),
-	blitz-%type_pkg[kde]-dev,
+	qimageblitz-unified-%type_pkg[kde],
 	cairo (>= 1.0-1),
 	cmake (>= 2.6.3-1),
 	dbus-dev (>= 1.2.12-1),
@@ -178,7 +178,7 @@ SplitOff5: <<
 	Package: kolourpaint4-%type_pkg[kde]
 	Description: KDE4 - simple image editor
 	Depends: <<
-		blitz-%type_pkg[kde]-shlibs,
+		qimageblitz-unified-%type_pkg[kde]-shlibs,
 		%N-base (>= %v-%r)
 	<<
 	Files: <<
@@ -233,7 +233,7 @@ SplitOff8: <<
 	Package: okular4-%type_pkg[kde]
 	Description: KDE4 - document viewer
 	Depends: <<
-		blitz-%type_pkg[kde]-shlibs,
+		qimageblitz-unified-%type_pkg[kde]-shlibs,
 		freetype219-shlibs,
 		libchm-shlibs,
 		libdjvulibre21-shlibs,
