@@ -2,6 +2,7 @@ Package: ikvm
 Version: 0.42.0.3
 Revision: 1
 Description: Java implementation for .Net
+Type: java(1.5)
 License: BSD
 Maintainer: Benjamin Reed <ikvm@fink.racoonfink.com>
 

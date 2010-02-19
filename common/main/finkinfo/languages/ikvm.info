@@ -8,6 +8,7 @@ Source2-MD5: c7f13c808e195df27c9bdc1f8f1090c1
 PatchFile: %n.patch
 PatchFile-MD5: 122bc479ab8e31d93c4b2845eb4261f9
 DocFiles: LICENSE THANKYOU website/*.txt
+Type: java(1.5)
 Depends: <<
 	mono (>= 2.0-1),
 	pkgconfig (>= 0.22-3)
