@@ -1,6 +1,7 @@
 Package: monodevelop-boo
 Version: 2.2
 Revision: 1
+Architecture: i386, powerpc
 Distribution: 10.5, 10.6
 Description: Boo language support for MonoDevelop
 License: GPL

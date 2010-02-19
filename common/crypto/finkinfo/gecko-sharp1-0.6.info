@@ -2,6 +2,7 @@ Package: gecko-sharp1
 Version: 0.6
 Revision: 1033
 Type: bundle
+Architecture: i386, powerpc
 Depends: %N-firefox3 (>= %v-%r) | %N-firefox2 (>= %v-%r) | %N-seamonkey (>= %v-%r)
 Description: Mozilla browser C# bindings: bundle
 License: OSI-Approved

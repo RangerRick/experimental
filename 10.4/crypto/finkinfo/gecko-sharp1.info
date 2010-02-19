@@ -2,6 +2,7 @@ Info3: <<
 Package: gecko-sharp1%type_pkg[gecko]
 Version: 0.6
 Revision: 1033
+Architecture: i386, powerpc
 Description: Mozilla browser C# bindings
 Type: gecko (-firefox3 -firefox2 -seamonkey)
 License: OSI-Approved
