@@ -1,6 +1,7 @@
 Package: boo
 Version: 0.9.3.3457
 Revision: 1
+Architecture: i386, powerpc
 Description: Wrist-friendly language for the CLI/Mono
 License: GPL
 Maintainer: Benjamin Reed <boo@fink.racoonfink.com>
