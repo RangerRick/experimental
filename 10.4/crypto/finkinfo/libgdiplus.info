@@ -38,7 +38,7 @@ PatchScript: <<
 	perl -pi -e 's,-Werror,,' src/Makefile.in
 <<
 PatchFile: %n.patch
-PatchFile-MD5: 0a1c19b9413d1f98fb04b319b5ef6f79
+PatchFile-MD5: a52a4fbe42134ebedcf4814904025b04
 
 ConfigureParams: --mandir=%p/share/man --with-cairo=system --disable-dependency-tracking
 

@@ -35,7 +35,7 @@ my $translate = [
 	'automoc',
 	'baghira',
 	'blitz',
-	'boo.info',
+	'boo.(info|patch)',
 	'boson',
 	'cairo',
 	'clucene',
