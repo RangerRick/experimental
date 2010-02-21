@@ -381,7 +381,7 @@ SplitOff6: <<
 PostInstScript: <<
 if [ "$1" = "configure" ] && [ ! -f "%p/lib/%N/include/phonon/Phonon/MediaNode" ]; then
 	# case-sensitive filesystem, make various build-system stuff happy
-	/bin/ln -sf phonon "%p/lib/%N/include/phonon/Phonon"
+	/bin/ln -sf . "%p/lib/%N/include/phonon/Phonon"
 fi
 <<
 PreRmScript: <<
