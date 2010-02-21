@@ -128,6 +128,7 @@ my $translate = [
 	'wv2',
 	'xfree86\\.',
 	'xmlunit',
+	'xplanet',
 	'xorg\\.',
 ];
 
