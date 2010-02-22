@@ -78,7 +78,7 @@ CompileScript: <<
 			;;
 	esac
 	touch src/3rdparty/phonon/gstreamer/phonon-config-gstreamer.h
-	make LINK="$CXX"
+	make
 <<
 
 InstallScript: <<

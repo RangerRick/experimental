@@ -63,7 +63,7 @@ CompileScript: <<
 	sh ./configure-for-fink.sh "%p" "%N" $EXTRA_ARGS -make "libs tools docs"
 	find . -name Makefile\* -print0 | xargs -0 perl -pi -e 's,-I%p/include,-isystem %p/include,g'
 	touch src/3rdparty/phonon/gstreamer/phonon-config-gstreamer.h
-	make LINK="$CXX"
+	make
 <<
 InstallScript: <<
 #!/bin/sh -ev
