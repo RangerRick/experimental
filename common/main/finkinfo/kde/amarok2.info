@@ -1,7 +1,7 @@
 Info4: <<
 Package: amarok2-%type_pkg[kde]
 Version: 2.2.2
-Revision: 1
+Revision: 2
 Type: kde (x11 mac)
 Description: KDE4 - music player
 License: GPL/LGPL

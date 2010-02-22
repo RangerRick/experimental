@@ -29,7 +29,7 @@ BuildDepends: <<
 	qt4-%type_pkg[kde] (>= 4.6.1-1),
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev,
-	taglib (>= 1.6.1-3)
+	taglib (>= 1.6.1-5)
 <<
 Conflicts: taglib-extras-%type_pkg[kde]
 Replaces: taglib-extras-%type_pkg[kde]
@@ -63,7 +63,7 @@ SplitOff: <<
 	Description: Shared libraries for taglib-extras
 	Depends: <<
 		kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.0-1),
-		taglib-shlibs (>= 1.6.1-3)
+		taglib-shlibs (>= 1.6.1-5)
 	<<
 	Files: opt/kde4/%type_pkg[kde]/lib/libtag-extras.1*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libtag-extras.1.dylib 1.0.0 %n (>= 1.0.0-1)

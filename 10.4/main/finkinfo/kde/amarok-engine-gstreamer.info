@@ -47,7 +47,7 @@ BuildDepends: <<
 	popt,
 	qt3 (>= 3.3.8-1027),
 	ruby18-dev,
-	taglib (>= 1.6.1-3),
+	taglib (>= 1.6.1-5),
 	unsermake (>= 0.4-0.20060316.1),
 	x11-dev,
 	xmms
