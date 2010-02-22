@@ -66,6 +66,7 @@ my $translate = [
 	'hdrie',
 	'icecream',
 	'ikvm',
+	'ilmbase',
 	'jakarta',
 	'kde',
 	'kipi',

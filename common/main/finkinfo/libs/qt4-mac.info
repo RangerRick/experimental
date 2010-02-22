@@ -8,7 +8,7 @@ Source: mirror:custom:qt/qt-%v-mac-eee74602dae3693d86aa8972e4ca4e198ad8969f.tar.
 Source-MD5: 1862bbdd8342a8f163a58cf3ced0905d
 SourceDirectory: qt-kde-qt-mac
 PatchFile: %n.patch
-PatchFile-MD5: 92f3969ee90cd9ffb56e996150a254f3
+PatchFile-MD5: 495e383d8f8f070a6752a74c9d5dd3bd
 Distribution: 10.4, 10.5
 PatchScript: <<
 	patch -p1 --fuzz=4 < %{PatchFile}

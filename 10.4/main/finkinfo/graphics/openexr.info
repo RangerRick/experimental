@@ -1,6 +1,7 @@
+Info4: <<
 Package: openexr
-Version: 1.4.0
-Revision: 2
+Version: 1.6.1
+Revision: 1
 Description: Dynamic-range image file tools
 License: BSD
 Maintainer: Benjamin Reed <openexr@fink.racoonfink.com>
@@ -10,23 +11,35 @@ Depends: <<
 	x11-shlibs
 <<
 BuildDepends: <<
+	ilmbase (>= 1.0.1-0),
 	fltk-x11,
 	x11-dev
 <<
 GCC: 4.0
 
-Source: http://download.savannah.nongnu.org/releases/%n/%n-%va.tar.gz
-Source-MD5: d0a4b9a930c766fa51561b05fb204afe
+Source: http://download.savannah.nongnu.org/releases/%n/%n-%v.tar.gz
+Source-MD5: 11951f164f9c872b183df75e66de145a
 SourceDirectory: %n-%v
-Patch: %n.patch
+PatchScript: perl -pi -e 's,-Wno-long-double,,g' configure
 
-ConfigureParams: --enable-shared=no --enable-imfexamples --disable-osx-universal-binaries --disable-dependency-tracking --with-gl-includes=/usr/X11R6/include
+ConfigureParams: --enable-shared=no --disable-imfexamples --disable-osx-universal-binaries --disable-dependency-tracking --with-gl-includes=/usr/X11R6/include
+CompileScript: <<
+#!/bin/sh -ev
+
+	if [ -x /usr/bin/gcc-4.2 ]; then
+		export CC="gcc-4.2"
+		export CXX="g++-4.2"
+	fi
+
+	./configure %c
+	make
+<<
 
 InstallScript: <<
-	make -j1 install DESTDIR="%d"
-	install -d -m 755 %i/share/doc/%N
-	mv %i/share/doc/OpenEXR-%v/examples %i/share/doc/%N/
-	rmdir %i/share/doc/OpenEXR-%v
+make -j1 install DESTDIR="%d"
+install -d -m 755 %i/share/doc/%N
+mv %i/share/doc/OpenEXR-%v/* %i/share/doc/%N/
+rmdir %i/share/doc/OpenEXR-%v
 <<
 DocFiles: AUTHORS COPYING ChangeLog INSTALL LICENSE NEWS README* doc/*.pdf
 SplitOff: <<
@@ -78,5 +91,6 @@ OpenEXR's features include:
 DescPort: <<
 Static libraries only, as dynamic are buggy (at runtime)
 on OSX.
+<<
 <<
 

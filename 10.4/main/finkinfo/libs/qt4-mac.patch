@@ -45,7 +45,7 @@ diff -Nurd qt-kde-qt-mac/mkspecs/darwin-g++40/qmake.conf qt-kde-qt-mac-new/mkspe
 +QMAKE_CC         = gcc-4.0
 +QMAKE_CXX        = g++-4.0
 +
-+include(../darwin-g++.conf)
++include(../darwin-g++/qmake.conf)
 +
 +load(qt_config)
 diff -Nurd qt-kde-qt-mac/mkspecs/darwin-g++40/qplatformdefs.h qt-kde-qt-mac-new/mkspecs/darwin-g++40/qplatformdefs.h
@@ -192,7 +192,7 @@ diff -Nurd qt-kde-qt-mac/mkspecs/darwin-g++42/qmake.conf qt-kde-qt-mac-new/mkspe
 +QMAKE_CC         = gcc-4.2
 +QMAKE_CXX        = g++-4.2
 +
-+include(../darwin-g++.conf)
++include(../darwin-g++/qmake.conf)
 +
 +load(qt_config)
 diff -Nurd qt-kde-qt-mac/mkspecs/darwin-g++42/qplatformdefs.h qt-kde-qt-mac-new/mkspecs/darwin-g++42/qplatformdefs.h

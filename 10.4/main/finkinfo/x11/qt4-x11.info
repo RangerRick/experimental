@@ -55,7 +55,7 @@ PatchScript: <<
 	perl -pi -e 's,CFG_MAC_XARCH=auto,CFG_MAC_XARCH=no,g' configure
 <<
 PatchFile: %n.patch
-PatchFile-MD5: 92f3969ee90cd9ffb56e996150a254f3
+PatchFile-MD5: 495e383d8f8f070a6752a74c9d5dd3bd
 
 SetLDFLAGS: -lglib-2.0
 SetMAKEFLAGS: -j1
