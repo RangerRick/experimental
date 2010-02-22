@@ -7,9 +7,11 @@ CustomMirror: RangerMirror
 Source: mirror:custom:qt/qt-%v-mac-eee74602dae3693d86aa8972e4ca4e198ad8969f.tar.gz
 Source-MD5: 1862bbdd8342a8f163a58cf3ced0905d
 SourceDirectory: qt-kde-qt-mac
+PatchFile: %n.patch
+PatchFile-MD5: c442d57c1f16c360d15e090566c0f132
 Distribution: 10.6
 PatchScript: <<
-#	patch -p1 --fuzz=4 < %{PatchFile}
+	patch -p1 --fuzz=4 < %{PatchFile}
 	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp
 	perl -pi -e 's,CFG_MAC_XARCH=auto,CFG_MAC_XARCH=no,g' configure
 <<
@@ -50,20 +52,6 @@ NoSetLDFLAGS: true
 CompileScript: <<
 #!/bin/sh -ev
 
-	echo "makeflags = $MAKEFLAGS"
-	if [ -z "$CC" ]; then
-		export CC=gcc
-		export CXX=g++
-	fi
-	if [ -x /usr/bin/gcc-4.2 ]; then
-		export CC=gcc-4.2
-		export CXX=g++-4.2
-	fi
-	if [ -x %p/bin/ccache ]; then
-		export CC="%p/bin/ccache $CC"
-		export CXX="%p/bin/ccache $CXX"
-		export CCACHE_DIR="/tmp/ccache-qt4"
-	fi
 	EXTRA_ARGS="-confirm-license -no-pch -verbose"
 	if [ "%m" = "x86_64" ]; then
 		EXTRA_ARGS="$EXTRA_ARGS -arch x86_64 -cocoa"
