@@ -1,7 +1,7 @@
 Info4: <<
 Package: qt4-mac
 Version: 4.6.2
-Revision: 1
+Revision: 2
 GCC: 4.0
 CustomMirror: RangerMirror
 Source: mirror:custom:qt/qt-%v-mac-eee74602dae3693d86aa8972e4ca4e198ad8969f.tar.gz
