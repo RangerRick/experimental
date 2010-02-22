@@ -49,6 +49,8 @@ BuildDepends: <<
 BuildConflicts: kdelibs3-dev, kdelibs3-ssl-dev, kdelibs3-unified-dev, libevent1, pcre, clucene-core
 BuildDependsOnly: true
 NoSetLDFLAGS: true
+NoSetMAKEFLAGS: true
+SetMAKEFLAGS: -j1
 CompileScript: <<
 #!/bin/sh -ev
 
