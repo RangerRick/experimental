@@ -2,6 +2,7 @@ Info3: <<
 Package: gtk-sharp2
 Version: 2.12.9
 Revision: 1
+Architecture: i386, powerpc
 Source: http://ftp.novell.com/pub/mono/sources/gtk-sharp212/gtk-sharp-%v.tar.bz2
 Source-MD5: 2619f6cbba514f10582f8961ed84063b
 BuildDepends: <<

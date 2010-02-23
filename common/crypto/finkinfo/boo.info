@@ -2,8 +2,6 @@ Package: boo
 Version: 0.9.3.3457
 Revision: 1
 Architecture: i386, powerpc
-#Source: http://dist.codehaus.org/boo/distributions/boo-%v-bin.zip
-#Source-MD5: d3506f6c0b1d2895694cc46bd3f5ffc6
 Source: http://dist.codehaus.org/boo/distributions/boo-%v-src.zip
 Source-MD5: c7f225468aac17d25845dfc92407ab95
 PatchFile: %n.patch

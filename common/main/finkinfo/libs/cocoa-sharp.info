@@ -1,6 +1,7 @@
 Package: cocoa-sharp
 Version: 0.9.5
 Revision: 2
+Architecture: i386, powerpc
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
 Source-MD5: 0fa994d2bae35d1eb60efad811b20532
 BuildDepends: <<

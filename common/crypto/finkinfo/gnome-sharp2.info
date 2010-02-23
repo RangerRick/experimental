@@ -2,6 +2,7 @@ Info3: <<
 Package: gnome-sharp2
 Version: 2.24.1
 Revision: 1
+Architecture: i386, powerpc
 Source: http://ftp.novell.com/pub/mono/sources/%n/gnome-sharp-%v.tar.bz2
 Source-MD5: 408f83f790a5189bcf76ea9299bc6410
 BuildDepends: <<

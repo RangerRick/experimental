@@ -2,6 +2,7 @@ Info3: <<
 Package: gtk-sharp
 Version: 1.0.10
 Revision: 1032
+Architecture: i386, powerpc
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.gz
 Source-MD5: e21fb3c5a39374f86ba70b926311a6d0
 PatchFile: %n.patch

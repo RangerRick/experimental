@@ -2,6 +2,7 @@ Info3: <<
 Package: ndesk-dbus-glib
 Version: 0.4.1
 Revision: 2
+Architecture: i386, powerpc
 Description: GLib Integration for NDesk D-Bus
 License: BSD
 Maintainer: Benjamin Reed <ndesk-dbus-glib@fink.racoonfink.com>

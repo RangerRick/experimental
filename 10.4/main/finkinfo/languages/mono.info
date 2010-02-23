@@ -2,6 +2,7 @@ Info4: <<
 Package: mono
 Version: 2.6.1
 Revision: 2
+Architecture: i386, powerpc
 Description: .NET-compatible CIL engine
 Type: java(1.5)
 License: LGPL
@@ -19,7 +20,6 @@ BuildDepends: <<
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.7-7),
-	(%m = x86_64) gc (>= 7.1-1),
 	gettext-tools,
 	glib2-dev (>= 2.18.4-1),
 	glitz (>= 0.4.4-1),
@@ -31,7 +31,7 @@ BuildDepends: <<
 	system-java15-dev,
 	xmkmf
 <<
-BuildConflicts: libicu28-dev, libicu30-dev, (%m != x86_64) gc
+BuildConflicts: libicu28-dev, libicu30-dev, gc
 Replaces: <<
 	%N-dev (<< %v-%r),
 	monodoc (<< 2.4-1)
@@ -39,7 +39,10 @@ Replaces: <<
 
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
 Source-MD5: 4cd2157c9eabbe9f49232d5ee3a2a57e
-PatchScript: sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1
+PatchScript: <<
+	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1
+	perl -pi -e 's,JIT_SUPPORTED=yes,JIT_SUPPORTED=no,g' configure
+<<
 PatchFile: %n.patch
 PatchFile-MD5: 01d28083e8b67d924a7b7f2960688ef6
 
@@ -50,7 +53,19 @@ SetMAKEFLAGS: -j1
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
 NoSetMAKEFLAGS: true
-ConfigureParams: --build=%m-apple-darwin`uname -r|cut -f1 -d.` (%m = x86_64) --with-gc=boehm --mandir=%p/share/man --sysconfdir=%p/etc --with-glib=system --with-ikvm-native=yes --with-jit=yes --with-preview=yes --with-x --with-moonlight --disable-dtrace --disable-dependency-tracking CFLAGS="-Os" CXXFLAGS="-Os"
+ConfigureParams: <<
+--build=%m-apple-darwin`uname -r|cut -f1 -d.` \
+--with-jit=yes \
+--with-ikvm-native=yes \
+--mandir=%p/share/man \
+--sysconfdir=%p/etc \
+--with-glib=system \
+--with-preview=yes \
+--with-x \
+--with-moonlight \
+--disable-dependency-tracking \
+CFLAGS="-Os" CXXFLAGS="-Os"
+<<
 CompileScript: <<
 #!/bin/sh -ex
 
@@ -76,12 +91,6 @@ CompileScript: <<
 	export PKG_CONFIG="%p/bin/pkg-config"
 	export XGETTEXT="%p/bin/xgettext"
 	export XMKMF="%p/lib/xmkmf/bin/xmkmf"
-
-#	if [ "%m" = "x86_64" ]; then
-#		export CFLAGS="$CFLAGS -arch x86_64"
-#		export CXXFLAGS="$CXXFLAGS -arch x86_64"
-#		export CPPFLAGS="$CPPFLAGS -arch x86_64"
-#	fi
 
 	perl -pi -e 's/hardcode_direct=yes/hardcode_direct=no/g; s/need_relink=yes/need_relink=no/g' configure ltmain.sh
 	./configure %c --with-jdk=$JAVA_HOME
@@ -112,7 +121,6 @@ SplitOff: <<
 	Package: %N-shlibs
 	Depends: <<
 		cairo-shlibs (>= 1.8.8-1),
-		(%m = x86_64) gc-shlibs (>= 7.1-1),
 		glib2-shlibs (>= 2.18.4-1),
 		macosx (>= 10.4.3-1)
 	<<

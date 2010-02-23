@@ -1,6 +1,7 @@
 Package: mono-debugger
 Version: 2.6
 Revision: 1
+Architecture: i386, powerpc
 Description: Mono debugger
 License: GPL
 Maintainer: Benjamin Reed <mono-debugger@fink.racoonfink.com>

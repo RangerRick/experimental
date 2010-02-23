@@ -1,6 +1,7 @@
 Package: mono-debugger
 Version: 2.6
 Revision: 1
+Architecture: i386, powerpc
 
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
 Source-MD5: a6cac2d8dc8f788a7b2b35cd3f7204dc

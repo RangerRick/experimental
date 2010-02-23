@@ -1,6 +1,7 @@
 Package: nant
 Version: 0.86
 Revision: 0.beta1.5
+Architecture: i386, powerpc
 
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v-beta1-src.tar.gz
 Source-MD5: 6e5e5ba4515bde5668c085807322a1f3

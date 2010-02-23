@@ -2,6 +2,7 @@ Info3: <<
 Package: libapache2-mod-mono
 Version: 2.6
 Revision: 1
+Architecture: i386, powerpc
 Source: http://ftp.novell.com/pub/mono/sources/mod_mono/mod_mono-%v.tar.bz2
 Source-MD5: 7484f8aebdd8b13bc005941277e3f485
 PatchFile: %n.patch

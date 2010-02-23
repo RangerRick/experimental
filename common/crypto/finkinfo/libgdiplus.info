@@ -2,6 +2,7 @@ Info3: <<
 Package: libgdiplus
 Version: 2.6
 Revision: 1
+Architecture: i386, powerpc
 
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
 Source-MD5: 9107b4429fdafde914bd23405544c58d

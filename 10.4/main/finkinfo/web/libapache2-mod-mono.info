@@ -2,6 +2,7 @@ Info3: <<
 Package: libapache2-mod-mono
 Version: 2.6
 Revision: 1
+Architecture: i386, powerpc
 Description: Allow Apache to serve ASP.NET pages
 License: OSI-Approved
 Maintainer: Benjamin Reed <libapache2-mod-mono@fink.racoonfink.com>

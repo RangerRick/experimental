@@ -2,6 +2,7 @@ Info3: <<
 Package: webkit-sharp
 Version: 0.3
 Revision: 1
+Architecture: i386, powerpc
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
 Source-MD5: 21482f9d5eafb0ef4acc6e790482f934
 DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README
