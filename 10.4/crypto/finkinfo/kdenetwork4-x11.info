@@ -227,7 +227,7 @@ SplitOff5: <<
 	Depends: %N-base (>= %v-%r)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/krdc*
-		opt/kde4/%type_pkg[kde]/kde4/*krcd*
+		opt/kde4/%type_pkg[kde]/kde4/*krdc*
 		opt/kde4/%type_pkg[kde]/lib/libkrdccore.4*.dylib
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/krdc*
 		opt/kde4/%type_pkg[kde]/share/apps/krdc

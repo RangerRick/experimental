@@ -7,7 +7,7 @@ Package: kdepim4-mac
 Type: kde (mac)
 #endif
 Version: 4.4.0
-Revision: 2
+Revision: 3
 Description: KDE4 - Personal Information Management
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdepim4@fink.racoonfink.com>
@@ -331,7 +331,7 @@ SplitOff14: <<
 		libmessagecore4-%type_pkg[kde]-shlibs (>= %v-%r),
 		libmessagelist4-%type_pkg[kde]-shlibs (>= %v-%r),
 		libmimelib4-%type_pkg[kde]-shlibs (>= %v-%r),
-		qgpgme1-mac-shlibs (>= %v-1),
+		qgpgme1-%type_pkg[kde]-shlibs (>= %v-1),
 	<<
 	Files:opt/kde4/%type_pkg[kde]/lib/libmessageviewer.0*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libmessageviewer.0.dylib 0.0.0 %n (>= 4.3.98-1)
