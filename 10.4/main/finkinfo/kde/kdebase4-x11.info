@@ -63,7 +63,7 @@ PatchScript: <<
 	%{default_script}
 	perl -pi -e 's,Phonon/Global,Phonon/MediaObject,g' apps/dolphin/src/panels/information/*.h apps/dolphin/src/panels/information/*.cpp
 <<
-PatchFile: kebase4.patch
+PatchFile: kdebase4.patch
 PatchFile-MD5: d2a988e7312e8487e4a2cc5e3d39ae8b
 
 CompileScript: <<
