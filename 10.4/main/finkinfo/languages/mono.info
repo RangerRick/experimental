@@ -63,6 +63,7 @@ ConfigureParams: <<
 --with-preview=yes \
 --with-x \
 --with-moonlight \
+--disable-dtrace \
 --disable-dependency-tracking \
 CFLAGS="-Os" CXXFLAGS="-Os"
 <<
