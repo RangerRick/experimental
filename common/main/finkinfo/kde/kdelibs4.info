@@ -1,7 +1,7 @@
 Info4: <<
 Package: kdelibs4-%type_pkg[kde]
 Version: 4.4.0
-Revision: 2
+Revision: 3
 Type: kde (x11 mac)
 Description: KDE4 - essential libraries
 License: GPL/LGPL
@@ -133,7 +133,10 @@ SplitOff: <<
 		xdg-base
 	<<
 	Recommends: %N (>= %v-%r)
-	Replaces: %N (<< 4.2.2-4)
+	Replaces: <<
+		kdebase4-workspace-%type_pkg[kde]-shlibs (<< 4.4.0-1),
+		%N (<< 4.2.2-4),
+	<<
 	ConfFiles: %p/opt/kde4/%type_pkg[kde]/etc/kde4rc
 	Files: <<
 		opt/kde4/%type_pkg[kde]/etc/kde4rc
