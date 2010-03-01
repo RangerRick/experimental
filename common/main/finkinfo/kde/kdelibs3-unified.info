@@ -28,7 +28,7 @@ BuildDepends: <<
 	dbus-qt3-dev,
 	esound,
 	expat1,
-	fink (>= 0.26.0-1),
+	fink (>= 0.28.0-1),
 	flex-devel,
 	#	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.7-7),
@@ -99,7 +99,7 @@ Source2-MD5: e2dccadc3d36718ef9a7e3c7789e2bdf
 Source2ExtractDir: kdelibs-%v
 SourceDirectory: kdelibs-%v
 PatchFile: kdelibs3-unified.patch
-PatchFile-MD5: 38251742b75f786c6f5a9d2f578c1072
+PatchFile-MD5: 4ed9c8583def4d269d0c412bb3b90777
 PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1
 	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g;' admin/*
