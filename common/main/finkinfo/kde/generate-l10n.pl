@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-my $KDEVERSION              = '4.4.0';
+my $KDEVERSION              = '4.4.1';
 my $KDEDIRECTORY            = 'stable/%v/src/';
 my $KDERELNUM               = 1;
 my $KDEI18NRELNUM           = 1;
