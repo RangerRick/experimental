@@ -1,7 +1,7 @@
 Info3: <<
 Package: kdebase4-workspace-%type_pkg[kde]
-Version: 4.4.0
-Revision: 2
+Version: 4.4.1
+Revision: 1
 Description: KDE4 - base applications and tools
 Type: kde (x11)
 License: GPL/LGPL
@@ -9,8 +9,8 @@ Maintainer: Benjamin Reed <kdebase4-workspace@fink.racoonfink.com>
 
 Depends: <<
 	%N-shlibs (= %v-%r),
-	kdelibs4-%type_pkg[kde] (>= 4.4.0-1),
-	kdepimlibs4-%type_pkg[kde] (>= 4.4.0-1),
+	kdelibs4-%type_pkg[kde] (>= 4.4.1-1),
+	kdepimlibs4-%type_pkg[kde] (>= 4.4.1-1),
 	libknotificationitem1-%type_pkg[kde] (>= 4.3.4-1),
 	pyqt4-py26
 <<
@@ -32,8 +32,8 @@ BuildDepends: <<
 	glib2-dev (>= 2.18.4-1),
 	gpsd-dev,
 	kde4-buildenv (>= 4.4.0-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.4.0-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.4.0-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
 	libgettext8-dev,
 	libidn,
 	libjasper.1,
@@ -62,7 +62,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdebase-workspace-%v.tar.bz2
-Source-MD5: 08179cba422038d4bb6537d63186bb23
+Source-MD5: c5a5826ce0e8b0faa760971850b29111
 SourceDirectory: kdebase-workspace-%v
 PatchScript: sed -e 's,@FINKPREFIX@,%p,g; s,@FINKTYPE@,%type_pkg[kde],g' %{PatchFile} | patch -p1
 PatchFile: kdebase4-workspace.patch
@@ -101,8 +101,8 @@ SplitOff: <<
 	Depends: <<
 		glib2-shlibs (>= 2.18.4-1),
 		gpsd-shlibs,
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.0-1),
-		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.4.0-1),
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
+		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
 		libknotificationitem1-%type_pkg[kde]-shlibs (>= 4.3.4-1),
 		libusb-shlibs,
 		(%type_pkg[kde] = x11) libxklavier12-shlibs,
@@ -148,7 +148,7 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libkhotkeysprivate.4.dylib               4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkscreensaver.5.dylib                  5.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libksgrd.4.dylib                         4.0.0 %n (>= 4.2.4-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libksignalplotter.4.dylib                4.0.0 %n (>= 4.4.0-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libksignalplotter.4.dylib                4.0.0 %n (>= 4.4.1-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkwineffects.1.dylib                   1.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkwinnvidiahack.4.dylib                4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkworkspace.4.dylib                    4.0.0 %n (>= 4.2.4-1)
@@ -156,7 +156,7 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libplasma_applet-system-monitor.4.dylib  4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libplasma-geolocation-interface.4.dylib  4.0.0 %n (>= 4.3.0-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libplasmaclock.4.dylib                   4.0.0 %n (>= 4.2.4-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libplasmagenericshell.4.dylib            4.0.0 %n (>= 4.4.0-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libplasmagenericshell.4.dylib            4.0.0 %n (>= 4.4.1-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libprocesscore.4.dylib                   4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libprocessui.4.dylib                     4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libsolidcontrol.4.dylib                  4.0.0 %n (>= 4.2.4-1)

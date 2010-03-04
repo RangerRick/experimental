@@ -1,7 +1,7 @@
 Info3: <<
 Package: kdebase4-workspace-%type_pkg[kde]
-Version: 4.4.0
-Revision: 2
+Version: 4.4.1
+Revision: 1
 Type: kde (x11)
 Description: KDE4 - base applications and tools
 License: GPL/LGPL
@@ -52,7 +52,7 @@ BuildDepends: <<
 # not until we have pykde4
 #	python26,
 #	pyqt4-py26,
-	qt4-%type_pkg[kde] (>= 4.4.0-1),
+	qt4-%type_pkg[kde] (>= 4.4.1-1),
 	strigi-dev (>= 0.6.3-1),
 	strigi-gui-%type_pkg[kde]-dev (>= 0.6.3-1),
 	(-%type_pkg[kde] = x11) x11-dev,
@@ -62,7 +62,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdebase-workspace-%v.tar.bz2
-Source-MD5: 08179cba422038d4bb6537d63186bb23
+Source-MD5: c5a5826ce0e8b0faa760971850b29111
 SourceDirectory: kdebase-workspace-%v
 PatchFile: kdebase4-workspace.patch
 PatchFile-MD5: 457a3497da0e11f884d5f10c661b7f45
@@ -151,7 +151,7 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libkhotkeysprivate.4.dylib               4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkscreensaver.5.dylib                  5.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libksgrd.4.dylib                         4.0.0 %n (>= 4.2.4-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libksignalplotter.4.dylib                4.0.0 %n (>= 4.4.0-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libksignalplotter.4.dylib                4.0.0 %n (>= 4.4.1-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkwineffects.1.dylib                   1.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkwinnvidiahack.4.dylib                4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkworkspace.4.dylib                    4.0.0 %n (>= 4.2.4-1)
@@ -159,7 +159,7 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libplasma_applet-system-monitor.4.dylib  4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libplasma-geolocation-interface.4.dylib  4.0.0 %n (>= 4.3.0-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libplasmaclock.4.dylib                   4.0.0 %n (>= 4.2.4-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libplasmagenericshell.4.dylib            4.0.0 %n (>= 4.4.0-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libplasmagenericshell.4.dylib            4.0.0 %n (>= 4.4.1-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libprocesscore.4.dylib                   4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libprocessui.4.dylib                     4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libsolidcontrol.4.dylib                  4.0.0 %n (>= 4.2.4-1)

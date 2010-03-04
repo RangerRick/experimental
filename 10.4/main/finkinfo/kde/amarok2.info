@@ -9,8 +9,8 @@ Maintainer: Benjamin Reed <amarok2@fink.racoonfink.com>
 
 Depends: <<
 	dbus (>= 1.2.12-1),
-	kdebase4-%type_pkg[kde] (>= 4.4.0-1),
-	kdemultimedia4-%type_pkg[kde]-base-shlibs (>= 4.4.0-1),
+	kdebase4-%type_pkg[kde] (>= 4.4.1-1),
+	kdemultimedia4-%type_pkg[kde]-base-shlibs (>= 4.4.1-1),
 	libgpod4-shlibs,
 	liblastfm-%type_pkg[kde]-shlibs,
 	libmp4v21-shlibs,
@@ -36,9 +36,9 @@ BuildDepends: <<
 	glib2-dev (>= 2.18.4-1),
 	gtk+2-dev (>= 2.14.7-1),
 	kde4-buildenv (>= 4.4.0-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.4.0-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.4.0-1),
-	kdemultimedia4-%type_pkg[kde]-dev (>= 4.4.0-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.4.1-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
+	kdemultimedia4-%type_pkg[kde]-dev (>= 4.4.1-1),
 	libgettext8-dev,
 	libgpod4,
 	liblastfm-%type_pkg[kde]-dev,

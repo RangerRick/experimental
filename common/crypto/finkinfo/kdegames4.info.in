@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdegames4-mac
 Type: kde (mac)
 #endif
-Version: 4.4.0
+Version: 4.4.1
 Revision: 1
 Description: KDE4 - Games
 License: GPL/LGPL
@@ -16,7 +16,7 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:stable/%v/src/kdegames-%v.tar.bz2
-Source-MD5: f19b44427efc9751bef34ea0c4512b3f
+Source-MD5: f239138dc3a7b890c82204ff49bb3edd
 #PatchFile: kdegames4.patch
 #PatchFile-MD5: db0daf5cb355d99ac3454cbd926d3781
 
@@ -75,7 +75,7 @@ BuildDepends: <<
 	libgettext3-dev,
 	pkgconfig (>= 0.22-3),
 	qca2-%type_pkg[kde] (>= 2.0.2-1),
-	qt4-%type_pkg[kde] (>= 4.4.0-1),
+	qt4-%type_pkg[kde] (>= 4.4.1-1),
 	soprano-%type_pkg[kde]-dev (>= 2.2.1-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,

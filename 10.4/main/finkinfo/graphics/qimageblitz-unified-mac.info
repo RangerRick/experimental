@@ -11,7 +11,7 @@ Depends: qimageblitz-unified-%type_pkg[blitz]-shlibs (= %v-%r)
 BuildDepends: <<
 	fink (>= 0.29.7-1),
 	kde4-buildenv (>= 4.4.0-1),
-	kdelibs4-%type_pkg[blitz] (>= 4.4.0-1),
+	kdelibs4-%type_pkg[blitz] (>= 4.4.1-1),
 	qt4-%type_pkg[blitz] (>= 4.6.1-1)
 <<
 Replaces: <<
@@ -69,7 +69,7 @@ DocFiles: Changelog README*
 SplitOff: <<
 	Package: qimageblitz-unified-%type_pkg[blitz]-shlibs
 	Description: Shared libraries for Blitz++
-	Depends: kdelibs4-%type_pkg[blitz]-shlibs (>= 4.4.0-1)
+	Depends: kdelibs4-%type_pkg[blitz]-shlibs (>= 4.4.1-1)
 	Replaces: <<
 		blitz-%type_pkg[blitz]-shlibs (<< 0.0.4-2000),
 		qimageblitz-mac-shlibs (<< 0.0.4-2000),

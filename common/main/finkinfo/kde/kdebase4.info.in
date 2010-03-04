@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdebase4-mac
 Type: kde (mac)
 #endif
-Version: 4.4.0
+Version: 4.4.1
 Revision: 1
 Description: KDE4 - base runtime
 License: GPL/LGPL
@@ -52,7 +52,7 @@ BuildDepends: <<
 	openldap24-dev,
 	pcre,
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.4.0-1),
+	qt4-%type_pkg[kde] (>= 4.4.1-1),
 	soprano-%type_pkg[kde]-dev (>= 2.2.1-1),
 	strigi-dev (>= 0.6.3-1),
 	strigi-gui-%type_pkg[kde]-dev (>= 0.6.3-1),
@@ -62,7 +62,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdebase-%v.tar.bz2
-Source-MD5: ddfc358aebe5dc8f5de6f5d1ff7cb018
+Source-MD5: 489602de000f1dd4bee682765510fa44
 SourceDirectory: kdebase-%v
 PatchFile: kdebase4.patch
 PatchFile-MD5: d2a988e7312e8487e4a2cc5e3d39ae8b

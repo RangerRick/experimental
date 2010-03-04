@@ -1,6 +1,6 @@
 Info3: <<
 Package: kdebase4-runtime-%type_pkg[kde]
-Version: 4.4.0
+Version: 4.4.1
 Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - base applications and tools (runtime)
@@ -53,7 +53,7 @@ BuildDepends: <<
 	openldap24-dev,
 	pcre,
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.4.0-1),
+	qt4-%type_pkg[kde] (>= 4.4.1-1),
 	strigi-dev (>= 0.6.3-1),
 	strigi-gui-%type_pkg[kde]-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
@@ -62,7 +62,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdebase-runtime-%v.tar.bz2
-Source-MD5: 066f1de9029e237aaa75d40c3bb3fcd2
+Source-MD5: d0e6f9afbd73c3f8321a468ae3d9c5e5
 SourceDirectory: kdebase-runtime-%v
 PatchFile: kdebase4-runtime.patch
 PatchFile-MD5: 4dd9be27d3bd3b1c3aff060fd6cb91ed

@@ -1,7 +1,7 @@
 Info4: <<
 Package: kdelibs4-%type_pkg[kde]
-Version: 4.4.0
-Revision: 3
+Version: 4.4.1
+Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - essential libraries
 License: GPL/LGPL
@@ -58,7 +58,7 @@ BuildConflicts: gamin-dev
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdelibs-%v.tar.bz2
-Source-MD5: 957bca85de744a9ddd316fd85e882b40
+Source-MD5: 5057908fb9dcf7997a87fe27a382bfc9
 SourceDirectory: kdelibs-%v
 PatchFile: kdelibs4.patch
 PatchFile-MD5: 917d9076ea23f7c9172db24deef8a44e
@@ -134,7 +134,7 @@ SplitOff: <<
 	<<
 	Recommends: %N (>= %v-%r)
 	Replaces: <<
-		kdebase4-workspace-%type_pkg[kde]-shlibs (<< 4.4.0-1),
+		kdebase4-workspace-%type_pkg[kde]-shlibs (<< 4.4.1-1),
 		%N (<< 4.2.2-4),
 	<<
 	ConfFiles: %p/opt/kde4/%type_pkg[kde]/etc/kde4rc

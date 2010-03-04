@@ -6,8 +6,8 @@ Type: kde (x11)
 Package: kdenetwork4-mac
 Type: kde (mac)
 #endif
-Version: 4.4.0
-Revision: 2
+Version: 4.4.1
+Revision: 1
 Description: KDE4 - Network Apps
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdenetwork4@fink.racoonfink.com>
@@ -16,7 +16,7 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:stable/%v/src/kdenetwork-%v.tar.bz2
-Source-MD5: a200053df151f17605ffee05f427e959
+Source-MD5: e1a0da88d27feb7c921a26c0dc9782b7
 PatchFile: kdenetwork4.patch
 PatchFile-MD5: 4a52c0becfc50a32c8423c61db802b4d
 
@@ -57,7 +57,7 @@ BuildDepends: <<
 	libxslt,
 	pkgconfig (>= 0.22-3),
 	qca2-%type_pkg[kde] (>= 2.0.2-1),
-	qt4-%type_pkg[kde] (>= 4.4.0-1),
+	qt4-%type_pkg[kde] (>= 4.4.1-1),
 	soprano-%type_pkg[kde]-dev (>= 2.2.1-1),
 	speex3,
 	sqlite3-dev,

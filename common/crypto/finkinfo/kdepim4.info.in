@@ -6,8 +6,8 @@ Type: kde (x11)
 Package: kdepim4-mac
 Type: kde (mac)
 #endif
-Version: 4.4.0
-Revision: 3
+Version: 4.4.1
+Revision: 1
 Description: KDE4 - Personal Information Management
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdepim4@fink.racoonfink.com>
@@ -16,7 +16,7 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:stable/%v/src/kdepim-%v.tar.bz2
-Source-MD5: a354448eebd4fd4b50739c4f20b90e20
+Source-MD5: da724cf0d5ab813648ebf9749091174e
 PatchFile: kdepim4.patch
 PatchFile-MD5: 0b2afe813abaf0c90b4d663ebf6b24d2
 
@@ -74,7 +74,7 @@ BuildDepends: <<
 	python25,
 	qca2-%type_pkg[kde] (>= 2.0.2-1),
 	qgpgme1-%type_pkg[kde] (>= 4.2.4-2),
-	qt4-%type_pkg[kde] (>= 4.4.0-1),
+	qt4-%type_pkg[kde] (>= 4.4.1-1),
 	soprano-%type_pkg[kde]-dev (>= 2.2.1-1),
 	speex3,
 	strigi-dev (>= 0.6.3-1),
@@ -243,7 +243,7 @@ SplitOff5: <<
 	Description: KDE4 - certificate manager library
 	Depends: <<
 		gpgme11-shlibs,
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.0-1),
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
 		qgpgme1-%type_pkg[kde]-shlibs,
 	<<
 	Files: <<

@@ -1,7 +1,7 @@
 Info3: <<
 Package: kdepimlibs4-%type_pkg[kde]
-Version: 4.4.0
-Revision: 2
+Version: 4.4.1
+Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - PIM support libraries
 License: GPL/LGPL
@@ -49,10 +49,13 @@ BuildDepends: <<
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev
 <<
+Replaces: <<
+	kontact4-%type_pkg[kde] (<< 4.4.1-1)
+<<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdepimlibs-%v.tar.bz2
-Source-MD5: 2eb04e5ae39a25009f036ec333eb118a
+Source-MD5: dab906c8ea41551b8d494ff9a696d20a
 SourceDirectory: kdepimlibs-%v
 PatchFile: kdepimlibs4.patch
 PatchFile-MD5: 227cdbbe6457a69a42e0cca4fbceb074
@@ -91,8 +94,8 @@ SplitOff: <<
 	<<
 	Replaces: <<
 		%N-dev (<< 4.2.1-2),
-		kontact4-%type_pkg[kde] (<< 4.4.0-1),
-		akonadi4-%type_pkg[kde]-shlibs (<< 4.4.0-1),
+		kontact4-%type_pkg[kde] (<< 4.4.1-1),
+		akonadi4-%type_pkg[kde]-shlibs (<< 4.4.1-1),
 	<<
 	Recommends: %N (>= %v-%r)
 	Files: <<

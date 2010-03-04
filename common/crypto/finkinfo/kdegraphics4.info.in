@@ -6,14 +6,14 @@ Type: kde (x11)
 Package: kdegraphics4-mac
 Type: kde (mac)
 #endif
-Version: 4.4.0
-Revision: 2
+Version: 4.4.1
+Revision: 1
 Description: KDE4 - Graphics applications
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdegraphics4@fink.racoonfink.com>
 
 Source: mirror:kde:stable/%v/src/kdegraphics-%v.tar.bz2
-Source-MD5: 922b647c4b9235fe3eb9a269c00bd436
+Source-MD5: f59b613714aae2ad57b03574f5db00f2
 PatchFile: kdegraphics4.patch
 PatchFile-MD5: 58db7d2be3e24f2ebb52b2f83599aa2b
 
@@ -63,7 +63,7 @@ BuildDepends: <<
 	poppler2,
 	poppler2-qt4-%type_pkg[kde] (>= 0.6.4-4),
 	qca2-%type_pkg[kde] (>= 2.0.2-1),
-	qt4-%type_pkg[kde] (>= 4.4.0-1),
+	qt4-%type_pkg[kde] (>= 4.4.1-1),
 	sane-backends-dev,
 	soprano-%type_pkg[kde]-dev (>= 2.2.1-1),
 	strigi-dev (>= 0.6.3-1),
@@ -122,7 +122,7 @@ SplitOff2: <<
 		libkipi-7-%type_pkg[kde]-shlibs (>= %v-%r),
 		%N-base (>= %v-%r)
 	<<
-	Replaces: %N-base (<< 4.4.0-1)
+	Replaces: %N-base (<< 4.4.1-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/gwenview*
 		opt/kde4/%type_pkg[kde]/lib/kde4/gvpart*
@@ -152,7 +152,7 @@ SplitOff3: <<
 		libgphoto2-shlibs,
 		%N-base (>= %v-%r)
 	<<
-	Replaces: %N-base (<< 4.4.0-1)
+	Replaces: %N-base (<< 4.4.1-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/*kamera*
 		opt/kde4/%type_pkg[kde]/share/apps/solid/actions/solid_camera*
@@ -242,7 +242,7 @@ SplitOff8: <<
 		qca2-%type_pkg[kde]-shlibs (>= 2.0.2-1),
 		%N-base (>= %v-%r)
 	<<
-	Replaces: %N-base (<< 4.4.0-1)
+	Replaces: %N-base (<< 4.4.1-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/okular*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kio_msits*
@@ -317,7 +317,7 @@ SplitOff13: <<
 	Package: libkexiv2-data-%type_pkg[kde]
 	Description: KDE4 - data for libkexiv2
 	Depends: %N-base (>= %v-%r)
-	Replaces: %N-base (<< 4.4.0-1)
+	Replaces: %N-base (<< 4.4.1-1)
 	Files: opt/kde4/%type_pkg[kde]/share/apps/libkexiv2
 <<
 SplitOff14: <<

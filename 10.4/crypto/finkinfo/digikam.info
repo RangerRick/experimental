@@ -8,7 +8,7 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <digikam@fink.racoonfink.com>
 
 Depends: <<
-	kdebase4-runtime-%type_pkg[kde] (>= 4.4.0-1),
+	kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1),
 	kipi-plugins4-%type_pkg[kde] (>= 1.1.0-1),
 	%N-shlibs (>= %v-%r)
 <<
@@ -21,10 +21,10 @@ BuildDepends: <<
 	freetype219 (>= 2.3.7-7),
 	glib2-dev (>= 2.18.4-1),
 	kde4-buildenv (>= 4.4.0-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.4.0-1),
-	kdeedu4-%type_pkg[kde]-dev (>= 4.4.0-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.4.0-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.4.0-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.4.1-1),
+	kdeedu4-%type_pkg[kde]-dev (>= 4.4.1-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
 	kipi-plugins4-%type_pkg[kde] (>= 1.1.0-1),
 	lcms,
 	lensfun,
@@ -73,7 +73,7 @@ InstallScript: <<
 SplitOff: <<
 	Package: %N-shlibs
 	Depends: <<
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.0-1),
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
 		kipi-plugins4-%type_pkg[kde]-shlibs (>= 1.1.0-1),
 		lcms-shlibs,
 		libjasper.1-shlibs,
@@ -82,7 +82,7 @@ SplitOff: <<
 		libkexiv2-8-%type_pkg[kde]-shlibs (>= 4.2.4-1),
 		libkipi-7-%type_pkg[kde]-shlibs (>= 4.2.4-1),
 		liblqr1-shlibs,
-		marble4-%type_pkg[kde] (>= 4.4.0-1)
+		marble4-%type_pkg[kde] (>= 4.4.1-1)
 	<<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/libdigikamcore.1*.dylib
