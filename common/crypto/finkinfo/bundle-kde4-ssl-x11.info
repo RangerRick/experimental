@@ -9,7 +9,8 @@ Maintainer: Benjamin Reed <bundle-kde4@fink.racoonfink.com>
 
 Depends: <<
 	bundle-kde4-x11 (>= %v-1),
-	kdegames4-x11 (>= %v-1),
+	kdeartwork4-x11 (>= %v-1),
+	kdebase4-workspace-x11 (>= %v-1),
 	kdegraphics4-x11 (>= %v-1),
 	kdenetwork4-x11 (>= %v-1),
 	kdepim4-x11 (>= %v-1),
