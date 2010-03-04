@@ -45,13 +45,9 @@ SetLDFLAGS: -bind_at_load
 SetLIBS: -L%p/lib
 NoSetMAKEFLAGS: true
 SetMAKEFLAGS: -j1
-PatchScript: <<
-	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1
-	perl -pi -e 's,JIT_SUPPORTED=yes,JIT_SUPPORTED=no,g' configure
-<<
+PatchScript: sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1
 ConfigureParams: <<
 	--build=%m-apple-darwin`uname -r|cut -f1 -d.` \
-	--with-jit=yes \
 	--with-ikvm-native=yes \
 	--mandir=%p/share/man \
 	--sysconfdir=%p/etc \
