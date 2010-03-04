@@ -678,22 +678,6 @@ diff -Nurd kdelibs-4.4.0/kdeui/windowmanagement/kwindowsystem_mac.cpp kdelibs-4.
      // not supported for 'global' windows; only for windows in the current process
      if (hasWId(winid)) return;
  
-diff -Nurd kdelibs-4.4.0/khtml/khtmlview.cpp kdelibs-4.4.0-new/khtml/khtmlview.cpp
---- kdelibs-4.4.0/khtml/khtmlview.cpp	2010-01-19 18:15:38.000000000 -0500
-+++ kdelibs-4.4.0-new/khtml/khtmlview.cpp	2010-02-18 11:28:28.000000000 -0500
-@@ -604,6 +604,12 @@
-         setWidget( new QWidget(this) );
-     widget()->setAttribute( Qt::WA_NoSystemBackground );
- 
-+    // Do *not* remove this attribute frivolously.
-+    // You might not notice a change of behaviour in Debug builds
-+    // but removing opaque events will make QWidget::scroll fail horribly
-+    // in Release builds.
-+    widget()->setAttribute( Qt::WA_OpaquePaintEvent );
-+
-     verticalScrollBar()->setCursor( Qt::ArrowCursor );
-     horizontalScrollBar()->setCursor( Qt::ArrowCursor );
- 
 diff -Nurd kdelibs-4.4.0/kimgio/CMakeLists.txt kdelibs-4.4.0-new/kimgio/CMakeLists.txt
 --- kdelibs-4.4.0/kimgio/CMakeLists.txt	2009-09-16 07:44:15.000000000 -0400
 +++ kdelibs-4.4.0-new/kimgio/CMakeLists.txt	2010-02-18 11:27:39.000000000 -0500
@@ -1054,17 +1038,6 @@ diff -Nurd kdelibs-4.4.0/kutils/kidletime/xscreensaverbasedpoller.cpp kdelibs-4.
  #include <X11/extensions/scrnsaver.h>
  
  #ifdef HAVE_XTEST
-diff -Nurd kdelibs-4.4.0/nepomuk/query/queryserviceclient.cpp kdelibs-4.4.0-new/nepomuk/query/queryserviceclient.cpp
---- kdelibs-4.4.0/nepomuk/query/queryserviceclient.cpp	2010-02-09 07:25:05.000000000 -0500
-+++ kdelibs-4.4.0-new/nepomuk/query/queryserviceclient.cpp	2010-02-18 11:30:16.000000000 -0500
-@@ -149,6 +149,7 @@
- Nepomuk::Query::QueryServiceClient::~QueryServiceClient()
- {
-     close();
-+    delete d->queryServiceInterface;
-     delete d;
- }
- 
 diff -Nurd kdelibs-4.4.0/solid/solid/managerbase.cpp kdelibs-4.4.0-new/solid/solid/managerbase.cpp
 --- kdelibs-4.4.0/solid/solid/managerbase.cpp	2009-03-10 08:26:04.000000000 -0400
 +++ kdelibs-4.4.0-new/solid/solid/managerbase.cpp	2010-02-18 11:27:39.000000000 -0500
