@@ -67,7 +67,7 @@ Source-MD5: c5a5826ce0e8b0faa760971850b29111
 SourceDirectory: kdebase-workspace-%v
 PatchScript: sed -e 's,@FINKPREFIX@,%p,g; s,@FINKTYPE@,%type_pkg[kde],g' %{PatchFile} | patch -p1
 PatchFile: kdebase4-workspace.patch
-PatchFile-MD5: 457a3497da0e11f884d5f10c661b7f45
+PatchFile-MD5: a8d9d84c2f35d7472f95444efd66f5bb
 
 CompileScript: <<
 #!/bin/sh -ev
