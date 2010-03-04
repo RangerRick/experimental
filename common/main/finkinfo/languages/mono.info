@@ -1,7 +1,7 @@
 Info4: <<
 Package: mono
 Version: 2.6.1
-Revision: 2
+Revision: 3
 Architecture: i386, powerpc
 
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
