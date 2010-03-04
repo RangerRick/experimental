@@ -114,6 +114,7 @@ SplitOff: <<
 		strigi-gui-%type_pkg[kde]-shlibs (>= 0.6.3-1),
 		xmms-shlibs
 	<<
+	Replaces: %N (<< 4.4.1-1)
 	Recommends: %N (>= %v-%r)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4
@@ -138,7 +139,7 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libprocessui.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libsolidcontrol.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libsolidcontrolifaces.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libsystemsettingsview.dylib
+		opt/kde4/%type_pkg[kde]/lib/libsystemsettingsview.1*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libtaskmanager.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libweather_ion.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/strigi
@@ -174,6 +175,7 @@ SplitOff2: <<
 	Package: %N-dev
 	Description: KDE4 - base development libraries and headers
 	Depends: %N (= %v-%r)
+	Replaces: %N-shlibs (<< 4.4.1-1)
 	BuildDependsOnly: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
@@ -197,6 +199,7 @@ SplitOff2: <<
 		opt/kde4/%type_pkg[kde]/lib/libprocessui.dylib
 		opt/kde4/%type_pkg[kde]/lib/libsolidcontrol.dylib
 		opt/kde4/%type_pkg[kde]/lib/libsolidcontrolifaces.dylib
+		opt/kde4/%type_pkg[kde]/lib/libsystemssettingsview.dylib
 		opt/kde4/%type_pkg[kde]/lib/libtaskmanager.dylib
 		opt/kde4/%type_pkg[kde]/lib/libweather_ion.dylib
 		opt/kde4/%type_pkg[kde]/share/apps/cmake
@@ -216,6 +219,7 @@ Shlibs: <<
 	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kwin_rules_dialog.dylib
 	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kxkb.dylib
 	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_plasma-desktop.dylib
+	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_plasma-netbook.dylib
 <<
 
 PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
