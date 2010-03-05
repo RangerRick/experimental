@@ -41,6 +41,7 @@ Source-MD5: cbde85e50db653f54fe9da34be4a6de5
 
 NoSetCPPFLAGS: true
 SetCPPFLAGS: -DDBUS_API_SUBJECT_TO_CHANGE
+SetCFLAGS: -Os -g
 NoSetLDFLAGS: true
 SetLIBRARY_PATH: %p/lib/mesa:%p/lib
 ConfigureParams: --x-includes=/usr/X11R6/include --x-libraries=/usr/X11R6/lib

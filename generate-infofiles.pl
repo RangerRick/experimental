@@ -126,6 +126,7 @@ my $translate = [
 	'strigi',
 	'swig',
 	'/taglib',
+	'winetricks',
 	'wv2',
 	'xfree86\\.',
 	'xmlunit',
