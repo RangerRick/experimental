@@ -199,7 +199,7 @@ SplitOff2: <<
 		opt/kde4/%type_pkg[kde]/lib/libprocessui.dylib
 		opt/kde4/%type_pkg[kde]/lib/libsolidcontrol.dylib
 		opt/kde4/%type_pkg[kde]/lib/libsolidcontrolifaces.dylib
-		opt/kde4/%type_pkg[kde]/lib/libsystemssettingsview.dylib
+		opt/kde4/%type_pkg[kde]/lib/libsystemsettingsview.dylib
 		opt/kde4/%type_pkg[kde]/lib/libtaskmanager.dylib
 		opt/kde4/%type_pkg[kde]/lib/libweather_ion.dylib
 		opt/kde4/%type_pkg[kde]/share/apps/cmake
