@@ -37,7 +37,7 @@ GCC: 4.0
 Source: mirror:kde:stable/%v/src/kdeadmin-%v.tar.bz2
 Source-MD5: 6a69c96bf7ad38ea78972e926a2281e7
 PatchFile: kdeadmin4.patch
-PatchFile-MD5: c3a334a921c615dff51f79c38b8cec31
+PatchFile-MD5: f5f3a82363cb00afc69fa1fcdbaca09f
 
 CompileScript: <<
 #!/bin/sh -ev
