@@ -151,6 +151,7 @@ SplitOff3: <<
 	Package: kate4-%type_pkg[kde]
 	Description: KDE4 - advanced text editor
 	Depends: %N-base (>= %v-%r)
+	Replaces: %N-base (<< 4.4.1-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kate*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kate*
