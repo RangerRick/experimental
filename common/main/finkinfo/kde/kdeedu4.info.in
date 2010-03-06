@@ -76,6 +76,8 @@ BuildDepends: <<
 	(%type_pkg[kde] = x11) xscreensaver
 <<
 GCC: 4.0
+NoSetMAKEFLAGS: true
+SetMAKEFLAGS: -j1
 
 CompileScript: <<
 #!/bin/sh -ev
@@ -532,6 +534,7 @@ SplitOff18: <<
 		r-base,
 		%N-base (>= %v-%r),
 	<<
+	Replaces: %N-base (<< 4.4.1-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/cantor*
 		opt/kde4/%type_pkg[kde]/lib/kde4/*cantor*

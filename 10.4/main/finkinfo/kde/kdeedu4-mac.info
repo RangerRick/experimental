@@ -65,8 +65,10 @@ GCC: 4.0
 Source: mirror:kde:stable/%v/src/kdeedu-%v.tar.bz2
 Source-MD5: ef4bb9307043d807f97d8758a9ac1f8f
 PatchFile: kdeedu4.patch
-PatchFile-MD5: 0bb99b8a0f784a49bd1b0cb53f7e5280
+PatchFile-MD5: c78374a968a3b46310f1f78d05e04ced
 
+SetMAKEFLAGS: -j1
+NoSetMAKEFLAGS: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -325,6 +327,7 @@ SplitOff18: <<
 		r-base,
 		%N-base (>= %v-%r)
 	<<
+	Replaces: %N-base (<< 4.4.1-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/cantor*
 		opt/kde4/%type_pkg[kde]/lib/kde4/*cantor*
