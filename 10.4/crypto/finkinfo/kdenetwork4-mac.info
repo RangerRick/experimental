@@ -54,7 +54,7 @@ GCC: 4.0
 Source: mirror:kde:stable/%v/src/kdenetwork-%v.tar.bz2
 Source-MD5: e1a0da88d27feb7c921a26c0dc9782b7
 PatchFile: kdenetwork4.patch
-PatchFile-MD5: 4a52c0becfc50a32c8423c61db802b4d
+PatchFile-MD5: 7468d341e1ab88bbfd1cacbd8035fb9e
 
 CompileScript: <<
 #!/bin/sh -ev

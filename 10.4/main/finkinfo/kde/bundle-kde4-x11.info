@@ -9,7 +9,6 @@ Maintainer: Benjamin Reed <bundle-kde4@fink.racoonfink.com>
 Depends: <<
 	kdeaccessibility4-x11 (>= %v-1),
 	kdeadmin4-x11 (>= %v-1),
-	kdeartwork4-x11 (>= %v-1),
 	kdebase4-runtime-x11 (>= 4.4.1-1),
 	kdeedu4-x11 (>= 4.4.1-1),
 	kdemultimedia4-x11 (>= 4.4.1-1),

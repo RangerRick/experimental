@@ -202,6 +202,7 @@ SplitOff13: <<
 	Package: killbots4-%type_pkg[kde]
 	Description: KDE4 - BSD robots game clone
 	Depends: %N-base (>= %v-%r)
+	Replaces: %N-base (<< 4.4.1-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/killbots*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/killbots*
@@ -703,6 +704,7 @@ SplitOff36: <<
 	Package: kigo4-%type_pkg[kde]
 	Description: KDE4 - Go board game
 	Depends: %N-base (>= %v-%r)
+	Replaces: %N-base (<< 4.4.1-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kigo*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kigo*
