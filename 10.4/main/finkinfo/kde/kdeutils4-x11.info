@@ -96,6 +96,7 @@ SplitOff: <<
 		libarchive-shlibs,
 		libzip1-shlibs
 	<<
+	Replaces: %N-base (<< 4.4.1-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/ark*
 		opt/kde4/%type_pkg[kde]/lib/kde4/arkpart*
@@ -317,6 +318,7 @@ SplitOff9: <<
 	Package: okteta4-%type_pkg[kde]
 	Description: KDE4 - hex editor
 	Depends: %N-base (>= %v-%r)
+	Replaces: %N-base (<< 4.4.1-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/okteta*
 		opt/kde4/%type_pkg[kde]/lib/kde4/libkbytearray*
