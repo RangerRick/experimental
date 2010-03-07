@@ -66,7 +66,7 @@ GCC: 4.0
 Source: mirror:kde:stable/%v/src/kdepim-%v.tar.bz2
 Source-MD5: da724cf0d5ab813648ebf9749091174e
 PatchFile: kdepim4.patch
-PatchFile-MD5: 0b2afe813abaf0c90b4d663ebf6b24d2
+PatchFile-MD5: faf20a3514d81315fe28da702ee1812f
 
 CompileScript: <<
 #!/bin/sh -ev
