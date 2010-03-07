@@ -612,7 +612,7 @@ SplitOff3: <<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/kmail_bodypartformatter*
 		opt/kde4/%type_pkg[kde]/lib/kde4/ktexteditorkabcbridge*
-		opt/kde4/%type_pkg[kde]/share/apps/akonadi/contact/editorpageplugins*
+		opt/kde4/%type_pkg[kde]/lib/akonadi/contact/editorpageplugins*
 		opt/kde4/%type_pkg[kde]/share/apps/kmail/plugins/bodypartformatter*
 	<<
 <<
