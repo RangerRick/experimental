@@ -511,9 +511,10 @@ SplitOff27: <<
 		qgpgme1-%type_pkg[kde]-shlibs,
 		%N-base (>= %v-%r)
 	<<
-	Replaces: %N-base (<< 4.2.4-1)
+	Replaces: %N-base (<< 4.4.1-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kmail*
+		opt/kde4/%type_pkg[kde]/bin/ksendemail*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kcm_kmail*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kmail*
 		opt/kde4/%type_pkg[kde]/lib/libkmailprivate.4*.dylib

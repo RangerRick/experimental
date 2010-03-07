@@ -131,7 +131,9 @@ SplitOff8: <<
 		kdebase4-workspace-%type_pkg[kde] (>= 4.4.1-1),
 		xscreensaver
 	<<
+	Replaces: %N-base (<< 4.4.1-1)
 	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/kx*
 		opt/kde4/%type_pkg[kde]/bin/*.kss
 		opt/kde4/%type_pkg[kde]/share/apps/kfiresaver
 		opt/kde4/%type_pkg[kde]/share/apps/kscreensaver
