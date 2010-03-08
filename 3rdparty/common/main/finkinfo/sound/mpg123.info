@@ -26,7 +26,7 @@ BuildDepends: fink (>= 0.26.2), libtool2
 Conflicts: mpg321
 Replaces: mpg321
 
-ConfigureParams: (%m = x86_64) --with-audio=coreaudio (%m != x86_64) --with-audio=coreaudio,openal --enable-int-quality --disable-dependency-tracking ( %m = i386 ) --with-cpu=x86 ( %m = x86_64 ) --with-cpu=x86-64_all
+ConfigureParams: --with-audio=coreaudio,openal --enable-int-quality --disable-dependency-tracking ( %m = i386 ) --with-cpu=x86 ( %m = x86_64 ) --with-cpu=x86-64_all
 
 InstallScript: <<
 	make install DESTDIR=%d
