@@ -7,7 +7,7 @@ Package: kdetoys4-mac
 Type: kde (mac)
 #endif
 Version: 4.4.1
-Revision: 1
+Revision: 2
 Description: KDE4 - Toys
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdetoys4@fink.racoonfink.com>
@@ -39,6 +39,7 @@ BuildDepends: <<
 	kdebase4-%type_pkg[kde]-dev (>= 4.2.0-1),
 #ifdef TYPE_X11
 	kdebase4-workspace-%type_pkg[kde]-dev (>= 4.2.0-1),
+#endif
 	kdelibs4-%type_pkg[kde]-dev (>= 4.2.0-1),
 	libgettext3-dev,
 	pkgconfig (>= 0.22-3),
