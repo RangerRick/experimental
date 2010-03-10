@@ -21,6 +21,7 @@ Source-MD5: 3dea45a5f04124ec4b3e9fe497617073
 Depends: <<
 #ifdef TYPE_X11
 	amor4-%type_pkg[kde] (>= %v-%r),
+	ktux4-%type_pkg[kde] (>= %v-%r),
 	kweather4-%type_pkg[kde] (>= %v-%r),
 #endif
 	kteatime4-%type_pkg[kde] (>= %v-%r),
@@ -36,6 +37,8 @@ BuildDepends: <<
 	glib2-dev (>= 2.14.0-1),
 	kde4-buildenv (>= 4.2-3),
 	kdebase4-%type_pkg[kde]-dev (>= 4.2.0-1),
+#ifdef TYPE_X11
+	kdebase4-workspace-%type_pkg[kde]-dev (>= 4.2.0-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.2.0-1),
 	libgettext3-dev,
 	pkgconfig (>= 0.22-3),
@@ -134,7 +137,10 @@ SplitOff3: <<
 SplitOff4: <<
 	Package: ktux4-%type_pkg[kde]
 	Description: KDE4 - tux screensaver
-	Depends: %N-base (>= %v-%r)
+	Depends: <<
+		kdebase4-workspace-%type_pkg[kde] (>= 4.4.0-1),
+		%N-base (>= %v-%r)
+	<<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/ktux*
 		opt/kde4/%type_pkg[kde]/share/apps/ktux*
