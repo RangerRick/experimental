@@ -1,7 +1,7 @@
 Info4: <<
 Package: bundle-kde4-ssl-x11
 Version: 4.4.1
-Revision: 2
+Revision: 3
 BuildDepends: fink
 Description: KDE4 - convenience package: KDE 4.4 (X11)
 Type: bundle
@@ -15,6 +15,7 @@ Depends: <<
 	kdenetwork4-x11 (>= %v-1),
 	kdepim4-x11 (>= %v-1),
 	kdetoys4-x11 (>= %v-1),
+	kdeutils4-x11 (>= %v-1),
 <<
 
 Homepage: http://www.kde.org/

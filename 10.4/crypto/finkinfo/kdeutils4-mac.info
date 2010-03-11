@@ -1,24 +1,11 @@
 Info4: <<
-#ifdef TYPE_X11
-Package: kdeutils4-x11
-Type: kde (x11)
-#else
 Package: kdeutils4-mac
-Type: kde (mac)
-#endif
 Version: 4.4.1
-Revision: 1
+Revision: 2
 Description: KDE4 - Utilities
+Type: kde (mac)
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdeutils4@fink.racoonfink.com>
-
-DescDetail: <<
-<<
-
-Source: mirror:kde:stable/%v/src/kdeutils-%v.tar.bz2
-Source-MD5: 7dd3dfd7cde8cae0d61f85dba4685dd1
-PatchFile: kdeutils4.patch
-PatchFile-MD5: 2e679d1fe33c92f5a353b7a6c4ee590a
 
 Depends: <<
 	ark4-%type_pkg[kde] (>= %v-%r),
@@ -28,38 +15,37 @@ Depends: <<
 	kfloppy4-%type_pkg[kde] (>= %v-%r),
 	ktimer4-%type_pkg[kde] (>= %v-%r),
 	kwallet4-%type_pkg[kde] (>= %v-%r),
-	okteta4-%type_pkg[kde] (>= %v-%r),
-#ifdef TYPE_X11
-	irkick4-%type_pkg[kde] (>= %v-%r),
-	sweeper4-%type_pkg[kde] (>= %v-%r),
-	superkaramba4-%type_pkg[kde] (>= %v-%r),
-#endif
+	okteta4-%type_pkg[kde] (>= %v-%r)
 <<
-
 BuildDepends: <<
-	automoc-%type_pkg[kde] (>= 0.9.88-1),
+	automoc-%type_pkg[kde] (>= 0.9.89-0),
 	qimageblitz-unified-%type_pkg[kde],
-	cmake (>= 2.6.3-1),
+	cmake (>= 2.6.4-1),
 	dbus-dev (>= 1.2.12-1),
-	fink (>= 0.28.0-1),
+	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.7-7),
-	glib2-dev (>= 2.14.0-1),
+	glib2-dev (>= 2.18.4-1),
 	gmp,
-	kde4-buildenv (>= 4.2-3),
-	kdebase4-%type_pkg[kde]-dev (>= 4.2.0-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.2.0-1),
+	kde4-buildenv (>= 4.4.0-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.4.1-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
 	libarchive,
-	libgettext3-dev,
+	libgettext8-dev,
 	libzip1,
-	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.4.1-1),
-	soprano-%type_pkg[kde]-dev (>= 2.2.1-1),
+	pkgconfig (>= 0.23-1),
+	qt4-%type_pkg[kde] (>= 4.6.1-1),
+	soprano-%type_pkg[kde]-dev (>= 2.4.0-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
-	system-openssl-dev,
+	system-openssl-dev
 <<
 GCC: 4.0
+
+Source: mirror:kde:stable/%v/src/kdeutils-%v.tar.bz2
+Source-MD5: 7dd3dfd7cde8cae0d61f85dba4685dd1
+PatchFile: kdeutils4.patch
+PatchFile-MD5: 2e679d1fe33c92f5a353b7a6c4ee590a
 
 CompileScript: <<
 #!/bin/sh -ev
@@ -99,14 +85,13 @@ InstallScript: <<
 	touch %i/share/doc/installed-packages/%N
 	touch %i/share/doc/installed-packages/%N-base
 <<
-
 SplitOff: <<
 	Package: ark4-%type_pkg[kde]
 	Description: KDE4 - archive utility
 	Depends: <<
 		%N-base (>= %v-%r),
 		libarchive-shlibs,
-		libzip1-shlibs,
+		libzip1-shlibs
 	<<
 	Replaces: %N-base (<< 4.4.1-1)
 	Files: <<
@@ -128,6 +113,18 @@ SplitOff: <<
 	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libkerfuffle.4.dylib
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
+SplitOff11: <<
+	Package: sweeper4-%type_pkg[kde]
+	Description: KDE4 - history and temp file cleaner
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/sweeper*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/sweeper*
+		opt/kde4/%type_pkg[kde]/share/apps/sweeper
+		opt/kde4/%type_pkg[kde]/share/dbus-1/interfaces/org.kde.sweeper*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
 SplitOff2: <<
 	Package: kcalc4-%type_pkg[kde]
 	Description: KDE4 - calculator
@@ -146,6 +143,12 @@ SplitOff2: <<
 	<<
 	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kcalc.dylib
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff20: <<
+	Package: %N-base
+	Description: KDE4 - kdeutils base package
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1)
+	Files: opt share/doc/installed-packages/%n
 <<
 SplitOff3: <<
 	Package: kcharselect4-%type_pkg[kde]
@@ -282,94 +285,7 @@ SplitOff9: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-#ifdef TYPE_X11
-SplitOff10: <<
-	Package: superkaramba4-%type_pkg[kde]
-	Description: KDE4 - theme engine
-	Depends: <<
-		qimageblitz-unified-%type_pkg[kde]-shlibs,
-		%N-base (>= %v-%r)
-	<<
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/superkaramba*
-		opt/kde4/%type_pkg[kde]/lib/kde4/plasma_*_superkaramba*
-		opt/kde4/%type_pkg[kde]/lib/libsuperkaramba.4*.dylib
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/superkaramba*
-		opt/kde4/%type_pkg[kde]/share/apps/superkaramba
-		opt/kde4/%type_pkg[kde]/share/config/superkaramba*
-		opt/kde4/%type_pkg[kde]/share/dbus-1/interfaces/org.kde.superkaramba*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/superkaramba
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/superkaramba*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/superkaramba*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/superkaramba*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/superkaramba*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/superkaramba*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/superkaramba*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/superkaramba*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/plasma-*-superkaramba*
-	<<
-	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libsuperkaramba.4.dylib
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-#endif
-SplitOff11: <<
-	Package: sweeper4-%type_pkg[kde]
-	Description: KDE4 - history and temp file cleaner
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/sweeper*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/sweeper*
-		opt/kde4/%type_pkg[kde]/share/apps/sweeper
-		opt/kde4/%type_pkg[kde]/share/dbus-1/interfaces/org.kde.sweeper*
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-#ifdef TYPE_X11
-SplitOff12: <<
-	Package: irkick4-%type_pkg[kde]
-	Description: KDE4 - infrared remote support
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/irkick*
-		opt/kde4/%type_pkg[kde]/lib/kde4/kcm_lirc*
-		opt/kde4/%type_pkg[kde]/lib/libkdeinit4_irkick.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkdelirc_shared.1*.dylib
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/irkick*
-		opt/kde4/%type_pkg[kde]/share/apps/irkick
-		opt/kde4/%type_pkg[kde]/share/apps/profiles
-		opt/kde4/%type_pkg[kde]/share/autostart/irkick*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/irkick
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kcmlirc
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/irkick.*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/irkick.*
-		opt/kde4/%type_pkg[kde]/share/icons/oxygen/128x128/devices/infrared-remote.*
-		opt/kde4/%type_pkg[kde]/share/icons/oxygen/16x16/devices/infrared-remote.*
-		opt/kde4/%type_pkg[kde]/share/icons/oxygen/22x22/actions/irkick*
-		opt/kde4/%type_pkg[kde]/share/icons/oxygen/22x22/devices/infrared-remote.*
-		opt/kde4/%type_pkg[kde]/share/icons/oxygen/32x32/devices/infrared-remote.*
-		opt/kde4/%type_pkg[kde]/share/icons/oxygen/42x42/devices/infrared-remote.*
-		opt/kde4/%type_pkg[kde]/share/icons/oxygen/48x48/devices/infrared-remote.*
-		opt/kde4/%type_pkg[kde]/share/icons/oxygen/64x64/devices/infrared-remote.*
-		opt/kde4/%type_pkg[kde]/share/icons/oxygen/8x8/devices/infrared-remote.*
-		opt/kde4/%type_pkg[kde]/share/icons/oxygen/scalable/actions/irkick*
-		opt/kde4/%type_pkg[kde]/share/icons/oxygen/scalable/devices/infrared-remote.*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/kcm_lirc.*
-	<<
-	Shlibs: <<
-		!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_irkick.dylib
-		!%p/opt/kde4/%type_pkg[kde]/lib/libkdelirc_shared.1.dylib
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-#endif
 
-SplitOff20: <<
-	Package: %N-base
-	Description: KDE4 - kdeutils base package
-	Depends: <<
-		kdebase4-runtime-%type_pkg[kde] (>= 4.2.1-1),
-	<<
-	Files: opt share/doc/installed-packages/%n
+DescDetail: 
 <<
 
-<<
