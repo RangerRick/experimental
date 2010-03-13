@@ -1,12 +1,12 @@
 Package: pbzip2
-Version: 1.0.5
+Version: 1.1.0
 Revision: 1
 GCC: 4.0
 
 BuildDepends: bzip2-dev
 Depends: bzip2-shlibs
 Source: http://compression.ca/%n/%n-%v.tar.gz
-Source-MD5: e2448d22ee29d1e6549ac58b98df11ab
+Source-MD5: 39cfc2e8c810391b571246e798f7c73a
 CompileScript: make
 InstallScript: <<
 	install -d -m 755 %i/bin
