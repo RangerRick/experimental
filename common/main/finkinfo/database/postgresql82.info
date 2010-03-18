@@ -1,6 +1,6 @@
 Package: postgresql82
-Version: 8.2.13
-Revision: 3
+Version: 8.2.16
+Revision: 1
 Description: PostgreSQL open-source database
 License: BSD
 Maintainer: Benjamin Reed <postgresql82@fink.racoonfink.com>
@@ -46,7 +46,7 @@ Replaces: <<
 GCC: 4.0
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: 6cabbab9620d0dda788cca202c87bb78
+Source-MD5: cb3be1e35ca9bba64d65a2ab337fb1a0
 PatchFile: %n.patch
 PatchFile-MD5: 620d72047858614b3c03af2398ca5311
 PatchScript: <<

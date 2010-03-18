@@ -1,6 +1,6 @@
 Package: postgresql81
-Version: 8.1.17
-Revision: 3
+Version: 8.1.20
+Revision: 1
 Description: PostgreSQL open-source database
 License: BSD
 Maintainer: Benjamin Reed <postgresql81@fink.racoonfink.com>
@@ -46,7 +46,7 @@ Replaces: <<
 GCC: 4.0
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: 082c37bbed468847e75762dc12bb6acf
+Source-MD5: e7c46bb0e5704537ada9c9dadc4358d8
 PatchFile: %n.patch
 PatchFile-MD5: 35f6068dcf1f958164183dbf865afd36
 PatchScript: <<

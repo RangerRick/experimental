@@ -1,6 +1,6 @@
 Package: postgresql83
-Version: 8.3.7
-Revision: 3
+Version: 8.3.10
+Revision: 1
 Description: PostgreSQL open-source database
 License: BSD
 Maintainer: Benjamin Reed <postgresql83@fink.racoonfink.com>
@@ -46,7 +46,7 @@ Replaces: <<
 GCC: 4.0
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: 7b7e91a2221e55fe1b167e663217a96d
+Source-MD5: 315118130e1800a87f0effe69b947810
 PatchFile: %n.patch
 PatchFile-MD5: 61bec3bd4b8bf0c27305a71ec8c32611
 PatchScript: <<

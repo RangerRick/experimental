@@ -1,6 +1,6 @@
 Package: postgresql84
-Version: 8.4.1
-Revision: 0.20090901.1
+Version: 8.4.3
+Revision: 1
 Description: PostgreSQL open-source database
 License: BSD
 Maintainer: Benjamin Reed <postgresql84@fink.racoonfink.com>
@@ -26,10 +26,8 @@ BuildDepends: <<
 
 GCC: 4.0
 
-CustomMirror: RangerMirror
-Source: mirror:custom:fink/postgresql/postgresql-%v-snapshot-20090901.tar.bz2
-SourceDirectory: postgresql-snapshot
-Source-MD5: 223fb2ec70ac7a1e6df6de95b1c4c8a7
+Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
+Source-MD5: 7f70e7b140fb190f268837255582b07e
 PatchFile: %n.patch
 PatchFile-MD5: e42fbdad63059b801b016b33742f1512
 PatchScript: <<
