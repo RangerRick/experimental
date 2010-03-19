@@ -18,7 +18,7 @@ Depends: <<
 	libnautilus-burn4-shlibs,
 	librsvg2-shlibs (>= 2.24.0-1),
 	libwnck1.22-shlibs (>= 2.26.2-1),
-	mono (>= 2.6.1-1),
+	mono (>= 2.6.2-1),
 	vte (>= 0.20.5-1)
 <<
 BuildDepends: <<
@@ -50,7 +50,7 @@ BuildDepends: <<
 	libnautilus-burn4-dev,
 	librsvg2 (>= 2.24.0-1),
 	libwnck1.22 (>= 2.26.2-1),
-	mono-dev (>= 2.6.1-1),
+	mono-dev (>= 2.6.2-1),
 	orbit2-dev (>= 2.14.10-1),
 	pango1-xft2-ft219-dev (>= 1.24.0-1),
 	pixman (>= 0.16.0-1),

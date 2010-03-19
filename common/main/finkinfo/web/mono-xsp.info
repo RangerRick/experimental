@@ -1,9 +1,9 @@
 Package: mono-xsp
-Version: 2.6
+Version: 2.6.3
 Revision: 1
 Architecture: i386, powerpc
 Source: http://ftp.novell.com/pub/mono/sources/xsp/xsp-%v.tar.bz2
-Source-MD5: 48215067d6846971545d4294c65ee500
+Source-MD5: 246a2760cf55849a5542daeb13f8c27d
 DocFiles: AUTHORS COPYING* ChangeLog INSTALL NEWS README
 Depends: mono (>= 2.0-1)
 BuildDepends: <<

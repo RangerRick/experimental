@@ -7,10 +7,10 @@ Description: C# Clean-Room D-Bus Implementation
 License: BSD
 Maintainer: Benjamin Reed <ndesk-dbus@fink.racoonfink.com>
 
-Depends: mono (>= 2.6.1-1)
+Depends: mono (>= 2.6.2-1)
 BuildDepends: <<
 	glib2-dev (>= 2.18.4-1),
-	mono-dev (>= 2.6.1-1),
+	mono-dev (>= 2.6.2-1),
 	pkgconfig (>= 0.23-1)
 <<
 

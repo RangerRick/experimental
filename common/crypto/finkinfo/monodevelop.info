@@ -1,11 +1,11 @@
 Info3: <<
 Package: monodevelop
-Version: 2.2
+Version: 2.2.2
 Revision: 1
 
 Architecture: i386, powerpc
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
-Source-MD5: 0d51c8d3a1e0a352f97ee5ac731b3238
+Source-MD5: 7f01933ede642dbf394147224d0d751e
 PatchFile: %n.patch
 PatchFile-MD5: 3237b6c87dbfb31af458726aba443376
 PatchScript: <<

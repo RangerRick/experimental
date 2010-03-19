@@ -12,7 +12,7 @@ Depends: <<
 	libglade2-shlibs (>= 2.6.2-1),
 	libgnomeui2-shlibs (>= 2.24.0-1),
 	librsvg2-shlibs (>= 2.24.0-1),
-	mono (>= 2.6.1-1),
+	mono (>= 2.6.2-1),
 	vte (>= 0.20.5-1)
 <<
 BuildDepends: <<
@@ -42,7 +42,7 @@ BuildDepends: <<
 	libjpeg8,
 	librsvg2 (>= 2.24.0-1),
 	libxml2 (>= 2.6.32-1),
-	mono-dev (>= 2.6.1-1),
+	mono-dev (>= 2.6.2-1),
 	orbit2-dev (>= 2.14.10-1),
 	pango1-xft2-ft219-dev (>= 1.24.0-1),
 	pixman (>= 0.16.0-1),

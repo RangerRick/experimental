@@ -1,6 +1,6 @@
-diff -Nurd postgresql-8.0.21/contrib/Makefile postgresql-8.0.21-new/contrib/Makefile
---- postgresql-8.0.21/contrib/Makefile	2004-12-14 17:50:23.000000000 -0500
-+++ postgresql-8.0.21-new/contrib/Makefile	2009-07-17 14:18:07.000000000 -0400
+diff -Nurd postgresql-8.0.24/contrib/Makefile postgresql-8.0.24-new/contrib/Makefile
+--- postgresql-8.0.24/contrib/Makefile	2004-12-14 16:50:23.000000000 -0600
++++ postgresql-8.0.24-new/contrib/Makefile	2010-03-18 21:31:34.000000000 -0500
 @@ -37,7 +37,6 @@
  		string		\
  		tablefunc	\
@@ -9,9 +9,9 @@ diff -Nurd postgresql-8.0.21/contrib/Makefile postgresql-8.0.21-new/contrib/Make
  		tsearch2	\
  		userlock	\
  		vacuumlo
-diff -Nurd postgresql-8.0.21/pgsql.sh postgresql-8.0.21-new/pgsql.sh
---- postgresql-8.0.21/pgsql.sh	1969-12-31 19:00:00.000000000 -0500
-+++ postgresql-8.0.21-new/pgsql.sh	2009-07-17 14:19:32.000000000 -0400
+diff -Nurd postgresql-8.0.24/pgsql.sh postgresql-8.0.24-new/pgsql.sh
+--- postgresql-8.0.24/pgsql.sh	1969-12-31 18:00:00.000000000 -0600
++++ postgresql-8.0.24-new/pgsql.sh	2010-03-18 21:31:34.000000000 -0500
 @@ -0,0 +1,81 @@
 +#!/bin/sh
 +
@@ -94,9 +94,9 @@ diff -Nurd postgresql-8.0.21/pgsql.sh postgresql-8.0.21-new/pgsql.sh
 +		$PG_COMMAND stop -D "$DATADIR" -m fast
 +		;;
 +esac
-diff -Nurd postgresql-8.0.21/src/Makefile.global.in postgresql-8.0.21-new/src/Makefile.global.in
---- postgresql-8.0.21/src/Makefile.global.in	2005-03-25 13:18:39.000000000 -0500
-+++ postgresql-8.0.21-new/src/Makefile.global.in	2009-07-17 14:18:07.000000000 -0400
+diff -Nurd postgresql-8.0.24/src/Makefile.global.in postgresql-8.0.24-new/src/Makefile.global.in
+--- postgresql-8.0.24/src/Makefile.global.in	2005-03-25 12:18:39.000000000 -0600
++++ postgresql-8.0.24-new/src/Makefile.global.in	2010-03-18 21:31:34.000000000 -0500
 @@ -65,21 +65,21 @@
  libexecdir := @libexecdir@
  ifeq "$(findstring pgsql, $(libexecdir))" ""
@@ -149,9 +149,9 @@ diff -Nurd postgresql-8.0.21/src/Makefile.global.in postgresql-8.0.21-new/src/Ma
  endif
  endif
  endif
-diff -Nurd postgresql-8.0.21/src/Makefile.shlib postgresql-8.0.21-new/src/Makefile.shlib
---- postgresql-8.0.21/src/Makefile.shlib	2005-12-03 15:16:50.000000000 -0500
-+++ postgresql-8.0.21-new/src/Makefile.shlib	2009-07-17 14:18:07.000000000 -0400
+diff -Nurd postgresql-8.0.24/src/Makefile.shlib postgresql-8.0.24-new/src/Makefile.shlib
+--- postgresql-8.0.24/src/Makefile.shlib	2005-12-03 14:16:50.000000000 -0600
++++ postgresql-8.0.24-new/src/Makefile.shlib	2010-03-18 21:31:34.000000000 -0500
 @@ -107,11 +107,11 @@
    ifeq ($(DLTYPE), library)
      # linkable library
@@ -166,9 +166,9 @@ diff -Nurd postgresql-8.0.21/src/Makefile.shlib postgresql-8.0.21-new/src/Makefi
    endif
    shlib			= lib$(NAME).$(SO_MAJOR_VERSION).$(SO_MINOR_VERSION)$(DLSUFFIX)
    shlib_major		= lib$(NAME).$(SO_MAJOR_VERSION)$(DLSUFFIX)
-diff -Nurd postgresql-8.0.21/src/backend/main/main.c postgresql-8.0.21-new/src/backend/main/main.c
---- postgresql-8.0.21/src/backend/main/main.c	2006-01-31 19:47:02.000000000 -0500
-+++ postgresql-8.0.21-new/src/backend/main/main.c	2009-07-17 14:18:07.000000000 -0400
+diff -Nurd postgresql-8.0.24/src/backend/main/main.c postgresql-8.0.24-new/src/backend/main/main.c
+--- postgresql-8.0.24/src/backend/main/main.c	2006-01-31 18:47:02.000000000 -0600
++++ postgresql-8.0.24-new/src/backend/main/main.c	2010-03-18 21:31:34.000000000 -0500
 @@ -56,6 +56,7 @@
  	struct passwd *pw;
  #endif
@@ -205,9 +205,9 @@ diff -Nurd postgresql-8.0.21/src/backend/main/main.c postgresql-8.0.21-new/src/b
  #ifdef WIN32
  	  || (len >= 14 && strcmp(argv[0] + len - 14, "postmaster.exe") == 0)
  #endif
-diff -Nurd postgresql-8.0.21/src/backend/utils/fmgr/dfmgr.c postgresql-8.0.21-new/src/backend/utils/fmgr/dfmgr.c
---- postgresql-8.0.21/src/backend/utils/fmgr/dfmgr.c	2004-12-31 17:01:31.000000000 -0500
-+++ postgresql-8.0.21-new/src/backend/utils/fmgr/dfmgr.c	2009-07-17 14:18:07.000000000 -0400
+diff -Nurd postgresql-8.0.24/src/backend/utils/fmgr/dfmgr.c postgresql-8.0.24-new/src/backend/utils/fmgr/dfmgr.c
+--- postgresql-8.0.24/src/backend/utils/fmgr/dfmgr.c	2004-12-31 16:01:31.000000000 -0600
++++ postgresql-8.0.24-new/src/backend/utils/fmgr/dfmgr.c	2010-03-18 21:31:34.000000000 -0500
 @@ -305,6 +305,26 @@
  		pfree(full);
  	}
@@ -235,21 +235,21 @@ diff -Nurd postgresql-8.0.21/src/backend/utils/fmgr/dfmgr.c postgresql-8.0.21-ne
  	new = palloc(strlen(name) + strlen(DLSUFFIX) + 1);
  	strcpy(new, name);
  	strcat(new, DLSUFFIX);
-diff -Nurd postgresql-8.0.21/src/backend/utils/misc/postgresql.conf.sample postgresql-8.0.21-new/src/backend/utils/misc/postgresql.conf.sample
---- postgresql-8.0.21/src/backend/utils/misc/postgresql.conf.sample	2006-05-21 16:11:25.000000000 -0400
-+++ postgresql-8.0.21-new/src/backend/utils/misc/postgresql.conf.sample	2009-07-17 14:18:07.000000000 -0400
+diff -Nurd postgresql-8.0.24/src/backend/utils/misc/postgresql.conf.sample postgresql-8.0.24-new/src/backend/utils/misc/postgresql.conf.sample
+--- postgresql-8.0.24/src/backend/utils/misc/postgresql.conf.sample	2010-02-25 17:45:04.000000000 -0600
++++ postgresql-8.0.24-new/src/backend/utils/misc/postgresql.conf.sample	2010-03-18 21:31:34.000000000 -0500
 @@ -61,7 +61,7 @@
  # - Security & Authentication -
  
  #authentication_timeout = 60	# 1-600, in seconds
 -#ssl = false
 +ssl = false
+ #ssl_renegotiation_limit = 524288	# amount of data between renegotiations
+ 					# in kilobytes
  #password_encryption = true
- #krb_server_keyfile = ''
- #db_user_namespace = false
-diff -Nurd postgresql-8.0.21/src/bin/initdb/initdb.c postgresql-8.0.21-new/src/bin/initdb/initdb.c
---- postgresql-8.0.21/src/bin/initdb/initdb.c	2006-05-21 15:57:39.000000000 -0400
-+++ postgresql-8.0.21-new/src/bin/initdb/initdb.c	2009-07-17 14:18:07.000000000 -0400
+diff -Nurd postgresql-8.0.24/src/bin/initdb/initdb.c postgresql-8.0.24-new/src/bin/initdb/initdb.c
+--- postgresql-8.0.24/src/bin/initdb/initdb.c	2009-03-31 13:58:20.000000000 -0500
++++ postgresql-8.0.24-new/src/bin/initdb/initdb.c	2010-03-18 21:31:35.000000000 -0500
 @@ -117,7 +117,7 @@
  
  /* defaults */
@@ -259,7 +259,7 @@ diff -Nurd postgresql-8.0.21/src/bin/initdb/initdb.c postgresql-8.0.21-new/src/b
  
  /*
   * Warning messages for authentication methods
-@@ -2313,7 +2313,7 @@
+@@ -2324,7 +2324,7 @@
  	sprintf(pgdenv, "PGDATA=%s", pg_data);
  	putenv(pgdenv);
  
@@ -268,7 +268,7 @@ diff -Nurd postgresql-8.0.21/src/bin/initdb/initdb.c postgresql-8.0.21-new/src/b
  							   backend_exec)) < 0)
  	{
  		char full_path[MAXPGPATH];
-@@ -2323,14 +2323,14 @@
+@@ -2334,14 +2334,14 @@
  
  		if (ret == -1)
  			fprintf(stderr,
@@ -285,7 +285,7 @@ diff -Nurd postgresql-8.0.21/src/bin/initdb/initdb.c postgresql-8.0.21-new/src/b
  					  "but was not the same version as %s.\n"
  					  "Check your installation.\n"),
  					full_path, progname);
-@@ -2617,7 +2617,7 @@
+@@ -2628,7 +2628,7 @@
  	get_parent_directory(bin_dir);
  	
  	printf(_("\nSuccess. You can now start the database server using:\n\n"
@@ -294,9 +294,9 @@ diff -Nurd postgresql-8.0.21/src/bin/initdb/initdb.c postgresql-8.0.21-new/src/b
  			 "or\n"
  			 "    %s%s%s%spg_ctl -D %s%s%s -l logfile start\n\n"),
  	  QUOTE_PATH, bin_dir, QUOTE_PATH, (strlen(bin_dir) > 0) ? DIR_SEP : "",
-diff -Nurd postgresql-8.0.21/src/bin/pg_ctl/pg_ctl.c postgresql-8.0.21-new/src/bin/pg_ctl/pg_ctl.c
---- postgresql-8.0.21/src/bin/pg_ctl/pg_ctl.c	2008-09-30 09:14:28.000000000 -0400
-+++ postgresql-8.0.21-new/src/bin/pg_ctl/pg_ctl.c	2009-07-17 14:18:07.000000000 -0400
+diff -Nurd postgresql-8.0.24/src/bin/pg_ctl/pg_ctl.c postgresql-8.0.24-new/src/bin/pg_ctl/pg_ctl.c
+--- postgresql-8.0.24/src/bin/pg_ctl/pg_ctl.c	2009-09-01 21:41:27.000000000 -0500
++++ postgresql-8.0.24-new/src/bin/pg_ctl/pg_ctl.c	2010-03-18 21:31:35.000000000 -0500
 @@ -570,7 +570,7 @@
  
  		postmaster_path = xmalloc(MAXPGPATH);
@@ -331,9 +331,9 @@ diff -Nurd postgresql-8.0.21/src/bin/pg_ctl/pg_ctl.c postgresql-8.0.21-new/src/b
  		if (ret != 0)
  		{
  			write_stderr(_("%s: could not find postmaster program executable\n"), progname);
-diff -Nurd postgresql-8.0.21/src/interfaces/ecpg/compatlib/Makefile postgresql-8.0.21-new/src/interfaces/ecpg/compatlib/Makefile
---- postgresql-8.0.21/src/interfaces/ecpg/compatlib/Makefile	2005-03-13 17:04:45.000000000 -0500
-+++ postgresql-8.0.21-new/src/interfaces/ecpg/compatlib/Makefile	2009-07-17 14:18:07.000000000 -0400
+diff -Nurd postgresql-8.0.24/src/interfaces/ecpg/compatlib/Makefile postgresql-8.0.24-new/src/interfaces/ecpg/compatlib/Makefile
+--- postgresql-8.0.24/src/interfaces/ecpg/compatlib/Makefile	2005-03-13 16:04:45.000000000 -0600
++++ postgresql-8.0.24-new/src/interfaces/ecpg/compatlib/Makefile	2010-03-18 21:31:35.000000000 -0500
 @@ -20,6 +20,7 @@
  override CPPFLAGS := -I$(top_srcdir)/src/interfaces/ecpg/include -I$(libpq_srcdir) \
  	-I$(top_srcdir)/src/include/utils $(CPPFLAGS)
@@ -342,9 +342,9 @@ diff -Nurd postgresql-8.0.21/src/interfaces/ecpg/compatlib/Makefile postgresql-8
  SHLIB_LINK = -L../ecpglib -lecpg -L../pgtypeslib -lpgtypes $(libpq) \
  	$(filter -lintl -lssl -lcrypto -lkrb5 -lcrypt -lm, $(LIBS)) $(PTHREAD_LIBS)
  
-diff -Nurd postgresql-8.0.21/src/interfaces/ecpg/ecpglib/Makefile postgresql-8.0.21-new/src/interfaces/ecpg/ecpglib/Makefile
---- postgresql-8.0.21/src/interfaces/ecpg/ecpglib/Makefile	2005-03-13 17:04:45.000000000 -0500
-+++ postgresql-8.0.21-new/src/interfaces/ecpg/ecpglib/Makefile	2009-07-17 14:18:07.000000000 -0400
+diff -Nurd postgresql-8.0.24/src/interfaces/ecpg/ecpglib/Makefile postgresql-8.0.24-new/src/interfaces/ecpg/ecpglib/Makefile
+--- postgresql-8.0.24/src/interfaces/ecpg/ecpglib/Makefile	2005-03-13 16:04:45.000000000 -0600
++++ postgresql-8.0.24-new/src/interfaces/ecpg/ecpglib/Makefile	2010-03-18 21:31:35.000000000 -0500
 @@ -19,6 +19,7 @@
  
  override CPPFLAGS := -DFRONTEND -I$(top_srcdir)/src/interfaces/ecpg/include \
@@ -353,9 +353,9 @@ diff -Nurd postgresql-8.0.21/src/interfaces/ecpg/ecpglib/Makefile postgresql-8.0
  override CFLAGS += $(PTHREAD_CFLAGS)
  
  # Need to recomple any libpgport object files
-diff -Nurd postgresql-8.0.21/src/makefiles/Makefile.darwin postgresql-8.0.21-new/src/makefiles/Makefile.darwin
---- postgresql-8.0.21/src/makefiles/Makefile.darwin	2006-01-19 16:20:32.000000000 -0500
-+++ postgresql-8.0.21-new/src/makefiles/Makefile.darwin	2009-07-17 14:18:07.000000000 -0400
+diff -Nurd postgresql-8.0.24/src/makefiles/Makefile.darwin postgresql-8.0.24-new/src/makefiles/Makefile.darwin
+--- postgresql-8.0.24/src/makefiles/Makefile.darwin	2006-01-19 15:20:32.000000000 -0600
++++ postgresql-8.0.24-new/src/makefiles/Makefile.darwin	2010-03-18 21:31:35.000000000 -0500
 @@ -13,6 +13,6 @@
  # Rule for building shared libs (currently used only for regression test
  # shlib ... should go away, since this is not really enough knowledge)
@@ -364,9 +364,9 @@ diff -Nurd postgresql-8.0.21/src/makefiles/Makefile.darwin postgresql-8.0.21-new
 +	$(CXX) -bundle -undefined dynamic_lookup -o $@ $< $(BE_DLLLIBS)
  
  sqlmansect = 7
-diff -Nurd postgresql-8.0.21/src/template/darwin postgresql-8.0.21-new/src/template/darwin
---- postgresql-8.0.21/src/template/darwin	2004-04-26 00:04:42.000000000 -0400
-+++ postgresql-8.0.21-new/src/template/darwin	2009-07-17 14:18:07.000000000 -0400
+diff -Nurd postgresql-8.0.24/src/template/darwin postgresql-8.0.24-new/src/template/darwin
+--- postgresql-8.0.24/src/template/darwin	2004-04-25 23:04:42.000000000 -0500
++++ postgresql-8.0.24-new/src/template/darwin	2010-03-18 21:31:35.000000000 -0500
 @@ -1,6 +1,2 @@
 -# Apple's cpp-precomp seems a tad broken, so don't use it
 -# (Note: on OS X before 10.2, you might need -traditional-cpp instead)

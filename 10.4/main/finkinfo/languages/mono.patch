@@ -1,6 +1,21 @@
 diff -Nurd mono-2.6.1/configure mono-2.6.1-new/configure
---- mono-2.6.1/configure	2009-12-17 10:50:43.000000000 -0500
-+++ mono-2.6.1-new/configure	2010-02-23 15:08:22.000000000 -0500
+--- mono-2.6.1/configure	2009-12-17 09:50:43.000000000 -0600
++++ mono-2.6.1-new/configure	2010-03-10 14:28:10.000000000 -0600
+@@ -3215,11 +3215,11 @@
+ 		parallel_mark="Disabled_Currently_Hangs_On_MacOSX"
+ 		platform_win32=no
+ 		platform_darwin=yes
+-		CPPFLAGS="$CPPFLAGS -no-cpp-precomp -D_THREAD_SAFE -DGC_MACOSX_THREADS -DPLATFORM_MACOSX -DUSE_MMAP -DUSE_MUNMAP"
++		CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE -DGC_MACOSX_THREADS -DPLATFORM_MACOSX -DUSE_MMAP -DUSE_MUNMAP"
+ 		CPPFLAGS="$CPPFLAGS -DGetCurrentProcess=MonoGetCurrentProcess -DGetCurrentThread=MonoGetCurrentThread -DCreateEvent=MonoCreateEvent"
+ 		libmono_cflags="-D_THREAD_SAFE"
+-		LDFLAGS="$LDFLAGS -pthread"
+-		libmono_ldflags="-pthread"
++		LDFLAGS="$LDFLAGS"
++		libmono_ldflags=""
+ 		need_link_unlink=yes
+ 		cat >>confdefs.h <<\_ACEOF
+ #define PTHREAD_POINTER_ID 1
 @@ -3239,7 +3239,7 @@
  		fi
  								case "$host" in
@@ -10,7 +25,7 @@ diff -Nurd mono-2.6.1/configure mono-2.6.1-new/configure
  				CPPFLAGS="$CPPFLAGS $BROKEN_DARWIN_FLAGS"
  				CFLAGS="$CFLAGS $BROKEN_DARWIN_FLAGS"
  				CXXFLAGS="$CXXFLAGS $BROKEN_DARWIN_FLAGS"
-@@ -18140,9 +18140,6 @@
+@@ -18140,20 +18140,14 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  #include <zlib.h>
@@ -18,9 +33,11 @@ diff -Nurd mono-2.6.1/configure mono-2.6.1-new/configure
 -main ()
 -{
  
-    void main () {
+-   void main () {
++   int main () {
     #if defined(ZLIB_VERNUM) && (ZLIB_VERNUM >= 0x1230)
-@@ -18150,10 +18147,6 @@
++      return 0;
+    }
     #else
     #error No good zlib found
     #endif
@@ -31,7 +48,27 @@ diff -Nurd mono-2.6.1/configure mono-2.6.1-new/configure
  _ACEOF
  rm -f conftest.$ac_objext
  if { (ac_try="$ac_compile"
-@@ -36561,11 +36554,11 @@
+@@ -23582,18 +23576,11 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ #include <sched.h>
+-int
+-main ()
+-{
+-
+ 		int main() {
+             int mask = 1;
+             sched_setaffinity(0, &mask);
++            return 0;
+         }
+-
+-  ;
+-  return 0;
+-}
+ _ACEOF
+ rm -f conftest.$ac_objext
+ if { (ac_try="$ac_compile"
+@@ -36561,11 +36548,11 @@
  
  JIT_SUPPORTED=no
  INTERP_SUPPORTED=no
@@ -48,7 +85,19 @@ diff -Nurd mono-2.6.1/configure mono-2.6.1-new/configure
  
  sizeof_register="SIZEOF_VOID_P"
  
-@@ -37047,11 +37040,11 @@
+@@ -36596,11 +36583,9 @@
+ main ()
+ {
+ 
+-		void main () {
+ 		#if _MIPS_SIM != _ABIN32
+ 		#error Not mips n32
+ 		#endif
+-   		}
+ 
+   ;
+   return 0;
+@@ -37047,11 +37032,11 @@
  case "$host" in
       *-*-darwin*)
  	libsuffix=".dylib"
@@ -66,8 +115,8 @@ diff -Nurd mono-2.6.1/configure mono-2.6.1-new/configure
       *-*-*netbsd*)
  	LIBC="libc.so.12"
 diff -Nurd mono-2.6.1/data/config.in mono-2.6.1-new/data/config.in
---- mono-2.6.1/data/config.in	2009-09-25 10:58:13.000000000 -0400
-+++ mono-2.6.1-new/data/config.in	2010-02-23 15:07:47.000000000 -0500
+--- mono-2.6.1/data/config.in	2009-09-25 09:58:13.000000000 -0500
++++ mono-2.6.1-new/data/config.in	2010-03-10 13:57:26.000000000 -0600
 @@ -5,19 +5,19 @@
  	<dllmap dll="intl" name="bind_textdomain_codeset" target="@LIBC@" os="solaris"/>
  	<dllmap dll="libintl" name="bind_textdomain_codeset" target="@LIBC@" os="solaris"/>
@@ -97,8 +146,8 @@ diff -Nurd mono-2.6.1/data/config.in mono-2.6.1-new/data/config.in
  		<dllentry dll="__Internal" name="CopyMemory" target="mono_win32_compat_CopyMemory"/>
  		<dllentry dll="__Internal" name="FillMemory" target="mono_win32_compat_FillMemory"/>
 diff -Nurd mono-2.6.1/mono/io-layer/shared.c mono-2.6.1-new/mono/io-layer/shared.c
---- mono-2.6.1/mono/io-layer/shared.c	2009-09-25 10:58:10.000000000 -0400
-+++ mono-2.6.1-new/mono/io-layer/shared.c	2010-02-23 15:07:47.000000000 -0500
+--- mono-2.6.1/mono/io-layer/shared.c	2009-09-25 09:58:10.000000000 -0500
++++ mono-2.6.1-new/mono/io-layer/shared.c	2010-03-10 13:57:26.000000000 -0600
 @@ -168,8 +168,8 @@
  		ubuf.machine[0] = '\0';
  		ubuf.sysname[0] = '\0';
@@ -111,8 +160,8 @@ diff -Nurd mono-2.6.1/mono/io-layer/shared.c mono-2.6.1-new/mono/io-layer/shared
  
  	fake_name = g_getenv ("MONO_SHARED_HOSTNAME");
 diff -Nurd mono-2.6.1/mono/metadata/loader.c mono-2.6.1-new/mono/metadata/loader.c
---- mono-2.6.1/mono/metadata/loader.c	2009-12-14 15:16:11.000000000 -0500
-+++ mono-2.6.1-new/mono/metadata/loader.c	2010-02-23 15:07:47.000000000 -0500
+--- mono-2.6.1/mono/metadata/loader.c	2009-12-14 14:16:11.000000000 -0600
++++ mono-2.6.1-new/mono/metadata/loader.c	2010-03-10 13:57:26.000000000 -0600
 @@ -1269,6 +1269,24 @@
  
  		if (!module) {

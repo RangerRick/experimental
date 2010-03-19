@@ -18,8 +18,8 @@ BuildDepends: <<
 	gtksourceview-sharp (>= 2.0-1031),
 	ikvm (>= 0.36.0.11-1),
 	mono-addins (>= 0.4-1),
-	mono-dev (>= 2.6.1-1),
-	mono-tools (>= 2.6.1-1),
+	mono-dev (>= 2.6.2-1),
+	mono-tools (>= 2.6.2-1),
 	monodevelop (>= 2.2-1),
 	monodoc (>= 2.0-1),
 	pkgconfig (>= 0.23-1)

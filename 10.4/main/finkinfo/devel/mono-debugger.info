@@ -8,14 +8,14 @@ Maintainer: Benjamin Reed <mono-debugger@fink.racoonfink.com>
 
 Depends: <<
 	glib2-shlibs (>= 2.18.4-1),
-	mono (>= 2.6.1-1)
+	mono (>= 2.6.2-1)
 <<
 BuildDepends: <<
 	glib2-dev (>= 2.18.4-1),
 	libbfd-dev,
 	libiberty-dev,
 	libopcodes-dev,
-	mono-dev (>= 2.6.1-1)
+	mono-dev (>= 2.6.2-1)
 <<
 
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2

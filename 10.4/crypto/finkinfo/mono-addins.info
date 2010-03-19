@@ -9,12 +9,12 @@ Maintainer: Benjamin Reed <mono-addins@fink.racoonfink.com>
 
 Depends: <<
 	gtk-sharp2 (>= 2.12.9-1),
-	mono (>= 2.6.1-1)
+	mono (>= 2.6.2-1)
 <<
 BuildDepends: <<
 	glib2-dev (>= 2.18.4-1),
 	gtk-sharp2 (>= 2.12.9-1),
-	mono-dev (>= 2.6.1-1)
+	mono-dev (>= 2.6.2-1)
 <<
 
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2

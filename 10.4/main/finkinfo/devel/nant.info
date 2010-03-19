@@ -6,9 +6,9 @@ Description: Ant-like build tool for .NET
 License: GPL
 Maintainer: Benjamin Reed <nant@fink.racoonfink.com>
 
-Depends: mono (>= 2.6.1-1)
+Depends: mono (>= 2.6.2-1)
 BuildDepends: <<
-	mono-dev (>= 2.6.1-1),
+	mono-dev (>= 2.6.2-1),
 	pkgconfig (>= 0.23-1)
 <<
 

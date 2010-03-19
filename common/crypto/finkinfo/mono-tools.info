@@ -1,11 +1,11 @@
 Info3: <<
 Package: mono-tools
-Version: 2.6.1
+Version: 2.6.2
 Revision: 1
 Architecture: i386, powerpc
 
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
-Source-MD5: b16305c2dbbc53211018ed07364abccf
+Source-MD5: c29f5993ae05d981769d2002a9f65d2a
 PatchFile: %n.patch
 PatchFile-MD5: 643a3c40e343919e641eefcf1cd1b01c
 

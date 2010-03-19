@@ -13,7 +13,7 @@ Depends: <<
 	(%type_raw[gecko] = -firefox2) firefox2-shlibs,
 	(%type_raw[gecko] = -seamonkey) seamonkey-shlibs (>= 1.1.5-2),
 	gtk-sharp (>= 1.0.10-11),
-	mono (>= 2.6.1-1)
+	mono (>= 2.6.2-1)
 <<
 BuildDepends: <<
 	(%type_raw[gecko] = -firefox3) firefox3-dev,
@@ -23,7 +23,7 @@ BuildDepends: <<
 	glib2-dev (>= 2.18.4-1),
 	gtk+2-dev (>= 2.14.7-1),
 	gtk-sharp (>= 1.0.10-11),
-	mono-dev (>= 2.6.1-1),
+	mono-dev (>= 2.6.2-1),
 	monodoc (>= 2.0-1),
 	pango1-xft2-ft219-dev (>= 1.24.0-1),
 	pkgconfig (>= 0.23-1)

@@ -8,11 +8,11 @@ Maintainer: Benjamin Reed <cocoa-sharp@fink.racoonfink.com>
 
 Depends: <<
 	glib2-shlibs (>= 2.18.4-1),
-	mono (>= 2.6.1-1)
+	mono (>= 2.6.2-1)
 <<
 BuildDepends: <<
 	glib2-dev (>= 2.18.4-1),
-	mono-dev (>= 2.6.1-1),
+	mono-dev (>= 2.6.2-1),
 	monodoc (>= 2.0-1),
 	pkgconfig (>= 0.23-1)
 <<

@@ -7,7 +7,7 @@ Architecture: i386, powerpc
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
 Source-MD5: 25abd742dc4a0ffcf17c537dea6d791f
 
-DocFiles: COPYING
+docFiles: COPYING
 
 Depends: <<
 	boo (>= 0.7.9-1),

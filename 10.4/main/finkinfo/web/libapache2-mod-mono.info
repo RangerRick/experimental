@@ -8,7 +8,7 @@ License: OSI-Approved
 Maintainer: Benjamin Reed <libapache2-mod-mono@fink.racoonfink.com>
 
 Depends: <<
-	mono (>= 2.6.1-1),
+	mono (>= 2.6.2-1),
 	mono-xsp (>= 2.0-1),
 	apache2-ssl | apache2
 <<
@@ -16,7 +16,7 @@ BuildDepends: <<
 	apache2-ssl-dev | apache2-dev,
 	apr-ssl | apr,
 	fink (>= 0.29.7-1),
-	mono-dev (>= 2.6.1-1),
+	mono-dev (>= 2.6.2-1),
 	mono-xsp (>= 2.0-1)
 <<
 
