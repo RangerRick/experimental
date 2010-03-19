@@ -35,7 +35,7 @@ Source-MD5: cb3be1e35ca9bba64d65a2ab337fb1a0
 Source2: http://gborg.postgresql.org/download/pgtclng/stable/pgtcl1.5.2.tar.gz
 Source2-MD5: d19dfdcb54c334495d32456a043e0232
 PatchFile: postgresql82.patch
-PatchFile-MD5: 6b399f03d00dbe624d2dff4d3891c51f
+PatchFile-MD5: 964107a0f601e15937e79df17ffea814
 PatchScript: sed 's|@INSTPREFIX@|%p|g' < %{PatchFile} | patch -p1
 
 SetCPPFLAGS: -I%p/include/postgresql -I%p/include

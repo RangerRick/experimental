@@ -48,7 +48,7 @@ GCC: 4.0
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
 Source-MD5: 315118130e1800a87f0effe69b947810
 PatchFile: %n.patch
-PatchFile-MD5: 61bec3bd4b8bf0c27305a71ec8c32611
+PatchFile-MD5: 13c7e9ba3d4f396395a45e6aa649e48b
 PatchScript: <<
 	sed -e 's|@BUILDDIR@|%b|g' -e 's|@INSTPREFIX@|%p|g' < %{PatchFile} | patch -p1
 	perl -pi -e 's,^enum,static enum,' contrib/pgcrypto/pgp.h
