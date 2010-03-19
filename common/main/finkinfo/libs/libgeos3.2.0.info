@@ -1,0 +1,94 @@
+Info4: <<
+Package: libgeos3.2.0
+Version: 3.2.0
+Revision: 2
+Description: Geometry Engine - Open Source
+License: LGPL
+Homepage: http://geos.refractions.net/
+Maintainer: Benjamin Reed <libgeos@fink.raccoonfink.com>
+DescDetail: <<
+Geometry Engine - Open Source is a C++ port of the Java Topology Suite
+(JTS). As such, it aims to contain the complete functionality of JTS
+in C++. This includes all the OpenGIS "Simple Features for SQL"
+spatial predicate functions and spatial operators, as well as specific
+JTS topology functions such as IsValid().
+<<
+
+# Dependencies.
+Depends: %N-shlibs (= %v-%r)
+BuildDepends: fink (>= 0.28.-01)
+BuildDependsOnly: true
+
+# Unpack Phase.
+Source: http://download.osgeo.org/geos/geos-%v.tar.bz2
+Source-MD5: bfad7129680f0107b6ca9a2b92a2c440
+
+# Compile Phase.
+GCC: 4.0
+CompileScript: <<
+	./configure --prefix=%p/opt/%N
+	make
+<<
+
+# Install Phase.
+InstallScript: <<
+#!/bin/sh -ev
+
+	make -j1 install-strip DESTDIR=%d
+
+	# make the geos_c lib pretend it's still in %p/lib/libgeos3
+	install_name_tool -id "%p/lib/libgeos3/libgeos_c.1.dylib" "%i/opt/%N/lib/libgeos_c.1.dylib"
+	install -d -m 755 "%i/lib/libgeos3"
+	pushd "%i/lib/libgeos3"
+		ln -s ../../opt/%N/lib/libgeos_c* .
+	popd
+	perl -pi -e 's,%p/opt/%N/lib,%p/lib/libgeos3,' '%i/lib/libgeos3/*.la'
+
+	# make a copy of the geos_c headers in %p/include
+	install -d -m 755 "%i/include/geos"
+	install -c -m 644 "%i/opt/%N/include/geos_c.h"       "%i/include/"
+	install -c -m 644 "%i/opt/%N/include/geos/export.h"  "%i/include/geos/"
+	install -c -m 644 "%i/opt/%N/include/geos/version.h" "%i/include/geos/"
+
+	# make a copy of geos-config for geos_c
+	install -d -m 755 "%i/bin"
+	sed -e 's,%p/opt/%N,%p,g; s,/lib$,/lib/libgeos3,; s,-lgeos,-lgeos_c,' "%i/opt/%N/bin/geos-config" >> "%i/bin/geosc-config"
+	chmod 755 "%i/bin/geosc-config"
+<<
+DocFiles: AUTHORS ChangeLog COPYING README TODO
+
+# Additional Phase.
+SplitOff: <<
+	Package: %N-shlibs
+	Files: opt/%N/lib/libgeos-%v.dylib
+	Shlibs: %p/opt/%N/lib/libgeos-%v.dylib 0.0.0 %n (>= 3.2.0-2)
+	DocFiles: AUTHORS ChangeLog COPYING README TODO
+<<
+SplitOff2: <<
+	Package: libgeosc1-shlibs
+	Description: C API to libGEOS
+	Depends: %N-shlibs (= %v-%r),
+	Files: <<
+		opt/%N/lib/libgeos_c.1*.dylib
+		lib/libgeos3/libgeos_c.1*.dylib
+	<<
+	Shlibs: %p/lib/libgeos3/libgeos_c.1.dylib 8.0.0 %n (>= 3.2.0-2)
+	DocFiles: AUTHORS ChangeLog COPYING README TODO
+<<
+SplitOff3: <<
+	Package: libgeosc1
+	Description: Developer tools for the C API to libGEOS
+	Depends: <<
+		%N-shlibs (= %v-%r),
+		%n-shlibs (>= %v-%r),
+	<<
+	BuildDependsOnly: true
+	Files: <<
+		bin/geosc-config
+		include
+		opt/%N/include/geos_c.h
+		opt/%N/lib/libgeos_c*
+		lib/libgeos3/libgeos_c*
+	<<
+<<
+<<

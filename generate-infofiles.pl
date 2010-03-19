@@ -107,6 +107,7 @@ my $translate = [
 	'poppler4.patch',
 	'poppler[24]-qt4',
 	'popt',
+	'postgis',
 	'postgresql',
 	'pth2',
 	'qca$',

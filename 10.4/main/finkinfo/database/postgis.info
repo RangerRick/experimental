@@ -15,7 +15,7 @@ Depends: <<
 	proj-shlibs
 <<
 BuildDepends: <<
-	fink (>= 0.28.0-1),
+	fink (>= 0.29.7-1),
 	jts,
 	libgeosc1 (>= 3.2.0-2),
 	libiconv-dev,
@@ -32,9 +32,9 @@ GCC: 4.0
 
 Source: http://postgis.refractions.net/download/postgis-%v.tar.gz
 Source-MD5: 8353b38c38282b2192f01693f71b8d28
+PatchScript: sed -e 's,@FINKPREFIX@,%p,g; s,@FINKPGRAWVERSION@,%type_raw[postgresql],g; s,@FINKPGVERSION@,%type_pkg[postgresql],g' %{PatchFile} | patch -p1
 PatchFile: %{Ni}.patch
 PatchFile-MD5: ef8e73c9e1db5166c90fadee7c624fde
-PatchScript: sed -e 's,@FINKPREFIX@,%p,g; s,@FINKPGRAWVERSION@,%type_raw[postgresql],g; s,@FINKPGVERSION@,%type_pkg[postgresql],g' %{PatchFile} | patch -p1
 
 SetCPPFLAGS: -I%p/include/postgresql -I%p/include -fno-common
 NoSetCPPFLAGS: true
@@ -144,3 +144,4 @@ need to upgrade the schema like so:
 		-d <your_spatial_database>
 <<
 <<
+
