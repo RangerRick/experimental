@@ -8,7 +8,7 @@ License: BSD
 Maintainer: Benjamin Reed <postgis@fink.racoonfink.com>
 
 Depends: <<
-	libgeosc1-shlibs (>= 3.2.0-2),
+	libgeosc1-shlibs (>= 3.2.0-3),
 	libxml2-shlibs,
 	(%type_raw[postgresql] <= 8.0) postgresql%type_pkg[postgresql]-unified-shlibs,
 	(%type_raw[postgresql] >= 8.1) postgresql%type_pkg[postgresql]-shlibs,
@@ -17,7 +17,7 @@ Depends: <<
 BuildDepends: <<
 	fink (>= 0.29.7-1),
 	jts,
-	libgeosc1 (>= 3.2.0-2),
+	libgeosc1 (>= 3.2.0-3),
 	libiconv-dev,
 	libxml2,
 	(%type_raw[postgresql] <= 8.0) postgresql%type_pkg[postgresql]-unified-dev,

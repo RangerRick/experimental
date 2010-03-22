@@ -1,18 +1,18 @@
 Info3: <<
 Package: iplike-pg%type_pkg[postgresql]
-Version: 1.0.8
+Version: 1.0.9
 Revision: 1
-Type: postgresql(7.4 8.0 8.1 8.2 8.3 8.4)
+Type: postgresql(8.0 8.1 8.2 8.3 8.4)
 
 Conflicts: opennms-pgsql74, opennms-pgsql80, opennms-pgsql81, opennms-pgsql82
 Replaces: opennms-pgsql74, opennms-pgsql80, opennms-pgsql81, opennms-pgsql82
 Provides: opennms-pgsql
 Source: mirror:sourceforge:opennms/iplike-%v.tar.gz
-Source-MD5: 85bcafd5e96a79e7d0ab6eee0b4b0b75
+Source-MD5: 5757fd55b3540227c79db5ad095a6134
 
 BuildDepends: <<
-	autoconf (>= 2.60-1),
-	automake1.10,
+	autoconf2.6,
+	automake1.11,
 	fink (>= 0.28.0-1),
 	libtool2,
 	(%type_raw[postgresql] <= 8.0) postgresql%type_pkg[postgresql]-unified-dev,
@@ -41,6 +41,7 @@ PatchScript: <<
 	%p/bin/automake --add-missing --copy
 <<
 
+ConfigureParams: --disable-dependency-tracking (%m != x86_64) --with-jvm-arch=32 (%m = x86_64) --with-jvm-arch=64
 CompileScript: <<
 #!/bin/sh -ex
 
