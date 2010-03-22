@@ -276,10 +276,14 @@ CompileScript: echo "none needed"
 InstallScript: <<
 #!/bin/sh -ev
 
-	ARCH_ARGS="-d32"
-	if [ "%m" = "x86_64" ]; then
-		ARCH_ARGS="-d64"
-	fi
+	case `sw_vers -productVersion` in
+		10.6*)
+			ARCH_ARGS="-d32"
+			if [ "%m" = "x86_64" ]; then
+				ARCH_ARGS="-d64"
+			fi
+			;;
+	esac
 
 	# main install
 	export MAVEN_OPTS="-Xmx1g $ARCH_ARGS"
