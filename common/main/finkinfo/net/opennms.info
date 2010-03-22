@@ -277,7 +277,9 @@ InstallScript: <<
 #!/bin/sh -ev
 
 	case `sw_vers -productVersion` in
-		10.6*)
+		10.[012345]*)
+			;;
+		*)
 			ARCH_ARGS="-d32"
 			if [ "%m" = "x86_64" ]; then
 				ARCH_ARGS="-d64"
