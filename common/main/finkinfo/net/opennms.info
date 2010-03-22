@@ -354,10 +354,12 @@ instructions in %p/share/doc/%n/README.Darwin
 END
 <<
 PreInstScript: <<
-for file in %p/var/opennms/etc/*.xml; do
-	/usr/bin/xmllint --format "$file" >xmllint-out.$$
-	mv xmllint-out.$$ "$file"
-done
+if [ -d "%p/var/opennms/etc" ]; then
+	for file in %p/var/opennms/etc/*.xml; do
+		/usr/bin/xmllint --format "$file" >xmllint-out.$$
+		mv xmllint-out.$$ "$file"
+	done
+fi
 <<
 PreRmScript: <<
 # clean up
