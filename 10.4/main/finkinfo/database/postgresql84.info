@@ -31,14 +31,12 @@ GCC: 4.0
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
 Source-MD5: 7f70e7b140fb190f268837255582b07e
-Source2: ftp://gborg.postgresql.org/pub/pgperl/stable/Pg-2.1.1.tar.gz
-Source2-MD5: c11c0abd99b8e1f50ba5dbdb922c2e61
 PatchScript: sed -e 's|@BUILDDIR@|%b|g' -e 's|@INSTPREFIX@|%p|g' < %{PatchFile} | patch -p1
 PatchFile: %n.patch
 PatchFile-MD5: e42fbdad63059b801b016b33742f1512
 
 SetCPPFLAGS: -I%p/lib/system-openssl/include -DHAVE_OPTRESET -fno-common
-SetLDFLAGS: -L%p/lib/system-openssl/lib
+SetLDFLAGS: -L%p/lib/system-openssl/lib -F/System/Library/Frameworks
 CompileScript: <<
 #!/bin/sh -xe
 
