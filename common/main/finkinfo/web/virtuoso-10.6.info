@@ -86,6 +86,13 @@ InstallScript: <<
 	find %i -name \*.la -exec rm -rf {} \;
 	install -d -m 755 %i/share/doc/%N
 	mv %i/share/virtuoso/doc %i/share/doc/%N
+	mv %i/bin/isql %i/bin/isql.virtuoso
+<<
+PostInstScript: <<
+	update-alternatives --install %p/bin/isql isql %p/bin/isql.virtuoso 80
+<<
+PreRmScript: <<
+	update-alternatives --remove isql %p/bin/isql.virtuoso
 <<
 License: GPL
 DescDetail: <<
