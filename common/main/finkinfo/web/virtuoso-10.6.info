@@ -13,6 +13,7 @@ BuildDepends: <<
 	bison,
 	fink (>= 0.28.0-1),
 	flex-devel,
+	gawk,
 	htmldoc-nox,
 	imagemagick2-dev,
 	libwbxml2-dev,
