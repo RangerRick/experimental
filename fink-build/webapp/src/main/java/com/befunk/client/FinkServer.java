@@ -8,8 +8,7 @@ import com.google.gwt.user.client.ui.RootPanel;
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class Application
-    implements EntryPoint
+public class FinkServer implements EntryPoint
 {
 
   /**
@@ -17,7 +16,7 @@ public class Application
    */
   public void onModuleLoad()
   {
-     final Label label = new Label ( "gwt-maven-plugin Archetype :: Project com.befunk.fink-build" );
+     final Label label = new Label ( "gwt-maven-plugin Archetype :: Yo!" );
      RootPanel.get().add( label );
   }
 }

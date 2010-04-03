@@ -10,7 +10,7 @@ public class GwtTestSample
 
    public String getModuleName()
    {
-      return "com.befunk.Application";
+      return "com.befunk.FinkServer";
    }
 
    public void testSomething()

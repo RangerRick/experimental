@@ -35,5 +35,12 @@
       <name>OpenNMS Repository</name>
       <url>http://repo.opennms.org/maven2</url>
     </repository>
+    <repository>
+      <snapshots><enabled>false</enabled></snapshots>
+      <releases><enabled>true</enabled></releases>
+      <id>smartgwt</id>
+      <name>SmartGWT Repository</name>
+      <url>http://www.smartclient.com/maven2</url>
+    </repository>
   </repositories>
 </project>
