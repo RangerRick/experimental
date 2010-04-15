@@ -31,5 +31,5 @@ DescPackaging: <<
 	  BSD and the JDOM license is simply a less restrictive apache license.
 <<
 Homepage: http://www.jdom.org/
-Maintainer: Benjamin Reed <jdom@fink.racoonfink.com>
+Maintainer: Benjamin Reed <jdom@fink.raccoonfink.com>
 License: BSD

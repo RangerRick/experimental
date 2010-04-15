@@ -41,7 +41,7 @@ InstallScript: <<
 <<
 DocFiles: LICENSE*
 Homepage: http://jakarta.apache.org/commons/jxpath/
-Maintainer: Benjamin Reed <commons-jxpath@fink.racoonfink.com>
+Maintainer: Benjamin Reed <commons-jxpath@fink.raccoonfink.com>
 Description: Jakarta Commons - XPath interpreter
 DescDetail: <<
 The org.apache.commons.jxpath package defines a simple

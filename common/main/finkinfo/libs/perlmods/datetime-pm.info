@@ -24,7 +24,7 @@ BuildDepends: <<
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <datetime-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <datetime-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/DateTime/DateTime-%v.tar.gz
 Source-MD5: 890270f12eb4eb07dc1ddf8b26794ffe

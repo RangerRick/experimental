@@ -42,7 +42,7 @@ CompileScript: <<
 InstallScript: make install DESTDIR="%d"
 
 Homepage: http://www.opennms.org/
-Maintainer: Benjamin Reed <jrrd@fink.racoonfink.com>
+Maintainer: Benjamin Reed <jrrd@fink.raccoonfink.com>
 Description: Java Interface to RRDTool
 DescDetail: <<
 This package contains a Java interface to RRDTool.

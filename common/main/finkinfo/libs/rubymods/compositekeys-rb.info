@@ -5,7 +5,7 @@ Revision: 1
 Type: ruby (1.8)
 Description: Composite primary keys for ActiveRecord
 License: BSD
-Maintainer: Benjamin Reed <compositekeys-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <compositekeys-rb@fink.raccoonfink.com>
 
 # Dependencies:
 Depends: <<

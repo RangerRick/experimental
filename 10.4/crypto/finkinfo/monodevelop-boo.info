@@ -5,7 +5,7 @@ Architecture: i386, powerpc
 Distribution: 10.5, 10.6
 Description: Boo language support for MonoDevelop
 License: GPL
-Maintainer: Benjamin Reed <monodevelop-boo@fink.racoonfink.com>
+Maintainer: Benjamin Reed <monodevelop-boo@fink.raccoonfink.com>
 
 Depends: <<
 	boo (>= 0.7.9-1),

@@ -5,7 +5,7 @@ Revision: 1
 Description: Pretty printing of data structures
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <data-dump-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <data-dump-pm@fink.raccoonfink.com>
 
 Depends: system-perl
 BuildDepends: system-perl

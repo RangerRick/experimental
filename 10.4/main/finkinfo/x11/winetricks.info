@@ -3,7 +3,7 @@ Version: 20100304
 Revision: 1
 Description: Install redistributable runtime tools in Wine
 License: OSI-Approved
-Maintainer: Benjamin Reed <winetricks@fink.racoonfink.com>
+Maintainer: Benjamin Reed <winetricks@fink.raccoonfink.com>
 
 Depends: <<
 	cabextract,

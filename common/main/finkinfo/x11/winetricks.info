@@ -190,5 +190,5 @@ Pseudopackages:
  volnum        Rename drive_c to harddiskvolume0 (needed by some installers)
 <<
 License: OSI-Approved
-Maintainer: Benjamin Reed <winetricks@fink.racoonfink.com>
+Maintainer: Benjamin Reed <winetricks@fink.raccoonfink.com>
 Homepage: http://wiki.winehq.org/winetricks

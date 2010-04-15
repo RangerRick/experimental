@@ -16,7 +16,7 @@ BuildDepends: <<
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <rose-object-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <rose-object-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Rose/Rose-Object-%v.tar.gz
 Source-MD5: d9632687f60e78cf5b5ea4f2a0384c53

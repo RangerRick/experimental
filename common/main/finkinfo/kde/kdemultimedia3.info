@@ -3,7 +3,7 @@ Version: 3.5.10
 Revision: 1
 Description: KDE Multimedia packages
 License: GPL
-Maintainer: Benjamin Reed <kdemultimedia3@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdemultimedia3@fink.raccoonfink.com>
 Depends: %N-akode (>= %v-%r), %N-arts (>= 1.5.9-1), %N-audiofile (>= 0.2.6-11), juk (>= %v-%r), kaboodle (>= %v-%r), %N-kappfinder (>= %v-%r), %N-kfile-plugins (>= %v-%r), kmix (>= %v-%r), krec (>= %v-%r), libkcddb (>= %v-%r), noatun (>= %v-%r), %N-xine (>= %v-%r)
 
 BuildDepends: <<

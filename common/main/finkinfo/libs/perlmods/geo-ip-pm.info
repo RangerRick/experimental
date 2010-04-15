@@ -17,7 +17,7 @@ Replaces: geo-ip-pm560, geo-ip-pm561, geo-ip-pm580, geo-ip-pm581, geo-ip-pm584, 
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <geo-ip-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <geo-ip-pm@fink.raccoonfink.com>
 
 Source: http://www.maxmind.com/download/geoip/api/perl/Geo-IP-%v.tar.gz
 Source-MD5: e3cc9477bcf4344988c703e8b141f21a

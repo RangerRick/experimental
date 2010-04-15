@@ -20,7 +20,7 @@ BuildDepends: <<
 NoPerlTests: true
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <datetime-locale-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <datetime-locale-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/DateTime/DateTime-Locale-%v.tar.gz
 Source-MD5: 2f40350ef1c697f1bc402220824f6a7a

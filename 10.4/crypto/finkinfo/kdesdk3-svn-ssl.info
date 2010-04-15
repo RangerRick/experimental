@@ -4,7 +4,7 @@ Revision: 1
 Description: KDE - svn ioslave (with SSL)
 Type: bundle
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdesdk3-svn-ssl@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdesdk3-svn-ssl@fink.raccoonfink.com>
 
 Depends: kdesdk3-svn (>= %v-1)
 

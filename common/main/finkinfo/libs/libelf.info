@@ -12,7 +12,7 @@ InstallScript: <<
 <<
 DocFiles: COPYING* ChangeLog INSTALL README VERSION
 Description: ELF object file access library
-Maintainer: Benjamin Reed <libelf@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libelf@fink.raccoonfink.com>
 Homepage: http://directory.fsf.org/libs/misc/libelf.html
 DescDetail: <<
 'Libelf' lets you read, modify or create ELF files in an

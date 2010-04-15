@@ -16,7 +16,7 @@ BuildDepends: <<
 <<
 BuildConflicts: unsermake
 BuildDependsOnly: true
-Maintainer: Benjamin Reed <libsmoke@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libsmoke@fink.raccoonfink.com>
 
 CustomMirror: RangerMirror
 Source: mirror:kde:stable/%v/src/kdebindings-%v.tar.bz2

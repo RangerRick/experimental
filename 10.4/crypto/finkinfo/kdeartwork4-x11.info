@@ -5,7 +5,7 @@ Revision: 1
 Description: KDE4 - Styles and themes
 Type: kde (x11)
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdeartwork4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdeartwork4@fink.raccoonfink.com>
 
 Depends: <<
 	%N-screensavers (>= %v-%r),

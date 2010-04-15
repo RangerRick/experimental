@@ -5,7 +5,7 @@ Revision: 2000
 Description: Image Effect Library
 Type: blitz (mac)
 License: BSD
-Maintainer: Benjamin Reed <blitz@fink.racoonfink.com>
+Maintainer: Benjamin Reed <blitz@fink.raccoonfink.com>
 
 Depends: qimageblitz-unified-%type_pkg[blitz]-shlibs (= %v-%r)
 BuildDepends: <<

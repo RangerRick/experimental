@@ -5,7 +5,7 @@ Revision: 2
 Description: Development files for Last.fm web services
 Type: lastfm (x11 mac)
 License: GPL
-Maintainer: Benjamin Reed <liblastfm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <liblastfm@fink.raccoonfink.com>
 
 Depends: liblastfm-%type_pkg[lastfm]-shlibs (= %v-%r)
 BuildDepends: <<

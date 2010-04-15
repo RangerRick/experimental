@@ -34,7 +34,7 @@ InstallScript: <<
 <<
 DocFiles: *.txt
 Homepage: http://jakarta.apache.org/commons/discovery/
-Maintainer: Benjamin Reed <commons-discovery@fink.racoonfink.com>
+Maintainer: Benjamin Reed <commons-discovery@fink.raccoonfink.com>
 Description: Jakarta Commons - Discovery
 DescDetail: <<
 The Discovery Component is about discovering, or finding,

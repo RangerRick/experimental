@@ -38,6 +38,6 @@ myapp should be replaced with whatever your application is called).  This
 script is created as part of the Catalyst setup.
 <<
 License: Artistic
-Maintainer: Benjamin Reed <catalyst-view-tt-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <catalyst-view-tt-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/Catalyst-View-TT
 <<

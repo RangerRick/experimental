@@ -34,7 +34,7 @@ InstallScript: <<
 <<
 DocFiles: RELEASE*
 Homepage: http://jakarta.apache.org/commons/codec/
-Maintainer: Benjamin Reed <commons-codec@fink.racoonfink.com>
+Maintainer: Benjamin Reed <commons-codec@fink.raccoonfink.com>
 Description: Jakarta Commons - Encoders/Decoders
 DescDetail: <<
 Commons Codec provides implementations of common encoders and

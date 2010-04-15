@@ -5,7 +5,7 @@ Revision: 1022
 Description: Fast plugins with instantiation
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <module-pluggable-fast-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <module-pluggable-fast-pm@fink.raccoonfink.com>
 
 Depends: <<
 	fink (>= 0.26.0-1),

@@ -9,7 +9,7 @@ BuildDepends: perl%type_pkg[perl]-core, fink (>= 0.20.2.1-1), module-build-pm%ty
 Type: perl(0)
 NoPerlTests: true
 License: Artistic
-Maintainer: Benjamin Reed <datetime-format-mysql-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <datetime-format-mysql-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:authors/id/D/DR/DROLSKY/DateTime-Format-MySQL-%v.tar.gz
 Source-MD5: f52377ecdeb19055ae64037fb1ef530e

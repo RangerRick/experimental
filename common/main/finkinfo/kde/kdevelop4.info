@@ -5,7 +5,7 @@ Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - IDE
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdevelop4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdevelop4@fink.raccoonfink.com>
 
 Depends: <<
 	kdevplatform-%type_pkg[kde] (>= 0.9.93-1)

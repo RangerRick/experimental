@@ -9,7 +9,7 @@ BuildDepends: <<
 	libiconv-dev,
 	x11-dev
 <<
-Maintainer: Benjamin Reed <qtcurve-gtk1@fink.racoonfink.com>
+Maintainer: Benjamin Reed <qtcurve-gtk1@fink.raccoonfink.com>
 
 Source: http://home.freeuk.com/cpdrummond/QtCurve-Gtk1-%v.tar.gz
 Source-MD5: 8219f58493ca4e65a8fe61ee76eca522

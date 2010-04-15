@@ -32,7 +32,7 @@ BuildDepends: <<
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <rose-html-objects-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <rose-html-objects-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Rose/Rose-HTML-Objects-%v.tar.gz
 Source-MD5: ccf516df97e399806daf9854d3e2e724

@@ -65,7 +65,7 @@ SplitOff2: <<
 
 DocFiles: CHANGES COPYING CREDITS GROUPS README
 Description: Package Manager
-Maintainer: Benjamin Reed <rpm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <rpm@fink.raccoonfink.com>
 Homepage: http://www.rpm.org/
 License: GPL/LGPL
 DescDetail: <<

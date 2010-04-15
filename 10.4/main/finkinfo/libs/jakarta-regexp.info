@@ -4,7 +4,7 @@ Revision: 1
 Description: Java Regular Expression Parsing
 Type: java(1.4)
 License: BSD
-Maintainer: Benjamin Reed <jakarta-regexp@fink.racoonfink.com>
+Maintainer: Benjamin Reed <jakarta-regexp@fink.raccoonfink.com>
 
 Depends: system-java (>= 1.4-1)
 BuildDepends: <<

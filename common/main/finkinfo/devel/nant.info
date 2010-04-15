@@ -13,7 +13,7 @@ BuildDepends: <<
 	pkgconfig (>= 0.22-3)
 <<
 Homepage: http://nant.sourceforge.net/
-Maintainer: Benjamin Reed <nant@fink.racoonfink.com>
+Maintainer: Benjamin Reed <nant@fink.raccoonfink.com>
 Description: Ant-like build tool for .NET
 NoSetMAKEFLAGS: true
 SetMAKEFLAGS: -j1

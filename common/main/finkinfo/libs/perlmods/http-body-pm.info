@@ -20,7 +20,7 @@ BuildDepends: <<
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <http-body-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <http-body-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/HTTP/HTTP-Body-%v.tar.gz
 Source-MD5: 1379184350749d108de4b0f47610a2b7

@@ -21,7 +21,7 @@ BuildDepends: <<
 	unsermake (>= 0.4-0.20060316.1)
 <<
 Depends: kdebase3-unified (>= 3.4.2-1)
-Maintainer: Benjamin Reed <baghira@fink.racoonfink.com>
+Maintainer: Benjamin Reed <baghira@fink.raccoonfink.com>
 
 CustomMirror: <<
 	nam-US: http://ranger.befunk.com/fink

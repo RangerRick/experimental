@@ -3,7 +3,7 @@ Version: 3.5.2
 Revision: 1
 Description: KDE - language bindings
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdebindings3@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdebindings3@fink.raccoonfink.com>
 
 Depends: 
 BuildDepends: <<

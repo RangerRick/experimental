@@ -67,7 +67,7 @@ internally.  The goal of this project is to consolidate some of the code
 used by various multimedia projects, and also make optimizations easier to
 use by a broader range of applications.
 <<
-Maintainer: Benjamin Reed <liboil@fink.racoonfink.com>
+Maintainer: Benjamin Reed <liboil@fink.raccoonfink.com>
 Homepage: http://liboil.freedesktop.org/wiki/
 License: BSD
 <<

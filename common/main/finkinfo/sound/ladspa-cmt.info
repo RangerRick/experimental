@@ -1,7 +1,7 @@
 Package: ladspa-cmt
 Version: 1.16
 Revision: 1
-Maintainer: Benjamin Reed <ladspa-cmt@fink.racoonfink.com>
+Maintainer: Benjamin Reed <ladspa-cmt@fink.raccoonfink.com>
 Depends: ladspa (>= 1.13-1)
 BuildDepends: ladspa-dev (>= 1.13), fink (>= 0.28-1)
 

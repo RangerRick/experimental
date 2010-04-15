@@ -4,7 +4,7 @@ Revision: 1
 Description: MySQL JDBC interface for Java
 Type: java(1.5)
 License: GPL
-Maintainer: Benjamin Reed <mysql-java@fink.racoonfink.com>
+Maintainer: Benjamin Reed <mysql-java@fink.raccoonfink.com>
 
 Depends: system-java (>= 1.5-1)
 

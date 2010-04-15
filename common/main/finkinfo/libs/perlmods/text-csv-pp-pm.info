@@ -19,7 +19,7 @@ Pure perl module which provides facilities for the composition
 and decomposition of comma-separated values.
 <<
 License: Artistic
-Maintainer: Benjamin Reed <text-csv-pp-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <text-csv-pp-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/Text-CSV/
 <<
 

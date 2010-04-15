@@ -68,5 +68,5 @@ DocFiles: AUTHORS COPYING ChangeLog* NEWS README*
 Description: .Net interface to GNOME
 License: LGPL
 Homepage: http://www.mono-project.com/
-Maintainer: Benjamin Reed <gnome-sharp2@fink.racoonfink.com>
+Maintainer: Benjamin Reed <gnome-sharp2@fink.raccoonfink.com>
 <<

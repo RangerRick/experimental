@@ -5,7 +5,7 @@ Revision: 1031
 Description: Qt language bindings for Perl
 Type: perl(0)
 License: GPL
-Maintainer: Benjamin Reed <perlqt@fink.racoonfink.com>
+Maintainer: Benjamin Reed <perlqt@fink.raccoonfink.com>
 
 Depends: <<
 	perl%type_pkg[perl]-core,

@@ -31,6 +31,6 @@ the name and the open filehandle of a temporary file.  The tempdir()
 function can be used to create a temporary directory.
 <<
 License: Artistic
-Maintainer: Benjamin Reed <file-temp-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <file-temp-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/File-Temp
 <<

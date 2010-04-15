@@ -31,7 +31,7 @@ InstallScript: <<
 <<
 DocFiles: *LICENSE*
 Homepage: http://xml.apache.org/
-Maintainer: Benjamin Reed <stylebook@fink.racoonfink.com>
+Maintainer: Benjamin Reed <stylebook@fink.raccoonfink.com>
 Description: XML-based documentation generator
 DescDetail: <<
 XML-based documentation generator

@@ -17,7 +17,7 @@ BuildDepends: <<
 	pkgconfig (>= 0.23-1),
 <<
 Homepage: http://www.ndesk.org/DBusSharp
-Maintainer: Benjamin Reed <ndesk-dbus-glib@fink.racoonfink.com>
+Maintainer: Benjamin Reed <ndesk-dbus-glib@fink.raccoonfink.com>
 Description: GLib Integration for NDesk D-Bus
 ConfigureParams: --disable-dependency-tracking
 InstallScript: <<

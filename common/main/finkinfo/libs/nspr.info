@@ -60,5 +60,5 @@ DescPackaging: <<
 Thanks to the MacPorts package for patches.  :)
 <<
 License: OSI-Approved
-Maintainer: Benjamin Reed <nspr@fink.racoonfink.com>
+Maintainer: Benjamin Reed <nspr@fink.raccoonfink.com>
 Homepage: http://www.mozilla.org/projects/nspr/

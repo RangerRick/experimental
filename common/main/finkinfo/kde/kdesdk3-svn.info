@@ -3,7 +3,7 @@ Version: 3.5.10
 Revision: 1
 Description: KDE - svn ioslave
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdesdk3-svn@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdesdk3-svn@fink.raccoonfink.com>
 
 Depends: <<
 	db47-aes-shlibs | db47-shlibs,

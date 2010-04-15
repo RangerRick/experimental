@@ -3,7 +3,7 @@ Version: 0.4
 Revision: 0.20070824.2
 Description: Replacement for automake
 License: GPL
-Maintainer: Benjamin Reed <unsermake@fink.racoonfink.com>
+Maintainer: Benjamin Reed <unsermake@fink.raccoonfink.com>
 
 CustomMirror: <<
 	Primary: http://ranger.users.finkproject.org/distfiles

@@ -74,7 +74,7 @@ Provides: catalyst-runtime-pm%type_pkg[perl]
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <catalyst-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <catalyst-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Catalyst/Catalyst-Runtime-%v.tar.gz
 Source-MD5: d92966ae79d5ad3d7768809acd4886ea

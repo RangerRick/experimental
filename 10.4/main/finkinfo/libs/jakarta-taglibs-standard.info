@@ -4,7 +4,7 @@ Revision: 4
 Description: JSP tag libraries
 Type: java(1.4)
 License: BSD
-Maintainer: Benjamin Reed <jakarta-taglibs@fink.racoonfink.com>
+Maintainer: Benjamin Reed <jakarta-taglibs@fink.raccoonfink.com>
 
 Depends: system-java (>= 1.4.2-1)
 BuildDepends: <<

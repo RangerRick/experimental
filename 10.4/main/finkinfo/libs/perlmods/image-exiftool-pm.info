@@ -5,7 +5,7 @@ Revision: 1
 Description: Read and write image/movie meta information
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <image-exiftool-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <image-exiftool-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Image/Image-ExifTool-%v.tar.gz
 Source-MD5: 4b60741cd725683eb11ae0866e5941e5

@@ -4,7 +4,7 @@ Version: 0.6.4
 Revision: 2
 Description: PDF rendering library (GLIB Interface)
 License: GPL
-Maintainer: Benjamin Reed <poppler2-glib@fink.racoonfink.com>
+Maintainer: Benjamin Reed <poppler2-glib@fink.raccoonfink.com>
 
 Depends: <<
 	%N-shlibs (>= %v-%r),

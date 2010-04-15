@@ -21,7 +21,7 @@ InstallScript: <<
 <<
 DocFiles: *.txt
 Homepage: http://jakarta.apache.org/commons/dbcp/
-Maintainer: Benjamin Reed <commons-dbcp@fink.racoonfink.com>
+Maintainer: Benjamin Reed <commons-dbcp@fink.raccoonfink.com>
 Description: Jakarta Commons - DBCP
 DescDetail: <<
 Commons-DBCP provides database connection pooling services.

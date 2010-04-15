@@ -21,7 +21,7 @@ BuildDepends: <<
 	unsermake (>= 0.4-0.20060316.1),
 	x11-dev
 <<
-Maintainer: Benjamin Reed <konversation@fink.racoonfink.com>
+Maintainer: Benjamin Reed <konversation@fink.raccoonfink.com>
 
 CustomMirror: RangerMirror
 Source: http://download.berlios.de/%n/%n-%v.tar.bz2

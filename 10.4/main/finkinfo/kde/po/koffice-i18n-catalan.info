@@ -3,7 +3,7 @@ Version: 1.6.3
 Revision: 1
 Description: KDE - KOffice languages for Catalan
 License: GPL/LGPL
-Maintainer: Benjamin Reed <koffice-i18n-catalan@fink.racoonfink.com>
+Maintainer: Benjamin Reed <koffice-i18n-catalan@fink.raccoonfink.com>
 
 Depends: <<
 	kdelibs3-unified (>= 3.5.7-1),

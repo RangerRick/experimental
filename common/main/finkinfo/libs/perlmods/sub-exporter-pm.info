@@ -32,6 +32,6 @@ into your module.  It builds this method based on configuration
 passed to its setup_exporter method.
 <<
 License: Artistic
-Maintainer: Benjamin Reed <sub-exporter-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <sub-exporter-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/Sub-Exporter
 <<

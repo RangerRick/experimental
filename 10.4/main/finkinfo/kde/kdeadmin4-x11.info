@@ -5,7 +5,7 @@ Revision: 1
 Description: KDE4 - UNIX admin tools
 Type: kde (x11)
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdeadmin4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdeadmin4@fink.raccoonfink.com>
 
 Depends: <<
 	kcron4-%type_pkg[kde] (>= %v-%r),

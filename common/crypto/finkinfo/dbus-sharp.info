@@ -42,7 +42,7 @@ bus daemon).
 
 These bindings provide D-BUS access using C# through mono.
 <<
-Maintainer: Benjamin Reed <dbus-mono@fink.racoonfink.com>
+Maintainer: Benjamin Reed <dbus-mono@fink.raccoonfink.com>
 Homepage: http://dbus.freedesktop.org/
 License: Restrictive/Distributable
 <<

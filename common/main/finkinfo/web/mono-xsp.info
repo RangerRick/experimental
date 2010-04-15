@@ -11,7 +11,7 @@ BuildDepends: <<
 	pkgconfig (>= 0.22-3)
 <<
 Homepage: http://www.mono-project.com/
-Maintainer: Benjamin Reed <mono-xsp@fink.racoonfink.com>
+Maintainer: Benjamin Reed <mono-xsp@fink.raccoonfink.com>
 Description: Mono ASP.Net web server
 SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true

@@ -43,7 +43,7 @@ InstallScript: <<
 <<
 DocFiles: LICENSE.txt RELEASE-NOTES.txt NOTICE.txt
 Homepage: http://jakarta.apache.org/commons/digester/
-Maintainer: Benjamin Reed <commons-digester@fink.racoonfink.com>
+Maintainer: Benjamin Reed <commons-digester@fink.raccoonfink.com>
 Description: Jakarta Commons - Digester
 DescDetail: <<
 Commons-Digester is an XML-to-Java-object mapping utility commonly used

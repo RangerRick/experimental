@@ -5,7 +5,7 @@ Revision: 2
 Type: ruby (1.8)
 Description: Iterators which work like a text cursor
 License: LGPL
-Maintainer: Benjamin Reed <cursor-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <cursor-rb@fink.raccoonfink.com>
 
 Depends: <<
 	libgems-rb%type_pkg[ruby],

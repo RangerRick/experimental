@@ -74,5 +74,5 @@ DocFiles: AUTHORS COPYING ChangeLog* INSTALL NEWS README*
 Description: GTK+ graphical interface for Mono
 License: LGPL
 Homepage: http://gtk-sharp.sourceforge.net/
-Maintainer: Benjamin Reed <gtk-sharp@fink.racoonfink.com>
+Maintainer: Benjamin Reed <gtk-sharp@fink.raccoonfink.com>
 <<

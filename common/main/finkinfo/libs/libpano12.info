@@ -30,6 +30,6 @@ SplitOff: <<
 <<
 DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README* doc/*.txt 
 Description: Library for photo stitching
-Maintainer: Benjamin Reed <libpano12@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libpano12@fink.raccoonfink.com>
 Homepage: http://panotools.sourceforge.net/
 License: GPL

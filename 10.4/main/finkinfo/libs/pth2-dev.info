@@ -3,7 +3,7 @@ Version: 2.0.7
 Revision: 1022
 Description: Portable library that provides scheduling
 License: LGPL
-Maintainer: Benjamin Reed <pth2@fink.racoonfink.com>
+Maintainer: Benjamin Reed <pth2@fink.raccoonfink.com>
 
 Depends: pth2-shlibs (>= %v-%r)
 Conflicts: pth

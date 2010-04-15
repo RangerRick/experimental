@@ -4,7 +4,7 @@ Revision: 5
 Distribution: 10.4
 Description: Font configuration library
 License: Restrictive/Distributable
-Maintainer: Benjamin Reed <fontconfig2@fink.racoonfink.com>
+Maintainer: Benjamin Reed <fontconfig2@fink.raccoonfink.com>
 
 Depends: <<
 	expat1-shlibs,

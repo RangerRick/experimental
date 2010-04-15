@@ -145,7 +145,7 @@ SplitOff21: <<
 
 DocFiles: Changelog README*
 Description: Image Effect Library
-Maintainer: Benjamin Reed <blitz@fink.racoonfink.com>
+Maintainer: Benjamin Reed <blitz@fink.raccoonfink.com>
 Homepage: http://www.kde.org/
 License: BSD
 DescDetail: <<

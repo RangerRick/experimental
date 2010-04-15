@@ -3,7 +3,7 @@ Version: 5.4.2.1
 Revision: 5
 Description: SNMP tools and libraries
 License: BSD
-Maintainer: Benjamin Reed <net-snmp@fink.racoonfink.com>
+Maintainer: Benjamin Reed <net-snmp@fink.raccoonfink.com>
 
 Depends: <<
 	daemonic,

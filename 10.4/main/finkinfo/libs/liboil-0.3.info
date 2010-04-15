@@ -4,7 +4,7 @@ Version: 0.3.17
 Revision: 2
 Description: CPU optimization library
 License: BSD
-Maintainer: Benjamin Reed <liboil@fink.racoonfink.com>
+Maintainer: Benjamin Reed <liboil@fink.raccoonfink.com>
 
 Depends: %N-shlibs (>= %v-%r)
 BuildDepends: <<

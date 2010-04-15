@@ -48,5 +48,5 @@ SplitOff: <<
 DocFiles: AUTHORS COPYING ChangeLog INSTALL MAINTAINERS NEWS README
 Description: C++ interface for the cairo library
 License: LGPL
-Maintainer: Benjamin Reed <cairomm1@fink.racoonfink.com>
+Maintainer: Benjamin Reed <cairomm1@fink.raccoonfink.com>
 Homepage: http://cairographics.org/

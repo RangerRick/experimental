@@ -6,5 +6,5 @@ Architecture: i386, powerpc
 Depends: %N-firefox3 (>= %v-%r) | %N-firefox2 (>= %v-%r) | %N-seamonkey (>= %v-%r)
 Description: Mozilla browser C# bindings: bundle
 License: OSI-Approved
-Maintainer: Benjamin Reed <gecko-sharp1@fink.racoonfink.com>
+Maintainer: Benjamin Reed <gecko-sharp1@fink.raccoonfink.com>
 Homepage: http://www.mono-project.com/

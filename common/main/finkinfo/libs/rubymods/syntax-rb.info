@@ -5,7 +5,7 @@ Revision: 2
 Type: ruby (1.8)
 Description: Syntax hilighting and lexical analysis
 License: BSD
-Maintainer: Benjamin Reed <syntax-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <syntax-rb@fink.raccoonfink.com>
 
 Depends: <<
 	libgems-rb%type_pkg[ruby],

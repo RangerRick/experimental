@@ -4,7 +4,7 @@ Revision: 208
 Distribution: 10.6
 Description: Font configuration library
 License: Restrictive/Distributable
-Maintainer: Benjamin Reed <fontconfig2@fink.racoonfink.com>
+Maintainer: Benjamin Reed <fontconfig2@fink.raccoonfink.com>
 
 Depends: <<
 	system-xfree86-dev (>= 2:7.2-1),

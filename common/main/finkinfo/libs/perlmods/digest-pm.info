@@ -5,7 +5,7 @@ Revision: 1
 Description: Perl modules that calculate message digests
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <digest-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <digest-pm@fink.raccoonfink.com>
 
 Depends: mime-base64-pm%type_pkg[perl], perl%type_pkg[perl]-core
 BuildDepends: fink (>= 0.20.1-1), mime-base64-pm%type_pkg[perl], perl%type_pkg[perl]-core

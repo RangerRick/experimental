@@ -2,7 +2,7 @@ Package: dbunit
 Version: 2.1
 Revision: 2
 Type: java(1.5)
-Maintainer: Benjamin Reed <dbunit@fink.racoonfink.com>
+Maintainer: Benjamin Reed <dbunit@fink.raccoonfink.com>
 BuildDepends: <<
 	ant-base (>= 1.6.5-1),
 	ant-junit (>= 1.6.5-1),

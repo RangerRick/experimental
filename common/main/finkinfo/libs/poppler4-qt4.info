@@ -6,7 +6,7 @@ Revision: 2
 Type: qt (x11 mac)
 Description: PDF rendering library (Qt4 binding)
 License: GPL
-Maintainer: Benjamin Reed <poppler4-qt4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <poppler4-qt4@fink.raccoonfink.com>
 
 BuildDependsOnly: true
 BuildDepends: <<

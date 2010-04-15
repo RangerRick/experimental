@@ -4,7 +4,7 @@ Revision: 0.beta1.5
 Architecture: i386, powerpc
 Description: Ant-like build tool for .NET
 License: GPL
-Maintainer: Benjamin Reed <nant@fink.racoonfink.com>
+Maintainer: Benjamin Reed <nant@fink.raccoonfink.com>
 
 Depends: mono (>= 2.6.2-1)
 BuildDepends: <<

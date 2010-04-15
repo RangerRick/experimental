@@ -5,7 +5,7 @@ Revision: 1021
 Description: Parse and format W3CDTF datetime strings
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <datetime-format-w3cdtf-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <datetime-format-w3cdtf-pm@fink.raccoonfink.com>
 
 Depends: <<
 	fink (>= 0.26.0-1),

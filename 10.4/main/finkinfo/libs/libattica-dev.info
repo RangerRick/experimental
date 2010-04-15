@@ -5,7 +5,7 @@ Revision: 1
 Description: Open Collaboration Services API
 Type: attica (x11 mac)
 License: LGPL
-Maintainer: Benjamin Reed <attica@fink.racoonfink.com>
+Maintainer: Benjamin Reed <attica@fink.raccoonfink.com>
 
 Depends: <<
 	libattica-%type_pkg[attica]-shlibs (= %v-%r),

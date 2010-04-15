@@ -5,7 +5,7 @@ Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - GPG Encryption Support
 License: GPL/LGPL
-Maintainer: Benjamin Reed <qgpgme1@fink.racoonfink.com>
+Maintainer: Benjamin Reed <qgpgme1@fink.raccoonfink.com>
 
 Depends: %N-shlibs (= %v-%r)
 BuildDepends: <<

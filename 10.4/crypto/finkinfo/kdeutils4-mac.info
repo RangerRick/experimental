@@ -5,7 +5,7 @@ Revision: 2
 Description: KDE4 - Utilities
 Type: kde (mac)
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdeutils4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdeutils4@fink.raccoonfink.com>
 
 Depends: <<
 	ark4-%type_pkg[kde] (>= %v-%r),

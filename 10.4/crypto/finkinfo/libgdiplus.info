@@ -5,7 +5,7 @@ Revision: 1
 Architecture: i386, powerpc
 Description: System.Drawing implementation for Mono
 License: OSI-Approved
-Maintainer: Benjamin Reed <libgdiplus@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libgdiplus@fink.raccoonfink.com>
 
 Depends: <<
 	cairo-shlibs (>= 1.8.8-1),

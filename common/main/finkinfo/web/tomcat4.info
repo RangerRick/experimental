@@ -108,7 +108,7 @@ SplitOff: <<
 <<
 
 Homepage: http://tomcat.apache.org/
-Maintainer: Benjamin Reed <tomcat4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <tomcat4@fink.raccoonfink.com>
 Description: Java Servlet 2.3 Container and Web Server
 DescDetail: <<
 Tomcat is the servlet container that is used in the official Reference

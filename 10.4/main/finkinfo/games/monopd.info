@@ -3,7 +3,7 @@ Version: 0.9.3
 Revision: 1
 Description: Monopoly-like game server
 License: GPL
-Maintainer: Benjamin Reed <monopd@fink.racoonfink.com>
+Maintainer: Benjamin Reed <monopd@fink.raccoonfink.com>
 
 Depends: <<
 	libcapsinetwork (>= 0.3.0-1),

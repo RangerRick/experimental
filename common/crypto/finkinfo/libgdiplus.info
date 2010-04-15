@@ -38,7 +38,7 @@ BuildDepends: <<
 	pkgconfig (>= 0.22-3),
 <<
 Homepage: http://www.mono-project.com/
-Maintainer: Benjamin Reed <libgdiplus@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libgdiplus@fink.raccoonfink.com>
 Description: System.Drawing implementation for Mono
 ConfigureParams: --mandir=%p/share/man --with-cairo=system --disable-dependency-tracking
 InstallScript: make -j1 install DESTDIR="%d"

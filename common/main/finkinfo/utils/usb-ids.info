@@ -2,7 +2,7 @@ Package: usb-ids
 Version: 20080311
 Revision: 1
 BuildDepends: bzip2
-Maintainer: Benjamin Reed <usb-ids@fink.racoonfink.com>
+Maintainer: Benjamin Reed <usb-ids@fink.raccoonfink.com>
 CustomMirror: RangerMirror
 Source: mirror:custom:usbids/usb.ids-%v.bz2
 Source-MD5: a314cfdc07f15c2a5d996846f952ea97 

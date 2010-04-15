@@ -20,7 +20,7 @@ BuildDepends: <<
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <catalyst-plugin-authentication-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <catalyst-plugin-authentication-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Catalyst/Catalyst-Plugin-Authentication-%v.tar.gz
 Source-MD5: aa93b6dff7b6420f4392e90b1c7bc3a0

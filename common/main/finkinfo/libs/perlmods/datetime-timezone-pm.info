@@ -19,7 +19,7 @@ BuildDepends: <<
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <datetime-timezone-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <datetime-timezone-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/DateTime/DateTime-TimeZone-%v.tar.gz
 Source-MD5: e6f36fa00425d64377aeae74a7da0ac3

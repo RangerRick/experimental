@@ -4,7 +4,7 @@ Revision: 4
 Description: Jakarta ORO Regex Library
 Type: java(1.4)
 License: BSD
-Maintainer: Benjamin Reed <jakarta-oro@fink.racoonfink.com>
+Maintainer: Benjamin Reed <jakarta-oro@fink.raccoonfink.com>
 
 Depends: system-java (>= 1.4-1)
 BuildDepends: <<

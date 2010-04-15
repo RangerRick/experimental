@@ -5,7 +5,7 @@ Revision: 1
 Type: ruby (1.8)
 Description: Event-processing library for Ruby
 License: BSD
-Maintainer: Benjamin Reed <eventmachine-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <eventmachine-rb@fink.raccoonfink.com>
 
 Depends: <<
 	libgems-rb%type_pkg[ruby],

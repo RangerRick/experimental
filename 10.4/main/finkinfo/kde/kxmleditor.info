@@ -3,7 +3,7 @@ Version: 1.1.4
 Revision: 9
 Description: KDE - XML editor
 License: GPL
-Maintainer: Benjamin Reed <kxmleditor@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kxmleditor@fink.raccoonfink.com>
 
 Depends: kdebase3-unified (>= 3.4.3-1)
 BuildDepends: <<

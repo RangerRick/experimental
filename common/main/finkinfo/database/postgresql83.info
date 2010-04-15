@@ -3,7 +3,7 @@ Version: 8.3.10
 Revision: 1
 Description: PostgreSQL open-source database
 License: BSD
-Maintainer: Benjamin Reed <postgresql83@fink.racoonfink.com>
+Maintainer: Benjamin Reed <postgresql83@fink.raccoonfink.com>
 
 Depends: <<
 	daemonic (>= 20010902-1),

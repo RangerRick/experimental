@@ -82,5 +82,5 @@ easily change or upgrade crypto implementations without even needing
 to recompile the application!
 <<
 License: LGPL
-Maintainer: Benjamin Reed <qca@fink.racoonfink.com>
+Maintainer: Benjamin Reed <qca@fink.raccoonfink.com>
 Homepage: http://delta.affinix.com/qca/

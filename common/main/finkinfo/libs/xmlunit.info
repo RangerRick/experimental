@@ -2,7 +2,7 @@ Package: xmlunit
 Version: 1.3
 Revision: 1
 Type: java
-Maintainer: Benjamin Reed <junit@fink.racoonfink.com>
+Maintainer: Benjamin Reed <junit@fink.raccoonfink.com>
 Depends: <<
 	junit (>= 3.8.1-4),
 	xalan-j (>= 1.0-1),

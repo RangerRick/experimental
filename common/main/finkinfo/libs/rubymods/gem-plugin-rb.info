@@ -5,7 +5,7 @@ Revision: 1
 Type: ruby (1.8)
 Description: Gem Based Plugin System for Ruby
 License: LGPL
-Maintainer: Benjamin Reed <gem-plugin-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <gem-plugin-rb@fink.raccoonfink.com>
 
 Depends: <<
 	libgems-rb%type_pkg[ruby],

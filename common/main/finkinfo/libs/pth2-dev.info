@@ -24,7 +24,7 @@ SplitOff: <<
 <<
 DocFiles: ANNOUNCE AUTHORS COPYING ChangeLog HACKING HISTORY INSTALL NEWS PORTING README SUPPORT TESTS THANKS USERS
 #
-Maintainer: Benjamin Reed <pth2@fink.racoonfink.com>
+Maintainer: Benjamin Reed <pth2@fink.raccoonfink.com>
 Homepage: http://www.gnu.org/software/pth/pth.html
 License: LGPL
 Description: Portable library that provides scheduling

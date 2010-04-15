@@ -4,7 +4,7 @@ Revision: 1
 Description: File-finding iterator
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <file-next-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <file-next-pm@fink.raccoonfink.com>
 
 Depends: system-perl
 BuildDepends: system-perl

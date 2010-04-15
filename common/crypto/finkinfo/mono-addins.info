@@ -31,5 +31,5 @@ DocFiles: AUTHORS ChangeLog NEWS
 Description: Mono framework for extensible software
 License: LGPL
 Homepage: http://www.mono-project.org/
-Maintainer: Benjamin Reed <mono-addins@fink.racoonfink.com>
+Maintainer: Benjamin Reed <mono-addins@fink.raccoonfink.com>
 <<

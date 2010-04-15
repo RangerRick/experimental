@@ -5,7 +5,7 @@ Revision: 2
 Type: ruby (1.8)
 Description: User and Login Management for Rails
 License: LGPL
-Maintainer: Benjamin Reed <login-generator-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <login-generator-rb@fink.raccoonfink.com>
 
 Depends: <<
 	rails-rb%type_pkg[ruby] (>= 1.1-1),

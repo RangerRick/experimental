@@ -3,7 +3,7 @@ Version: 2.1.1
 Revision: 1
 Description: KDE - Graphical Debugger
 License: GPL
-Maintainer: Benjamin Reed <kdbg@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdbg@fink.raccoonfink.com>
 
 Depends: kdelibs3-unified (>= 3.5.5-1)
 BuildDepends: <<

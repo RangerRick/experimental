@@ -53,5 +53,5 @@ libCapsiNetwork is a C++ network library to allow fast development
 of server daemon processes.
 <<
 License: GPL/LGPL
-Maintainer: Benjamin Reed <libcapsinetwork@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libcapsinetwork@fink.raccoonfink.com>
 Homepage: http://sourceforge.net/projects/libcapsinetwork/

@@ -41,6 +41,6 @@ Magic differs from tieing and overloading in several ways :
   by nature, and there's no need for any method resolution.
 <<
 License: Artistic
-Maintainer: Benjamin Reed <variable-magic-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <variable-magic-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/Variable-Magic
 <<

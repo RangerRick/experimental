@@ -23,7 +23,7 @@ BuildDepends: <<
 	qt3 (>= 3.3.5-3),
 	x11-dev
 <<
-Maintainer: Benjamin Reed <boson@fink.racoonfink.com>
+Maintainer: Benjamin Reed <boson@fink.raccoonfink.com>
 
 CustomMirror: RangerMirror
 Source: mirror:sourceforge:%n/%n-all-%v.tar.bz2

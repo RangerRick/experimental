@@ -5,7 +5,7 @@ Revision: 1021
 Description: Perl RPC client/server
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <plrpc-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <plrpc-pm@fink.raccoonfink.com>
 
 Depends: net-daemon-pm
 BuildDepends: net-daemon-pm

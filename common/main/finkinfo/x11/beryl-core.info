@@ -2,7 +2,7 @@ Package: beryl-core
 Version: 0.2.1
 Revision: 1
 
-Maintainer: Benjamin Reed <beryl-core@fink.racoonfink.com>
+Maintainer: Benjamin Reed <beryl-core@fink.raccoonfink.com>
 Source: http://releases.beryl-project.org/%v/%n-%v.tar.bz2
 Source-MD5: 895fe727d4396f6d51ffaf73cf8460d0
 Patch: %n.patch

@@ -20,6 +20,6 @@ CompileScript: <<
 InstallScript: make -j1 install DESTDIR="%d"
 DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README
 Description: C++ template library for matrices
-Maintainer: Benjamin Reed <gmm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <gmm@fink.raccoonfink.com>
 Homepage: http://home.gna.org/getfem/gmm_intro.html
 License: LGPL

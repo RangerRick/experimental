@@ -5,7 +5,7 @@ Revision: 1
 Type: ruby (1.8)
 Description: Rubyforge automation
 License: BSD
-Maintainer: Benjamin Reed <rubyforge-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <rubyforge-rb@fink.raccoonfink.com>
 
 Depends: <<
 	json-pure-rb%type_pkg[ruby] (>= 1.1.9-1),

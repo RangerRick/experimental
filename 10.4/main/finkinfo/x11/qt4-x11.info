@@ -4,7 +4,7 @@ Version: 4.6.2
 Revision: 2
 Description: Cross-Platform framework (X11 version)
 License: LGPL
-Maintainer: Benjamin Reed <qt4-x11@fink.racoonfink.com>
+Maintainer: Benjamin Reed <qt4-x11@fink.raccoonfink.com>
 
 Depends: <<
 	%N-core-shlibs (= %v-%r),

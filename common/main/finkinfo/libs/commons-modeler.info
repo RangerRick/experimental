@@ -40,7 +40,7 @@ InstallScript: <<
 JarFiles: dist/*.jar
 DocFiles: LICENSE* NOTICE* RELEASE*
 Homepage: http://jakarta.apache.org/commons/modeler.html
-Maintainer: Benjamin Reed <commons-modeler@fink.racoonfink.com>
+Maintainer: Benjamin Reed <commons-modeler@fink.raccoonfink.com>
 Description: Jakarta Commons - Modeler
 DescDetail: <<
 Commons-Modeler provides mechanisms to create Model MBeans compatible

@@ -4,7 +4,7 @@ Version: 1.0.1
 Revision: 1
 Description: Media Transfer Protocol library
 License: LGPL
-Maintainer: Benjamin Reed <libmtp@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libmtp@fink.raccoonfink.com>
 
 Depends: %N-shlibs (>= %v-%r)
 BuildDepends: <<

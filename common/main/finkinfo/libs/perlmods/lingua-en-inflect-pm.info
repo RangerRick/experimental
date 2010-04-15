@@ -5,7 +5,7 @@ Revision: 1022
 Description: Convert singular to plural
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <lingua-en-inflect-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <lingua-en-inflect-pm@fink.raccoonfink.com>
 
 Depends: system-perl
 BuildDepends: system-perl

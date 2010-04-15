@@ -22,7 +22,7 @@ BuildDepends: <<
 	qt3 (>= 3.3.5-1),
 	x11-dev
 <<
-Maintainer: Benjamin Reed <kio-kmd@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kio-kmd@fink.raccoonfink.com>
 BuildConflicts: unsermake
 
 CustomMirror: <<

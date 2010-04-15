@@ -35,6 +35,6 @@ Functions called in the package itself will still be bound by their
 name, but they won't show up as methods on your class or instances.
 <<
 License: Artistic
-Maintainer: Benjamin Reed <namespace-clean-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <namespace-clean-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/namespace-clean
 <<

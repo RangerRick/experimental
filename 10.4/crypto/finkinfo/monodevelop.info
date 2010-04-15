@@ -5,7 +5,7 @@ Revision: 1
 Architecture: i386, powerpc
 Description: Integrated Development Environment for C#
 License: GPL
-Maintainer: Benjamin Reed <monodevelop@fink.racoonfink.com>
+Maintainer: Benjamin Reed <monodevelop@fink.raccoonfink.com>
 
 Depends: <<
 	gecko-sharp (>= 2.0-1044),

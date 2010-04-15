@@ -7,7 +7,7 @@ Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type
 Description: PostgreSQL Perl DBI module (with SSL)
 Type: perl(5.6.0)
 License: Artistic
-Maintainer: Benjamin Reed <dbd-pg-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <dbd-pg-pm@fink.raccoonfink.com>
 
 Depends: <<
 	perl560-core,

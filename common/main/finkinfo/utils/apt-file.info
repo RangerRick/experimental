@@ -49,6 +49,6 @@ Unlike apt-cache, you can search in which package a file is included
 or list the contents of a package without installing or fetching it. 
 <<
 License: GPL
-Maintainer: Benjamin Reed <apt-file@fink.racoonfink.com>
+Maintainer: Benjamin Reed <apt-file@fink.raccoonfink.com>
 Homepage: http://packages.debian.org/unstable/base/apt-file
 <<

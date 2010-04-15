@@ -41,6 +41,6 @@ tests you want to run and the order in which you want to run them.
 It constructs the right value for MakeMaker to do the right thing.
 <<
 License: Artistic
-Maintainer: Benjamin Reed <test-manifest-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <test-manifest-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/Test-Manifest
 <<

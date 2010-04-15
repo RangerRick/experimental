@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <catalyst-plugin-authorization-roles-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <catalyst-plugin-authorization-roles-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Catalyst/Catalyst-Plugin-Authorization-Roles-%v.tar.gz
 Source-MD5: afef214de7c8084c59fad8a07a640059

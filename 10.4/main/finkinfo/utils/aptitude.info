@@ -3,7 +3,7 @@ Version: 0.3.3
 Revision: 3
 Description: Terminal-based apt frontend
 License: GPL
-Maintainer: Benjamin Reed <aptitude@fink.racoonfink.com>
+Maintainer: Benjamin Reed <aptitude@fink.raccoonfink.com>
 
 Depends: <<
 	apt0.6.40-shlibs,

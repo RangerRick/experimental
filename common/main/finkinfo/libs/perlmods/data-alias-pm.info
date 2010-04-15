@@ -23,6 +23,6 @@ refer to the same thing.  Modifying one will modify the other, and if
 you take a reference to both, the two values are the same.
 <<
 License: Artistic
-Maintainer: Benjamin Reed <data-alias-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <data-alias-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/Data-Alias
 <<

@@ -3,7 +3,7 @@ Version: 1.4.10
 Revision: 1
 Description: Gnu privacy guard - A Free PGP replacement
 License: GPL
-Maintainer: Benjamin Reed <gnupg@fink.racoonfink.com>
+Maintainer: Benjamin Reed <gnupg@fink.raccoonfink.com>
 BuildDepends: <<
 	bzip2,
 	libcurl4,

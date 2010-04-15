@@ -17,7 +17,7 @@ Recommends: apache2 | apache2-ssl
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <catalyst-engine-apache-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <catalyst-engine-apache-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Catalyst/Catalyst-Engine-Apache-%v.tar.gz
 Source-MD5: 00d89cac86ed977428468433389f4c6e

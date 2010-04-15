@@ -83,6 +83,6 @@ DescUsage: <<
  See /sw/share/doc/bash/README.Fink for configuration advice.
 <<
 License: GPL
-Maintainer: Benjamin Reed <bash@fink.racoonfink.com>
+Maintainer: Benjamin Reed <bash@fink.raccoonfink.com>
 Homepage: http://www.gnu.org/software/bash/bash.html
 <<

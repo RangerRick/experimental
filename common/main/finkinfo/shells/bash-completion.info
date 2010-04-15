@@ -28,5 +28,5 @@ DescPort: <<
 Added var prefix to use fink's apt-get/dpkg and rpm dbs
 <<
 License: GPL
-Maintainer: Benjamin Reed <bash-completion@fink.racoonfink.com>
+Maintainer: Benjamin Reed <bash-completion@fink.raccoonfink.com>
 Homepage: http://www.caliban.org/bash/index.shtml

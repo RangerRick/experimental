@@ -17,7 +17,7 @@ InstallScript: <<
 <<
 JarFiles: lib/*.jar runlib/*.jar
 Homepage: http://www-306.ibm.com/software/awdtools/netrexx/
-Maintainer: Benjamin Reed <netrexx@fink.racoonfink.com>
+Maintainer: Benjamin Reed <netrexx@fink.raccoonfink.com>
 Description: Rexx programming and scripting language
 DescDetail: <<
 NetRexx is a programming and scripting language that can support your

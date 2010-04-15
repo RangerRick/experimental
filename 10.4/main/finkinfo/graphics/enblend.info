@@ -3,7 +3,7 @@ Version: 2.5
 Revision: 3
 Description: Image compositing tool
 License: GPL
-Maintainer: Benjamin Reed <enblend@fink.racoonfink.com>
+Maintainer: Benjamin Reed <enblend@fink.raccoonfink.com>
 
 Depends: <<
 	boost1.32-py24-shlibs,

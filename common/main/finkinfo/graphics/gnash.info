@@ -1,7 +1,7 @@
 Package: gnash
 Version: 0.1
 Revision: 1
-Maintainer: Benjamin Reed <gnash@fink.racoonfink.com>
+Maintainer: Benjamin Reed <gnash@fink.raccoonfink.com>
 Depends: 
 BuildDepends: 
 

@@ -60,7 +60,7 @@ SplitOff: <<
 
 DocFiles: AUTHORS COPYING README
 Description: Open Collaboration Services API
-Maintainer: Benjamin Reed <attica@fink.racoonfink.com>
+Maintainer: Benjamin Reed <attica@fink.raccoonfink.com>
 Homepage: http://www.freedesktop.org/wiki/Specifications/open-collaboration-services
 License: LGPL
 DescDetail: <<

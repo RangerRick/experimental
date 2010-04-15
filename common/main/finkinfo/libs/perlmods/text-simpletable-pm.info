@@ -8,7 +8,7 @@ BuildDepends: perl%type_pkg[perl]-core, fink (>= 0.20.2.1-1), module-build-pm%ty
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <text-simpletable-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <text-simpletable-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Text/Text-SimpleTable-%v.tar.gz
 Source-MD5: 90f884fec82f85df903ad7934b5351a6

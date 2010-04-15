@@ -5,7 +5,7 @@ Revision: 1033
 Architecture: i386, powerpc
 Description: C# bindings for GTKSourceView
 License: LGPL
-Maintainer: Benjamin Reed <gtksourceview-sharp@fink.racoonfink.com>
+Maintainer: Benjamin Reed <gtksourceview-sharp@fink.raccoonfink.com>
 
 Depends: <<
 	gtk-sharp2 (>= 2.12.9-1),

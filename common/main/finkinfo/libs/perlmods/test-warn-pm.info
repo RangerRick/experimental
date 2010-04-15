@@ -35,6 +35,6 @@ DescDetail: <<
 This module provides a few convenience methods for testing warning based code.
 <<
 License: Artistic
-Maintainer: Benjamin Reed <test-warn-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <test-warn-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/Test-Warn
 <<

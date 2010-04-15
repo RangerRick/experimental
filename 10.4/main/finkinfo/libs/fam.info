@@ -3,7 +3,7 @@ Version: 2.7.0
 Revision: 1
 Description: File Alteration Monitor
 License: GPL
-Maintainer: Benjamin Reed <fam@fink.racoonfink.com>
+Maintainer: Benjamin Reed <fam@fink.raccoonfink.com>
 
 Depends: %N-shlibs (>= %v-%r)
 BuildDepends: <<

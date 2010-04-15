@@ -27,7 +27,7 @@ DescPort: <<
   dmacks fixed how perl interp is located
 <<
 License: Artistic
-Maintainer: Benjamin Reed <inline-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <inline-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/Inline
 Source-MD5: 63140a6c911f1576fdee71ba4457610f 
 <<

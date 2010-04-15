@@ -68,6 +68,6 @@ PostRmScript: <<
 	fi
 <<
 License: GPL
-Maintainer: Benjamin Reed <mono-tools@fink.racoonfink.com>
+Maintainer: Benjamin Reed <mono-tools@fink.raccoonfink.com>
 Homepage: http://www.mono-project.com/
 <<

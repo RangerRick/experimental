@@ -20,6 +20,6 @@ is always no-operation, and returns empty-string or empty-list, as
 appropriate.
 <<
 License: Artistic
-Maintainer: Benjamin Reed <io-null-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <io-null-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/IO-Null
 <<

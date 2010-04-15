@@ -3,7 +3,7 @@ Version: 0.10.26
 Revision: 2
 Description: Streaming-media framework
 License: GPL/LGPL
-Maintainer: Benjamin Reed <gstreamer-0.10@fink.racoonfink.com>
+Maintainer: Benjamin Reed <gstreamer-0.10@fink.raccoonfink.com>
 
 Depends: %N-shlibs (= %v-%r)
 BuildDepends: <<

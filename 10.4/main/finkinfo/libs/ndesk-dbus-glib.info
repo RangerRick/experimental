@@ -5,7 +5,7 @@ Revision: 2
 Architecture: i386, powerpc
 Description: GLib Integration for NDesk D-Bus
 License: BSD
-Maintainer: Benjamin Reed <ndesk-dbus-glib@fink.racoonfink.com>
+Maintainer: Benjamin Reed <ndesk-dbus-glib@fink.raccoonfink.com>
 
 Depends: <<
 	mono (>= 2.6.2-1),

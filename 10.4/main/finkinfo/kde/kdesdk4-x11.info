@@ -5,7 +5,7 @@ Revision: 1
 Description: KDE4 - Developer Utilities
 Type: kde (x11)
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdesdk4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdesdk4@fink.raccoonfink.com>
 
 Depends: <<
 	cervisia4-%type_pkg[kde] (>= %v-%r),

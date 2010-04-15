@@ -5,7 +5,7 @@ Revision: 1021
 Description: Class::DBI extension for PostgreSQL
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <class-dbi-pg-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <class-dbi-pg-pm@fink.raccoonfink.com>
 
 Depends: <<
 	class-dbi-pm%type_pkg[perl] (>= 0.89-1),

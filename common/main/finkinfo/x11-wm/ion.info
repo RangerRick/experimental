@@ -1,7 +1,7 @@
 Package: ion
 Version: 20040729
 Revision: 1
-Maintainer: Benjamin Reed <ion@fink.racoonfink.com>
+Maintainer: Benjamin Reed <ion@fink.raccoonfink.com>
 BuildDepends: autoconf (>= 2.60-1), automake1.9, libtool14 (>= 1.5.0-1), lua (>= 5.0.2-1), x11-dev
 Depends: libtool14-shlibs, lua (>= 5.0.2-1), x11
 Source: http://iki.fi/tuomov/dl/%n-2-%v.tar.gz

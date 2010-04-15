@@ -73,5 +73,5 @@ DescDetail: <<
 MySQL Connector/J is the official JDBC driver for MySQL.
 <<
 License: GPL
-Maintainer: Benjamin Reed <mysql-java@fink.racoonfink.com>
+Maintainer: Benjamin Reed <mysql-java@fink.raccoonfink.com>
 Homepage: http://dev.mysql.com/downloads/connector/j/

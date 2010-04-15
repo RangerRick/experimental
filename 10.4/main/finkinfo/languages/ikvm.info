@@ -5,7 +5,7 @@ Architecture: i386, powerpc
 Description: Java implementation for .Net
 Type: java(1.5)
 License: BSD
-Maintainer: Benjamin Reed <ikvm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <ikvm@fink.raccoonfink.com>
 
 Depends: <<
 	mono (>= 2.6.2-1),

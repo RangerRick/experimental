@@ -22,7 +22,7 @@ BuildDepends: <<
 	mono-xsp (>= 2.0-1),
 <<
 Homepage: http://www.mono-project.com/contributing/asp-net.html
-Maintainer: Benjamin Reed <libapache2-mod-mono@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libapache2-mod-mono@fink.raccoonfink.com>
 Description: Allow Apache to serve ASP.NET pages
 ConfigureParams: --mandir=%p/share/man --with-apxs=%p/sbin/apxs --with-mono-prefix=%p --with-apr-config=%p/bin/apr-config --enable-debug
 CompileScript: <<

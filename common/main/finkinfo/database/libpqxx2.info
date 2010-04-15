@@ -71,5 +71,5 @@ object-orientation to give you some extra reliability features that would
 be hard to get with most other database interfaces.
 <<
 License: BSD
-Maintainer: Benjamin Reed <libpqxx2@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libpqxx2@fink.raccoonfink.com>
 Homepage: http://pqxx.org/

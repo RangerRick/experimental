@@ -36,5 +36,5 @@ Libjingle is a set of components provided by Google to interoperate
 with Google Talk's peer-to-peer and voice capabilities.
 <<
 License: BSD
-Maintainer: Benjamin Reed <libjingle@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libjingle@fink.raccoonfink.com>
 Homepage: http://code.google.com/apis/talk/index.html

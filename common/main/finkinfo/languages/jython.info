@@ -16,7 +16,7 @@ InstallScript: <<
 <<
 
 Homepage: http://www.jython.org/
-Maintainer: Benjamin Reed <jython@fink.racoonfink.com>
+Maintainer: Benjamin Reed <jython@fink.raccoonfink.com>
 Description: Implementation of Python in Java
 DescDetail: <<
 Jython is an implementation of the high-level, dynamic, object-oriented

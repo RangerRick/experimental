@@ -38,7 +38,7 @@ InstallScript: <<
 <<
 DocFiles: LICENSE* NOTICE*
 Homepage: http://jakarta.apache.org/commons/net/
-Maintainer: Benjamin Reed <commons-net@fink.racoonfink.com>
+Maintainer: Benjamin Reed <commons-net@fink.raccoonfink.com>
 Description: Jakarta Commons - Networking
 DescDetail: <<
 Jakarta Commons Net implements the client side of many basic Internet

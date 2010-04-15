@@ -5,7 +5,7 @@ Revision: 3
 BuildDepends: fink
 Description: KDE4 - convenience package: KDE 4.4 (X11)
 Type: bundle
-Maintainer: Benjamin Reed <bundle-kde4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <bundle-kde4@fink.raccoonfink.com>
 
 Depends: <<
 	kdeaccessibility4-x11 (>= %v-1),

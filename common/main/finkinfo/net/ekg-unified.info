@@ -3,7 +3,7 @@ Version: 1.7
 Revision: 1
 Description: Gadu-Gadu program
 License: GPL/LGPL
-Maintainer: Benjamin Reed <ekg@fink.racoonfink.com>
+Maintainer: Benjamin Reed <ekg@fink.raccoonfink.com>
 
 Depends: <<
 	libgadu3-shlibs,

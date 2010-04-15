@@ -3,7 +3,7 @@ Version: 6.8.2
 Revision: 24
 Description: Free X11 implementation
 License: BSD
-Maintainer: Benjamin Reed <xorg@fink.racoonfink.com>
+Maintainer: Benjamin Reed <xorg@fink.raccoonfink.com>
 
 Depends: %N-shlibs (>= %v-%r)
 BuildDepends: gcc3.1

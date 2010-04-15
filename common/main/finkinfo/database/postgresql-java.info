@@ -4,7 +4,7 @@ Revision: 701.1
 Description: PostgreSQL Java library
 Type: java(1.5)
 License: BSD
-Maintainer: Benjamin Reed <postgresql-java@fink.racoonfink.com>
+Maintainer: Benjamin Reed <postgresql-java@fink.raccoonfink.com>
 
 Depends: system-java (>= 1.5-1)
 BuildDepends: <<

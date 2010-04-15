@@ -3,7 +3,7 @@ Version: 1.0
 Revision: 3
 Description: Qt Cryptographic Architecture
 License: LGPL
-Maintainer: Benjamin Reed <qca@fink.racoonfink.com>
+Maintainer: Benjamin Reed <qca@fink.raccoonfink.com>
 
 Depends: %N-shlibs
 BuildDepends: <<

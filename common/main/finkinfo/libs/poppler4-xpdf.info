@@ -4,7 +4,7 @@ Version: 0.10.5
 Revision: 1
 Description: PDF rendering library (alternate interface)
 License: GPL
-Maintainer: Benjamin Reed <poppler4-xpdf@fink.racoonfink.com>
+Maintainer: Benjamin Reed <poppler4-xpdf@fink.raccoonfink.com>
 
 BuildDepends: <<
 	fink (>= 0.28.0-1)

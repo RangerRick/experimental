@@ -26,7 +26,7 @@ InstallScript: <<
 <<
 DocFiles: README.txt license.terms RELEASE_NOTES acknowledgments.txt overview.html
 Homepage: http://freetts.sourceforge.net/
-Maintainer: Benjamin Reed <freetts@fink.racoonfink.com>
+Maintainer: Benjamin Reed <freetts@fink.raccoonfink.com>
 Description: Speech synthesizer written entirely in Java
 DescDetail: <<
 FreeTTS is a speech synthesis system written entirely in the Java

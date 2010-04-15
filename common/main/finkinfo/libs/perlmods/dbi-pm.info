@@ -23,7 +23,7 @@ Conflicts: dbi-pm560-bin, dbi-pm561-bin, dbi-pm580-bin, dbi-pm581-bin, dbi-pm584
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <dbi-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <dbi-pm@fink.raccoonfink.com>
 
 # Unpack Phase:
 Source: mirror:cpan:modules/by-module/DBI/DBI-%v.tar.gz

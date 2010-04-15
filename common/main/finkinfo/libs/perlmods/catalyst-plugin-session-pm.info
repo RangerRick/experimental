@@ -32,7 +32,7 @@ BuildDepends: <<
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <catalyst-plugin-session-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <catalyst-plugin-session-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Catalyst/Catalyst-Plugin-Session-%v.tar.gz
 Source-MD5: 21b71cd5ff088fa9e83ac3b679cfbce8

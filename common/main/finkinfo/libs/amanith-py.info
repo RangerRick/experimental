@@ -13,7 +13,7 @@ Depends: <<
 	amanith-shlibs (>= 0.3-2),
 	python%type_pkg[python],
 <<
-Maintainer: Benjamin Reed <amanith-py@fink.racoonfink.com>
+Maintainer: Benjamin Reed <amanith-py@fink.raccoonfink.com>
 HomePage: http://louhi.kempele.fi/~skyostil/projects/pyamanith/
 Source: http://louhi.kempele.fi/~skyostil/projects/pyamanith/dist/PyAmanith-%v.tar.gz
 Source-MD5: e6d44980ba8d1260f4e8dc73b93c63d4

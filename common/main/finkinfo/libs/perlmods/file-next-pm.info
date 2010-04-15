@@ -8,7 +8,7 @@ BuildDepends: system-perl
 Type: perl
 License: Artistic
 UpdatePOD: true
-Maintainer: Benjamin Reed <file-next-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <file-next-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/File/File-Next-%v.tar.gz
 Source-MD5: ad2800827fd053f556e5e18fe9d50202

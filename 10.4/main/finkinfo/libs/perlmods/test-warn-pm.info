@@ -7,7 +7,7 @@ Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type
 Description: Perl extension to test methods for warnings
 Type: perl(5.8.1 5.8.4 5.8.6 5.8.8 5.10.0)
 License: Artistic
-Maintainer: Benjamin Reed <test-warn-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <test-warn-pm@fink.raccoonfink.com>
 
 Depends: <<
 	array-compare-pm%type_pkg[perl],

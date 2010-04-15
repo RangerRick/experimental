@@ -6,7 +6,7 @@ Revision: 1
 Depends: amarok-core (>= %v-%r), amarok-engine-xine (>= %v-%r)
 Conflicts: amarok-kde-xine, amarok-kde-gstreamer, amarok-kde-gstreamer-xine
 Replaces: amarok-kde-xine, amarok-kde-gstreamer, amarok-kde-gstreamer-xine
-Maintainer: Benjamin Reed <amarok@fink.racoonfink.com>
+Maintainer: Benjamin Reed <amarok@fink.raccoonfink.com>
 Type: bundle
 
 Description: KDE - music player

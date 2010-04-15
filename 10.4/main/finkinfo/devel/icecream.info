@@ -3,7 +3,7 @@ Version: 0.6
 Revision: 1
 Description: Centralized distributed compilation tool
 License: GPL
-Maintainer: Benjamin Reed <icecream@fink.racoonfink.com>
+Maintainer: Benjamin Reed <icecream@fink.raccoonfink.com>
 
 Depends: kdelibs3-ssl-shlibs | kdelibs3-shlibs
 BuildDepends: kdelibs3-ssl-dev | kdelibs3-dev

@@ -5,7 +5,7 @@ Revision: 1021
 Description: Handle MPEG audio from a file handle
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <mpeg-audio-frame-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <mpeg-audio-frame-pm@fink.raccoonfink.com>
 
 Depends: system-perl
 

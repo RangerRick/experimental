@@ -5,7 +5,7 @@ Revision: 1
 Description: PostgreSQL Perl tools
 Type: perl(0)
 License: BSD
-Maintainer: Benjamin Reed <postgresql-perl@fink.racoonfink.com>
+Maintainer: Benjamin Reed <postgresql-perl@fink.raccoonfink.com>
 
 Depends: <<
 	postgresql82-shlibs (>= %v-1),

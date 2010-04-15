@@ -35,6 +35,6 @@ for Catalyst that uses an simple file to act as a shared memory
 interprocess cache.  It is based on Cache::FileCache.
 <<
 License: Artistic
-Maintainer: Benjamin Reed <catalyst-plugin-session-store-file-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <catalyst-plugin-session-store-file-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/Catalyst-Plugin-Session-Store-File
 <<

@@ -5,7 +5,7 @@ Revision: 1
 Type: ruby (1.8)
 Description: Optimized threading for Ruby
 License: LGPL
-Maintainer: Benjamin Reed <fastthread-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <fastthread-rb@fink.raccoonfink.com>
 
 Depends: <<
 	libgems-rb%type_pkg[ruby],

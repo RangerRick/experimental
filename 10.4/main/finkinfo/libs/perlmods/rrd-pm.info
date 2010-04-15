@@ -7,7 +7,7 @@ Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type
 Description: RRDTool Perl bindings module
 Type: perl(5.8.1 5.8.4 5.8.6 5.8.8 5.10.0)
 License: GPL
-Maintainer: Benjamin Reed <rrd-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <rrd-pm@fink.raccoonfink.com>
 
 Depends: <<
 	libpng3-shlibs,

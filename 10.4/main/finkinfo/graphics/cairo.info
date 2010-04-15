@@ -3,7 +3,7 @@ Version: 1.8.8
 Revision: 2
 Description: Vector graphics library
 License: BSD
-Maintainer: Benjamin Reed <cairo@fink.racoonfink.com>
+Maintainer: Benjamin Reed <cairo@fink.raccoonfink.com>
 
 Depends: <<
 	%N-shlibs (= %v-%r),

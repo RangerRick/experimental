@@ -24,7 +24,7 @@ InstallScript: <<
 JarFiles: *.jar
 DocFiles: *LICENSE* ChangeLog README
 Homepage: http://www.jcraft.com/jzlib/index.html
-Maintainer: Benjamin Reed <jzlib@fink.racoonfink.com>
+Maintainer: Benjamin Reed <jzlib@fink.raccoonfink.com>
 Description: Pure Java zlib implementation
 DescDetail: <<
 JZlib is a re-implementation of zlib  in pure Java.

@@ -33,7 +33,7 @@ InstallScript: <<
 <<
 JarFiles: dist/*.jar
 Homepage: http://jakarta.apache.org/spice-jndikit/
-Maintainer: Benjamin Reed <spice-jndikit@fink.racoonfink.com>
+Maintainer: Benjamin Reed <spice-jndikit@fink.raccoonfink.com>
 Description: Toolkit for constructing JNDI providers
 DescDetail: <<
 JNDI Kit is a toolkit designed to help with the construction of

@@ -32,7 +32,7 @@ BuildDepends: <<
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <module-install-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <module-install-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Module/Module-Install-%v.tar.gz
 Source-MD5: 54473368b3151461562bc472ba282f38

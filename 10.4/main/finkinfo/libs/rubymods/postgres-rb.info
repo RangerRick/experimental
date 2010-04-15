@@ -5,7 +5,7 @@ Revision: 3
 Description: Ruby bindings for PostgreSQL
 Type: ruby (1.8)
 License: BSD
-Maintainer: Benjamin Reed <postgres-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <postgres-rb@fink.raccoonfink.com>
 
 Depends: <<
 	postgresql83-shlibs,

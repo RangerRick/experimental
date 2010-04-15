@@ -25,5 +25,5 @@ interface, for making instruction-processing programs more independent
 of the instruction set being processed. 
 <<
 License: GPL
-Maintainer: Benjamin Reed <libopcodes@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libopcodes@fink.raccoonfink.com>
 Homepage: http://www.gnu.org/software/binutils/

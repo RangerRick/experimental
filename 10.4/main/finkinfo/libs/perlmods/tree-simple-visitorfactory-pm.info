@@ -5,7 +5,7 @@ Revision: 3
 Description: Create tree structures from visitor info
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <tree-simple-visitorfactory-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <tree-simple-visitorfactory-pm@fink.raccoonfink.com>
 
 Depends: <<
 	system-perl,

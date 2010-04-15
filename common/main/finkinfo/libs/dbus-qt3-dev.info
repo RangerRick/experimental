@@ -36,6 +36,6 @@ bus daemon).
 
 These bindings provide D-BUS access using the Qt API.
 <<
-Maintainer: Benjamin Reed <dbus-qt3@fink.racoonfink.com>
+Maintainer: Benjamin Reed <dbus-qt3@fink.raccoonfink.com>
 Homepage: http://dbus.freedesktop.org/
 License: Restrictive/Distributable

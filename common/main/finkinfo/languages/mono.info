@@ -36,7 +36,7 @@ BuildConflicts: libicu28-dev, libicu30-dev, gc
 Replaces: %N-dev (<< %v-%r), monodoc (<< 2.4-1)
 Type: java(1.5)
 Homepage: http://www.mono-project.com/
-Maintainer: Benjamin Reed <mono@fink.racoonfink.com>
+Maintainer: Benjamin Reed <mono@fink.raccoonfink.com>
 Description: .NET-compatible CIL engine
 NoSetCPPFLAGS: true
 SetCPPFLAGS: -I%p/include

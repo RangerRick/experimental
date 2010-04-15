@@ -3,7 +3,7 @@ Version: 4.5
 Revision: 1.0.3
 Description: Package Manager
 License: GPL/LGPL
-Maintainer: Benjamin Reed <rpm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <rpm@fink.raccoonfink.com>
 
 Depends: %N4.4-shlibs (= %v-%r)
 BuildDepends: <<

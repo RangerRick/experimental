@@ -3,7 +3,7 @@ Version: 0.4.4
 Revision: 1
 Description: Library for musicbrainz tagging
 License: LGPL
-Maintainer: Benjamin Reed <libtunepimp3@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libtunepimp3@fink.raccoonfink.com>
 
 Depends: %N-shlibs (>= %v-%r)
 BuildDepends: <<

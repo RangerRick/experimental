@@ -5,7 +5,7 @@ Revision: 1
 Description: Recursively copy files and directories
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <file-copy-recursive-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <file-copy-recursive-pm@fink.raccoonfink.com>
 
 Depends: system-perl
 BuildDepends: system-perl

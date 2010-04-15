@@ -3,7 +3,7 @@ Version: 0.8
 Revision: 1
 Description: KDE - A perky imitation of Apple's OSX look
 License: GPL
-Maintainer: Benjamin Reed <baghira@fink.racoonfink.com>
+Maintainer: Benjamin Reed <baghira@fink.raccoonfink.com>
 
 Depends: kdebase3-unified (>= 3.4.2-1)
 BuildDepends: <<

@@ -331,6 +331,6 @@ DescUsage: <<
 <<
 DocFiles: LGPL* LICENSE* README*
 License: LGPL
-Maintainer: Benjamin Reed <qt4-x11@fink.racoonfink.com>
+Maintainer: Benjamin Reed <qt4-x11@fink.raccoonfink.com>
 Homepage: http://www.trolltech.com/
 <<

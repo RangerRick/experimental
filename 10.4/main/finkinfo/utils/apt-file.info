@@ -5,7 +5,7 @@ Revision: 1
 Description: APT package searching utility
 Type: perl (5.6.1 5.8.0 5.8.1 5.8.6)
 License: GPL
-Maintainer: Benjamin Reed <apt-file@fink.racoonfink.com>
+Maintainer: Benjamin Reed <apt-file@fink.raccoonfink.com>
 
 Depends: <<
 	apt-pkg-pm%type_pkg[perl],

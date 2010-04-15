@@ -3,7 +3,7 @@ Version: 1.0.1
 Revision: 1
 Description: Base Industrial Light & Magic libs
 License: BSD
-Maintainer: Benjamin Reed <ilmbase@fink.racoonfink.com>
+Maintainer: Benjamin Reed <ilmbase@fink.raccoonfink.com>
 
 Replaces: openexr-dev
 BuildDependsOnly: true

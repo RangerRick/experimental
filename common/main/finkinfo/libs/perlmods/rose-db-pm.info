@@ -37,7 +37,7 @@ BuildDepends: <<
 Type: perl(0)
 NoPerlTests: true
 License: Artistic
-Maintainer: Benjamin Reed <rose-db-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <rose-db-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Rose/Rose-DB-%v.tar.gz
 Source-MD5: 3b97e33e9dfa9ff83aa418f564fd40ce

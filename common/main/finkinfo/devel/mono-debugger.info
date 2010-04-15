@@ -43,5 +43,5 @@ PostInstScript: <<
 	[ -x "%p/bin/monodoc" ] && [ -d "%p/lib/monodoc" ] && "%p/bin/monodoc" --make-index >/dev/null 2>&1 || :
 <<
 License: GPL
-Maintainer: Benjamin Reed <mono-debugger@fink.racoonfink.com>
+Maintainer: Benjamin Reed <mono-debugger@fink.raccoonfink.com>
 Homepage: http://www.mono-project.com/

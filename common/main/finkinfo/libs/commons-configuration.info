@@ -73,7 +73,7 @@ InstallScript: <<
 <<
 DocFiles: RELEASE*
 Homepage: http://jakarta.apache.org/commons/configuration/
-Maintainer: Benjamin Reed <commons-configuration@fink.racoonfink.com>
+Maintainer: Benjamin Reed <commons-configuration@fink.raccoonfink.com>
 Description: Jakarta Commons - Configuration
 DescDetail: <<
 Commons Configuration provides a generic configuration interface which

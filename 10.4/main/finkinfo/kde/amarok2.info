@@ -5,7 +5,7 @@ Revision: 2
 Description: KDE4 - music player
 Type: kde (x11 mac)
 License: GPL/LGPL
-Maintainer: Benjamin Reed <amarok2@fink.racoonfink.com>
+Maintainer: Benjamin Reed <amarok2@fink.raccoonfink.com>
 
 Depends: <<
 	dbus (>= 1.2.12-1),

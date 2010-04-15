@@ -5,7 +5,7 @@ Revision: 2
 Type: ruby (1.8)
 Description: Pattern matching in Ruby data structures
 License: LGPL
-Maintainer: Benjamin Reed <reg-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <reg-rb@fink.raccoonfink.com>
 
 Depends: <<
 	cursor-rb%type_pkg[ruby] (>= 0.9-1),

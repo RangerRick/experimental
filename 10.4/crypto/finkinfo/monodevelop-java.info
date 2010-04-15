@@ -4,7 +4,7 @@ Revision: 1
 Architecture: i386, powerpc
 Description: Java language support for MonoDevelop
 License: GPL
-Maintainer: Benjamin Reed <monodevelop-java@fink.racoonfink.com>
+Maintainer: Benjamin Reed <monodevelop-java@fink.raccoonfink.com>
 
 Depends: <<
 	ikvm (>= 0.36.0.11-1),

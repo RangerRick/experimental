@@ -53,5 +53,5 @@ binary representation of XML, defined by the Wap Forum, and used to
 reduce bandwidth in mobile communications.
 <<
 License: LGPL
-Maintainer: Benjamin Reed <libwbxml2@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libwbxml2@fink.raccoonfink.com>
 Homepage: http://libwbxml.opensync.org/

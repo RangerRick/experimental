@@ -4,7 +4,7 @@ Revision: 4
 Description: Message bus system for applications 
 License: OSI-Approved
 # dual license: Academic Free License, GPL2
-Maintainer: Benjamin Reed <dbus@fink.racoonfink.com>
+Maintainer: Benjamin Reed <dbus@fink.raccoonfink.com>
 
 BuildDepends: <<
 	autoconf (>= 2.63-1),

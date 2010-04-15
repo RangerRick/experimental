@@ -4,7 +4,7 @@ Revision: 4
 Description: Readline support for Java
 Type: java(1.4)
 License: LGPL
-Maintainer: Benjamin Reed <readline-java@fink.racoonfink.com>
+Maintainer: Benjamin Reed <readline-java@fink.raccoonfink.com>
 
 Depends: <<
 	commons-logging,

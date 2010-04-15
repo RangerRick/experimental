@@ -3,7 +3,7 @@ Version: 1.8.2
 Revision: 1
 Description: C++ interface for the cairo library
 License: LGPL
-Maintainer: Benjamin Reed <cairomm1@fink.racoonfink.com>
+Maintainer: Benjamin Reed <cairomm1@fink.raccoonfink.com>
 
 Depends: %N-shlibs (= %v-%r)
 BuildDepends: <<

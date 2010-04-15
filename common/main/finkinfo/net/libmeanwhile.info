@@ -49,6 +49,6 @@ SplitOff: <<
 <<
 DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 Description: Library for sametime communication
-Maintainer: Benjamin Reed <libmeanwhile@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libmeanwhile@fink.raccoonfink.com>
 Homepage: http://meanwhile.sourceforge.net/
 License: LGPL

@@ -4,7 +4,7 @@ Version: 1.4.2
 Revision: 1
 Description: Fixed-size "round-robin" database storage
 License: GPL
-Maintainer: Benjamin Reed <rrdtool@fink.racoonfink.com>
+Maintainer: Benjamin Reed <rrdtool@fink.raccoonfink.com>
 
 Depends: librrd4-shlibs (>= %v-%r)
 BuildDepends: <<

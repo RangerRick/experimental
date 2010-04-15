@@ -66,4 +66,4 @@ Description: GIF image format handling library
 DescPort: Uses autoconf and libtool. The usual fixes.
 License: OSI-Approved
 Homepage: http://giflib.sourceforge.net/
-Maintainer: Benjamin Reed <giflib@fink.racoonfink.com>
+Maintainer: Benjamin Reed <giflib@fink.raccoonfink.com>

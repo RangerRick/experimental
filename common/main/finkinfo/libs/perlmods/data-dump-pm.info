@@ -8,7 +8,7 @@ BuildDepends: system-perl
 
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <data-dump-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <data-dump-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Data/Data-Dump-%v.tar.gz
 Source-MD5: b4f4beb85058cff872f957aee2fbaf08

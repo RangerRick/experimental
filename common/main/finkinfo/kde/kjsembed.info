@@ -22,7 +22,7 @@ BuildDepends: <<
 	x11-dev
 <<
 Recommends: kdebase3-ssl (>= %v-1) | kdebase3 (>= %v-1)
-Maintainer: Benjamin Reed <kjsembed@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kjsembed@fink.raccoonfink.com>
 
 CustomMirror: RangerMirror
 Source: mirror:kde:stable/%v/src/kdebindings-%v.tar.bz2

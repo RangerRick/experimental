@@ -26,7 +26,7 @@ BuildDepends: <<
 	x11-dev,
 	xft2-dev,
 <<
-Maintainer: Benjamin Reed <qtcurve-gtk2@fink.racoonfink.com>
+Maintainer: Benjamin Reed <qtcurve-gtk2@fink.raccoonfink.com>
 
 Source: http://home.freeuk.com/cpdrummond/QtCurve-Gtk2-%v.tar.bz2
 Source-MD5: afa418c3d22091fb4ef9397de0195a23

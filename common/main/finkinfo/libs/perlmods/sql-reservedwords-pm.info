@@ -39,6 +39,6 @@ DescDetail: <<
 Determine if words are reserved by ANSI/ISO SQL standard.
 <<
 License: Artistic
-Maintainer: Benjamin Reed <sql-reservedwords-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <sql-reservedwords-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/SQL-ReservedWords
 <<

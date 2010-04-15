@@ -5,7 +5,7 @@ Revision: 1
 Type: ruby (1.8)
 Description: Utility classes for Rails
 License: BSD
-Maintainer: Benjamin Reed <activesupport-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <activesupport-rb@fink.raccoonfink.com>
 
 # Dependencies:
 Depends: <<

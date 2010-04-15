@@ -8,7 +8,7 @@ BuildDepends: file-next-pm, system-perl
 Type: perl
 License: Artistic
 UpdatePOD: true
-Maintainer: Benjamin Reed <ack@fink.racoonfink.com>
+Maintainer: Benjamin Reed <ack@fink.raccoonfink.com>
 NoPerlTests: true
 
 Source: mirror:cpan:modules/by-module/App/%n-%v.tar.gz

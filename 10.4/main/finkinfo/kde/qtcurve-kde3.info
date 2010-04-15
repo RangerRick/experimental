@@ -3,7 +3,7 @@ Version: 0.59.5
 Revision: 1
 Description: Unified widget style (KDE 3 version)
 License: GPL
-Maintainer: Benjamin Reed <qtcurve-kde3@fink.racoonfink.com>
+Maintainer: Benjamin Reed <qtcurve-kde3@fink.raccoonfink.com>
 
 Depends: kdelibs3-unified-shlibs (>= %v-1)
 BuildDepends: <<

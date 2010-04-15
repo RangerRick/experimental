@@ -5,7 +5,7 @@ Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - PIM support libraries
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdepimlibs4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdepimlibs4@fink.raccoonfink.com>
 
 Depends: <<
 	%N-shlibs (= %v-%r),

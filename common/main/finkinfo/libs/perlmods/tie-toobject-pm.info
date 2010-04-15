@@ -17,7 +17,7 @@ BuildDepends: <<
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <tie-toobject-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <tie-toobject-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Tie/Tie-ToObject-%v.tar.gz
 Source-MD5: b4f434992c286d531f26893c78541456

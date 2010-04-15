@@ -5,7 +5,7 @@ Revision: 1
 Description: KDE4 - image plugins
 Type: kde (x11 mac)
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kipi-plugins4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kipi-plugins4@fink.raccoonfink.com>
 
 Depends: <<
 	kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1),

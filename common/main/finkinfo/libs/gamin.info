@@ -3,7 +3,7 @@ Version: 0.1.9
 Revision: 1
 Description: File alteration monitor implementation
 License: LGPL
-Maintainer: Benjamin Reed <gamin@fink.racoonfink.com>
+Maintainer: Benjamin Reed <gamin@fink.raccoonfink.com>
 
 Depends: %N-shlibs (>= %v-%r)
 

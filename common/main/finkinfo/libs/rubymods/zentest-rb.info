@@ -5,7 +5,7 @@ Revision: 1
 Type: ruby (1.8)
 Description: Continuous integration while you code
 License: BSD
-Maintainer: Benjamin Reed <zentest-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <zentest-rb@fink.raccoonfink.com>
 
 Depends: <<
 	hoe-rb%type_pkg[ruby],

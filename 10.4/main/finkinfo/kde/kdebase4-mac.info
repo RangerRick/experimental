@@ -5,7 +5,7 @@ Revision: 1
 Description: KDE4 - base runtime
 Type: kde (mac)
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdebase4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdebase4@fink.raccoonfink.com>
 
 Depends: <<
 	%N-shlibs (= %v-%r),

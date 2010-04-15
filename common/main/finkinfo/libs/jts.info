@@ -15,7 +15,7 @@ InstallScript: <<
 <<
 JarFiles: lib/jts*.jar
 Homepage: http://www.vividsolutions.com/JTS/
-Maintainer: Benjamin Reed <jts@fink.racoonfink.com>
+Maintainer: Benjamin Reed <jts@fink.raccoonfink.com>
 Description: API of 2D spatial predicates and functions
 DescDetail: <<
 The JTS Topology Suite is an API of 2D spatial predicates and

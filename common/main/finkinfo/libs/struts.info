@@ -31,7 +31,7 @@ InstallScript: <<
 <<
 DocFiles: dist/INSTALL dist/LICENSE dist/README
 Homepage: http://struts.apache.org/
-Maintainer: Benjamin Reed <struts@fink.racoonfink.com>
+Maintainer: Benjamin Reed <struts@fink.raccoonfink.com>
 Description: Web development framework
 DescDetail: <<
 The goal of Struts is to provide an open source framework for

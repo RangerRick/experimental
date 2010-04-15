@@ -3,7 +3,7 @@ Version: 1.2.30
 Revision: 1
 Description: Fixed-size "round-robin" database storage
 License: GPL
-Maintainer: Benjamin Reed <rrdtool@fink.racoonfink.com>
+Maintainer: Benjamin Reed <rrdtool@fink.raccoonfink.com>
 
 Depends: librrd2-shlibs (>= %v-%r)
 BuildDepends: <<

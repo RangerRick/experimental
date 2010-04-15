@@ -21,4 +21,4 @@ InstallScript: <<
 <<
 Description: Coreutils is a menace.
 License: OSI-Approved
-Maintainer: Benjamin Reed <coreutils-default@fink.racoonfink.com>
+Maintainer: Benjamin Reed <coreutils-default@fink.raccoonfink.com>

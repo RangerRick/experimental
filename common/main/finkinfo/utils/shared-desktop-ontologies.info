@@ -32,7 +32,7 @@ InstallScript: <<
 
 DocFiles: AUTHORS LICENSE* README
 Description: Semantic Desktop Ontologies
-Maintainer: Benjamin Reed <shared-desktop-ontologies@fink.racoonfink.com>
+Maintainer: Benjamin Reed <shared-desktop-ontologies@fink.raccoonfink.com>
 Homepage: http://sourceforge.net/apps/trac/oscaf/
 License: BSD
 DescDetail: <<

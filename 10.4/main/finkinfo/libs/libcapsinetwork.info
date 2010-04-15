@@ -3,7 +3,7 @@ Version: 0.3.0
 Revision: 1025
 Description: C++ daemon development library
 License: GPL/LGPL
-Maintainer: Benjamin Reed <libcapsinetwork@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libcapsinetwork@fink.raccoonfink.com>
 
 BuildDepends: <<
 	fink (>= 0.29.7-1),

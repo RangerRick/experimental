@@ -5,7 +5,7 @@ Revision: 1
 Architecture: i386, powerpc
 Description: .Net interface to GNOME Desktop
 License: LGPL
-Maintainer: Benjamin Reed <gnome-desktop-sharp2@fink.racoonfink.com>
+Maintainer: Benjamin Reed <gnome-desktop-sharp2@fink.raccoonfink.com>
 
 Depends: <<
 	gnome-panel-shlibs (>= 2.24.0-1),

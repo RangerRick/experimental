@@ -5,7 +5,7 @@ Revision: 4
 Type: ruby (1.8)
 Description: SOAP and XML-RPC support for Rails
 License: BSD
-Maintainer: Benjamin Reed <actionwebservice-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <actionwebservice-rb@fink.raccoonfink.com>
 
 # Dependencies:
 Depends: <<

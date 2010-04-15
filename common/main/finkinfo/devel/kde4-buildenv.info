@@ -27,7 +27,7 @@ InstallScript: <<
 <<
 
 Homepage: http://ranger.befunk.com/fink/%n
-Maintainer: Benjamin Reed <kde4-buildenv@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kde4-buildenv@fink.raccoonfink.com>
 Description: Scripts for simplifying KDE4 builds
 DescDetail: <<
 When packaging KDE4 software, in your CompileScript, first do:

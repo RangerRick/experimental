@@ -3,7 +3,7 @@ Version: 2.18.3
 Revision: 1031
 Description: Distributed compilation tool
 License: GPL
-Maintainer: Benjamin Reed <distcc@fink.racoonfink.com>
+Maintainer: Benjamin Reed <distcc@fink.raccoonfink.com>
 
 Depends: <<
 	daemonic,

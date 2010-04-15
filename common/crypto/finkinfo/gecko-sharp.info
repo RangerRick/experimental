@@ -31,7 +31,7 @@ BuildDepends: <<
 <<
 
 Homepage: http://www.mono-project.com/
-Maintainer: Benjamin Reed <gecko-sharp@fink.racoonfink.com>
+Maintainer: Benjamin Reed <gecko-sharp@fink.raccoonfink.com>
 Description: Mozilla browser C# bindings
 NoSetMAKEFLAGS: true
 SetMAKEFLAGS: -j1

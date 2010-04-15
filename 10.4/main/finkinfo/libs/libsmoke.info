@@ -4,7 +4,7 @@ Revision: 1
 Epoch: 1
 Description: Library for Qt and KDE language bindings
 License: BSD
-Maintainer: Benjamin Reed <libsmoke@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libsmoke@fink.raccoonfink.com>
 
 Depends: %N-shlibs (>= %e:%v-%r)
 BuildDepends: <<

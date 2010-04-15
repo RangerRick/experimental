@@ -3,7 +3,7 @@ Version: 3.3.8
 Revision: 1
 Description: MySQL Plugin for the Qt Toolkit
 License: GPL
-Maintainer: Benjamin Reed <qt3-mysql@fink.racoonfink.com>
+Maintainer: Benjamin Reed <qt3-mysql@fink.raccoonfink.com>
 
 Depends: <<
 	mysql14-shlibs,

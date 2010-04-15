@@ -124,6 +124,6 @@ Porchdog has discontinued the "howl" library and recommends Avahi as
 its replacement.
 <<
 License: LGPL
-Maintainer: Benjamin Reed <avahi-gtk@fink.racoonfink.com>
+Maintainer: Benjamin Reed <avahi-gtk@fink.raccoonfink.com>
 Homepage: http://avahi.org/
 <<

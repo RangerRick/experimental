@@ -3,7 +3,7 @@ Version: 2.0.2
 Revision: 3
 Description: Audio decoding framework, development files
 License: GPL/LGPL
-Maintainer: Benjamin Reed <akode@fink.racoonfink.com>
+Maintainer: Benjamin Reed <akode@fink.raccoonfink.com>
 
 Depends: %N-shlibs (= %v-%r)
 BuildDepends: <<

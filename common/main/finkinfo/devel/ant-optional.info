@@ -2,7 +2,7 @@ Package: ant-optional
 Version: 1.7.1
 Revision: 2
 Type: java
-Maintainer: Benjamin Reed <ant-optional@fink.racoonfink.com>
+Maintainer: Benjamin Reed <ant-optional@fink.raccoonfink.com>
 BuildDepends: <<
 	ant-base (>= %v-1),
 	antlr (>= 2.7.4-3),

@@ -45,6 +45,6 @@ interface to writing anything from a full client to a simple protocol
 tester.
 <<
 License: LGPL
-Maintainer: Benjamin Reed <net-xmpp-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <net-xmpp-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/Net-XMPP
 <<

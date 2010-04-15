@@ -40,6 +40,6 @@ DescPackaging: <<
 	lib, so not need to force interited bdep of it.
 <<
 Description: Thai language support library
-Maintainer: Benjamin Reed <libthai@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libthai@fink.raccoonfink.com>
 Homepage: http://linux.thai.net/plone/TLWG/libthai/
 License: LGPL

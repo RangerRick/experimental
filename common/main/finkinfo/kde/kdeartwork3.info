@@ -3,7 +3,7 @@ Version: 3.5.10
 Revision: 1
 Description: KDE - additional artwork
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdeartwork3@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdeartwork3@fink.raccoonfink.com>
 
 Depends: kde-extra-sounds (>= %v-%r), kde-extra-themes (>= %v-%r), kde-extra-wallpapers (>= %v-%r), kde-icons-classic (>= %v-%r), kde-icons-kids (>= %v-%r), kde-icons-ikons (>= %v-%r), kde-icons-locolor (>= %v-%r), kde-icons-slick (>= %v-%r), kde-emoticons (>= %v-%r), kworldclock-maps (>= %v-%r), kde-extra-screensavers (>= %v-%r)
 BuildDepends: <<

@@ -5,7 +5,7 @@ Revision: 1
 Architecture: i386, powerpc
 Description: GTK+ graphical interface for Mono
 License: LGPL
-Maintainer: Benjamin Reed <gtk-sharp2@fink.racoonfink.com>
+Maintainer: Benjamin Reed <gtk-sharp2@fink.raccoonfink.com>
 
 Depends: <<
 	gtkhtml3.14-shlibs (>= 3.26.2-1),

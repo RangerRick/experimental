@@ -10,7 +10,7 @@ Version: 4.4.1
 Revision: 1
 Description: KDE4 - UNIX admin tools
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdeadmin4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdeadmin4@fink.raccoonfink.com>
 
 DescDetail: <<
 Various administration tools for KDE.

@@ -26,6 +26,6 @@ packages without the unsightly mess of no strict or
 typeglobs lying about where just anyone can see them.
 <<
 License: Artistic
-Maintainer: Benjamin Reed <sub-install-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <sub-install-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/Sub-Install
 <<

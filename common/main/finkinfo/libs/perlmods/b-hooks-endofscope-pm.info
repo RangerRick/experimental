@@ -29,6 +29,6 @@ This module allows you to execute code when perl finished
 compiling the surrounding scope.
 <<
 License: Artistic
-Maintainer: Benjamin Reed <b-hooks-endofscope-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <b-hooks-endofscope-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/B-Hooks-EndOfScope
 <<

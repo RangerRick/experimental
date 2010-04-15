@@ -3,7 +3,7 @@ Version: 3.5.4
 Revision: 1
 Description: KDE - multimedia tools
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdemultimedia3@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdemultimedia3@fink.raccoonfink.com>
 
 Depends: arts-plugin-akode (>= %v-%r), arts-plugin-audiofile (>= %v-%r), arts-plugin-oggvorbis (>= %v-%r), arts-plugin-xine (>= %v-%r), juk (>= %v-%r), kaboodle (>= %v-%r), %N-ioslaves (>= %v-%r), %N-kfile-plugins (>= %v-%r), kmix (>= %v-%r), noatun (>= %v-%r)
 BuildDepends: <<

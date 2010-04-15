@@ -3,7 +3,7 @@ Version: 3.5.10
 Revision: 1
 Description: KDE - languages for Farsi
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kde-i18n-farsi@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kde-i18n-farsi@fink.raccoonfink.com>
 
 Depends: <<
 	kdelibs3-unified (>= %v-1),

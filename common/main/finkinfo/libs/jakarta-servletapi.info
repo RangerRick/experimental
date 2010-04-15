@@ -4,7 +4,7 @@ Revision: 1
 Description: Java Servlet and JSP API Classes
 Type: java
 License: BSD
-Maintainer: Benjamin Reed <jakarta-servletapi@fink.racoonfink.com>
+Maintainer: Benjamin Reed <jakarta-servletapi@fink.raccoonfink.com>
 
 Depends: <<
 	xalan-j (>= 2.2-1),

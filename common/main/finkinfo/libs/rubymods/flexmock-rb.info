@@ -5,7 +5,7 @@ Revision: 2
 Type: ruby (1.8)
 Description: Flexible mocking library for Ruby
 License: BSD
-Maintainer: Benjamin Reed <flexmock-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <flexmock-rb@fink.raccoonfink.com>
 
 Depends: <<
 	libgems-rb%type_pkg[ruby],

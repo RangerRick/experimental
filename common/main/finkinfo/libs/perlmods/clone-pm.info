@@ -10,7 +10,7 @@ Replaces: clone-pm
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <clone-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <clone-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Clone/Clone-%v.tar.gz
 Source-MD5: 65f34e7280d7b7dfb72ab6224e5767f5

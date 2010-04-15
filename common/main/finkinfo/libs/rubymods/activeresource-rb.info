@@ -5,7 +5,7 @@ Revision: 1
 Type: ruby (1.8)
 Description: Object-Relational Mapper for Ruby
 License: BSD
-Maintainer: Benjamin Reed <activeresource-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <activeresource-rb@fink.raccoonfink.com>
 
 # Dependencies:
 Depends: <<

@@ -5,7 +5,7 @@ Revision: 1026
 Description: Convert Microsoft mail attachments
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <convert-tnef-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <convert-tnef-pm@fink.raccoonfink.com>
 
 Depends: <<
 	perl%type_pkg[perl]-core,

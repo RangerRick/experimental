@@ -4,7 +4,7 @@ Version: 1.6.1
 Revision: 1
 Description: Dynamic-range image file tools
 License: BSD
-Maintainer: Benjamin Reed <openexr@fink.racoonfink.com>
+Maintainer: Benjamin Reed <openexr@fink.raccoonfink.com>
 
 Depends: <<
 	fltk-x11-shlibs,

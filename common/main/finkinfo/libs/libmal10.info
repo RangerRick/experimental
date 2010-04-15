@@ -4,7 +4,7 @@ Revision: 1
 Epoch: 1
 Description: Library for syncing AvantGo
 License: OSI-Approved
-Maintainer: Benjamin Reed <libmal10@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libmal10@fink.raccoonfink.com>
 
 Depends: %N-shlibs (>= %e:%v-%r)
 BuildDepends: fink (>= 0.24.12), pilot-link09, libiconv-dev, libncurses5 (>= 5.4-20041023-1006), readline5 (>= 5.0-1004)

@@ -44,7 +44,7 @@ InstallScript: <<
 <<
 DocFiles: ABOUT-NLS AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 Description: Visualization plugins for libvisual-0.4
-Maintainer: Benjamin Reed <libvisual-plugins-0.4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libvisual-plugins-0.4@fink.raccoonfink.com>
 Homepage: http://localhost.nl/~synap/libvisual/
 License: LGPL
 DescDetail: <<

@@ -1,7 +1,7 @@
 Package: ant-junit
 Version: 1.7.1
 Revision: 2
-Maintainer: Benjamin Reed <ant-junit@fink.racoonfink.com>
+Maintainer: Benjamin Reed <ant-junit@fink.raccoonfink.com>
 #
 Type: java
 BuildDepends: fink (>= 0.22.2-1), fink-mirrors (>= 0.22.1.1-1), junit (>= 3.8.1-4), system-java-dev (>= 1.5-1)

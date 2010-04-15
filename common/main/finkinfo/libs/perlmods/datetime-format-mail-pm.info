@@ -22,7 +22,7 @@ BuildDepends: <<
 Type: perl(0)
 NoPerlTests: true
 License: Artistic
-Maintainer: Benjamin Reed <datetime-format-mail-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <datetime-format-mail-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/DateTime/DateTime-Format-Mail-%v.tar.gz
 Source-MD5: 15e36249e866463bd0237262a8e43b16

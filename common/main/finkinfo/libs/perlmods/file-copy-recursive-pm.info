@@ -8,7 +8,7 @@ BuildDepends: system-perl
 
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <file-copy-recursive-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <file-copy-recursive-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/File/File-Copy-Recursive-%v.tar.gz
 Source-MD5: e76dc75ab456510d67c6c3a95183f72f

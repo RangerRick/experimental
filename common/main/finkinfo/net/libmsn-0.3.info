@@ -47,6 +47,6 @@ SplitOff: <<
 <<
 DocFiles: COPYING README THANKS TODO
 Description: Library for connecting to MSN Messenger
-Maintainer: Benjamin Reed <libmsn@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libmsn@fink.raccoonfink.com>
 Homepage: http://sourceforge.net/projects/libmsn/
 License: GPL

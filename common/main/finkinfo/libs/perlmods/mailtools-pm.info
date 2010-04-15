@@ -30,6 +30,6 @@ MailTools contains a set of perl modules for sending, receiving,
 and manipulating internet mail messages.
 <<
 License: Artistic
-Maintainer: Benjamin Reed <mailtools-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <mailtools-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/MailTools
 <<

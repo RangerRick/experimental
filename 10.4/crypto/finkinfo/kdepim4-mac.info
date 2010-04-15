@@ -5,7 +5,7 @@ Revision: 1
 Description: KDE4 - Personal Information Management
 Type: kde (mac)
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdepim4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdepim4@fink.raccoonfink.com>
 
 Depends: <<
 	%N-akonadi (>= %v-%r),

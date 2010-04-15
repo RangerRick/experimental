@@ -31,7 +31,7 @@ BuildDepends: <<
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <data-visitor-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <data-visitor-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Data/Data-Visitor-%v.tar.gz
 Source-MD5: f3bca28efc96aef200dd6bba74510c12

@@ -10,7 +10,7 @@ InstallScript: <<
 	install -d -m 755 %i/share/doc/installed-packages
 	touch %i/share/doc/installed-packages/%N
 <<
-Maintainer: Benjamin Reed <jce@fink.racoonfink.com>
+Maintainer: Benjamin Reed <jce@fink.raccoonfink.com>
 Description: Java Cryptography Extension
 DescDetail: <<
 The Java Cryptography Extension (JCE) is a set of packages that provides a

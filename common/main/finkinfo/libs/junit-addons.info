@@ -14,7 +14,7 @@ InstallScript: <<
 JarFiles: %n.jar
 DocFiles: LICENSE README WHATSNEW
 Homepage: http://junit-addons.sourceforge.net/
-Maintainer: Benjamin Reed <junit-addons@fink.racoonfink.com>
+Maintainer: Benjamin Reed <junit-addons@fink.raccoonfink.com>
 Description: Addons for the JUnit unit test framework
 DescDetail: <<
 JUnit-addons is a collection of helper classes for JUnit.

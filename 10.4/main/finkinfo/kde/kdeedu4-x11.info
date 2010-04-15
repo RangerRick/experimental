@@ -5,7 +5,7 @@ Revision: 1
 Description: KDE4 - Edutainment software
 Type: kde (x11)
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdeedu4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdeedu4@fink.raccoonfink.com>
 
 Depends: <<
 	blinken4-%type_pkg[kde] (>= %v-%r),

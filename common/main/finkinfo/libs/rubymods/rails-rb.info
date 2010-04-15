@@ -5,7 +5,7 @@ Revision: 1
 Type: ruby (1.8)
 Description: MVC web application framework
 License: BSD
-Maintainer: Benjamin Reed <rails-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <rails-rb@fink.raccoonfink.com>
 
 Depends: <<
 	actionmailer-rb%type_pkg[ruby] (>= 2.1.0-1),

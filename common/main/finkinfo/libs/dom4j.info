@@ -18,7 +18,7 @@ InstallScript: <<
 <<
 DocFiles: *.txt
 Homepage: http://jakarta.apache.org/dom4j/
-Maintainer: Benjamin Reed <dom4j@fink.racoonfink.com>
+Maintainer: Benjamin Reed <dom4j@fink.raccoonfink.com>
 Description: XML, XPath, and XSLT API
 DescDetail: <<
 dom4j is an easy to use, open source library for working with XML,

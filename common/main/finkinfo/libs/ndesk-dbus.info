@@ -15,7 +15,7 @@ BuildDepends: <<
 	pkgconfig (>= 0.23-1),
 <<
 Homepage: http://www.ndesk.org/DBusSharp
-Maintainer: Benjamin Reed <ndesk-dbus@fink.racoonfink.com>
+Maintainer: Benjamin Reed <ndesk-dbus@fink.raccoonfink.com>
 Description: C# Clean-Room D-Bus Implementation
 ConfigureParams: --disable-dependency-tracking
 InstallScript: <<

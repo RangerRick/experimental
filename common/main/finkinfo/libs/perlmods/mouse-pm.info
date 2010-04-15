@@ -15,7 +15,7 @@ BuildDepends: <<
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <mouse-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <mouse-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:authors/id/S/SA/SARTAK/Mouse-%v.tar.gz
 Source-MD5: b7be6042224bc24f9a4f28e9c89c72de

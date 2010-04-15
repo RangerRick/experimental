@@ -4,7 +4,7 @@ Revision: 1
 Description: Unit testing for XML
 Type: java
 License: BSD
-Maintainer: Benjamin Reed <junit@fink.racoonfink.com>
+Maintainer: Benjamin Reed <junit@fink.raccoonfink.com>
 
 Depends: <<
 	junit (>= 3.8.1-4),

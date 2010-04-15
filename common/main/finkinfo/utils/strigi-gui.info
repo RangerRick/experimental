@@ -118,7 +118,7 @@ SplitOff2: <<
 
 DocFiles: AUTHORS COPYING ChangeLog NEWS README
 Description: Desktop Search (GUI)
-Maintainer: Benjamin Reed <strig@fink.racoonfink.com>
+Maintainer: Benjamin Reed <strig@fink.raccoonfink.com>
 Homepage: http://www.vandenoever.info/software/strigi/
 License: LGPL
 DescDetail: <<

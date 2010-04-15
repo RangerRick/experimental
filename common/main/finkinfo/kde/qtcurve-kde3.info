@@ -19,7 +19,7 @@ BuildDepends: <<
 	x11-dev
 <<
 Recommends: kdebase3-ssl (>= %v-1) | kdebase3 (>= %v-1)
-Maintainer: Benjamin Reed <qtcurve-kde3@fink.racoonfink.com>
+Maintainer: Benjamin Reed <qtcurve-kde3@fink.raccoonfink.com>
 
 Source: http://home.freeuk.com/cpdrummond/QtCurve-KDE3-%v.tar.bz2
 Source-MD5: e6e721a38650c4c453c686c5d871862d

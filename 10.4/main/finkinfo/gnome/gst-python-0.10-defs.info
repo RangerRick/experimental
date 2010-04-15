@@ -4,7 +4,7 @@ Version: 0.10.18
 Revision: 1
 Description: Python interface to GStreamer (data files)
 License: LGPL
-Maintainer: Benjamin Reed <gst-python-0.10-defs@fink.racoonfink.com>
+Maintainer: Benjamin Reed <gst-python-0.10-defs@fink.raccoonfink.com>
 
 Replaces: <<
 	gst-python-0.10-py23,

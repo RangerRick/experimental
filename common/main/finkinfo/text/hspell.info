@@ -1,7 +1,7 @@
 Package: hspell
 Version: 1.0
 Revision: 1
-Maintainer: Benjamin Reed <hspell@fink.racoonfink.com>
+Maintainer: Benjamin Reed <hspell@fink.raccoonfink.com>
 Source: http://www.sourcefiles.org/Utilities/Dictionary/%n-%v.tar.gz
 Source-MD5: 3e12fa383c2cfd430918d115f33f9841
 PatchFile: %n.patch

@@ -17,7 +17,7 @@ BuildDepends: <<
 	x11-dev
 <<
 BuildConflicts: unsermake
-Maintainer: Benjamin Reed <qt-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <qt-rb@fink.raccoonfink.com>
 Type: ruby(1.8)
 
 CustomMirror: RangerMirror

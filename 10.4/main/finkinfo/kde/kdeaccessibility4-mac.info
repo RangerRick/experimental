@@ -5,7 +5,7 @@ Revision: 1
 Description: KDE4 - accessibility software
 Type: kde (mac)
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdeaccessibility4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdeaccessibility4@fink.raccoonfink.com>
 
 Depends: <<
 	kmouth4-%type_pkg[kde] (>= %v-%r),

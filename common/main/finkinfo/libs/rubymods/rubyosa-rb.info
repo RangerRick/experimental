@@ -6,7 +6,7 @@ Type: ruby (1.8)
 Description: Apple Event Manager infrastructure bridge
 Distribution: 10.4, 10.5
 License: BSD
-Maintainer: Benjamin Reed <rubyosa-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <rubyosa-rb@fink.raccoonfink.com>
 
 Depends: <<
 	libxml2-rb%type_pkg[ruby] (>= 0.3.8-1),

@@ -95,7 +95,7 @@ DocFiles: AUTHORS COPYING ChangeLog* INSTALL NEWS README
 Description: Vector graphics library
 License: BSD
 Homepage: http://www.cairographics.org/
-Maintainer: Benjamin Reed <cairo@fink.racoonfink.com>
+Maintainer: Benjamin Reed <cairo@fink.raccoonfink.com>
 DescPackaging: <<
 	dmacks: make sure we don't detect poppler4 or librsvg2 (avoid
 	circular dependencies)...though it's only for testing, so

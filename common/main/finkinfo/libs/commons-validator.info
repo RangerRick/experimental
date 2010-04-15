@@ -37,7 +37,7 @@ InstallScript: <<
 JarFiles: dist/%n-%v.jar:%n.jar
 DocFiles: LICENSE* NOTICE* RELEASE-NOTES*
 Homepage: http://jakarta.apache.org/commons/validator/
-Maintainer: Benjamin Reed <commons-validator@fink.racoonfink.com>
+Maintainer: Benjamin Reed <commons-validator@fink.raccoonfink.com>
 Description: Jakarta Commons - Validator
 DescDetail: <<
 The Validator package provides the capability to configure

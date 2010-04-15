@@ -1,7 +1,7 @@
 Package: libexif12
 Version: 0.6.16
 Revision: 1
-Maintainer: Benjamin Reed <libexif12@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libexif12@fink.raccoonfink.com>
 Conflicts: libexif-dev
 Replaces: libexif-dev
 BuildDependsOnly: true

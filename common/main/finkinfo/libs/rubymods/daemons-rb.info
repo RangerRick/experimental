@@ -5,7 +5,7 @@ Revision: 1
 Type: ruby (1.8)
 Description: Wrap a ruby script as a daemon
 License: LGPL
-Maintainer: Benjamin Reed <daemons-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <daemons-rb@fink.raccoonfink.com>
 
 Depends: <<
 	libgems-rb%type_pkg[ruby],

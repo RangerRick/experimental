@@ -1,7 +1,7 @@
 Package: foo
 Version: 1.0
 Revision: 2
-Maintainer: Benjamin Reed <foo@fink.racoonfink.com>
+Maintainer: Benjamin Reed <foo@fink.raccoonfink.com>
 Type: nosource
 PatchFile: %n.patch
 PatchFile-MD5: 9bbd5708d5a281f2cc0cd3dc0d765340

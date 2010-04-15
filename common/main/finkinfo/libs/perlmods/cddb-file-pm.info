@@ -5,7 +5,7 @@ Revision: 1021
 Description: Parse a CDDB/freedb data file
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <cddb-file-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <cddb-file-pm@fink.raccoonfink.com>
 
 Depends: system-perl
 

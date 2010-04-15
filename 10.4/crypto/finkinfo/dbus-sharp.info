@@ -5,7 +5,7 @@ Revision: 1024
 Architecture: i386, powerpc
 Description: D-BUS C# bindings
 License: Restrictive/Distributable
-Maintainer: Benjamin Reed <dbus-mono@fink.racoonfink.com>
+Maintainer: Benjamin Reed <dbus-mono@fink.raccoonfink.com>
 
 Depends: <<
 	dbus-shlibs (>= 1.2.12-1),

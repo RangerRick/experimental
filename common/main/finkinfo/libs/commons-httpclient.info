@@ -39,7 +39,7 @@ InstallScript: <<
 <<
 DocFiles: LICENSE* README* RELEASE_NOTES*
 Homepage: http://jakarta.apache.org/commons/httpclient/
-Maintainer: Benjamin Reed <commons-httpclient@fink.racoonfink.com>
+Maintainer: Benjamin Reed <commons-httpclient@fink.raccoonfink.com>
 Description: Jakarta Commons - HTTP Client
 DescDetail: <<
 Although the java.net package provides basic functionality for accessing

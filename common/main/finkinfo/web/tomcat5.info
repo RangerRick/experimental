@@ -138,7 +138,7 @@ SplitOff: <<
 <<
 
 Homepage: http://jakarta.apache.org/tomcat/index.html
-Maintainer: Benjamin Reed <tomcat5@fink.racoonfink.com>
+Maintainer: Benjamin Reed <tomcat5@fink.raccoonfink.com>
 Description: Java Servlet 2.4 Container and Web Server
 DescDetail: <<
 Apache Tomcat version 5.5 implements the Servlet 2.4 and JavaServer Pages

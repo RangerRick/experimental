@@ -1,7 +1,7 @@
 Package: xliquid-gtk2
 Version: 1.0
 Revision: 1
-Maintainer: Benjamin Reed <xliquid-gtk2@fink.racoonfink.com>
+Maintainer: Benjamin Reed <xliquid-gtk2@fink.raccoonfink.com>
 Depends: gtk+2-shlibs (>= 2.12.0-1)
 
 CustomMirror: RangerMirror

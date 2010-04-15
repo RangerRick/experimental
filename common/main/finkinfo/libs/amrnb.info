@@ -35,6 +35,6 @@ Description: AMR narrow-band speech codec
 DescDetail: <<
 AMR-NB is a narrowband speech codec used in mobile phones.
 <<
-Maintainer: Benjamin Reed <amrnb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <amrnb@fink.raccoonfink.com>
 Homepage: http://3gpp.org/
 License: LGPL

@@ -2,7 +2,7 @@ Package: hsqldb
 Version: 1.8.1.1
 Revision: 1
 Type: java(1.5)
-Maintainer: Benjamin Reed <hsqldb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <hsqldb@fink.raccoonfink.com>
 BuildDepends: fink (>= 0.24.12-1)
 Depends: system-java (>= 1.5-1)
 

@@ -5,7 +5,7 @@ Revision: 1
 Type: kde (x11 mac)
 Description: Taglib support for other formats
 License: LGPL
-Maintainer: Benjamin Reed <taglib-extras@fink.racoonfink.com>
+Maintainer: Benjamin Reed <taglib-extras@fink.raccoonfink.com>
 
 Conflicts: taglib-extras-%type_pkg[kde]
 Replaces: taglib-extras-%type_pkg[kde]

@@ -5,7 +5,7 @@ Revision: 1021
 Description: Dynamic definition of Class::DBI sub classes
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <class-dbi-loader-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <class-dbi-loader-pm@fink.raccoonfink.com>
 
 Depends: <<
 	perl%type_pkg[perl]-core,

@@ -5,7 +5,7 @@ Revision: 1
 Description: Match globbing patterns against text
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <text-glob-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <text-glob-pm@fink.raccoonfink.com>
 
 BuildDepends: system-perl
 

@@ -5,7 +5,7 @@ Revision: 1
 Architecture: i386, powerpc
 Description: Tools for use with the Mono runtime
 License: GPL
-Maintainer: Benjamin Reed <mono-tools@fink.racoonfink.com>
+Maintainer: Benjamin Reed <mono-tools@fink.raccoonfink.com>
 
 Depends: <<
 	gecko-sharp,

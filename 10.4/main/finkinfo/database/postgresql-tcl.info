@@ -3,7 +3,7 @@ Version: 8.2.16
 Revision: 1
 Description: PostgreSQL TCL tools
 License: BSD
-Maintainer: Benjamin Reed <postgresql-tcl@fink.racoonfink.com>
+Maintainer: Benjamin Reed <postgresql-tcl@fink.raccoonfink.com>
 
 Depends: <<
 	postgresql82-shlibs,

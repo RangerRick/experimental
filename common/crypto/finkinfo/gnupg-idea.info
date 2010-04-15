@@ -4,7 +4,7 @@ Revision: 1
 Epoch: 1
 Description: Gnu privacy guard (with IDEA cipher)
 License: GPL
-Maintainer: Benjamin Reed <gnupg@fink.racoonfink.com>
+Maintainer: Benjamin Reed <gnupg@fink.raccoonfink.com>
 BuildDepends: <<
 	bzip2,
 	libcurl4,

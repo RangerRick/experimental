@@ -38,6 +38,6 @@ explicit space after use makes it clear that this is a single
 compile-time action.
 <<
 License: Artistic
-Maintainer: Benjamin Reed <test-use-ok-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <test-use-ok-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/Test-use-ok
 <<

@@ -5,7 +5,7 @@ Revision: 1021
 Description: Provide utility methods for factory classes
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <class-factory-util-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <class-factory-util-pm@fink.raccoonfink.com>
 
 Depends: system-perl
 BuildDepends: <<

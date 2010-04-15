@@ -20,7 +20,7 @@ BuildDepends: <<
 Type: perl(0)
 NoPerlTests: true
 License: Artistic
-Maintainer: Benjamin Reed <catalyst-plugin-defaultend-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <catalyst-plugin-defaultend-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Catalyst/Catalyst-Plugin-DefaultEnd-%v.tar.gz
 Source-MD5: af50b78732e8e2b2461698f8e0ac8598

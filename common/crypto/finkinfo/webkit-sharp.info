@@ -15,7 +15,7 @@ BuildDepends: <<
 	mono-dev (>= 2.0-1),
 <<
 Homepage: http://www.mono-project.com/
-Maintainer: Benjamin Reed <webkit-sharp@fink.racoonfink.com>
+Maintainer: Benjamin Reed <webkit-sharp@fink.raccoonfink.com>
 Description: C# Interface to WebKit
 ConfigureParams: WEBKIT_CFLAGS="-F/System/Library/Frameworks" WEBKIT_LIBS="-framework WebKit"
 InstallScript: <<

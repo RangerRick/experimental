@@ -5,7 +5,7 @@ Revision: 1
 Description: Qt language bindings for Ruby
 Type: ruby(1.8)
 License: GPL
-Maintainer: Benjamin Reed <qt-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <qt-rb@fink.raccoonfink.com>
 
 Depends: <<
 	ruby%type_pkg[ruby],

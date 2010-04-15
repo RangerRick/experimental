@@ -4,7 +4,7 @@ Version: 1.8.2
 Revision: 1
 Description: Gadu-Gadu IM dev
 License: GPL/LGPL
-Maintainer: Benjamin Reed <libgadu3@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libgadu3@fink.raccoonfink.com>
 
 Depends: libgadu3-shlibs (>= %v-%r)
 BuildDepends: <<

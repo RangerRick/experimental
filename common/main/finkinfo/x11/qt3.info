@@ -382,7 +382,7 @@ PreInstScript: <<
 <<
 DocFiles: FAQ INSTALL LICENSE* MANIFEST PLATFORMS README* bin/findtr bin/qt20fix bin/qtrename140
 License: GPL
-Maintainer: Benjamin Reed <qt3@fink.racoonfink.com>
+Maintainer: Benjamin Reed <qt3@fink.raccoonfink.com>
 Homepage: http://www.trolltech.com/
 DescPackaging: <<
 	As of Qt 3.3.6-2, I've moved everything to %p/lib/qt3 instead of %p.

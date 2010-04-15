@@ -56,7 +56,7 @@ SplitOff: <<
 
 DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README
 Description: Library for accessing iPod files
-Maintainer: Benjamin Reed <libgpod4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libgpod4@fink.raccoonfink.com>
 Homepage: http://www.gtkpod.org/libgpod.html
 License: LGPL
 DescDetail: <<

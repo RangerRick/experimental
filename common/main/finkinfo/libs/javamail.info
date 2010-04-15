@@ -16,7 +16,7 @@ InstallScript: <<
 <<
 DocFiles: *LICENSE* *README* *NOTES* *CHANGES*
 Homepage: http://java.sun.com/products/javamail/index.html
-Maintainer: Benjamin Reed <javamail@fink.racoonfink.com>
+Maintainer: Benjamin Reed <javamail@fink.raccoonfink.com>
 Description: Java Mail (SMTP/IMAP/POP) API
 DescDetail: <<
 The JavaMail 1.4 API provides a set of abstract classes that model a

@@ -5,7 +5,7 @@ Revision: 1
 Description: KDE4 - base applications and tools (runtime)
 Type: kde (x11 mac)
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdebase4-runtime@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdebase4-runtime@fink.raccoonfink.com>
 
 Depends: <<
 	dbus (>= 1.2.12-1),

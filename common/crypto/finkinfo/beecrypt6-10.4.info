@@ -26,7 +26,7 @@ SplitOff: <<
 
 DocFiles: AUTHORS BENCHMARKS CONTRIBUTORS COPYING* ChangeLog NEWS README* 
 Description: Fast Cryptographic Toolkit
-Maintainer: Benjamin Reed <beecrypt6@fink.racoonfink.com>
+Maintainer: Benjamin Reed <beecrypt6@fink.raccoonfink.com>
 Homepage: http://beecrypt.sourceforge.net/
 License: GPL/LGPL
 DescDetail: <<

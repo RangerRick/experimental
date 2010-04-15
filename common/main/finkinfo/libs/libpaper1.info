@@ -47,7 +47,7 @@ SplitOff2: <<
 
 DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README
 Description: Library for handling paper sizes and types
-Maintainer: Benjamin Reed <libpaper1@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libpaper1@fink.raccoonfink.com>
 Homepage: http://packages.debian.org/unstable/source/libpaper
 License: GPL
 DescDetail: <<

@@ -34,7 +34,7 @@ Depends: <<
 	system-java (>= 1.5-1)
 <<
 Homepage: http://virtuoso.openlinksw.com/dataspace/dav/wiki/Main 
-Maintainer: Benjamin Reed <virtuoso@fink.racoonfink.com>
+Maintainer: Benjamin Reed <virtuoso@fink.raccoonfink.com>
 Description: SQL/RDF/XML data management server
 ConfigureParams: <<
 	--enable-xml \

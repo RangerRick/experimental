@@ -5,7 +5,7 @@ Revision: 1021
 Description: Perl extension for portable daemons
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <net-daemon-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <net-daemon-pm@fink.raccoonfink.com>
 
 Depends: system-perl
 BuildDepends: system-perl

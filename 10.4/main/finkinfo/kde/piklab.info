@@ -3,7 +3,7 @@ Version: 0.8.0
 Revision: 3
 Description: KDE - PIC microcontroller IDE
 License: GPL
-Maintainer: Benjamin Reed <piklab@fink.racoonfink.com>
+Maintainer: Benjamin Reed <piklab@fink.raccoonfink.com>
 
 Depends: <<
 	kdelibs3-unified-shlibs (>= 3.5.2-1),

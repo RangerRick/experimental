@@ -62,7 +62,7 @@ SplitOff: <<
 
 DocFiles: AUTHORS COPYING* doc/*
 Description: Audio meta-data library
-Maintainer: Benjamin Reed <taglib@fink.racoonfink.com>
+Maintainer: Benjamin Reed <taglib@fink.raccoonfink.com>
 Homepage: http://ktown.kde.org/~wheeler/taglib.html
 License: LGPL
 <<

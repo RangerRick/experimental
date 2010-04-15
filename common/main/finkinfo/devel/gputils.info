@@ -5,7 +5,7 @@ Revision: 1
 Source: mirror:sourceforge:%n/%n-%v.tar.gz
 Source-MD5: 9703abd149565d6f5e926dda15eef8c2
 Homepage: http://gputils.sourceforge.net/
-Maintainer: Benjamin Reed <gputils@fink.racoonfink.com>
+Maintainer: Benjamin Reed <gputils@fink.raccoonfink.com>
 Description: Microchip PIC controller dev utilities
 ConfigureParams: --mandir=%p/share/man --infodir=%p/share/info
 InstallScript: make install DESTDIR=%d

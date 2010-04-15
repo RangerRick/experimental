@@ -103,6 +103,6 @@ The goals of OpenSync:
   embed into other applications.  Therefore it is possible to use
   GUIs, CLIs or whatever you can imagine. 
 <<
-Maintainer: Benjamin Reed <opensync@fink.racoonfink.com>
+Maintainer: Benjamin Reed <opensync@fink.raccoonfink.com>
 Homepage: http://www.opensync.org/
 License: GPL/LGPL

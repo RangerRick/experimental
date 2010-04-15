@@ -3,7 +3,7 @@ Version: 0.0.4
 Revision: 1
 Description: C++ math library
 License: GPL
-Maintainer: Benjamin Reed <libmath_@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libmath_@fink.raccoonfink.com>
 
 BuildDepends: <<
 	autoconf2.6 (>= 2.59-1),

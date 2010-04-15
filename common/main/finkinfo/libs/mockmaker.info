@@ -14,7 +14,7 @@ InstallScript: echo "none needed"
 JarFiles: org.mockmaker.eclipse/lib/*.jar
 DocFiles: *.html *.cfg
 Homepage: http://mockmaker.sourceforge.net/
-Maintainer: Benjamin Reed <mockmaker@fink.racoonfink.com>
+Maintainer: Benjamin Reed <mockmaker@fink.raccoonfink.com>
 Description: Generate mock object source code
 DescDetail: <<
 MockMaker is a program for creating source code for mock object classes.

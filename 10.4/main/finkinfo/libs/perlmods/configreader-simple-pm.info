@@ -5,7 +5,7 @@ Revision: 1
 Description: Simple configuration file parser
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <configreader-simple-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <configreader-simple-pm@fink.raccoonfink.com>
 
 BuildDepends: fink (>= 0.29.7-1)
 

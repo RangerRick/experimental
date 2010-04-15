@@ -29,7 +29,7 @@ InstallScript: <<
 JarFiles: %n.jar
 DocFiles: LICENSE* README*
 Homepage: http://jakarta.apache.org/regexp/
-Maintainer: Benjamin Reed <jakarta-regexp@fink.racoonfink.com>
+Maintainer: Benjamin Reed <jakarta-regexp@fink.raccoonfink.com>
 Description: Java Regular Expression Parsing
 DescDetail: <<
 Regexp is a 100% Pure Java Regular Expression package that was graciously

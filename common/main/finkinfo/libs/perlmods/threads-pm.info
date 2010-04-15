@@ -14,7 +14,7 @@ BuildDepends: <<
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <threads-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <threads-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:authors/id/J/JD/JDHEDDEN/threads-%v.tar.gz
 Source-MD5: daa78a18bcd82d235e3c8006b5bc27f2

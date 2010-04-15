@@ -6,7 +6,7 @@ Distribution: (%type_pkg[python] = 23) 10.3, (%type_pkg[python] = 23) 10.4, (%ty
 Description: Python interface to GStreamer
 Type: python(0)
 License: LGPL
-Maintainer: Benjamin Reed <gst-python-0.10@fink.racoonfink.com>
+Maintainer: Benjamin Reed <gst-python-0.10@fink.raccoonfink.com>
 
 Depends: %N-shlibs (= %v-%r)
 BuildDepends: <<

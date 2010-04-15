@@ -5,7 +5,7 @@ Revision: 1
 Description: KDE4 - Network Apps
 Type: kde (mac)
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdenetwork4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdenetwork4@fink.raccoonfink.com>
 
 Depends: <<
 	filesharing4-%type_pkg[kde] (>= %v-%r),

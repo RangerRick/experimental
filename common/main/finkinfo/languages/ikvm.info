@@ -24,7 +24,7 @@ BuildDepends: <<
 	nant (>= 0.85-10)
 <<
 Homepage: http://www.mono-project.com/
-Maintainer: Benjamin Reed <ikvm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <ikvm@fink.raccoonfink.com>
 Description: Java implementation for .Net
 NoSetCPPFLAGS: true
 SetCPPFLAGS: -I%p/include

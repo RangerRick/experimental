@@ -22,6 +22,6 @@ DocFiles: README README.darwin TODO Changes
 Description: Access the UNIX process table
 ###
 License: Artistic
-Maintainer: Benjamin Reed <proc-processtable-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <proc-processtable-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/Proc-ProcessTable
 <<

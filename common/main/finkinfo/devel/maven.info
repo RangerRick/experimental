@@ -1,9 +1,9 @@
 Package: maven
-Version: 2.0.10
+Version: 2.2.1
 Revision: 1
-Type: java(1.4)
-Source: mirror:apache:%n/binaries/apache-%n-%v-bin.tar.gz
-Source-MD5: 1673c4b206633155774ecbcab1c2fb2e
+Type: java(1.5)
+Source: mirror:apache:%n/binaries/apache-%n-%v-bin.tar.bz2
+Source-MD5: c581a15cb0001d9b771ad6df7c8156f8
 SourceDirectory: apache-%n-%v
 PatchFile: %n.patch
 PatchFile-MD5: 3da755f98c82474b1d7dce54a19b2551
@@ -20,7 +20,8 @@ InstallScript: <<
 	mv bin/m2.conf %i/etc/maven/
 
 	install -d -m 755 %i/bin
-	mv bin/m2 bin/mvn %i/bin/
+	mv bin/mvn %i/bin/
+	ln -sf mvn %i/bin/m2
 	rm -rf bin
 	chmod 755 %i/bin/*
 
@@ -30,7 +31,7 @@ InstallScript: <<
 <<
 DocFiles: *.txt
 Homepage: http://maven.apache.org/
-Maintainer: Benjamin Reed <maven@fink.racoonfink.com>
+Maintainer: Benjamin Reed <maven@fink.raccoonfink.com>
 Description: Software project management tool
 DescDetail: <<
 Maven is a software project management and comprehension tool.

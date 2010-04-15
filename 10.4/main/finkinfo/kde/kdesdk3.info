@@ -3,7 +3,7 @@ Version: 3.5.10
 Revision: 2
 Description: KDE - tools for developers
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdesdk3@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdesdk3@fink.raccoonfink.com>
 
 Depends: <<
 	cervisia (>= %v-%r),

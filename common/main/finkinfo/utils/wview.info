@@ -106,5 +106,5 @@ DescUsage: <<
 		%p/sbin/wview <start|stop>
 <<
 License: GPL
-Maintainer: Benjamin Reed <wview@fink.racoonfink.com>
+Maintainer: Benjamin Reed <wview@fink.raccoonfink.com>
 Homepage: http://www.wviewweather.com/

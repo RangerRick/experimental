@@ -3,7 +3,7 @@ Version: 0.11.0
 Revision: 6
 Description: UPnP Media Server w/ Web Interface
 License: GPL
-Maintainer: Benjamin Reed <mediatomb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <mediatomb@fink.raccoonfink.com>
 
 Depends: <<
 	file,

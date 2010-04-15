@@ -3,7 +3,7 @@ Version: 0.10
 Revision: 1
 Source: http://0pointer.de/lennart/projects/libdaemon/libdaemon-%{v}.tar.gz
 Source-MD5: 6812a5e4063b5016f25e9a0cebbd3dd9
-Maintainer: Benjamin Reed <libdaemon-doc@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libdaemon-doc@fink.raccoonfink.com>
 Homepage: http://0pointer.de/lennart/projects/libdaemon/
 License: LGPL
 Description: Easy way to write UNIX daemons (documentation)

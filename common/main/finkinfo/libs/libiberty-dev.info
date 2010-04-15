@@ -38,5 +38,5 @@ Current members include:
         strtoul -- string-to-unsigned-long conversion
 <<
 License: LGPL
-Maintainer: Benjamin Reed <libiberty@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libiberty@fink.raccoonfink.com>
 Homepage: http://www.gnu.org/software/binutils/

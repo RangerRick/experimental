@@ -5,7 +5,7 @@ Revision: 1
 Description: KDE4 - Web Development
 Type: kde (mac)
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdewebdev4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdewebdev4@fink.raccoonfink.com>
 
 Depends: <<
 	kfilereplace4-%type_pkg[kde] (>= %v-%r),

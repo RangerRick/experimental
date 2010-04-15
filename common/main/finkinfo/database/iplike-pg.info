@@ -78,7 +78,7 @@ WARNING: Don't forget to remove the IPLIKE function from your database!
 <<
 
 Homepage: http://www.opennms.org/
-Maintainer: Benjamin Reed <iplike@fink.racoonfink.com>
+Maintainer: Benjamin Reed <iplike@fink.raccoonfink.com>
 Description: PostgreSQL IP address query interface
 DescDetail: <<
 This package contains a PostgreSQL function for doing complex

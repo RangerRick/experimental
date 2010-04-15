@@ -35,7 +35,7 @@ BuildDepends: <<
 <<
 Suggests: monodevelop
 Homepage: http://www.mono-project.com/
-Maintainer: Benjamin Reed <boo@fink.racoonfink.com>
+Maintainer: Benjamin Reed <boo@fink.raccoonfink.com>
 Description: Wrist-friendly language for the CLI/Mono
 CompileScript: <<
 #!/bin/sh -ex

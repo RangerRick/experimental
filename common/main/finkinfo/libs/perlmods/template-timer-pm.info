@@ -20,6 +20,6 @@ throughout your code.  It's an overridden version of Template::Context
 that wraps the process() and include() methods.
 <<
 License: Artistic
-Maintainer: Benjamin Reed <template-timer-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <template-timer-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/Template-Timer
 <<

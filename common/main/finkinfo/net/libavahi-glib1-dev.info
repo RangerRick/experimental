@@ -62,5 +62,5 @@ Avahi.
 This is a glib interface to avahi.
 <<
 License: LGPL
-Maintainer: Benjamin Reed <avahi-glib@fink.racoonfink.com>
+Maintainer: Benjamin Reed <avahi-glib@fink.raccoonfink.com>
 Homepage: http://avahi.org/

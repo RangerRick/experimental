@@ -44,7 +44,7 @@ BuildDepends: <<
 <<
 
 Homepage: http://www.monodevelop.com/
-Maintainer: Benjamin Reed <monodevelop@fink.racoonfink.com>
+Maintainer: Benjamin Reed <monodevelop@fink.raccoonfink.com>
 
 # gtksourceview2 is "broken and unneeded" according to the developers
 ConfigureParams: --mandir=%p/share/man --infodir=%p/share/info --disable-update-mimedb --disable-update-desktopdb --disable-dependency-tracking --disable-gtksourceview2 --enable-monoextensions --enable-versioncontrol --enable-subversion --enable-gnomeplatform --disable-macplatform --enable-aspnet --enable-c

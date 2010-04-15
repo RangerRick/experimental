@@ -12,7 +12,7 @@ CompileScript: echo "none needed"
 InstallScript: echo "none needed"
 JarFiles: *.jar
 Homepage: http://java.sun.com/products/java-media/speech/
-Maintainer: Benjamin Reed <jsapi@fink.racoonfink.com>
+Maintainer: Benjamin Reed <jsapi@fink.raccoonfink.com>
 DocFiles: LICENSE
 Description: Java Speech API
 DescDetail: <<

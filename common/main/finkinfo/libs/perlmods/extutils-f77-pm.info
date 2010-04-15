@@ -8,7 +8,7 @@ BuildDepends: fink (>= 0.28.0-1), g95, system-perl
 
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <extutils-f77-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <extutils-f77-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/ExtUtils/ExtUtils-F77-%v.tar.gz
 Source-MD5: af925e7e8a2876a5fd9b6c4660e37664

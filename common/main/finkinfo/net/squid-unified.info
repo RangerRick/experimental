@@ -142,6 +142,6 @@ port you want squid to listen on.
 <<
 License: GPL
 Homepage: http://www.squid-cache.org/
-Maintainer: Benjamin Reed <squid@fink.racoonfink.com>
+Maintainer: Benjamin Reed <squid@fink.raccoonfink.com>
 
 <<

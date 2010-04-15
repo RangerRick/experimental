@@ -28,6 +28,6 @@ SplitOff: <<
 <<
 DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README
 Description: Double-array trie
-Maintainer: Benjamin Reed <libdatrie@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libdatrie@fink.raccoonfink.com>
 Homepage: http://linux.thai.net/~thep/datrie/datrie.html
 License: LGPL

@@ -41,7 +41,7 @@ SplitOff2: <<
 ConfFiles: %p/etc/fam.conf
 DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 Description: File Alteration Monitor
-Maintainer: Benjamin Reed <fam@fink.racoonfink.com>
+Maintainer: Benjamin Reed <fam@fink.raccoonfink.com>
 Homepage: http://oss.sgi.com/projects/fam/
 License: GPL
 DescPackaging: <<

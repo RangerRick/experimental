@@ -5,7 +5,7 @@ Revision: 0.977962.3
 Type: automoc (x11 mac)
 Description: Automatic moc for Qt4
 License: LGPL
-Maintainer: Benjamin Reed <automoc@fink.racoonfink.com>
+Maintainer: Benjamin Reed <automoc@fink.raccoonfink.com>
 
 BuildDepends: <<
 	cmake (>= 2.6.1-2),

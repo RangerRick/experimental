@@ -5,7 +5,7 @@ Revision: 1
 Description: KDE4 - Graphics applications
 Type: kde (x11)
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdegraphics4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdegraphics4@fink.raccoonfink.com>
 
 Depends: <<
 	thumbnailers4-%type_pkg[kde] (>= %v-%r),

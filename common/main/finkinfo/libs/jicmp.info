@@ -13,7 +13,7 @@ ConfigureParams: --disable-dependency-tracking (%m != x86_64) --with-jvm-arch=32
 InstallScript: make -j1 install DESTDIR="%d"
 
 Homepage: http://www.opennms.org/
-Maintainer: Benjamin Reed <jicmp@fink.racoonfink.com>
+Maintainer: Benjamin Reed <jicmp@fink.raccoonfink.com>
 Description: Java Interface to ICMP (Ping)
 DescDetail: <<
 This package contains a Java interface to ICMP.

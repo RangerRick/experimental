@@ -24,7 +24,7 @@ BuildDepends: <<
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <catalyst-plugin-session-state-cookie-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <catalyst-plugin-session-state-cookie-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Catalyst/Catalyst-Plugin-Session-State-Cookie-%v.tar.gz
 Source-MD5: 0c0f8992eecbe98295f3d36a9b378edc

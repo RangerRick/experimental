@@ -15,7 +15,7 @@ BuildDepends: <<
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <universal-isa-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <universal-isa-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/UNIVERSAL/UNIVERSAL-isa-%v.tar.gz
 Source-MD5: 032d0d035b6dc8e25dd0e8af55443b9b

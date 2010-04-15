@@ -5,7 +5,7 @@ Revision: 3
 Distribution: 10.4, 10.5
 Description: Cross-Platform framework (Mac version)
 License: LGPL
-Maintainer: Benjamin Reed <qt4-mac@fink.racoonfink.com>
+Maintainer: Benjamin Reed <qt4-mac@fink.raccoonfink.com>
 
 Depends: <<
 	%N-core-shlibs (= %v-%r),

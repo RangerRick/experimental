@@ -9,7 +9,7 @@ BuildDepends: perl%type_pkg[perl]-core, fink (>= 0.20.2.1-1), module-build-pm%ty
 Type: perl(0)
 NoPerlTests: true
 License: Artistic
-Maintainer: Benjamin Reed <array-compare-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <array-compare-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Array/Array-Compare-%v.tar.gz
 Source-MD5: 0159ebb79529528db4cc68051532d22d

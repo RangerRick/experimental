@@ -3,7 +3,7 @@ Version: 2.18.3
 Revision: 1027
 Description: GUI monitor for distcc build hosts
 License: GPL
-Maintainer: Benjamin Reed <distcc-gtk@fink.racoonfink.com>
+Maintainer: Benjamin Reed <distcc-gtk@fink.raccoonfink.com>
 
 Depends: <<
 	atk1-shlibs (>= 1.20.0-1),

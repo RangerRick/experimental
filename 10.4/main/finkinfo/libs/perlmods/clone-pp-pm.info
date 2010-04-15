@@ -5,7 +5,7 @@ Revision: 1022
 Description: Recursively copy Perl datatypes
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <clone-pp-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <clone-pp-pm@fink.raccoonfink.com>
 
 Depends: system-perl
 BuildDepends: system-perl

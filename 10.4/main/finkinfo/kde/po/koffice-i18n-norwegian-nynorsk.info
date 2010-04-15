@@ -3,7 +3,7 @@ Version: 1.5.2
 Revision: 1
 Description: KDE - KOffice language files for Norwegian Nynorsk
 License: GPL/LGPL
-Maintainer: Benjamin Reed <koffice-i18n-norwegian-nynorsk@fink.racoonfink.com>
+Maintainer: Benjamin Reed <koffice-i18n-norwegian-nynorsk@fink.raccoonfink.com>
 
 Depends: <<
 	kdelibs3-unified (>= 3.5.4-1),

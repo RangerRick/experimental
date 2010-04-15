@@ -22,7 +22,7 @@ RuntimeVars: FORREST_HOME: %p/share/%N
 JarFiles: build/*.jar
 DocFiles: KEYS *.txt *.html
 Homepage: http://forrest.apache.org/
-Maintainer: Benjamin Reed <apache-forrest@fink.racoonfink.com>
+Maintainer: Benjamin Reed <apache-forrest@fink.raccoonfink.com>
 Description: Java-based publishing framework
 DescDetail: <<
 Apache Forrest is a publishing framework that transforms input from

@@ -5,7 +5,7 @@ Revision: 1025
 Description: Read command-line arguments
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <getopt-mixed-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <getopt-mixed-pm@fink.raccoonfink.com>
 
 BuildDepends: <<
 	perl%type_pkg[perl]-core,

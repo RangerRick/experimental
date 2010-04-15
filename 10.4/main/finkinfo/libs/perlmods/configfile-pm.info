@@ -6,7 +6,7 @@ Epoch: 1
 Description: Manipulate XML config files
 Type: perl
 License: GPL
-Maintainer: Benjamin Reed <configfile-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <configfile-pm@fink.raccoonfink.com>
 
 Depends: system-perl
 

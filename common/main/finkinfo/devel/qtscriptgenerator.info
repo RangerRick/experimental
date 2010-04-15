@@ -5,7 +5,7 @@ Revision: 3
 Type: qt (x11 mac)
 Description: QtScript binding generator
 License: GPL/LGPL
-Maintainer: Benjamin Reed <qtscriptgenerator@fink.racoonfink.com>
+Maintainer: Benjamin Reed <qtscriptgenerator@fink.raccoonfink.com>
 
 Source: http://qtscriptgenerator.googlecode.com/files/qtscriptgenerator-src-%v.tar.gz
 Source-MD5: ca4046ad4bda36cd4e21649d4b98886d

@@ -5,7 +5,7 @@ Revision: 2
 Type: ruby (1.8)
 Description: Rapid development of CRUD apps with Rails
 License: BSD
-Maintainer: Benjamin Reed <streamlined-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <streamlined-rb@fink.raccoonfink.com>
 
 Depends: <<
 	rails-rb%type_pkg[ruby] (>= 1.2-1),

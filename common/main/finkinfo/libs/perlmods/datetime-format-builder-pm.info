@@ -26,7 +26,7 @@ BuildDepends: <<
 Type: perl(0)
 NoPerlTests: true
 License: Artistic
-Maintainer: Benjamin Reed <datetime-format-builder-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <datetime-format-builder-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:authors/id/D/DR/DROLSKY/DateTime-Format-Builder-%v.tar.gz
 Source-MD5: 43407285237cdc3cdd2c08b936229198

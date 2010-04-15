@@ -4,7 +4,7 @@ Revision: 1
 Architecture: i386, powerpc
 Description: Mono debugger
 License: GPL
-Maintainer: Benjamin Reed <mono-debugger@fink.racoonfink.com>
+Maintainer: Benjamin Reed <mono-debugger@fink.raccoonfink.com>
 
 Depends: <<
 	glib2-shlibs (>= 2.18.4-1),

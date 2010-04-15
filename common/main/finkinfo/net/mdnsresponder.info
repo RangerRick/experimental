@@ -60,5 +60,5 @@ DaemonicFile: <<
 DocFiles: APPLE_* README.txt
 Description: Apple's Rendezvous (multicast DNS) implementation
 License: OSI-Approved
-Maintainer: Benjamin Reed <mDNSResponder@fink.racoonfink.com>
+Maintainer: Benjamin Reed <mDNSResponder@fink.raccoonfink.com>
 Homepage: http://developer.apple.com/darwin/projects/rendezvous/

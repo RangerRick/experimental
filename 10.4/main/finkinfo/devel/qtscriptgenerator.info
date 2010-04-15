@@ -5,7 +5,7 @@ Revision: 3
 Description: QtScript binding generator
 Type: qt (x11 mac)
 License: GPL/LGPL
-Maintainer: Benjamin Reed <qtscriptgenerator@fink.racoonfink.com>
+Maintainer: Benjamin Reed <qtscriptgenerator@fink.raccoonfink.com>
 
 Depends: <<
 	qt4-%type_pkg[qt]-designer-shlibs (>= 4.6.1-1),

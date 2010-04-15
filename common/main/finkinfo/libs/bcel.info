@@ -30,7 +30,7 @@ InstallScript: <<
 <<
 DocFiles: dist/*.txt
 Homepage: http://jakarta.apache.org/bcel/
-Maintainer: Benjamin Reed <bcel@fink.racoonfink.com>
+Maintainer: Benjamin Reed <bcel@fink.raccoonfink.com>
 Description: Byte Code Engineering Library
 DescDetail: <<
 The Byte Code Engineering Library is intended to give

@@ -5,7 +5,7 @@ Revision: 1
 Type: ruby (1.8)
 Description: Ruby bindings for libxml2
 License: BSD
-Maintainer: Benjamin Reed <libxml-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libxml-rb@fink.raccoonfink.com>
 
 Depends: <<
 	libxml2-shlibs,

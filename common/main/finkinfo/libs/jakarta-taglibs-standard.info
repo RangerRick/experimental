@@ -39,7 +39,7 @@ InstallScript: <<
 	mv examples dist/doc/doc/standard-doc/* dist/standard/javadoc %i/share/doc/%N/
 <<
 Homepage: http://jakarta.apache.org/taglibs
-Maintainer: Benjamin Reed <jakarta-taglibs@fink.racoonfink.com>
+Maintainer: Benjamin Reed <jakarta-taglibs@fink.raccoonfink.com>
 Description: JSP tag libraries
 DescDetail: <<
 This is the reference implementation (RI) for the JSP Standard Tag

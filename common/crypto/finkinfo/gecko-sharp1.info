@@ -30,7 +30,7 @@ BuildDepends: <<
 	pkgconfig (>= 0.22-3),
 <<
 Homepage: http://www.mono-project.com/
-Maintainer: Benjamin Reed <gecko-sharp1@fink.racoonfink.com>
+Maintainer: Benjamin Reed <gecko-sharp1@fink.raccoonfink.com>
 Description: Mozilla browser C# bindings
 ConfigureParams: --mandir=%p/share/man --disable-dependency-tracking lt_cv_sys_max_cmd_len=65536 PKG_CONFIG_PATH="%p/lib/pango-ft219/lib/pkgconfig"
 PatchScript: <<

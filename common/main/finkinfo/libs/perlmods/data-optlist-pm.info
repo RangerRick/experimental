@@ -25,6 +25,6 @@ UpdatePOD: true
 DocFiles: Changes LICENSE README
 Description: Parse and validate name/value option pairs
 License: Artistic
-Maintainer: Benjamin Reed <data-optlist-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <data-optlist-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/Data-OptList
 <<

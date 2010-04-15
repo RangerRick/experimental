@@ -5,7 +5,7 @@ Revision: 1
 Description: KDE4 - office suite
 Type: kde (x11 mac)
 License: GPL/LGPL
-Maintainer: Benjamin Reed <koffice2@fink.racoonfink.com>
+Maintainer: Benjamin Reed <koffice2@fink.raccoonfink.com>
 
 Depends: <<
 	karbon2-%type_pkg[kde] (>= %v-%r),

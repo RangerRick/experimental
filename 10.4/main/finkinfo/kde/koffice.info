@@ -3,7 +3,7 @@ Version: 1.6.3
 Revision: 1029
 Description: KDE - office suite
 License: GPL/LGPL
-Maintainer: Benjamin Reed <koffice@fink.racoonfink.com>
+Maintainer: Benjamin Reed <koffice@fink.raccoonfink.com>
 
 Depends: <<
 	karbon (>= %v-%r),

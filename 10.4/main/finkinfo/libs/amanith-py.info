@@ -5,7 +5,7 @@ Revision: 1
 Description: Python binding to Amanith
 Type: python(2.3 2.4 2.5 2.6)
 License: OSI-Approved
-Maintainer: Benjamin Reed <amanith-py@fink.racoonfink.com>
+Maintainer: Benjamin Reed <amanith-py@fink.raccoonfink.com>
 
 Depends: <<
 	amanith-shlibs (>= 0.3-2),

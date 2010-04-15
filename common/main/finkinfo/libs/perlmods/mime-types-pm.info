@@ -16,7 +16,7 @@ BuildDepends: <<
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <mime-types-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <mime-types-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/MIME/MIME-Types-%v.tar.gz
 Source-MD5: 9407dfdd3a5adb7bf569ed2a184f1640

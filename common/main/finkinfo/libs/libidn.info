@@ -65,6 +65,6 @@ SplitOff3: <<
 <<
 DocFiles: AUTHORS COPYING* ChangeLog FAQ INSTALL NEWS README* THANKS TODO doc/libidn.html doc/libidn.ps doc/libidn.pdf
 Description: Internationalized domain names
-Maintainer: Benjamin Reed <libidn@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libidn@fink.raccoonfink.com>
 Homepage: http://www.gnu.org/software/libidn/
 License: LGPL

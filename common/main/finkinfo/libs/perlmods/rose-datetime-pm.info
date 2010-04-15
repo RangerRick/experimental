@@ -5,7 +5,7 @@ Revision: 1022
 Description: DateTime helper functions and objects
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <rose-datetime-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <rose-datetime-pm@fink.raccoonfink.com>
 
 Depends: <<
 	datetime-pm%type_pkg[perl],

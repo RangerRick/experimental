@@ -5,7 +5,7 @@ Revision: 2
 Type: kde (x11 mac)
 Description: KDE4 - music player
 License: GPL/LGPL
-Maintainer: Benjamin Reed <amarok2@fink.racoonfink.com>
+Maintainer: Benjamin Reed <amarok2@fink.raccoonfink.com>
 
 DescDetail: <<
 Amarok is the music player for Linux and Unix with an intuitive interface.

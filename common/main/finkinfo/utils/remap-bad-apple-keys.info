@@ -16,5 +16,5 @@ Some keys are incorrectly mapped in Apple's X11 (and possibly others),
 making it impossible to use navigation keys in some applications.
 <<
 License: BSD
-Maintainer: Benjamin Reed <remap-bad-apple-keys@fink.racoonfink.com>
+Maintainer: Benjamin Reed <remap-bad-apple-keys@fink.raccoonfink.com>
 Homepage: http://ranger.befunk.com/fink/

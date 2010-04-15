@@ -58,6 +58,6 @@ InstallScript: <<
 DocFiles: MANIFEST* README
 Description: Talk to del.icio.us through perl
 License: Artistic
-Maintainer: Benjamin Reed <net-delicious-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <net-delicious-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/Net-Delicious
 <<

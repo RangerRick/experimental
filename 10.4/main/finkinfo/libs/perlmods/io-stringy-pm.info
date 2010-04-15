@@ -5,7 +5,7 @@ Revision: 1022
 Description: Perl module for advanced I/O with filehandles
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <io-stringy-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <io-stringy-pm@fink.raccoonfink.com>
 
 Replaces: <<
 	io-stringy-pm560,

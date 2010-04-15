@@ -5,7 +5,7 @@ Revision: 1022
 Description: CDBI model class for Catalyst
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <catalyst-model-cdbi-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <catalyst-model-cdbi-pm@fink.raccoonfink.com>
 
 Depends: <<
 	perl%type_pkg[perl]-core,

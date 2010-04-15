@@ -10,7 +10,7 @@ Version: 4.4.1
 Revision: 1
 Description: KDE4 - Graphics applications
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdegraphics4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdegraphics4@fink.raccoonfink.com>
 
 Source: mirror:kde:stable/%v/src/kdegraphics-%v.tar.bz2
 Source-MD5: f59b613714aae2ad57b03574f5db00f2

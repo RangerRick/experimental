@@ -5,7 +5,7 @@ Revision: 2
 Architecture: i386, powerpc
 Description: Mono framework for extensible software
 License: LGPL
-Maintainer: Benjamin Reed <mono-addins@fink.racoonfink.com>
+Maintainer: Benjamin Reed <mono-addins@fink.raccoonfink.com>
 
 Depends: <<
 	gtk-sharp2 (>= 2.12.9-1),

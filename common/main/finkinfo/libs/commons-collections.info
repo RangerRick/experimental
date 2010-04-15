@@ -36,7 +36,7 @@ InstallScript: <<
 <<
 DocFiles: *.txt *.html
 Homepage: http://jakarta.apache.org/commons/collections.html
-Maintainer: Benjamin Reed <commons-collections@fink.racoonfink.com>
+Maintainer: Benjamin Reed <commons-collections@fink.raccoonfink.com>
 Description: Jakarta Commons - Collections
 DescDetail: <<
 The introduction of the Collections API by Sun in JDK 1.2 has been a boon

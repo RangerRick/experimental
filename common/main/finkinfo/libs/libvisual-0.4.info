@@ -20,7 +20,7 @@ SplitOff: <<
 <<
 DocFiles: ABOUT-NLS AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 Description: Visualization plugin abstraction library
-Maintainer: Benjamin Reed <libvisual-0.4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libvisual-0.4@fink.raccoonfink.com>
 Homepage: http://localhost.nl/~synap/libvisual/
 License: LGPL
 DescDetail: <<

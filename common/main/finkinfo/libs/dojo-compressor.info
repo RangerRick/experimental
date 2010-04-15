@@ -10,7 +10,7 @@ CompileScript: true
 InstallScript: true
 JarFiles: custom_rhino-%v.jar:%n.jar
 Homepage: http://dojotoolkit.org/
-Maintainer: Benjamin Reed <dojo-compressor@fink.racoonfink.com>
+Maintainer: Benjamin Reed <dojo-compressor@fink.raccoonfink.com>
 Description: Dojo Toolkit - Compressor
 DescDetail: <<
 Javascript compression toolkit.

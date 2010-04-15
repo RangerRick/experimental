@@ -5,7 +5,7 @@ Revision: 1
 Architecture: i386, powerpc
 Description: C# Interface to WebKit
 License: BSD
-Maintainer: Benjamin Reed <webkit-sharp@fink.racoonfink.com>
+Maintainer: Benjamin Reed <webkit-sharp@fink.raccoonfink.com>
 
 Depends: mono (>= 2.6.2-1)
 BuildDepends: <<

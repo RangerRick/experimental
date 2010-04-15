@@ -5,7 +5,7 @@ Revision: 1
 Description: KDE4 - Games
 Type: kde (mac)
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdegames4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdegames4@fink.raccoonfink.com>
 
 Depends: <<
 	bomber4-%type_pkg[kde] (>= %v-%r),

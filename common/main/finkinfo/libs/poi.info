@@ -2,7 +2,7 @@ Package: poi
 Version: 2.5.1
 Revision: 2
 Type: java(1.4)
-Maintainer: Benjamin Reed <poi@fink.racoonfink.com>
+Maintainer: Benjamin Reed <poi@fink.raccoonfink.com>
 #
 BuildDepends: <<
 	ant-base (>= 1.6.5-1),

@@ -5,7 +5,7 @@ Revision: 3
 BuildDepends: fink
 Description: KDE4 - convenience package: KDE 4.4 (Native)
 Type: bundle
-Maintainer: Benjamin Reed <bundle-kde4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <bundle-kde4@fink.raccoonfink.com>
 
 Depends: <<
 	bundle-kde4-mac (>= %v-1),

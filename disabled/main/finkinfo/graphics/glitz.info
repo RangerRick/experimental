@@ -37,4 +37,4 @@ DocFiles: AUTHORS COPYING ChangeLog* INSTALL NEWS README TODO
 Description: OpenGL compositing library
 License: BSD
 Homepage: http://www.cairographics.org/
-Maintainer: Benjamin Reed <glitz@fink.racoonfink.com>
+Maintainer: Benjamin Reed <glitz@fink.raccoonfink.com>

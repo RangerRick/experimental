@@ -71,7 +71,7 @@ SplitOff: <<
 
 DocFiles: COPYING README
 Description: Development files for Last.fm web services
-Maintainer: Benjamin Reed <liblastfm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <liblastfm@fink.raccoonfink.com>
 Homepage: http://last.fm
 License: GPL
 DescDetail: <<

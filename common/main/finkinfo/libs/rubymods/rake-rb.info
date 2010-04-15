@@ -5,7 +5,7 @@ Revision: 1
 Type: ruby (1.8)
 Description: Make-like utility for Ruby
 License: BSD
-Maintainer: Benjamin Reed <rake-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <rake-rb@fink.raccoonfink.com>
 
 # Dependencies:
 Depends: libgems-rb%type_pkg[ruby], ruby%type_pkg[ruby]

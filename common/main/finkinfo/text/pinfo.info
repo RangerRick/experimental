@@ -1,7 +1,7 @@
 Package: pinfo
 Version: 0.6.9
 Revision: 1
-Maintainer: Benjamin Reed <pinfo@fink.racoonfink.com>
+Maintainer: Benjamin Reed <pinfo@fink.raccoonfink.com>
 Depends: libgettext3-shlibs, libiconv, libncurses5-shlibs, readline5-shlibs
 BuildDepends: libgettext3-dev, gettext-tools, libiconv-dev, libncurses5, readline5
 GCC: 4.0

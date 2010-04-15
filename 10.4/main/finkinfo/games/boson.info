@@ -3,7 +3,7 @@ Version: 0.13
 Revision: 1
 Description: Real-time strategy game
 License: GPL
-Maintainer: Benjamin Reed <boson@fink.racoonfink.com>
+Maintainer: Benjamin Reed <boson@fink.raccoonfink.com>
 
 BuildDepends: <<
 	arts-dev (>= 1.5.10-1),

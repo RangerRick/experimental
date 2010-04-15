@@ -3,7 +3,7 @@ Version: 1.4.8
 Revision: 1
 Description: KDE - music player
 Type: bundle
-Maintainer: Benjamin Reed <amarok@fink.racoonfink.com>
+Maintainer: Benjamin Reed <amarok@fink.raccoonfink.com>
 
 Depends: <<
 	amarok-core (>= %v-%r),

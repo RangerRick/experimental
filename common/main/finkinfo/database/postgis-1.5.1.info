@@ -5,7 +5,7 @@ Revision: 2
 Description: PostgreSQL geographic object support
 Type: postgresql (8.4)
 License: BSD
-Maintainer: Benjamin Reed <postgis@fink.racoonfink.com>
+Maintainer: Benjamin Reed <postgis@fink.raccoonfink.com>
 
 Depends: <<
 	libgeos3.2.0-shlibs (>= 3.2.0-4),

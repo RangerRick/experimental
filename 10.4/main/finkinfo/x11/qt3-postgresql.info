@@ -3,7 +3,7 @@ Version: 3.3.8
 Revision: 1
 Description: PostgreSQL Plugin for the Qt Toolkit
 License: GPL
-Maintainer: Benjamin Reed <qt3-postgresql@fink.racoonfink.com>
+Maintainer: Benjamin Reed <qt3-postgresql@fink.raccoonfink.com>
 
 Depends: <<
 	postgresql82-shlibs,

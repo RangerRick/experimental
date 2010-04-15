@@ -66,7 +66,7 @@ DaemonicFile: <<
 <<
 DocFiles: *.txt
 Homepage: http://nexus.sonatype.org/
-Maintainer: Benjamin Reed <nexus@fink.racoonfink.com>
+Maintainer: Benjamin Reed <nexus@fink.raccoonfink.com>
 Description: Maven repository manager
 DescDetail: <<
 Nexus manages software "artifacts" required for development, deployment, and

@@ -5,7 +5,7 @@ Revision: 1021
 Description: Generate cryptographic signatures for objects
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <object-signature-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <object-signature-pm@fink.raccoonfink.com>
 
 Depends: <<
 	digest-md5-pm%type_pkg[perl],

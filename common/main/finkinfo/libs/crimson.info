@@ -23,7 +23,7 @@ InstallScript: <<
 <<
 DocFiles: ChangeLog *.txt
 Homepage: http://jakarta.apache.org/crimson/
-Maintainer: Benjamin Reed <crimson@fink.racoonfink.com>
+Maintainer: Benjamin Reed <crimson@fink.raccoonfink.com>
 Description: Java XML parser
 DescDetail: <<
 Crimson is a Java XML parser which supports XML 1.0 via the following APIs:

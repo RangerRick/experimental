@@ -5,7 +5,7 @@ Revision: 1
 Description: KDE4 - Oxygen icons
 Type: kde (mac x11)
 License: GPL/LGPL
-Maintainer: Benjamin Reed <oxygen-icons@fink.racoonfink.com>
+Maintainer: Benjamin Reed <oxygen-icons@fink.raccoonfink.com>
 
 BuildDepends: <<
 	cmake (>= 2.6.4-1),

@@ -24,7 +24,7 @@ InstallScript: <<
 <<
 DocFiles: *LICENSE* ChangeLog README
 Homepage: http://www.jcraft.com/jsch/index.html
-Maintainer: Benjamin Reed <jsch@fink.racoonfink.com>
+Maintainer: Benjamin Reed <jsch@fink.raccoonfink.com>
 Description: Pure-Java SSH2 implementation
 DescDetail: <<
 JSch is a pure Java implementation of SSH2.

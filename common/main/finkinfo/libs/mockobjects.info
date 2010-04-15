@@ -11,7 +11,7 @@ CompileScript: echo "none needed"
 InstallScript: echo "none needed"
 JarFiles: mockobjects-core-%v.jar mockobjects-jdk%type_raw[java]-%v.jar mockobjects-alt-jdk%type_raw[java]-%v.jar mockobjects-jdk%type_raw[java]-j2ee1.3-%v.jar mockobjects-alt-jdk%type_raw[java]-j2ee1.3-%v.jar
 Homepage: http://mockobjects.sourceforge.net/
-Maintainer: Benjamin Reed <mockobjects@fink.racoonfink.com>
+Maintainer: Benjamin Reed <mockobjects@fink.raccoonfink.com>
 Description: Object-oriented unit testing framework
 DescDetail: <<
 Mock Objects is a test-first development process for building object-oriented

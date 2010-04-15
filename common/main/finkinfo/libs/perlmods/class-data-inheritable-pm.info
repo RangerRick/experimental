@@ -5,7 +5,7 @@ Revision: 1
 Description: Inheritable, overridable class data
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <class-data-inheritable-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <class-data-inheritable-pm@fink.raccoonfink.com>
 
 # Unpack Phase:
 Source: mirror:cpan:modules/by-module/Class/Class-Data-Inheritable-%v.tar.gz

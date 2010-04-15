@@ -50,7 +50,7 @@ BuildDepends: <<
 	x11-dev,
 	xmms
 <<
-Maintainer: Benjamin Reed <amarok@fink.racoonfink.com>
+Maintainer: Benjamin Reed <amarok@fink.raccoonfink.com>
 
 CustomMirror: RangerMirror
 Source: mirror:kde:stable/amarok/%v/src/amarok-%v.tar.bz2

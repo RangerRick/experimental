@@ -22,7 +22,7 @@ BuildDepends: <<
 
 Type: perl(0)
 License: Artistic
-Maintainer: Benjamin Reed <datetime-format-strptime-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <datetime-format-strptime-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/DateTime/DateTime-Format-Strptime-%v.tgz
 Source-MD5: 930bdda4cbf0e5414a70759861655a12

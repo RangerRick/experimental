@@ -6,7 +6,7 @@ Type: ruby (1.6 1.8)
 Description: Package management framework for Ruby
 Homepage: http://rubygems.rubyforge.org/
 License: OSI-Approved
-Maintainer: Benjamin Reed <libgems-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <libgems-rb@fink.raccoonfink.com>
 
 # Dependencies.
 Depends: ruby%type_pkg[ruby]

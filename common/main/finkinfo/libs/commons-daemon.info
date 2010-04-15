@@ -27,7 +27,7 @@ InstallScript: <<
 <<
 DocFiles: KEYS LICENSE* PROPOSAL* README* RELEASE-NOTES* STATUS*
 Homepage: http://jakarta.apache.org/commons/daemon/
-Maintainer: Benjamin Reed <commons-daemon@fink.racoonfink.com>
+Maintainer: Benjamin Reed <commons-daemon@fink.raccoonfink.com>
 Description: Jakarta Commons - Daemon
 DescDetail: <<
 Java-based daemons or services.

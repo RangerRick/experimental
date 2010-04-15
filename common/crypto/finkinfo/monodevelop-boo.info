@@ -28,7 +28,7 @@ BuildDepends: <<
 <<
 
 Homepage: http://www.monodevelop.com/
-Maintainer: Benjamin Reed <monodevelop-boo@fink.racoonfink.com>
+Maintainer: Benjamin Reed <monodevelop-boo@fink.raccoonfink.com>
 
 NoSetLDFLAGS: true
 SetLIBS: -L%p/lib

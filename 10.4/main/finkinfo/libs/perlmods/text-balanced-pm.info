@@ -5,7 +5,7 @@ Revision: 1
 Description: Extract delimited text sequences from strings
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <text-balanced-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <text-balanced-pm@fink.raccoonfink.com>
 
 Depends: system-perl
 BuildDepends: system-perl

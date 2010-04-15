@@ -24,7 +24,7 @@ BuildDepends: <<
 	x11-dev
 <<
 BuildConflicts: unsermake
-Maintainer: Benjamin Reed <kmud@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kmud@fink.raccoonfink.com>
 
 CustomMirror: <<
 	nam-US: http://ranger.befunk.com/fink

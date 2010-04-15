@@ -5,7 +5,7 @@ Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - base applications and tools (runtime)
 License: GPL/LGPL
-Maintainer: Benjamin Reed <kdebase4-runtime@fink.racoonfink.com>
+Maintainer: Benjamin Reed <kdebase4-runtime@fink.raccoonfink.com>
 
 Replaces: <<
 	kdebase4-%type_pkg[kde] (<< 4.3.0-1),

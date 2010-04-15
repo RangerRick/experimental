@@ -5,7 +5,7 @@ Revision: 1022
 Description: Pseudo-class NEXT for method redispatch
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <next-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <next-pm@fink.raccoonfink.com>
 
 Depends: system-perl
 BuildDepends: system-perl

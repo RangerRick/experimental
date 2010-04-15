@@ -22,5 +22,5 @@ compressed with PBZIP2 can be decompressed with bzip2).
 <<
 DocFiles: AUTHORS COPYING ChangeLog README
 License: OSI-Approved
-Maintainer: Benjamin Reed <pbzip2@fink.racoonfink.com>
+Maintainer: Benjamin Reed <pbzip2@fink.raccoonfink.com>
 Homepage: http://compression.ca/pbzip2/

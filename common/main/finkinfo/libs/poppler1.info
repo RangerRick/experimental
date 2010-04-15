@@ -3,7 +3,7 @@ Version: 0.5.4
 Revision: 1028
 Description: PDF rendering library
 License: GPL
-Maintainer: Benjamin Reed <poppler1@fink.racoonfink.com>
+Maintainer: Benjamin Reed <poppler1@fink.raccoonfink.com>
 
 Depends: <<
 	%N-shlibs (= %v-%r),

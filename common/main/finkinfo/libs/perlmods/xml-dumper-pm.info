@@ -33,6 +33,6 @@ they will behave as expected.  Intuitively, if the perl objects are converted
 and reconstituted in the same environment, all should be well.  And it is.
 <<
 License: Artistic
-Maintainer: Benjamin Reed <xml-dumper-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <xml-dumper-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/XML-Dumper
 <<

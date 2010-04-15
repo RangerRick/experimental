@@ -3,7 +3,7 @@ Version: 1.0.1
 Revision: 3
 Description: KDE - User-friendly IRC client
 License: GPL
-Maintainer: Benjamin Reed <konversation@fink.racoonfink.com>
+Maintainer: Benjamin Reed <konversation@fink.raccoonfink.com>
 
 Depends: kdelibs3-unified (>= 3.5.5-1)
 BuildDepends: <<

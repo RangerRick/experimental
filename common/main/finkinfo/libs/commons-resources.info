@@ -63,7 +63,7 @@ InstallScript: <<
 JarFiles: dist/*.jar
 DocFiles: dist/LICENSE*
 Homepage: http://jakarta.apache.org/commons/resources/
-Maintainer: Benjamin Reed <commons-resources@fink.racoonfink.com>
+Maintainer: Benjamin Reed <commons-resources@fink.raccoonfink.com>
 Description: Jakarta Commons - Resources
 DescDetail: <<
 Commons Resources provide a framework for providing customized

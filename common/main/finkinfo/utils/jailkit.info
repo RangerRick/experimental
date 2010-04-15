@@ -43,5 +43,5 @@ providers, as well as many smaller companies and private users that
 need to secure cvs, sftp, shell or daemon processes.
 <<
 License: LGPL
-Maintainer: Benjamin Reed <jailkit@fink.racoonfink.com>
+Maintainer: Benjamin Reed <jailkit@fink.raccoonfink.com>
 Homepage: http://olivier.sessink.nl/jailkit/

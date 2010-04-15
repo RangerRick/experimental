@@ -8,7 +8,7 @@ BuildDepends: system-perl
 
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <text-balanced-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <text-balanced-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Text/Text-Balanced-v%v.tar.gz
 Source-MD5: dfb395067cd332056e9c893f9b854f58

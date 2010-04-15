@@ -5,7 +5,7 @@ Revision: 1
 Description: Perl class for null filehandles
 Type: perl
 License: Artistic
-Maintainer: Benjamin Reed <io-null-pm@fink.racoonfink.com>
+Maintainer: Benjamin Reed <io-null-pm@fink.raccoonfink.com>
 
 BuildDepends: fink (>= 0.29.7-1)
 

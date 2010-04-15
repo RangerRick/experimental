@@ -2,7 +2,7 @@ Package: pci-ids
 Version: 20080318
 Revision: 1
 BuildDepends: bzip2
-Maintainer: Benjamin Reed <pci-ids@fink.racoonfink.com>
+Maintainer: Benjamin Reed <pci-ids@fink.raccoonfink.com>
 CustomMirror: RangerMirror
 Source: mirror:custom:pciids/pci.ids-%v.bz2
 Source-MD5: 9a9574408e77aec717bd8dc334f8de72 

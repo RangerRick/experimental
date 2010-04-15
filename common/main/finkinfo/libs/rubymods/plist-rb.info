@@ -5,7 +5,7 @@ Revision: 2
 Type: ruby (1.8)
 Description: Manipulate plist files in Ruby
 License: BSD
-Maintainer: Benjamin Reed <plist-rb@fink.racoonfink.com>
+Maintainer: Benjamin Reed <plist-rb@fink.raccoonfink.com>
 
 Depends: <<
 	libgems-rb%type_pkg[ruby],
