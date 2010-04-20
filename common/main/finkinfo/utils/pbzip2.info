@@ -1,12 +1,12 @@
 Package: pbzip2
-Version: 1.1.0
+Version: 1.1.1
 Revision: 1
 GCC: 4.0
 
 BuildDepends: bzip2-dev
 Depends: bzip2-shlibs
 Source: http://compression.ca/%n/%n-%v.tar.gz
-Source-MD5: 39cfc2e8c810391b571246e798f7c73a
+Source-MD5: b354422759da7113da366aad1876ed5d
 CompileScript: make
 InstallScript: <<
 	install -d -m 755 %i/bin
@@ -15,10 +15,10 @@ InstallScript: <<
 <<
 Description: SMP-capable bzip2
 DescDetail: <<
-PBZIP2 is a parallel implementation of the bzip2 block-sorting file compressor
-that uses pthreads and achieves near-linear speedup on SMP machines.  The
-output of this version is fully compatible with bzip2 1.0.2 (ie: anything
-compressed with PBZIP2 can be decompressed with bzip2).
+PBZIP2 is a parallel implementation of the bzip2 block-sorting file
+compressor that uses pthreads and achieves near-linear speedup on SMP
+machines.  The output of this version is fully compatible with bzip2 v1.0.2
+or newer (ie: anything compressed with pbzip2 can be decompressed with bzip2).
 <<
 DocFiles: AUTHORS COPYING ChangeLog README
 License: OSI-Approved
