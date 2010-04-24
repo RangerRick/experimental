@@ -35,7 +35,10 @@ SetCPPFLAGS: -I%p/lib/system-openssl/include
 SetLDFLAGS: -L%p/lib/system-openssl/lib
 ConfigureParams: --disable-dependency-tracking --without-redland
 
-InfoTest: TestScript: make check || exit 2
+InfoTest: <<
+	TestDepends: raptor-bin (>= 1.4.18-1)
+	TestScript: make check || exit 2
+<<
 
 InstallScript: make -j1 install DESTDIR=%d
 DocFiles: AUTHORS COPYING* ChangeLog* LICENSE* NEWS* NOTICE README* RELEASE*
