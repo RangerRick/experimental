@@ -35,6 +35,7 @@ Depends: <<
 PatchScript: <<
 	perl -pi -e 's,(\@CPPFLAGS\@),-I%p/lib/system-openssl/include \1,' `find . -name Makefile.in`
 	perl -pi -e 's,for bdbc_version in ,for bdbc_version in 4.8 ,g' configure
+	perl -pi -e 's,SQLITE_API,REDLAND_SQLITE_VERSION,g' configure src/rdf_config.h.in src/rdf_storage_sqlite.c
 <<
 
 SetCPPFLAGS: -I%p/lib/system-openssl/include -I%p/include/db4
