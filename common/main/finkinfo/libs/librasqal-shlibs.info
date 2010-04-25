@@ -36,8 +36,16 @@ SetLDFLAGS: -L%p/lib/system-openssl/lib
 ConfigureParams: --disable-dependency-tracking --without-redland
 
 InfoTest: <<
-	TestDepends: raptor-bin (>= 1.4.18-1)
-	TestScript: make check || exit 2
+	TestDepends: <<
+		perl588-core,
+		raptor-bin (>= 1.4.18-1),
+		xml-dom-pm588
+	<<
+	TestScript: <<
+		perl -pi -e 's,/.*/bin/perl,%p/bin/perl5.8.8,' tests/*/*/Makefile tests/improve
+		perl -pi -e 's,^PERL = perl,PERL = %p/bin/perl5.8.8,' tests/*/*/Makefile
+		make check || exit 2
+	<<
 <<
 
 InstallScript: make -j1 install DESTDIR=%d
