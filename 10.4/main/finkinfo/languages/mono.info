@@ -1,6 +1,6 @@
 Info4: <<
 Package: mono
-Version: 2.6.3
+Version: 2.6.4
 Revision: 1
 Architecture: i386, powerpc
 Description: .NET-compatible CIL engine
@@ -38,7 +38,7 @@ Replaces: <<
 <<
 
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
-Source-MD5: b1dc21bac2c7c75814a9f32246eadadd
+Source-MD5: 342a7ca3bea3cbec0c8ac48b9322fcb4
 PatchScript: sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1
 PatchFile: %n.patch
 PatchFile-MD5: 4324b17de9b381a562a3d0e36a55cfc8
