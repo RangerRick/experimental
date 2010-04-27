@@ -44,11 +44,13 @@ PatchScript: <<
 	perl -pi -e 's,-pthread,-lpthread,g' configure
 <<
 PatchFile: %n.patch
-PatchFile-MD5: dd42d4150f1d7fdaedc50b34d0a480bb
+PatchFile-MD5: caa24fdd3937e6bee8fbc203254235ee
 
+SetCFLAGS: -Os
 SetCPPFLAGS: -I%p/include
 SetLIBS: -L%p/lib
 SetMAKEFLAGS: -j1
+NoSetCFLAGS: true
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
 NoSetMAKEFLAGS: true
@@ -62,8 +64,7 @@ ConfigureParams: <<
 --with-moonlight \
 --without-sigaltstack \
 --disable-dtrace \
---disable-dependency-tracking \
-CFLAGS="-Os -g" CXXFLAGS="-Os -g"
+--disable-dependency-tracking
 <<
 CompileScript: <<
 #!/bin/sh -ex
@@ -92,7 +93,17 @@ CompileScript: <<
 	export XMKMF="%p/lib/xmkmf/bin/xmkmf"
 
 	if [ -x /usr/bin/gcc-4.2 ]; then
-		export CC=gcc-4.2 CXX=g++-4.2 CPP=cpp-4.2
+		export CC="gcc-4.2" CXX="g++-4.2"
+	fi
+
+	if [ "%m" = "powerpc" ]; then
+		case `sw_vers -productVersion` in
+			10.5*)
+				unset CC CXX
+				# Hack.  HAAAAAAAAAAAAAAAACK!!!!
+				export CFLAGS="-Wp,-isysroot,/Developer/SDKs/MacOSX10.4u.sdk $CFLAGS" ac_cv_header_execinfo_h=no
+				;;
+		esac
 	fi
 
 	perl -pi -e 's/hardcode_direct=yes/hardcode_direct=no/g; s/need_relink=yes/need_relink=no/g' configure ltmain.sh
