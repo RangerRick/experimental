@@ -40,12 +40,14 @@ Replaces: <<
 
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
 Source-MD5: 342a7ca3bea3cbec0c8ac48b9322fcb4
-PatchScript: sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1
+PatchScript: <<
+	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1
+	perl -pi -e 's,-pthread,-lpthread,g' configure
+<<
 PatchFile: %n.patch
-PatchFile-MD5: 4324b17de9b381a562a3d0e36a55cfc8
+PatchFile-MD5: dd42d4150f1d7fdaedc50b34d0a480bb
 
 SetCPPFLAGS: -I%p/include
-SetLDFLAGS: -bind_at_load
 SetLIBS: -L%p/lib
 SetMAKEFLAGS: -j1
 NoSetCPPFLAGS: true
@@ -59,6 +61,7 @@ ConfigureParams: <<
 --with-preview=yes \
 --with-x \
 --with-moonlight \
+--without-sigaltstack \
 --disable-dtrace \
 --disable-dependency-tracking \
 CFLAGS="-Os -g" CXXFLAGS="-Os -g"
@@ -96,7 +99,7 @@ CompileScript: <<
 	perl -pi -e 's/hardcode_direct=yes/hardcode_direct=no/g; s/need_relink=yes/need_relink=no/g' configure ltmain.sh
 	./configure %c --with-jdk=$JAVA_HOME
 	make
-	fink-package-precedence --prohibit-bdep %N-dev .
+	%p/sbin/fink-package-precedence --prohibit-bdep %N-dev .
 <<
 
 InstallScript: <<
