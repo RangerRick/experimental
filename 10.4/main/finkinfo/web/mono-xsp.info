@@ -1,5 +1,5 @@
 Package: mono-xsp
-Version: 2.6.3
+Version: 2.6.4
 Revision: 1
 Architecture: i386, powerpc
 Description: Mono ASP.Net web server
@@ -13,7 +13,7 @@ BuildDepends: <<
 <<
 
 Source: http://ftp.novell.com/pub/mono/sources/xsp/xsp-%v.tar.bz2
-Source-MD5: 246a2760cf55849a5542daeb13f8c27d
+Source-MD5: 271886aa22cae93fd9cb75c9fe832391
 
 SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true

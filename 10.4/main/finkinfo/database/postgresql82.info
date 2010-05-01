@@ -43,6 +43,17 @@ Replaces: <<
 	postgresql74-ssl (<< %v-%r)
 <<
 GCC: 4.0
+InfoTest: <<
+	TestScript: <<
+		#!/bin/sh -ev
+		if [ `id -u` -eq 0 ]; then
+			sudo chown -R fink-bld .
+			sudo -u fink-bld make check || exit 2
+		else
+			make check || exit 2
+		fi
+	<<
+<<
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
 Source-MD5: cb3be1e35ca9bba64d65a2ab337fb1a0

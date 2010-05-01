@@ -1,7 +1,7 @@
 Info4: <<
 Package: pinfo
 Version: 0.6.9
-Revision: 2
+Revision: 3
 Maintainer: Benjamin Reed <pinfo@fink.raccoonfink.com>
 BuildDepends: <<
 	fink (>= 0.28.0-1),

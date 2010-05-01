@@ -51,6 +51,17 @@ Replaces: <<
 	postgresql80-ssl
 <<
 GCC: 4.0
+InfoTest: <<
+	TestScript: <<
+		#!/bin/sh -ev
+		if [ `id -u` -eq 0 ]; then
+			sudo chown -R fink-bld .
+			sudo -u fink-bld make check || exit 2
+		else
+			make check || exit 2
+		fi
+	<<
+<<
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
 Source-MD5: 100aa892c6ed6668d032811d4cc98e87

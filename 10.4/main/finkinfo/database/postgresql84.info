@@ -28,6 +28,17 @@ BuildDepends: <<
 	tcltk-dev
 <<
 GCC: 4.0
+InfoTest: <<
+TestScript: <<
+	#!/bin/sh -ev
+	if [ `id -u` -eq 0 ]; then
+		sudo chown -R fink-bld .
+		sudo -u fink-bld make check || exit 2
+	else
+		make check || exit 2
+	fi
+<<
+<<
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
 Source-MD5: 7f70e7b140fb190f268837255582b07e

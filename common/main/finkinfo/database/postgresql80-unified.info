@@ -246,6 +246,17 @@ END
 	chmod 755 %i/var/postgresql-8.0/*.sh
 	perl -pi -e 's,^%d,,' %i/bin/pg_config*
 <<
+InfoTest: <<
+	TestScript: <<
+		#!/bin/sh -ev
+		if [ `id -u` -eq 0 ]; then
+			sudo chown -R fink-bld .
+			sudo -u fink-bld make check || exit 2
+		else
+			make check || exit 2
+		fi
+	<<
+<<
 DocFiles: COPYRIGHT HISTORY INSTALL README
 
 PreInstScript: <<
