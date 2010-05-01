@@ -1,6 +1,6 @@
 diff -Nurd mono-2.6.4/configure mono-2.6.4-new/configure
---- mono-2.6.4/configure	2010-04-22 11:53:03.000000000 -0400
-+++ mono-2.6.4-new/configure	2010-04-26 21:58:44.000000000 -0400
+--- mono-2.6.4/configure	2010-04-22 10:53:03.000000000 -0500
++++ mono-2.6.4-new/configure	2010-04-30 22:27:50.000000000 -0500
 @@ -3222,11 +3222,11 @@
  		parallel_mark="Disabled_Currently_Hangs_On_MacOSX"
  		platform_win32=no
@@ -115,8 +115,8 @@ diff -Nurd mono-2.6.4/configure mono-2.6.4-new/configure
       *-*-*netbsd*)
  	LIBC="libc.so.12"
 diff -Nurd mono-2.6.4/data/config.in mono-2.6.4-new/data/config.in
---- mono-2.6.4/data/config.in	2010-04-22 11:37:47.000000000 -0400
-+++ mono-2.6.4-new/data/config.in	2010-04-26 21:58:44.000000000 -0400
+--- mono-2.6.4/data/config.in	2010-04-22 10:37:47.000000000 -0500
++++ mono-2.6.4-new/data/config.in	2010-04-30 22:27:50.000000000 -0500
 @@ -5,19 +5,19 @@
  	<dllmap dll="intl" name="bind_textdomain_codeset" target="@LIBC@" os="solaris"/>
  	<dllmap dll="libintl" name="bind_textdomain_codeset" target="@LIBC@" os="solaris"/>
@@ -146,8 +146,8 @@ diff -Nurd mono-2.6.4/data/config.in mono-2.6.4-new/data/config.in
  		<dllentry dll="__Internal" name="CopyMemory" target="mono_win32_compat_CopyMemory"/>
  		<dllentry dll="__Internal" name="FillMemory" target="mono_win32_compat_FillMemory"/>
 diff -Nurd mono-2.6.4/libgc/darwin_stop_world.c mono-2.6.4-new/libgc/darwin_stop_world.c
---- mono-2.6.4/libgc/darwin_stop_world.c	2010-04-22 11:37:43.000000000 -0400
-+++ mono-2.6.4-new/libgc/darwin_stop_world.c	2010-04-26 21:59:49.000000000 -0400
+--- mono-2.6.4/libgc/darwin_stop_world.c	2010-04-22 10:37:43.000000000 -0500
++++ mono-2.6.4-new/libgc/darwin_stop_world.c	2010-04-30 22:27:50.000000000 -0500
 @@ -135,7 +135,7 @@
  	GC_push_one(state.ebp); 
  #endif
@@ -167,8 +167,8 @@ diff -Nurd mono-2.6.4/libgc/darwin_stop_world.c mono-2.6.4-new/libgc/darwin_stop
  	hi = (ptr_t)FindTopOfStack(info.__r1);
  
 diff -Nurd mono-2.6.4/mono/interpreter/interp.h mono-2.6.4-new/mono/interpreter/interp.h
---- mono-2.6.4/mono/interpreter/interp.h	2010-04-22 11:37:47.000000000 -0400
-+++ mono-2.6.4-new/mono/interpreter/interp.h	2010-04-26 21:58:55.000000000 -0400
+--- mono-2.6.4/mono/interpreter/interp.h	2010-04-22 10:37:47.000000000 -0500
++++ mono-2.6.4-new/mono/interpreter/interp.h	2010-04-30 22:27:50.000000000 -0500
 @@ -120,8 +120,8 @@
  void
  mono_interp_transform_init (void);
@@ -181,8 +181,8 @@ diff -Nurd mono-2.6.4/mono/interpreter/interp.h mono-2.6.4-new/mono/interpreter/
  
  /*
 diff -Nurd mono-2.6.4/mono/io-layer/shared.c mono-2.6.4-new/mono/io-layer/shared.c
---- mono-2.6.4/mono/io-layer/shared.c	2010-04-22 11:37:44.000000000 -0400
-+++ mono-2.6.4-new/mono/io-layer/shared.c	2010-04-26 21:58:44.000000000 -0400
+--- mono-2.6.4/mono/io-layer/shared.c	2010-04-22 10:37:44.000000000 -0500
++++ mono-2.6.4-new/mono/io-layer/shared.c	2010-04-30 22:27:50.000000000 -0500
 @@ -168,8 +168,8 @@
  		ubuf.machine[0] = '\0';
  		ubuf.sysname[0] = '\0';
@@ -195,8 +195,8 @@ diff -Nurd mono-2.6.4/mono/io-layer/shared.c mono-2.6.4-new/mono/io-layer/shared
  
  	fake_name = g_getenv ("MONO_SHARED_HOSTNAME");
 diff -Nurd mono-2.6.4/mono/metadata/loader.c mono-2.6.4-new/mono/metadata/loader.c
---- mono-2.6.4/mono/metadata/loader.c	2010-04-22 11:37:44.000000000 -0400
-+++ mono-2.6.4-new/mono/metadata/loader.c	2010-04-26 21:58:44.000000000 -0400
+--- mono-2.6.4/mono/metadata/loader.c	2010-04-22 10:37:44.000000000 -0500
++++ mono-2.6.4-new/mono/metadata/loader.c	2010-04-30 22:27:50.000000000 -0500
 @@ -1284,6 +1284,24 @@
  
  		if (!module) {
@@ -222,9 +222,63 @@ diff -Nurd mono-2.6.4/mono/metadata/loader.c mono-2.6.4-new/mono/metadata/loader
  			while ((full_name = mono_dl_build_path (NULL, file_name, &iter))) {
  				mono_trace (G_LOG_LEVEL_INFO, MONO_TRACE_DLLIMPORT,
  						"DllImport loading location: '%s'.", full_name);
+diff -Nurd mono-2.6.4/mono/metadata/profiler.c mono-2.6.4-new/mono/metadata/profiler.c
+--- mono-2.6.4/mono/metadata/profiler.c	2010-04-22 10:37:44.000000000 -0500
++++ mono-2.6.4-new/mono/metadata/profiler.c	2010-04-30 22:27:50.000000000 -0500
+@@ -26,7 +26,7 @@
+ #ifdef HAVE_SYS_TIME_H
+ #include <sys/time.h>
+ #endif
+-#ifdef HAVE_BACKTRACE_SYMBOLS
++#if defined(HAVE_BACKTRACE_SYMBOLS) && defined(HAVE_EXECINFO_H)
+ #include <execinfo.h>
+ #endif
+ 
+diff -Nurd mono-2.6.4/mono/mini/mini-arm.c mono-2.6.4-new/mono/mini/mini-arm.c
+--- mono-2.6.4/mono/mini/mini-arm.c	2010-04-22 10:37:45.000000000 -0500
++++ mono-2.6.4-new/mono/mini/mini-arm.c	2010-04-30 22:28:15.000000000 -0500
+@@ -4794,10 +4794,15 @@
+ 	MonoJumpInfo *patch_info;
+ 	int i;
+ 	guint8 *code;
+-	const guint8* exc_throw_pos [MONO_EXC_INTRINS_NUM] = {NULL};
+-	guint8 exc_throw_found [MONO_EXC_INTRINS_NUM] = {0};
++	guint8* exc_throw_pos [MONO_EXC_INTRINS_NUM];
++	guint8 exc_throw_found [MONO_EXC_INTRINS_NUM];
+ 	int max_epilog_size = 50;
+ 
++	for (i = 0; i < MONO_EXC_INTRINS_NUM; i++) {
++		exc_throw_pos [i] = NULL;
++		exc_throw_found [i] = 0;
++	}
++
+ 	/* count the number of exception infos */
+      
+ 	/* 
+diff -Nurd mono-2.6.4/mono/mini/mini-ppc.c mono-2.6.4-new/mono/mini/mini-ppc.c
+--- mono-2.6.4/mono/mini/mini-ppc.c	2010-04-22 10:37:45.000000000 -0500
++++ mono-2.6.4-new/mono/mini/mini-ppc.c	2010-04-30 22:28:15.000000000 -0500
+@@ -5365,10 +5365,15 @@
+ 	MonoJumpInfo *patch_info;
+ 	int i;
+ 	guint8 *code;
+-	const guint8* exc_throw_pos [MONO_EXC_INTRINS_NUM] = {NULL};
+-	guint8 exc_throw_found [MONO_EXC_INTRINS_NUM] = {0};
++	guint8* exc_throw_pos [MONO_EXC_INTRINS_NUM];
++	guint8 exc_throw_found [MONO_EXC_INTRINS_NUM];
+ 	int max_epilog_size = 50;
+ 
++	for (i = 0; i < MONO_EXC_INTRINS_NUM; i++) {
++		exc_throw_pos [i] = NULL;
++		exc_throw_found [i] = 0;
++	}
++
+ 	/* count the number of exception infos */
+      
+ 	/* 
 diff -Nurd mono-2.6.4/mono/mini/mini-ppc.h mono-2.6.4-new/mono/mini/mini-ppc.h
---- mono-2.6.4/mono/mini/mini-ppc.h	2010-04-22 11:37:45.000000000 -0400
-+++ mono-2.6.4-new/mono/mini/mini-ppc.h	2010-04-26 22:00:14.000000000 -0400
+--- mono-2.6.4/mono/mini/mini-ppc.h	2010-04-22 10:37:45.000000000 -0500
++++ mono-2.6.4-new/mono/mini/mini-ppc.h	2010-04-30 22:27:50.000000000 -0500
 @@ -277,9 +277,9 @@
  
  #if defined(__linux__)
@@ -238,8 +292,8 @@ diff -Nurd mono-2.6.4/mono/mini/mini-ppc.h mono-2.6.4-new/mono/mini/mini-ppc.h
  #elif defined(__NetBSD__)
  #define MONO_ARCH_USE_SIGACTION 1
 diff -Nurd mono-2.6.4/support/sys-mman.c mono-2.6.4-new/support/sys-mman.c
---- mono-2.6.4/support/sys-mman.c	2010-04-22 11:37:47.000000000 -0400
-+++ mono-2.6.4-new/support/sys-mman.c	2010-04-26 22:01:35.000000000 -0400
+--- mono-2.6.4/support/sys-mman.c	2010-04-22 10:37:47.000000000 -0500
++++ mono-2.6.4-new/support/sys-mman.c	2010-04-30 22:27:50.000000000 -0500
 @@ -8,6 +8,7 @@
   */
  
@@ -248,15 +302,3 @@ diff -Nurd mono-2.6.4/support/sys-mman.c mono-2.6.4-new/support/sys-mman.c
  
  #include <sys/types.h>
  #include <sys/mman.h>
-diff -Nurd mono-2.6.4/mono/metadata/profiler.c mono-2.6.4-new/mono/metadata/profiler.c
---- mono-2.6.4/mono/metadata/profiler.c	2010-04-22 11:37:44.000000000 -0400
-+++ mono-2.6.4-new/mono/metadata/profiler.c	2010-04-27 10:31:50.000000000 -0400
-@@ -26,7 +26,7 @@
- #ifdef HAVE_SYS_TIME_H
- #include <sys/time.h>
- #endif
--#ifdef HAVE_BACKTRACE_SYMBOLS
-+#if defined(HAVE_BACKTRACE_SYMBOLS) && defined(HAVE_EXECINFO_H)
- #include <execinfo.h>
- #endif
- 

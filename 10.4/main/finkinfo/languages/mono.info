@@ -44,7 +44,7 @@ PatchScript: <<
 	perl -pi -e 's,-pthread,-lpthread,g' configure
 <<
 PatchFile: %n.patch
-PatchFile-MD5: caa24fdd3937e6bee8fbc203254235ee
+PatchFile-MD5: 112c7e332abdabd158a9b11b02fd5eba
 
 SetCFLAGS: -Os
 SetCPPFLAGS: -I%p/include
@@ -94,16 +94,6 @@ CompileScript: <<
 
 	if [ -x /usr/bin/gcc-4.2 ]; then
 		export CC="gcc-4.2" CXX="g++-4.2"
-	fi
-
-	if [ "%m" = "powerpc" ]; then
-		case `sw_vers -productVersion` in
-			10.5*)
-				unset CC CXX
-				# Hack.  HAAAAAAAAAAAAAAAACK!!!!
-				export CFLAGS="-Wp,-isysroot,/Developer/SDKs/MacOSX10.4u.sdk $CFLAGS" ac_cv_header_execinfo_h=no
-				;;
-		esac
 	fi
 
 	perl -pi -e 's/hardcode_direct=yes/hardcode_direct=no/g; s/need_relink=yes/need_relink=no/g' configure ltmain.sh
