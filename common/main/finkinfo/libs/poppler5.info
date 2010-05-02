@@ -1,10 +1,10 @@
-Package: poppler4
-# NOTE: Must keep %v in sync among all poppler4* packages!
-Version: 0.10.7
-Revision: 4
+Package: poppler5
+# NOTE: Must keep %v in sync among all poppler5* packages!
+Version: 0.12.4
+Revision: 1
 Description: PDF rendering library
 License: GPL
-Maintainer: Benjamin Reed <poppler4@fink.racoonfink.com>
+Maintainer: Benjamin Reed <poppler5@fink.racoonfink.com>
 
 Depends: <<
 	%N-shlibs (= %v-%r)
@@ -35,22 +35,22 @@ Conflicts: <<
 	poppler1,
 	poppler2,
 	poppler3,
-	poppler5
+	poppler4
 <<
 Replaces: <<
 	poppler,
 	poppler1,
 	poppler2,
 	poppler3,
-	poppler5
+	poppler4
 <<
 BuildDependsOnly: True
 GCC: 4.0
 
 Source: http://poppler.freedesktop.org/poppler-%v.tar.gz
-Source-MD5: ba120e49a82567d85d00e159011ebe67
+Source-MD5: 4155346f9369b192569ce9184ff73e43
 PatchFile: %n.patch
-PatchFile-MD5: fedaec5cc0d9fb044e2d189e84d181da
+PatchFile-MD5: a5fefb411deed42545db9e912be1383a
 
 SetCFLAGS: -Os
 SetCXXFLAGS: -Os
@@ -88,8 +88,8 @@ SplitOff: <<
 		libxml2-shlibs
 	<<
 	DocFiles: AUTHORS COPYING ChangeLog NEWS README README-XPDF TODO
-	Files: lib/libpoppler.4.*
-	Shlibs: %p/lib/libpoppler.4.dylib 5.0.0 %n (>= 0.10.0-1)
+	Files: lib/libpoppler.5.*
+	Shlibs: %p/lib/libpoppler.5.dylib 6.0.0 %n (>= 0.12.0-1)
 <<
 SplitOff2: <<
 	Package: poppler-bin

@@ -1,10 +1,10 @@
 Package: poppler2-xpdf
 # NOTE: Must keep %v in sync among all poppler2* packages!
 Version: 0.6.4
-Revision: 2
+Revision: 5
 Description: PDF rendering library (alternate interface)
 License: GPL
-Maintainer: Benjamin Reed <poppler2@fink.raccoonfink.com>
+Maintainer: Benjamin Reed <poppler2@fink.racoonfink.com>
 
 BuildDepends: <<
 	fink (>= 0.24.12-1)

@@ -1,7 +1,7 @@
 Info4: <<
 Package: poppler-qt4%type_pkg[qt4]
-Version: 0.5.4
-Revision: 1029
+Version: 0.5.9
+Revision: 1
 Type: qt4 (-x11 -mac)
 Description: PDF rendering library (Qt4 Interface)
 License: GPL
@@ -12,6 +12,7 @@ BuildDepends: <<
 	(%type_raw[qt4] = -x11) x11-dev,
 	(%type_raw[qt4] = -mac) qt4-mac,
 	fink (>= 0.28.0-1),
+	fink-package-precedence,
 	freetype219 (>= 2.3.7-7),
 	libjpeg,
 	pkgconfig (>= 0.22-3),
@@ -26,8 +27,8 @@ SetLDFLAGS: -L%p/lib/freetype219/lib -L%p/lib/fontconfig2/lib -Wl,-dylib_file,/S
 SetLIBS: -L%p/lib
 BuildDependsOnly: True
 Source: http://poppler.freedesktop.org/poppler-%v.tar.gz
-Source-MD5: 053fdfd70533ecce1a06353fa945f061
-ConfigureParams: --mandir=%p/share/man SYSTEM_XPDFRC=%p/etc/xpdfrc.poppler1 --disable-dependency-tracking --enable-zlib --disable-poppler-glib --enable-poppler-qt4 --disable-poppler-qt FREETYPE_CONFIG=%p/lib/freetype219/bin/freetype-config PKG_CONFIG_PATH="%p/lib/fontconfig2/lib/pkgconfig:%p/lib/freetype219/lib/pkgconfig:$PKG_CONFIG_PATH"
+Source-MD5: 8d1ac008614c0e413bcac95b8102fa07
+ConfigureParams: --mandir=%p/share/man SYSTEM_XPDFRC=%p/etc/xpdfrc.poppler1 --enable-dependency-tracking --enable-zlib --disable-poppler-glib --enable-poppler-qt4 --disable-poppler-qt FREETYPE_CONFIG=%p/lib/freetype219/bin/freetype-config PKG_CONFIG_PATH="%p/lib/fontconfig2/lib/pkgconfig:%p/lib/freetype219/lib/pkgconfig:$PKG_CONFIG_PATH"
 PatchFile: poppler-qt4.patch
 PatchFile-MD5: 57a42d810ac65587b065812a60844066
 PatchScript: sed 's|@PREFIX@|%p|g' %{PatchFile} | patch -p1 --fuzz=4
@@ -61,6 +62,7 @@ CompileScript: <<
 			perl -pi -e 's#-lpoppler-qt4#-L%p/lib/qt4%type_raw[qt4]/lib -Wl,-F%p/lib/qt4%type_raw[qt4]/lib -Wl,-framework,QtCore -Wl,-framework,QtGui -Wl,-framework,QtXml -lpoppler-qt4#' poppler-qt4.pc
 			;;
 	esac
+	fink-package-precedence --prohibit-bdep %n .
 <<
 InstallScript: <<
 #!/bin/sh -ev

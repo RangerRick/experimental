@@ -1,9 +1,9 @@
 Package: poppler1
-Version: 0.5.4
-Revision: 1028
+Version: 0.5.9
+Revision: 1
 Description: PDF rendering library
 License: GPL
-Maintainer: Benjamin Reed <poppler1@fink.raccoonfink.com>
+Maintainer: Benjamin Reed <poppler1@fink.racoonfink.com>
 
 Depends: <<
 	%N-shlibs (= %v-%r),
@@ -15,6 +15,7 @@ BuildDepends: <<
 	cairo (>= 1.6-1),
 	expat1,
 	fink (>= 0.24.12),
+	fink-package-precedence,
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.5-1),
 	glib2-dev (>= 2.14.0-1),
@@ -37,22 +38,26 @@ Conflicts: <<
 	poppler2,
 	poppler2-glib,
 	poppler4,
-	poppler4-glib
+	poppler4-glib,
+	poppler5,
+	poppler5-glib
 <<
 Replaces: <<
 	poppler,
 	poppler2,
 	poppler2-glib,
 	poppler4,
-	poppler4-glib
+	poppler4-glib,
+	poppler5,
+	poppler5-glib
 <<
 BuildDependsOnly: True
 GCC: 4.0
 
 Source: http://poppler.freedesktop.org/poppler-%v.tar.gz
-Source-MD5: 053fdfd70533ecce1a06353fa945f061
+Source-MD5: 8d1ac008614c0e413bcac95b8102fa07
 PatchFile: %n.patch
-PatchFile-MD5: 715d072c66509ba23009115d265602c7
+PatchFile-MD5: 29f304a3b92cd9166a3afc90ea4205a4
 PatchScript: sed -e 's|@PREFIX@|%p|g' <%{PatchFile} | patch -p1
 
 SetCFLAGS: -Os
@@ -79,6 +84,8 @@ CompileScript: <<
 			ranlib $a
 		done
 	fi
+
+	fink-package-precedence --no-headers .
 <<
 
 InstallScript: <<

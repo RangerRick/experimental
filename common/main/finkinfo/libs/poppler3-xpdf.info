@@ -1,7 +1,7 @@
 Package: poppler3-xpdf
 # NOTE: Must keep %v in sync among all poppler3* packages!
 Version: 0.8.7
-Revision: 1
+Revision: 2
 Distribution: 10.4, 10.5
 Description: PDF rendering library (alternate interface)
 License: GPL
