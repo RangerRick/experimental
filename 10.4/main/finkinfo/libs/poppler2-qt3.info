@@ -32,7 +32,7 @@ PatchScript: <<
 	perl -pi -e 's,libqt-mt.so,libqt-mt.dylib,g' configure
 <<
 PatchFile: %n.patch
-PatchFile-MD5: 9ffdfd0b4a62b594daf20054371dbc2b
+PatchFile-MD5: d55290728c849111601a20f85252f7fb
 
 SetCPPFLAGS: -I%p/lib/freetype219/include -I%p/lib/freetype219/include/freetype2 -I%p/lib/fontconfig2/include -I%p/include
 SetLDFLAGS: -L%p/lib/freetype219/lib -L%p/lib/fontconfig2/lib -L%p/lib -Wl,-dylib_file,/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib

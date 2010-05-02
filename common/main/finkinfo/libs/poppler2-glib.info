@@ -37,7 +37,7 @@ GCC: 4.0
 Source: http://poppler.freedesktop.org/poppler-%v.tar.gz
 Source-MD5: 13d12ca4e349574cfbbcf4a9b2b3ae52
 PatchFile: %n.patch
-PatchFile-MD5: 24575f137add7e61fb98cac06ebe3c29
+PatchFile-MD5: d55290728c849111601a20f85252f7fb
 PatchScript: sed 's|@PREFIX@|%p|g' <%{PatchFile} | patch -p1 --fuzz=4
 
 SetCPPFLAGS: -I%p/lib/fontconfig2/include

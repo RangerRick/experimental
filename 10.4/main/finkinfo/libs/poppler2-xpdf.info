@@ -22,7 +22,7 @@ PatchScript: <<
 	done
 <<
 PatchFile: %n.patch
-PatchFile-MD5: 712def249122211f047582d14b2021c5
+PatchFile-MD5: d55290728c849111601a20f85252f7fb
 
 UseMaxBuildJobs: true
 CompileScript: #

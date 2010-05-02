@@ -48,7 +48,7 @@ Source: http://poppler.freedesktop.org/poppler-%v.tar.gz
 Source-MD5: 13d12ca4e349574cfbbcf4a9b2b3ae52
 PatchScript: sed -e 's|@PREFIX@|%p|g' <%{PatchFile} | patch -p1
 PatchFile: %n.patch
-PatchFile-MD5: 9ffdfd0b4a62b594daf20054371dbc2b
+PatchFile-MD5: d55290728c849111601a20f85252f7fb
 
 SetCFLAGS: -Os
 SetCPPFLAGS: -I%p/lib/pango-ft219/include/pango-1.0 -I%p/lib/pango-ft219/include -I%p/lib/freetype219/include/freetype2 -I%p/lib/freetype219/include -I%p/lib/fontconfig2/include -I%p/include -I%p/include/sys

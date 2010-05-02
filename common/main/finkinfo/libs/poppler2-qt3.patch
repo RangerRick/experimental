@@ -1,4 +1,4 @@
-diff -Nur poppler-0.6.4/configure poppler-0.6.4-new/configure
+diff -Nurd poppler-0.6.4/configure poppler-0.6.4-new/configure
 --- poppler-0.6.4/configure	2008-01-25 17:12:30.000000000 -0500
 +++ poppler-0.6.4-new/configure	2010-05-02 12:29:30.000000000 -0400
 @@ -25109,7 +25109,7 @@
@@ -28,7 +28,7 @@ diff -Nur poppler-0.6.4/configure poppler-0.6.4-new/configure
  
  { echo "$as_me:$LINENO: checking for Qt headers" >&5
  echo $ECHO_N "checking for Qt headers... $ECHO_C" >&6; }
-diff -Nur poppler-0.6.4/glib/Makefile.in poppler-0.6.4-new/glib/Makefile.in
+diff -Nurd poppler-0.6.4/glib/Makefile.in poppler-0.6.4-new/glib/Makefile.in
 --- poppler-0.6.4/glib/Makefile.in	2008-01-25 17:12:27.000000000 -0500
 +++ poppler-0.6.4-new/glib/Makefile.in	2010-05-02 12:29:10.000000000 -0400
 @@ -291,10 +291,10 @@
@@ -65,7 +65,7 @@ diff -Nur poppler-0.6.4/glib/Makefile.in poppler-0.6.4-new/glib/Makefile.in
  	$(cairo_libs)
  
  BUILT_SOURCES = \
-diff -Nur poppler-0.6.4/glib/reference/Makefile.in poppler-0.6.4-new/glib/reference/Makefile.in
+diff -Nurd poppler-0.6.4/glib/reference/Makefile.in poppler-0.6.4-new/glib/reference/Makefile.in
 --- poppler-0.6.4/glib/reference/Makefile.in	2008-01-25 17:12:27.000000000 -0500
 +++ poppler-0.6.4-new/glib/reference/Makefile.in	2010-05-02 12:29:10.000000000 -0400
 @@ -290,14 +290,14 @@
@@ -86,7 +86,7 @@ diff -Nur poppler-0.6.4/glib/reference/Makefile.in poppler-0.6.4-new/glib/refere
  	$(cairo_libs)
  
  @GTK_DOC_USE_LIBTOOL_FALSE@GTKDOC_CC = $(CC) $(INCLUDES) $(AM_CFLAGS) $(CFLAGS)
-diff -Nur poppler-0.6.4/poppler/Makefile.in poppler-0.6.4-new/poppler/Makefile.in
+diff -Nurd poppler-0.6.4/poppler/Makefile.in poppler-0.6.4-new/poppler/Makefile.in
 --- poppler-0.6.4/poppler/Makefile.in	2008-01-25 17:12:28.000000000 -0500
 +++ poppler-0.6.4-new/poppler/Makefile.in	2010-05-02 12:29:10.000000000 -0400
 @@ -386,12 +386,12 @@
@@ -120,7 +120,7 @@ diff -Nur poppler-0.6.4/poppler/Makefile.in poppler-0.6.4-new/poppler/Makefile.i
  	$(win32_libs)
  
  libpoppler_la_LDFLAGS = -version-info 2:0:0 @create_shared_lib@
-diff -Nur poppler-0.6.4/qt/Makefile.in poppler-0.6.4-new/qt/Makefile.in
+diff -Nurd poppler-0.6.4/qt/Makefile.in poppler-0.6.4-new/qt/Makefile.in
 --- poppler-0.6.4/qt/Makefile.in	2008-01-25 17:12:28.000000000 -0500
 +++ poppler-0.6.4-new/qt/Makefile.in	2010-05-02 12:29:54.000000000 -0400
 @@ -63,7 +63,7 @@
@@ -182,7 +182,7 @@ diff -Nur poppler-0.6.4/qt/Makefile.in poppler-0.6.4-new/qt/Makefile.in
  
  all: all-am
  
-diff -Nur poppler-0.6.4/qt4/src/Makefile.in poppler-0.6.4-new/qt4/src/Makefile.in
+diff -Nurd poppler-0.6.4/qt4/src/Makefile.in poppler-0.6.4-new/qt4/src/Makefile.in
 --- poppler-0.6.4/qt4/src/Makefile.in	2008-01-25 17:12:28.000000000 -0500
 +++ poppler-0.6.4-new/qt4/src/Makefile.in	2010-05-02 12:31:34.000000000 -0400
 @@ -38,7 +38,7 @@
@@ -215,7 +215,28 @@ diff -Nur poppler-0.6.4/qt4/src/Makefile.in poppler-0.6.4-new/qt4/src/Makefile.i
  	$(FONTCONFIG_LIBS) $(POPPLER_QT4_LIBS) $(am__append_1)
  libpoppler_qt4_la_LDFLAGS = -version-info 2:0:0
  all: all-am
-diff -Nur poppler-0.6.4/test/Makefile.in poppler-0.6.4-new/test/Makefile.in
+diff -Nurd poppler-0.6.4/qt4/tests/Makefile.in poppler-0.6.4-new/qt4/tests/Makefile.in
+--- poppler-0.6.4/qt4/tests/Makefile.in	2008-01-25 17:12:28.000000000 -0500
++++ poppler-0.6.4-new/qt4/tests/Makefile.in	2010-05-02 13:26:40.000000000 -0400
+@@ -67,7 +67,7 @@
+ @BUILD_POPPLER_QT4_TRUE@	check_attachments.$(OBJEXT)
+ check_attachments_OBJECTS = $(am_check_attachments_OBJECTS)
+ am__DEPENDENCIES_1 =
+-am__DEPENDENCIES_2 = $(top_builddir)/poppler/libpoppler.la \
++am__DEPENDENCIES_2 = \
+ 	$(top_builddir)/qt4/src/libpoppler-qt4.la \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ @BUILD_POPPLER_QT4_TRUE@check_attachments_DEPENDENCIES =  \
+@@ -337,7 +337,7 @@
+ 	$(POPPLER_QT4_CFLAGS)
+ 
+ LDADDS = \
+-	$(top_builddir)/poppler/libpoppler.la	\
++	-lpoppler \
+ 	$(top_builddir)/qt4/src/libpoppler-qt4.la	\
+ 	$(FONTCONFIG_LIBS)				\
+ 	$(POPPLER_QT4_LIBS)
+diff -Nurd poppler-0.6.4/test/Makefile.in poppler-0.6.4-new/test/Makefile.in
 --- poppler-0.6.4/test/Makefile.in	2008-01-25 17:12:29.000000000 -0500
 +++ poppler-0.6.4-new/test/Makefile.in	2010-05-02 12:29:10.000000000 -0400
 @@ -264,17 +264,17 @@
@@ -262,7 +283,7 @@ diff -Nur poppler-0.6.4/test/Makefile.in poppler-0.6.4-new/test/Makefile.in
  	$(GTK_TEST_LIBS)
  
  EXTRA_DIST = \
-diff -Nur poppler-0.6.4/xpdfrc.poppler2 poppler-0.6.4-new/xpdfrc.poppler2
+diff -Nurd poppler-0.6.4/xpdfrc.poppler2 poppler-0.6.4-new/xpdfrc.poppler2
 --- poppler-0.6.4/xpdfrc.poppler2	1969-12-31 19:00:00.000000000 -0500
 +++ poppler-0.6.4-new/xpdfrc.poppler2	2010-05-02 12:29:10.000000000 -0400
 @@ -0,0 +1,91 @@
