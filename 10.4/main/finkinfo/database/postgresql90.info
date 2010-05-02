@@ -40,7 +40,7 @@ TestScript: <<
 <<
 <<
 
-Source: postgresql-9.0beta1.tar.bz2
+Source: mirror:postgresql:source/v9.0beta1/postgresql-9.0beta1.tar.bz2
 Source-MD5: b7447f48cdb0a97e62de7046acbc041b
 PatchScript: sed -e 's|@BUILDDIR@|%b|g' -e 's|@INSTPREFIX@|%p|g' < %{PatchFile} | patch -p1
 PatchFile: %n.patch

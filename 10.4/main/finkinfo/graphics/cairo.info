@@ -1,6 +1,6 @@
 Package: cairo
-Version: 1.8.8
-Revision: 2
+Version: 1.8.10
+Revision: 1
 Description: Vector graphics library
 License: BSD
 Maintainer: Benjamin Reed <cairo@fink.raccoonfink.com>
@@ -10,19 +10,17 @@ Depends: <<
 	pkgconfig (>= 0.23-1)
 <<
 BuildDepends: <<
-	expat1,
 	fink (>= 0.29.7-1),
-	fontconfig2-dev,
-	freetype219 (>= 2.3.7-7),
+	fink-package-precedence,
+	fontconfig2-dev (>= 2.8.0-4),
+	freetype219 (>= 2.3.12-1),
 	glitz (>= 0.5.6-1),
-	gtk-doc (>= 1.8-1),
+	gtk-doc (>= 1.13-5),
 	pixman (>= 0.16.0-1),
 	pkgconfig (>= 0.23-1),
 	libgl-dev,
-	libiconv,
 	libpng3,
-	x11-dev,
-	xft2-dev
+	x11-dev
 <<
 BuildDependsOnly: true
 InfoTest: <<
@@ -35,15 +33,8 @@ InfoTest: <<
 	<<
 <<
 
-CustomMirror: <<
-	Primary: http://ranger.users.finkproject.org/distfiles
-	eur-NL: http://ranger.users.finkproject.org/distfiles
-	nam-US: http://ranger.befunk.com/fink
-	nam-US: http://astrange.ithinksw.net/~astrange/ranger-fink
-	nam-CA: http://www.southofheaven.net/befunk
-<<
 Source: http://cairographics.org/releases/%n-%v.tar.gz
-Source-MD5: d3e1a1035ae563812d4dd44a74fb0dd0
+Source-MD5: b60a82f405f9400bbfdcf850b1728d25
 PatchScript: <<
 	patch -p1 < %{PatchFile}
 	perl -pi -e 's,have_glitz_agl=yes,have_glitz_agl=no,g' configure
@@ -56,10 +47,7 @@ PatchFile: %n.patch
 PatchFile-MD5: c0035b1abb5c8a39fd0d111e3e1f4aff
 
 SetCFLAGS: -Os
-SetCPPFLAGS: -I%p/lib/fontconfig2/include
-SetLDFLAGS: -L%p/lib/fontconfig2/lib
-NoSetCFLAGS: true
-ConfigureParams: --build=%m-apple-darwin`uname -r|sed 's/\\..*//'` --disable-xcb --disable-dependency-tracking --disable-gtk-doc --enable-quartz --enable-quartz-font --disable-quartz-image --enable-png --enable-glitz --enable-ps --enable-pdf --disable-atsui --infodir=%p/share/info --mandir=%p/share/man
+ConfigureParams: --build=%m-apple-darwin`uname -r|sed 's/\\..*//'` --disable-xcb --enable-dependency-tracking --disable-gtk-doc --enable-quartz --enable-quartz-font --disable-quartz-image --enable-png --enable-glitz --enable-ps --enable-pdf --disable-atsui --mandir=%p/share/man --disable-static
 CompileScript: <<
 #!/bin/sh -ex
 	if [ -x /usr/bin/gcc-4.2 ]; then
@@ -68,8 +56,9 @@ CompileScript: <<
 
 	export PKG_CONFIG_PATH="%p/lib/fontconfig2/lib/pkgconfig:`pwd`:$PKG_CONFIG_PATH"
 	ac_cv_prog_GS= ./configure %c
-	find . -name Makefile | xargs perl -pi -e 's,^CAIRO_CFLAGS = ,CAIRO_CFLAGS = -I%p/lib/fontconfig2/include ,'
+#	find . -name Makefile | xargs perl -pi -e 's,^CAIRO_CFLAGS = ,CAIRO_CFLAGS = -I%p/lib/fontconfig2/include ,'
 	make
+	fink-package-precedence --prohibit-bdep %n .
 <<
 
 InstallScript: <<
@@ -78,20 +67,19 @@ InstallScript: <<
 	perl -pi -e 's,xrender >= 0.6,,' %i/lib/pkgconfig/*.pc
 	perl -pi -e 's,^(Libs.private:.*)$,$1 -lXrender -lXext,' %i/lib/pkgconfig/cairo.pc
 	perl -pi -e 's,^(Cflags: .*)$,$1 -I/usr/X11R6/include -I/usr/X11/include,' %i/lib/pkgconfig/cairo.pc
+	perl -pi -e 's,libpng12,,' %i/lib/pkgconfig/*.pc
 <<
 DocFiles: AUTHORS COPYING ChangeLog* INSTALL NEWS README
 SplitOff: <<
 	Package: %N-shlibs
 	Depends: <<
-		expat1-shlibs,
-		fontconfig2-shlibs,
-		freetype219-shlibs (>= 2.3.7-7),
+		fontconfig2-shlibs (>= 2.8.0-4),
+		freetype219-shlibs (>= 2.3.12-1),
 		glitz-shlibs (>= 0.5.6-1),
 		libgl-shlibs,
 		libpng3-shlibs,
 		pixman-shlibs (>= 0.16.0-1),
-		x11-shlibs,
-		xft2-shlibs
+		x11-shlibs
 	<<
 	DocFiles: AUTHORS COPYING ChangeLog* INSTALL NEWS README
 	Files: lib/libcairo.*.dylib
@@ -110,5 +98,9 @@ DescPackaging: <<
 
 	dmacks: seems to ignore --enable-gtk-doc, so just patch the
 	prefix in the bad URLs in the existing generated files.
+
+	dmacks: libpng12 is not part of public API so don't need to
+	publish it via .pc (avoids inherited BDep and deadlock with
+	other libpng* pkgs)--we're shared-only, no unresolved symbols.
 <<
 
