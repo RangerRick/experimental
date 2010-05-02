@@ -95,7 +95,6 @@ SplitOff: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/amor
 		include/AmorIface.h
@@ -177,7 +176,6 @@ SplitOff10: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/*ww_panelapplet*
 		share/apps/kicker/applets/kwwapplet.desktop
@@ -248,7 +246,6 @@ SplitOff11: <<
 	Depends: kdebase3-unified (>= %v-1)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -315,7 +312,6 @@ SplitOff2: <<
 		kmoon
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/*kmoon_panelapplet*
 		share/apps/kicker/applets/kmoonapplet.desktop
@@ -396,7 +392,6 @@ SplitOff3: <<
 		kodo
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kodo
 		share/applications/kde/kodo.desktop
@@ -474,7 +469,6 @@ SplitOff4: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kteatime
 		share/apps/kteatime
@@ -556,7 +550,6 @@ SplitOff5: <<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
 	Suggests: kworldclock-maps
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kworldclock
 		share/applications/kde/kworldclock.desktop
@@ -636,7 +629,6 @@ SplitOff6: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/*eyes_panelapplet*
 		share/apps/kicker/applets/eyesapplet.desktop
@@ -703,7 +695,6 @@ SplitOff7: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/*fifteen_panelapplet*
 		share/apps/kicker/applets/kfifteenapplet.desktop
@@ -770,7 +761,6 @@ SplitOff8: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/ktux
 		share/applnk/System/ScreenSavers/ktux.desktop
@@ -841,7 +831,6 @@ SplitOff9: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kweatherreport
 		bin/kweatherservice

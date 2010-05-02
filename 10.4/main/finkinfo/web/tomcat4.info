@@ -86,7 +86,6 @@ SplitOff: <<
 		tomcat5,
 		tomcat5-webapps
 	<<
-	UseMaxBuildJobs: true
 	Files: share/webapps
 	ConfFiles: <<
 		%p/share/webapps/admin.xml

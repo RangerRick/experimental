@@ -29,7 +29,6 @@ DocFiles: AUTHORS COPYING ChangeLog DOCUMENTATION INSTALL NEWS README
 SplitOff: <<
 	Package: %N-shlibs
 	Depends: expat1-shlibs
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: lib/libjingle*-0.3.*.dylib
 	Shlibs: <<
@@ -43,7 +42,6 @@ SplitOff: <<
 <<
 SplitOff2: <<
 	Package: %N-dev
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: lib include
 <<

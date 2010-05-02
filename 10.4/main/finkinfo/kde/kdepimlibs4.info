@@ -96,7 +96,6 @@ SplitOff: <<
 		akonadi4-%type_pkg[kde]-shlibs (<< 4.4.1-1)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4
 		opt/kde4/%type_pkg[kde]/lib/libakonadi-contact.4*.dylib
@@ -153,7 +152,6 @@ SplitOff10: <<
 	Depends: %N (= %v-%r)
 	Replaces: kdepim4-%type_pkg[kde]-dev (<< 4.3.0-1)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
 		opt/kde4/%type_pkg[kde]/lib
@@ -164,7 +162,6 @@ SplitOff2: <<
 	Package: libkholidays4-%type_pkg[kde]-shlibs
 	Description: KDE4 - holiday calendar shared libraries
 	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1)
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/lib/libkholidays.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkholidays.4.dylib 4.0.0 %n (>= 4.3.0-1)
 <<
@@ -172,7 +169,6 @@ SplitOff3: <<
 	Package: libkholidays4-%type_pkg[kde]
 	Description: KDE4 - holiday calendar support
 	Depends: %n-shlibs (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/share/apps/libkholidays
 <<
 

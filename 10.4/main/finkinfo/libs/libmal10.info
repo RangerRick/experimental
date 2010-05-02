@@ -45,7 +45,6 @@ SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for libmal
 	Depends: pilot-link09-shlibs
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 	Files: lib/libmal.*.dylib
 	Shlibs: %p/lib/libmal.1.dylib 2.0.0 %n (>= 0.40-1026)
@@ -59,7 +58,6 @@ SplitOff2: <<
 		readline5-shlibs (>= 5.0-1004)
 	<<
 	Replaces: %N (<< 0.40-1026)
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 	Files: bin
 <<

@@ -49,7 +49,6 @@ SplitOff: <<
 		libiconv
 	<<
 	Replaces: %N (<< 0.6.13-5)
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README
 	Files: lib/libexif.*.dylib share/locale
 	Shlibs: %p/lib/libexif.12.dylib 15.0.0 libexif12 (>= 0.6.16-1)

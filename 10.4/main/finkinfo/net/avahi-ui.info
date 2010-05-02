@@ -80,7 +80,6 @@ SplitOff: <<
 		libavahi-glib1-shlibs (>= %v-1),
 		gtk+2-shlibs (>= 2.14.7-1)
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: LICENSE
 	Files: lib/libavahi-ui.0*.dylib
 	Shlibs: %p/lib/libavahi-ui.0.dylib 2.0.0 %n (>= 0.6.23-1)
@@ -91,7 +90,6 @@ SplitOff2: <<
 		libavahi-client3-shlibs (>= %v-1),
 		libavahi-glib1-shlibs (>= %v-1)
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: LICENSE
 	Files: lib/libavahi-gobject.0*.dylib
 	Shlibs: %p/lib/libavahi-gobject.0.dylib 1.0.0 %n (>= 0.6.23-1)
@@ -105,7 +103,6 @@ SplitOff3: <<
 		libavahi-gobject0-shlibs (>= %v-%r)
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	DocFiles: LICENSE
 	Files: include lib
 <<

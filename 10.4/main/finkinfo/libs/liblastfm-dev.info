@@ -61,7 +61,6 @@ DocFiles: COPYING README
 SplitOff: <<
 	Package: liblastfm-%type_pkg[lastfm]-shlibs
 	Description: Shared libraries for Last.fm web services
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/lastfm/%type_pkg[lastfm]/lib/liblastfm.0*.dylib
 		opt/lastfm/%type_pkg[lastfm]/lib/liblastfm_fingerprint.0*.dylib

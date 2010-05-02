@@ -48,7 +48,6 @@ SplitOff: <<
 		libxml2-shlibs (>= 2.6.32-1),
 		sqlite3-shlibs
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: <<
 		lib/libopensync.0*.dylib
@@ -69,7 +68,6 @@ SplitOff2: <<
 		%N-shlibs (>= %v-%r),
 		python26-shlibs
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: <<
 		lib/python2.6/site-packages/*.so
@@ -82,7 +80,6 @@ SplitOff3: <<
 	Description: Developer headers and libraries for opensync
 	Depends: %N (= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: include lib
 <<

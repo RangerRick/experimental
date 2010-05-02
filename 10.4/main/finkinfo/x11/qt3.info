@@ -333,7 +333,6 @@ SplitOff: <<
 		%N-linguist,
 		%N-doc
 	<<
-	UseMaxBuildJobs: true
 	RuntimeVars: QTDIR: %p/lib/qt3
 	Files: <<
 		lib/libqt-mt.*.dylib
@@ -378,7 +377,6 @@ SplitOff2: <<
 		%N-bin,
 		qt2
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/designer
 		share/applnk/Development/designer.desktop
@@ -397,7 +395,6 @@ SplitOff3: <<
 		%N-designer,
 		qt2
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/libdesignercore.*.dylib
 		lib/%N/lib/libdesignercore.*.dylib
@@ -418,7 +415,6 @@ SplitOff4: <<
 		%N-bin,
 		qt2
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/l*
 		bin/qm2ts
@@ -443,7 +439,6 @@ SplitOff5: <<
 		qt,
 		qt3
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/%N lib/%N/doc
 <<
 

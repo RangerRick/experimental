@@ -89,7 +89,6 @@ SplitOff: <<
 	Package: fontconfig2-shlibs
 	Description: Fontconfig 2, shared libs (dummy)
 	Depends: system-xfree86-shlibs (>= 2:7.2-1)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/fontconfig2/bin
 		lib/fontconfig2/lib/libfontconfig.1*dylib

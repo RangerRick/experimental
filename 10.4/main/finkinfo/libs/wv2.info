@@ -51,7 +51,6 @@ SplitOff: <<
 		libiconv,
 		libxml2-shlibs
 	<<
-	UseMaxBuildJobs: true
 	Files: lib/libwv2.*.dylib
 	Shlibs: %p/lib/libwv2.1.dylib 2.0.0 %n (>= 0.2.1-1)
 <<

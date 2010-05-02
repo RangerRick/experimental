@@ -65,7 +65,6 @@ SplitOff: <<
 		libxml2-shlibs (>= 2.6.32-1)
 	<<
 	Replaces: %N
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/libgst*-0.10.*.dylib
 		lib/gstreamer-0.10
@@ -84,7 +83,6 @@ SplitOff2: <<
 	Package: %N-dev
 	Depends: %N (= %v-%r)
 	BuildDependsOnly: True
-	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib

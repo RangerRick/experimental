@@ -49,7 +49,6 @@ DocFiles: CHANGES COPYING CREDITS GROUPS README
 SplitOff: <<
 	Package: %N4.4-shlibs
 	Description: Shared libraries for RPM
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: <<
 		lib/librpm-4.4.dylib
@@ -69,7 +68,6 @@ SplitOff2: <<
 	Package: %N4.4-dev
 	Description: Development headers and libraries for RPM
 	Depends: %N (= %v-%r)
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: include lib/*.la lib/*.dylib lib/*.a
 <<

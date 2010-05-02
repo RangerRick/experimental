@@ -39,7 +39,6 @@ SplitOff: <<
 	Package: %N-dev
 	Description: Development files for LADSPA
 	Depends: %N
-	UseMaxBuildJobs: true
 	Files: include
 <<
 

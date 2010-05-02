@@ -82,7 +82,6 @@ SplitOff: <<
 		qt-shlibs,
 		qt
 	<<
-	UseMaxBuildJobs: true
 	Files: lib/libqt.%v.dylib lib/libqt.2.dylib lib/libqutil.1.0.0.dylib lib/libqutil.1.dylib
 	PreInstScript: <<
 if [ "$1" = "install" ]; then

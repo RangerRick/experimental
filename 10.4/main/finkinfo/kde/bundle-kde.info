@@ -30,7 +30,6 @@ SplitOff: <<
 		kdewebdev3 (>= %v-1),
 		koffice (>= 1.6.0-1)
 	<<
-	UseMaxBuildJobs: true
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
 

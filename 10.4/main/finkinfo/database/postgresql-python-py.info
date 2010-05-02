@@ -87,7 +87,6 @@ DocFiles: COPYRIGHT HISTORY INSTALL README
 SplitOff: <<
 	Package: postgresql-ssl-python-py%type_pkg[python]
 	Depends: postgresql-python-py%type_pkg[python] (>= %v-%r)
-	UseMaxBuildJobs: true
 	DocFiles: COPYRIGHT HISTORY INSTALL README
 <<
 

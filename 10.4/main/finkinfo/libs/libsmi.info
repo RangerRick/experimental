@@ -29,7 +29,6 @@ DocFiles: ANNOUNCE COPYING ChangeLog README THANKS TODO
 SplitOff: <<
 	Package: %N-shlibs
 	Depends: %N-data (>= %v-%r)
-	UseMaxBuildJobs: true
 	DocFiles: ANNOUNCE COPYING ChangeLog README THANKS TODO
 	Files: lib/libsmi.2*.dylib
 	Shlibs: %p/lib/libsmi.2.dylib 3.0.0 %n (>= 0.4.1-1)
@@ -40,14 +39,12 @@ SplitOff2: <<
 		%N-shlibs (>= %v-%r),
 		wget
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: ANNOUNCE COPYING ChangeLog README THANKS TODO
 	Files: bin share/man/man1
 <<
 SplitOff3: <<
 	Package: %N-data
 	Replaces: %N (<< 0.4.8-1)
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: share/mibs share/pibs
 <<

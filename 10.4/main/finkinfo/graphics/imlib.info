@@ -60,7 +60,6 @@ SplitOff: <<
 		x11-shlibs
 	<<
 	Replaces: %N (<= 1.9.14-2)
-	UseMaxBuildJobs: true
 	DocFiles: COPYING COPYING.LIB README AUTHORS
 	Files: <<
 		lib/libgdk_imlib.*.dylib

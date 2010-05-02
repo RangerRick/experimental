@@ -52,7 +52,6 @@ SplitOff: <<
 		libvorbis0-shlibs,
 		speex3-shlibs
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: <<
 		lib/libakode*.2*.dylib
@@ -64,7 +63,6 @@ SplitOff2: <<
 	Package: %N-bin
 	Description: Audio decoding framework, cmdline tool
 	Depends: %N-shlibs (= %v-%r)
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: bin/akodeplay
 <<

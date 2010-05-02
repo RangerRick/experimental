@@ -29,7 +29,6 @@ SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for musicbrainz
 	Depends: expat1-shlibs
-	UseMaxBuildJobs: true
 	Files: lib/libmusicbrainz.*.dylib
 	Shlibs: %p/lib/libmusicbrainz.4.dylib 5.0.0 %n (>= 2.1.1-1)
 <<

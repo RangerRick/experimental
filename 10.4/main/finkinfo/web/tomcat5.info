@@ -99,7 +99,6 @@ SplitOff: <<
 		tomcat4-webapps,
 		tomcat5
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		share/webapps
 		var/%N/conf/Catalina/localhost/*

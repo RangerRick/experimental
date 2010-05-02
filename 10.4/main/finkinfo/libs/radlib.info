@@ -21,7 +21,6 @@ DocFiles: AUTHORS COPYING ChangeLog INSTALL MAINTAIN NEWS README
 SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for radlib
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: lib/librad.0*.dylib
 	Shlibs: %p/lib/librad.0.dylib 1.0.0 %N-shlibs (>= 2.7.0-1)
@@ -31,7 +30,6 @@ SplitOff2: <<
 	Description: Headers and libraries for radlib development
 	Depends: %N (= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: include lib
 <<

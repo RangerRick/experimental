@@ -80,7 +80,6 @@ DocFiles: COPYRIGHT HISTORY INSTALL
 SplitOff2: <<
 	Package: postgresql-ssl-tcl
 	Depends: postgresql-tcl (>= %v-%r)
-	UseMaxBuildJobs: true
 	DocFiles: COPYRIGHT HISTORY INSTALL
 <<
 Shlibs: !%p/lib/pgtcl1.5.2/libpgtcl1.5.2.dylib

@@ -29,7 +29,6 @@ SplitOff: <<
 	Description: shared libraries for gdchart
 	Depends: gd-shlibs
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: lib/libgdc.0*.dylib
 <<
 

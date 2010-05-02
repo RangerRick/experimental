@@ -32,7 +32,6 @@ DocFiles: ANNOUNCE CHANGES COPYING TODO
 SplitOff: <<
 	Package: %N-dev
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	DocFiles: COPYING libjbig/jbig.doc pbmtools/*.5
 	Files: <<
 		include

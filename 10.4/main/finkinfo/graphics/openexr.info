@@ -47,7 +47,6 @@ SplitOff: <<
 	Package: %N-dev
 	Description: headers and libraries for OpenEXR development
 	Depends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/*.a

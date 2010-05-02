@@ -46,7 +46,6 @@ SplitOff: <<
 	Description: headers and development libraries for mDNSResponder
 	Depends: %N (>= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/libdns_sd.dylib
@@ -55,7 +54,6 @@ SplitOff: <<
 SplitOff2: <<
 	Package: %N-shlibs
 	Description: shared libraries for mDNSResponder
-	UseMaxBuildJobs: true
 	Files: lib
 	Shlibs: %p/lib/libdns_sd.1.dylib 0.0.0 %N-shlibs (>= 87-1)
 <<

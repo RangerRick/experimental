@@ -132,7 +132,6 @@ SplitOff: <<
 		amarok-kde-gstreamer-xine,
 		amarok (<< %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: lib/libamarok.*.dylib
 	Shlibs: %p/lib/libamarok.0.dylib 1.0.0 %N-shlibs (>= 1.4.0-1)
 <<

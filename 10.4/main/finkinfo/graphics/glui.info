@@ -47,7 +47,6 @@ DocFiles: readme.txt
 SplitOff: <<
 	Package: %N-shlibs
 	Depends: glut-shlibs (>= 3.7-1025)
-	UseMaxBuildJobs: true
 	DocFiles: readme.txt
 	Files: lib/libglui.2.2.dylib lib/libglui.2.dylib
 	Shlibs: %p/lib/libglui.2.dylib 2.1.0 %n (>= 2.1-16)

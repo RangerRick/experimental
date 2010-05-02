@@ -52,7 +52,6 @@ DocFiles: AUTHORS COPYING* ChangeLog* LICENSE* NEWS* NOTICE README* RELEASE*
 SplitOff: <<
 	Package: rasqal-bin
 	Depends: %N (= %v-%r)
-	UseMaxBuildJobs: true
 	DocFiles: COPYING* LICENSE* README*
 	Files: bin/roqet share/man/man1/roqet.1
 <<
@@ -63,7 +62,6 @@ SplitOff2: <<
 		pkgconfig (>= 0.23-1)
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	DocFiles: COPYING* LICENSE* README*
 	Files: bin include lib/librasqal.{a,la,dylib} lib/pkgconfig share/gtk-doc share/man
 <<

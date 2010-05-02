@@ -64,7 +64,6 @@ SplitOff: <<
 		jts,
 		postgresql-java (>= %type_raw[postgresql]-1)
 	<<
-	UseMaxBuildJobs: true
 	JarFiles: java/jdbc/postgis.jar java/pljava/postgis_pljava.jar
 <<
 

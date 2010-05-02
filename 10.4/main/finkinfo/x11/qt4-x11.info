@@ -191,7 +191,6 @@ SplitOff: <<
 		%N-linguist,
 		%N-doc
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: LGPL* LICENSE*
 	Files: <<
 		lib/%N/lib/libQt3Support.4*.dylib
@@ -239,7 +238,6 @@ SplitOff2: <<
 		sqlite3-shlibs,
 		x11-shlibs
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: LGPL* LICENSE*
 	Files: <<
 		lib/%N/lib/libQtCore.4*.dylib
@@ -273,7 +271,6 @@ SplitOff3: <<
 		x11
 	<<
 	Replaces: %N (<< %v-1)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/designer*
 		share/applnk/Development/designer4.desktop
@@ -286,7 +283,6 @@ SplitOff4: <<
 		%N-gui-shlibs (= %v-%r),
 		x11-shlibs
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: LGPL* LICENSE*
 	Files: <<
 		lib/%N/lib/libQtDesigner.4*.dylib
@@ -305,7 +301,6 @@ SplitOff5: <<
 		x11
 	<<
 	Replaces: %N (<< %v-1)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/l*
 		share/applnk/Development/linguist4.desktop
@@ -315,7 +310,6 @@ SplitOff5: <<
 <<
 SplitOff6: <<
 	Package: %N-doc
-	UseMaxBuildJobs: true
 	Files: share/doc/%N
 <<
 

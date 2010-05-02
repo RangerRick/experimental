@@ -21,7 +21,6 @@ DocFiles: Changes MANIFEST
 SplitOff: <<
 	Package: %N-man
 	Depends: %N (= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/man
 <<
 

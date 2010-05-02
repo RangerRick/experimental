@@ -86,7 +86,6 @@ SplitOff: <<
 		kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
 		svn15-shlibs (>= 1.6.0-1)
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: COPYING*
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4
@@ -121,7 +120,6 @@ SplitOff2: <<
 	Description: KDE4 - headers and static libs for kdevplatform
 	Depends: %N (= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	DocFiles: COPYING*
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include

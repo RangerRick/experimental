@@ -52,7 +52,6 @@ SplitOff: <<
 	Description: libmath++ development headers and libraries.
 	Depends: libmath++ (>= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: include lib/libmath++.dylib lib/*.a lib/*.la share/doc/%N/user-api
 <<
 

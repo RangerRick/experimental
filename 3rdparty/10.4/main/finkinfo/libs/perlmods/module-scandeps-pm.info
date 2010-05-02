@@ -17,7 +17,6 @@ UpdatePOD: true
 DocFiles: AUTHORS Changes MANIFEST META.yml README
 SplitOff: <<
 	Package: %N-bin
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS Changes MANIFEST META.yml README
 	Files: bin share/man/man1
 <<

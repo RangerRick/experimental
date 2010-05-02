@@ -62,7 +62,6 @@ END
 DocFiles: readme.txt
 SplitOff: <<
 	Package: %N-shlibs
-	UseMaxBuildJobs: true
 	Files: lib/libglui-aqua.*.dylib
 	Shlibs: %p/lib/libglui-aqua.2.dylib 2.0.0 %n (>= 2.2-1)
 <<

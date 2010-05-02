@@ -50,7 +50,6 @@ SplitOff: <<
 		(%type_raw[ruby] = 1.8) ruby (>= 1.8-0),
 		(%type_raw[ruby] = 1.8) ruby (<< 1.9-0)
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: ChangeLog GPL* History* LICENSE* README
 	Files: bin
 	PostInstScript: <<

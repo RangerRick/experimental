@@ -33,7 +33,6 @@ InstallScript: <<
 DocFiles: AUTHORS ChangeLog COPYING INSTALL NEWS README* QuickStart*
 SplitOff: <<
 	Package: %N-shlibs
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: lib/ggz2/lib/libggz.2*.dylib
 	Shlibs: %p/lib/ggz2/lib/libggz.2.dylib 6.0.0 %n (>= 0.0.14-1)

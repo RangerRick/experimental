@@ -102,7 +102,6 @@ SplitOff: <<
 		qt4-%type_pkg[qt]-gui-shlibs (>= 4.6.1-1),
 		(%type_pkg[qt] = x11) x11
 	<<
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[qt]/lib/libpoppler-qt4.3*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[qt]/lib/libpoppler-qt4.3.dylib 5.0.0 %n (>= 0.10.5-2)
 <<

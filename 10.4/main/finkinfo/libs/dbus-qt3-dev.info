@@ -35,7 +35,6 @@ SplitOff: <<
 		dbus-shlibs (>= 1.2.12-1),
 		qt3-shlibs
 	<<
-	UseMaxBuildJobs: true
 	Files: lib/libdbus-qt-1.*.dylib
 	Shlibs: %p/lib/libdbus-qt-1.1.dylib 2.0.0 %n (>= 0.60-1)
 <<

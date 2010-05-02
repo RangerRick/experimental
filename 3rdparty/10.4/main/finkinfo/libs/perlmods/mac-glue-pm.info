@@ -55,7 +55,6 @@ SplitOff: <<
 		%{Ni}584-bin,
 		%{Ni}586-bin
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: Changes MANIFEST README
 	Files: <<
 		bin/gluemac

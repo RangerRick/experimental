@@ -35,7 +35,6 @@ InstallScript: make -j1 install DESTDIR="%d"
 DocFiles: AUTHORS COPYING ChangeLog* INSTALL NEWS README TODO
 SplitOff: <<
 	Package: %N-shlibs
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: lib/libpixman-1.0*.dylib
 	Shlibs: %p/lib/libpixman-1.0.dylib 19.0.0 %N-shlibs (>= 0.18.0-1)

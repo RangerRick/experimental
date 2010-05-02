@@ -93,7 +93,6 @@ SplitOff: <<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/*.la
@@ -169,7 +168,6 @@ SplitOff2: <<
 		%N (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kfilereplace
 		lib/kde3/*kfilereplace*
@@ -250,7 +248,6 @@ SplitOff3: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kimagemapeditor
 		lib/kde3/*kimagemap*
@@ -331,7 +328,6 @@ SplitOff4: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/klinkstatus
 		lib/kde3/*klinkstatus*
@@ -419,7 +415,6 @@ SplitOff5: <<
 		%N (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kmdr-*
 		lib/libkommander*
@@ -518,7 +513,6 @@ SplitOff6: <<
 		%N (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kxsldbg
 		bin/xsldbg
@@ -619,7 +613,6 @@ SplitOff7: <<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
 	Suggests: kdiff3
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/quanta
 		lib/kde3/*quanta*
@@ -705,7 +698,6 @@ SplitOff8: <<
 	Depends: kdebase3-unified (>= %v-1)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------

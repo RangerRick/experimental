@@ -44,7 +44,6 @@ InstallScript: <<
 <<
 SplitOff: <<
 	Package: %N-shlibs
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/libnspr4.*.dylib
 		lib/libplc4.*.dylib

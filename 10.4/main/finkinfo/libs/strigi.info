@@ -60,7 +60,6 @@ SplitOff: <<
 		libiconv,
 		libxml2-shlibs (>= 2.6.32-1)
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: <<
 		lib/libsearchclient.0*.dylib
@@ -81,7 +80,6 @@ SplitOff2: <<
 	Depends: %N (= %v-%r)
 	Replaces: %N
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: include lib/pkgconfig lib/*.dylib
 <<

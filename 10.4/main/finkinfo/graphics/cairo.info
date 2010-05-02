@@ -82,7 +82,6 @@ SplitOff: <<
 		pixman-shlibs (>= 0.16.0-1),
 		x11-shlibs
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING ChangeLog* INSTALL NEWS README
 	Files: lib/libcairo.*.dylib
 	Shlibs: %p/lib/libcairo.2.dylib 10803.0.0 %N-shlibs (>= 1.8.0-1)

@@ -67,7 +67,6 @@ SplitOff: <<
 	Package: kmouth4-%type_pkg[kde]
 	Description: KDE4 - text-to-speech tool
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kmouth*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kmouth*
@@ -86,21 +85,18 @@ SplitOff5: <<
 	Package: %N-color-schemes
 	Description: KDE4 - color schemes to aid accessibility
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/share/apps/color-schemes
 <<
 SplitOff6: <<
 	Package: %N-icon-themes
 	Description: KDE4 - icon themes to aid accessibility
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/share/icons
 <<
 SplitOff7: <<
 	Package: %N-base
 	Description: KDE4 - kdeaccessibility base package
 	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1)
-	UseMaxBuildJobs: true
 	Files: opt share/doc/installed-packages/%N-base
 <<
 

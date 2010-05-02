@@ -60,7 +60,6 @@ SplitOff: <<
 		freetype219-shlibs (>= 2.3.12-1),
 		libsigc++2-shlibs
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: lib/lib*.*.*.dylib
 	Shlibs: %p/lib/libcairomm-1.0.1.dylib 6.0.0 %n (>= 1.8.2-1)

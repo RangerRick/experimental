@@ -59,7 +59,6 @@ DocFiles: AUTHORS COPYING* doc/*
 SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for the taglib meta-data library
-	UseMaxBuildJobs: true
 	DocFiles: COPYING*
 	Files: <<
 		lib/libtag.1*.dylib

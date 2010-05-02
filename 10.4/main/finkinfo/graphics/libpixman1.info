@@ -22,7 +22,6 @@ InstallScript: make install DESTDIR=%d
 DocFiles: AUTHORS COPYING ChangeLog* INSTALL NEWS README
 SplitOff: <<
 	Package: %N-shlibs
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING ChangeLog* INSTALL NEWS README
 	Files: lib/libpixman.1*.dylib
 	Shlibs: %p/lib/libpixman.1.dylib 2.0.0 %N-shlibs (>= 0.1.1-1)

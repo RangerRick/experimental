@@ -67,7 +67,6 @@ SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for libidn
 	Depends: libiconv
-	UseMaxBuildJobs: true
 	Files: lib/libidn.*.dylib
 	Shlibs: %p/lib/libidn.11.dylib 17.0.0 %N-shlibs (>= 0.5.20-1)
 <<
@@ -75,7 +74,6 @@ SplitOff2: <<
 	Package: %N-java
 	Description: Java implementation of libidn
 	Depends: system-java (>= 1.5-1)
-	UseMaxBuildJobs: true
 	JarFiles: java/%N-%v.jar
 <<
 SplitOff3: <<
@@ -86,7 +84,6 @@ SplitOff3: <<
 		libgettext8-shlibs
 	<<
 	Replaces: %N (<< 0.5.18-1)
-	UseMaxBuildJobs: true
 	Files: bin share/locale share/man/man1 share/info
 	InfoDocs: libidn.info
 <<

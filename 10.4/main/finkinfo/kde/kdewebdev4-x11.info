@@ -74,7 +74,6 @@ SplitOff: <<
 	Package: kfilereplace4-%type_pkg[kde]
 	Description: KDE4 - batch search-and-replace
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kfilereplace*
 		opt/kde4/%type_pkg[kde]/lib/kde4/libkfilereplace*
@@ -94,7 +93,6 @@ SplitOff10: <<
 	Description: KDE4 - kdewebdev headers and libraries
 	Depends: %N (>= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
 		opt/kde4/%type_pkg[kde]/lib/libkommandercore.dylib
@@ -105,14 +103,12 @@ SplitOff11: <<
 	Package: %N-base
 	Description: KDE4 - kdewebdev base package
 	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1)
-	UseMaxBuildJobs: true
 	Files: opt share/doc/installed-packages/%n
 <<
 SplitOff2: <<
 	Package: kimagemapeditor4-%type_pkg[kde]
 	Description: KDE4 - HTML image map editor
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kimagemapeditor*
 		opt/kde4/%type_pkg[kde]/lib/kde4/libkimagemapedito*
@@ -130,7 +126,6 @@ SplitOff3: <<
 	Package: klinkstatus4-%type_pkg[kde]
 	Description: KDE4 - web link validity checker
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/klinkstatus*
 		opt/kde4/%type_pkg[kde]/lib/kde4/*linkstatus*
@@ -155,7 +150,6 @@ SplitOff4: <<
 	Package: kommander4-%type_pkg[kde]
 	Description: KDE4 - visual dialog builder
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kommander*
 		opt/kde4/%type_pkg[kde]/lib/libkommandercore.4*.dylib

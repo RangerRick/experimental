@@ -59,7 +59,6 @@ SplitOff: <<
 	<<
 	Conflicts: fltk
 	Replaces: fltk
-	UseMaxBuildJobs: true
 	DocFiles: ANNOUNCEMENT CHANGES COPYING CREDITS README
 	Files: <<
 		lib/libfltk.*.dylib

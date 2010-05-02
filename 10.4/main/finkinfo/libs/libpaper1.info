@@ -44,7 +44,6 @@ DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README
 SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for libpaper
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: lib/libpaper.*.dylib etc/papersize
 	Shlibs: %p/lib/libpaper.1.dylib 3.0.0 libpaper1-shlibs (>= 1.1.14-1)
@@ -56,7 +55,6 @@ SplitOff2: <<
 	Depends: %N-shlibs (>= %v-%r)
 	Replaces: %N
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: lib/libpaper.dylib lib/*.la lib/*.a include
 <<

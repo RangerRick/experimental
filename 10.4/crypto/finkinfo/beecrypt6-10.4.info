@@ -25,7 +25,6 @@ DocFiles: AUTHORS BENCHMARKS CONTRIBUTORS COPYING* ChangeLog NEWS README*
 SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for beecrypt
-	UseMaxBuildJobs: true
 	DocFiles: COPYING*
 	Files: lib/libbeecrypt.6*.dylib
 	Shlibs: %p/lib/libbeecrypt.6.dylib 11.0.0 %n (>= 4.1.2-1)

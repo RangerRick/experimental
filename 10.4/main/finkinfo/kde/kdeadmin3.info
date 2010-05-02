@@ -94,7 +94,6 @@ SplitOff: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kcron
 		share/applications/kde/kcron*
@@ -174,7 +173,6 @@ SplitOff2: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kpackage
 		lib/kde3/kfile_deb.*
@@ -257,7 +255,6 @@ SplitOff3: <<
 	Description: KDE - PAM security policy viewer
 	Depends: %N-base (>= %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: bin/secpolicy
 	DescDetail: <<
 This tool allows you to manipulate the PAM configuration
@@ -325,7 +322,6 @@ SplitOff4: <<
 	Depends: kdebase3-unified (>= %v-1)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------

@@ -50,7 +50,6 @@ SplitOff: <<
 		module-corelist-pm585-bin,
 		module-corelist-pm586-bin
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: Changes MANIFEST README
 	Files: bin
 <<

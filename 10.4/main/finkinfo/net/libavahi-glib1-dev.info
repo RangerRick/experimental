@@ -50,7 +50,6 @@ SplitOff: <<
 		libiconv,
 		libavahi-common3-shlibs (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: LICENSE
 	Files: lib/libavahi-glib.1*.dylib
 	Shlibs: %p/lib/libavahi-glib.1.dylib 2.0.0 %n (>= 0.6.20-1)

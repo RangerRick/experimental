@@ -89,7 +89,6 @@ InstallScript: <<
 DocFiles: AGENT.txt CHANGES COPYING ChangeLog CodingStyle EXAMPLE.conf.def FAQ NEWS PORTING README* TODO
 SplitOff: <<
 	Package: %N15-shlibs
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: lib/libnetsnmp*.15*.dylib
 	Shlibs: <<
@@ -116,7 +115,6 @@ SplitOff2: <<
 		net-snmp-unified-dev
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: include lib/*.a lib/*.dylib bin/net-snmp-config
 <<
@@ -128,7 +126,6 @@ SplitOff3: <<
 		fink (>= 0.29.7-1),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff4: <<
@@ -139,7 +136,6 @@ SplitOff4: <<
 		fink (>= 0.29.7-1),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 

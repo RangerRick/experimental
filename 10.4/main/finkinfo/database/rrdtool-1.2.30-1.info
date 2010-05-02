@@ -65,7 +65,6 @@ SplitOff: <<
 		rrdtool-fonts
 	<<
 	Suggests: %N
-	UseMaxBuildJobs: true
 	Files: lib/librrd*.*.dylib
 	Shlibs: <<
 		%p/lib/librrd.2.dylib 3.0.0 librrd2-shlibs (>= 1.2.8-1)
@@ -75,7 +74,6 @@ SplitOff: <<
 SplitOff2: <<
 	Package: %N-fonts
 	Description: Fonts for RRDTool PNG rendering
-	UseMaxBuildJobs: true
 	Files: share/rrdtool/fonts
 <<
 SplitOff3: <<
@@ -83,7 +81,6 @@ SplitOff3: <<
 	Description: Utilities for round-robin databases
 	Depends: %N (>= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: include lib/*.a lib/*.la lib/librrd.dylib lib/librrd_th.dylib
 <<
 SplitOff4: <<
@@ -94,7 +91,6 @@ SplitOff4: <<
 		tcltk-shlibs
 	<<
 	Enhances: librrd2-shlibs
-	UseMaxBuildJobs: true
 	Files: lib/tclrrd%v lib/tclrrd%v.dylib
 	Shlibs: %p/lib/tclrrd%v.dylib 0.0.0 rrdtool-tcl (>= 1.2.23-1)
 <<

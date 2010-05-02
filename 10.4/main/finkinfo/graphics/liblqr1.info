@@ -32,7 +32,6 @@ SplitOff: <<
 		glib2-shlibs,
 		libgettext8-shlibs
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: COPYING* README
 	Files: lib/liblqr-1.0*.dylib
 	Shlibs: %p/lib/liblqr-1.0.dylib 4.0.0 %n (>= 0.4.1-1)

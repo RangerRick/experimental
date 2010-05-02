@@ -54,7 +54,6 @@ SplitOff: <<
 		libgettext8-shlibs,
 		libiconv
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: LICENSE full-documentation
 	Files: lib/libavahi-client.3*.dylib
 	Shlibs: %p/lib/libavahi-client.3.dylib 6.0.0 %n (>= 0.6.20-1)
@@ -65,7 +64,6 @@ SplitOff2: <<
 		libgettext8-shlibs,
 		libiconv
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: LICENSE full-documentation
 	Files: lib/libavahi-common.3*.dylib
 	Shlibs: %p/lib/libavahi-common.3.dylib 9.0.0 %n (>= 0.6.22-1)
@@ -77,7 +75,6 @@ SplitOff3: <<
 		libgettext8-shlibs,
 		libiconv
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: LICENSE full-documentation
 	Files: lib/libavahi-core.6*.dylib
 	Shlibs: %p/lib/libavahi-core.6.dylib 7.0.0 %n (>= 0.6.25-1)
@@ -91,7 +88,6 @@ SplitOff4: <<
 		libavahi-core6-shlibs (= %v-%r)
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	DocFiles: LICENSE full-documentation
 	Files: <<
 		include

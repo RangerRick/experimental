@@ -300,7 +300,7 @@ sub handle_file {
 			my $treeproperties = clone($properties);
 			$treeproperties->{'Tree'} = $tree;
 
-			$treeproperties = transform_fields($treeproperties, clone($treeproperties));
+			$treeproperties = transform_fields($treeproperties, clone($treeproperties), 1);
 
 			my $todir = $dir;
 			$todir =~ s#/common/#/${tree}/#;
@@ -340,6 +340,7 @@ sub handle_file {
 sub transform_fields {
 	my $packagehash = shift;
 	my $properties  = shift;
+	my $toplevel    = shift || 0;
 
 	for my $field (keys %$properties) {
 		my $lcfield = lc($field);
@@ -353,7 +354,7 @@ sub transform_fields {
 		}
 	}
 
-	if (not exists $properties->{'UseMaxBuildJobs'}) {
+	if ($toplevel and not exists $properties->{'UseMaxBuildJobs'}) {
 		if (exists $properties->{'NoSetMAKEFLAGS'}) {
 			$properties->{'UseMaxBuildJobs'} = 'false';
 		} else {

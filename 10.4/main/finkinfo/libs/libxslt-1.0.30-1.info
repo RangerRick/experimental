@@ -36,7 +36,6 @@ SplitOff: <<
 	Description: XML stylsheet transformation shared libraries
 	Depends: libxml2-shlibs (>= 2.6.32-1)
 	Replaces: %N (<< 1.0.15-2)
-	UseMaxBuildJobs: true
 	DocFiles: COPYING AUTHORS Copyright
 	Files: lib/libexslt.0*.dylib lib/libxslt.1*.dylib lib/libxsltbreakpoint.1*.dylib
 	Shlibs: <<

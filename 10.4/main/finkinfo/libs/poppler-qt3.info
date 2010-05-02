@@ -77,7 +77,6 @@ SplitOff: <<
 		poppler1-shlibs (>= %v-1),
 		qt3-shlibs (>= 3.3.8-1027)
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING ChangeLog NEWS README README-XPDF TODO
 	Files: lib/libpoppler-qt.1*.dylib
 	Shlibs: %p/lib/libpoppler-qt.1.dylib 2.0.0 %n (>= 0.5.4-1)

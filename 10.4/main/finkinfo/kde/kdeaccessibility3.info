@@ -132,7 +132,6 @@ SplitOff: <<
 	Description: KDE - magnifier
 	Depends: %N-base (>= %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kmag
 		share/applnk/Applications/kmag.desktop
@@ -206,7 +205,6 @@ SplitOff2: <<
 	Description: KDE - automatically click when mouse idles
 	Depends: %N-base (>= %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kmousetool
 		share/applnk/Applications/kmousetool.desktop
@@ -287,7 +285,6 @@ SplitOff3: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/ktts*
 		lib/kde3/kcm_kttsd.*
@@ -384,7 +381,6 @@ SplitOff4: <<
 	Description: KDE - Speak a text file
 	Depends: %N-base (>= %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/ksayit
 		include/ksayit*
@@ -470,7 +466,6 @@ SplitOff5: <<
 	Description: KDE - Track keyboard state
 	Depends: %N-base (>= %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/kbstate*
 		share/apps/kbstateapplet
@@ -537,7 +532,6 @@ SplitOff6: <<
 	Description: KDE - %N icon themes
 	Depends: %N-base (>= %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/icons/mono
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -601,7 +595,6 @@ SplitOff7: <<
 	Depends: kdebase3-unified (>= %v-1)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------

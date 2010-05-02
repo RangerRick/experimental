@@ -76,7 +76,6 @@ DocFiles: LICENSE* README*
 SplitOff: <<
 	Package: %N-runtime
 	Description: Runtime QtScript plugins
-	UseMaxBuildJobs: true
 	Files: lib/qt4-%type_pkg[qt]/plugins
 <<
 

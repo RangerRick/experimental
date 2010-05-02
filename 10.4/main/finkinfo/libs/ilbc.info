@@ -19,7 +19,6 @@ InstallScript: make install DESTDIR=%d
 DocFiles: AUTHORS ChangeLog INSTALL NEWS README ../gips_iLBClicense.pdf
 SplitOff: <<
 	Package: %N-shlibs
-	UseMaxBuildJobs: true
 	DocFiles: ../gips_iLBClicense.pdf
 	Files: lib/libilbc.*.dylib
 	Shlibs: %p/lib/libilbc.0.dylib 1.0.0 %n (>= 1.0-1)

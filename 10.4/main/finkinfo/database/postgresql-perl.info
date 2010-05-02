@@ -93,7 +93,6 @@ DocFiles: COPYRIGHT HISTORY INSTALL src/pl/plperl/README
 SplitOff: <<
 	Package: postgresql-ssl-perl-%type_pkg[perl]
 	Depends: postgresql-perl-%type_pkg[perl] (>= %v-%r)
-	UseMaxBuildJobs: true
 	DocFiles: COPYRIGHT HISTORY INSTALL src/pl/plperl/README
 <<
 

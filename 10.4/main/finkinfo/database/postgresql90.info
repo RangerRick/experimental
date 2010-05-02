@@ -195,7 +195,6 @@ SplitOff: <<
 	Description: PostgreSQL development headers and libraries
 	Depends: %N (>= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/postgresql-9.0/bin/pg_config*
 		opt/postgresql-9.0/include
@@ -221,7 +220,6 @@ fi
 SplitOff2: <<
 	Package: %N-shlibs
 	Description: PostgreSQL shared libraries
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/postgresql-9.0/lib/lib*.*.dylib
 		var/postgresql-9.0/*.sh

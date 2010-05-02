@@ -52,7 +52,6 @@ SplitOff: <<
 	Description: Shared libraries for QCA
 	Depends: qt4-%type_pkg[qca]-gui-shlibs (>= 4.6.1-1)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: opt/qca2/%type_pkg[qca]/lib/libqca.2*.dylib
 	Shlibs: %p/opt/qca2/%type_pkg[qca]/lib/libqca.2.dylib 2.0.0 %n (>= 2.0.2-1)

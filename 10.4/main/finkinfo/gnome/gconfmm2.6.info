@@ -57,7 +57,6 @@ SplitOff: <<
 		pango1-xft2-ft219-shlibs (>= 1.24.0-1),
 		x11-shlibs
 	<<
-	UseMaxBuildJobs: true
 	Files: lib/libgconfmm-2.6.*.dylib
 	Shlibs: %p/lib/libgconfmm-2.6.1.dylib 2.0.0 %n (>= 2.10.0-2)
 <<

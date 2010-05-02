@@ -126,7 +126,6 @@ SplitOff: <<
 		gstreamer-0.10 (>= 0.10.26-1),
 		gst-plugins-base-0.10 (>= 0.10.26-1)
 	<<
-	UseMaxBuildJobs: true
 	Files: lib
 <<
 

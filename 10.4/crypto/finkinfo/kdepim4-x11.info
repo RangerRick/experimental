@@ -175,7 +175,6 @@ SplitOff: <<
 		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
 		qt4-%type_pkg[kde]-designer-shlibs (>= 4.6.1-1)
 	<<
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/lib/libkdepim.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkdepim.4.dylib 4.0.0 %n (>= 4.2.4-1)
 <<
@@ -183,7 +182,6 @@ SplitOff11: <<
 	Package: libmimelib4-%type_pkg[kde]-shlibs
 	Description: KDE4 - MIME shared libraries
 	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1)
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/lib/libmimelib.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libmimelib.4.dylib 4.0.0 %n (>= 4.2.4-1)
 <<
@@ -194,7 +192,6 @@ SplitOff12: <<
 		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
 		libmimelib4-%type_pkg[kde]-shlibs (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/lib/libmessagecore.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libmessagecore.4.dylib 4.0.0 %n (>= 4.3.98-1)
 <<
@@ -206,7 +203,6 @@ SplitOff13: <<
 		libmessagecore4-%type_pkg[kde]-shlibs (>= %v-%r),
 		libmimelib4-%type_pkg[kde]-shlibs (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/lib/libmessagelist.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libmessagelist.4.dylib 4.0.0 %n (>= 4.3.98-1)
 <<
@@ -223,7 +219,6 @@ SplitOff14: <<
 		libmimelib4-%type_pkg[kde]-shlibs (>= %v-%r),
 		qgpgme1-%type_pkg[kde]-shlibs (>= 4.4.1-1)
 	<<
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/lib/libmessageviewer.0*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libmessageviewer.0.dylib 0.0.0 %n (>= 4.3.98-1)
 <<
@@ -231,7 +226,6 @@ SplitOff2: <<
 	Package: libkdepim4-%type_pkg[kde]
 	Description: KDE4 - PIM library support
 	Depends: %n-shlibs (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/kpartsdesignerplugin*
 		opt/kde4/%type_pkg[kde]/lib/kde4/plugins/designer/kdepimwidgets*
@@ -252,7 +246,6 @@ SplitOff20: <<
 		libkholidays4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kontact*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kcm_apptsummary*
@@ -290,7 +283,6 @@ SplitOff21: <<
 		%N-base (>= %v-%r)
 	<<
 	Replaces: %N-base (<< 4.2.4-1)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/kabc_*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kcal_*
@@ -342,7 +334,6 @@ SplitOff22: <<
 		libkdepim4-%type_pkg[kde]-shlibs (>= %v-%r),
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/akregator*
 		opt/kde4/%type_pkg[kde]/lib/kde4/akregator*
@@ -383,7 +374,6 @@ SplitOff23: <<
 		%N-base (>= %v-%r)
 	<<
 	Replaces: %n-shlibs (<< 4.3.98-1)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kaddressbook*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kaddressbookpart*
@@ -410,7 +400,6 @@ SplitOff24: <<
 		%N-base (>= %v-%r),
 		%N-resources (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kalarm*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kalarm_*
@@ -447,7 +436,6 @@ SplitOff25: <<
 		libkdepim4-%type_pkg[kde]-shlibs (>= %v-%r),
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kjots*
 		opt/kde4/%type_pkg[kde]/lib/kde4/*kjots*
@@ -483,7 +471,6 @@ SplitOff26: <<
 		qgpgme1-%type_pkg[kde]-shlibs,
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kgpgconf*
 		opt/kde4/%type_pkg[kde]/bin/kleopatra*
@@ -527,7 +514,6 @@ SplitOff27: <<
 		%N-base (>= %v-%r)
 	<<
 	Replaces: %N-base (<< 4.4.1-1)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kmail*
 		opt/kde4/%type_pkg[kde]/bin/ksendemail*
@@ -571,7 +557,6 @@ SplitOff28: <<
 		libkpgp4-%type_pkg[kde]-shlibs (>= %v-%r),
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/knode*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kcm_knode*
@@ -599,7 +584,6 @@ SplitOff29: <<
 		libkdepim4-%type_pkg[kde]-shlibs (>= %v-%r),
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/knotes*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kcm_knote*
@@ -627,7 +611,6 @@ SplitOff3: <<
 		libkleo4-%type_pkg[kde]-shlibs (>= %v-%r),
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/kmail_bodypartformatter*
 		opt/kde4/%type_pkg[kde]/lib/kde4/ktexteditorkabcbridge*
@@ -643,7 +626,6 @@ SplitOff30: <<
 		libkholidays4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/ical2vcal*
 		opt/kde4/%type_pkg[kde]/bin/korgac*
@@ -702,7 +684,6 @@ SplitOff32: <<
 		libkdepim4-%type_pkg[kde]-shlibs (>= %v-%r),
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/karm*
 		opt/kde4/%type_pkg[kde]/bin/ktimetracker*
@@ -730,7 +711,6 @@ SplitOff33: <<
 		libkdepim4-%type_pkg[kde]-shlibs (>= %v-%r),
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/akonadiconsole*
 		opt/kde4/%type_pkg[kde]/lib/libakonadi-kcal_next.4*.dylib
@@ -747,7 +727,6 @@ SplitOff34: <<
 	Package: blogilo4-%type_pkg[kde]
 	Description: KDE4 - blogging utility
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/blogilo*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/blogilo*
@@ -779,7 +758,6 @@ SplitOff35: <<
 	Package: %N-console-tools
 	Description: KDE4 - console tools for kdepim
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kabc2mutt*
 		opt/kde4/%type_pkg[kde]/bin/kabcclient*
@@ -801,7 +779,6 @@ SplitOff36: <<
 		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/akonadi_nepomuk*
 		opt/kde4/%type_pkg[kde]/share/akonadi/agents/nepomukemailfeeder*
@@ -812,7 +789,6 @@ SplitOff4: <<
 	Package: %N-wizards
 	Description: KDE4 - PIM wizards
 	Depends: 
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/*wizard*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/*wizard*
@@ -829,7 +805,6 @@ SplitOff40: <<
 		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
 		strigi-gui-%type_pkg[kde]-shlibs
 	<<
-	UseMaxBuildJobs: true
 	Files: opt
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
@@ -841,7 +816,6 @@ SplitOff5: <<
 		kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
 		qgpgme1-%type_pkg[kde]-shlibs
 	<<
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/lib/libkleo.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkleo.4.dylib 4.0.0 %n (>= 4.2.4-1)
 <<
@@ -849,7 +823,6 @@ SplitOff6: <<
 	Package: libkleo4-%type_pkg[kde]
 	Description: KDE4 - certificate manager support
 	Depends: %n-shlibs (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/share/apps/libkleopatra
 		opt/kde4/%type_pkg[kde]/share/config/libkleopatrarc
@@ -859,7 +832,6 @@ SplitOff7: <<
 	Package: libkpgp4-%type_pkg[kde]-shlibs
 	Description: KDE4 - PGP shared libraries
 	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1)
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/lib/libkpgp.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkpgp.4.dylib 4.0.0 %n (>= 4.2.4-1)
 <<
@@ -867,7 +839,6 @@ SplitOff8: <<
 	Package: libkpgp4-%type_pkg[kde]
 	Description: KDE4 - PGP support
 	Depends: %n-shlibs (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/share/apps/kconf_update/kpgp*
 		opt/kde4/%type_pkg[kde]/share/apps/kmail/pics/key*
@@ -878,7 +849,6 @@ SplitOff9: <<
 	Package: libksieve4-%type_pkg[kde]-shlibs
 	Description: KDE4 - sieve mail filter shared libraries
 	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1)
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/lib/libksieve.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libksieve.4.dylib 4.0.0 %n (>= 4.2.4-1)
 <<

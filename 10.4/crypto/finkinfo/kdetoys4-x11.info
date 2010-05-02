@@ -67,7 +67,6 @@ SplitOff: <<
 	Package: amor4-%type_pkg[kde]
 	Description: KDE4 - desktop companion
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/amor*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/amor*
@@ -86,14 +85,12 @@ SplitOff10: <<
 	Package: %N-base
 	Description: KDE4 - kdetoys base package
 	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1)
-	UseMaxBuildJobs: true
 	Files: opt share/doc/installed-packages/%n
 <<
 SplitOff2: <<
 	Package: kteatime4-%type_pkg[kde]
 	Description: KDE4 - make a fine cup of tea
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kteatime*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kteatime*
@@ -113,7 +110,6 @@ SplitOff3: <<
 	Package: kweather4-%type_pkg[kde]
 	Description: KDE4 - weather display applet
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kweather*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kcm_weather*
@@ -136,7 +132,6 @@ SplitOff4: <<
 		kdebase4-workspace-%type_pkg[kde] (>= 4.4.1-1),
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/ktux*
 		opt/kde4/%type_pkg[kde]/share/apps/ktux*

@@ -30,7 +30,6 @@ DocFiles: AUTHORS COPYING INSTALL NEWS README TODO
 SplitOff: <<
 	Package: %N-shlibs
 	Depends: libgnugetopt-shlibs
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING INSTALL NEWS README TODO
 	Files: lib/faac/libmp4v2.*.dylib lib/libfaac.*.dylib
 	Shlibs: <<
@@ -42,7 +41,6 @@ SplitOff2: <<
 	Package: %N-dev
 	Depends: %N-shlibs (= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING INSTALL NEWS README TODO
 	Files: include lib/faac/libmp4v2.{a,dylib,la} lib/libfaac.{a,dylib,la}
 <<

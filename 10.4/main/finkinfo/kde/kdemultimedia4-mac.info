@@ -80,7 +80,6 @@ SplitOff: <<
 		libxine1-shlibs,
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/dragon*
 		opt/kde4/%type_pkg[kde]/lib/kde4/dragon*
@@ -114,7 +113,6 @@ SplitOff2: <<
 		taglib-shlibs (>= 1.6.1-5),
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/juk*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/juk*
@@ -135,7 +133,6 @@ SplitOff20: <<
 	Description: KDE4 - kdemultimedia dev headers and libs
 	Depends: %N (>= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
 		opt/kde4/%type_pkg[kde]/lib/libkcddb.dylib
@@ -149,7 +146,6 @@ SplitOff21: <<
 		kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
 		libmusicbrainz4-shlibs
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/libkcddb.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkcompactdisc.4*.dylib
@@ -166,14 +162,12 @@ SplitOff22: <<
 		%N-base-shlibs (>= %v-%r),
 		kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1)
 	<<
-	UseMaxBuildJobs: true
 	Files: opt
 <<
 SplitOff4: <<
 	Package: kmix4-%type_pkg[kde]
 	Description: KDE4 - volume control and mixer
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kmix*
 		opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kmix*
@@ -202,7 +196,6 @@ SplitOff5: <<
 		mplayer,
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/mplayerthumbs*
 		opt/kde4/%type_pkg[kde]/lib/kde4/videopreview*

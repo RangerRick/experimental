@@ -159,7 +159,6 @@ SplitOff: <<
 		kde-extra-themes
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/*.la
@@ -250,7 +249,6 @@ SplitOff2: <<
 		kde-extra-themes
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/*_panelextension*.so
 		lib/kde3/*_panelapplet*.so
@@ -364,7 +362,6 @@ SplitOff3: <<
 		fink (>= 0.29.7-1),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -430,7 +427,6 @@ SplitOff4: <<
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -495,7 +491,6 @@ SplitOff5: <<
 		fink (>= 0.29.7-1),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -560,7 +555,6 @@ SplitOff6: <<
 		fink (>= 0.29.7-1),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -626,7 +620,6 @@ SplitOff7: <<
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -691,7 +684,6 @@ SplitOff8: <<
 		fink (>= 0.29.7-1),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------

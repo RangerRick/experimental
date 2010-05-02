@@ -233,7 +233,6 @@ SplitOff: <<
 		libxine-shlibs,
 		libxine
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README
 	Files: <<
 		lib/libxine*.*.dylib

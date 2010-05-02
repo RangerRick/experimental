@@ -125,7 +125,6 @@ SplitOff: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/libkdegames.*.dylib
 		share/apps/carddecks
@@ -205,7 +204,6 @@ SplitOff10: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kenolaba
 		share/applications/kde/kenolaba.desktop
@@ -291,7 +289,6 @@ SplitOff11: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kfouleggs
 		share/applications/kde/kfouleggs.desktop
@@ -376,7 +373,6 @@ SplitOff12: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kgoldrunner
 		share/applications/kde/KGoldrunner.desktop
@@ -460,7 +456,6 @@ SplitOff13: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kjumpingcube
 		share/applications/kde/kjumpingcube.desktop
@@ -546,7 +541,6 @@ SplitOff14: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/klickety
 		share/applications/kde/klickety.desktop
@@ -631,7 +625,6 @@ SplitOff15: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/klines
 		share/applications/kde/klines.desktop
@@ -723,7 +716,6 @@ SplitOff16: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kmahjongg
 		share/applications/kde/kmahjongg.desktop
@@ -809,7 +801,6 @@ SplitOff17: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kmines
 		share/applications/kde/kmines.desktop
@@ -893,7 +884,6 @@ SplitOff18: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kolf
 		lib/kde3/*kolf*
@@ -987,7 +977,6 @@ SplitOff19: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/konquest
 		share/applications/kde/konquest.desktop
@@ -1090,7 +1079,6 @@ SplitOff2: <<
 		qt3 (>= 3.3.8-1027)
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/libkdegames.la
@@ -1172,7 +1160,6 @@ SplitOff20: <<
 		kpat
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kpat
 		share/applications/kde/kpat.desktop
@@ -1258,7 +1245,6 @@ SplitOff21: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kpoker
 		share/applications/kde/kpoker.desktop
@@ -1342,7 +1328,6 @@ SplitOff22: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kreversi
 		share/applications/kde/kreversi.desktop
@@ -1438,7 +1423,6 @@ SplitOff23: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/ksame
 		share/applications/kde/ksame.desktop
@@ -1519,7 +1503,6 @@ SplitOff24: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kshisen
 		share/applications/kde/kshisen.desktop
@@ -1605,7 +1588,6 @@ SplitOff25: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/ksirtet
 		share/applications/kde/ksirtet.desktop
@@ -1691,7 +1673,6 @@ SplitOff26: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/ksmiletris
 		share/applications/kde/ksmiletris.desktop
@@ -1772,7 +1753,6 @@ SplitOff27: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/ksnake
 		share/applications/kde/ksnake.desktop
@@ -1858,7 +1838,6 @@ SplitOff28: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/ksokoban
 		share/applications/kde/ksokoban.desktop
@@ -1941,7 +1920,6 @@ SplitOff29: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kspaceduel
 		share/applications/kde/kspaceduel.desktop
@@ -2028,7 +2006,6 @@ SplitOff3: <<
 	<<
 	Recommends: %N (>= %v-%r)
 	Suggests: monopd (>= 0.7.0-1)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/atlantik
 		lib/kde3/*kio_atlantik*
@@ -2118,7 +2095,6 @@ SplitOff30: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/ktron
 		share/applications/kde/ktron.desktop
@@ -2205,7 +2181,6 @@ SplitOff31: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/ktuberling
 		share/applications/kde/ktuberling.desktop
@@ -2292,7 +2267,6 @@ SplitOff32: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kwin4
 		bin/kwin4proc
@@ -2379,7 +2353,6 @@ SplitOff33: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/lskat
 		bin/lskatproc
@@ -2465,7 +2438,6 @@ SplitOff34: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/knetwalk
 		share/applications/kde/knetwalk.desktop
@@ -2544,7 +2516,6 @@ SplitOff35: <<
 		%N (>= %v-%r),
 		kdebase3-unified (>= %v-1)
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -2612,7 +2583,6 @@ SplitOff4: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kasteroids
 		share/applications/kde/kasteroids.desktop
@@ -2699,7 +2669,6 @@ SplitOff5: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/katomic
 		share/applications/kde/katomic.desktop
@@ -2784,7 +2753,6 @@ SplitOff6: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kbackgammon
 		share/applications/kde/kbackgammon.desktop
@@ -2869,7 +2837,6 @@ SplitOff7: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kbattleship
 		share/applications/kde/kbattleship.desktop
@@ -2955,7 +2922,6 @@ SplitOff8: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kblackbox
 		share/applications/kde/kblackbox.desktop
@@ -3039,7 +3005,6 @@ SplitOff9: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kbounce
 		share/applications/kde/kbounce.desktop

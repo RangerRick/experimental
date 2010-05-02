@@ -47,7 +47,6 @@ SplitOff: <<
 		libpng14-shlibs
 	<<
 	Replaces: %N (<= 1.9.14-2)
-	UseMaxBuildJobs: true
 	DocFiles: README docs/*gpl*
 	Files: lib/liblensfun.0*.dylib
 	Shlibs: %p/lib/liblensfun.0.dylib 0.0.0 %n (>= 0.2.3-1)

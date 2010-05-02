@@ -45,7 +45,6 @@ SplitOff: <<
 		libtiff-shlibs,
 		system-java (>= 1.4-1)
 	<<
-	UseMaxBuildJobs: true
 	Files: lib/libpano*.*.dylib
 	Shlibs: %p/lib/libpano12.0.dylib 1.0.0 libpano12-shlibs (>= 2.7.0.10-1)
 <<

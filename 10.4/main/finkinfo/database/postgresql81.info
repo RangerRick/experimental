@@ -281,7 +281,6 @@ SplitOff: <<
 		postgresql83-dev
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/pg_config*
 		include
@@ -327,7 +326,6 @@ SplitOff2: <<
 		postgresql-shlibs,
 		postgresql80-unified-shlibs
 	<<
-	UseMaxBuildJobs: true
 	Files: lib/postgresql-8.1/*.dylib var/postgresql-8.1/*.sh var/postgresql-8.1/*.list
 	Shlibs: <<
 		%p/lib/postgresql-8.1/libecpg.5.dylib        5.0.0 postgresql81-shlibs (>= 8.1.17-1)

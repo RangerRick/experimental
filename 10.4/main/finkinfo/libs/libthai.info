@@ -35,7 +35,6 @@ SplitOff: <<
 		libdatrie1-shlibs,
 		%N (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: lib/libthai.*.dylib
 	Shlibs: %p/lib/libthai.0.dylib 2.0.0 %N-shlibs (>= 0.1.6-1)
@@ -45,7 +44,6 @@ SplitOff2: <<
 	Description: Development headers and libraries for libthai
 	Depends: %N (= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: include lib share/man
 <<
 

@@ -18,7 +18,6 @@ InstallScript: make install DESTDIR=%d
 DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 SplitOff: <<
 	Package: %N-shlibs
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: lib/libortp.*.dylib
 	Shlibs: %p/lib/libortp.5.dylib 6.0.0 %n (>= 0.11.0-1)

@@ -96,7 +96,6 @@ SplitOff: <<
 		ccache (>= 2.2-0),
 		ccache-default (>= 2.2-0)
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: COPYING*
 	Files: %p/etc/profile.d/distcc-default*
 <<

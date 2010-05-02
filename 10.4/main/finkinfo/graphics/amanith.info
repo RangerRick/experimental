@@ -55,7 +55,6 @@ SplitOff: <<
 		libpng14-shlibs,
 		x11-shlibs
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: LICENSE*
 	Files: lib/libamanith.*.dylib
 	Shlibs: %p/lib/libamanith.1.dylib 1.0.0 %N-shlibs (>= 0.3-1)

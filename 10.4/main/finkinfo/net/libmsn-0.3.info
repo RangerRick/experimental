@@ -47,7 +47,6 @@ DocFiles: COPYING README THANKS TODO
 SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for libmsn
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: lib/libmsn.0.3*.dylib
 	Shlibs: %p/lib/libmsn.0.3.dylib 0.3.0 %n (>= 4.1-0)

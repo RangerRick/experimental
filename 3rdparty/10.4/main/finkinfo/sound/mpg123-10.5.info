@@ -42,13 +42,11 @@ SplitOff: <<
 	Package: lib%N
 	Depends: lib%N-shlibs (= %V-0)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS ChangeLog COPYING NEWS NEWS.libmpg123 README
 	Files: include lib/pkgconfig lib/libmpg123.dylib lib/libmpg123.la
 <<
 SplitOff2: <<
 	Package: lib%N-shlibs
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS ChangeLog COPYING NEWS NEWS.libmpg123 README
 	Files: lib/libmpg123.0.dylib
 	Shlibs: %p/lib/libmpg123.0.dylib 23.0.0 %n (>= 1:1.10.0-1)

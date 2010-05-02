@@ -52,7 +52,6 @@ SplitOff: <<
 	Package: postgresql-ssl-java
 	Description: Upgrade package for postgresql-ssl-java
 	Depends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	DocFiles: LICENSE README
 <<
 

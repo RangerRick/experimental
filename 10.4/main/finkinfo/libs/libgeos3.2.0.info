@@ -24,7 +24,6 @@ InstallScript: make -j1 install-strip DESTDIR=%d
 DocFiles: AUTHORS ChangeLog COPYING README TODO
 SplitOff: <<
 	Package: %N-shlibs
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS ChangeLog COPYING README TODO
 	Files: <<
 		opt/%N/lib/libgeos-%v.dylib

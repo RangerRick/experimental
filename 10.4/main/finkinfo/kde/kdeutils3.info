@@ -121,7 +121,6 @@ SplitOff: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/ark
 		lib/kde3/*ark*
@@ -210,7 +209,6 @@ SplitOff10: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/klaptop*
 		lib/kde3/kcm_laptop*
@@ -294,7 +292,6 @@ SplitOff11: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kjots
 		share/applications/kde/Kjots.desktop
@@ -378,7 +375,6 @@ SplitOff12: <<
 		ksim-ssl
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/ksim_*
 		lib/libksimcore.*.dylib
@@ -472,7 +468,6 @@ SplitOff13: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/ktimer
 		share/applications/kde/ktimer.desktop
@@ -552,7 +547,6 @@ SplitOff14: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kwikdisk
 		share/applications/kde/kwikdisk.desktop
@@ -635,7 +629,6 @@ SplitOff15: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kregexpeditor
 		lib/kde3/*kregexp*
@@ -734,7 +727,6 @@ SplitOff16: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kwalletmanager
 		lib/kde3/kcm_kwallet*
@@ -823,7 +815,6 @@ SplitOff17: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/superkaramba
 		share/applnk/Utilities/superkaramba*
@@ -927,7 +918,6 @@ SplitOff18: <<
 		qt3 (>= 3.3.8-1027)
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib
@@ -998,7 +988,6 @@ SplitOff19: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -1068,7 +1057,6 @@ SplitOff2: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kcalc
 		lib/*kcalc*
@@ -1155,7 +1143,6 @@ SplitOff20: <<
 	Package: kdeutils3-ssl
 	Description: KDE - upgrade package for kdeutils3-ssl
 	Depends: %N (= %v-%r)
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING INSTALL README
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -1222,7 +1209,6 @@ SplitOff3: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kcharselect
 		lib/kde3/*kcharselect_panelapplet*
@@ -1300,7 +1286,6 @@ SplitOff5: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: bin/kdessh
 	DescDetail: <<
 This is a frontend to SSH designed for use with KDE.  This program is
@@ -1372,7 +1357,6 @@ SplitOff6: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kdf
 		lib/kde3/*kcm_kdf*
@@ -1456,7 +1440,6 @@ SplitOff7: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kedit
 		lib/kde3/*kedit*
@@ -1546,7 +1529,6 @@ SplitOff8: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kfloppy
 		share/applications/kde/KFloppy.desktop
@@ -1628,7 +1610,6 @@ SplitOff9: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/khexedit
 		lib/kde3/*kbytesedit*

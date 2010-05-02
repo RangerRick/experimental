@@ -116,7 +116,6 @@ SplitOff: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/libkaddrbk_*
 		share/apps/kaddressbook
@@ -196,7 +195,6 @@ SplitOff10: <<
 		%N (>= %v-%r),
 		kdebase3-unified (>= %v-1)
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -267,7 +265,6 @@ SplitOff2: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/atlantikdesigner
 		lib/kde3/atlantik*
@@ -347,7 +344,6 @@ SplitOff3: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/*kate*
 		share/applnk/.hidden/katefll.desktop
@@ -439,7 +435,6 @@ SplitOff4: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/lnkforward
 		lib/kde3/kfile*
@@ -528,7 +523,6 @@ SplitOff5: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/*panelapplet*
 		share/apps/kicker
@@ -612,7 +606,6 @@ SplitOff6: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/apps/knewsticker
 	DescDetail: <<
 * MBOX file to RSS converter
@@ -687,7 +680,6 @@ SplitOff7: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/fsview
 		bin/jpegorient
@@ -867,7 +859,6 @@ SplitOff8: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/ksig
 		lib/kde3/ksig*
@@ -950,7 +941,6 @@ SplitOff9: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/librenaudio*
 		lib/kde3/librenimage*

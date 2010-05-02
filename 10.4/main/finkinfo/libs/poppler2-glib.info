@@ -83,7 +83,6 @@ SplitOff: <<
 		pango1-xft2-ft219-shlibs (>= 1.24.0-1),
 		poppler2-shlibs (>= %v-1)
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING ChangeLog NEWS README README-XPDF TODO
 	Files: lib/libpoppler-glib.2*.dylib
 	Shlibs: %p/lib/libpoppler-glib.2.dylib 3.0.0 %n (>= 0.6-1)

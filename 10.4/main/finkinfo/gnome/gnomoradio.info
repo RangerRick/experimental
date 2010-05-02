@@ -58,7 +58,6 @@ SplitOff: <<
 	Description: Headers and libraries for gnomoradio development
 	Depends: %N (>= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/*.la
@@ -88,7 +87,6 @@ SplitOff2: <<
 		libxml2-shlibs (>= 2.6.32-1),
 		orbit2-shlibs
 	<<
-	UseMaxBuildJobs: true
 	Files: lib
 	Shlibs: 
 <<

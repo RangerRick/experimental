@@ -20,13 +20,11 @@ SplitOff: <<
 	Description: headers and static libraries for GeoIP
 	Depends: %N (= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: include lib/*.a lib/*.la lib/libGeoIP.dylib lib/libGeoIPUpdate.dylib
 <<
 SplitOff2: <<
 	Package: %N-shlibs
 	Description: shared libraries for GeoIP
-	UseMaxBuildJobs: true
 	Files: lib/*.dylib
 	Shlibs: <<
 		%p/lib/libGeoIP.1.dylib 6.0.0 %n (>= 1.4.1-1)

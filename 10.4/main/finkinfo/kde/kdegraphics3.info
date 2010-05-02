@@ -125,7 +125,6 @@ SplitOff: <<
 	Depends: %N (>= %v-%r)
 	Replaces: kghostview (<< 3.5.10-1)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/*.la
@@ -205,7 +204,6 @@ SplitOff10: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kpovmodeler
 		lib/kde3/*kpovmodeler*
@@ -315,7 +313,6 @@ SplitOff11: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kooka
 		lib/kde3/kooka.*
@@ -410,7 +407,6 @@ SplitOff12: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kruler
 		lib/kde3/kruler.*
@@ -496,7 +492,6 @@ SplitOff13: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/ksnapshot
 		lib/kde3/ksnapshot.*
@@ -578,7 +573,6 @@ SplitOff14: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/printnodetest
 		bin/svgdisplay
@@ -670,7 +664,6 @@ SplitOff15: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kuickshow
 		lib/*kuickshow*
@@ -753,7 +746,6 @@ SplitOff16: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kview
 		bin/kviewshell
@@ -889,7 +881,6 @@ SplitOff17: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/gsthumbnail*
 		lib/kde3/*kfile*
@@ -958,7 +949,6 @@ SplitOff18: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/mrmlsearch
 		lib/kde3/*daemonwatcher*
@@ -1045,7 +1035,6 @@ SplitOff19: <<
 		%N (>= %v-%r),
 		kdebase3-unified (>= %v-1)
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -1109,7 +1098,6 @@ SplitOff2: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kcolorchooser
 		bin/kcoloredit
@@ -1195,7 +1183,6 @@ SplitOff3: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kdvi
 		lib/kde3/*kdvi*
@@ -1282,7 +1269,6 @@ SplitOff4: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kfax
 		bin/kfaxview
@@ -1365,7 +1351,6 @@ SplitOff5: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/xf86gammacfg
 		lib/kde3/*kgamma*
@@ -1445,7 +1430,6 @@ SplitOff6: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kghostview
 		lib/kde3/*kghostview*
@@ -1532,7 +1516,6 @@ SplitOff7: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kiconedit
 		lib/kde3/kiconedit.*
@@ -1610,7 +1593,6 @@ SplitOff8: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kolourpaint
 		share/applications/kde/kolourpaint.desktop
@@ -1697,7 +1679,6 @@ SplitOff9: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kpdf
 		lib/kde3/*kpdf*

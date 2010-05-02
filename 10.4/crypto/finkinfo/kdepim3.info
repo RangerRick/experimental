@@ -163,7 +163,6 @@ SplitOff: <<
 		qt3 (>= 3.3.8-1027)
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/*.la
@@ -293,7 +292,6 @@ SplitOff10: <<
 		ksync (<< 3.5.7-1)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kitchensync
 		lib/kde3/*kitchensync*
@@ -387,7 +385,6 @@ SplitOff11: <<
 	<<
 	Recommends: %N (>= %v-%r)
 	Suggests: klamav
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kmail*
 		lib/kde3/kcm_kmail.*
@@ -507,7 +504,6 @@ SplitOff12: <<
 		%N-common
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/knode
 		lib/kde3/kcm_knode.*
@@ -608,7 +604,6 @@ SplitOff13: <<
 		%N-common
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/knotes
 		lib/kde3/knotes*
@@ -697,7 +692,6 @@ SplitOff14: <<
 		%N-common
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/konsolekalendar
 		lib/kde3/konsolekalendar.*
@@ -796,7 +790,6 @@ SplitOff15: <<
 		korganizer (<< 3.4.0-1)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kontact
 		lib/kde3/kcm_*summary.*
@@ -920,7 +913,6 @@ SplitOff16: <<
 		kmail (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/ical2vcal
 		bin/korgac
@@ -1043,7 +1035,6 @@ SplitOff17: <<
 		%N-common
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/korn
 		lib/kconf_update_bin/korn-*
@@ -1137,7 +1128,6 @@ SplitOff18: <<
 		%N-common
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kpalmdoc
 		bin/kpilot
@@ -1264,7 +1254,6 @@ SplitOff2: <<
 		%N-common
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/akregator
 		lib/kde3/*akregator*
@@ -1367,7 +1356,6 @@ SplitOff20: <<
 		%N-common
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/ktnef
 		lib/kde3/ktnef.*
@@ -1462,7 +1450,6 @@ SplitOff21: <<
 		%N-common
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/*wizard
 		lib/libegroupwarewizard.dylib
@@ -1559,7 +1546,6 @@ SplitOff22: <<
 		kmail (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin
 		lib
@@ -1678,7 +1664,6 @@ SplitOff23: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -1750,7 +1735,6 @@ SplitOff3: <<
 		%N-common
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kleopatra
 		bin/kwatchgnupg
@@ -1850,7 +1834,6 @@ SplitOff4: <<
 		%N-common
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kabc2mutt
 		bin/kaddressbook
@@ -1964,7 +1947,6 @@ SplitOff5: <<
 		%N-common
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kalarm*
 		share/applications/kde/kalarm.desktop
@@ -2055,7 +2037,6 @@ SplitOff6: <<
 		%N-common
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kandy*
 		lib/kde3/kandy*
@@ -2144,7 +2125,6 @@ SplitOff7: <<
 		%N-common
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/karm
 		lib/kde3/libkarmpart*
@@ -2239,7 +2219,6 @@ SplitOff8: <<
 		kmail (<< 3.4.0-1)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/kfile_ics.*
 		lib/kde3/kfile_palm.*
@@ -2320,7 +2299,6 @@ SplitOff9: <<
 		kdebase3-unified (<< 3.5.0-1)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/kio_imap*
 		lib/kde3/kio_mbox*

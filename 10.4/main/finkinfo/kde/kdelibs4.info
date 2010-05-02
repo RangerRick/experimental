@@ -132,7 +132,6 @@ SplitOff: <<
 		%N (<< 4.2.2-4)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/etc/kde4rc
 		opt/kde4/%type_pkg[kde]/lib/kde4/*.so
@@ -221,7 +220,6 @@ SplitOff2: <<
 		kdebase4-workspace-%type_pkg[kde]-dev (<< 4.3.0-1)
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
 		opt/kde4/%type_pkg[kde]/lib/libkde3support.dylib

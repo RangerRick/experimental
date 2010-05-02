@@ -44,7 +44,6 @@ SplitOff: <<
 		orbit2-shlibs (>= 2.14.10-1),
 		pango1-xft2-ft219-shlibs (>= 1.24.0-1)
 	<<
-	UseMaxBuildJobs: true
 	Files: lib/libgconfmm-2.0.*.dylib
 	Shlibs: %p/lib/libgconfmm-2.0.1.dylib 2.0.0 %n (>= 2.0.2-1)
 <<

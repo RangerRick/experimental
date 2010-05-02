@@ -20,7 +20,6 @@ InstallScript: make -j1 install DESTDIR="%d"
 DocFiles: AUTHORS COPYING ChangeLog Copyright INSTALL NEWS README TODO doc/gamin.html doc/*.gif
 SplitOff: <<
 	Package: %N-shlibs
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: <<
 		lib/libfam.0*.dylib
@@ -38,7 +37,6 @@ SplitOff2: <<
 		pkgconfig (>= 0.23-1)
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: include lib
 <<

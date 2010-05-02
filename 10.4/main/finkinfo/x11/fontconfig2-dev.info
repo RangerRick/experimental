@@ -37,7 +37,6 @@ SplitOff: <<
 		expat1-shlibs,
 		freetype219-shlibs
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: README
 	Files: <<
 		lib/fontconfig2/bin
@@ -49,7 +48,6 @@ SplitOff: <<
 SplitOff2: <<
 	Package: fontconfig-config
 	Description: configuration files for fontconfig
-	UseMaxBuildJobs: true
 	Files: %p/etc/fonts
 	ConfFiles: <<
 		%p/etc/fonts/fonts.conf

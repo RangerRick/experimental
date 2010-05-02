@@ -227,7 +227,6 @@ SplitOff: <<
 		%N (>= 5.0.45-1),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff10: <<
@@ -238,7 +237,6 @@ SplitOff10: <<
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff11: <<
@@ -249,7 +247,6 @@ SplitOff11: <<
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff12: <<
@@ -272,7 +269,6 @@ SplitOff12: <<
 		mysql-ssl15-dev
 	<<
 	BuildDependsOnly: True
-	UseMaxBuildJobs: true
 	DocFiles: README COPYING
 	Files: <<
 		include
@@ -293,7 +289,6 @@ SplitOff2: <<
 		%N (>= 5.0.45-1),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff20: <<
@@ -303,7 +298,6 @@ SplitOff20: <<
 		%N-shlibs (>= 5.0.45-1),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff21: <<
@@ -313,7 +307,6 @@ SplitOff21: <<
 		%N-shlibs (>= 5.0.45-1),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff22: <<
@@ -325,7 +318,6 @@ SplitOff22: <<
 		mysql15-shlibs,
 		mysql-ssl15-shilbs
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: README COPYING
 	Files: <<
 		lib/mysql/libmysqlclient.15*.dylib
@@ -345,7 +337,6 @@ SplitOff30: <<
 		%N-client (>= 5.0.45-1),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff31: <<
@@ -355,7 +346,6 @@ SplitOff31: <<
 		%N-client (>= 5.0.45-1),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff32: <<
@@ -372,7 +362,6 @@ SplitOff32: <<
 		mysql-client,
 		mysql-ssl-client
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: README COPYING
 	Files: <<
 		bin/myisam_ftdump

@@ -47,7 +47,6 @@ SplitOff: <<
 		libungif (<< 4.1.6-1),
 		giflib (<= 4.1.0-2)
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: README COPYING AUTHORS
 	Files: lib/libgif.*.dylib
 	Shlibs: %p/lib/libgif.4.dylib 6.0.0 giflib-shlibs (>= 4.1.6-1)
@@ -64,7 +63,6 @@ SplitOff2: <<
 		libungif (<< 4.1.6-1),
 		giflib (<= 4.1.0-2)
 	<<
-	UseMaxBuildJobs: true
 	InstallScript: <<
 mkdir -p %i/share/doc/%N
 cp doc/*.txt %i/share/doc/%N/
@@ -80,7 +78,6 @@ SplitOff4: <<
 		%N-shlibs (>= %v-%r),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff5: <<
@@ -89,7 +86,6 @@ SplitOff5: <<
 		%N-bin (>= %v-%r),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 

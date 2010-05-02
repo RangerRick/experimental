@@ -69,7 +69,6 @@ SplitOff: <<
 		cyrus-sasl2-shlibs,
 		qt3-shlibs (>= 3.3.8-1027)
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: COPYING*
 	Files: <<
 		lib/libqca.*.dylib

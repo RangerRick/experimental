@@ -27,7 +27,6 @@ DocFiles: INSTALL LICENSE README
 SplitOff: <<
 	Package: %N-shlibs
 	Replaces: %N (<< 1.1-4)
-	UseMaxBuildJobs: true
 	DocFiles: INSTALL LICENSE README
 	Files: lib/%N.*.dylib
 <<

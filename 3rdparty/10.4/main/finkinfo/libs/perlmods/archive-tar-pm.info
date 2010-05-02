@@ -59,7 +59,6 @@ SplitOff: <<
 		archive-tar-pm585-bin,
 		archive-tar-pm586-bin
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: MANIFEST README
 	Files: bin
 <<

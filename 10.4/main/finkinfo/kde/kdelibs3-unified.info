@@ -218,7 +218,6 @@ SplitOff: <<
 		%N (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/kabc*.so
 		lib/kde3/kbzip2filter.so
@@ -426,7 +425,6 @@ SplitOff2: <<
 		qt3-doc
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/dcopidl*
 		bin/meinproc
@@ -533,7 +531,6 @@ SplitOff3: <<
 		fink (>= 0.29.7-1),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -599,7 +596,6 @@ SplitOff4: <<
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -664,7 +660,6 @@ SplitOff5: <<
 		fink (>= 0.29.7-1),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -729,7 +724,6 @@ SplitOff6: <<
 		fink (>= 0.29.7-1),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -795,7 +789,6 @@ SplitOff7: <<
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -860,7 +853,6 @@ SplitOff8: <<
 		fink (>= 0.29.7-1),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------

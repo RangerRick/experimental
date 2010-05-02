@@ -31,7 +31,6 @@ DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README
 SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for libdatrie
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: lib/libdatrie.*.dylib
 	Shlibs: %p/lib/libdatrie.1.dylib 2.0.0 %N-shlibs (>= 0.2.2-1)

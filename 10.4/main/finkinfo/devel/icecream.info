@@ -69,7 +69,6 @@ SplitOff: <<
 		ccache (>= 2.2-0),
 		ccache-default (>= 2.2-0)
 	<<
-	UseMaxBuildJobs: true
 	RuntimeVars: CCACHE_PREFIX: icecc
 <<
 

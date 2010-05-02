@@ -135,7 +135,6 @@ SplitOff: <<
 		qt3 (>= 3.3.8-1027)
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/*.la
@@ -212,7 +211,6 @@ SplitOff10: <<
 		krfb (<< %v-1)
 	<<
 	Recommends: krfb (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/krdc
 		share/applications/kde/krdc.desktop
@@ -295,7 +293,6 @@ SplitOff11: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: krdc (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/krfb
 		bin/krfb_httpd
@@ -385,7 +382,6 @@ SplitOff12: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/kded_dnssd*
 		lib/kde3/kio_zeroconf*
@@ -465,7 +461,6 @@ SplitOff13: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/lisa
 		bin/reslisa
@@ -554,7 +549,6 @@ SplitOff14: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -616,7 +610,6 @@ SplitOff15: <<
 	Package: %N-common
 	Description: KDE - upgrade package for kdenetwork
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-common
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -683,7 +676,6 @@ SplitOff2: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/feedbrowser
 		bin/rss*
@@ -755,7 +747,6 @@ SplitOff3: <<
 	Description: KDE - filesharing client
 	Depends: %N-common (>= %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/fileshare_propsdlgplugin*
 		lib/kde3/kcm_fileshare*
@@ -830,7 +821,6 @@ SplitOff4: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/dsirc
 		bin/ksirc
@@ -917,7 +907,6 @@ SplitOff5: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kdict
 		lib/kde3/*kdict*
@@ -1001,7 +990,6 @@ SplitOff6: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kget
 		lib/kde3/*khtml_kget.*
@@ -1100,7 +1088,6 @@ SplitOff7: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/knewstickerstub
 		lib/kde3/*newsticker*
@@ -1195,7 +1182,6 @@ SplitOff8: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kopete
 		bin/kopete_latexconvert.sh
@@ -1366,7 +1352,6 @@ SplitOff9: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/*kpf*
 		share/apps/kicker/applets/kpfapplet.desktop

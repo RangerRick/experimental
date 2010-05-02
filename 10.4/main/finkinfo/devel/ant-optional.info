@@ -82,7 +82,6 @@ SplitOff: <<
 		ant-base (>= 1.7.1-3),
 		ant-optional (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: INSTALL KEYS LICENSE* NOTICE README WHATSNEW
 <<
 

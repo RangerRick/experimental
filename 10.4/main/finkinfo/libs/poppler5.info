@@ -83,7 +83,6 @@ SplitOff: <<
 		libjpeg8-shlibs,
 		libxml2-shlibs
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING ChangeLog NEWS README README-XPDF TODO
 	Files: lib/libpoppler.5.*
 	Shlibs: %p/lib/libpoppler.5.dylib 6.0.0 %n (>= 0.12.0-1)
@@ -106,7 +105,6 @@ SplitOff2: <<
 		poppler,
 		xpdf
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING ChangeLog NEWS README README-XPDF TODO
 	Files: bin share/man
 <<

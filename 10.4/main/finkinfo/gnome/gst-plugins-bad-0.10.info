@@ -121,7 +121,6 @@ SplitOff: <<
 		gst-plugins-base-0.10 (>= 0.10.26-1),
 		sdl
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/gstreamer-0.10
 		lib/libgst*-0.10.0*.dylib

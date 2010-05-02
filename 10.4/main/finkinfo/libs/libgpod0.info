@@ -58,7 +58,6 @@ SplitOff: <<
 		libiconv
 	<<
 	Replaces: libgpod0 (<< 0.3.2-3)
-	UseMaxBuildJobs: true
 	Files: lib/libgpod.0*.dylib share/locale
 	Shlibs: %p/lib/libgpod.0.dylib 303.0.0 libgpod0-shlibs (>= 0.3.2-1)
 <<

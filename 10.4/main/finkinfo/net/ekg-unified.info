@@ -81,7 +81,6 @@ SplitOff: <<
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff2: <<
@@ -92,7 +91,6 @@ SplitOff2: <<
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff3: <<
@@ -102,7 +100,6 @@ SplitOff3: <<
 		%N (>= %v-%r),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff4: <<
@@ -112,7 +109,6 @@ SplitOff4: <<
 		libgadu3-shlibs,
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff5: <<
@@ -123,7 +119,6 @@ SplitOff5: <<
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff6: <<
@@ -133,7 +128,6 @@ SplitOff6: <<
 		%N (>= %v-%r),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff7: <<
@@ -143,7 +137,6 @@ SplitOff7: <<
 		libgadu3-shlibs,
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff8: <<
@@ -154,7 +147,6 @@ SplitOff8: <<
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 

@@ -100,7 +100,6 @@ SplitOff: <<
 		popt-shlibs
 	<<
 	Recommends: gconf2 (>= 2.20.0-1)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/libgstcontrol-0.8.*.dylib
 		lib/libgstreamer-0.8.*.dylib
@@ -116,7 +115,6 @@ SplitOff2: <<
 	Depends: %N (= %v-%r)
 	Replaces: %N
 	BuildDependsOnly: True
-	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/libgstcontrol-0.8.dylib

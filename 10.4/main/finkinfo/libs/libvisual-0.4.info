@@ -30,7 +30,6 @@ SplitOff: <<
 		libgettext8-shlibs,
 		libiconv
 	<<
-	UseMaxBuildJobs: true
 	Files: lib/libvisual-0.4.*.dylib share/locale
 	Shlibs: %p/lib/libvisual-0.4.0.dylib 1.0.0 libvisual-0.4-shlibs (>= 0.4.0-1)
 <<

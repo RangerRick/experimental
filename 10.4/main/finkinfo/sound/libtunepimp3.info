@@ -60,7 +60,6 @@ SplitOff: <<
 		readline5-shlibs,
 		taglib-shlibs (>= 1.6.1-5)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/libtunepimp.*.dylib
 		lib/tunepimp3
@@ -77,7 +76,6 @@ SplitOff2: <<
 		libtunepimp2-bin,
 		%N
 	<<
-	UseMaxBuildJobs: true
 	Files: bin
 <<
 

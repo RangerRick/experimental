@@ -38,7 +38,6 @@ InstallScript: <<
 DocFiles: CHANGES CREDITS readme
 SplitOff: <<
 	Package: %N-shlibs
-	UseMaxBuildJobs: true
 	Files: lib/libcgi.*.dylib
 <<
 

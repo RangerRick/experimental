@@ -85,7 +85,6 @@ SplitOff: <<
 		sdl-shlibs,
 		sdl-image-shlibs
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: lib/libguichan*.0*.dylib
 	Shlibs: <<

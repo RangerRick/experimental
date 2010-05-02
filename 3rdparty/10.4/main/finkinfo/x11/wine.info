@@ -102,7 +102,6 @@ SplitOff: <<
 	Package: %N-dev
 	Depends: %N (= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: include lib/libwine.dylib
 <<
 Shlibs: %p/lib/libwine.1.dylib 1.0.0 %n (>= 0.9.21-3)

@@ -55,7 +55,6 @@ SplitOff: <<
 		libgettext8-shlibs,
 		libiconv
 	<<
-	UseMaxBuildJobs: true
 	Files: lib/libgpod.*.dylib share/locale
 	Shlibs: %p/lib/libgpod.1.dylib 2.0.0 libgpod1-shlibs (>= 0.4.2-1)
 <<

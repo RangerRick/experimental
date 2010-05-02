@@ -102,7 +102,6 @@ SplitOff: <<
 		poppler (<< %v-%r),
 		%N (<< %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING ChangeLog NEWS README README-XPDF TODO
 	Files: <<
 		lib/libpoppler.2*.dylib
@@ -120,7 +119,6 @@ SplitOff2: <<
 		%N (<< %v-%r),
 		xpdf
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING ChangeLog NEWS README README-XPDF TODO
 	Files: bin share/man
 <<

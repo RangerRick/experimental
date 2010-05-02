@@ -115,7 +115,6 @@ SplitOff: <<
 		svn15-shlibs (>= 1.6-1)
 	<<
 	Replaces: %N (<< 3.5.4-1)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3
 		lib/libd.0*.dylib
@@ -219,7 +218,6 @@ SplitOff2: <<
 	Depends: %N (>= %v-%r)
 	Replaces: %N (<< 3.5.4-1)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: include lib
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------

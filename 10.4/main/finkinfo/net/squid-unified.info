@@ -95,7 +95,6 @@ SplitOff: <<
 		%N (= %e:%v-%r),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: CONTRIBUTORS COPYING COPYRIGHT CREDITS ChangeLog INSTALL QUICKSTART README RELEASENOTES.html SPONSORS
 <<
 SplitOff2: <<
@@ -104,7 +103,6 @@ SplitOff2: <<
 		%N (= %e:%v-%r),
 		fink-obsolete-packages
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: CONTRIBUTORS COPYING COPYRIGHT CREDITS ChangeLog INSTALL QUICKSTART README RELEASENOTES.html SPONSORS
 <<
 

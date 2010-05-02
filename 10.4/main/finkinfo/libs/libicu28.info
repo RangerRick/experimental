@@ -53,7 +53,6 @@ DocFiles: *.html
 SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for ICU
-	UseMaxBuildJobs: true
 	DocFiles: license.html
 	Files: <<
 		lib/libicudata.*.dylib
@@ -79,7 +78,6 @@ SplitOff2: <<
 	Description: Headers and static libraries for ICU
 	Depends: %N (>= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/icu-config
 		include

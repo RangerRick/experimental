@@ -94,7 +94,6 @@ SplitOff: <<
 	Description: KDE4 - PostScript & PDF thumbnail support
 	Depends: %N-base (>= %v-%r)
 	Replaces: gsthumbnail4-%type_pkg[kde]
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/*thumbnail.so
 		opt/kde4/%type_pkg[kde]/share/kde4/services/*thumbnail.desktop
@@ -105,7 +104,6 @@ SplitOff10: <<
 	Package: libkdcraw-data-%type_pkg[kde]
 	Description: KDE4 - data for libkdcraw
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/share/apps/libkdcraw
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kdcraw*
@@ -122,7 +120,6 @@ SplitOff11: <<
 		libkdcraw-data-%type_pkg[kde] (>= %v-%r),
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/lib/libkdcraw.8*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkdcraw.8.dylib 8.0.0 %n (>= 4.3.98-1)
 <<
@@ -133,7 +130,6 @@ SplitOff12: <<
 	Conflicts: libkdcraw-7-%type_pkg[kde]-dev
 	Replaces: libkdcraw-7-%type_pkg[kde]-dev
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include/libkdcraw
 		opt/kde4/%type_pkg[kde]/lib/libkdcraw.dylib
@@ -145,7 +141,6 @@ SplitOff13: <<
 	Description: KDE4 - data for libkexiv2
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N-base (<< 4.4.1-1)
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/share/apps/libkexiv2
 <<
 SplitOff14: <<
@@ -156,7 +151,6 @@ SplitOff14: <<
 		libkexiv2-data-%type_pkg[kde],
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/lib/libkexiv2.8*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkexiv2.8.dylib 8.0.0 %n (>= 4.3.98-1)
 <<
@@ -167,7 +161,6 @@ SplitOff15: <<
 	Conflicts: libkexiv2-7-%type_pkg[kde]-dev
 	Replaces: libkexiv2-7-%type_pkg[kde]-dev
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include/libkexiv2
 		opt/kde4/%type_pkg[kde]/lib/libkexiv2.dylib
@@ -178,7 +171,6 @@ SplitOff16: <<
 	Package: libkipi-data-%type_pkg[kde]
 	Description: KDE4 - data for libkipi
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/share/apps/kipi
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kipi*
@@ -196,7 +188,6 @@ SplitOff17: <<
 		%N-base (>= %v-%r),
 		libkipi-data-%type_pkg[kde] (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/lib/libkipi.7*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkipi.7.dylib 7.0.0 %n (>= 4.3.98-1)
 <<
@@ -207,7 +198,6 @@ SplitOff18: <<
 	Conflicts: libkipi-6-%type_pkg[kde]-dev
 	Replaces: libkipi-6-%type_pkg[kde]-dev
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include/libkipi
 		opt/kde4/%type_pkg[kde]/lib/libkipi.dylib
@@ -221,7 +211,6 @@ SplitOff19: <<
 		sane-backends-shlibs,
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/lib/libksane.0*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libksane.0.dylib 0.0.0 %n (>= 4.2.4-1)
 <<
@@ -234,7 +223,6 @@ SplitOff2: <<
 		%N-base (>= %v-%r)
 	<<
 	Replaces: %N-base (<< 4.4.1-1)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/gwenview*
 		opt/kde4/%type_pkg[kde]/lib/kde4/gvpart*
@@ -262,7 +250,6 @@ SplitOff20: <<
 	Description: KDE4 - libksane development headers and libs
 	Depends: libksane-0-%type_pkg[kde]-shlibs (>= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include/libksane
 		opt/kde4/%type_pkg[kde]/lib/libksane.dylib
@@ -274,7 +261,6 @@ SplitOff21: <<
 	Package: svgpart4-%type_pkg[kde]
 	Description: KDE4 - SVG support
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/svgpart*
 		opt/kde4/%type_pkg[kde]/share/apps/svgpart
@@ -290,7 +276,6 @@ SplitOff3: <<
 		%N-base (>= %v-%r)
 	<<
 	Replaces: %N-base (<< 4.4.1-1)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/*kamera*
 		opt/kde4/%type_pkg[kde]/share/apps/solid/actions/solid_camera*
@@ -307,7 +292,6 @@ SplitOff30: <<
 		libtiff-shlibs,
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/lib/strigi
 <<
 SplitOff31: <<
@@ -315,14 +299,12 @@ SplitOff31: <<
 	Description: KDE4 - kdegraphics base package
 	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1)
 	Replaces: gsthumbnail4-%type_pkg[kde]
-	UseMaxBuildJobs: true
 	Files: opt
 <<
 SplitOff4: <<
 	Package: kcolorchooser4-%type_pkg[kde]
 	Description: KDE4 - color chooser and palette editor
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kcolorchooser*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kcolorchooser*
@@ -338,7 +320,6 @@ SplitOff5: <<
 		qimageblitz-unified-%type_pkg[kde]-shlibs,
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kolourpaint*
 		opt/kde4/%type_pkg[kde]/lib/libkolourpaint_lgpl.4*.dylib
@@ -358,7 +339,6 @@ SplitOff6: <<
 	Package: kruler4-%type_pkg[kde]
 	Description: KDE4 - screen ruler
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kruler*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kruler*
@@ -382,7 +362,6 @@ SplitOff7: <<
 		sane-backends-shlibs,
 		%N-base (>= %v-%r)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/ksaneplugin*
 		opt/kde4/%type_pkg[kde]/share/kde4/services/ksane*
@@ -403,7 +382,6 @@ SplitOff8: <<
 		%N-base (>= %v-%r)
 	<<
 	Replaces: %N-base (<< 4.4.1-1)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/okular*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kio_msits*
@@ -432,7 +410,6 @@ SplitOff9: <<
 	Description: KDE4 - development headers and libs for okular
 	Depends: okular4-%type_pkg[kde] (>= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include/okular
 		opt/kde4/%type_pkg[kde]/lib/libokularcore.dylib

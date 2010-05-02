@@ -172,7 +172,6 @@ SplitOff: <<
 		%N-linguist,
 		%N-doc
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: LGPL* LICENSE*
 	Files: <<
 		(%m != x86_64) lib/%N/lib/Qt3Support.framework/Qt3Support
@@ -262,7 +261,6 @@ SplitOff2: <<
 		libtiff-shlibs,
 		sqlite3-shlibs
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: LGPL* LICENSE*
 	Files: <<
 		lib/qt4-mac/lib/libQtCLucene.4*.dylib
@@ -335,14 +333,12 @@ SplitOff3: <<
 	Package: %N-designer
 	Depends: %N-designer-shlibs (= %v-%r)
 	Replaces: %N (<< %v-1)
-	UseMaxBuildJobs: true
 	Files: lib/%N/bin/Designer*
 <<
 SplitOff4: <<
 	Package: %N-designer-shlibs
 	Depends: %N-gui-shlibs (= %v-%r)
 	Replaces: %N (<< 4.5.1-2)
-	UseMaxBuildJobs: true
 	DocFiles: LGPL* LICENSE*
 	Files: <<
 		lib/%N/lib/QtDesigner.framework/QtDesigner
@@ -368,7 +364,6 @@ SplitOff5: <<
 	Package: %N-linguist
 	Depends: %N-gui-shlibs (= %v-%r)
 	Replaces: %N (<< %v-1)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/%N/bin/Linguist*
 		lib/%N/bin/l*
@@ -377,7 +372,6 @@ SplitOff5: <<
 <<
 SplitOff6: <<
 	Package: %N-doc
-	UseMaxBuildJobs: true
 	Files: share/doc/%N
 <<
 

@@ -38,7 +38,6 @@ DocFiles: AUTHORS ChangeLog COPYING INSTALL NEWS README* QuickStart*
 SplitOff: <<
 	Package: libggzcore9-shlibs
 	Depends: libggz2-shlibs
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: lib/ggz2/lib/libggzcore.9*.dylib
 	Shlibs: %p/lib/ggz2/lib/libggzcore.9.dylib 10.0.0 %n (>= 0.0.14-1)
@@ -46,7 +45,6 @@ SplitOff: <<
 SplitOff2: <<
 	Package: libggzmod4-shlibs
 	Depends: libggzcore9-shlibs
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: lib/ggz2/lib/libggzmod.4*.dylib
 	Shlibs: %p/lib/ggz2/lib/libggzmod.4.dylib 6.0.0 %n (>= 0.0.14-1)
@@ -55,7 +53,6 @@ SplitOff3: <<
 	Package: %N-dev
 	Depends: %N (>= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: <<
 		lib/ggz2/bin/ggz-config

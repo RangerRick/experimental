@@ -79,7 +79,6 @@ SplitOff: <<
 		postgresql80-unified-shlibs,
 		postgresql81-shlibs
 	<<
-	UseMaxBuildJobs: true
 	Files: lib/libpqxx.*.dylib
 	Shlibs: %p/lib/libpqxx.2.dylib 9.0.0 %n (>= 2.6.8-1)
 <<

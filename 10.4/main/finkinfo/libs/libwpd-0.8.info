@@ -54,7 +54,6 @@ SplitOff: <<
 		libiconv,
 		libxml2-shlibs
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: CHANGES COPYING INSTALL README TODO
 	Files: <<
 		lib/libwpd-0.8.8*.dylib
@@ -71,7 +70,6 @@ SplitOff2: <<
 	Conflicts: libwpd-1-dev
 	Replaces: libwpd-1-dev
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	DocFiles: CHANGES COPYING INSTALL README TODO
 	Files: <<
 		include

@@ -33,7 +33,6 @@ SplitOff: <<
 		glibmm2.4-shlibs (>= 2.13.9-1),
 		libxml2-shlibs (>= 2.6.32-1)
 	<<
-	UseMaxBuildJobs: true
 	Files: lib/libxml++-2.6.*.dylib
 	Shlibs: %p/lib/libxml++-2.6.2.dylib 3.0.0 %n (>= 2.20.0-1)
 <<

@@ -87,7 +87,6 @@ SplitOff: <<
 		libkexiv2-8-%type_pkg[kde]-shlibs (>= 4.2.4-1),
 		libkipi-7-%type_pkg[kde]-shlibs (>= 4.2.4-1)
 	<<
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/lib/libkipiplugins.1*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkipiplugins.1.dylib 1.0.0 %n (>= 0.2.0-2)
 <<

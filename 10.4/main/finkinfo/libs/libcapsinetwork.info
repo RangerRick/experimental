@@ -50,7 +50,6 @@ SplitOff: <<
 	Description: static libraries and headers for libCapsiNetwork
 	Depends: libcapsinetwork (= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: include lib/libcapsinetwork.dylib lib/*.a lib/*.la
 <<
 Shlibs: 	%p/lib/libcapsinetwork.0.dylib 1.0.0 %n (>= 0.2.5-1)

@@ -99,7 +99,6 @@ SplitOff: <<
 		strigi-gui-%type_pkg[kde]-shlibs (>= 0.7.2-1)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/libdolphinprivate.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkonq.5*.dylib
@@ -120,7 +119,6 @@ SplitOff2: <<
 	Description: KDE4 - base development libraries and headers
 	Depends: %N (= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
 		opt/kde4/%type_pkg[kde]/lib/libdolphinprivate.dylib

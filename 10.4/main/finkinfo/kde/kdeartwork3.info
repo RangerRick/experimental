@@ -104,7 +104,6 @@ SplitOff: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/kwin*
 		lib/kde3/kstyle*
@@ -177,7 +176,6 @@ SplitOff10: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kxs*
 		bin/*.kss
@@ -252,7 +250,6 @@ SplitOff11: <<
 		kdelibs3-unified
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/emoticons
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -316,7 +313,6 @@ SplitOff12: <<
 	Depends: kdebase3-unified (>= %v-1)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -383,7 +379,6 @@ SplitOff2: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/apps/kworldclock
 	Homepage: http://docs.kde.org/en/3.3/kdetoys/kworldclock/
 	DescDetail: <<
@@ -454,7 +449,6 @@ SplitOff3: <<
 	Description: KDE - "Classic" icon set
 	Depends: %N-base (>= %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/icons/kdeclassic
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -518,7 +512,6 @@ SplitOff4: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/icons/kids
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -582,7 +575,6 @@ SplitOff5: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/icons/Locolor
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -646,7 +638,6 @@ SplitOff6: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/icons/ikons
 	Homepage: http://www.kde-look.org/content/show.php?content=602
 	DescUsage: <<
@@ -711,7 +702,6 @@ SplitOff7: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/icons/slick
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -775,7 +765,6 @@ SplitOff8: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/sounds
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -839,7 +828,6 @@ SplitOff9: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/wallpapers
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------

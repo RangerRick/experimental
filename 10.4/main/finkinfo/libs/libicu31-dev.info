@@ -43,7 +43,6 @@ SplitOff: <<
 	Package: libicu31
 	Conflicts: libicu30
 	Replaces: libicu30
-	UseMaxBuildJobs: true
 	Files: share/doc/%N/.turd
 <<
 

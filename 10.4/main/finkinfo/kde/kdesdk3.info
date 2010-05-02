@@ -127,7 +127,6 @@ SplitOff: <<
 		qt3 (>= 3.3.8-1027)
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/*.la
@@ -205,7 +204,6 @@ SplitOff10: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kuiviewer
 		lib/kde3/*kuiviewer*
@@ -294,7 +292,6 @@ SplitOff11: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: lib/libkspy.*
 	Shlibs: %p/lib/libkspy.1.dylib 4.0.0 kspy (>= 3.4.0-1)
 	DescDetail: <<
@@ -377,7 +374,6 @@ SplitOff12: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/po2xml
 		bin/split2po
@@ -475,7 +471,6 @@ SplitOff13: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/plugins/styles/scheck*
 		share/apps/kstyle/themes/scheck.themerc
@@ -545,7 +540,6 @@ SplitOff14: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/umbrello
 		bin/umbodoc
@@ -649,7 +643,6 @@ SplitOff15: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/adddebug
 		bin/build-progress.sh
@@ -743,7 +736,6 @@ SplitOff16: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kunittest*
 		lib/libkunittestgui.*.dylib
@@ -814,7 +806,6 @@ SplitOff17: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -876,7 +867,6 @@ SplitOff18: <<
 	Package: kdesdk3-ssl
 	Description: KDE - upgrade package for kdesdk3-ssl
 	Depends: %N (= %v-%r)
-	UseMaxBuildJobs: true
 	DocFiles: COPYING README
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -943,7 +933,6 @@ SplitOff2: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/cervisia
 		lib/kde3/*cervisia*
@@ -1044,7 +1033,6 @@ SplitOff3: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kapptemplate
 		share/apps/kapptemplate
@@ -1132,7 +1120,6 @@ SplitOff4: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/catalogmanager
 		bin/kbabel*
@@ -1248,7 +1235,6 @@ SplitOff5: <<
 	Description: KDE - bug-reporting tool
 	Depends: %N-base (>= %v-%r)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kbugbuster
 		lib/kde3/*bugbuster*
@@ -1336,7 +1322,6 @@ SplitOff6: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kcachegrind
 		bin/dprof2calltree
@@ -1437,7 +1422,6 @@ SplitOff7: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/*kabcformat_kdeaccounts*
 		share/apps/kabc/formats/kdeaccountsplugin.desktop
@@ -1507,7 +1491,6 @@ SplitOff8: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/*kfile*
 		share/services/kfile*
@@ -1577,7 +1560,6 @@ SplitOff9: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/kompare
 		lib/kde3/*kompare*

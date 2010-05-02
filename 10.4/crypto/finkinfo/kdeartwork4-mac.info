@@ -74,49 +74,42 @@ SplitOff: <<
 	Package: %N-color-schemes
 	Description: KDE4 - extra color schemes
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/share/apps/color-schemes
 <<
 SplitOff2: <<
 	Package: %N-desktop-themes
 	Description: KDE4 - extra desktop themes
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/share/apps/desktoptheme
 <<
 SplitOff20: <<
 	Package: %N-base
 	Description: KDE4 - kdeartwork base package
 	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1)
-	UseMaxBuildJobs: true
 	Files: opt share/doc/installed-packages/%N-base
 <<
 SplitOff3: <<
 	Package: %N-emoticons
 	Description: KDE4 - extra emoticons
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/share/emoticons
 <<
 SplitOff4: <<
 	Package: %N-icon-themes
 	Description: KDE4 - extra icon themes
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/share/icons
 <<
 SplitOff5: <<
 	Package: %N-sounds
 	Description: KDE4 - extra sounds
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/share/sounds
 <<
 SplitOff6: <<
 	Package: %N-styles
 	Description: KDE4 - extra styles
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/kstyle*
 		opt/kde4/%type_pkg[kde]/lib/kde4/plugins/styles
@@ -127,7 +120,6 @@ SplitOff7: <<
 	Package: %N-wallpapers
 	Description: KDE4 - extra wallpapers
 	Depends: %N-base (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/share/wallpapers
 <<
 

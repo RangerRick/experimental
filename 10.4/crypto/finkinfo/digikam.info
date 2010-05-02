@@ -85,7 +85,6 @@ SplitOff: <<
 		liblqr1-shlibs,
 		marble4-%type_pkg[kde] (>= 4.4.1-1)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/libdigikamcore.1*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libdigikamdatabase.1*.dylib
@@ -98,7 +97,6 @@ SplitOff: <<
 SplitOff2: <<
 	Package: %N-dev
 	Depends: %N (>= 0.10.0-1)
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
 		opt/kde4/%type_pkg[kde]/lib/*.dylib

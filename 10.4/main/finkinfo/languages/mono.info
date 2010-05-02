@@ -129,7 +129,6 @@ SplitOff: <<
 		macosx (>= 10.4.3-1)
 	<<
 	Replaces: %N (<< %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/libmono-profiler-*.0*.dylib
 		lib/libmono.0*.dylib
@@ -148,7 +147,6 @@ SplitOff10: <<
 		monodoc (<< 2.4-1)
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/*.a
@@ -161,7 +159,6 @@ SplitOff10: <<
 SplitOff2: <<
 	Package: monodoc
 	Depends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/mdassembler
 		bin/mdoc*

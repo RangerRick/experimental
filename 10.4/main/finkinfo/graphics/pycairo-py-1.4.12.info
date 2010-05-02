@@ -65,7 +65,6 @@ SplitOff: <<
 		pycairo-py26-dev
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING README
 	Files: include lib/pkgconfig
 <<

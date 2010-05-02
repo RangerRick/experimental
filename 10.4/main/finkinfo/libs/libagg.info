@@ -47,7 +47,6 @@ SplitOff: <<
 		sdl-shlibs (>= 1.2.13-1),
 		x11-shlibs
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/libagg.2*.dylib
 		lib/libaggfontfreetype.2*.dylib
@@ -66,7 +65,6 @@ SplitOff2: <<
 	Description: libagg development headers and libraries
 	Depends: %N-shlibs (>= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib

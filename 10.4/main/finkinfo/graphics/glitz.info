@@ -43,7 +43,6 @@ SplitOff: <<
 		libgl-shlibs,
 		x11-shlibs
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING ChangeLog* INSTALL NEWS README TODO
 	Files: <<
 		lib/libglitz-agl.*.dylib

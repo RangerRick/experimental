@@ -36,7 +36,6 @@ SplitOff: <<
 		libavformat52-shlibs (>= 0.4.20071217-5),
 		libavutil49-shlibs (>= 0.4.20071217-5)
 	<<
-	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: lib/libdlna.0*.dylib
 	Shlibs: %p/lib/libdlna.0.dylib 1.0.0 %n (>= 0.2.3-2)

@@ -278,7 +278,6 @@ SplitOff: <<
 		postgresql83-dev
 	<<
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		bin/pg_config*
 		include
@@ -321,7 +320,6 @@ SplitOff2: <<
 		postgresql80-unified-shlibs,
 		postgresql81-shlibs
 	<<
-	UseMaxBuildJobs: true
 	Files: lib/postgresql-8.2/*.dylib var/postgresql-8.2/*.sh var/postgresql-8.2/*.list
 	Shlibs: <<
 		%p/lib/postgresql-8.2/libecpg.5.dylib        5.0.0 postgresql82-shlibs (>= 8.2.13-1)
@@ -337,7 +335,6 @@ SplitOff3: <<
 	Description: Upgrade package for PostgreSQL
 	Depends: %N (>= %v-%r)
 	Replaces: postgresql-ssl
-	UseMaxBuildJobs: true
 	DocFiles: COPYRIGHT HISTORY INSTALL README
 <<
 SplitOff4: <<
@@ -345,7 +342,6 @@ SplitOff4: <<
 	Description: Upgrade package for PostgreSQL
 	Depends: %N (>= %v-%r)
 	Replaces: postgresql
-	UseMaxBuildJobs: true
 	DocFiles: COPYRIGHT HISTORY INSTALL README
 <<
 

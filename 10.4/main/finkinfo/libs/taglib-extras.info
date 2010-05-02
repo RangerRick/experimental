@@ -67,7 +67,6 @@ SplitOff: <<
 		kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
 		taglib-shlibs (>= 1.6.1-5)
 	<<
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/lib/libtag-extras.0*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libtag-extras.0.dylib 0.0.0 %n (>= 0.1.3-2)
 <<

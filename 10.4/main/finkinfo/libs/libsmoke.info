@@ -72,7 +72,6 @@ SplitOff: <<
 		kdelibs3-unified-shlibs (>= %v-1),
 		qt3-shlibs (>= 3.3.8-1027)
 	<<
-	UseMaxBuildJobs: true
 	Files: <<
 		lib/libsmokeqt.*.dylib
 		lib/libsmokekde.*.dylib

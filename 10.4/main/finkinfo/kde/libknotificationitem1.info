@@ -75,7 +75,6 @@ SplitOff: <<
 	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1)
 	Replaces: %N-dev (<< 4.2.1-2)
 	Recommends: %N (>= %v-%r)
-	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/lib/libknotificationitem-1.1*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libknotificationitem-1.1.dylib 1.0.0 %n (>= 4.3.0-1)
 <<
@@ -84,7 +83,6 @@ SplitOff2: <<
 	Description: KDE4 - notification headers and libs
 	Depends: %N (= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
 		opt/kde4/%type_pkg[kde]/lib

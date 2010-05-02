@@ -76,7 +76,6 @@ SplitOff: <<
 	Description: KDE - headers and libraries for KJSEmbed development
 	Depends: %N (>= %v-%r)
 	BuildDependsOnly: true
-	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/libkjsembed.*

@@ -73,7 +73,6 @@ DocFiles: AUTHORS COPYING ChangeLog* NEWS README*
 SplitOff: <<
 	Package: gtk-sharp-monodoc
 	Description: Dummy package for upgrades
-	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING ChangeLog* NEWS README*
 <<
 
