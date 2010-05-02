@@ -25,6 +25,7 @@ Source-MD5: e93b79bfafefc83892bf4dcfaa8df7b6
 PatchFile: %{Ni}.patch
 PatchFile-MD5: c2fa106412b172a7aa89e3f5e45f3b28
 
+UseMaxBuildJobs: true
 CompileScript: <<
 	%p/bin/ruby%type_raw[ruby] setup.rb config --prefix="%p"
 	%p/bin/ruby%type_raw[ruby] setup.rb setup

@@ -22,6 +22,7 @@ Source: http://louhi.kempele.fi/~skyostil/projects/pyamanith/dist/PyAmanith-%v.t
 Source-MD5: e6d44980ba8d1260f4e8dc73b93c63d4
 Patch: %{ni}.patch
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/bash -ev
 

@@ -20,6 +20,8 @@ Replaces: %N-man
 Source: mirror:cpan:modules/by-module/Compress/Compress-Zlib-%v.tar.gz
 Source-MD5: 689ba2cc399b019d0bf76a0575c32947
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
   %{default_script}

@@ -15,19 +15,19 @@ Depends: <<
 	x11
 <<
 BuildDepends: <<
-	cairo (>= 1.8.8-1),
+	cairo (>= 1.8.10-1),
 	expat1,
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
 	freeglut,
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	giflib,
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	glitz,
 	libgettext8-dev,
 	libiconv-dev,
 	libjpeg8,
-	libpng3,
+	libpng14,
 	libtiff,
 	netpbm10,
 	pango1-xft2-ft219-dev (>= 1.24.0-1),
@@ -44,6 +44,7 @@ PatchFile: %n.patch
 PatchFile-MD5: 966a8c3dd7d02a690ed11a7167a906ff
 
 SetCPPFLAGS: -Wall
+UseMaxBuildJobs: true
 ConfigureParams: <<
 	--mandir=%p/share/man \
 	--x-includes=/usr/X11R6/include --x-libraries=/usr/X11R6/lib \

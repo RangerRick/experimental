@@ -39,6 +39,7 @@ PatchFile-MD5: ef8e73c9e1db5166c90fadee7c624fde
 SetCPPFLAGS: -I%p/include/postgresql -I%p/include -fno-common
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --with-pgconfig=%p/bin/pg_config-%type_raw[postgresql] --with-geosconfig=%p/opt/libgeos3.2.0/bin/geos-config --with-projdir=%p --with-xml2config=%p/bin/xml2-config
 CompileScript: <<
 #!/bin/sh -ev
@@ -71,6 +72,7 @@ SplitOff: <<
 		jts,
 		postgresql-java (>= %type_raw[postgresql]-1)
 	<<
+	UseMaxBuildJobs: true
 	JarFiles: java/jdbc/postgis.jar java/pljava/postgis_pljava.jar
 <<
 

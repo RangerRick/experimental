@@ -33,6 +33,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Catalyst/Catalyst-Plugin-Authorization-Roles-%v.tar.gz
 Source-MD5: afef214de7c8084c59fad8a07a640059
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

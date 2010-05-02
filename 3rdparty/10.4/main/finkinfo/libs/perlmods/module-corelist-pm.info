@@ -20,6 +20,8 @@ Replaces: %N-man
 Source: mirror:cpan:modules/by-module/Module/Module-CoreList-%v.tar.gz
 Source-MD5: a006aa836dcc584acfbf3422df62f739
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
   %{default_script}
@@ -48,6 +50,7 @@ SplitOff: <<
 		module-corelist-pm585-bin,
 		module-corelist-pm586-bin
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: Changes MANIFEST README
 	Files: bin
 <<

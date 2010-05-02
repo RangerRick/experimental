@@ -40,6 +40,7 @@ SetCFLAGS: -Os -I%p/lib/system-openssl/include
 SetLDFLAGS: -L%p/lib/system-openssl/lib
 SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 ConfigureParams: --enable-aspell --enable-dynamic --enable-shared --enable-ui-readline --enable-ui-ncurses --with-ncurses=%p --with-readline=%p --with-libgsm --with-python=no --with-openssl --enable-libgadu-openssl --with-pthread --disable-ioctld --sysconfdir=%p/etc --mandir=%p/share/man --disable-dependency-tracking
 CompileScript: <<
 #!/bin/sh -ex
@@ -80,6 +81,7 @@ SplitOff: <<
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff2: <<
@@ -90,6 +92,7 @@ SplitOff2: <<
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff3: <<
@@ -99,6 +102,7 @@ SplitOff3: <<
 		%N (>= %v-%r),
 		fink-obsolete-packages
 	<<
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff4: <<
@@ -108,6 +112,7 @@ SplitOff4: <<
 		libgadu3-shlibs,
 		fink-obsolete-packages
 	<<
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff5: <<
@@ -118,6 +123,7 @@ SplitOff5: <<
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff6: <<
@@ -127,6 +133,7 @@ SplitOff6: <<
 		%N (>= %v-%r),
 		fink-obsolete-packages
 	<<
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff7: <<
@@ -136,6 +143,7 @@ SplitOff7: <<
 		libgadu3-shlibs,
 		fink-obsolete-packages
 	<<
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff8: <<
@@ -146,6 +154,7 @@ SplitOff8: <<
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 

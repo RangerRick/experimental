@@ -21,6 +21,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Variable/Variable-Magic-%v.tar.gz
 Source-MD5: 1850fb2c5770b48df0d9a13b5713a643
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 %{default_script}

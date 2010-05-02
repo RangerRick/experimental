@@ -27,6 +27,8 @@ Replaces: http-body-pm
 Source: mirror:cpan:modules/by-module/HTTP/HTTP-Body-%v.tar.gz
 Source-MD5: 1379184350749d108de4b0f47610a2b7
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

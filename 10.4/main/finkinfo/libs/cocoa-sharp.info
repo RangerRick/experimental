@@ -7,11 +7,11 @@ License: GPL
 Maintainer: Benjamin Reed <cocoa-sharp@fink.raccoonfink.com>
 
 Depends: <<
-	glib2-shlibs (>= 2.18.4-1),
+	glib2-shlibs (>= 2.22.0-1),
 	mono (>= 2.6.2-1)
 <<
 BuildDepends: <<
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	mono-dev (>= 2.6.2-1),
 	monodoc (>= 2.0-1),
 	pkgconfig (>= 0.23-1)
@@ -21,6 +21,7 @@ Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
 Source-MD5: 0fa994d2bae35d1eb60efad811b20532
 
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --infodir=%p/share/info --disable-static --disable-dependency-tracking
 
 InstallScript: <<

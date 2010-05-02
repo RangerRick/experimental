@@ -1,0 +1,28 @@
+Package: pty-redir
+Version: 0.1
+Revision: 1
+Description: Redirect PTYs
+License: GPL
+Maintainer: Benjamin Reed <pty-redir@fink.raccoonfink.com>
+
+Source: http://www.shinythings.com/%n/%n-%v.tgz
+Source-MD5: 1fa596594678da850988290327b88b64
+
+UseMaxBuildJobs: true
+CompileScript: 	make
+
+InstallScript: <<
+	install -d -m 755 %i/bin
+	install -c -m 755 pty-redir %i/bin/
+<<
+DocFiles: GPL
+
+Homepage: http://www.shinythings.com/pty-redir/
+DescDetail: <<
+This is a little tool to allow redirecting PTYs (for example,
+for creating a tunnel).
+
+See http://www.macdevcenter.com/pub/a/mac/2002/12/20/vpn.html?page=2
+for the reason this was packaged.  ;)
+<<
+

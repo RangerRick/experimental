@@ -28,6 +28,7 @@ GCC: 4.0
 Source: http://www.cpan.org/modules/by-module/DBD/DBD-Pg-%v.tar.gz
 Source-MD5: 2fc355b28ad5c7c05a46bf74fc88dd38
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ex
 
@@ -46,12 +47,14 @@ SplitOff: <<
 	Package: dbd-pg-pm560
 	Description: upgrade package for dbd-pg-pm560
 	Depends: dbd-pg-unified-pm560 (= %v-%r)
+	UseMaxBuildJobs: true
 	DocFiles: README README.win32 MANIFEST Changes
 <<
 SplitOff2: <<
 	Package: dbd-pg-pm560-ssl
 	Description: upgrade package for dbd-pg-pm560-ssl
 	Depends: dbd-pg-unified-pm560 (= %v-%r)
+	UseMaxBuildJobs: true
 	DocFiles: README README.win32 MANIFEST Changes
 <<
 

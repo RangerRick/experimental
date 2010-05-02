@@ -22,11 +22,11 @@ BuildDepends: <<
 	fink (>= 0.29.7-1),
 	ffmpeg-dev,
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gconf2-dev (>= 2.20.0-1),
 	gettext-bin,
 	gettext-tools,
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	gnome-vfs2-unified-dev (>= 1:2.24.0-1),
 	gsm,
 	gtk+2-dev (>= 2.14.7-1),
@@ -99,6 +99,7 @@ PatchFile-MD5: 630f55e102108174c95ae21675e0cd64
 
 SetCFLAGS: -Os -fomit-frame-pointer -fexpensive-optimizations -ffast-math
 SetLDFLAGS: -Wl,-dylib_file,/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+UseMaxBuildJobs: true
 ConfigureParams: <<
 --disable-dependency-tracking \
 --libexecdir=%p/lib/libxine \
@@ -178,9 +179,9 @@ SplitOff: <<
 		expat1-shlibs,
 		faac-shlibs,
 		fontconfig2-shlibs (>= 2.4.1-1),
-		freetype219-shlibs (>= 2.3.7-7),
+		freetype219-shlibs (>= 2.3.12-1),
 		gconf2-shlibs (>= 2.20.0-1),
-		glib2-shlibs (>= 2.18.4-1),
+		glib2-shlibs (>= 2.22.0-1),
 		gnome-vfs2-unified-shlibs (>= 1:2.24.0-1),
 		gtk+2-shlibs (>= 2.14.7-1),
 		imagemagick1-shlibs,
@@ -232,6 +233,7 @@ SplitOff: <<
 		libxine-shlibs,
 		libxine
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README
 	Files: <<
 		lib/libxine*.*.dylib

@@ -11,7 +11,7 @@ Depends: <<
 	audiofile-shlibs (>= 0.2.6-11),
 	daemonic,
 	esound-bin,
-	glib2-shlibs (>= 2.18.4-1),
+	glib2-shlibs (>= 2.22.0-1),
 	libiconv,
 	libmad-shlibs,
 	libogg-shlibs,
@@ -25,15 +25,15 @@ BuildDepends: <<
 	expat1,
 	fink (>= 0.29.7-1),
 	#	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	libgettext8-dev,
 	gettext-bin,
 	gettext-tools,
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	libiconv-dev,
 	libjpeg8,
 	libogg,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	libvorbis0,
 	libmad,
 	macosx (>= 10.4.3-1),
@@ -68,6 +68,7 @@ PatchFile-MD5: 9a104e152e9590b3ed5436dc2fc0db4e
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --with-distribution='Fink/Mac OS X'
 CompileScript: <<
 #!/bin/sh -ev
@@ -103,13 +104,13 @@ SplitOff: <<
 		esound-shlibs,
 		expat1-shlibs,
 		#		fontconfig2-shlibs (>= 2.4.1-1),
-		freetype219-shlibs (>= 2.3.7-7),
+		freetype219-shlibs (>= 2.3.12-1),
 		libgettext8-shlibs,
-		glib2-shlibs (>= 2.18.4-1),
+		glib2-shlibs (>= 2.22.0-1),
 		libiconv,
 		libmad-shlibs,
 		libogg-shlibs,
-		libpng3-shlibs (>= 1.2.8-1),
+		libpng14-shlibs (>= 1.4.1-2),
 		libvorbis0-shlibs,
 		qt3-shlibs (>= 3.3.8-1027),
 		macosx (>= 10.4.3-1),
@@ -117,6 +118,7 @@ SplitOff: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		lib/libartsc.0*.dylib
 		lib/libartsflow.1*.dylib
@@ -213,13 +215,14 @@ SplitOff2: <<
 		fink (>= 0.29.7-1),
 		glib2-dev,
 		libogg,
-		libpng3 (>= 1.2.8-1),
+		libpng14 (>= 1.4.1-2),
 		libvorbis0,
 		libmad,
 		pkgconfig (>= 0.23-1),
 		qt3 (>= 3.3.8-1027)
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/artsc-config
 		bin/mcopidl

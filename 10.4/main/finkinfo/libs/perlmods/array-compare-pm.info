@@ -22,6 +22,7 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Array/Array-Compare-%v.tar.gz
 Source-MD5: 0159ebb79529528db4cc68051532d22d
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ex
 	exec 2>&1

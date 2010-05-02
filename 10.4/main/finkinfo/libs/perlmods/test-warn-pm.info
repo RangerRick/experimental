@@ -32,6 +32,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Test/Test-Warn-%v.tar.gz
 Source-MD5: 1000ef6d94b54ca9eb75fb994a7e8bec
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

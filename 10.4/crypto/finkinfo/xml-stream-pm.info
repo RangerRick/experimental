@@ -33,6 +33,8 @@ Source: mirror:cpan:modules/by-module/XML/XML-Stream-%v.tar.gz
 Source-MD5: ae09400fac17eaea4c9b12283db06881
 SourceDirectory: XML-Stream-%v
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 #!/bin/sh -ev

@@ -11,12 +11,12 @@ BuildDepends: <<
 	cmake (>= 2.6.4-1),
 	expat1,
 	fink (>= 0.29.7-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	kdelibs3-unified-dev (>= 3.5.3-1),
 	libart2 (>= 2.3.20-1),
 	libiconv-dev,
 	libidn,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	pcre,
 	pkgconfig (>= 0.23-1),
 	qt3 (>= 3.3.8-1027),
@@ -30,6 +30,7 @@ Source-MD5: e6e721a38650c4c453c686c5d871862d
 PatchFile: %n.patch
 PatchFile-MD5: cb6b94aed5de064467fb18c2eaceeb12
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 

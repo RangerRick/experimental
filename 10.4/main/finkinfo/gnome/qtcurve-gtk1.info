@@ -1,0 +1,45 @@
+Package: qtcurve-gtk1
+Version: 0.42.2
+Revision: 1
+Description: Unified widget style (GTK+ 1.x version)
+License: GPL
+Maintainer: Benjamin Reed <qtcurve-gtk1@fink.raccoonfink.com>
+
+Depends: <<
+	gtk+-shlibs (>= 1.2.6-1),
+	libgettext8-shlibs,
+	x11-shlibs
+<<
+BuildDepends: <<
+	glib,
+	gtk+ (>= 1.2.6-1),
+	libgettext8-dev,
+	libiconv-dev,
+	x11-dev
+<<
+
+Source: http://home.freeuk.com/cpdrummond/QtCurve-Gtk1-%v.tar.gz
+Source-MD5: 8219f58493ca4e65a8fe61ee76eca522
+Patch: %n.patch
+
+NoSetCPPFLAGS: true
+NoSetLDFLAGS: true
+UseMaxBuildJobs: true
+
+InstallScript: make install DESTDIR="%d"
+DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
+
+DescDetail: <<
+	This is a set of widget styles for KDE, GTK1, and GTK2 based apps.
+	The underlying code is based upon Blue/FreeCurve - however,
+	*extensive* modifications have been made.
+
+	This package contains the GTK+ 1.x version.
+<<
+DescUsage: <<
+	To enable this style, edit (or create) a ~/.gtkrc
+	file so that it contains the following line:
+
+	include "%p/share/themes/QtCurve/gtk/gtkrc"
+<<
+

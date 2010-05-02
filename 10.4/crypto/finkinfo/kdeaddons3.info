@@ -25,10 +25,10 @@ BuildDepends: <<
 	esound,
 	expat1,
 	fink (>= 0.29.7-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	glib,
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	gtk+,
 	kdebase3-unified-dev (>= %v-1),
 	kdegames3-dev (>= %v-1),
@@ -41,7 +41,7 @@ BuildDepends: <<
 	libjpeg8,
 	libmad,
 	libogg,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	libvorbis0,
 	pkgconfig (>= 0.23-1),
 	pcre,
@@ -74,6 +74,7 @@ PatchFile-MD5: 31c0a3ab36678b48ab095ec70e5ac888
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --with-sdl-prefix=%p --disable-sdltest --with-distribution='Fink/Mac OS X'
 CompileScript: <<
 #!/bin/sh -ev
@@ -115,6 +116,7 @@ SplitOff: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/libkaddrbk_*
 		share/apps/kaddressbook
@@ -194,6 +196,7 @@ SplitOff10: <<
 		%N (>= %v-%r),
 		kdebase3-unified (>= %v-1)
 	<<
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -264,6 +267,7 @@ SplitOff2: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/atlantikdesigner
 		lib/kde3/atlantik*
@@ -343,6 +347,7 @@ SplitOff3: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/*kate*
 		share/applnk/.hidden/katefll.desktop
@@ -434,6 +439,7 @@ SplitOff4: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/lnkforward
 		lib/kde3/kfile*
@@ -522,6 +528,7 @@ SplitOff5: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/*panelapplet*
 		share/apps/kicker
@@ -605,6 +612,7 @@ SplitOff6: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: share/apps/knewsticker
 	DescDetail: <<
 * MBOX file to RSS converter
@@ -679,6 +687,7 @@ SplitOff7: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/fsview
 		bin/jpegorient
@@ -858,6 +867,7 @@ SplitOff8: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/ksig
 		lib/kde3/ksig*
@@ -940,6 +950,7 @@ SplitOff9: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/librenaudio*
 		lib/kde3/librenimage*

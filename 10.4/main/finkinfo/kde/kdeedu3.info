@@ -34,9 +34,9 @@ BuildDepends: <<
 	esound,
 	expat1,
 	fink (>= 0.29.7-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	kdelibs3-unified-dev (>= %v-1),
 	libart2 (>= 2.3.20-1),
 	libgettext8-dev,
@@ -45,7 +45,7 @@ BuildDepends: <<
 	libjpeg8,
 	libmad,
 	libogg,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	libvorbis0,
 	pcre,
 	pkgconfig (>= 0.23-1),
@@ -84,6 +84,7 @@ SetMAKEFLAGS: -j1
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 ConfigureParams: --disable-kig-python-scripting --with-distribution='Fink/Mac OS X'
 CompileScript: <<
 #!/bin/sh -ev
@@ -136,6 +137,7 @@ SplitOff: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kalzium
 		lib/kde3/kalzium.*
@@ -228,6 +230,7 @@ SplitOff10: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/apmount
 		bin/celestrongps
@@ -332,6 +335,7 @@ SplitOff11: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/ktouch
 		lib/kde3/ktouch.*
@@ -424,6 +428,7 @@ SplitOff12: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kverbos
 		lib/kde3/kverbos.*
@@ -520,6 +525,7 @@ SplitOff13: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kvoctrain
 		share/applications/kde/kvoctrain.desktop
@@ -612,6 +618,7 @@ SplitOff14: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/klatin
 		lib/kde3/klatin.*
@@ -710,6 +717,7 @@ SplitOff15: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kwordquiz
 		lib/kde3/kwordquiz.*
@@ -810,6 +818,7 @@ SplitOff16: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kturtle
 		lib/kde3/kturtle.*
@@ -902,6 +911,7 @@ SplitOff17: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/blinken
 		share/applications/kde/blinken.desktop
@@ -989,6 +999,7 @@ SplitOff18: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kanagram
 		share/applications/kde/kanagram.desktop
@@ -1077,6 +1088,7 @@ SplitOff19: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kgeography
 		share/applications/kde/kgeography.desktop
@@ -1174,6 +1186,7 @@ SplitOff2: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kbruch
 		lib/kde3/kbruch.*
@@ -1280,6 +1293,7 @@ SplitOff20: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/spotlight2kvtml
 		lib/libextdate.*.dylib
@@ -1368,10 +1382,11 @@ SplitOff21: <<
 		arts-dev (>= 1.5.10-1),
 		kdelibs3-unified-dev (>= %v-1),
 		libart2,
-		libpng3 (>= 1.2.8-1),
+		libpng14 (>= 1.4.1-2),
 		qt3 (>= 3.3.8-1027)
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/*.la
@@ -1446,6 +1461,7 @@ SplitOff22: <<
 		%N (>= %v-%r),
 		kdebase3-unified (>= %v-1)
 	<<
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -1513,6 +1529,7 @@ SplitOff3: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/keduca*
 		lib/kde3/*keduca*
@@ -1610,6 +1627,7 @@ SplitOff4: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/khangman
 		lib/kde3/khangman.*
@@ -1702,6 +1720,7 @@ SplitOff5: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kig
 		bin/pykig.py
@@ -1812,6 +1831,7 @@ SplitOff6: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kiten
 		bin/kitengen
@@ -1923,6 +1943,7 @@ SplitOff7: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/klettres
 		lib/kde3/klettres.*
@@ -2018,6 +2039,7 @@ SplitOff8: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kmplot
 		lib/kde3/*kmplot*
@@ -2114,6 +2136,7 @@ SplitOff9: <<
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kpercentage
 		lib/kde3/kpercentage.*

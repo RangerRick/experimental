@@ -24,6 +24,8 @@ Recommends: apache2 | apache2-ssl
 Source: mirror:cpan:modules/by-module/Catalyst/Catalyst-Engine-Apache-%v.tar.gz
 Source-MD5: 00d89cac86ed977428468433389f4c6e
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

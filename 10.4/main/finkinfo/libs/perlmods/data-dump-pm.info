@@ -13,6 +13,8 @@ BuildDepends: system-perl
 Source: mirror:cpan:modules/by-module/Data/Data-Dump-%v.tar.gz
 Source-MD5: b4f4beb85058cff872f957aee2fbaf08
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 DocFiles: Changes README
 

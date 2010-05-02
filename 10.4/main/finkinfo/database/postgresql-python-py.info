@@ -48,6 +48,7 @@ SetCPPFLAGS: -DHAVE_OPTRESET -I%p/include/postgresql -I%p/include
 SetLIBS: -L%p/lib
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --prefix=%p --with-docdir=%p/share/doc --mandir=%p/share/man --enable-multibyte --enable-recode --with-CXX --without-perl --with-python --with-openssl --with-libraries=%p/lib --with-includes=%p/include --without-tcl --without-java --enable-odbc --with-pam --with-rendezvous
 CompileScript: <<
 #!/bin/sh -ev
@@ -86,6 +87,7 @@ DocFiles: COPYRIGHT HISTORY INSTALL README
 SplitOff: <<
 	Package: postgresql-ssl-python-py%type_pkg[python]
 	Depends: postgresql-python-py%type_pkg[python] (>= %v-%r)
+	UseMaxBuildJobs: true
 	DocFiles: COPYRIGHT HISTORY INSTALL README
 <<
 

@@ -15,6 +15,7 @@ Source-MD5: 9cb4a25331a4c4db866a31cbe507c793
 
 SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 ConfigureParams: --mandir='${prefix}/share/man' --disable-pthread
 CompileScript: <<
 #!/bin/sh -ex
@@ -27,6 +28,7 @@ InstallScript: make -j1 install DESTDIR=%d
 DocFiles: ANNOUNCE AUTHORS COPYING ChangeLog HACKING HISTORY INSTALL NEWS PORTING README SUPPORT TESTS THANKS USERS
 SplitOff: <<
 	Package: pth2-shlibs
+	UseMaxBuildJobs: true
 	Files: lib/libpth.*.dylib
 	Shlibs: %p/lib/libpth.20.dylib 21.0.0 %n (>= 2.0.4-1)
 <<

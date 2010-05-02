@@ -18,6 +18,7 @@ SourceDirectory: %n-%v-beta1
 
 SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 CompileScript: <<
 #!/bin/sh -ex
 

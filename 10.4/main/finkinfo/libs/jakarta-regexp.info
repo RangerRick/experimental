@@ -19,6 +19,7 @@ Source-MD5: b941b8f4de297827f3211c2cb34af199
 SourceDirectory: %n-%v
 PatchScript: perl -pi -e 's,<javac,<javac target="1.4" source="1.4",g' build.xml
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ex
 

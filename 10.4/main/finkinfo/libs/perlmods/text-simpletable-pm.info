@@ -22,6 +22,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Text/Text-SimpleTable-%v.tar.gz
 Source-MD5: 90f884fec82f85df903ad7934b5351a6
 
+UseMaxBuildJobs: true
+
 InstallScript: <<
 	%{default_script}
 	find %i -name perllocal.pod -exec rm -rf {} \; || :

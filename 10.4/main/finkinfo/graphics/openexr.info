@@ -22,6 +22,7 @@ Source-MD5: 11951f164f9c872b183df75e66de145a
 SourceDirectory: %n-%v
 PatchScript: perl -pi -e 's,-Wno-long-double,,g' configure
 
+UseMaxBuildJobs: true
 ConfigureParams: --enable-shared=no --disable-imfexamples --disable-osx-universal-binaries --disable-dependency-tracking --with-gl-includes=/usr/X11R6/include
 CompileScript: <<
 #!/bin/sh -ev
@@ -46,6 +47,7 @@ SplitOff: <<
 	Package: %N-dev
 	Description: headers and libraries for OpenEXR development
 	Depends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/*.a

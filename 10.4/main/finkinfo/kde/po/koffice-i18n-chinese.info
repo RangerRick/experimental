@@ -27,6 +27,7 @@ Source-MD5: 7c7c3787a45743ae9d06938829381d2e
 SourceDirectory: koffice-l10n-zh_TW-%v
 PatchScript: perl -pi -e 's,doc/HTML,doc/kde,g' configure
 
+UseMaxBuildJobs: true
 CompileScript: (export HOME=/tmp; export KDEDIR=%p; sh configure %c; find . -name \*.bz2 -exec touch {} \;; make -j2)
 
 InstallScript: <<

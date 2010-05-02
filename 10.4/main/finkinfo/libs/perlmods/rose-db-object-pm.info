@@ -35,6 +35,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Rose/Rose-DB-Object-%v.tar.gz
 Source-MD5: 4642e4084d89303bafd7bba8a9bd109f
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

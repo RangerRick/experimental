@@ -32,6 +32,7 @@ Source-MD5: ec56591a82683ba8c123b33892603133
 SourceDirectory: %n-4
 PatchScript: perl -pi -e 's,<javac,<javac target="1.5" source="1.4",g' build.xml
 
+UseMaxBuildJobs: true
 CompileScript: ant dist -Dservletapi.build=build -Dservletapi.dist=dist
 
 InstallScript: <<

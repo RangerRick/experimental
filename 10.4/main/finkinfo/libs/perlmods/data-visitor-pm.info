@@ -38,6 +38,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Data/Data-Visitor-%v.tar.gz
 Source-MD5: f3bca28efc96aef200dd6bba74510c12
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

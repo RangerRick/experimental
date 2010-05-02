@@ -20,7 +20,7 @@ BuildDepends: <<
 	(%type_raw[gecko] = -firefox2) firefox2-dev,
 	(%type_raw[gecko] = -seamonkey) seamonkey-dev (>= 1.1.5-2),
 	atk1 (>= 1.26.0-1),
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	gtk+2-dev (>= 2.14.7-1),
 	gtk-sharp2 (>= 2.12.9-1),
 	mono-dev (>= 2.6.2-1),
@@ -50,6 +50,7 @@ Source-MD5: f88eaa06e71f8d8fa34cf59a3e034a6b
 
 SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 ConfigureParams: --mandir=%p/share/man --disable-dependency-tracking PKG_CONFIG_PATH="%p/lib/pango-ft219/lib/pkgconfig" lt_cv_sys_max_cmd_len=65536
 CompileScript: <<
 #!/bin/sh -ex

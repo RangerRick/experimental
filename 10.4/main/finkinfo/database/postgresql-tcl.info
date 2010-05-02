@@ -40,6 +40,7 @@ SetCPPFLAGS: -I%p/include/postgresql -I%p/include
 SetLIBS: -L%p/lib -lpq
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --prefix=%p --with-docdir=%p/share/doc --mandir=%p/share/man --enable-multibyte --enable-recode --with-CXX --without-perl --without-python --with-openssl --with-libraries=%p/lib --with-includes=%p/include --with-tcl --with-tclconfig=%p/lib --with-tkconfig=%p/lib --without-java --enable-odbc --with-pam --with-rendezvous
 CompileScript: <<
 #!/bin/sh -ev
@@ -79,6 +80,7 @@ DocFiles: COPYRIGHT HISTORY INSTALL
 SplitOff2: <<
 	Package: postgresql-ssl-tcl
 	Depends: postgresql-tcl (>= %v-%r)
+	UseMaxBuildJobs: true
 	DocFiles: COPYRIGHT HISTORY INSTALL
 <<
 Shlibs: !%p/lib/pgtcl1.5.2/libpgtcl1.5.2.dylib

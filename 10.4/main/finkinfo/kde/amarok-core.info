@@ -12,12 +12,12 @@ BuildDepends: <<
 	autoconf2.6 (>= 2.59-1),
 	cctools-single-module,
 	expat1,
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gettext-bin,
 	gettext-tools,
 	libgettext8-dev,
 	glib,
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	gtk+,
 	kdebase3-unified-dev (>= 3.5.3-1),
 	kdelibs3-unified-dev (>= 3.5.3-1),
@@ -31,7 +31,7 @@ BuildDepends: <<
 	libmp4v21-dev,
 	libmusicbrainz4,
 	libogg,
-	libpng3,
+	libpng14,
 	libtunepimp3,
 	libvisual-0.4,
 	libvorbis0,
@@ -71,6 +71,7 @@ PatchScript: <<
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --disable-mysql --disable-postgresql --without-nmm --without-mas --without-helix --with-distribution='Fink/Mac OS X' --with-libgpod --with-mp4v2 --with-mp4v2-dir=%p --without-xine --without-gstreamer --without-gstreamer10
 CompileScript: <<
 #!/bin/sh -ev
@@ -100,7 +101,7 @@ SplitOff: <<
 		libflac8,
 		libgettext8-shlibs,
 		glib-shlibs,
-		glib2-shlibs (>= 2.18.4-1),
+		glib2-shlibs (>= 2.22.0-1),
 		gtk+-shlibs,
 		kdebase3-unified-shlibs (>= 3.5.3-1),
 		kdelibs3-unified-shlibs (>= 3.5.3-1),
@@ -113,7 +114,7 @@ SplitOff: <<
 		libmp4v21-shlibs,
 		libmusicbrainz4-shlibs,
 		libogg-shlibs,
-		libpng3-shlibs,
+		libpng14-shlibs,
 		libtunepimp3-shlibs,
 		libvisual-0.4-shlibs,
 		libvorbis0-shlibs,
@@ -131,6 +132,7 @@ SplitOff: <<
 		amarok-kde-gstreamer-xine,
 		amarok (<< %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: lib/libamarok.*.dylib
 	Shlibs: %p/lib/libamarok.0.dylib 1.0.0 %N-shlibs (>= 1.4.0-1)
 <<

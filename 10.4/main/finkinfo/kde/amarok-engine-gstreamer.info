@@ -16,12 +16,12 @@ BuildDepends: <<
 	autoconf2.6 (>= 2.59-1),
 	cctools-single-module,
 	expat1,
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gettext-bin,
 	gettext-tools,
 	libgettext8-dev,
 	glib,
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	gst-plugins-base-0.10-dev,
 	gstreamer-0.10-dev,
 	gtk+,
@@ -37,7 +37,7 @@ BuildDepends: <<
 	libmp4v21-dev,
 	libmusicbrainz4,
 	libogg,
-	libpng3,
+	libpng14,
 	libtunepimp3,
 	libvorbis0,
 	libxine1,
@@ -77,6 +77,7 @@ PatchScript: <<
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --disable-mysql --disable-postgresql --without-nmm --without-mas --without-helix --without-libvisual --with-distribution='Fink/Mac OS X' --with-libgpod --with-mp4v2 --with-mp4v2-dir=%p --without-xine --without-gstreamer --with-gstreamer10
 CompileScript: <<
 #!/bin/sh -ev

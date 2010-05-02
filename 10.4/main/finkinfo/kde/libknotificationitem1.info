@@ -22,7 +22,7 @@ BuildDepends: <<
 	dbus-dev (>= 1.2.12-1),
 	expat1,
 	fink (>= 0.29.7-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	giflib,
 	kde4-buildenv (>= 4.4.0-1),
@@ -31,7 +31,7 @@ BuildDepends: <<
 	libidn,
 	libjasper.1,
 	libjpeg8,
-	libpng3,
+	libpng14,
 	libtiff,
 	libxml2,
 	libxslt,
@@ -48,6 +48,7 @@ Source: mirror:kde:stable/%v/src/kdelibs-experimental-%v.tar.bz2
 Source-MD5: ee3eb713d703b8bba9de61197f6943c4
 SourceDirectory: kdelibs-experimental-%v
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -74,6 +75,7 @@ SplitOff: <<
 	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1)
 	Replaces: %N-dev (<< 4.2.1-2)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[kde]/lib/libknotificationitem-1.1*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libknotificationitem-1.1.dylib 1.0.0 %n (>= 4.3.0-1)
 <<
@@ -82,6 +84,7 @@ SplitOff2: <<
 	Description: KDE4 - notification headers and libs
 	Depends: %N (= %v-%r)
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
 		opt/kde4/%type_pkg[kde]/lib

@@ -26,6 +26,7 @@ PatchFile-MD5: 63f00141cb26fcc62c4329724f2f8c02
 SetCFLAGS: -Os
 SetCXXFLAGS: -Os
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --infodir=%p/share/info
 CompileScript: <<
 #!/bin/sh -ex
@@ -49,6 +50,7 @@ SplitOff: <<
 	Description: static libraries and headers for libCapsiNetwork
 	Depends: libcapsinetwork (= %v-%r)
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: include lib/libcapsinetwork.dylib lib/*.a lib/*.la
 <<
 Shlibs: 	%p/lib/libcapsinetwork.0.dylib 1.0.0 %n (>= 0.2.5-1)

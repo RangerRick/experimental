@@ -30,6 +30,7 @@ PatchScript: sed -e 's,@INSTPREFIX@,%p,g' %a/%n.patch | patch -p1
 
 SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 CompileScript: <<
 #!/bin/sh -ex
 

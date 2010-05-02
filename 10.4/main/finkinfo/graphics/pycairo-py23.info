@@ -9,17 +9,17 @@ License: LGPL
 Maintainer: Benjamin Reed <pycairo-py@fink.raccoonfink.com>
 
 Depends: <<
-	cairo-shlibs (>= 1.8.8-1),
+	cairo-shlibs (>= 1.8.10-1),
 	expat1-shlibs,
 	fontconfig2-shlibs (>= 2.4.1-1),
 	freetype219-shlibs,
 	glitz-shlibs (>= 0.5.6-1),
-	libpng3-shlibs,
+	libpng14-shlibs,
 	numpy-py%type_pkg[python],
 	python%type_pkg[python]
 <<
 BuildDepends: <<
-	cairo (>= 1.8.8-1),
+	cairo (>= 1.8.10-1),
 	expat1,
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219,
@@ -27,7 +27,7 @@ BuildDepends: <<
 	numpy-py%type_pkg[python],
 	pkgconfig (>= 0.23-1),
 	libgl-dev,
-	libpng3,
+	libpng14,
 	pixman (>= 0.16.0-1),
 	x11-dev,
 	xft2-dev
@@ -37,6 +37,7 @@ Source: http://cairographics.org/releases/pycairo-%v.tar.gz
 Source-MD5: 166b04c4800c01aba1a6c8b14e87e0bc
 PatchScript: 	perl -pi -e 's|#\!\s*/usr/bin/env\s+python.*|#\!%p/bin/python%type_raw[python]|' test/*.py examples/*.py examples/gtk/*.py
 
+UseMaxBuildJobs: true
 ConfigureParams: --without-pygtk --mandir=%p/share/man --disable-dependency-tracking PKG_CONFIG_PATH=%p/lib/freetype219/lib/pkgconfig
 CompileScript: <<
 	PYTHON=%p/bin/python%type_raw[python] ./configure %c
@@ -62,6 +63,7 @@ SplitOff: <<
 		pycairo-py26-dev
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	DocFiles: AUTHORS COPYING README
 	Files: include lib/pkgconfig
 <<

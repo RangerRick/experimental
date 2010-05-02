@@ -79,6 +79,8 @@ Depends: <<
 	kde-i18n-chinese (>= 3.5.10-1)
 <<
 
+UseMaxBuildJobs: true
+
 DescDetail: <<
 This package doesn't install any files of itself, but instead makes
 sure that all KDE language files get installed.

@@ -13,6 +13,8 @@ BuildDepends: system-perl
 Source: mirror:cpan:authors/id/D/DC/DCONWAY/NEXT-%v.tar.gz
 Source-MD5: 93e782d1e123a8213a6771c9baed6ff7
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 DocFiles: Changes MANIFEST README demo/*
 

@@ -29,6 +29,7 @@ GCC: 4.0
 Source: http://www.cpan.org/modules/by-module/DBD/DBD-Pg-%v.tar.gz
 Source-MD5: 543e8caf0de78423adc9c9bb1c9a023b
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ex
 
@@ -47,12 +48,14 @@ SplitOff: <<
 	Package: dbd-pg-pm%type_pkg[perl]
 	Description: upgrade package for dbd-pg-pm%type_pkg[perl]
 	Depends: dbd-pg-unified-pm%type_pkg[perl] (= %v-%r)
+	UseMaxBuildJobs: true
 	DocFiles: README README.win32 MANIFEST Changes
 <<
 SplitOff2: <<
 	Package: dbd-pg-pm%type_pkg[perl]-ssl
 	Description: upgrade package for dbd-pg-pm%type_pkg[perl]-ssl
 	Depends: dbd-pg-unified-pm%type_pkg[perl] (= %v-%r)
+	UseMaxBuildJobs: true
 	DocFiles: README README.win32 MANIFEST Changes
 <<
 

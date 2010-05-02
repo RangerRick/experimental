@@ -24,6 +24,7 @@ BuildDepends: <<
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-nl-%v.tar.bz2
 Source-MD5: 3bcd3e1af34e7aee927ebab16210adad
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 

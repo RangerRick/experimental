@@ -33,6 +33,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Module/Module-Release-%v.tar.gz
 Source-MD5: f0088245a60cb3bbd5415179a7de3b41
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

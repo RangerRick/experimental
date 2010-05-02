@@ -16,6 +16,8 @@ Depends: <<
 Source: mirror:cpan:modules/by-module/IO/IO-Compress-Bzip2-%v.tar.gz
 Source-MD5: 9f3aff70e9ab4c7f34c4bae0117f7a48
 
+UseMaxBuildJobs: true
+
 UpdatePOD: True
 InstallScript: <<
 	%{default_script}

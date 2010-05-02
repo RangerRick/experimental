@@ -14,7 +14,7 @@ Depends: <<
 BuildDepends: <<
 	ecj,
 	fink (>= 0.29.7-1),
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	libgettext8-dev,
 	mono-dev (>= 2.6.2-1),
 	nant (>= 0.86-0)
@@ -34,6 +34,7 @@ SetMAKEFLAGS: -j1
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 CompileScript: <<
 #!/bin/sh -ex
 

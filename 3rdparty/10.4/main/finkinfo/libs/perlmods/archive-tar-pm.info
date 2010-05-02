@@ -29,6 +29,8 @@ Replaces: %N-man
 Source: mirror:cpan:modules/by-module/Archive/Archive-Tar-%v.tar.gz
 Source-MD5: c339b845681f37f7107690072187ea1c
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
   %{default_script}
@@ -57,6 +59,7 @@ SplitOff: <<
 		archive-tar-pm585-bin,
 		archive-tar-pm586-bin
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: MANIFEST README
 	Files: bin
 <<

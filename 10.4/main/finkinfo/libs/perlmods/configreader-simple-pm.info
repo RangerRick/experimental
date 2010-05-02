@@ -12,6 +12,8 @@ BuildDepends: fink (>= 0.29.7-1)
 Source: mirror:cpan:modules/by-module/ConfigReader/ConfigReader-Simple-%v.tar.gz
 Source-MD5: b2cb8d92e5b5c414fc7405840aeb68a7
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 DocFiles: Changes MANIFEST README LICENSE
 

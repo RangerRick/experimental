@@ -27,6 +27,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Catalyst/Catalyst-Plugin-Authentication-%v.tar.gz
 Source-MD5: aa93b6dff7b6420f4392e90b1c7bc3a0
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

@@ -27,6 +27,8 @@ BuildDepends: <<
 Source: mirror:cpan:authors/id/C/CH/CHANSEN/HTTP-Request-AsCGI-%v.tar.gz
 Source-MD5: e1f5d332969d072a19d9649ed7d77f59
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

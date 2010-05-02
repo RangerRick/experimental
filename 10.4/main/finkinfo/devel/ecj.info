@@ -25,6 +25,7 @@ Source: mirror:custom:R-%v-200702121330/%nsrc.zip
 Source-MD5: f9d7b548658c84231b00fada8d4b4f1b
 SourceRename: %n-%v.zip
 
+UseMaxBuildJobs: true
 CompileScript: <<
   
   # Compile the Java sources

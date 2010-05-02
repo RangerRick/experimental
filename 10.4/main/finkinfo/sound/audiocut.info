@@ -1,0 +1,33 @@
+Package: audiocut
+Version: 0.6
+Revision: 1
+Description: Simple tools for .wav concatenation
+License: GPL
+Maintainer: Benjamin Reed <audiocut@fink.raccoonfink.com>
+
+Depends: libsndfile1-shlibs
+BuildDepends: libsndfile1-dev
+
+CustomMirror: <<
+	Primary: http://www.finkproject.org/~ranger/distfiles
+	eur-NL: http://www.finkproject.org/~ranger/distfiles
+	nam-US: http://ranger.befunk.com/fink
+<<
+Source: mirror:custom:%n-%v.tgz
+Source-MD5: 33e99de848ef2021585680d2003899b3
+Patch: %n.patch
+
+UseMaxBuildJobs: true
+CompileScript:   make CFLAGS=-I%p/include LDFLAGS=-L%p/lib
+
+InstallScript: <<
+  install -d -m 755 %i/bin
+  install -c -m 755 wavcat wavprint wavsplit wavtime wavtrim %i/bin/
+<<
+DocFiles: README
+
+DescDetail: <<
+Audiocut is a set of tools to join WAV files, trim the trailing silence and
+lately to output data as a stream of numbers to visualise.
+<<
+

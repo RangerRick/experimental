@@ -18,6 +18,8 @@ Depends: <<
 <<
 BuildDepends: fink
 
+UseMaxBuildJobs: true
+
 Homepage: http://www.kde.org/
 DescDetail: <<
 This package doesn't install any files of itself, but makes sure that

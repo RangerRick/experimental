@@ -13,6 +13,8 @@ BuildDepends: system-perl
 Source: mirror:cpan:modules/by-module/Time/Time-Local-%v.tar.gz
 Source-MD5: bd47c6403f325168c9dc5a1ff0567176
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 DocFiles: Changes LICENSE MANIFEST README
 

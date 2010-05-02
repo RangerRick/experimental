@@ -48,6 +48,7 @@ PatchFile-MD5: e42fbdad63059b801b016b33742f1512
 
 SetCPPFLAGS: -I%p/lib/system-openssl/include -DHAVE_OPTRESET -fno-common
 SetLDFLAGS: -L%p/lib/system-openssl/lib -F/System/Library/Frameworks
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -xe
 
@@ -205,6 +206,7 @@ SplitOff: <<
 	Description: PostgreSQL development headers and libraries
 	Depends: %N (>= %v-%r)
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/postgresql-8.4/bin/pg_config*
 		opt/postgresql-8.4/include
@@ -231,6 +233,7 @@ fi
 SplitOff2: <<
 	Package: %N-shlibs
 	Description: PostgreSQL shared libraries
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/postgresql-8.4/lib/lib*.*.dylib
 		var/postgresql-8.4/*.sh

@@ -1,0 +1,31 @@
+Package: fondu
+Version: 030428
+Revision: 1
+Epoch: 1
+Description: Convert between Mac and UNIX font formats
+License: BSD
+Maintainer: Benjamin Reed <fondu@fink.raccoonfink.com>
+
+CustomMirror: <<
+	eur-NL: http://ranger.users.finkproject.org/distfiles
+	nam-US: http://ranger.befunk.com/fink
+	nam-US: http://astrange.ithinksw.net/ranger-fink
+	nam-CA: http://www.southofheaven.net/befunk
+	nam-US: http://fondu.sourceforge.net
+<<
+Source: mirror:custom:%N_src-%v.tgz
+Source-MD5: f4edb5fbadc8bdbf3bfbd05f9e66c1c4
+SourceDirectory: %n
+Patch: %n.patch
+
+UseMaxBuildJobs: true
+CompileScript: make -f Makefile.Mac prefix=%p
+
+InstallScript: make -f Makefile.Mac install DESTDIR=%d prefix=%p
+
+Homepage: http://fondu.sourceforge.net/
+DescDetail: <<
+Fondu is a set of programs to interconvert between mac font
+formats and pfb, ttf, otf and bdf files on unix.
+<<
+

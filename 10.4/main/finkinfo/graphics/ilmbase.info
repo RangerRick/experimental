@@ -18,6 +18,7 @@ PatchScript: perl -pi -e 's,-Wno-long-double,,g' configure
 NoSetCFLAGS: true
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --enable-shared=no --disable-osx-universal-binaries --disable-dependency-tracking
 CompileScript: <<
 #!/bin/sh -ev

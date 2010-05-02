@@ -29,6 +29,7 @@ PatchScript: <<
 <<
 
 SetLDFLAGS: -no-undefined -lintl
+UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --with-libintl-prefix=%p --with-libiconv-prefix=%p
 
 InstallScript: make install DESTDIR=%d
@@ -40,6 +41,7 @@ SplitOff: <<
 		libiconv
 	<<
 	Replaces: %N (<= 1.6.2-1)
+	UseMaxBuildJobs: true
 	DocFiles: README COPYING CHANGES
 	Files: <<
 		lib/libpopt.0*.dylib

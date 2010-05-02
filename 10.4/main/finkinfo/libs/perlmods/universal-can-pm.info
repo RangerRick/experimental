@@ -24,6 +24,7 @@ BuildDepends: <<
 Source: mirror:cpan:authors/id/C/CH/CHROMATIC/UNIVERSAL-can-%v.tar.gz
 Source-MD5: 4386c4f7479447fc5b51e8c3770cd2f4
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ex
 	exec 2>&1

@@ -32,6 +32,7 @@ SourceDirectory: strigi-%v
 PatchFile: strigi-gui.patch
 PatchFile-MD5: e286fcc9bcb9c04384e6f953bf2d2768
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -70,6 +71,7 @@ SplitOff: <<
 		qt4-%type_pkg[strigi]-gui-shlibs (>= 4.6.1-1),
 		strigi-shlibs (>= %v-1)
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: opt/strigi/%type_pkg[strigi]/lib/libstrigiqtdbusclient.0*.dylib
 	Shlibs: %p/opt/strigi/%type_pkg[strigi]/lib/libstrigiqtdbusclient.0.dylib 0.0.0 %n (>= 0.6.5-1)
@@ -79,6 +81,7 @@ SplitOff2: <<
 	Description: Development headers and libraries for the Strigi GUI
 	Depends: %N-shlibs (= %v-%r)
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: <<
 		opt/strigi/%type_pkg[strigi]/include

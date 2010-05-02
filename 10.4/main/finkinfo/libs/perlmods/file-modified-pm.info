@@ -13,6 +13,8 @@ BuildDepends: system-perl
 Source: mirror:cpan:modules/by-module/File/File-Modified-%v.tar.gz
 Source-MD5: 271a991b96ccbdaeb7098272c9f97d51
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 DocFiles: Changes MANIFEST README bug.txt example/*
 

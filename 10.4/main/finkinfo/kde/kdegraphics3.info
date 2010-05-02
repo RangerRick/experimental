@@ -31,7 +31,7 @@ BuildDepends: <<
 	expat1,
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	fribidi (>= 0.10.4-1),
 	fribidi-dev (>= 0.10.4-1),
 	gettext-tools,
@@ -47,7 +47,7 @@ BuildDepends: <<
 	libidn,
 	libjpeg8,
 	libpaper1,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	libtiff,
 	libtiff-bin,
 	libtool2,
@@ -90,6 +90,7 @@ PatchFile-MD5: 7fce964f32bbc36480fb58ff66751ba3
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --without-kamera --with-imlib-config=%p/bin --with-distribution='Fink/Mac OS X'
 CompileScript: <<
 #!/bin/sh -ev
@@ -124,6 +125,7 @@ SplitOff: <<
 	Depends: %N (>= %v-%r)
 	Replaces: kghostview (<< 3.5.10-1)
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/*.la
@@ -203,6 +205,7 @@ SplitOff10: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kpovmodeler
 		lib/kde3/*kpovmodeler*
@@ -312,6 +315,7 @@ SplitOff11: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kooka
 		lib/kde3/kooka.*
@@ -406,6 +410,7 @@ SplitOff12: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kruler
 		lib/kde3/kruler.*
@@ -491,6 +496,7 @@ SplitOff13: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/ksnapshot
 		lib/kde3/ksnapshot.*
@@ -572,6 +578,7 @@ SplitOff14: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/printnodetest
 		bin/svgdisplay
@@ -663,6 +670,7 @@ SplitOff15: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kuickshow
 		lib/*kuickshow*
@@ -745,6 +753,7 @@ SplitOff16: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kview
 		bin/kviewshell
@@ -880,6 +889,7 @@ SplitOff17: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/gsthumbnail*
 		lib/kde3/*kfile*
@@ -948,6 +958,7 @@ SplitOff18: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/mrmlsearch
 		lib/kde3/*daemonwatcher*
@@ -1034,6 +1045,7 @@ SplitOff19: <<
 		%N (>= %v-%r),
 		kdebase3-unified (>= %v-1)
 	<<
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -1097,6 +1109,7 @@ SplitOff2: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kcolorchooser
 		bin/kcoloredit
@@ -1182,6 +1195,7 @@ SplitOff3: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kdvi
 		lib/kde3/*kdvi*
@@ -1268,6 +1282,7 @@ SplitOff4: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kfax
 		bin/kfaxview
@@ -1350,6 +1365,7 @@ SplitOff5: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/xf86gammacfg
 		lib/kde3/*kgamma*
@@ -1429,6 +1445,7 @@ SplitOff6: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kghostview
 		lib/kde3/*kghostview*
@@ -1515,6 +1532,7 @@ SplitOff7: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kiconedit
 		lib/kde3/kiconedit.*
@@ -1592,6 +1610,7 @@ SplitOff8: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kolourpaint
 		share/applications/kde/kolourpaint.desktop
@@ -1678,6 +1697,7 @@ SplitOff9: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kpdf
 		lib/kde3/*kpdf*

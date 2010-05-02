@@ -13,6 +13,8 @@ BuildDepends: system-perl
 Source: mirror:cpan:modules/by-module/Astro/Astro-FITS-Header-%v.tar.gz
 Source-MD5: 5d9fa2424486846115c80c3fd6b82949
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 DocFiles: ChangeLog GPL MANIFEST README TODO
 

@@ -18,6 +18,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Data/Data-Alias-%v.tar.gz
 Source-MD5: 598670fb44767abb11bb801dc79c3def
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

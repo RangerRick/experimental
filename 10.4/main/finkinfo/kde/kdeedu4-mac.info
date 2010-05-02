@@ -36,9 +36,9 @@ BuildDepends: <<
 	dbus-dev (>= 1.2.12-1),
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	eigen2 (>= 2.0.11-1),
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	gmm,
 	gpsd (>= 2.35-1),
 	gsl,
@@ -69,6 +69,7 @@ PatchFile-MD5: c78374a968a3b46310f1f78d05e04ced
 
 SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -119,6 +120,7 @@ SplitOff: <<
 	Package: blinken4-%type_pkg[kde]
 	Description: KDE4 - simon says game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/blinken*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/blinken*
@@ -139,6 +141,7 @@ SplitOff10: <<
 	Package: klettres4-%type_pkg[kde]
 	Description: KDE4 - learn language alphabets
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/klettres*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/klettres*
@@ -160,6 +163,7 @@ SplitOff11: <<
 	Package: kmplot4-%type_pkg[kde]
 	Description: KDE4 - mathematical function plotter
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kmplot*
 		opt/kde4/%type_pkg[kde]/lib/kde4/*kmplot*
@@ -187,6 +191,7 @@ SplitOff12: <<
 		xplanet,
 		%N-base (>= %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kstars*
 		opt/kde4/%type_pkg[kde]/lib/libSatLib.4*.dylib
@@ -209,6 +214,7 @@ SplitOff13: <<
 	Package: ktouch4-%type_pkg[kde]
 	Description: KDE4 - learn touch typing
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/ktouch*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/ktouch*
@@ -229,6 +235,7 @@ SplitOff14: <<
 	Package: kturtle4-%type_pkg[kde]
 	Description: KDE4 - educational programming environment (Logo)
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kturtle*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kturtle*
@@ -248,6 +255,7 @@ SplitOff15: <<
 	Package: kwordquiz4-%type_pkg[kde]
 	Description: KDE4 - flash card program
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kwordquiz*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kwordquiz*
@@ -271,6 +279,7 @@ SplitOff16: <<
 		gpsd-shlibs (>= 2.35-1),
 		%N-base (>= %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/geodatatest*
 		opt/kde4/%type_pkg[kde]/bin/marble*
@@ -298,6 +307,7 @@ SplitOff17: <<
 		libxslt-shlibs (>= 1.1.0-1),
 		%N-base (>= %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/parley*
 		opt/kde4/%type_pkg[kde]/lib/kde4/*parley*
@@ -328,6 +338,7 @@ SplitOff18: <<
 		%N-base (>= %v-%r)
 	<<
 	Replaces: %N-base (<< 4.4.1-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/cantor*
 		opt/kde4/%type_pkg[kde]/lib/kde4/*cantor*
@@ -360,6 +371,7 @@ SplitOff19: <<
 	Package: rocs4-%type_pkg[kde]
 	Description: KDE4 - Graph editor and environment
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/rocs*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/rocs*
@@ -381,6 +393,7 @@ SplitOff2: <<
 		readline5-shlibs,
 		%N-base (>= %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/calgebra*
 		opt/kde4/%type_pkg[kde]/bin/kalgebra*
@@ -406,6 +419,7 @@ SplitOff20: <<
 	Package: step4-%type_pkg[kde]
 	Description: KDE4 - Interactive physics simulator
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/step*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/step*
@@ -431,6 +445,7 @@ SplitOff3: <<
 		ocaml,
 		%N-base (>= %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kalzium*
 		opt/kde4/%type_pkg[kde]/lib/kde4/*didyouknow*
@@ -460,6 +475,7 @@ SplitOff30: <<
 	Package: %N-base-shlibs
 	Description: KDE4 - base kdeedu shared libraries
 	Depends: kdebase4-%type_pkg[kde]-shlibs (>= 4.4.1-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/libkdeeduui.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkeduvocdocument.4*.dylib
@@ -476,6 +492,7 @@ SplitOff31: <<
 	Description: KDE4 - kdeedu development libs and headers
 	Depends: %N (>= %v-%r)
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
 		opt/kde4/%type_pkg[kde]/lib/*.dylib
@@ -489,12 +506,14 @@ SplitOff32: <<
 		%N-base-shlibs (>= %v-%r),
 		kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1)
 	<<
+	UseMaxBuildJobs: true
 	Files: opt
 <<
 SplitOff4: <<
 	Package: kanagram4-%type_pkg[kde]
 	Description: KDE4 - anagram word game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kanagram*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kanagram*
@@ -516,6 +535,7 @@ SplitOff5: <<
 	Package: kbruch4-%type_pkg[kde]
 	Description: practice calculating with fractions
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kbruch*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kbruch*
@@ -537,6 +557,7 @@ SplitOff6: <<
 	Package: kgeography4-%type_pkg[kde]
 	Description: KDE4 - geography learning trainer
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kgeography*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kgeography*
@@ -557,6 +578,7 @@ SplitOff7: <<
 	Package: khangman4-%type_pkg[kde]
 	Description: KDE4 - hangman word guessing game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/khangman*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/khangman*
@@ -579,6 +601,7 @@ SplitOff8: <<
 	Package: kig4-%type_pkg[kde]
 	Description: KDE4 - explore geometric constructions
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/*kig*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kigpart*
@@ -608,6 +631,7 @@ SplitOff9: <<
 	Package: kiten4-%type_pkg[kde]
 	Description: KDE4 - Japanese learning tool
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kiten*
 		opt/kde4/%type_pkg[kde]/lib/libkiten.4*.dylib

@@ -26,6 +26,7 @@ PatchScript: sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1
 PatchFile: %n.patch
 PatchFile-MD5: 13d8f4ae42173a6bd8d035530247d90a
 
+UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --with-apxs=%p/sbin/apxs --with-mono-prefix=%p --with-apr-config=%p/bin/apr-config --enable-debug
 CompileScript: <<
 #!/bin/sh -ex

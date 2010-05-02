@@ -1,0 +1,36 @@
+diff -Nurd wview-4.0.0/Makefile.in wview-4.0.0-patched/Makefile.in
+--- wview-4.0.0/Makefile.in	2008-06-28 15:58:51.000000000 -0400
++++ wview-4.0.0-patched/Makefile.in	2008-07-01 16:22:53.000000000 -0400
+@@ -634,21 +634,17 @@
+ 
+ # this target installs the default environment in the default places
+ install-env:	install
+-	mkdir -p $(WV_CONFIG_DIR)
+-	mkdir -p $(WV_RUN_DIR)
+-	mkdir -p $(WV_RUN_DIR)/noaa
+-	mkdir -p $(WV_RUN_DIR)/alarms
+-	mkdir -p $(WV_RUN_DIR)/archive
+-	mkdir -p $(WV_RUN_DIR)/img
+-	mkdir -p $(WV_RUN_DIR)/img/Archive
+-	mkdir -p $(WV_RUN_DIR)/img/NOAA
+-	cp -rf $(WV_RUN_DIR)/img $(WV_RUN_DIR)/img-`date '+%Y%m%d.%H%M%S'`
+-	cp -rf $(top_srcdir)/bin/img $(WV_RUN_DIR)
+-	cp -rf $(WV_CONFIG_DIR) $(WV_CONFIG_DIR)-`date '+%Y%m%d.%H%M%S'`
+-	rm -rf $(WV_CONFIG_DIR)/html
+-	cp -rf $(top_srcdir)/examples/html $(WV_CONFIG_DIR)
+-	cp -rf $(top_srcdir)/examples/alarms $(WV_CONFIG_DIR)
+-	cp -rf $(top_srcdir)/examples/conf/*.* $(WV_CONFIG_DIR)
++	install -d -m 755 $(DESTDIR)$(WV_RUN_DIR)/noaa
++	install -d -m 755 $(DESTDIR)$(WV_RUN_DIR)/alarms
++	install -d -m 755 $(DESTDIR)$(WV_RUN_DIR)/archive
++	install -d -m 755 $(DESTDIR)$(WV_RUN_DIR)/img/Archive
++	install -d -m 755 $(DESTDIR)$(WV_RUN_DIR)/img/NOAA
++	install -c -m 644 $(top_srcdir)/bin/img/* $(DESTDIR)$(WV_RUNDIR)/
++	install -d $(DESTDIR)$(WV_CONFIG_DIR)/html
++	install -c -m 644 $(top_srcdir)/examples/html/classic/plus/* $(DESTDIR)$(WV_CONFIG_DIR)/html/
++	install -c -m 755 $(top_srcdir)/examples/alarms/* $(DESTDIR)$(WV_CONFIG_DIR)/
++	install -c -m 644 $(top_srcdir)/examples/conf/* $(DESTDIR)$(WV_CONFIG_DIR)/
++
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

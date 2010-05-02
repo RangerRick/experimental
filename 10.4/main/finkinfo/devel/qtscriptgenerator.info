@@ -27,6 +27,7 @@ PatchFile-MD5: f3144aa211895d542539cc109c9b7a22
 
 SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -75,6 +76,7 @@ DocFiles: LICENSE* README*
 SplitOff: <<
 	Package: %N-runtime
 	Description: Runtime QtScript plugins
+	UseMaxBuildJobs: true
 	Files: lib/qt4-%type_pkg[qt]/plugins
 <<
 

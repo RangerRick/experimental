@@ -1,0 +1,28 @@
+Package: usb-ids
+Version: 20080311
+Revision: 1
+Description: A database of USB IDs
+License: GPL
+Maintainer: Benjamin Reed <usb-ids@fink.raccoonfink.com>
+
+BuildDepends: bzip2
+
+CustomMirror: <<
+	Primary: http://www.finkproject.org/~ranger/distfiles
+	eur-NL: http://www.finkproject.org/~ranger/distfiles
+	nam-US: http://ranger.befunk.com/fink
+<<
+NoSourceDirectory: true
+Source: mirror:custom:usbids/usb.ids-%v.bz2
+Source-MD5: a314cfdc07f15c2a5d996846f952ea97
+
+UseMaxBuildJobs: true
+CompileScript: true
+
+InstallScript: <<
+	install -d -m 755 %i/share/%N
+	bzip2 -dc usb.ids-%v.bz2 > %i/share/%N/usb.ids
+<<
+
+Homepage: http://www.linux-usb.org/
+

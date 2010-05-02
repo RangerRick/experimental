@@ -22,8 +22,8 @@ BuildDepends: <<
 	libgadu3-dev,
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
-	glib2-dev (>= 2.18.4-1),
+	freetype219 (>= 2.3.12-1),
+	glib2-dev (>= 2.22.0-1),
 	gmp,
 	kde4-buildenv (>= 4.4.0-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.4.1-1),
@@ -57,6 +57,7 @@ Source-MD5: e1a0da88d27feb7c921a26c0dc9782b7
 PatchFile: kdenetwork4.patch
 PatchFile-MD5: 7468d341e1ab88bbfd1cacbd8035fb9e
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -87,6 +88,7 @@ SplitOff: <<
 	Package: filesharing4-%type_pkg[kde]
 	Description: KDE4 - network filesharing configuration
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/*fileshare*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kcm_kcmsambaconf*
@@ -100,6 +102,7 @@ SplitOff2: <<
 	Package: kdnssd4-%type_pkg[kde]
 	Description: KDE4 - DNS-SD (zeroconf) support
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/kded_dnssdwatcher.so
 		opt/kde4/%type_pkg[kde]/lib/kde4/kio_zeroconf.so
@@ -117,6 +120,7 @@ SplitOff3: <<
 		qca2-%type_pkg[kde]-shlibs (>= 2.0.2-1),
 		%N-base (>= %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kget*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kcm_kget_*
@@ -157,6 +161,7 @@ SplitOff4: <<
 		xmms-shlibs,
 		%N-base (>= %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kopete*
 		opt/kde4/%type_pkg[kde]/bin/winpopup*
@@ -225,6 +230,7 @@ SplitOff5: <<
 	Package: krdc4-%type_pkg[kde]
 	Description: KDE4 - remote desktop client
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/krdc*
 		opt/kde4/%type_pkg[kde]/lib/kde4/*krdc*
@@ -246,6 +252,7 @@ SplitOff6: <<
 	Description: KDE4 - kdenetwork development headers and libs
 	Depends: %N (>= %v-%r)
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
 		opt/kde4/%type_pkg[kde]/lib/libkopete.dylib
@@ -268,6 +275,7 @@ SplitOff7: <<
 	Package: %N-base
 	Description: KDE4 - kdenetwork base package
 	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1)
+	UseMaxBuildJobs: true
 	Files: opt
 <<
 

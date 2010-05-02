@@ -25,6 +25,7 @@ SourceDirectory: attica-%v
 PatchFile: libattica-dev.patch
 PatchFile-MD5: 70d8d3075edeaa47597661bb74a515da
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -50,6 +51,7 @@ SplitOff: <<
 	Package: libattica-%type_pkg[attica]-shlibs
 	Description: Shared libraries for Attica
 	Depends: qt4-%type_pkg[attica]-core-shlibs (>= 4.6.1-1)
+	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: opt/attica/%type_pkg[attica]/lib/libattica.0*.dylib
 	Shlibs: %p/opt/attica/%type_pkg[attica]/lib/libattica.0.dylib 0.0.0 %n (>= 0.1.1-1)

@@ -22,14 +22,14 @@ BuildDepends: <<
 	expat1,
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
-	glib2-dev (>= 2.18.4-1),
+	freetype219 (>= 2.3.12-1),
+	glib2-dev (>= 2.22.0-1),
 	kde4-buildenv (>= 4.4.0-1),
 	libgettext8-dev,
 	libiconv-dev,
 	libjpeg8,
 	libmng2,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	libtiff,
 	macosx (>= 10.4.3-1),
 	pkgconfig (>= 0.23-1),
@@ -60,6 +60,7 @@ PatchFile-MD5: 495e383d8f8f070a6752a74c9d5dd3bd
 SetMAKEFLAGS: -j1
 NoSetLDFLAGS: true
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -171,6 +172,7 @@ SplitOff: <<
 		%N-linguist,
 		%N-doc
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: LGPL* LICENSE*
 	Files: <<
 		(%m != x86_64) lib/%N/lib/Qt3Support.framework/Qt3Support
@@ -253,13 +255,14 @@ SplitOff2: <<
 		dbus-shlibs (>= 1.2.12-1),
 		fink (>= 0.29.7-1),
 		fontconfig2-shlibs (>= 2.4.1-1),
-		freetype219-shlibs (>= 2.3.7-7),
-		glib2-shlibs (>= 2.18.4-1),
+		freetype219-shlibs (>= 2.3.12-1),
+		glib2-shlibs (>= 2.22.0-1),
 		libjpeg8-shlibs,
-		libpng3-shlibs (>= 1.2.8-1),
+		libpng14-shlibs (>= 1.4.1-2),
 		libtiff-shlibs,
 		sqlite3-shlibs
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: LGPL* LICENSE*
 	Files: <<
 		lib/qt4-mac/lib/libQtCLucene.4*.dylib
@@ -332,12 +335,14 @@ SplitOff3: <<
 	Package: %N-designer
 	Depends: %N-designer-shlibs (= %v-%r)
 	Replaces: %N (<< %v-1)
+	UseMaxBuildJobs: true
 	Files: lib/%N/bin/Designer*
 <<
 SplitOff4: <<
 	Package: %N-designer-shlibs
 	Depends: %N-gui-shlibs (= %v-%r)
 	Replaces: %N (<< 4.5.1-2)
+	UseMaxBuildJobs: true
 	DocFiles: LGPL* LICENSE*
 	Files: <<
 		lib/%N/lib/QtDesigner.framework/QtDesigner
@@ -363,6 +368,7 @@ SplitOff5: <<
 	Package: %N-linguist
 	Depends: %N-gui-shlibs (= %v-%r)
 	Replaces: %N (<< %v-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		lib/%N/bin/Linguist*
 		lib/%N/bin/l*
@@ -371,6 +377,7 @@ SplitOff5: <<
 <<
 SplitOff6: <<
 	Package: %N-doc
+	UseMaxBuildJobs: true
 	Files: share/doc/%N
 <<
 

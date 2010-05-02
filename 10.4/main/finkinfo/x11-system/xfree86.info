@@ -86,6 +86,7 @@ PatchScript: <<
 
 SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -129,6 +130,7 @@ SplitOff: <<
 		system-xfree86,
 		xfree86-shlibs
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		/usr/X11R6/lib/libAppleWM.*.dylib
 		/usr/X11R6/lib/libFS.*.dylib

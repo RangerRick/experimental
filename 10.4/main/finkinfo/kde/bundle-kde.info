@@ -7,6 +7,8 @@ Maintainer: Benjamin Reed <bundle-kde@fink.raccoonfink.com>
 
 Depends: bundle-kde-unified (= %v-%r)
 
+UseMaxBuildJobs: true
+
 SplitOff: <<
 	Package: bundle-kde-unified
 	Description: KDE - convenience package: KDE 3.5
@@ -28,6 +30,7 @@ SplitOff: <<
 		kdewebdev3 (>= %v-1),
 		koffice (>= 1.6.0-1)
 	<<
+	UseMaxBuildJobs: true
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
 

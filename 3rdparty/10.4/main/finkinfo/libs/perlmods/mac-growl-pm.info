@@ -21,6 +21,8 @@ Source: mirror:sourceforge:fink/Mac-Growl-%v.tar.bz2
 Source-MD5: 5ab0b975bf66e507386a8582db7278af
 SourceDirectory: Mac-Growl
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
   %{default_script}

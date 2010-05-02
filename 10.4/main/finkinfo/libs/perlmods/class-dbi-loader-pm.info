@@ -30,6 +30,8 @@ BuildDepends: <<
 Source: mirror:cpan:authors/id/D/DM/DMAKI/Class-DBI-Loader-%v.tar.gz
 Source-MD5: ed560f11d64621fd9107e287f9c8eae4
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

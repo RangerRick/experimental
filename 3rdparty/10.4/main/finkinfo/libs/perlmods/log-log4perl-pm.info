@@ -14,6 +14,8 @@ BuildDepends: perl%type_pkg[perl]-core
 Source: mirror:cpan:modules/by-module/Log/Log-Log4perl-%v.tar.gz
 Source-MD5: 102dd4fc918ffb730c7cde49aeaecb3a
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
   %{default_script}

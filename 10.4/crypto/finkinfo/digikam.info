@@ -18,8 +18,8 @@ BuildDepends: <<
 	dbus-dev (>= 1.2.12-1),
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
-	glib2-dev (>= 2.18.4-1),
+	freetype219 (>= 2.3.12-1),
+	glib2-dev (>= 2.22.0-1),
 	kde4-buildenv (>= 4.4.0-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.4.1-1),
 	kdeedu4-%type_pkg[kde]-dev (>= 4.4.1-1),
@@ -50,6 +50,7 @@ Source-MD5: 94a536e7387325c7b73ab2ac7b0a9a62
 PatchFile: digikam.patch
 PatchFile-MD5: 066618ee8a44c560ff0a347be08567ca
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -84,6 +85,7 @@ SplitOff: <<
 		liblqr1-shlibs,
 		marble4-%type_pkg[kde] (>= 4.4.1-1)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/libdigikamcore.1*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libdigikamdatabase.1*.dylib
@@ -96,6 +98,7 @@ SplitOff: <<
 SplitOff2: <<
 	Package: %N-dev
 	Depends: %N (>= 0.10.0-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
 		opt/kde4/%type_pkg[kde]/lib/*.dylib

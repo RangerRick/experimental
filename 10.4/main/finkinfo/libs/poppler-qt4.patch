@@ -1,0 +1,110 @@
+diff -uNr poppler-0.5.4/configure poppler-0.5.4-patched/configure
+--- poppler-0.5.4/configure	2006-09-21 20:54:32.000000000 -0400
++++ poppler-0.5.4-patched/configure	2007-01-30 11:39:31.000000000 -0500
+@@ -25712,6 +25712,7 @@
+ qt4_test_la_library="libQtCore.la"
+ qt4_test_library="libQtCore.so"
+ qt4_windows_test_library="QtCore4.dll"
++qt4_mac_test_library="QtCore.framework"
+ 
+ echo "$as_me:$LINENO: checking for Qt4 headers" >&5
+ echo $ECHO_N "checking for Qt4 headers... $ECHO_C" >&6
+@@ -25744,6 +25745,12 @@
+         windows_qt="yes"
+         break
+     fi
++
++    if test -d "$qt4_check/$qt4_mac_test_library" ; then
++        qt4_libdir="$qt4_check"
++        mac_qt="yes"
++        break
++    fi
+ done
+ echo "$as_me:$LINENO: result: $qt4_libdir" >&5
+ echo "${ECHO_T}$qt4_libdir" >&6
+@@ -25757,9 +25764,11 @@
+ if test "x$have_qt4" == "xyes"; then
+     POPPLER_QT4_CXXFLAGS="-I$qt4_incdir"
+     if test x$windows_qt = xyes; then
+-	POPPLER_QT4_LIBS="-L$qt4_libdir -lQtCore4 -lQtGui4 -lQtXml4"
++        POPPLER_QT4_LIBS="-L$qt4_libdir -lQtCore4 -lQtGui4 -lQtXml4"
++    elif test x$mac_qt = xyes; then
++        POPPLER_QT4_LIBS="-L$qt4_libdir -Wl,-F$qt4_libdir -framework QtCore -framework QtGui -framework QtXml"
+     else
+-	POPPLER_QT4_LIBS="-L$qt4_libdir -lQtCore -lQtGui -lQtXml"
++        POPPLER_QT4_LIBS="-L$qt4_libdir -lQtCore -lQtGui -lQtXml"
+     fi
+     :
+ else
+@@ -25785,6 +25794,7 @@
+ qt4_test_la_library="libQtCore.la"
+ qt4_test_library="libQtCore.so"
+ qt4_windows_test_library="QtCore4.dll"
++qt4_mac_test_library="QtCore.framework"
+ 
+ echo "$as_me:$LINENO: checking for Qt4 headers" >&5
+ echo $ECHO_N "checking for Qt4 headers... $ECHO_C" >&6
+@@ -25817,6 +25827,12 @@
+         windows_qt="yes"
+         break
+     fi
++
++    if test -d "$qt4_check/$qt4_mac_test_library" ; then
++        qt4_libdir="$qt4_check"
++        mac_qt="yes"
++        break
++    fi
+ done
+ echo "$as_me:$LINENO: result: $qt4_libdir" >&5
+ echo "${ECHO_T}$qt4_libdir" >&6
+@@ -25830,9 +25846,11 @@
+ if test "x$have_qt4" == "xyes"; then
+     POPPLER_QT4_CXXFLAGS="-I$qt4_incdir"
+     if test x$windows_qt = xyes; then
+-	POPPLER_QT4_LIBS="-L$qt4_libdir -lQtCore4 -lQtGui4 -lQtXml4"
++        POPPLER_QT4_LIBS="-L$qt4_libdir -lQtCore4 -lQtGui4 -lQtXml4"
++    elif test x$mac_qt = xyes; then
++        POPPLER_QT4_LIBS="-L$qt4_libdir -Wl,-F$qt4_libdir -framework QtCore -framework QtGui -framework QtXml"
+     else
+-	POPPLER_QT4_LIBS="-L$qt4_libdir -lQtCore -lQtGui -lQtXml"
++        POPPLER_QT4_LIBS="-L$qt4_libdir -lQtCore -lQtGui -lQtXml"
+     fi
+     enable_poppler_qt4="yes"
+ else
+diff -uNr poppler-0.5.4/qt4/Makefile.in poppler-0.5.4-patched/qt4/Makefile.in
+--- poppler-0.5.4/qt4/Makefile.in	2006-09-21 20:54:24.000000000 -0400
++++ poppler-0.5.4-patched/qt4/Makefile.in	2007-01-30 11:38:02.000000000 -0500
+@@ -216,7 +216,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = src tests
++SUBDIRS = src
+ all: all-recursive
+ 
+ .SUFFIXES:
+diff -uNr poppler-0.5.4/qt4/src/Makefile.in poppler-0.5.4-patched/qt4/src/Makefile.in
+--- poppler-0.5.4/qt4/src/Makefile.in	2006-09-21 20:54:25.000000000 -0400
++++ poppler-0.5.4-patched/qt4/src/Makefile.in	2007-01-30 10:56:05.000000000 -0500
+@@ -61,9 +61,7 @@
+ libLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+-libpoppler_qt4_la_DEPENDENCIES =  \
+-	$(top_builddir)/poppler/libpoppler.la \
+-	$(top_builddir)/poppler/libpoppler-arthur.la \
++libpoppler_qt4_la_DEPENDENCIES = \
+ 	$(am__DEPENDENCIES_1)
+ am_libpoppler_qt4_la_OBJECTS = poppler-document.lo poppler-page.lo \
+ 	poppler-fontinfo.lo poppler-embeddedfile.lo poppler-textbox.lo \
+@@ -279,9 +277,7 @@
+ 	poppler-annotation-helper.h		\
+ 	poppler-private.h
+ 
+-libpoppler_qt4_la_LIBADD = \
+-	$(top_builddir)/poppler/libpoppler.la	\
+-	$(top_builddir)/poppler/libpoppler-arthur.la	\
++libpoppler_qt4_la_LIBADD = -lpoppler \
+ 	$(POPPLER_QT4_LIBS)
+ 
+ libpoppler_qt4_la_LDFLAGS = -version-info 1:0:0

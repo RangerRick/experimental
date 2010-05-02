@@ -30,6 +30,7 @@ Source-MD5: 25abd742dc4a0ffcf17c537dea6d791f
 
 SetLIBS: -L%p/lib
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 
 InstallScript: make -j1 install DESTDIR="%d"
 DocFiles: COPYING

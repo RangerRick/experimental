@@ -21,6 +21,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Sub/Sub-Install-%v.tar.gz
 Source-MD5: 694aaec771c42280746a9a6279683263
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 %{default_script}

@@ -10,6 +10,8 @@ Maintainer: Benjamin Reed <class-data-inheritable-pm@fink.raccoonfink.com>
 Source: mirror:cpan:modules/by-module/Class/Class-Data-Inheritable-%v.tar.gz
 Source-MD5: fc0fe65926eb8fb932743559feb54eb9
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 DocFiles: MANIFEST README Changes
 

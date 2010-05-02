@@ -25,6 +25,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/B/B-Hooks-EndOfScope-%v.tar.gz
 Source-MD5: ebc1f0f45918cdd3de182a836db21a22
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 %{default_script}

@@ -10,13 +10,13 @@ License: GPL
 Maintainer: Benjamin Reed <rrd-pm@fink.raccoonfink.com>
 
 Depends: <<
-	libpng3-shlibs,
+	libpng14-shlibs,
 	perl%type_pkg[perl]-core,
 	rrdtool (>= %v-1)
 <<
 BuildDepends: <<
 	fink (>= 0.29.7-1),
-	libpng3,
+	libpng14,
 	perl%type_pkg[perl]-core,
 	rrdtool (>= %v-1),
 	rrdtool-dev (>= %v-1)
@@ -42,6 +42,7 @@ PatchFile: rrd-pm.patch
 PatchFile-MD5: 2042cea1692e4c2fde35f3b31e928167
 
 SetCPPFLAGS: -fno-common -I%p/lib/freetype219/include -I%p/lib/freetype219/include/freetype2
+UseMaxBuildJobs: true
 ConfigureParams: --disable-static --enable-shared --with-tcllib=%p/lib --mandir=%p/share/man --enable-perl --disable-python
 CompileScript: <<
 #!/bin/sh -ex

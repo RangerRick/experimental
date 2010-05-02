@@ -29,6 +29,7 @@ Source-MD5: 998409be294212345806483033485c0f
 SourceDirectory: kde-i18n-hu-%v
 PatchScript: perl -pi -e 's,doc/HTML,doc/kde,g' configure
 
+UseMaxBuildJobs: true
 CompileScript: (export HOME=/tmp; export KDEDIR=%p; sh configure %c; find . -name \*.bz2 -exec touch {} \;; make)
 
 InstallScript: <<

@@ -184,7 +184,7 @@ my $version_lookup = {
 		'^gecko-sharp1(-firefox.|-seamonkey)?$'=> [ '0.6',         '1033' ],
 		'^gettext-tools$'                     => [ '0.17',         '1'    ],
 		'^glew(-shlibs)?$'                    => [ '1.5.1',        '1'    ],
-		'^glib2(-dev|-shlibs)?$'              => [ '2.18.4',       '1'    ],
+		'^glib2(-dev|-shlibs)?$'              => [ '2.22.0',       '1'    ],
 		'^gnome-desktop-sharp2$'              => [ '2.24.0',       '1'    ],
 		'^gnome-panel(-shlibs|-dev)?$'        => [ '2.24.0',       '1'    ],
 		'^gnome-sharp2$'                      => [ '2.24.0',       '1'    ],
@@ -272,8 +272,8 @@ my @KEYS = (
 		'Source<N>Rename', 'Source-MD5', 'Source<N>-MD5', 'TarFilesRename',
 		'Tar<N>FilesRename', 'UpdateConfigGuess', 'UpdateConfigGuessInDirs',
 		'UpdateLibtool', 'UpdateLibtoolInDirs', 'UpdatePoMakefile', 'Patch',
-		'PatchScript', 'PatchFile', 'PatchFile-MD5', '<CR>',
-	'Set<S>', 'NoSet<S>', 'ConfigureParams', 'CompileScript', '<CR>',
+		'PatchScript', 'PatchFile', 'PatchFile-MD5', 'PatchFile<N>', 'PatchFile<N>-MD5', '<CR>',
+	'Set<S>', 'NoSet<S>', 'UseMaxBuildJobs', 'ConfigureParams', 'CompileScript', '<CR>',
 	'UpdatePOD', 'InstallScript', 'NoPerlTests', 'AppBundles', 'JarFiles', 'DocFiles',
 		'RuntimeVars', 'SplitOff', 'SplitOff<N>', 'Files', 'Shlibs', '<CR>',
 	'PreInstScript', 'PostInstScript', 'PreRmScript', 'PostRmScript', 'ConfFiles',
@@ -301,14 +301,14 @@ FILELOOP: for my $file (@files) {
 	next if ($file =~ /\/\.svn\//);
 	next unless ($file =~ /\.(info|info\.in|patch)$/);
 
-	my $matched = 0;
-	for my $regex (@$translate) {
-		if ($file =~ /local\/rangerrick.*?$regex/) {
-			$matched++;
-			#print "$file matched $regex\n";
-			last;
-		}
-	}
+	my $matched = 1;
+#	for my $regex (@$translate) {
+#		if ($file =~ /local\/rangerrick.*?$regex/) {
+#			$matched++;
+#			#print "$file matched $regex\n";
+#			last;
+#		}
+#	}
 	next if (not $matched);
 	next if ($file =~ /notready/);
 
@@ -468,6 +468,14 @@ sub transform_fields {
 			$properties->{$field} = &{"transform_$lcfield"}($packagehash, $properties->{$field});
 		} else {
 			#warn "unhandled field: $field\n";
+		}
+	}
+
+	if (not exists $properties->{'UseMaxBuildJobs'}) {
+		if (exists $properties->{'NoSetMAKEFLAGS'}) {
+			$properties->{'UseMaxBuildJobs'} = 'false';
+		} else {
+			$properties->{'UseMaxBuildJobs'} = 'true';
 		}
 	}
 

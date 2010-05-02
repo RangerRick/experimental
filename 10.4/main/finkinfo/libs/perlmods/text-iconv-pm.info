@@ -19,6 +19,7 @@ Replaces: text-iconv-pm (<= 1.2-1)
 Source: mirror:cpan:modules/by-module/Text/Text-Iconv-%v.tar.gz
 Source-MD5: 81b26e069eaebb084e91ea3c009b67ae
 
+UseMaxBuildJobs: true
 ConfigureParams: INC=-I%p/include LIBS=-L%p/lib
 
 UpdatePOD: True

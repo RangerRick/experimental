@@ -23,6 +23,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Test/Test-Output-%v.tar.gz
 Source-MD5: 5b0a877a98f716af6cc150c1a1d6dc59
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 %{default_script}

@@ -17,7 +17,7 @@ BuildDepends: <<
 	automake1.11,
 	kdelibs3-unified-dev (>= %v-1),
 	glut (>= 3.7-3),
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	libsmoke (>= 1:%v-1),
 	libtool2 (>= 1.5.10-1),
 	qt3 (>= 3.3.8-1027),
@@ -43,6 +43,7 @@ PatchScript: <<
 	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g;' admin/*
 <<
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 

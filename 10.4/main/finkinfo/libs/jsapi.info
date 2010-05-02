@@ -1,0 +1,39 @@
+Package: jsapi
+Version: 1.0
+Revision: 2
+Description: Java Speech API
+Type: java(1.4)
+License: Restrictive/Distributable
+Maintainer: Benjamin Reed <jsapi@fink.raccoonfink.com>
+
+Depends: system-java (>= 1.4-1)
+
+CustomMirror: <<
+	Primary: http://www.finkproject.org/~ranger/distfiles
+	eur-NL: http://www.finkproject.org/~ranger/distfiles
+	nam-US: http://ranger.befunk.com/fink
+<<
+Source: mirror:custom:%n.jar
+Source-MD5: 38d26ea55db20966bb1d747f4027c224
+SourceDirectory: .
+PatchScript: patch -p0 < %a/%n.patch
+
+UseMaxBuildJobs: true
+CompileScript: echo "none needed"
+
+InstallScript: echo "none needed"
+JarFiles: *.jar
+DocFiles: LICENSE
+
+Homepage: http://java.sun.com/products/java-media/speech/
+DescDetail: <<
+With the Java Speech API you can incorporate speech technology into user
+interfaces for your applets and applications based on Java technology.
+This API specifies a cross-platform interface to support command and
+control recognizers, dictation systems and speech synthesizers.
+<<
+DescPort: <<
+This is a repackaging of a binary-redistributable jar from Sun that
+provides the speech API.
+<<
+

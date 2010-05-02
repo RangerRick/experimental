@@ -17,11 +17,11 @@ BuildDepends: <<
 	cctools-single-module,
 	expat1,
 	fink (>= 0.29.7-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	kdelibs3-unified-dev (>= 3.5.2-1),
 	libart2 (>= 2.3.20-1),
 	libidn,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	libusb,
 	pkgconfig (>= 0.23-1),
 	qt3 (>= 3.3.8-1027),
@@ -43,6 +43,7 @@ Source2ExtractDir: %n-%v
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --prefix=%p --with-qt-dir=%p --with-qt-includes=%p/include/qt --with-extra-libs=%p/lib --with-extra-includes=%p/include --enable-mt --with-pic --enable-rpath --enable-shared=yes --enable-static=no --mandir=%i/share/man --with-xinerama --disable-final --disable-dependency-tracking
 CompileScript: <<
 #!/bin/sh -ev

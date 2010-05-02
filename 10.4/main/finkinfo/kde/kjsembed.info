@@ -12,13 +12,13 @@ BuildDepends: <<
 	cctools-single-module,
 	expat1,
 	fink (>= 0.29.7-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	kdelibs3-unified-dev (>= %v-1),
 	libart2 (>= 2.3.20-1),
 	libiconv-dev,
 	libidn,
 	libjpeg8,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	pcre,
 	pkgconfig (>= 0.23-1),
 	qt3 (>= 3.3.8-1027),
@@ -45,6 +45,7 @@ PatchScript: <<
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --with-distribution='Fink/Mac OS X'
 CompileScript: <<
 #!/bin/sh -ev
@@ -75,6 +76,7 @@ SplitOff: <<
 	Description: KDE - headers and libraries for KJSEmbed development
 	Depends: %N (>= %v-%r)
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/libkjsembed.*

@@ -20,6 +20,7 @@ Replaces: cgi-simple-pm
 Source: mirror:cpan:modules/by-module/CGI/CGI-Simple-%v.tar.gz
 Source-MD5: 2f997bd3ff941fc3001cc271583a81b5
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ex
 	exec 2>&1

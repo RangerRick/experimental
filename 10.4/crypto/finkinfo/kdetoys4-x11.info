@@ -19,8 +19,8 @@ BuildDepends: <<
 	dbus-dev (>= 1.2.12-1),
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
-	glib2-dev (>= 2.18.4-1),
+	freetype219 (>= 2.3.12-1),
+	glib2-dev (>= 2.22.0-1),
 	kde4-buildenv (>= 4.4.0-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.4.1-1),
 	kdebase4-workspace-%type_pkg[kde]-dev (>= 4.4.1-1),
@@ -38,6 +38,7 @@ GCC: 4.0
 Source: mirror:kde:stable/%v/src/kdetoys-%v.tar.bz2
 Source-MD5: 3dea45a5f04124ec4b3e9fe497617073
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -66,6 +67,7 @@ SplitOff: <<
 	Package: amor4-%type_pkg[kde]
 	Description: KDE4 - desktop companion
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/amor*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/amor*
@@ -84,12 +86,14 @@ SplitOff10: <<
 	Package: %N-base
 	Description: KDE4 - kdetoys base package
 	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1)
+	UseMaxBuildJobs: true
 	Files: opt share/doc/installed-packages/%n
 <<
 SplitOff2: <<
 	Package: kteatime4-%type_pkg[kde]
 	Description: KDE4 - make a fine cup of tea
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kteatime*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kteatime*
@@ -109,6 +113,7 @@ SplitOff3: <<
 	Package: kweather4-%type_pkg[kde]
 	Description: KDE4 - weather display applet
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kweather*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kcm_weather*
@@ -131,6 +136,7 @@ SplitOff4: <<
 		kdebase4-workspace-%type_pkg[kde] (>= 4.4.1-1),
 		%N-base (>= %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/ktux*
 		opt/kde4/%type_pkg[kde]/share/apps/ktux*

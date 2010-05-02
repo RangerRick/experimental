@@ -25,6 +25,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Data/Data-OptList-%v.tar.gz
 Source-MD5: 95620446a0e49917b01a789e8a60cdd3
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 %{default_script}

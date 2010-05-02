@@ -17,6 +17,7 @@ Source-MD5: 271886aa22cae93fd9cb75c9fe832391
 
 SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 ConfigureParams: --mandir=%p/share/man
 CompileScript: <<
 #!/bin/sh -ex

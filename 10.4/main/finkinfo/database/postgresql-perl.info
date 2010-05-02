@@ -43,6 +43,7 @@ PatchScript: sed -e 's,@INSTPREFIX@,%p,g' -e 's,perl5.6.0,perl%type_raw[perl],g'
 PatchFile: postgresql82.patch
 PatchFile-MD5: 964107a0f601e15937e79df17ffea814
 
+UseMaxBuildJobs: true
 ConfigureParams: --prefix=%p --with-docdir=%p/share/doc --mandir=%p/share/man --enable-multibyte --enable-recode --with-CXX --with-perl --without-python --with-openssl --with-libraries=%p/lib --with-includes=%p/include --without-tcl --without-java --enable-odbc --with-pam --with-rendezvous
 CompileScript: <<
 #!/bin/sh -ev
@@ -92,6 +93,7 @@ DocFiles: COPYRIGHT HISTORY INSTALL src/pl/plperl/README
 SplitOff: <<
 	Package: postgresql-ssl-perl-%type_pkg[perl]
 	Depends: postgresql-perl-%type_pkg[perl] (>= %v-%r)
+	UseMaxBuildJobs: true
 	DocFiles: COPYRIGHT HISTORY INSTALL src/pl/plperl/README
 <<
 

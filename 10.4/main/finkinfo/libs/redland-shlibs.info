@@ -1,0 +1,100 @@
+Package: redland-shlibs
+Version: 1.0.9
+Revision: 1
+Description: RDF manipulation library
+License: GPL/LGPL
+Maintainer: Benjamin Reed <redland@fink.raccoonfink.com>
+
+Depends: <<
+	db48-aes-shlibs | db48-shlibs,
+	libraptor1-shlibs (>= 1.4.17-1),
+	librasqal-shlibs (>= 0.9.16-2),
+	libssh2.1-shlibs,
+	pcre-shlibs,
+	sqlite3-shlibs
+<<
+BuildDepends: <<
+	db48-aes | db48,
+	gmp,
+	gtk-doc,
+	libcurl4,
+	libiconv,
+	libmpfr1,
+	libraptor1-dev (>= 1.4.17-1),
+	librasqal-dev (>= 0.9.16-2),
+	libssh2.1,
+	libxml2,
+	libxslt,
+	pcre,
+	pkgconfig (>= 0.23-1),
+	sqlite3-dev,
+	system-openssl-dev
+<<
+InfoTest: TestScript: make check || exit 2
+
+Source: http://download.librdf.org/source/redland-%v.tar.gz
+Source-MD5: e5ef0c29c55b4f0f5aeed7955b4d383b
+PatchScript: <<
+	perl -pi -e 's,(\@CPPFLAGS\@),-I%p/lib/system-openssl/include \1,' `find . -name Makefile.in`
+	perl -pi -e 's,for bdbc_version in ,for bdbc_version in 4.8 ,g' configure
+	perl -pi -e 's,SQLITE_API,REDLAND_SQLITE_VERSION,g' configure src/rdf_config.h.in src/rdf_storage_sqlite.c
+<<
+
+SetCPPFLAGS: -I%p/lib/system-openssl/include -I%p/include/db4
+SetLDFLAGS: -L%p/lib/system-openssl/lib
+UseMaxBuildJobs: true
+ConfigureParams: --disable-dependency-tracking --with-raptor=system --with-rasqal=system --without-threestore --without-mysql --without-postgresql
+
+InstallScript: <<
+	make -j1 install DESTDIR=%d
+	find %i/share/gtk-doc -name \*.html | xargs perl -pi -e 's,/usr/share,%p/share,g'
+<<
+DocFiles: AUTHORS COPYING* ChangeLog* LICENSE* NEWS* NOTICE README* RELEASE*
+SplitOff: <<
+	Package: redland-bin
+	Depends: %N (= %v-%r)
+	UseMaxBuildJobs: true
+	DocFiles: COPYING* LICENSE* README*
+	Files: <<
+		bin/rdfproc
+		bin/redland-db-upgrade
+		share/man/man1/rdfproc.1
+		share/man/man1/redland-db-upgrade.1
+	<<
+<<
+SplitOff2: <<
+	Package: redland-dev
+	Depends: <<
+		%N (= %v-%r),
+		pkgconfig (>= 0.23-1)
+	<<
+	BuildDependsOnly: true
+	UseMaxBuildJobs: true
+	DocFiles: COPYING* LICENSE* README*
+	Files: <<
+		bin
+		include
+		lib/librdf.{a,la,dylib}
+		lib/pkgconfig
+		share/gtk-doc
+		share/man
+	<<
+<<
+Shlibs: %p/lib/librdf.0.dylib 1.0.0 %n (>= 1.0.6-1)
+
+Homepage: http://librdf.org/
+DescDetail: <<
+------------------------------------------------------------------------------
+Redland is a set of free software libraries that provide support for the
+Resource Description Framework (RDF).
+
+* Modular, object based libraries and APIs for manipulating the RDF graph,
+  triples, URIs and Literals.
+* Support for multiple syntaxes for reading and writing RDF as RDF/XML,
+  N-Triples and Turtle Terse RDF Triple Language, RSS and Atom syntaxes via
+  the Raptor RDF Parser Toolkit.
+* Querying with SPARQL and RDQL using the Rasqal RDF Query Library.
+* Data aggregation and recording provenance support with Redland contexts.
+* Portable, fast and with no known memory leaks.
+<<
+

@@ -17,6 +17,7 @@ Patch: %n.patch
 SetCPPFLAGS: -I./src -I./lzo -I%p/include
 SetLIBS: -L%p/lib
 NoSetCPPFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --infodir=%p/share/info --with-qt-dir=%p --with-qt-includes=%p/include/qt
 CompileScript: <<
 #!/bin/sh -ex
@@ -68,6 +69,7 @@ SplitOff: <<
 		ccache (>= 2.2-0),
 		ccache-default (>= 2.2-0)
 	<<
+	UseMaxBuildJobs: true
 	RuntimeVars: CCACHE_PREFIX: icecc
 <<
 

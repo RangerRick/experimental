@@ -11,7 +11,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	gettext-bin,
 	gettext-tools,
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	libgsf1.114-dev (>= 1.14.8-1),
 	libiconv-dev,
 	libxml2,
@@ -36,6 +36,7 @@ PatchScript: <<
 	perl -pi -e 's/hardcode_direct=yes/hardcode_direct=no/g' configure
 <<
 
+UseMaxBuildJobs: true
 ConfigureParams: --enable-debug --disable-dependency-tracking --disable-static
 
 InstallScript: make install DESTDIR=%d
@@ -45,11 +46,12 @@ SplitOff: <<
 	Description: Shared libraries for the MSWord parsing library
 	Depends: <<
 		libgettext8-shlibs,
-		glib2-shlibs (>= 2.18.4-1),
+		glib2-shlibs (>= 2.22.0-1),
 		libgsf1.114-shlibs (>= 1.14.8-1),
 		libiconv,
 		libxml2-shlibs
 	<<
+	UseMaxBuildJobs: true
 	Files: lib/libwv2.*.dylib
 	Shlibs: %p/lib/libwv2.1.dylib 2.0.0 %n (>= 0.2.1-1)
 <<

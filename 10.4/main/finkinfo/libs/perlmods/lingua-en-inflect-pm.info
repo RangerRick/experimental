@@ -13,6 +13,8 @@ BuildDepends: system-perl
 Source: mirror:cpan:authors/id/D/DC/DCONWAY/Lingua-EN-Inflect-%v.tar.gz
 Source-MD5: ca864087a32754a8185d30fa677121ea
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 DocFiles: Changes MANIFEST README demo*
 

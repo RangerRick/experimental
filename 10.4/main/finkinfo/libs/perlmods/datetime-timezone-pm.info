@@ -26,6 +26,7 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/DateTime/DateTime-TimeZone-%v.tar.gz
 Source-MD5: e6f36fa00425d64377aeae74a7da0ac3
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ex
 	exec 2>&1

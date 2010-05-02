@@ -23,7 +23,7 @@ BuildDepends: <<
 	enchant1-dev,
 	expat1,
 	fink (>= 0.29.7-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	giflib,
 	hspell,
@@ -35,7 +35,7 @@ BuildDepends: <<
 	libidn,
 	libjasper.1,
 	libjpeg8,
-	libpng3,
+	libpng14,
 	libtiff,
 	libxml2,
 	libxslt,
@@ -56,6 +56,7 @@ GCC: 4.0
 Source: mirror:kde:unstable/kdevelop/3.9.94/kdevplatform-%v.tar.bz2
 Source-MD5: c4358f1da3c330bae087cf7cab98136e
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -85,6 +86,7 @@ SplitOff: <<
 		kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
 		svn15-shlibs (>= 1.6.0-1)
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: COPYING*
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4
@@ -119,6 +121,7 @@ SplitOff2: <<
 	Description: KDE4 - headers and static libs for kdevplatform
 	Depends: %N (= %v-%r)
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	DocFiles: COPYING*
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include

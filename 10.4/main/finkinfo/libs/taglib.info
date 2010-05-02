@@ -26,6 +26,7 @@ PatchFile-MD5: 6574a9274cf593111487b7313c6ff174
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -58,6 +59,7 @@ DocFiles: AUTHORS COPYING* doc/*
 SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for the taglib meta-data library
+	UseMaxBuildJobs: true
 	DocFiles: COPYING*
 	Files: <<
 		lib/libtag.1*.dylib

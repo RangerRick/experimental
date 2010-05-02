@@ -28,6 +28,7 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/DateTime/DateTime-Format-Mail-%v.tar.gz
 Source-MD5: 15e36249e866463bd0237262a8e43b16
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ex
 	exec 2>&1

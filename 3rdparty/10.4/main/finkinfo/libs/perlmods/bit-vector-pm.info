@@ -26,6 +26,8 @@ InfoTest: <<
 Source: mirror:cpan:modules/by-module/Bit/Bit-Vector-%v.tar.gz
 Source-MD5: 164c8574b728f6171b2a6f564fcd2e50
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
   %{default_script}

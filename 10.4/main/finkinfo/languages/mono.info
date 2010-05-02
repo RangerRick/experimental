@@ -15,17 +15,17 @@ Depends: <<
 <<
 BuildDepends: <<
 	atk1 (>= 1.26.0-1),
-	cairo (>= 1.8.8-1),
+	cairo (>= 1.8.10-1),
 	expat1,
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	glitz (>= 0.4.4-1),
 	libgettext8-dev,
 	libiconv-dev,
-	libpng3,
+	libpng14,
 	pixman (>= 0.16.0-1),
 	pkgconfig (>= 0.23-1),
 	system-java15-dev,
@@ -54,6 +54,7 @@ NoSetCFLAGS: true
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 ConfigureParams: <<
 --with-ikvm-native=yes \
 --mandir=%p/share/man \
@@ -123,11 +124,12 @@ DocFiles: AUTHORS COPYING* ChangeLog NEWS README
 SplitOff: <<
 	Package: %N-shlibs
 	Depends: <<
-		cairo-shlibs (>= 1.8.8-1),
-		glib2-shlibs (>= 2.18.4-1),
+		cairo-shlibs (>= 1.8.10-1),
+		glib2-shlibs (>= 2.22.0-1),
 		macosx (>= 10.4.3-1)
 	<<
 	Replaces: %N (<< %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		lib/libmono-profiler-*.0*.dylib
 		lib/libmono.0*.dylib
@@ -146,6 +148,7 @@ SplitOff10: <<
 		monodoc (<< 2.4-1)
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/*.a
@@ -158,6 +161,7 @@ SplitOff10: <<
 SplitOff2: <<
 	Package: monodoc
 	Depends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/mdassembler
 		bin/mdoc*

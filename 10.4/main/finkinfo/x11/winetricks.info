@@ -23,6 +23,7 @@ PatchScript: patch -p0 %n-%v %{PatchFile}
 PatchFile: %n.patch
 PatchFile-MD5: a00392392592f8d27a1bb4ded35f053c
 
+UseMaxBuildJobs: true
 CompileScript: true
 
 InstallScript: <<

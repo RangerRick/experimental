@@ -10,7 +10,7 @@ BuildDepends: <<
 	arts-dev (>= 1.5.10-1),
 	autoconf2.6 (>= 2.59-1),
 	fink (>= 0.29.7-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gettext-bin,
 	gettext-tools,
 	kdebase3-unified-dev (>= %v-1),
@@ -20,7 +20,7 @@ BuildDepends: <<
 	libiconv-dev,
 	libidn,
 	libjpeg8,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	qt3 (>= 3.3.8-1027),
 	x11-dev,
 	unsermake (>= 0.4-0.20060316.1)
@@ -39,6 +39,7 @@ Source2ExtractDir: %n-%v
 PatchFile: %n.patch
 PatchFile-MD5: 8995ee6389e4ce3288f348cf27731568
 
+UseMaxBuildJobs: true
 ConfigureParams: --with-distribution='Fink/Mac OS X'
 CompileScript: <<
 #!/bin/sh -ex

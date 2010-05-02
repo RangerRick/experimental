@@ -19,6 +19,7 @@ Source-MD5: 6f7690c6ba9750e3cbb8ebd10078a79a
 SourceDirectory: %n-%v
 PatchScript: perl -pi -e 's,<javac,<javac target="1.4" source="1.4",g' build.xml
 
+UseMaxBuildJobs: true
 CompileScript: ant package
 
 InstallScript: <<

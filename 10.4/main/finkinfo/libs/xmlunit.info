@@ -21,6 +21,7 @@ Source: mirror:sourceforge:%n/%n%%20for%%20Java/XMLUnit%%20for%%20Java%%20%v/%n-
 Source-MD5: 67b1fa574840360a39867a456cdfe611
 SourceDirectory: %n-%v
 
+UseMaxBuildJobs: true
 CompileScript: echo "none needed"
 
 InstallScript: <<

@@ -31,6 +31,8 @@ Source: mirror:cpan:modules/by-module/XML/XML-Dumper-%v.tar.gz
 Source-MD5: 10726bbe78bef5e4264d5f57533da7c1
 SourceDirectory: XML-Dumper-%v
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

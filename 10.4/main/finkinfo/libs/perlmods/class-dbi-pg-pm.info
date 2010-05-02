@@ -26,6 +26,8 @@ BuildDepends: <<
 Source: mirror:cpan:authors/id/D/DM/DMAKI/Class-DBI-Pg-%v.tar.gz
 Source-MD5: cccb8d48958081ebaebb561a60fe50f0
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

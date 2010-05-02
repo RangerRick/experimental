@@ -1,0 +1,39 @@
+Info2: <<
+Package: rake-rb%type_pkg[ruby]
+Version: 0.8.7
+Revision: 1
+Description: Make-like utility for Ruby
+Type: ruby (1.8)
+License: BSD
+Maintainer: Benjamin Reed <rake-rb@fink.raccoonfink.com>
+
+Depends: <<
+	libgems-rb%type_pkg[ruby],
+	ruby%type_pkg[ruby]
+<<
+BuildDepends: <<
+	rubygems-rb%type_pkg[ruby],
+	ruby%type_pkg[ruby]-dev
+<<
+
+NoSourceDirectory: true
+Source: http://rubyforge.org/frs/download.php/56871/rake-%v.gem
+Source-MD5: d9eb83525310ad1a0e8a3eeddfe3c65f
+
+UseMaxBuildJobs: true
+CompileScript: echo ""
+
+InstallScript: <<
+	install -d -m 755 %i/var/lib/gems/%type_raw[ruby]
+	%p/bin/gem install --local --install-dir %i/var/lib/gems/%type_raw[ruby] --rdoc rake-%v.gem
+	mv %i/var/lib/gems/%type_raw[ruby]/bin %i/
+	rm -rf %i/var/lib/gems/%type_raw[ruby]/cache
+<<
+
+Homepage: http://rubyforge.org/projects/rake/
+DescDetail: <<
+	Rake is a Ruby make-like utility using standard
+	Ruby syntax for the build specification file.
+<<
+<<
+

@@ -1,0 +1,27 @@
+Info3: <<
+Package: jicmp
+Version: 1.0.11
+Revision: 1
+Description: Java Interface to ICMP (Ping)
+Type: java(1.5)
+License: GPL
+Maintainer: Benjamin Reed <jicmp@fink.raccoonfink.com>
+
+Depends: system-java (>= 1.5-1)
+
+Source: mirror:sourceforge:opennms/jicmp-%v.tar.gz
+Source-MD5: 8d46317af6badd960546ab2383fb0ca2
+
+UseMaxBuildJobs: true
+ConfigureParams: --disable-dependency-tracking (%m != x86_64) --with-jvm-arch=32 (%m = x86_64) --with-jvm-arch=64
+
+InstallScript: make -j1 install DESTDIR="%d"
+
+Homepage: http://www.opennms.org/
+DescDetail: <<
+This package contains a Java interface to ICMP.
+It was previously part of the OpenNMS project and has
+since been separated out into it's own package.
+<<
+<<
+

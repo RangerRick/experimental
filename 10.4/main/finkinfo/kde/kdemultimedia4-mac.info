@@ -19,8 +19,8 @@ BuildDepends: <<
 	dbus-dev (>= 1.2.12-1),
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
-	glib2-dev (>= 2.18.4-1),
+	freetype219 (>= 2.3.12-1),
+	glib2-dev (>= 2.22.0-1),
 	kde4-buildenv (>= 4.4.0-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.4.1-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
@@ -48,6 +48,7 @@ Source-MD5: 757a70465395512f245fac6f9e3b7c59
 PatchFile: kdemultimedia4.patch
 PatchFile-MD5: 585ccb0fa9592bbab477ff50969d18b9
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -79,6 +80,7 @@ SplitOff: <<
 		libxine1-shlibs,
 		%N-base (>= %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/dragon*
 		opt/kde4/%type_pkg[kde]/lib/kde4/dragon*
@@ -112,6 +114,7 @@ SplitOff2: <<
 		taglib-shlibs (>= 1.6.1-5),
 		%N-base (>= %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/juk*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/juk*
@@ -132,6 +135,7 @@ SplitOff20: <<
 	Description: KDE4 - kdemultimedia dev headers and libs
 	Depends: %N (>= %v-%r)
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
 		opt/kde4/%type_pkg[kde]/lib/libkcddb.dylib
@@ -145,6 +149,7 @@ SplitOff21: <<
 		kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
 		libmusicbrainz4-shlibs
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/libkcddb.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkcompactdisc.4*.dylib
@@ -161,12 +166,14 @@ SplitOff22: <<
 		%N-base-shlibs (>= %v-%r),
 		kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1)
 	<<
+	UseMaxBuildJobs: true
 	Files: opt
 <<
 SplitOff4: <<
 	Package: kmix4-%type_pkg[kde]
 	Description: KDE4 - volume control and mixer
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kmix*
 		opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kmix*
@@ -195,6 +202,7 @@ SplitOff5: <<
 		mplayer,
 		%N-base (>= %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/mplayerthumbs*
 		opt/kde4/%type_pkg[kde]/lib/kde4/videopreview*

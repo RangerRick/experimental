@@ -14,11 +14,14 @@ Depends: perl%type_pkg[perl]-core
 Source: mirror:cpan:modules/by-module/Authen/Authen-SASL-%v.tar.gz
 Source-MD5: 041ce912640c5dff626a91435a359b88
 
+UseMaxBuildJobs: true
+
 UpdatePOD: True
 DocFiles: Changes MANIFEST
 SplitOff: <<
 	Package: %N-man
 	Depends: %N (= %v-%r)
+	UseMaxBuildJobs: true
 	Files: share/man
 <<
 

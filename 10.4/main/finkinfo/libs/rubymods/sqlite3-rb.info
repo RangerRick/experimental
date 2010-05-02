@@ -21,6 +21,7 @@ BuildDepends: <<
 Source: http://rubyforge.org/frs/download.php/17096/sqlite3-ruby-%v.tar.bz2
 Source-MD5: 7ec13981e20bab8af024db3c1df4a602
 
+UseMaxBuildJobs: true
 CompileScript: <<
 	ruby%type_raw[ruby] setup.rb config --prefix=%p
 	ruby%type_raw[ruby] setup.rb setup

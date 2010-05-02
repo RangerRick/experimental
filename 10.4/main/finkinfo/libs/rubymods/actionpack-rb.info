@@ -1,0 +1,42 @@
+Info2: <<
+Package: actionpack-rb%type_pkg[ruby]
+Version: 2.1.0
+Revision: 1
+Description: Web request routing and handling
+Type: ruby (1.8)
+License: BSD
+Maintainer: Benjamin Reed <actionpack-rb@fink.raccoonfink.com>
+
+Depends: <<
+	activesupport-rb%type_pkg[ruby] (>= 2.1.0-1),
+	libgems-rb%type_pkg[ruby] (>= 0.9.5-2),
+	ruby%type_pkg[ruby]
+<<
+BuildDepends: <<
+	activesupport-rb%type_pkg[ruby] (>= 2.1.0-1),
+	rubygems-rb%type_pkg[ruby] (>= 0.9.5-2),
+	ruby%type_pkg[ruby]-dev
+<<
+
+NoSourceDirectory: true
+Source: http://rubyforge.org/frs/download.php/37759/actionpack-%v.gem
+Source-MD5: 0326687a617b4871bc21783bc983ad45
+
+UseMaxBuildJobs: true
+CompileScript: echo ""
+
+InstallScript: <<
+	install -d -m 755 %i/var/lib/gems/%type_raw[ruby]
+	%p/bin/gem install --local --install-dir %i/var/lib/gems/%type_raw[ruby] --rdoc actionpack-%v.gem
+	rm -rf %i/var/lib/gems/%type_raw[ruby]/cache
+<<
+
+Homepage: http://rubyforge.org/projects/actionpack/
+DescDetail: <<
+	Eases web-request routing, handling, and response as a
+	half-way front, half-way page controller.  Implemented
+	with specific emphasis on enabling easy unit/integration
+	testing that doesn't require a browser.
+<<
+<<
+

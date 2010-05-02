@@ -23,6 +23,7 @@ Source-MD5: 496db515732b6cb9fb90684fd0b1de3c
 Source2: mirror:custom:%n/normalize-filenames-4.2.3-1.sh
 Source2-MD5: aa5d58694004df09f486abc9907f7e0a
 
+UseMaxBuildJobs: true
 CompileScript: echo "none"
 
 InstallScript: <<

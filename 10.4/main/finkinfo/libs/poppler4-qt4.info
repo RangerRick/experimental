@@ -52,6 +52,7 @@ Source-MD5: ba120e49a82567d85d00e159011ebe67
 PatchFile: poppler4.patch
 PatchFile-MD5: fedaec5cc0d9fb044e2d189e84d181da
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -101,6 +102,7 @@ SplitOff: <<
 		qt4-%type_pkg[qt]-gui-shlibs (>= 4.6.1-1),
 		(%type_pkg[qt] = x11) x11
 	<<
+	UseMaxBuildJobs: true
 	Files: opt/kde4/%type_pkg[qt]/lib/libpoppler-qt4.3*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[qt]/lib/libpoppler-qt4.3.dylib 5.0.0 %n (>= 0.10.5-2)
 <<

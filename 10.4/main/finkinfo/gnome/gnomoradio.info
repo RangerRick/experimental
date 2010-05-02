@@ -13,15 +13,15 @@ Depends: <<
 <<
 BuildDepends: <<
 	atk1 (>= 1.26.0-1),
-	cairo (>= 1.8.8-1),
+	cairo (>= 1.8.10-1),
 	cairomm1,
 	esound (>= 0.2.38-1),
 	expat1,
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gconf2-dev (>= 2.20.0-1),
 	gconfmm2.6 (>= 2.20.0-1),
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	glibmm2.4-dev (>= 2.13.9-1),
 	glitz,
 	gtk+2-dev (>= 2.14.7-1),
@@ -30,7 +30,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	libiconv-dev,
 	libogg,
-	libpng3,
+	libpng14,
 	libsigc++2 (>= 2.0.11-1003),
 	libvorbis0,
 	libxml++2 (>= 2.20.0-1),
@@ -49,6 +49,7 @@ Source: http://savannah.nongnu.org/download/%n/%n-%v.tar.gz
 Source-MD5: 1ca31f4e9fb77adb5e7261e190ecb20a
 Patch: %n.patch
 
+UseMaxBuildJobs: true
 ConfigureParams: --disable-dependency-tracking PKG_CONFIG_PATH="%p/lib/pango-ft219/lib/pkgconfig:%p/lib/fontconfig2/lib/pkgconfig:%p/lib/freetype219/lib/pkgconfig:$PKG_CONFIG_PATH" FREETYPE_CONFIG=%p/lib/freetype219/bin/freetype-config
 
 DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
@@ -57,6 +58,7 @@ SplitOff: <<
 	Description: Headers and libraries for gnomoradio development
 	Depends: %N (>= %v-%r)
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/*.la
@@ -72,7 +74,7 @@ SplitOff2: <<
 	Depends: <<
 		esound-shlibs (>= 0.2.38-1),
 		gconfmm2.6-shlibs (>= 2.20.0-1),
-		glib2-shlibs (>= 2.18.4-1),
+		glib2-shlibs (>= 2.22.0-1),
 		glibmm2.4-shlibs (>= 2.13.9-1),
 		gtk+2-shlibs (>= 2.14.7-1),
 		gtkmm2.4-shlibs (>= 2.12.0-1),
@@ -86,6 +88,7 @@ SplitOff2: <<
 		libxml2-shlibs (>= 2.6.32-1),
 		orbit2-shlibs
 	<<
+	UseMaxBuildJobs: true
 	Files: lib
 	Shlibs: 
 <<

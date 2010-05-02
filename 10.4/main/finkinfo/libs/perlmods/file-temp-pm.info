@@ -24,6 +24,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/File/File-Temp-%v.tar.gz
 Source-MD5: d1631d9797fe11ded7cf4b93284c8c8e
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

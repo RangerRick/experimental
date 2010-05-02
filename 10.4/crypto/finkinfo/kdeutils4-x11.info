@@ -27,8 +27,8 @@ BuildDepends: <<
 	dbus-dev (>= 1.2.12-1),
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
-	glib2-dev (>= 2.18.4-1),
+	freetype219 (>= 2.3.12-1),
+	glib2-dev (>= 2.22.0-1),
 	gmp,
 	kde4-buildenv (>= 4.4.0-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.4.1-1),
@@ -51,6 +51,7 @@ Source-MD5: 7dd3dfd7cde8cae0d61f85dba4685dd1
 PatchFile: kdeutils4.patch
 PatchFile-MD5: 2e679d1fe33c92f5a353b7a6c4ee590a
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -98,6 +99,7 @@ SplitOff: <<
 		libzip1-shlibs
 	<<
 	Replaces: %N-base (<< 4.4.1-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/ark*
 		opt/kde4/%type_pkg[kde]/lib/kde4/arkpart*
@@ -124,6 +126,7 @@ SplitOff10: <<
 		qimageblitz-unified-%type_pkg[kde]-shlibs,
 		%N-base (>= %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/superkaramba*
 		opt/kde4/%type_pkg[kde]/lib/kde4/plasma_*_superkaramba*
@@ -149,6 +152,7 @@ SplitOff11: <<
 	Package: sweeper4-%type_pkg[kde]
 	Description: KDE4 - history and temp file cleaner
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/sweeper*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/sweeper*
@@ -164,6 +168,7 @@ SplitOff12: <<
 		kdebase4-workspace-%type_pkg[kde] (>= 4.4.1-1),
 		%N-base (>= %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/irkick*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kcm_lirc*
@@ -203,6 +208,7 @@ SplitOff2: <<
 		gmp-shlibs,
 		%N-base (>= %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kcalc*
 		opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kcalc.dylib
@@ -219,12 +225,14 @@ SplitOff20: <<
 	Package: %N-base
 	Description: KDE4 - kdeutils base package
 	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1)
+	UseMaxBuildJobs: true
 	Files: opt share/doc/installed-packages/%n
 <<
 SplitOff3: <<
 	Package: kcharselect4-%type_pkg[kde]
 	Description: KDE4 - special character utility
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kcharselect*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/KCharSelect*
@@ -238,6 +246,7 @@ SplitOff5: <<
 	Package: kdf4-%type_pkg[kde]
 	Description: KDE4 - disk information utility
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kdf*
 		opt/kde4/%type_pkg[kde]/bin/kwikdisk*
@@ -270,6 +279,7 @@ SplitOff6: <<
 	Package: kfloppy4-%type_pkg[kde]
 	Description: KDE4 - floppy formatter
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kfloppy*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/KFloppy*
@@ -287,6 +297,7 @@ SplitOff7: <<
 	Package: ktimer4-%type_pkg[kde]
 	Description: KDE4 - countdown timer
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/ktimer*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/ktimer*
@@ -302,6 +313,7 @@ SplitOff8: <<
 	Package: kwallet4-%type_pkg[kde]
 	Description: KDE4 - secure password wallet manager
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kwalletmanager*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kcm_kwallet*
@@ -323,6 +335,7 @@ SplitOff9: <<
 	Description: KDE4 - hex editor
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N-base (<< 4.4.1-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/okteta*
 		opt/kde4/%type_pkg[kde]/lib/kde4/libkbytearray*

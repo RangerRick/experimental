@@ -39,6 +39,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Catalyst/Catalyst-Plugin-Session-%v.tar.gz
 Source-MD5: 21b71cd5ff088fa9e83ac3b679cfbce8
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

@@ -36,6 +36,8 @@ Source: mirror:cpan:authors/id/D/DO/DONEILL/MIME-tools-%v.tar.gz
 Source-MD5: 4333caa7238cb9eafb5f7fb39fcbd8e7
 SourceDirectory: MIME-tools-%v
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

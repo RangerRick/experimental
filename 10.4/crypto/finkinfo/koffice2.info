@@ -25,9 +25,9 @@ BuildDepends: <<
 	eigen2,
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	glew (>= 1.5.1-1),
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	gmm,
 	graphicsmagick-dev (>= 1.1-1),
 	gsl (>= 1.7-1),
@@ -62,6 +62,7 @@ Source-MD5: 9955f30f43ed3f6970870f55015a1a18
 PatchFile: koffice2.patch
 PatchFile-MD5: 600f503702af7e42b51c6a69604931c6
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -110,6 +111,7 @@ SplitOff: <<
 		%N-base (>= %v-%r)
 	<<
 	Replaces: %N-dev (<< 2.0.0-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/karbon*
 		opt/kde4/%type_pkg[kde]/lib/kde4/karbon*
@@ -143,6 +145,7 @@ SplitOff10: <<
 		qca2-%type_pkg[kde]-shlibs (>= 2.0.2-1),
 		wv2.4-shlibs
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4
 		opt/kde4/%type_pkg[kde]/lib/libchartshapelib.5*.dylib
@@ -191,6 +194,7 @@ SplitOff11: <<
 	Description: KDE4 - karbon shared libraries
 	Depends: %N-base (>= %v-%r)
 	Replaces: karbon2-%type_pkg[kde] (<< 1.9.99.0-2)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/libkarboncommon.5*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkarbonui.5*.dylib
@@ -208,6 +212,7 @@ SplitOff12: <<
 		kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1),
 		%N-base-shlibs (>= %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin
 		opt/kde4/%type_pkg[kde]/lib/libkdeinit4_*.dylib
@@ -232,12 +237,14 @@ SplitOff13: <<
 	Description: KDE4 - koffice development headers and libs
 	Depends: %N (>= %v-%r)
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: opt
 <<
 SplitOff2: <<
 	Package: kplato2-%type_pkg[kde]
 	Description: KDE4 - project management and scheduling
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kplato*
 		opt/kde4/%type_pkg[kde]/lib/kde4/krossmodulekplato*
@@ -281,6 +288,7 @@ SplitOff3: <<
 	Package: kpresenter2-%type_pkg[kde]
 	Description: KDE4 - presentation program
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kpresenter*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kpr*
@@ -318,6 +326,7 @@ SplitOff4: <<
 		%N-base (>= %v-%r)
 	<<
 	Replaces: %N-dev (<< 2.0.0-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/krita*
 		opt/kde4/%type_pkg[kde]/lib/kde4/krita*
@@ -362,6 +371,7 @@ SplitOff5: <<
 		gsl-shlibs (>= 1.7-1),
 		%N-base (>= %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kspread*
 		opt/kde4/%type_pkg[kde]/lib/kde4/krossmodulekspread*
@@ -401,6 +411,7 @@ SplitOff6: <<
 	Description: KDE4 - word processor
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N-dev (<< 2.0.0-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kword*
 		opt/kde4/%type_pkg[kde]/lib/kde4/krossmodulekword*

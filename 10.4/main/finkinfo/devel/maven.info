@@ -1,0 +1,48 @@
+Package: maven
+Version: 2.2.1
+Revision: 1
+Description: Software project management tool
+Type: java(1.5)
+License: BSD
+Maintainer: Benjamin Reed <maven@fink.raccoonfink.com>
+
+Depends: system-java (>= 1.4-1)
+BuildDepends: fink (>= 0.29.7-1)
+
+Source: mirror:apache:%n/binaries/apache-%n-%v-bin.tar.bz2
+Source-MD5: c581a15cb0001d9b771ad6df7c8156f8
+SourceDirectory: apache-%n-%v
+PatchScript: sed -e 's,@FINKPREFIX@,%p,g' < %{PatchFile} | patch -p1
+PatchFile: %n.patch
+PatchFile-MD5: 3da755f98c82474b1d7dce54a19b2551
+
+UseMaxBuildJobs: true
+CompileScript: echo "none needed"
+
+InstallScript: <<
+#!/bin/sh -ex
+
+	install -d -m 755 %i/etc/maven
+	echo "M2_HOME=%p/share/maven"                 > %i/etc/maven/mavenrc
+	echo "CLASSWORLDS_CONF=%p/etc/maven/m2.conf" >> %i/etc/maven/mavenrc
+	mv bin/m2.conf %i/etc/maven/
+
+	install -d -m 755 %i/bin
+	mv bin/mvn %i/bin/
+	ln -sf mvn %i/bin/m2
+	rm -rf bin
+	chmod 755 %i/bin/*
+
+	install -d -m 755 %i/share/maven
+	mv boot conf lib %i/share/maven/
+<<
+DocFiles: *.txt
+
+Homepage: http://maven.apache.org/
+DescDetail: <<
+Maven is a software project management and comprehension tool.
+Based on the concept of a project object model (POM), Maven can
+manage a project's build, reporting and documentation from a
+central piece of information.
+<<
+

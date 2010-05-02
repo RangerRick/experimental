@@ -27,6 +27,7 @@ SetCXXFLAGS: -Os -g -I%p/include
 NoSetCFLAGS: true
 NoSetCPPFLAGS: true
 NoSetCXXFLAGS: true
+UseMaxBuildJobs: true
 
 InstallScript: <<
  make install DESTDIR="%d"

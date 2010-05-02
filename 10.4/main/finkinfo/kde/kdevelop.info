@@ -25,7 +25,7 @@ BuildDepends: <<
 	expat1,
 	fink (>= 0.29.7-1),
 	flex-devel (>= 2.5.35-2),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	graphviz,
 	kdelibs3-unified-dev (>= 3.5.5-1),
 	kdelibs3-apidox (>= 3.5.5-1),
@@ -38,7 +38,7 @@ BuildDepends: <<
 	libidn,
 	libiconv-dev,
 	libjpeg8,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	libusb,
 	pcre,
 	pkgconfig (>= 0.23-1),
@@ -74,6 +74,7 @@ SetMAKEFLAGS: -j1
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 ConfigureParams: --disable-dependency-tracking --with-qtdoc-dir=%p/share/doc/qt3/html --with-kdelibsdoxy-dir=%p/share/doc/kde/en/kdelibs-apidocs --enable-vba --with-db-includedir=%p/include/db4 --with-db-libdir=%p/lib --with-pic --with-distribution='Fink/Mac OS X'
 CompileScript: <<
 #!/bin/sh -ev
@@ -114,6 +115,7 @@ SplitOff: <<
 		svn15-shlibs (>= 1.6-1)
 	<<
 	Replaces: %N (<< 3.5.4-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3
 		lib/libd.0*.dylib
@@ -217,6 +219,7 @@ SplitOff2: <<
 	Depends: %N (>= %v-%r)
 	Replaces: %N (<< 3.5.4-1)
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: include lib
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------

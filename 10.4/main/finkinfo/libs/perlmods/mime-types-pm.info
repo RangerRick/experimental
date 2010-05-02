@@ -23,6 +23,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/MIME/MIME-Types-%v.tar.gz
 Source-MD5: 9407dfdd3a5adb7bf569ed2a184f1640
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

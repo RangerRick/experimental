@@ -12,7 +12,7 @@ Depends: <<
 	default-icon-theme (>= 0.5-2),
 	libart2-shlibs (>= 2.3.20-1),
 	libjpeg8-shlibs,
-	libpng3-shlibs (>= 1.2.8-1),
+	libpng14-shlibs (>= 1.4.1-2),
 	pcre-shlibs,
 	qt3-shlibs (>= 3.3.8-1027)
 <<
@@ -31,17 +31,17 @@ BuildDepends: <<
 	fink (>= 0.29.7-1),
 	flex-devel,
 	#	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	libgettext8-dev,
 	gettext-tools,
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	libart2 (>= 2.3.20-1),
 	libdatrie,
 	libiconv-dev,
 	libidn (>= 0.5.1-1),
 	libjpeg8,
 	libogg,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	libthai-dev,
 	libtiff,
 	libvorbis0,
@@ -107,6 +107,7 @@ PatchFile-MD5: 4ed9c8583def4d269d0c412bb3b90777
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --without-lua --enable-cups --with-ldap=framework --with-gssapi=framework --with-distribution='Fink/Mac OS X'
 CompileScript: <<
 #!/bin/sh -ev
@@ -183,8 +184,8 @@ SplitOff: <<
 		dbus-qt3-shlibs,
 		esound-shlibs,
 		expat1-shlibs,
-		freetype219-shlibs (>= 2.3.7-7),
-		glib2-shlibs (>= 2.18.4-1),
+		freetype219-shlibs (>= 2.3.12-1),
+		glib2-shlibs (>= 2.22.0-1),
 		libart2-shlibs (>= 2.3.20-1),
 		libgettext8-shlibs,
 		libiconv,
@@ -192,7 +193,7 @@ SplitOff: <<
 		libjpeg8-shlibs,
 		libmad-shlibs,
 		libogg-shlibs,
-		libpng3-shlibs (>= 1.2.8-1),
+		libpng14-shlibs (>= 1.4.1-2),
 		libthai-shlibs,
 		libtiff-shlibs,
 		libvorbis0-shlibs,
@@ -217,6 +218,7 @@ SplitOff: <<
 		%N (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/kabc*.so
 		lib/kde3/kbzip2filter.so
@@ -411,7 +413,7 @@ SplitOff2: <<
 		libart2,
 		libjpeg8,
 		libogg,
-		libpng3 (>= 1.2.8-1),
+		libpng14 (>= 1.4.1-2),
 		libtiff,
 		libvorbis0,
 		libxml2,
@@ -424,6 +426,7 @@ SplitOff2: <<
 		qt3-doc
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/dcopidl*
 		bin/meinproc
@@ -530,6 +533,7 @@ SplitOff3: <<
 		fink (>= 0.29.7-1),
 		fink-obsolete-packages
 	<<
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -595,6 +599,7 @@ SplitOff4: <<
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -659,6 +664,7 @@ SplitOff5: <<
 		fink (>= 0.29.7-1),
 		fink-obsolete-packages
 	<<
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -723,6 +729,7 @@ SplitOff6: <<
 		fink (>= 0.29.7-1),
 		fink-obsolete-packages
 	<<
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -788,6 +795,7 @@ SplitOff7: <<
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -852,6 +860,7 @@ SplitOff8: <<
 		fink (>= 0.29.7-1),
 		fink-obsolete-packages
 	<<
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------

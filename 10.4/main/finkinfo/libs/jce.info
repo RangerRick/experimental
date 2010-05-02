@@ -1,0 +1,30 @@
+Package: jce
+Version: 127
+Revision: 2
+Description: Java Cryptography Extension
+Type: nosource
+License: BSD
+Maintainer: Benjamin Reed <jce@fink.raccoonfink.com>
+
+Depends: system-java (>= 1.4-1)
+
+UseMaxBuildJobs: true
+CompileScript: echo "nothing to do"
+
+InstallScript: <<
+#!/bin/sh -ex
+
+	install -d -m 755 %i/share/doc/installed-packages
+	touch %i/share/doc/installed-packages/%N
+<<
+
+DescDetail: <<
+The Java Cryptography Extension (JCE) is a set of packages that provides a
+framework and implementations for encryption, key generation and key
+agreement, and Message Authentication Code (MAC) algorithms.  Support for
+encryption includes symmetric, asymmetric, block, and stream ciphers.  The
+software also supports secure streams and sealed objects.
+
+JCE is integrated into the JDK as of 1.4.
+<<
+

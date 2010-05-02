@@ -32,6 +32,7 @@ PatchScript: <<
 PatchFile: liblastfm-dev.patch
 PatchFile-MD5: b878f7800a49676f545081cf293fa3e0
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -60,6 +61,7 @@ DocFiles: COPYING README
 SplitOff: <<
 	Package: liblastfm-%type_pkg[lastfm]-shlibs
 	Description: Shared libraries for Last.fm web services
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/lastfm/%type_pkg[lastfm]/lib/liblastfm.0*.dylib
 		opt/lastfm/%type_pkg[lastfm]/lib/liblastfm_fingerprint.0*.dylib

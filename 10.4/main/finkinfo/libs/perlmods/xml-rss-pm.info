@@ -44,6 +44,8 @@ Source: mirror:cpan:modules/by-module/XML/XML-RSS-%v.tar.gz
 Source-MD5: dce2dd92ad4cfb34aa8e928a35b73648
 SourceDirectory: XML-RSS-%v
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

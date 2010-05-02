@@ -14,6 +14,8 @@ Depends: perl%type_pkg[perl]-core
 Source: mirror:cpan:authors/id/A/AN/ANDYA/Test-Harness-%v.tar.gz
 Source-MD5: d4b9f3bf6bd7fdc9f03c66a352a2c0da
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
   %{default_script}

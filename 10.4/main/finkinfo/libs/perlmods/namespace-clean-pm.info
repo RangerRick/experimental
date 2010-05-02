@@ -23,6 +23,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/namespace/namespace-clean-%v.tar.gz
 Source-MD5: 8edfbf0ccd9cb0557e7d0c5366d9f1f1
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 %{default_script}

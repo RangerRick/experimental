@@ -23,6 +23,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/UNIVERSAL/UNIVERSAL-require-%v.tar.gz
 Source-MD5: a93b419333866dcf1e974e8079a41bd7
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

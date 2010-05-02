@@ -26,10 +26,10 @@ BuildDepends: <<
 	esound,
 	expat1,
 	fink (>= 0.29.7-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gettext-bin,
 	gettext-tools,
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	kdebase3-unified-dev (>= %v-1),
 	kdelibs3-unified-dev (>= %v-1),
 	kworldclock (>= %v-1),
@@ -40,7 +40,7 @@ BuildDepends: <<
 	libjpeg8,
 	libogg,
 	libmad,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	libvorbis0,
 	pkgconfig (>= 0.23-1),
 	qt3 (>= 3.3.8-1027),
@@ -66,6 +66,7 @@ PatchScript: 	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/p
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --with-distribution='Fink/Mac OS X'
 CompileScript: <<
 #!/bin/sh -ev
@@ -103,6 +104,7 @@ SplitOff: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/kwin*
 		lib/kde3/kstyle*
@@ -175,6 +177,7 @@ SplitOff10: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kxs*
 		bin/*.kss
@@ -249,6 +252,7 @@ SplitOff11: <<
 		kdelibs3-unified
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: share/emoticons
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -312,6 +316,7 @@ SplitOff12: <<
 	Depends: kdebase3-unified (>= %v-1)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -378,6 +383,7 @@ SplitOff2: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: share/apps/kworldclock
 	Homepage: http://docs.kde.org/en/3.3/kdetoys/kworldclock/
 	DescDetail: <<
@@ -448,6 +454,7 @@ SplitOff3: <<
 	Description: KDE - "Classic" icon set
 	Depends: %N-base (>= %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: share/icons/kdeclassic
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -511,6 +518,7 @@ SplitOff4: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: share/icons/kids
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -574,6 +582,7 @@ SplitOff5: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: share/icons/Locolor
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -637,6 +646,7 @@ SplitOff6: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: share/icons/ikons
 	Homepage: http://www.kde-look.org/content/show.php?content=602
 	DescUsage: <<
@@ -701,6 +711,7 @@ SplitOff7: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: share/icons/slick
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -764,6 +775,7 @@ SplitOff8: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: share/sounds
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -827,6 +839,7 @@ SplitOff9: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: share/wallpapers
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------

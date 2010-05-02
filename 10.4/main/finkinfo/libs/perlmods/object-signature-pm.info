@@ -26,6 +26,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Object/Object-Signature-%v.tar.gz
 Source-MD5: b154a57c64ac06bd47b364c924bf3738
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

@@ -9,5 +9,7 @@ Maintainer: Benjamin Reed <gecko-sharp1@fink.raccoonfink.com>
 
 Depends: %N-firefox3 (>= %v-%r) | %N-firefox2 (>= %v-%r) | %N-seamonkey (>= %v-%r)
 
+UseMaxBuildJobs: true
+
 Homepage: http://www.mono-project.com/
 

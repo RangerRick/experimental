@@ -33,7 +33,7 @@ BuildDepends: <<
 	freetype219,
 	libgettext8-dev,
 	gettext-tools,
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	imagemagick1-dev (>= 6.4.1-1013),
 	kdelibs3-unified-dev (>= 3.5.8-1021),
 	kjsembed-dev,
@@ -46,7 +46,7 @@ BuildDepends: <<
 	libjpeg8,
 	libogg,
 	libpaper1-dev,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	libpqxx2 (>= 1:2.6.8-1),
 	libtiff,
 	libtool2,
@@ -103,6 +103,7 @@ SetMAKEFLAGS: -j1
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 ConfigureParams: --enable-mysql --enable-pgsql --with-pgsqlincdir=%p/include/postgresql --with-pgsqllibdir=%p/lib --with-pqxx-includes=%p/include --with-pqxx-libraries=%p/lib --with-distribution='Fink/Mac OS X' --with-pythondir=%p
 CompileScript: <<
 #!/bin/sh -ev
@@ -148,6 +149,7 @@ SplitOff: <<
 	Description: KDE - a vector drawing program
 	Depends: %N-common (>= %v-%r)
 	Replaces: %N-common (<< %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/karbon
 		lib/kde3/karbon.*
@@ -231,6 +233,7 @@ SplitOff10: <<
 		%N-common (<< %v-%r),
 		kspread (<< %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kword
 		lib/kde3/kwmailmerge_*
@@ -353,6 +356,7 @@ SplitOff11: <<
 		%N-common (<< %v-%r),
 		%N-dev (<< %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kplato
 		lib/libkdeinit_kplato*
@@ -492,6 +496,7 @@ SplitOff12: <<
 		kugar,
 		kword
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3
 		lib/*.*.dylib
@@ -601,6 +606,7 @@ SplitOff13: <<
 		kugar (<< %v-%r)
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/*.la
@@ -727,6 +733,7 @@ SplitOff14: <<
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -801,6 +808,7 @@ SplitOff15: <<
 		kword,
 		%N-dev (<< %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		bin
 		share/app*
@@ -877,6 +885,7 @@ SplitOff2: <<
 	Description: KDE - a chart drawing program
 	Depends: %N-common (>= %v-%r)
 	Replaces: %N-common (<< %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kchart
 		lib/kde3/kchart.*
@@ -1027,6 +1036,7 @@ SplitOff3: <<
 		libpqxx2-shlibs (>= 1:2.6.8-1)
 	<<
 	Replaces: %N-common (<< %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kexi*
 		bin/ksqlite*
@@ -1136,6 +1146,7 @@ SplitOff4: <<
 	Description: KDE - a powerful formula editor
 	Depends: %N-common (>= %v-%r)
 	Replaces: %N-common (<< %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kformula
 		lib/kde3/kformula.*
@@ -1229,6 +1240,7 @@ SplitOff5: <<
 	Description: KDE - a Visio(R)-style flowcharting application
 	Depends: %N-common (>= %v-%r)
 	Replaces: %N-common (<< %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kivio
 		lib/kde3/kivio.*
@@ -1323,6 +1335,7 @@ SplitOff6: <<
 	Description: KDE - a full-featured presentation program
 	Depends: %N-common (>= %v-%r)
 	Replaces: %N-common (<< %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kprconverter.pl
 		bin/kpresenter
@@ -1436,6 +1449,7 @@ SplitOff7: <<
 		%N-common (<< %v-%r),
 		%N-shlibs (<< %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/krita
 		lib/kde3/krita*
@@ -1544,6 +1558,7 @@ SplitOff8: <<
 	Description: KDE - a powerful spreadsheet program
 	Depends: %N-common (>= %v-%r)
 	Replaces: %N-common (<< %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kspread
 		lib/kde3/kspread.*
@@ -1652,6 +1667,7 @@ SplitOff9: <<
 		%N-common (<< %v-%r),
 		%N-shlibs (<< %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kudesigner
 		bin/kugar

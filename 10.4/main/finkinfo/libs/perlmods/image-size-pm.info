@@ -28,6 +28,7 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Image/Image-Size-%v.tar.gz
 Source-MD5: 4e1f653e1ec6989b3afcc8474ea268f0
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ex
 	exec 2>&1

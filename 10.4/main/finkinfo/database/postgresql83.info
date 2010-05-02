@@ -64,6 +64,7 @@ PatchScript: <<
 PatchFile: %n.patch
 PatchFile-MD5: 13c7e9ba3d4f396395a45e6aa649e48b
 
+UseMaxBuildJobs: true
 ConfigureParams: --prefix=%p --libdir=%p/lib/postgresql-8.3 --with-docdir=%p/share/doc --mandir=%p/share/man --enable-multibyte --enable-recode --with-CXX --without-perl --without-python --with-openssl --with-libraries=%p/lib --with-includes=%p/include --without-tcl --without-tk --without-java --enable-odbc --with-pam --with-bonjour --enable-syslog --with-krb5 --enable-thread-safety --with-libxml --with-libxslt
 CompileScript: <<
 #!/bin/sh -xe
@@ -277,6 +278,7 @@ SplitOff: <<
 		postgresql82-dev
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/pg_config*
 		include
@@ -319,6 +321,7 @@ SplitOff2: <<
 		postgresql80-unified-shlibs,
 		postgresql81-shlibs
 	<<
+	UseMaxBuildJobs: true
 	Files: lib/postgresql-8.3/*.dylib var/postgresql-8.3/*.sh var/postgresql-8.3/*.list
 	Shlibs: <<
 		%p/lib/postgresql-8.3/libecpg.6.dylib        6.0.0 postgresql83-shlibs (>= 8.3.7-1)
@@ -334,6 +337,7 @@ SplitOff3: <<
 	Description: Upgrade package for PostgreSQL
 	Depends: %N (>= %v-%r)
 	Replaces: postgresql-ssl
+	UseMaxBuildJobs: true
 	DocFiles: COPYRIGHT HISTORY INSTALL README
 <<
 SplitOff4: <<
@@ -341,6 +345,7 @@ SplitOff4: <<
 	Description: Upgrade package for PostgreSQL
 	Depends: %N (>= %v-%r)
 	Replaces: postgresql
+	UseMaxBuildJobs: true
 	DocFiles: COPYRIGHT HISTORY INSTALL README
 <<
 

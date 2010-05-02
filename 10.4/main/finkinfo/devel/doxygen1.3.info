@@ -6,13 +6,13 @@ License: GPL
 Maintainer: Benjamin Reed <doxygen1.3@fink.raccoonfink.com>
 
 Depends: <<
-	libpng3-shlibs,
+	libpng14-shlibs,
 	graphviz,
 	tetex-base (>= 2.0-1) | tetex-nox | system-tetex,
 	tetex-texmf (>= 2.0-1) | system-tetex
 <<
 BuildDepends: <<
-	libpng3,
+	libpng14,
 	ghostscript | ghostscript-nox,
 	tetex-base (>= 2.0-1) | tetex-nox | system-tetex
 <<
@@ -32,6 +32,7 @@ PatchScript: <<
 SetMAKEFLAGS: -j1
 NoSetCPPFLAGS: true
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 CompileScript: <<
 ./configure --prefix %p --docdir %p/share/doc/%N --release  --install /usr/bin/install
 make INSTALL=%p/lib/doxygen1.3 DOCDIR=%p/share/doc/%N

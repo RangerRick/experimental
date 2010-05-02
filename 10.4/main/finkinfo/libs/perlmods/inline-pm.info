@@ -29,6 +29,8 @@ Source-MD5: 63140a6c911f1576fdee71ba4457610f
 PatchFile: inline-pm.patch
 PatchFile-MD5: c54c4880d257afff626a52d855d069f9
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
   %{default_script}

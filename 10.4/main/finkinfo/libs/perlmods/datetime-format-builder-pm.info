@@ -32,6 +32,7 @@ BuildDepends: <<
 Source: mirror:cpan:authors/id/D/DR/DROLSKY/DateTime-Format-Builder-%v.tar.gz
 Source-MD5: 43407285237cdc3cdd2c08b936229198
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ex
 	exec 2>&1

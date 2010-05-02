@@ -26,10 +26,10 @@ BuildDepends: <<
 	expat1,
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	giflib,
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	gpsd-dev,
 	kde4-buildenv (>= 4.4.0-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
@@ -39,7 +39,7 @@ BuildDepends: <<
 	libjasper.1,
 	libjpeg8,
 	libknotificationitem1-%type_pkg[kde]-dev (>= 4.3.4-1),
-	libpng3,
+	libpng14,
 	libtiff,
 	libusb,
 	(%type_pkg[kde] = x11) libxklavier12,
@@ -69,6 +69,7 @@ PatchScript: sed -e 's,@FINKPREFIX@,%p,g; s,@FINKTYPE@,%type_pkg[kde],g' %{Patch
 PatchFile: kdebase4-workspace.patch
 PatchFile-MD5: fee95a2c9a51b2999852a418353f35df
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -100,7 +101,7 @@ SplitOff: <<
 	Package: %N-shlibs
 	Description: KDE4 - base shared libraries
 	Depends: <<
-		glib2-shlibs (>= 2.18.4-1),
+		glib2-shlibs (>= 2.22.0-1),
 		gpsd-shlibs,
 		kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
 		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
@@ -113,6 +114,7 @@ SplitOff: <<
 	<<
 	Replaces: %N (<< 4.4.1-1)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4
 		opt/kde4/%type_pkg[kde]/lib/libkdecorations.4*.dylib
@@ -172,6 +174,7 @@ SplitOff2: <<
 	Depends: %N (= %v-%r)
 	Replaces: %N-shlibs (<< 4.4.1-1)
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
 		opt/kde4/%type_pkg[kde]/lib/cmake

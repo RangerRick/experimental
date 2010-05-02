@@ -1,0 +1,132 @@
+Info4: <<
+Package: fuppes
+Version: 0.650
+Revision: 1
+Description: Free, multiplatform UPnP A/V Media Server
+License: GPL
+Maintainer: Benjamin Reed <fuppes@fink.raccoonfink.com>
+
+Depends: <<
+	ffmpeg,
+	imagemagick1-shlibs,
+	lame (>= 3.98.2-1),
+	lame-shlibs (>= 3.98.2-1),
+	libavcodec1-shlibs,
+	libavformat1-shlibs,
+	libavutil49-shlibs (>= 0.4.20071217-1),
+	libdlna0-shlibs (>= 0.2.3-2),
+	libexiv2-0.19-shlibs,
+	libfaad1-shlibs,
+	libflac8,
+	libgettext8-shlibs,
+	libiconv,
+	libmad-shlibs,
+	libmp4v21-shlibs (>= 2.0.0-1),
+	libmpcdec5-shlibs (>= 1.2.6-1),
+	libswscale0-shlibs,
+	libupnp3-shlibs (>= 1.6.6-1),
+	libvorbis0-shlibs (>= 1.2.3-1),
+	pcre-shlibs (>= 7.6-1),
+	simage27-shlibs (>= 1.6.1-1),
+	sqlite3-shlibs,
+	taglib-shlibs (>= 1.6.1-5),
+	uuid-shlibs (>= 1.6.2-1)
+<<
+BuildDepends: <<
+	fink (>= 0.29.7-1),
+	imagemagick1-dev,
+	lame-dev (>= 3.98.2-1),
+	libavcodec1-dev,
+	libavformat1-dev,
+	libavutil-dev (>= 0.4.20071217-1),
+	libdlna0 (>= 0.2.3-2),
+	libexiv2-0.19,
+	libfaad1-dev,
+	libflac8-dev,
+	libgettext8-dev,
+	libiconv-dev,
+	libmad,
+	libmp4v21-dev (>= 2.0.0-1),
+	libmpcdec5 (>= 1.2.6-1),
+	libswscale-dev,
+	libupnp3 (>= 1.6.6-1),
+	libvorbis0 (>= 1.2.3-1),
+	pcre (>= 7.6-1),
+	pkgconfig (>= 0.23-1),
+	simage27 (>= 1.6.1-1),
+	sqlite3-dev,
+	taglib (>= 1.6.1-5),
+	uuid (>= 1.6.2-1)
+<<
+BuildDependsOnly: true
+
+CustomMirror: <<
+	Primary: http://www.finkproject.org/~ranger/distfiles
+	eur-NL: http://www.finkproject.org/~ranger/distfiles
+	nam-US: http://ranger.befunk.com/fink
+<<
+Source: mirror:custom:%n/%n-%v.tar.bz2
+Source-MD5: d009ac47e72781536e00c8a36a7d520b
+PatchScript: <<
+	%{default_script}
+	
+	perl -pi -e 's,LIBAVFORMAT_CFLAGS="",,; s,LIBAVFORMAT_LIBS="",,;' configure
+	perl -pi -e 's,libavformat/avformat.h,ffmpeg/avformat.h,g; s,libavutil/avstring.h,ffmpeg/avstring.h,g; s,libavcodec/avcodec.h,ffmpeg/avcodec.h,;' configure src/plugins/ffmpeg/*.* src/plugins/*.*
+	
+	echo '#!/bin/sh' >mpeg4ip-config
+	echo 'echo -I%p/include' >>mpeg4ip-config
+	chmod 755 *-config
+	
+	echo '#include <stdint.h>' >mp4ff_int_types.h
+	
+	perl -pi -e 's,_EXCEPTION_H,_FUPPES_EXCEPTION_H,g' src/lib/Common/*.*
+	perl -pi -e 's,EException,Exception,g; s,throw Exception,throw fuppes::Exception,g;' src/lib/HTTP/*.*
+	perl -pi -e 's,CODEC_TYPE_SUBTITLE,CODEC_TYPE_UNKNOWN,g' src/plugins/ffmpeg/*.* src/plugins/*.*
+<<
+PatchFile: %n.patch
+PatchFile-MD5: d8fa0137ea414f6da291fe66d3792d5d
+
+SetCFLAGS: -I%b -I%b/src -I%p/include
+UseMaxBuildJobs: true
+ConfigureParams: --enable-lame --enable-mad --enable-faad --disable-transcoder-ffmpeg --disable-rpath
+CompileScript: <<
+#!/bin/sh -ev
+
+	export LIBAVFORMAT_CFLAGS="-I%p/include"
+	export LIBAVFORMAT_LIBS="-L%p/lib -lavformat"
+	export LIBAVCODEC_CFLAGS="-I%p/include"
+	export LIBAVCODEC_LIBS="-L%p/lib -lavcodec"
+	export MPEG4IP_CONFIG=`pwd`/mpeg4ip-config
+	export ac_cv_path_MYSQL_CONFIG=no
+	export CPPFLAGS="-I`pwd` $CPPFLAGS"
+
+	./configure %c
+	make
+<<
+
+InstallScript: <<
+make -j1 install DESTDIR="%d"
+rm -rf %i/lib/libfuppes.dylib
+<<
+DocFiles: AUTHORS COPYING ChangeLog NEWS README THANKS TODO
+Shlibs: !%p/lib/libfuppes.0.dylib
+
+Homepage: http://fuppes.ulrich-voelkel.de/
+DescDetail: <<
+FUPPES supports a wide range of UPnP MediaRenderers as well as on-the-fly
+transcoding of various audio, video and image formats.
+
+FUPPES also includes basic DLNA support.
+
+Features:
+
+* browse, search and play your data
+* optional transcoding of ogg, mpc, flac, aac/mp4 to mp3, mp2, pcm or wav
+* image conversion/resizing
+* convert RAW images using dcraw
+* video transcoding
+* configurable via webinterface
+* create your own virtual folder layout
+<<
+<<
+

@@ -51,10 +51,10 @@ BuildDepends: <<
 	dbus-dev (>= 1.2.12-1),
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	ggz-client-libs2-dev,
 	libggz2,
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	kde4-buildenv (>= 4.4.0-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.4.1-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
@@ -72,6 +72,7 @@ GCC: 4.0
 Source: mirror:kde:stable/%v/src/kdegames-%v.tar.bz2
 Source-MD5: f239138dc3a7b890c82204ff49bb3edd
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -125,6 +126,7 @@ SplitOff: <<
 	Package: bomber4-%type_pkg[kde]
 	Description: KDE4 - arcade spaceship game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/bomber*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/bomber*
@@ -143,6 +145,7 @@ SplitOff10: <<
 	Package: kdiamond4-%type_pkg[kde]
 	Description: KDE4 - three-in-a-row game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kdiamond*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kdiamond*
@@ -164,6 +167,7 @@ SplitOff11: <<
 	Package: kfourinline4-%type_pkg[kde]
 	Description: KDE4 - Connect Four game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kfourinline*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kfourinline*
@@ -183,6 +187,7 @@ SplitOff12: <<
 	Package: kgoldrunner4-%type_pkg[kde]
 	Description: KDE4 - Lode Runner arcade game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kgoldrunner*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/KGoldrunner*
@@ -203,6 +208,7 @@ SplitOff13: <<
 	Description: KDE4 - BSD robots game clone
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N-base (<< 4.4.1-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/killbots*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/killbots*
@@ -223,6 +229,7 @@ SplitOff14: <<
 	Package: kiriki4-%type_pkg[kde]
 	Description: KDE4 - Yahtzee dice game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kiriki*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kiriki*
@@ -241,6 +248,7 @@ SplitOff15: <<
 	Package: kjumpingcube4-%type_pkg[kde]
 	Description: KDE4 - simple tactical game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kjumpingcube*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kjumpingcube*
@@ -260,6 +268,7 @@ SplitOff16: <<
 	Package: klines4-%type_pkg[kde]
 	Description: KDE4 - color lines game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/klines*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/klines*
@@ -280,6 +289,7 @@ SplitOff17: <<
 	Description: KDE4 - Mahjongg solitaire game
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N-base (<< 4.3.98-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kmahjongg*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kmahjongg*
@@ -300,6 +310,7 @@ SplitOff18: <<
 	Package: kmines4-%type_pkg[kde]
 	Description: KDE4 - minesweeper game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kmines*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kmines*
@@ -319,6 +330,7 @@ SplitOff19: <<
 	Package: knetwalk4-%type_pkg[kde]
 	Description: KDE4 - wire puzzle game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/knetwalk*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/knetwalk*
@@ -338,6 +350,7 @@ SplitOff2: <<
 	Package: bovo4-%type_pkg[kde]
 	Description: KDE4 - gomoku board game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/bovo*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/bovo*
@@ -350,6 +363,7 @@ SplitOff20: <<
 	Package: kolf4-%type_pkg[kde]
 	Description: KDE4 - miniature golf game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kolf*
 		opt/kde4/%type_pkg[kde]/lib/libkolfprivate.4*.dylib
@@ -370,6 +384,7 @@ SplitOff21: <<
 	Package: kollision4-%type_pkg[kde]
 	Description: KDE4 - simple ball dodging game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kollision*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kollision*
@@ -395,6 +410,7 @@ SplitOff22: <<
 	Package: konquest4-%type_pkg[kde]
 	Description: KDE4 - simple turn-based strategy game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/konquest*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/konquest*
@@ -413,6 +429,7 @@ SplitOff23: <<
 	Package: kpat4-%type_pkg[kde]
 	Description: KDE4 - solitaire card game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kpat*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kpat*
@@ -432,6 +449,7 @@ SplitOff24: <<
 	Package: kreversi4-%type_pkg[kde]
 	Description: KDE4 - reversi board game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kreversi*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kreversi*
@@ -455,6 +473,7 @@ SplitOff25: <<
 	Package: ksame4-%type_pkg[kde]
 	Description: KDE4 - SameGame puzzle game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/ksame*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/ksame*
@@ -473,6 +492,7 @@ SplitOff26: <<
 	Package: kshisen4-%type_pkg[kde]
 	Description: KDE4 - Shisen-Sho solitaire game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kshisen*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kshisen*
@@ -497,6 +517,7 @@ SplitOff27: <<
 		%N-base (>= %v-%r)
 	<<
 	Replaces: %N-base (<< 4.3.98-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/ksirk*
 		opt/kde4/%type_pkg[kde]/lib/libiris_ksirk.2*.dylib
@@ -521,6 +542,7 @@ SplitOff28: <<
 	Package: kspaceduel4-%type_pkg[kde]
 	Description: KDE4 - SpaceWar! arcade game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kspaceduel*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kspaceduel*
@@ -540,6 +562,7 @@ SplitOff29: <<
 	Package: ksquares4-%type_pkg[kde]
 	Description: KDE4 - Dots and Boxes game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/ksquares*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/ksquares*
@@ -559,6 +582,7 @@ SplitOff3: <<
 	Package: kapman4-%type_pkg[kde]
 	Description: KDE4 - Pac-Man clone
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kapman*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kapman*
@@ -579,6 +603,7 @@ SplitOff30: <<
 	Package: ksudoku4-%type_pkg[kde]
 	Description: KDE4 - Sudoku puzzle game and solver
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/ksudoku*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/ksudoku*
@@ -595,6 +620,7 @@ SplitOff31: <<
 	Package: ktuberling4-%type_pkg[kde]
 	Description: KDE4 - stamp drawing toy
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/ktuberling*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/ktuberling*
@@ -619,6 +645,7 @@ SplitOff32: <<
 	Package: kubrick4-%type_pkg[kde]
 	Description: KDE4 - Rubik's Cube game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kubrick*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kubrick*
@@ -637,6 +664,7 @@ SplitOff33: <<
 	Package: lskat4-%type_pkg[kde]
 	Description: KDE4 - Lieutenant Skat card game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/lskat*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/lskat*
@@ -655,6 +683,7 @@ SplitOff34: <<
 	Package: granatier4-%type_pkg[kde]
 	Description: KDE4 - ClanBomber clone
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/granatier*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/granatier*
@@ -675,6 +704,7 @@ SplitOff35: <<
 	Package: ktron4-%type_pkg[kde]
 	Description: KDE4 - Lightcycle game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kdesnake*
 		opt/kde4/%type_pkg[kde]/bin/ktron*
@@ -705,6 +735,7 @@ SplitOff36: <<
 	Description: KDE4 - Go board game
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N-base (<< 4.4.1-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kigo*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kigo*
@@ -725,6 +756,7 @@ SplitOff37: <<
 	Package: palapeli-%type_pkg[kde]
 	Description: KDE4 - Jigsaw puzzle game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/*pala*
 		opt/kde4/%type_pkg[kde]/lib/kde4/pala*
@@ -746,6 +778,7 @@ SplitOff4: <<
 	Description: KDE4 - atomix puzzle game
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N-base (<< 4.3.98-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/katomic*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/katomic*
@@ -767,6 +800,7 @@ SplitOff40: <<
 	Description: KDE4 - kdegames developer headers and libs
 	Depends: %N (>= %v-%r)
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
 		opt/kde4/%type_pkg[kde]/lib/libkdegames.dylib
@@ -782,6 +816,7 @@ SplitOff41: <<
 	Package: %N-base-shlibs
 	Description: KDE4 - kdegames base shared libraries
 	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/libkdegames.5*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkggzgames.4*.dylib
@@ -805,6 +840,7 @@ SplitOff42: <<
 		kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1),
 		qca2-%type_pkg[kde]-shlibs (>= 2.0.2-1)
 	<<
+	UseMaxBuildJobs: true
 	Files: opt
 <<
 SplitOff5: <<
@@ -812,6 +848,7 @@ SplitOff5: <<
 	Description: KDE4 - battleship board game
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N-base (<< 4.3.98-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kbattleship*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kbattleship*
@@ -831,6 +868,7 @@ SplitOff6: <<
 	Package: kblackbox4-%type_pkg[kde]
 	Description: KDE4 - Black Box puzzle game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kblackbox*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kblackbox*
@@ -849,6 +887,7 @@ SplitOff7: <<
 	Package: kblocks4-%type_pkg[kde]
 	Description: KDE4 - falling blocks game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kblocks*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kblocks*
@@ -869,6 +908,7 @@ SplitOff8: <<
 	Package: kbounce4-%type_pkg[kde]
 	Description: KDE4 - Jezzball arcade game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kbounce*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kbounce*
@@ -887,6 +927,7 @@ SplitOff9: <<
 	Package: kbreakout4-%type_pkg[kde]
 	Description: KDE4 - Breakout arcade game
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kbreakout*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kbreakout*

@@ -22,6 +22,7 @@ Source: mirror:kde:stable/%v/src/oxygen-icons-%v.tar.bz2
 Source-MD5: 9e91b94f2e743d5dc0bd740ed0acb025
 SourceDirectory: oxygen-icons-%v
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 

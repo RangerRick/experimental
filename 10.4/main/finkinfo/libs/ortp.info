@@ -1,0 +1,38 @@
+Package: ortp
+Version: 0.11.0
+Revision: 1
+Description: RTP protocol implementation
+License: LGPL
+Maintainer: Benjamin Reed <ortp@fink.raccoonfink.com>
+
+Depends: %N-shlibs (= %v-%r)
+BuildDepends: gtk-doc
+BuildDependsOnly: true
+
+Source: http://download.savannah.nongnu.org/releases/linphone/%n/sources/%n-%v.tar.gz
+Source-MD5: c2595b0caf99f922946fcb16e3250787
+
+UseMaxBuildJobs: true
+
+InstallScript: make install DESTDIR=%d
+DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
+SplitOff: <<
+	Package: %N-shlibs
+	UseMaxBuildJobs: true
+	DocFiles: COPYING
+	Files: lib/libortp.*.dylib
+	Shlibs: %p/lib/libortp.5.dylib 6.0.0 %n (>= 0.11.0-1)
+<<
+
+Homepage: http://www.linphone.org/
+DescDetail: <<
+oRTP is a LGPL licensed C library implementing the RTP protocol (rfc3550).
+
+Current features:
+* works with ipv6
+* packet scheduler
+* adaptive jitter compensation
+* automatic sending of RTCP SR or RR coumpounded with a SDES
+* RTCP parser API
+<<
+

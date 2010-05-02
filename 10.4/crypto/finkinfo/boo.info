@@ -15,8 +15,8 @@ BuildDepends: <<
 	atk1 (>= 1.26.0-1),
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
-	glib2-dev (>= 2.18.4-1),
+	freetype219 (>= 2.3.12-1),
+	glib2-dev (>= 2.22.0-1),
 	gtk+2-dev (>= 2.14.7-1),
 	gtksourceview-dev (>= 1.8.5-1),
 	gtksourceview-sharp (>= 2.0-1031),
@@ -39,6 +39,7 @@ Source-MD5: c7f225468aac17d25845dfc92407ab95
 PatchFile: %n.patch
 PatchFile-MD5: 0766b380d002bc6a50cdf6a58e3c38c5
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ex
 

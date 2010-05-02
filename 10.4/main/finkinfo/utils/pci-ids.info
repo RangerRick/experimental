@@ -1,0 +1,28 @@
+Package: pci-ids
+Version: 20080318
+Revision: 1
+Description: A database of PCI IDs
+License: GPL
+Maintainer: Benjamin Reed <pci-ids@fink.raccoonfink.com>
+
+BuildDepends: bzip2
+
+CustomMirror: <<
+	Primary: http://www.finkproject.org/~ranger/distfiles
+	eur-NL: http://www.finkproject.org/~ranger/distfiles
+	nam-US: http://ranger.befunk.com/fink
+<<
+NoSourceDirectory: true
+Source: mirror:custom:pciids/pci.ids-%v.bz2
+Source-MD5: 9a9574408e77aec717bd8dc334f8de72
+
+UseMaxBuildJobs: true
+CompileScript: true
+
+InstallScript: <<
+	install -d -m 755 %i/share/%N
+	bzip2 -dc pci.ids-%v.bz2 > %i/share/%N/pci.ids
+<<
+
+Homepage: http://pciids.sourceforge.net/
+

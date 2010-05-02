@@ -21,7 +21,7 @@ BuildDepends: <<
 	dbus-dev (>= 1.2.12-1),
 	expat1,
 	fink (>= 0.29.7-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	giflib,
 	gpgme11,
@@ -33,7 +33,7 @@ BuildDepends: <<
 	libidn,
 	libjasper.1,
 	libjpeg8,
-	libpng3,
+	libpng14,
 	libtiff,
 	libxml2,
 	libxslt,
@@ -54,6 +54,7 @@ Source: mirror:kde:stable/%v/src/kdepimlibs-%v.tar.bz2
 Source-MD5: dab906c8ea41551b8d494ff9a696d20a
 SourceDirectory: kdepimlibs-%v
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -85,6 +86,7 @@ SplitOff: <<
 		libgpg-error-shlibs
 	<<
 	Replaces: kdepimlibs4-%type_pkg[kde]-shlibs (<< 4.2.1-2)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/libgpgme++-pth.2*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libgpgme++-pthread.2*.dylib

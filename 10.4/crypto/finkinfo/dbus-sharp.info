@@ -14,7 +14,7 @@ Depends: <<
 BuildDepends: <<
 	dbus-dev (>= 1.2.12-1),
 	fink (>= 0.29.7-1),
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	mono-dev (>= 2.6.2-1),
 	monodoc (>= 2.0-1),
 	mono-tools (>= 2.6.2-1),
@@ -31,6 +31,7 @@ PatchScript: <<
 PatchFile: %n.patch
 PatchFile-MD5: e73f1a3df5de237545edb6813dbd5fd6
 
+UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --disable-qt --disable-qt3 --disable-glib --disable-gtk --disable-xml-docs --disable-doxygen-docs --disable-gcj --enable-mono --enable-mono-docs --disable-python --disable-selinux --with-xml=expat
 
 InstallScript: make -j1 install DESTDIR="%d"

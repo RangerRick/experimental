@@ -28,6 +28,8 @@ Source: mirror:cpan:modules/by-module/Test/Test-Manifest-%v.tar.gz
 Source-MD5: 298156323748c74decdca79904ebd881
 SourceDirectory: Test-Manifest-%v
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

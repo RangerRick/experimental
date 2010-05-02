@@ -24,12 +24,12 @@ Depends: <<
 BuildDepends: <<
 	atk1 (>= 1.26.0-1),
 	audiofile (>= 0.2.6-11),
-	cairo (>= 1.8.8-1),
+	cairo (>= 1.8.10-1),
 	dbus-dev (>= 1.2.12-1),
 	expat1,
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gconf2-dev (>= 2.20.1-1),
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	gnome-keyring-dev (>= 0.8.1-1),
 	gnome-panel-dev (>= 2.24.0-1),
 	gnome-sharp2 (>= 2.24.0-1),
@@ -63,6 +63,7 @@ Source: http://ftp.novell.com/pub/mono/sources/%n/gnome-desktop-sharp-%v.tar.bz2
 Source-MD5: 2d36f04223a52e09908ddbdc1c767f5e
 PatchScript: perl -pi -e 's, sample,,' Makefile.in
 
+UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --disable-static --disable-dependency-tracking lt_cv_sys_max_cmd_len=65536 PKG_CONFIG_PATH="%p/lib/pango-ft219/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 InstallScript: <<

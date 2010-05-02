@@ -16,6 +16,8 @@ Replaces: io-pm (<< 1.2301-2)
 Source: mirror:cpan:modules/by-module/IO/IO-%v.tar.gz
 Source-MD5: 4f209b75851b27f39a4d221d01a19b92
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

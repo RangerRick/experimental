@@ -30,6 +30,7 @@ Source2: http://jdbc.postgresql.org/download/postgresql-8.4-701.jdbc3.jar
 Source2-MD5: cae9df650a214ecdd696462810c93721
 SourceDirectory: postgresql-jdbc-%v-701.src
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -51,6 +52,7 @@ SplitOff: <<
 	Package: postgresql-ssl-java
 	Description: Upgrade package for postgresql-ssl-java
 	Depends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	DocFiles: LICENSE README
 <<
 

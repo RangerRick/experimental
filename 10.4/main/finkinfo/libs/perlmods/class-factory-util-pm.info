@@ -16,6 +16,7 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Class/Class-Factory-Util-%v.tar.gz
 Source-MD5: aebd79da361b676a7ecd3245fc3d1b3f
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ex
 	exec 2>&1

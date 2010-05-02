@@ -31,6 +31,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/DateTime/DateTime-%v.tar.gz
 Source-MD5: 890270f12eb4eb07dc1ddf8b26794ffe
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

@@ -23,6 +23,7 @@ Patch: %n.patch
 SetCPPFLAGS: -Wno-long-double
 SetLIBS: -L%p/lib
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --disable-dependency-tracking --mandir='${prefix}/share/man'
 
 InstallScript: make install DESTDIR=%d

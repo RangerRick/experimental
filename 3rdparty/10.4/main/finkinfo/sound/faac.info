@@ -1,0 +1,52 @@
+Package: faac
+Version: 1.24+cvs20041018
+Revision: 12
+Description: Encoder for AAC and MP4 audio
+License: LGPL
+Maintainer: Dave Vasilevsky <vasi@users.sourceforge.net>
+
+Depends: %N-shlibs (= %v-%r)
+BuildDepends: <<
+	automake1.11,
+	autoconf2.6,
+	libtool2,
+	libgnugetopt
+<<
+GCC: 4.0
+
+Source: http://www.audiocoding.com/snapshot/%N-18102004.tar.gz
+Source-MD5: 6051e5831aea16848822163b30d9456b
+SourceDirectory: %N
+
+UseMaxBuildJobs: true
+CompileScript: <<
+	#!/bin/sh -ev
+	sh bootstrap
+	perl -i -pe 's,@(lib|include)dir@,$&/faac,g' common/mp4v2/Makefile.in
+	%{default_script}
+<<
+
+DocFiles: AUTHORS COPYING INSTALL NEWS README TODO
+SplitOff: <<
+	Package: %N-shlibs
+	Depends: libgnugetopt-shlibs
+	UseMaxBuildJobs: true
+	DocFiles: AUTHORS COPYING INSTALL NEWS README TODO
+	Files: lib/faac/libmp4v2.*.dylib lib/libfaac.*.dylib
+	Shlibs: <<
+		%p/lib/libfaac.0.dylib			1.0.0 %n (>= 1.24+cvs20041018-11)
+		%p/lib/faac/libmp4v2.0.dylib	1.0.0 %n (>= 1.24+cvs20041018-11)
+	<<
+<<
+SplitOff2: <<
+	Package: %N-dev
+	Depends: %N-shlibs (= %v-%r)
+	BuildDependsOnly: true
+	UseMaxBuildJobs: true
+	DocFiles: AUTHORS COPYING INSTALL NEWS README TODO
+	Files: include lib/faac/libmp4v2.{a,dylib,la} lib/libfaac.{a,dylib,la}
+<<
+
+Homepage: http://www.audiocoding.com/modules/wiki/?page=FAAC
+DescPort: Move libmp4v2 out of the way so we don't conflict with faad2.
+

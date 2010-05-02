@@ -30,8 +30,8 @@ BuildDepends: <<
 	dbus-dev (>= 1.2.12-1),
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
-	glib2-dev (>= 2.18.4-1),
+	freetype219 (>= 2.3.12-1),
+	glib2-dev (>= 2.22.0-1),
 	kde4-buildenv (>= 4.4.0-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.4.1-1),
 	kdepimlibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
@@ -54,6 +54,7 @@ GCC: 4.0
 Source: mirror:kde:stable/%v/src/kdesdk-%v.tar.bz2
 Source-MD5: 4dc275062bb38a338e83ed8f6f4854bc
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -90,6 +91,7 @@ SplitOff: <<
 	Description: KDE4 - CVS client
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N-base (<< 4.2.4-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/cervisia*
 		opt/kde4/%type_pkg[kde]/bin/cvs*
@@ -123,6 +125,7 @@ SplitOff10: <<
 	Description: KDE4 - UML modelling tool
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N-base (<< 4.4.1-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/umbrello*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/umbrello*
@@ -144,6 +147,7 @@ SplitOff11: <<
 	Package: %N-svn-provider
 	Description: KDE4 - Subversion support
 	Depends: %N-svn-ioslave (>= %v-%r) | kde4-%type_pkg[kde]-svn-ioslave
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff12: <<
@@ -159,6 +163,7 @@ SplitOff12: <<
 		kdesvn-kde4-%type_pkg[kde],
 		%N-ioslaves (<< 4.2.2-3)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kio_svn_helper*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kded_ksvnd*
@@ -179,6 +184,7 @@ SplitOff13: <<
 	Package: %N-ioslaves
 	Description: KDE4 - upgrade package
 	Depends: %N-svn-ioslave (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%n
 <<
 SplitOff14: <<
@@ -189,6 +195,7 @@ SplitOff14: <<
 		%N-scripts (<< 4.2.4-1),
 		%N-base (<< 4.2.4-1)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kpartloader*
 		opt/kde4/%type_pkg[kde]/share/apps/kpartloader
@@ -199,6 +206,7 @@ SplitOff15: <<
 	Description: KDE4 - scripts for KDE development
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N-base (<< 4.2.4-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin
 		opt/kde4/%type_pkg[kde]/share/man/man1
@@ -208,6 +216,7 @@ SplitOff16: <<
 	Package: %N-accounts-plugin
 	Description: KDE4 - add KDE developer emails to the address book
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/*kdeaccounts*
 		opt/kde4/%type_pkg[kde]/share/apps/kabc/formats/*kdeaccounts*
@@ -217,6 +226,7 @@ SplitOff2: <<
 	Package: kapptemplate4-%type_pkg[kde]
 	Description: KDE4 - application template generator
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kapptemplate*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kapptemplate*
@@ -237,6 +247,7 @@ SplitOff20: <<
 	Description: KDE4 - kdesdk dev headers and libs
 	Depends: %N (>= %v-%r)
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
 		opt/kde4/%type_pkg[kde]/lib/libkateinterfaces.dylib
@@ -247,6 +258,7 @@ SplitOff21: <<
 	Package: %N-base
 	Description: KDE4 - kdesdk base package
 	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1)
+	UseMaxBuildJobs: true
 	Files: opt
 <<
 SplitOff3: <<
@@ -254,6 +266,7 @@ SplitOff3: <<
 	Description: KDE4 - advanced text editor
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N-base (<< 4.4.1-1)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kate*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kate*
@@ -295,6 +308,7 @@ SplitOff4: <<
 		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
 		%N-base (>= %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kbugbuster*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kcal_bugzilla*
@@ -315,6 +329,7 @@ SplitOff5: <<
 	Package: kcachegrind4-%type_pkg[kde]
 	Description: KDE4 - valgrind visualization tool
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/*2calltree*
 		opt/kde4/%type_pkg[kde]/bin/kcachegrind*
@@ -330,6 +345,7 @@ SplitOff6: <<
 	Package: kompare4-%type_pkg[kde]
 	Description: KDE4 - file difference viewer
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kompare*
 		opt/kde4/%type_pkg[kde]/lib/kde4/libkompare*
@@ -362,6 +378,7 @@ SplitOff7: <<
 		qt4-%type_pkg[kde]-designer-shlibs (>= 4.6.1-1),
 		%N-base (>= %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kuiviewer*
 		opt/kde4/%type_pkg[kde]/lib/kde4/libkuiviewerpart*
@@ -383,6 +400,7 @@ SplitOff8: <<
 		libhunspell-shlibs (>= 1.2.8-1004),
 		%N-base (>= %v-%r)
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/lokalize*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/lokalize*
@@ -400,6 +418,7 @@ SplitOff9: <<
 	Package: po2xml4-%type_pkg[kde]
 	Description: KDE4 - translate docbook XML with gettext
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/po2xml*
 		opt/kde4/%type_pkg[kde]/bin/split2po*

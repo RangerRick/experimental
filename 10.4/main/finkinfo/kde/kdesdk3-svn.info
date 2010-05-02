@@ -27,7 +27,7 @@ BuildDepends: <<
 	expat1,
 	fink (>= 0.29.7-1),
 	flex-devel (>= 2.5.31-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gdbm3,
 	libgettext8-dev,
 	gettext-tools,
@@ -36,7 +36,7 @@ BuildDepends: <<
 	libiconv-dev,
 	libidn,
 	libjpeg8,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	libxml2,
 	neon24,
 	openldap23-dev,
@@ -70,6 +70,7 @@ PatchScript: 	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/p
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --with-distribution='Fink/Mac OS X'
 CompileScript: <<
 #!/bin/sh -ev

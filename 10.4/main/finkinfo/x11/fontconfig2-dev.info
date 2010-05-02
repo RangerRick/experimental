@@ -24,6 +24,7 @@ PatchFile: %n.patch
 PatchFile-MD5: d35b226ecf9a049ea2bc6e51ac1c3cdb
 
 SetCFLAGS: -fno-common -g -Os
+UseMaxBuildJobs: true
 ConfigureParams: --with-freetype-config="%p/lib/freetype219/bin/freetype-config" --prefix=%p/lib/fontconfig2 --with-confdir=%p/etc/fonts --disable-docs --disable-dependency-tracking --with-cache-dir=%p/var/cache/fontconfig-2.4 --with-default-fonts=/System/Library/Fonts --with-add-fonts=/Library/Fonts,/Network/Library/Fonts,/System/Library/Fonts,/usr/X11/lib/X11/fonts,/usr/X11R6/lib/X11/fonts,/usr/share/fonts
 
 InstallScript: make -j1 install DESTDIR=%d
@@ -36,6 +37,7 @@ SplitOff: <<
 		expat1-shlibs,
 		freetype219-shlibs
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: README
 	Files: <<
 		lib/fontconfig2/bin
@@ -47,6 +49,7 @@ SplitOff: <<
 SplitOff2: <<
 	Package: fontconfig-config
 	Description: configuration files for fontconfig
+	UseMaxBuildJobs: true
 	Files: %p/etc/fonts
 	ConfFiles: <<
 		%p/etc/fonts/fonts.conf

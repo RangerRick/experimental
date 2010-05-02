@@ -9,6 +9,8 @@ Maintainer: Daniel Macks <dmacks@netspace.org>
 Source: mirror:cpan:modules/by-module/IO/IO-Compress-Base-%v.tar.gz
 Source-MD5: 009813067e40c73c28c23fde8d9abfd5
 
+UseMaxBuildJobs: true
+
 UpdatePOD: True
 DocFiles: Changes README
 

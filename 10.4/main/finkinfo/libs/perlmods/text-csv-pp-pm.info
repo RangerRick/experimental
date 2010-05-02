@@ -18,6 +18,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Text/Text-CSV-%v.tar.gz
 Source-MD5: ea28c3e4d37125b34c68ce2a03e6315a
 
+UseMaxBuildJobs: true
+
 UpdatePOD: True
 InstallScript: <<
 	%{default_script}

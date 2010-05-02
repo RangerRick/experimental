@@ -37,6 +37,7 @@ Source: mirror:cpan:modules/by-module/URI/URI-Find-Rule-%v.tar.gz
 Source-MD5: 36a5b9d1e11202582aee0b76c9bbfc71
 SourceDirectory: URI-Find-Rule-%v
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ex
   exec 2>&1

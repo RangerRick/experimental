@@ -22,6 +22,7 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/UNIVERSAL/UNIVERSAL-isa-%v.tar.gz
 Source-MD5: 032d0d035b6dc8e25dd0e8af55443b9b
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ex
 	exec 2>&1

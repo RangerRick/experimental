@@ -25,6 +25,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Module/Module-Pluggable-Fast-%v.tar.gz
 Source-MD5: 37e511a6828448618b12bb85186f79b9
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

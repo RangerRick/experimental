@@ -26,6 +26,7 @@ PatchScript: perl -pi -e 's/-Wl,-z,defs//g' configure
 
 SetCFLAGS: -Os -I%p/lib/system-openssl/include
 SetLDFLAGS: -L%p/lib/system-openssl/lib
+UseMaxBuildJobs: true
 ConfigureParams: --with-pthread --disable-dependency-tracking
 CompileScript: <<
 #!/bin/sh -ex
@@ -47,6 +48,7 @@ SplitOff: <<
 		ekg-ssl-shlibs (<< 1.8-1),
 		ekg-unified-shlibs (<< 1.8-1)
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: COPYING README
 	Files: lib/libgadu.*.dylib
 	Shlibs: %p/lib/libgadu.3.dylib 13.0.0 %v (>= 1.8.2-1)

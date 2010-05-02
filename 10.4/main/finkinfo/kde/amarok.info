@@ -20,3 +20,5 @@ Replaces: <<
 	amarok-kde-gstreamer-xine
 <<
 
+UseMaxBuildJobs: true
+

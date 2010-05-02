@@ -21,6 +21,8 @@ BuildDepends: <<
 Source: mirror:cpan:authors/id/J/JD/JDHEDDEN/threads-%v.tar.gz
 Source-MD5: daa78a18bcd82d235e3c8006b5bc27f2
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

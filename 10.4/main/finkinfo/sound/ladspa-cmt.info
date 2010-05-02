@@ -1,0 +1,49 @@
+Package: ladspa-cmt
+Version: 1.16
+Revision: 1
+Description: LADSPA Computer Music Toolkit (plugins)
+License: GPL
+Maintainer: Benjamin Reed <ladspa-cmt@fink.raccoonfink.com>
+
+Depends: ladspa (>= 1.13-1)
+BuildDepends: <<
+	ladspa-dev (>= 1.13-0),
+	fink (>= 0.29.7-1)
+<<
+GCC: 4.0
+
+Source: http://www.ladspa.org/download/cmt_src_%v.tgz
+Source-MD5: 15a875e5aaf79c209c223babfb41cb1c
+SourceDirectory: cmt
+PatchScript: sed -e 's,@PREFIX@,%p,g' %{PatchFile} | patch -p1
+PatchFile: %n.patch
+PatchFile-MD5: 696d8a7bbdfdcb9730f148f1713d3d3e
+
+UseMaxBuildJobs: true
+CompileScript: <<
+#!/bin/sh -ev
+  pushd src
+  make
+  popd
+<<
+
+InstallScript: <<
+#!/bin/sh -ev
+  install -d -m 755 %i/lib/ladspa
+  install -m 755 plugins/* %i/lib/ladspa/
+<<
+DocFiles: README doc/*
+
+DescDetail: <<
+The Computer Music Toolkit (CMT) is a collection of LADSPA plugins
+for use with software synthesis and recording packages on Linux.
+See the license before use.
+
+The CMT was initially designed and developed by Richard W.E. Furse
+(who was also the principal designer of the LADSPA standard) and
+further plugins have been provided by by Jezar, David Bartold and
+Nathaniel Virgo.  If you are a programmer or can write
+documentation and would like to help out, please feel free to
+contact Richard.
+<<
+

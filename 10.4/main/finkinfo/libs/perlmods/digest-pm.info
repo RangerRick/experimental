@@ -34,6 +34,8 @@ Replaces: <<
 Source: mirror:cpan:modules/by-module/Digest/Digest-%v.tar.gz
 Source-MD5: 83be88df645ef0981d991f86dcba6da7
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

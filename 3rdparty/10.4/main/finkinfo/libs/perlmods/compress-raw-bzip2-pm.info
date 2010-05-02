@@ -16,6 +16,7 @@ BuildDepends: bzip2-dev
 Source: mirror:cpan:modules/by-module/Compress/Compress-Raw-Bzip2-%v.tar.gz
 Source-MD5: dc30ce4bfdd83df0da5b460c8b93c76d
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 	export BUILD_BZIP2=0

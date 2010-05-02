@@ -1,0 +1,84 @@
+diff -Nurd fuppes-0.650/src/lib/Common/Thread.cpp fuppes-0.650-new/src/lib/Common/Thread.cpp
+--- fuppes-0.650/src/lib/Common/Thread.cpp	2009-11-27 06:24:23.000000000 -0500
++++ fuppes-0.650-new/src/lib/Common/Thread.cpp	2009-11-28 17:52:52.000000000 -0500
+@@ -31,6 +31,26 @@
+ #include <errno.h>
+ #include <time.h>
+ 
++#ifndef CLOCK_REALTIME
++#include <sys/time.h>
++#define  CLOCK_REALTIME 0 
++static int clock_gettime(int clk_id /*ignored*/, struct timespec *tp)
++{
++	struct timeval now;
++	
++	int rv = gettimeofday(&now, NULL);
++	
++	if (rv != 0) {
++		return rv;
++	}
++	
++	tp->tv_sec = now.tv_sec;
++	tp->tv_nsec = now.tv_usec * 1000;
++	
++	return 0;
++}
++#endif
++
+ using namespace fuppes;
+ 
+ Mutex::Mutex() 
+diff -Nurd fuppes-0.650/src/plugins/Makefile.am fuppes-0.650-new/src/plugins/Makefile.am
+--- fuppes-0.650/src/plugins/Makefile.am	2009-11-28 17:51:17.000000000 -0500
++++ fuppes-0.650-new/src/plugins/Makefile.am	2009-11-28 17:53:11.000000000 -0500
+@@ -57,7 +57,7 @@
+ 
+ if LIBAVFORMAT_METADATA_PLUGIN
+ 
+-lib_LTLIBRARIES += libmetadata_libavformat.la
++#lib_LTLIBRARIES += libmetadata_libavformat.la
+ 
+ libmetadata_libavformat_la_SOURCES = \
+ 	metadata_libavformat.c
+diff -Nurd fuppes-0.650/src/plugins/Makefile.in fuppes-0.650-new/src/plugins/Makefile.in
+--- fuppes-0.650/src/plugins/Makefile.in	2009-11-28 17:51:40.000000000 -0500
++++ fuppes-0.650-new/src/plugins/Makefile.in	2009-11-28 17:52:52.000000000 -0500
+@@ -33,7 +33,7 @@
+ build_triplet = @build@
+ host_triplet = @host@
+ @MYSQL_DATABASE_PLUGIN_TRUE@am__append_1 = libdatabase_mysql.la
+-@LIBAVFORMAT_METADATA_PLUGIN_TRUE@am__append_2 = libmetadata_libavformat.la
++#am__append_2 = libmetadata_libavformat.la
+ @TAGLIB_METADATA_PLUGIN_TRUE@am__append_3 = libmetadata_taglib.la
+ @SIMAGE_METADATA_PLUGIN_TRUE@am__append_4 = libmetadata_simage.la
+ @MAGICK_WAND_METADATA_PLUGIN_TRUE@am__append_5 = libmetadata_magickwand.la
+diff -Nurd fuppes-0.650/src/plugins/metadata_libavformat.c fuppes-0.650-new/src/plugins/metadata_libavformat.c
+--- fuppes-0.650/src/plugins/metadata_libavformat.c	2009-07-21 05:07:48.000000000 -0400
++++ fuppes-0.650-new/src/plugins/metadata_libavformat.c	2009-11-28 17:52:52.000000000 -0500
+@@ -28,6 +28,11 @@
+ extern "C" {
+ #endif
+ 
++#ifndef int64_t_C
++#define int64_t_C(c)     (c ## LL)
++#define uint64_t_C(c)    (c ## ULL)
++#endif
++
+ #if FFMPEG_VERSION >= 52 && !defined(OLD_INCLUDES_PATH)
+ #include <libavformat/avformat.h>
+ #include <libavcodec/avcodec.h>
+diff -Nurd fuppes-0.650/src/plugins/metadata_libmp4v2.cpp fuppes-0.650-new/src/plugins/metadata_libmp4v2.cpp
+--- fuppes-0.650/src/plugins/metadata_libmp4v2.cpp	2009-07-21 05:07:48.000000000 -0400
++++ fuppes-0.650-new/src/plugins/metadata_libmp4v2.cpp	2009-11-28 17:52:52.000000000 -0500
+@@ -84,8 +84,11 @@
+ 	set_value(&metadata->duration, szDuration);
+ 	
+ 	// channels
++/*
+ 	metadata->channels = MP4GetTrackAudioChannels(mp4file, 
+ 																		MP4FindTrackId(mp4file, 0, MP4_AUDIO_TRACK_TYPE));
++*/
++
+ 	// bitrate
+ 	metadata->bitrate = MP4GetTrackBitRate(mp4file, 
+ 														MP4FindTrackId(mp4file, 0, MP4_AUDIO_TRACK_TYPE));

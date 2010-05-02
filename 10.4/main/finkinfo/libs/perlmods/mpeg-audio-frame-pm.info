@@ -12,6 +12,8 @@ Depends: system-perl
 Source: mirror:cpan:modules/by-module/MPEG/MPEG-Audio-Frame-%v.tar.gz
 Source-MD5: 376ec352c257a620ef293cf5f6d7ccf0
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 DocFiles: Changes MANIFEST
 

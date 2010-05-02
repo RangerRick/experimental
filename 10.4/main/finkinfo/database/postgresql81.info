@@ -66,6 +66,7 @@ PatchFile-MD5: f062e01947c637f635ff08b961a272f0
 
 SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 ConfigureParams: --prefix=%p --libdir=%p/lib/postgresql-8.1 --with-docdir=%p/share/doc --mandir=%p/share/man --enable-multibyte --enable-recode --with-CXX --without-perl --without-python --with-openssl --with-libraries=%p/lib --with-includes=%p/include --without-tcl --without-tk --without-java --enable-odbc --with-pam --with-bonjour --enable-syslog --with-krb5 --enable-thread-safety
 CompileScript: <<
 #!/bin/sh -xe
@@ -280,6 +281,7 @@ SplitOff: <<
 		postgresql83-dev
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/pg_config*
 		include
@@ -325,6 +327,7 @@ SplitOff2: <<
 		postgresql-shlibs,
 		postgresql80-unified-shlibs
 	<<
+	UseMaxBuildJobs: true
 	Files: lib/postgresql-8.1/*.dylib var/postgresql-8.1/*.sh var/postgresql-8.1/*.list
 	Shlibs: <<
 		%p/lib/postgresql-8.1/libecpg.5.dylib        5.0.0 postgresql81-shlibs (>= 8.1.17-1)

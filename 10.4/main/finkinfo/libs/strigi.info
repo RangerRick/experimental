@@ -29,6 +29,7 @@ SourceDirectory: strigi-%v
 PatchFile: strigi.patch
 PatchFile-MD5: 5fe7eefcbc2db3a4bb4453b76cdf0568
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -59,6 +60,7 @@ SplitOff: <<
 		libiconv,
 		libxml2-shlibs (>= 2.6.32-1)
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: <<
 		lib/libsearchclient.0*.dylib
@@ -79,6 +81,7 @@ SplitOff2: <<
 	Depends: %N (= %v-%r)
 	Replaces: %N
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: include lib/pkgconfig lib/*.dylib
 <<

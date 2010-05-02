@@ -25,6 +25,7 @@ Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-ku-%v.tar.bz2
 Source-MD5: 15780380183dc634432a5ccb8ec2d64d
 SourceDirectory: kde-l10n-ku-%v
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 

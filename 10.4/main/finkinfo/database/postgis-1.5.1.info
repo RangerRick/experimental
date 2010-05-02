@@ -36,6 +36,7 @@ SetCPPFLAGS: -I%p/lib/system-openssl/include -DHAVE_OPTRESET -fno-common
 SetLDFLAGS: -L%p/lib/system-openssl/lib
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --with-pgconfig=%p/opt/postgresql-%type_raw[postgresql]/bin/pg_config --with-geosconfig=%p/opt/libgeos3.2.0/bin/geos-config --with-projdir=%p --with-xml2config=%p/bin/xml2-config
 CompileScript: <<
 #!/bin/sh -ev
@@ -63,6 +64,7 @@ SplitOff: <<
 		jts,
 		postgresql-java (>= %type_raw[postgresql]-1)
 	<<
+	UseMaxBuildJobs: true
 	JarFiles: java/jdbc/postgis.jar java/pljava/postgis_pljava.jar
 <<
 

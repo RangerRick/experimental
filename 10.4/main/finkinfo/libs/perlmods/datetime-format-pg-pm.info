@@ -27,6 +27,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/DateTime/DateTime-Format-Pg-%v.tar.gz
 Source-MD5: 381bb4e599cae0da2c0c8a48d4b0e759
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

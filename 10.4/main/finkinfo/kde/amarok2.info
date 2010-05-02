@@ -32,8 +32,8 @@ BuildDepends: <<
 	dbus-dev (>= 1.2.12-1),
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
-	glib2-dev (>= 2.18.4-1),
+	freetype219 (>= 2.3.12-1),
+	glib2-dev (>= 2.22.0-1),
 	gtk+2-dev (>= 2.14.7-1),
 	kde4-buildenv (>= 4.4.0-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.4.1-1),
@@ -68,6 +68,7 @@ SourceDirectory: amarok-%v
 PatchFile: amarok2.patch
 PatchFile-MD5: 8b800d79d954c8ad6ce516d8e009d658
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 

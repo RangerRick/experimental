@@ -25,6 +25,8 @@ BuildDepends: <<
 Source: mirror:cpan:authors/id/J/JS/JSIRACUSA/Rose-Conf-%v.tar.gz
 Source-MD5: 5892458a864d90d69e388336427c1619
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

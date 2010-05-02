@@ -14,6 +14,8 @@ Source: mirror:debian:pool/main/libc/libconfigfile-perl/libconfigfile-perl_%v.ta
 Source-MD5: 8e79879b8b751707c4bb8de96b9f9fb3
 SourceDirectory: libconfigfile-perl-%v
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 DocFiles: debian/changelog debian/copyright
 

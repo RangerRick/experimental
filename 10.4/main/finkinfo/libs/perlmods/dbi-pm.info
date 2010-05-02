@@ -54,6 +54,8 @@ Replaces: <<
 Source: mirror:cpan:modules/by-module/DBI/DBI-%v.tar.gz
 Source-MD5: bd5785b39675213948a61dea1b400012
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 #!/bin/sh -ev

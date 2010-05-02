@@ -39,6 +39,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Rose/Rose-HTML-Objects-%v.tar.gz
 Source-MD5: ccf516df97e399806daf9854d3e2e724
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

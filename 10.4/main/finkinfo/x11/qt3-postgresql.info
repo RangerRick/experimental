@@ -35,6 +35,7 @@ Source-MD5: cf3c43a7dfde5bfb76f8001102fe6e85
 SourceDirectory: qt-x11-free-%v
 PatchScript:   perl -pi -e 's,REQUIRES.*=.*sql.*,,' plugins/src/sqldrivers/*/*.pro
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ex
 

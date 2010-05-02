@@ -30,6 +30,7 @@ GCC: 4.0
 Source: http://download.akonadi-project.org/akonadi-%v.tar.bz2
 Source-MD5: e6eef3ed5c28d55f4b6530544e379413
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -62,6 +63,7 @@ SplitOff: <<
 		soprano-%type_pkg[akonadi]-shlibs (>= 2.4.0-1)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	DocFiles: lgpl-license
 	Files: <<
 		opt/akonadi/%type_pkg[akonadi]/lib/libakonadiprivate.1*.dylib
@@ -76,6 +78,7 @@ SplitOff2: <<
 	Package: %N-dev
 	Description: Akonadi development headers and libs
 	Depends: %N-shlibs (= %v-%r)
+	UseMaxBuildJobs: true
 	DocFiles: lgpl-license
 	Files: <<
 		opt/akonadi/%type_pkg[akonadi]/include

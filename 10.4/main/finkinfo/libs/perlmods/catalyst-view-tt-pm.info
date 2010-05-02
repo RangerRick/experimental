@@ -31,6 +31,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Catalyst/Catalyst-View-TT-%v.tar.gz
 Source-MD5: 94badd213bf0b22afc23c1cfe77a6c4a
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

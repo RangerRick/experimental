@@ -15,7 +15,7 @@ BuildDepends: <<
 	cctools-single-module,
 	expat1,
 	fink (>= 0.29.7-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gnupg | gnupg-idea,
 	kdebase3-unified-dev (>= %v-1),
 	kdelibs3-unified-dev (>= %v-1),
@@ -23,7 +23,7 @@ BuildDepends: <<
 	libiconv-dev,
 	libidn,
 	libjpeg8,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	pkgconfig (>= 0.23-1),
 	qt3 (>= 3.3.8-1027),
 	unsermake (>= 0.4-0.20060316.1),
@@ -53,6 +53,7 @@ PatchScript: 	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/p
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --with-distribution='Fink/Mac OS X'
 CompileScript: <<
 #!/bin/sh -ev

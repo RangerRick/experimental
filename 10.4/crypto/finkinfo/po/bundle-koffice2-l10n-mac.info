@@ -34,6 +34,8 @@ Depends: <<
 	koffice2-l10n-chinese-mac (>= 2.1.1-1)
 <<
 
+UseMaxBuildJobs: true
+
 DescDetail: <<
 This package doesn't install any files of itself, but instead makes
 sure that all KOffice language files get installed.

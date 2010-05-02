@@ -8,24 +8,24 @@ License: OSI-Approved
 Maintainer: Benjamin Reed <libgdiplus@fink.raccoonfink.com>
 
 Depends: <<
-	cairo-shlibs (>= 1.8.8-1),
+	cairo-shlibs (>= 1.8.10-1),
 	libexif12-shlibs,
 	libtiff-shlibs,
 	giflib-shlibs (>= 4.1.6-1),
 	mono (>= 2.6.2-1)
 <<
 BuildDepends: <<
-	cairo (>= 1.8.8-1),
+	cairo (>= 1.8.10-1),
 	expat1,
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	giflib (>= 4.1.6-1),
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	libgettext8-dev,
 	libexif12,
 	libjpeg8,
-	libpng3,
+	libpng14,
 	libtiff,
 	mono-dev (>= 2.6.2-1),
 	pixman (>= 0.16.0-1),
@@ -41,6 +41,7 @@ PatchScript: <<
 PatchFile: %n.patch
 PatchFile-MD5: a52a4fbe42134ebedcf4814904025b04
 
+UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --with-cairo=system --disable-dependency-tracking
 
 InstallScript: make -j1 install DESTDIR="%d"

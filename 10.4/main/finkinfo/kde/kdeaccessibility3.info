@@ -22,10 +22,10 @@ BuildDepends: <<
 	expat1,
 	fink (>= 0.29.7-1),
 	freetts,
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gettext-bin,
 	gettext-tools,
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	gstreamer-dev (>= 0.8.5-1),
 	gst-plugins-dev (>= 0.8.5-1),
 	kdebase3-unified-dev (>= %v-1),
@@ -38,7 +38,7 @@ BuildDepends: <<
 	libjpeg8,
 	libmad,
 	libogg,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	libvorbis0,
 	pkgconfig (>= 0.23-1),
 	qt3 (>= 3.3.8-1027),
@@ -63,6 +63,7 @@ PatchScript: 	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/p
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --enable-kttsd-gstreamer --with-distribution='Fink/Mac OS X'
 CompileScript: <<
 #!/bin/sh -ev
@@ -131,6 +132,7 @@ SplitOff: <<
 	Description: KDE - magnifier
 	Depends: %N-base (>= %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kmag
 		share/applnk/Applications/kmag.desktop
@@ -204,6 +206,7 @@ SplitOff2: <<
 	Description: KDE - automatically click when mouse idles
 	Depends: %N-base (>= %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kmousetool
 		share/applnk/Applications/kmousetool.desktop
@@ -284,6 +287,7 @@ SplitOff3: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/ktts*
 		lib/kde3/kcm_kttsd.*
@@ -380,6 +384,7 @@ SplitOff4: <<
 	Description: KDE - Speak a text file
 	Depends: %N-base (>= %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/ksayit
 		include/ksayit*
@@ -465,6 +470,7 @@ SplitOff5: <<
 	Description: KDE - Track keyboard state
 	Depends: %N-base (>= %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/kbstate*
 		share/apps/kbstateapplet
@@ -531,6 +537,7 @@ SplitOff6: <<
 	Description: KDE - %N icon themes
 	Depends: %N-base (>= %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: share/icons/mono
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -594,6 +601,7 @@ SplitOff7: <<
 	Depends: kdebase3-unified (>= %v-1)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------

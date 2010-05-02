@@ -8,19 +8,19 @@ Maintainer: Benjamin Reed <libgpod3@fink.raccoonfink.com>
 Depends: %N-shlibs (>= %v-%r)
 BuildDepends: <<
 	atk1 (>= 1.26.0-1),
-	cairo (>= 1.8.8-1),
+	cairo (>= 1.8.10-1),
 	expat1,
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	glitz,
 	gtk+2-dev (>= 2.14.7-1),
 	intltool40,
 	libgettext8-dev,
 	libiconv-dev,
 	libjpeg8,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	libtiff,
 	pango1-xft2-ft219-dev (>= 1.24.0-1),
 	pkgconfig (>= 0.23-1),
@@ -44,6 +44,7 @@ Source-MD5: b44d8aee3f6610370b6faf61770c5f3c
 PatchScript: perl -pi -e 's,GETTEXT_PACKAGE=libgpod,GETTEXT_PACKAGE=libgpod-3.0,' configure
 
 SetCPPFLAGS: -fnested-functions
+UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --disable-dependency-tracking
 
 InstallScript: make -j1 install DESTDIR=%d
@@ -52,11 +53,12 @@ SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for libgpod
 	Depends: <<
-		glib2-shlibs (>= 2.18.4-1),
+		glib2-shlibs (>= 2.22.0-1),
 		gtk+2-shlibs (>= 2.14.7-1),
 		libgettext8-shlibs,
 		libiconv
 	<<
+	UseMaxBuildJobs: true
 	Files: lib/libgpod.3*.dylib share/locale
 	Shlibs: %p/lib/libgpod.3.dylib 4.0.0 libgpod3-shlibs (>= 0.6.0-1)
 <<

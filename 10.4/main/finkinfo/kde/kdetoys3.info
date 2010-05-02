@@ -23,7 +23,7 @@ BuildDepends: <<
 	cctools-single-module,
 	expat1,
 	fink (>= 0.29.7-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	kdelibs3-unified-dev (>= %v-1),
 	libart2 (>= 2.3.20-1),
@@ -31,7 +31,7 @@ BuildDepends: <<
 	libiconv-dev,
 	libidn,
 	libjpeg8,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	pcre,
 	pkgconfig (>= 0.23-1),
 	qt3 (>= 3.3.8-1027),
@@ -63,6 +63,7 @@ PatchFile-MD5: 3c547daa8719553cbb1c0971baf7ab8d
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --with-distribution='Fink/Mac OS X'
 CompileScript: <<
 #!/bin/sh -ev
@@ -94,6 +95,7 @@ SplitOff: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/amor
 		include/AmorIface.h
@@ -175,6 +177,7 @@ SplitOff10: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/*ww_panelapplet*
 		share/apps/kicker/applets/kwwapplet.desktop
@@ -245,6 +248,7 @@ SplitOff11: <<
 	Depends: kdebase3-unified (>= %v-1)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -311,6 +315,7 @@ SplitOff2: <<
 		kmoon
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/*kmoon_panelapplet*
 		share/apps/kicker/applets/kmoonapplet.desktop
@@ -391,6 +396,7 @@ SplitOff3: <<
 		kodo
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kodo
 		share/applications/kde/kodo.desktop
@@ -468,6 +474,7 @@ SplitOff4: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kteatime
 		share/apps/kteatime
@@ -549,6 +556,7 @@ SplitOff5: <<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
 	Suggests: kworldclock-maps
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kworldclock
 		share/applications/kde/kworldclock.desktop
@@ -628,6 +636,7 @@ SplitOff6: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/*eyes_panelapplet*
 		share/apps/kicker/applets/eyesapplet.desktop
@@ -694,6 +703,7 @@ SplitOff7: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		lib/kde3/*fifteen_panelapplet*
 		share/apps/kicker/applets/kfifteenapplet.desktop
@@ -760,6 +770,7 @@ SplitOff8: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/ktux
 		share/applnk/System/ScreenSavers/ktux.desktop
@@ -830,6 +841,7 @@ SplitOff9: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kweatherreport
 		bin/kweatherservice

@@ -27,6 +27,7 @@ Source-MD5: cb87c7f1c0455e8984ee4830f1e749cf
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -75,6 +76,7 @@ SplitOff: <<
 		qimageblitz-mac-shlibs (<< 0.0.4-2000),
 		qimageblitz-shlibs (<< 0.0.4-2000)
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: README*
 	Files: opt/kde4/%type_pkg[blitz]/lib/libqimageblitz.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[blitz]/lib/libqimageblitz.4.dylib 4.0.0 %n (>= 0.0.4-2000)
@@ -88,6 +90,7 @@ SplitOff10: <<
 		fink (>= 0.29.7-1)
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	DocFiles: README*
 <<
 SplitOff11: <<
@@ -99,6 +102,7 @@ SplitOff11: <<
 		fink (>= 0.29.7-1)
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	DocFiles: README*
 	Files: <<
 		lib/qt4-%type_pkg[blitz]/bin/blitztest
@@ -115,6 +119,7 @@ SplitOff20: <<
 		fink-obsolete-packages,
 		fink (>= 0.29.7-1)
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: README*
 <<
 SplitOff21: <<
@@ -126,6 +131,7 @@ SplitOff21: <<
 		fink (>= 0.29.7-1)
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	DocFiles: README*
 	Files: lib/qt4-%type_pkg[blitz]/lib/libqimageblitz.4*.dylib
 <<

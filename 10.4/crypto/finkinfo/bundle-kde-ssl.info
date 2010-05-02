@@ -12,6 +12,8 @@ Depends: <<
 	kgpg (>= %v-1)
 <<
 
+UseMaxBuildJobs: true
+
 Homepage: http://fink.sourceforge.net/news/kde.php
 DescDetail: <<
 This package doesn't install any files of itself, but makes sure that

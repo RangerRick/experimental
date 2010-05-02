@@ -24,6 +24,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Tie/Tie-ToObject-%v.tar.gz
 Source-MD5: b4f434992c286d531f26893c78541456
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 %{default_script}

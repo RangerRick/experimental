@@ -36,6 +36,7 @@ SetCFLAGS: -Os
 SetCPPFLAGS: -I%p/lib/fontconfig2/include -DENABLE_GCC_VISIBILITY=1
 SetLDFLAGS: -L%p/lib/fontconfig2/lib
 NoSetCFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --enable-dependency-tracking PKG_CONFIG_PATH="%p/lib/fontconfig2/lib/pkgconfig:$PKG_CONFIG_PATH" --disable-static
 CompileScript: <<
 	./configure %c
@@ -59,6 +60,7 @@ SplitOff: <<
 		freetype219-shlibs (>= 2.3.12-1),
 		libsigc++2-shlibs
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: lib/lib*.*.*.dylib
 	Shlibs: %p/lib/libcairomm-1.0.1.dylib 6.0.0 %n (>= 1.8.2-1)

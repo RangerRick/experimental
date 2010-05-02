@@ -23,6 +23,8 @@ BuildDepends: fink (>= 0.29.7-1)
 Source: mirror:cpan:authors/id/C/CN/CNANDOR/Mac-Glue-%v.tar.gz
 Source-MD5: b98b8687fe928063ba2cc6d3a906945f
 
+UseMaxBuildJobs: true
+
 UpdatePOD: True
 InstallScript: <<
 	#!/bin/sh -ev
@@ -53,6 +55,7 @@ SplitOff: <<
 		%{Ni}584-bin,
 		%{Ni}586-bin
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: Changes MANIFEST README
 	Files: <<
 		bin/gluemac

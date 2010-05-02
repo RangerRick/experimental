@@ -28,6 +28,8 @@ Source: mirror:cpan:modules/by-module/Net/Net-XMPP-%v.tar.gz
 Source-MD5: 6338484aa0d394e68c01666ca34e5241
 SourceDirectory: Net-XMPP-%v
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 #!/bin/sh -ex

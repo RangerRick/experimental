@@ -7,11 +7,11 @@ License: GPL
 Maintainer: Benjamin Reed <mono-debugger@fink.raccoonfink.com>
 
 Depends: <<
-	glib2-shlibs (>= 2.18.4-1),
+	glib2-shlibs (>= 2.22.0-1),
 	mono (>= 2.6.2-1)
 <<
 BuildDepends: <<
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	libbfd-dev,
 	libiberty-dev,
 	libopcodes-dev,
@@ -21,6 +21,7 @@ BuildDepends: <<
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
 Source-MD5: a6cac2d8dc8f788a7b2b35cd3f7204dc
 
+UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --disable-dependency-tracking
 CompileScript: <<
 #!/bin/sh -ex

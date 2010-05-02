@@ -26,6 +26,7 @@ BuildDepends: <<
 Source: mirror:cpan:authors/id/D/DR/DROLSKY/DateTime-Format-MySQL-%v.tar.gz
 Source-MD5: f52377ecdeb19055ae64037fb1ef530e
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ex
 	exec 2>&1

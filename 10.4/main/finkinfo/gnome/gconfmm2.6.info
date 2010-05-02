@@ -8,21 +8,21 @@ Maintainer: Benjamin Reed <gconfmm2.6@fink.raccoonfink.com>
 Depends: %N-shlibs (>= %v-%r)
 BuildDepends: <<
 	atk1 (>= 1.26.0-1),
-	cairo (>= 1.8.8-1),
+	cairo (>= 1.8.10-1),
 	cairomm1,
 	expat1,
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gconf2-dev (>= 2.20.0-1),
 	gettext-tools,
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	glibmm2.4-dev (>= 2.13.9-1),
 	glitz,
 	gtk+2-dev (>= 2.14.7-1),
 	gtkmm2.4-dev (>= 2.12.0-1),
 	libgettext8-dev,
 	libiconv-dev,
-	libpng3,
+	libpng14,
 	libsigc++2 (>= 2.0.11-1003),
 	orbit2-dev (>= 2.14.9-1),
 	pango1-xft2-ft219-dev (>= 1.24.0-1),
@@ -37,6 +37,7 @@ GCC: 4.0
 Source: mirror:gnome:sources/gconfmm/2.20/gconfmm-%v.tar.bz2
 Source-MD5: 24d7e01104394229f28e32a1dc17c819
 
+UseMaxBuildJobs: true
 ConfigureParams: --disable-dependency-tracking --mandir=%p/share/man --infodir=%p/share/info PKG_CONFIG_PATH="%p/lib/pango-ft219/lib/pkgconfig:%p/lib/fontconfig2/lib/pkgconfig:%p/lib/freetype219/lib/pkgconfig:$PKG_CONFIG_PATH" FREETYPE_CONFIG=%p/lib/freetype219/bin/freetype-config
 
 InstallScript: make -j1 install DESTDIR="%d"
@@ -47,7 +48,7 @@ SplitOff: <<
 		atk1-shlibs (>= 1.26.0-1),
 		cairomm1-shlibs,
 		gconf2-shlibs (>= 2.20.0-1),
-		glib2-shlibs (>= 2.18.4-1),
+		glib2-shlibs (>= 2.22.0-1),
 		glibmm2.4-shlibs (>= 2.13.9-1),
 		libgettext8-shlibs,
 		libiconv,
@@ -56,6 +57,7 @@ SplitOff: <<
 		pango1-xft2-ft219-shlibs (>= 1.24.0-1),
 		x11-shlibs
 	<<
+	UseMaxBuildJobs: true
 	Files: lib/libgconfmm-2.6.*.dylib
 	Shlibs: %p/lib/libgconfmm-2.6.1.dylib 2.0.0 %n (>= 2.10.0-2)
 <<

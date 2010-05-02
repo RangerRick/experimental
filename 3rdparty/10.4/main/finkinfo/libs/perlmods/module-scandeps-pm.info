@@ -11,10 +11,13 @@ BuildDepends: module-build-pm
 Source: mirror:cpan:modules/by-module/Module/Module-ScanDeps-%v.tar.gz
 Source-MD5: 97eccc0184030d598c84c544f3507a53
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 DocFiles: AUTHORS Changes MANIFEST META.yml README
 SplitOff: <<
 	Package: %N-bin
+	UseMaxBuildJobs: true
 	DocFiles: AUTHORS Changes MANIFEST META.yml README
 	Files: bin share/man/man1
 <<

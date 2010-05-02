@@ -19,8 +19,8 @@ BuildDepends: <<
 	dbus-dev (>= 1.2.12-1),
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
-	glib2-dev (>= 2.18.4-1),
+	freetype219 (>= 2.3.12-1),
+	glib2-dev (>= 2.22.0-1),
 	kde4-buildenv (>= 4.4.0-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.4.1-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
@@ -39,6 +39,7 @@ Source-MD5: 6a69c96bf7ad38ea78972e926a2281e7
 PatchFile: kdeadmin4.patch
 PatchFile-MD5: f5f3a82363cb00afc69fa1fcdbaca09f
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -67,6 +68,7 @@ SplitOff: <<
 	Package: kcron4-%type_pkg[kde]
 	Description: KDE4 - crontab editor
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/*cron*
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kcron
@@ -78,6 +80,7 @@ SplitOff2: <<
 	Package: knetworkconf4-%type_pkg[kde]
 	Description: KDE4 - network configuration tool
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/*knetworkconf*
 		opt/kde4/%type_pkg[kde]/share/apps/knetworkconf
@@ -95,6 +98,7 @@ SplitOff4: <<
 	Description: KDE4 - system log viewer
 	Depends: %N-base (>= %v-%r)
 	Replaces: kdeadmin4-%type_pkg[kde]-base (<< 4.2.2-2)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/ksystemlog*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/ksystemlog*
@@ -107,6 +111,7 @@ SplitOff5: <<
 	Package: kuser4-%type_pkg[kde]
 	Description: KDE4 - user management
 	Depends: %N-base (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kuser*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kuser*
@@ -126,6 +131,7 @@ SplitOff6: <<
 	Package: %N-base
 	Description: KDE4 - kdeadmin base package
 	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1)
+	UseMaxBuildJobs: true
 	Files: opt share/doc/installed-packages/%n
 <<
 

@@ -31,6 +31,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Catalyst/Catalyst-Plugin-Session-State-Cookie-%v.tar.gz
 Source-MD5: 0c0f8992eecbe98295f3d36a9b378edc
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

@@ -26,6 +26,7 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Catalyst/Catalyst-Plugin-DefaultEnd-%v.tar.gz
 Source-MD5: af50b78732e8e2b2461698f8e0ac8598
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ex
 	exec 2>&1

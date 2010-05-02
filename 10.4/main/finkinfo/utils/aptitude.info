@@ -37,6 +37,7 @@ SetLIBS: -L%p/lib
 SetMAKEFLAGS: -j1
 NoSetLDFLAGS: true
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 ConfigureParams: --mandir=%p/share/man --infodir=%p/share/info --disable-werror --with-libintl-prefix=%p --with-package-state-loc=%p/var/lib/aptitude
 
 InstallScript: make install DESTDIR=%d

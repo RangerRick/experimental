@@ -43,6 +43,7 @@ PatchScript: <<
 PatchFile: soprano.patch
 PatchFile-MD5: 1447c93a237bfa38369081d46d17b0f0
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -86,6 +87,7 @@ SplitOff: <<
 		virtuoso
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	DocFiles: COPYING*
 	Files: <<
 		opt/soprano/%type_pkg[soprano]/lib/libsoprano.4*.dylib
@@ -106,6 +108,7 @@ SplitOff2: <<
 	Depends: %N (= %v-%r)
 	Replaces: %N (<< 2.4.0.1-1)
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		opt/soprano/%type_pkg[soprano]/include
 		opt/soprano/%type_pkg[soprano]/lib/*.dylib

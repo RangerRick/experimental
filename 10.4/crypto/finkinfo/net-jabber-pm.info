@@ -29,6 +29,8 @@ Source: mirror:cpan:modules/by-module/Net/Net-Jabber-%v.tar.gz
 Source-MD5: 1fd348fb9a1a6c5a167ae862ed89cd53
 SourceDirectory: Net-Jabber-%v
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 #!/bin/sh -ex

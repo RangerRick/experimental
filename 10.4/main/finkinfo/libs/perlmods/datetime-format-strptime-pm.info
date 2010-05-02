@@ -29,6 +29,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/DateTime/DateTime-Format-Strptime-%v.tgz
 Source-MD5: 930bdda4cbf0e5414a70759861655a12
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 %{default_script}

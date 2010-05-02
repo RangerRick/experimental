@@ -66,6 +66,7 @@ CustomMirror: <<
 Source: mirror:custom:Downloads/Connector-J/mysql-connector-java-%v.tar.gz
 Source-MD5: f9da616de868ddd1acf1428334f3313d
 
+UseMaxBuildJobs: true
 CompileScript: echo "none needed"
 
 InstallScript: <<

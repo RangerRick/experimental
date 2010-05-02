@@ -8,21 +8,21 @@ Maintainer: Benjamin Reed <gst-plugins-bad-0.10@fink.raccoonfink.com>
 Depends: %N-shlibs (= %v-%r)
 BuildDepends: <<
 	bzip2-dev,
-	cairo (>= 1.8.8-1),
+	cairo (>= 1.8.10-1),
 	expat1,
 	faac-dev,
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	gsm,
 	gstreamer-0.10-dev (>= 0.10.26-1),
 	gst-plugins-base-0.10-dev (>= 0.10.26-1),
 	gconf2 (>= 2.20.0-1),
 	gconf2-dev (>= 2.20.0-1),
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	glitz (>= 0.5.6-1),
-	gtk-doc (>= 1.8-1),
+	gtk-doc (>= 1.13-5),
 	jack-dev,
 	libfaad1-dev,
 	libgettext8-dev,
@@ -71,6 +71,7 @@ NoSetCFLAGS: true
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 ConfigureParams: --without-check --libexecdir=%p/lib/%n --mandir=%p/share/man --enable-gtk-doc --disable-static --disable-dependency-tracking --disable-sdltest --disable-directfb --disable-dts --disable-divx --disable-libmms --disable-swfdec --disable-ivorbis --disable-xvid --disable-opengl --enable-tests --enable-failing-tests PKG_CONFIG_PATH="%p/lib/fontconfig2/lib/pkgconfig:%p/lib/freetype219/lib/pkgconfig:$PKG_CONFIG_PATH" FREETYPE_CONFIG=%p/lib/freetype219/bin/freetype-config (%m = x86_64) --disable-osx_video (%m = x86_64) --disable-quicktime
 CompileScript: <<
 #!/bin/sh -ex
@@ -93,10 +94,10 @@ SplitOff: <<
 	Description: "Bad" shared library plugins for GStreamer
 	Depends: <<
 		bzip2-shlibs,
-		cairo-shlibs (>= 1.8.8-1),
+		cairo-shlibs (>= 1.8.10-1),
 		faac-shlibs,
 		libgettext8-shlibs,
-		glib2-shlibs (>= 2.18.4-1),
+		glib2-shlibs (>= 2.22.0-1),
 		gst-plugins-base-0.10-shlibs (>= 0.10.26-1),
 		jack-shlibs,
 		libfaad1-shlibs,
@@ -120,6 +121,7 @@ SplitOff: <<
 		gst-plugins-base-0.10 (>= 0.10.26-1),
 		sdl
 	<<
+	UseMaxBuildJobs: true
 	Files: <<
 		lib/gstreamer-0.10
 		lib/libgst*-0.10.0*.dylib

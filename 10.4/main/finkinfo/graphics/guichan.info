@@ -17,6 +17,8 @@ Source: http://guichan.googlecode.com/files/%n-%v.tar.gz
 Source-MD5: 275c5bad231d2ce55e654d80cb1e05be
 Patch: %n.patch
 
+UseMaxBuildJobs: true
+
 InstallScript: <<
 #!/bin/sh -ev
 
@@ -83,6 +85,7 @@ SplitOff: <<
 		sdl-shlibs,
 		sdl-image-shlibs
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: lib/libguichan*.0*.dylib
 	Shlibs: <<

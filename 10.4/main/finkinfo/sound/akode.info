@@ -30,6 +30,7 @@ Patch: %n.patch
 PatchScript: perl -pi -e "s,-g -O,-O,;s,-O2,-Os,;" configure
 
 SetCPPFLAGS: -I%p/include/speex
+UseMaxBuildJobs: true
 ConfigureParams: --mandir=%{i}/share/man --with-extra-includes=%{p}/include --with-extra-libs=%{p}/lib --disable-dependency-tracking --without-ffmpeg
 
 InstallScript: <<
@@ -51,6 +52,7 @@ SplitOff: <<
 		libvorbis0-shlibs,
 		speex3-shlibs
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: <<
 		lib/libakode*.2*.dylib
@@ -62,6 +64,7 @@ SplitOff2: <<
 	Package: %N-bin
 	Description: Audio decoding framework, cmdline tool
 	Depends: %N-shlibs (= %v-%r)
+	UseMaxBuildJobs: true
 	DocFiles: COPYING
 	Files: bin/akodeplay
 <<

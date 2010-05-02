@@ -9,18 +9,18 @@ Depends: %N-shlibs (= %v-%r)
 BuildDepends: <<
 	a52dec-dev,
 	amrnb-dev,
-	cairo (>= 1.8.8-1),
+	cairo (>= 1.8.10-1),
 	dbus-dev (>= 1.2.12-1),
 	expat1,
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gconf2-dev (>= 2.20.0-1),
 	gettext-tools,
 	gnome-vfs2-unified-dev (>= 1:2.24.0-1),
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	gstreamer-0.10-dev (>= 0.10.26-1),
 	gst-plugins-base-0.10-dev (>= 0.10.26-1),
-	gtk-doc (>= 1.8-1),
+	gtk-doc (>= 1.13-5),
 	lame-dev,
 	libdvdcss,
 	libdvdnav (>= 0.1.10-13),
@@ -57,6 +57,7 @@ NoSetCFLAGS: true
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 ConfigureParams: --without-check --libexecdir=%p/lib/%n --mandir=%p/share/man --enable-gtk-doc --disable-dependency-tracking --disable-static --disable-twolame --enable-dvdnav --enable-dvdread --enable-tests --enable-failing-tests PKG_CONFIG_PATH="%p/lib/fontconfig2/lib/pkgconfig:%p/lib/freetype219/lib/pkgconfig:$PKG_CONFIG_PATH" FREETYPE_CONFIG=%p/lib/freetype219/bin/freetype-config
 CompileScript: <<
 #!/bin/sh -ex
@@ -93,6 +94,7 @@ SplitOff: <<
 		gstreamer-0.10 (>= 0.10.26-1),
 		gst-plugins-base-0.10 (>= 0.10.26-1)
 	<<
+	UseMaxBuildJobs: true
 	Files: lib
 <<
 

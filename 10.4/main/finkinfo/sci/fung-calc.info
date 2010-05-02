@@ -8,7 +8,7 @@ Maintainer: Benjamin Reed <fung-calc@fink.raccoonfink.com>
 Depends: <<
 	glut-shlibs,
 	kdelibs3-unified-shlibs (>= 3.5.0-1),
-	libpng3-shlibs (>= 1.2.8-1),
+	libpng14-shlibs (>= 1.4.1-2),
 	qt3-shlibs (>= 3.3.8-1027),
 	x11-shlibs
 <<
@@ -18,7 +18,7 @@ BuildDepends: <<
 	automake1.11,
 	glut,
 	kdelibs3-unified-dev (>= 3.5.0-1),
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	qt3 (>= 3.3.8-1027),
 	unsermake,
 	x11-dev
@@ -40,6 +40,7 @@ Patch: %n.patch
 SetLIBS: -L/usr/X11R6/lib -lGL
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --includedir=%p/include --libdir=%p/lib --prefix=%p --with-qt-dir=%p --with-qt-includes=%p/include/qt --with-extra-libs=%p/lib --with-extra-includes=%p/include --with-pic --enable-rpath --enable-shared=yes --enable-static=no --mandir=%p/share/man --with-xinerama --with-pam --disable-final --enable-kde-app
 CompileScript: <<
 #!/bin/sh -e

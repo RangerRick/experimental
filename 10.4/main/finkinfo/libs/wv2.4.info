@@ -12,7 +12,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	gettext-bin,
 	gettext-tools,
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	libgsf1.114-dev (>= 1.14.8-1),
 	libiconv-dev,
 	libxml2,
@@ -42,6 +42,7 @@ Source-MD5: 850ed8e44a84e7bf0610747827018cbc
 PatchFile: %n.patch
 PatchFile-MD5: e58e285b36fc55462c13c42d2954a0d8
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -65,11 +66,12 @@ SplitOff: <<
 	Description: Shared libraries for the MSWord parsing library
 	Depends: <<
 		libgettext8-shlibs,
-		glib2-shlibs (>= 2.18.4-1),
+		glib2-shlibs (>= 2.22.0-1),
 		libgsf1.114-shlibs (>= 1.14.8-1),
 		libiconv,
 		libxml2-shlibs
 	<<
+	UseMaxBuildJobs: true
 	Files: lib/libwv2.4*.dylib
 	Shlibs: %p/lib/libwv2.4.dylib 4.0.0 %n (>= 0.4.2-1)
 <<

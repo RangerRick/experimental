@@ -28,6 +28,7 @@ Source-MD5: f195f32545d35e6b428ddfa3ff0b2a94
 
 SetCPPFLAGS: -I%p/lib/system-openssl/include -I%p/include/postgresql
 SetLDFLAGS: -L%p/lib/system-openssl/lib
+UseMaxBuildJobs: true
 CompileScript: echo ""
 
 InstallScript: <<

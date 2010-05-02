@@ -34,6 +34,7 @@ Source: mirror:cpan:modules/by-module/DBD/DBD-mysql-%v.tar.gz
 Source-MD5: 0b28c245eb4cc49d5071db91bd8819b1
 PatchScript:  head -n 25 dbdimp.h >> LICENSE
 
+UseMaxBuildJobs: true
 CompileScript: <<
   #!/bin/sh -ev
 

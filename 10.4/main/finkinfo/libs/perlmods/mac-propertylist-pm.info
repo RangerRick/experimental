@@ -10,6 +10,8 @@ Maintainer: Benjamin Reed <mac-propertylist-pm@fink.raccoonfink.com>
 Source: mirror:cpan:modules/by-module/Mac/Mac-PropertyList-%v.tar.gz
 Source-MD5: db7a64a6ba4e4d29d63537bbcdbca1c3
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 DocFiles: Changes MANIFEST README
 

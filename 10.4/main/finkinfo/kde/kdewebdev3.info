@@ -19,7 +19,7 @@ BuildDepends: <<
 	cctools-single-module,
 	expat1,
 	fink (>= 0.29.7-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	kdelibs3-unified-dev (>= %v-1),
 	kdesdk3-dev (>= %v-1),
@@ -28,7 +28,7 @@ BuildDepends: <<
 	libiconv-dev,
 	libidn,
 	libjpeg8,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	libxml2,
 	libxslt,
 	pcre,
@@ -57,6 +57,7 @@ PatchScript: 	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/p
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --with-distribution='Fink/Mac OS X'
 CompileScript: <<
 #!/bin/sh -ev
@@ -92,6 +93,7 @@ SplitOff: <<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		include
 		lib/*.la
@@ -167,6 +169,7 @@ SplitOff2: <<
 		%N (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kfilereplace
 		lib/kde3/*kfilereplace*
@@ -247,6 +250,7 @@ SplitOff3: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kimagemapeditor
 		lib/kde3/*kimagemap*
@@ -327,6 +331,7 @@ SplitOff4: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/klinkstatus
 		lib/kde3/*klinkstatus*
@@ -414,6 +419,7 @@ SplitOff5: <<
 		%N (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kmdr-*
 		lib/libkommander*
@@ -512,6 +518,7 @@ SplitOff6: <<
 		%N (<< %v-%r)
 	<<
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kxsldbg
 		bin/xsldbg
@@ -612,6 +619,7 @@ SplitOff7: <<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
 	Suggests: kdiff3
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/quanta
 		lib/kde3/*quanta*
@@ -697,6 +705,7 @@ SplitOff8: <<
 	Depends: kdebase3-unified (>= %v-1)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------

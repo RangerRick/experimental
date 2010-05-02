@@ -26,10 +26,10 @@ BuildDepends: <<
 	expat1,
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	giflib,
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	kde4-buildenv (>= 4.4.0-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
 	kdepimlibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
@@ -38,7 +38,7 @@ BuildDepends: <<
 	libjasper.1,
 	libjpeg8,
 	libknotificationitem1-%type_pkg[kde]-dev (>= 4.3.4-1),
-	libpng3,
+	libpng14,
 	libtiff,
 	libxine1,
 	(%type_pkg[kde] = x11) libxklavier12,
@@ -67,6 +67,7 @@ SourceDirectory: kdebase-runtime-%v
 PatchFile: kdebase4-runtime.patch
 PatchFile-MD5: 4dd9be27d3bd3b1c3aff060fd6cb91ed
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 

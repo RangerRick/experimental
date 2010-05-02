@@ -26,6 +26,8 @@ BuildDepends: <<
 Source: mirror:cpan:authors/id/P/PE/PETDANCE/Template-Timer-%v.tar.gz
 Source-MD5: 063b7d84c5cd501a2820f9c2e601eadc
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

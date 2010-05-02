@@ -24,6 +24,7 @@ PatchScript: <<
 PatchFile: %n.patch
 PatchFile-MD5: 9b8f74ef73a501fdeb2395122488906c
 
+UseMaxBuildJobs: true
 CompileScript: <<
 	chmod -R a+rw .
 	chmod a+x config/*
@@ -41,6 +42,7 @@ SplitOff: <<
 		libgl-shlibs,
 		x11-shlibs
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: LICENSE*
 	Files: lib/libGLEW.1*.dylib
 	Shlibs: %p/lib/libGLEW.1.dylib 1.5.0 %n (>= 1.5.1-1)

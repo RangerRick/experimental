@@ -25,6 +25,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Class/Class-Inspector-%v.tar.gz
 Source-MD5: 28e1e697f5e8d838d62159966aac8a5d
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

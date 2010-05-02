@@ -24,6 +24,7 @@ Source: http://ftp.debian.org/debian/pool/main/a/apt-file/apt-file_%v.tar.gz
 Source-MD5: 8f7d28379d30e602708864b4255b992b
 SourceDirectory: apt-file-%v
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ex
 

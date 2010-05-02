@@ -35,6 +35,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Rose/Rose-%v.tar.gz
 Source-MD5: 44ef7964823d666116d5c419d1cb0888
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

@@ -23,6 +23,7 @@ Source: http://finch.finkproject.org/~ranger/distfiles/dbus-qt3-%v.tar.bz2
 Source-MD5: 9a8d4a4d560b49fb5ad034abfd3e3db5
 
 SetLIBS: -L%p/lib -lqt-mt
+UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --disable-dependency-tracking
 
 InstallScript: make install DESTDIR="%d"
@@ -34,6 +35,7 @@ SplitOff: <<
 		dbus-shlibs (>= 1.2.12-1),
 		qt3-shlibs
 	<<
+	UseMaxBuildJobs: true
 	Files: lib/libdbus-qt-1.*.dylib
 	Shlibs: %p/lib/libdbus-qt-1.1.dylib 2.0.0 %n (>= 0.60-1)
 <<

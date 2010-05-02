@@ -1,0 +1,29 @@
+Package: gnash
+Version: 0.1
+Revision: 1
+License: GPL
+Maintainer: Benjamin Reed <gnash@fink.raccoonfink.com>
+
+CustomMirror: <<
+	Primary: http://www.finkproject.org/~ranger/distfiles
+	eur-NL: http://www.finkproject.org/~ranger/distfiles
+	nam-US: http://ranger.befunk.com/fink
+<<
+Source: mirror:custom:%n-20060502.tar.bz2
+Source-MD5: cfb0e83e9a129b3f8b516e3073ffc6c3
+SourceDirectory: %n
+TarFilesRename: gnash/server/sound.cpp:gnash/server/_sound.cpp gnash/server/sound.h:gnash/server/_sound.h
+Patch: %n.patch
+PatchScript: perl -pi -e 's,libSDL-1.1.so,libSDL-1.2.dylib,g; s,libSDL.so,libSDL.dylib,g;' configure
+
+SetCPPFLAGS: -I%p/lib/freetype219/include -I%p/include -I/usr/X11R6/include
+SetLDFLAGS: -L%p/lib/freetype219/lib
+SetLIBS: -L%p/lib -L/usr/X11R6/lib
+NoSetCPPFLAGS: true
+NoSetLDFLAGS: true
+UseMaxBuildJobs: true
+ConfigureParams: --mandir=%p/share/man --infodir=%p/share/info --enable-klash --enable-sdk-install --enable-dom --enable-xmlreader --enable-http --enable-net-conn --enable-jpeg --enable-png --enable-mp3 --enable-ogg --enable-fltk --enable-pthreads --with-extra-includes=%p/include --with-extra-libs=%p/lib --with-qt-dir=%p/lib/qt3 --with-libxml=%p --with-plugindir=%p/lib/firefox/plugins --with-sdl-incl=%p/include/SDL --with-sdl-lib=%p/lib --with-sdl-mixer-incl=%p/include/SDL --with-sdl-mixer-lib=%p/lib --with-pic
+
+Homepage: http://www.gnu.org/software/gnash/
+DescDetail: 
+

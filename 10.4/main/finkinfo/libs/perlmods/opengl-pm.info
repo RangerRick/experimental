@@ -30,6 +30,7 @@ PatchFile-MD5: 991033da3fad6fe4eb656d899690c881
 
 SetCFLAGS: -I/usr/X11/include -I/usr/X11R6/include
 SetLDFLAGS: -L/usr/X11/lib -L/usr/X11R6/lib
+UseMaxBuildJobs: true
 CompileScript: <<
 	perl%type_raw[perl] Makefile.PL %c
 	perl -pi -e 's,-arch [^ ]*,,g; s,-O3,-Os,g' Makefile

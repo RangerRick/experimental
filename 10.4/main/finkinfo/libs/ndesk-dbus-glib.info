@@ -12,7 +12,7 @@ Depends: <<
 	ndesk-dbus
 <<
 BuildDepends: <<
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	mono-dev (>= 2.6.2-1),
 	ndesk-dbus,
 	pkgconfig (>= 0.23-1)
@@ -21,6 +21,7 @@ BuildDepends: <<
 Source: http://www.ndesk.org/archive/dbus-sharp/%n-%v.tar.gz
 Source-MD5: 7faf8770b214956fa9de009def550826
 
+UseMaxBuildJobs: true
 ConfigureParams: --disable-dependency-tracking
 
 InstallScript: <<

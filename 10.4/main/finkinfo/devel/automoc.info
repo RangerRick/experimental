@@ -27,6 +27,7 @@ Source: mirror:custom:automoc/automoc-977962.tar.bz2
 Source-MD5: 59992bc321959f72b582a4d8df8c4695
 SourceDirectory: automoc
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 

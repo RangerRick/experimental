@@ -8,6 +8,8 @@ Maintainer: Benjamin Reed <kdesdk3-svn-ssl@fink.raccoonfink.com>
 
 Depends: kdesdk3-svn (>= %v-1)
 
+UseMaxBuildJobs: true
+
 DescDetail: An IO slave that lets you connect to subversion repositories.
 DescUsage: <<
 ---[ Installation ]---------------------------------------------------

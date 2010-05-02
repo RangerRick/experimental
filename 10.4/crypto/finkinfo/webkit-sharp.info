@@ -9,7 +9,7 @@ Maintainer: Benjamin Reed <webkit-sharp@fink.raccoonfink.com>
 
 Depends: mono (>= 2.6.2-1)
 BuildDepends: <<
-	glib2-dev (>= 2.18.4-1),
+	glib2-dev (>= 2.22.0-1),
 	gtk-sharp2 (>= 2.12.9-1),
 	mono-dev (>= 2.6.2-1)
 <<
@@ -17,6 +17,7 @@ BuildDepends: <<
 Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v.tar.bz2
 Source-MD5: 21482f9d5eafb0ef4acc6e790482f934
 
+UseMaxBuildJobs: true
 ConfigureParams: WEBKIT_CFLAGS="-F/System/Library/Frameworks" WEBKIT_LIBS="-framework WebKit"
 
 InstallScript: <<

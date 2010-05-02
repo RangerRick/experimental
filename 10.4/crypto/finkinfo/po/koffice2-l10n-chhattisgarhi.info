@@ -20,6 +20,7 @@ BuildDepends: <<
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-hne-%v.tar.bz2
 Source-MD5: a0d04941cd32b7dbf1896a122df82db8
 
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 

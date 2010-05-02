@@ -11,6 +11,8 @@ Depends: <<
 	gst-plugins-ugly-0.10 (>= 0.10.13-1)
 <<
 
+UseMaxBuildJobs: true
+
 Homepage: http://www.gstreamer.net/
 DescDetail: <<
 GStreamer is a streaming-media framework, based on graphs of 

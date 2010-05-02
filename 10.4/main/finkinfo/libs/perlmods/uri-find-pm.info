@@ -30,6 +30,8 @@ Source: mirror:cpan:modules/by-module/URI/URI-Find-%v.tar.gz
 Source-MD5: 339279e268cf37e629f54c1091f99a13
 SourceDirectory: URI-Find-%v
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}

@@ -71,6 +71,7 @@ PatchFile-MD5: e9ccf99481c187524edf8205ffa6a083
 
 SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
 ConfigureParams: --prefix=%p --libdir=%p/lib/postgresql-8.0 --with-docdir=%p/share/doc --mandir=%p/share/man --enable-multibyte --enable-recode --with-CXX --without-perl --without-python --with-openssl --with-libraries=%p/lib --with-includes=%p/include --without-tcl --without-tk --without-java --enable-odbc --with-pam --with-rendezvous --enable-syslog --with-krb5 --enable-thread-safety
 CompileScript: <<
 #!/bin/sh -xe
@@ -298,6 +299,7 @@ SplitOff: <<
 		postgresql83-dev
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/pg_config*
 		include
@@ -347,6 +349,7 @@ SplitOff2: <<
 		postgresql80-shlibs,
 		postgresql80-ssl-shlibs
 	<<
+	UseMaxBuildJobs: true
 	Files: lib/postgresql-8.0/*.dylib var/postgresql-8.0/*.sh var/postgresql-8.0/*.list
 	Shlibs: <<
 		%p/lib/postgresql-8.0/libecpg.5.dylib        5.0.0 postgresql80-unified-shlibs (>= 8.0.21-1)
@@ -365,6 +368,7 @@ SplitOff3: <<
 		fink (>= 0.29.7-1),
 		fink-obsolete-packages
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: COPYRIGHT HISTORY INSTALL README
 	DescUsage: <<
 The package runs initdb on installation as the user 'postgres'.
@@ -393,6 +397,7 @@ SplitOff4: <<
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	DocFiles: COPYRIGHT HISTORY INSTALL README
 <<
 SplitOff5: <<
@@ -403,6 +408,7 @@ SplitOff5: <<
 		fink (>= 0.29.7-1),
 		fink-obsolete-packages
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: COPYRIGHT HISTORY INSTALL README
 <<
 SplitOff6: <<
@@ -413,6 +419,7 @@ SplitOff6: <<
 		fink (>= 0.29.7-1),
 		fink-obsolete-packages
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: COPYRIGHT HISTORY INSTALL README
 	DescUsage: <<
 The package runs initdb on installation as the user 'postgres'.
@@ -441,6 +448,7 @@ SplitOff7: <<
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
+	UseMaxBuildJobs: true
 	DocFiles: COPYRIGHT HISTORY INSTALL README
 <<
 SplitOff8: <<
@@ -451,6 +459,7 @@ SplitOff8: <<
 		fink (>= 0.29.7-1),
 		fink-obsolete-packages
 	<<
+	UseMaxBuildJobs: true
 	DocFiles: COPYRIGHT HISTORY INSTALL README
 <<
 

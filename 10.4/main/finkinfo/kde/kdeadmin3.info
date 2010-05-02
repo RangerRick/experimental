@@ -16,7 +16,7 @@ BuildDepends: <<
 	cctools-single-module,
 	expat1,
 	fink (>= 0.29.7-1),
-	freetype219 (>= 2.3.7-7),
+	freetype219 (>= 2.3.12-1),
 	gettext-bin,
 	gettext-tools,
 	kdebase3-unified-dev (>= %v-1),
@@ -26,7 +26,7 @@ BuildDepends: <<
 	libiconv-dev,
 	libidn,
 	libjpeg8,
-	libpng3 (>= 1.2.8-1),
+	libpng14 (>= 1.4.1-2),
 	pkgconfig (>= 0.23-1),
 	qt3 (>= 3.3.8-1027),
 	unsermake (>= 0.4-0.20060316.1),
@@ -56,6 +56,7 @@ PatchFile-MD5: 3abfe1ba46410482f828d680aa8dce69
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
+UseMaxBuildJobs: true
 ConfigureParams: --with-distribution='Fink/Mac OS X'
 CompileScript: <<
 #!/bin/sh -ev
@@ -93,6 +94,7 @@ SplitOff: <<
 	Depends: %N-base (>= %v-%r)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kcron
 		share/applications/kde/kcron*
@@ -172,6 +174,7 @@ SplitOff2: <<
 	<<
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: <<
 		bin/kpackage
 		lib/kde3/kfile_deb.*
@@ -254,6 +257,7 @@ SplitOff3: <<
 	Description: KDE - PAM security policy viewer
 	Depends: %N-base (>= %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: bin/secpolicy
 	DescDetail: <<
 This tool allows you to manipulate the PAM configuration
@@ -321,6 +325,7 @@ SplitOff4: <<
 	Depends: kdebase3-unified (>= %v-1)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
+	UseMaxBuildJobs: true
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------

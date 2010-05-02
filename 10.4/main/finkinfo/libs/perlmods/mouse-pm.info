@@ -22,6 +22,8 @@ BuildDepends: <<
 Source: mirror:cpan:authors/id/S/SA/SARTAK/Mouse-%v.tar.gz
 Source-MD5: b7be6042224bc24f9a4f28e9c89c72de
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 %{default_script}

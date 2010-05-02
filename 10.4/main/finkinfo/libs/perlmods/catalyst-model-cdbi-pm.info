@@ -26,6 +26,8 @@ BuildDepends: <<
 Source: mirror:cpan:modules/by-module/Catalyst/Catalyst-Model-CDBI-%v.tar.gz
 Source-MD5: c9b3d6c90541a0440257823a2f715a99
 
+UseMaxBuildJobs: true
+
 UpdatePOD: true
 InstallScript: <<
 	%{default_script}
