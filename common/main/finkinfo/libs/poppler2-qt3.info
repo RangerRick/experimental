@@ -29,7 +29,7 @@ GCC: 4.0
 Source: http://poppler.freedesktop.org/poppler-%v.tar.gz
 Source-MD5: 13d12ca4e349574cfbbcf4a9b2b3ae52
 PatchFile: %n.patch
-PatchFile-MD5: 076fe6ee3e4600f40692d9a737209834
+PatchFile-MD5: 2861ebd784da096922419e7558497b30
 PatchScript: <<
 	sed 's|@PREFIX@|%p|g' <%{PatchFile} | patch -p1 --fuzz=4
 	perl -pi -e 's,libqt-mt.so,libqt-mt.dylib,g' configure

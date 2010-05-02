@@ -57,7 +57,7 @@ GCC: 4.0
 Source: http://poppler.freedesktop.org/poppler-%v.tar.gz
 Source-MD5: 8d1ac008614c0e413bcac95b8102fa07
 PatchFile: %n.patch
-PatchFile-MD5: 29f304a3b92cd9166a3afc90ea4205a4
+PatchFile-MD5: 17b81b0b5985b00dad65d07e94fd4d40
 PatchScript: sed -e 's|@PREFIX@|%p|g' <%{PatchFile} | patch -p1
 
 SetCFLAGS: -Os

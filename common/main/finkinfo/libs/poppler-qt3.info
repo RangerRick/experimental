@@ -33,7 +33,7 @@ Replaces: poppler2-qt3
 Source: http://poppler.freedesktop.org/poppler-%v.tar.gz
 Source-MD5: 8d1ac008614c0e413bcac95b8102fa07
 PatchFile: %n.patch
-PatchFile-MD5: c76672b54d186c6a33587029bd23ccd8
+PatchFile-MD5: 17b81b0b5985b00dad65d07e94fd4d40
 PatchScript: sed 's|@PREFIX@|%p|g' <%{PatchFile} | patch -p1 --fuzz=4
 
 NoSetCPPFLAGS: true
