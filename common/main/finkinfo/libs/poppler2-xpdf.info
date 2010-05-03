@@ -7,17 +7,29 @@ License: GPL
 Maintainer: Benjamin Reed <poppler2@fink.racoonfink.com>
 
 BuildDepends: <<
-	fink (>= 0.24.12-1)
+	cairo (>= 1.6-1),
+	expat1,
+	fink (>= 0.24.12),
+	fink-package-precedence,
+	fontconfig2-dev (>= 2.4.1-1),
+	freetype219 (>= 2.3.5-1),
+	glitz,
+	gettext-bin,
+	gettext-tools,
+	libgettext3-dev,
+	libiconv-dev,
+	libjpeg,
+	libpng3,
+	libxml2,
+	pixman (>= 0.10.0-1),
+	poppler2 (>= %v-%r),
+	pkgconfig (>= 0.21-1),
+	x11-dev,
+	xft2-dev
 <<
-Depends: <<
-	poppler2-shlibs (>= %v-1)
-<<
-Conflicts: <<
-	poppler4-xpdf
-<<
-Replaces: <<
-	poppler4-xpdf
-<<
+Depends: poppler2-shlibs (>= %v-1)
+Conflicts: poppler4-xpdf
+Replaces: poppler4-xpdf
 BuildDependsOnly: True
 GCC: 4.0
 
@@ -26,28 +38,14 @@ Source-MD5: 13d12ca4e349574cfbbcf4a9b2b3ae52
 
 PatchFile: %n.patch
 PatchFile-MD5: d55290728c849111601a20f85252f7fb
-PatchScript: <<
-#!/bin/sh -ev
-	%{default_script}
-	for mfdir in goo poppler splash; do
-		perl -n -e 'print if s/if ENABLE_XPDF_HEADERS// .. s/endif//' < ${mfdir}/Makefile.am > ${mfdir}/Makefile
-	done
-<<	
-CompileScript: #
+CompileScript: ./configure %c --enable-xpdf-headers
 InstallScript: <<
 #!/bin/sh -ev
 	for mfdir in goo poppler splash; do
-		make -j1 -C ${mfdir} install DESTDIR=%d includedir=%p/include
+		make -j1 -C "$mfdir" install-data DESTDIR=%d includedir=%p/include
 	done
 <<
 DocFiles: AUTHORS COPYING ChangeLog NEWS README README-XPDF TODO
 
 Homepage: http://poppler.freedesktop.org/
 DescDetail: Poppler is a PDF rendering library based on the xpdf-3.0 code base.
-DescPackaging: <<
-	This is just the older-interface headers, which are installed
-	by poppler iff it's configured with --enable-xpdf-headers. We
-	just hack the makefiles we need and use just the xpdf headers
-	parts of them instead of actually building the poppler package
-	and stripping out the parts we don't need.
-<<
