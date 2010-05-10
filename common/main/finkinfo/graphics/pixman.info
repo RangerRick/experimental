@@ -1,6 +1,6 @@
 Package: pixman
 Version: 0.18.0
-Revision: 1
+Revision: 2
 Source: http://xorg.freedesktop.org/archive/individual/lib/pixman-%v.tar.bz2
 Source-MD5: a1b5a0a145cab653f5c1e8cf2f98f945
 
@@ -12,6 +12,10 @@ Depends: %N-shlibs (= %v-%r)
 
 InfoTest: <<
 	TestScript: make -k check || exit 2
+<<
+
+PatchScript: <<
+	perl -pi -e 's,PTHREAD_LDFLAGS="-pthread",PTHREAD_LDFLAGS="",g' configure
 <<
 
 NoSetLDFLAGS: true
