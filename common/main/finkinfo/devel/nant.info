@@ -1,11 +1,11 @@
 Package: nant
-Version: 0.86
-Revision: 0.beta1.5
+Version: 0.90
+Revision: 1
 Architecture: i386, powerpc
 
-Source: http://ftp.novell.com/pub/mono/sources/%n/%n-%v-beta1-src.tar.gz
-Source-MD5: 6e5e5ba4515bde5668c085807322a1f3
-SourceDirectory: %n-%v-beta1
+Source: http://downloads.sourceforge.net/project/%n/%n/%v/%n-%v-src.tar.gz
+Source-MD5: 1ba849249c6ff00062ac9ea90f729b20
+SourceDirectory: %n-%v
 DocFiles: *.txt
 Depends: mono (>= 2.0-1)
 BuildDepends: <<
