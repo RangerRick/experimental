@@ -7,7 +7,7 @@ Maintainer: Benjamin Reed <cairomm1@fink.raccoonfink.com>
 
 Depends: %N-shlibs (= %v-%r)
 BuildDepends: <<
-	cairo (>= 1.8.10-1),
+	cairo (>= 1.8.10-3),
 	doxygen,
 	expat1,
 	fink (>= 0.29.7-1),
@@ -55,7 +55,7 @@ DocFiles: AUTHORS COPYING ChangeLog INSTALL MAINTAINERS NEWS README
 SplitOff: <<
 	Package: %N-shlibs
 	Depends: <<
-		cairo-shlibs (>= 1.8.10-1),
+		cairo-shlibs (>= 1.8.10-3),
 		fontconfig2-shlibs (>= 2.8.0-4),
 		freetype219-shlibs (>= 2.3.12-1),
 		libsigc++2-shlibs

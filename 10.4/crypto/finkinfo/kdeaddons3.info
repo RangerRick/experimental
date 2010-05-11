@@ -17,7 +17,7 @@ Depends: <<
 	%N-renamedlg (>= %v-%r)
 <<
 BuildDepends: <<
-	arts-dev (>= 1.5.10-1),
+	arts-dev (>= 1.5.10-10),
 	audiofile (>= 0.2.6-11),
 	autoconf2.6 (>= 2.59-1),
 	cctools-single-module,
@@ -30,10 +30,10 @@ BuildDepends: <<
 	glib,
 	glib2-dev (>= 2.22.0-1),
 	gtk+,
-	kdebase3-unified-dev (>= %v-1),
-	kdegames3-dev (>= %v-1),
-	kdelibs3-unified-dev (>= %v-1),
-	kdepim3-dev (>= %v-1),
+	kdebase3-unified-dev (>= 3.5.10-10),
+	kdegames3-dev (>= 3.5.10-10),
+	kdelibs3-unified-dev (>= 3.5.10-10),
+	kdepim3-dev (>= 3.5.10-10),
 	libart2 (>= 2.3.20-1),
 	libgettext8-dev,
 	libiconv-dev,
@@ -186,14 +186,14 @@ remove all of the kdenetwork3 packages, run:
 SplitOff10: <<
 	Package: %N-base
 	Description: KDE - kdeaddons base package
-	Depends: kdebase3-unified (>= %v-1)
+	Depends: kdebase3-unified (>= 3.5.10-10)
 	Replaces: <<
 		%N (<< %v-%r),
 		%N-dev (<< %v-%r)
 	<<
 	Recommends: <<
 		%N (>= %v-%r),
-		kdebase3-unified (>= %v-1)
+		kdebase3-unified (>= 3.5.10-10)
 	<<
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<
@@ -258,7 +258,7 @@ SplitOff2: <<
 	Depends: <<
 		%N-base (>= %v-%r),
 		atlantik (>= %v-1),
-		kdegames3-common (>= %v-1)
+		kdegames3-common (>= 3.5.10-10)
 	<<
 	Replaces: <<
 		%N (<< %v-%r),
@@ -337,7 +337,7 @@ SplitOff3: <<
 	Description: KDE - extra kate editor plugins from kdeaddons
 	Depends: <<
 		%N-base (>= %v-%r),
-		kdebase3-unified-shlibs (>= %v-1)
+		kdebase3-unified-shlibs (>= 3.5.10-10)
 	<<
 	Replaces: <<
 		%N (<< %v-%r),

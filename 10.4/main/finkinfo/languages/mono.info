@@ -15,7 +15,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	atk1 (>= 1.26.0-1),
-	cairo (>= 1.8.10-1),
+	cairo (>= 1.8.10-3),
 	expat1,
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
@@ -124,7 +124,7 @@ DocFiles: AUTHORS COPYING* ChangeLog NEWS README
 SplitOff: <<
 	Package: %N-shlibs
 	Depends: <<
-		cairo-shlibs (>= 1.8.10-1),
+		cairo-shlibs (>= 1.8.10-3),
 		glib2-shlibs (>= 2.22.0-1),
 		macosx (>= 10.4.3-1)
 	<<

@@ -8,7 +8,7 @@ Maintainer: Benjamin Reed <rrdtool@fink.raccoonfink.com>
 
 Depends: librrd4-shlibs (>= %v-%r)
 BuildDepends: <<
-	cairo (>= 1.8.10-1),
+	cairo (>= 1.8.10-3),
 	expat1,
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
@@ -82,7 +82,7 @@ SplitOff: <<
 	Package: librrd4-shlibs
 	Description: Fixed-size "round-robin" database storage shared libraries
 	Depends: <<
-		cairo-shlibs (>= 1.8.10-1),
+		cairo-shlibs (>= 1.8.10-3),
 		glib2-shlibs (>= 2.22.0-1),
 		libpng14-shlibs (>= 1.4.1-2),
 		libxml2-shlibs (>= 2.6.32-1),

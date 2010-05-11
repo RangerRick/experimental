@@ -6,7 +6,7 @@ Type: bundle
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdesdk3-svn-ssl@fink.raccoonfink.com>
 
-Depends: kdesdk3-svn (>= %v-1)
+Depends: kdesdk3-svn (>= 3.5.10-10)
 
 UseMaxBuildJobs: true
 

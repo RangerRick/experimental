@@ -1,6 +1,6 @@
 Package: kdegames3
 Version: 3.5.10
-Revision: 2
+Revision: 10
 Description: KDE - games
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdegames3@fink.raccoonfink.com>
@@ -40,7 +40,7 @@ Depends: <<
 	lskat (>= %v-%r)
 <<
 BuildDepends: <<
-	arts-dev (>= 1.5.10-1),
+	arts-dev (>= 1.5.10-10),
 	audiofile (>= 0.2.6-11),
 	autoconf2.6 (>= 2.59-1),
 	cctools-single-module,
@@ -51,7 +51,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	gettext-tools,
 	glib2-dev (>= 2.22.0-1),
-	kdelibs3-unified-dev (>= %v-1),
+	kdelibs3-unified-dev (>= 3.5.10-10),
 	libart2 (>= 2.3.20-1),
 	libcapsinetwork-dev,
 	libiconv-dev,
@@ -1065,11 +1065,11 @@ SplitOff2: <<
 		atlantik (<< %v-%r)
 	<<
 	Recommends: <<
-		arts-dev (>= 1.5.10-1),
+		arts-dev (>= 1.5.10-10),
 		audiofile,
 		esound,
 		fink (>= 0.29.7-1),
-		kdelibs3-unified-dev (>= %v-1),
+		kdelibs3-unified-dev (>= 3.5.10-10),
 		libart2,
 		libcapsinetwork-dev,
 		libmath++-dev (>= 0.0.4-1001),
@@ -2506,7 +2506,7 @@ remove all of the kdenetwork3 packages, run:
 SplitOff35: <<
 	Package: %N-base
 	Description: KDE - kdegames base package
-	Depends: kdebase3-unified (>= %v-1)
+	Depends: kdebase3-unified (>= 3.5.10-10)
 	Replaces: <<
 		%N (<< %v-%r),
 		%N-common (<< %v-%r),
@@ -2514,7 +2514,7 @@ SplitOff35: <<
 	<<
 	Recommends: <<
 		%N (>= %v-%r),
-		kdebase3-unified (>= %v-1)
+		kdebase3-unified (>= 3.5.10-10)
 	<<
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<

@@ -12,10 +12,10 @@ Depends: <<
 	libsmoke-shlibs (>= 1:%v-1)
 <<
 BuildDepends: <<
-	arts-dev (>= 1.5.10-1),
+	arts-dev (>= 1.5.10-10),
 	autoconf2.6 (>= 2.60-4),
 	automake1.11,
-	kdelibs3-unified-dev (>= %v-1),
+	kdelibs3-unified-dev (>= 3.5.10-10),
 	glut (>= 3.7-3),
 	libpng14 (>= 1.4.1-2),
 	libsmoke (>= 1:%v-1),

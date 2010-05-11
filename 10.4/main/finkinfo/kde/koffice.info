@@ -19,7 +19,7 @@ Depends: <<
 	kplato (>= %v-%r)
 <<
 BuildDepends: <<
-	arts-dev (>= 1.5.10-1),
+	arts-dev (>= 1.5.10-10),
 	aspell,
 	aspell-dev,
 	audiofile,
@@ -35,7 +35,7 @@ BuildDepends: <<
 	gettext-tools,
 	glib2-dev (>= 2.22.0-1),
 	imagemagick1-dev (>= 6.4.1-1013),
-	kdelibs3-unified-dev (>= 3.5.8-1021),
+	kdelibs3-unified-dev (>= 3.5.10-10),
 	kjsembed-dev,
 	lcms,
 	libart2,
@@ -721,7 +721,7 @@ remove all of the kdenetwork3 packages, run:
 SplitOff14: <<
 	Package: %N-base
 	Description: KDE - koffice base package
-	Depends: kdebase3-unified (>= 3.5.8-1021)
+	Depends: kdebase3-unified (>= 3.5.10-10)
 	Replaces: <<
 		%N-common (<< %v-%r),
 		%N (<< %v-%r),

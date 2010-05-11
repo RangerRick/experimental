@@ -1,7 +1,7 @@
 Info3: <<
 Package: arts
 Version: 1.5.10
-Revision: 3
+Revision: 10
 Description: KDE - analog realtime synthesizer
 License: GPL
 Maintainer: Benjamin Reed <arts@fink.raccoonfink.com>

@@ -1,6 +1,6 @@
 Package: kdeedu3
 Version: 3.5.10
-Revision: 1
+Revision: 10
 Description: KDE - educational software
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdeedu3@fink.raccoonfink.com>
@@ -27,7 +27,7 @@ Depends: <<
 	kturtle (>= %v-%r)
 <<
 BuildDepends: <<
-	arts-dev (>= 1.5.10-1),
+	arts-dev (>= 1.5.10-10),
 	audiofile (>= 0.2.6-11),
 	autoconf2.6 (>= 2.60-1),
 	cctools-single-module,
@@ -37,7 +37,7 @@ BuildDepends: <<
 	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	glib2-dev (>= 2.22.0-1),
-	kdelibs3-unified-dev (>= %v-1),
+	kdelibs3-unified-dev (>= 3.5.10-10),
 	libart2 (>= 2.3.20-1),
 	libgettext8-dev,
 	libiconv-dev,
@@ -1358,7 +1358,7 @@ SplitOff21: <<
 	Description: KDE - kdeedu development headers and libraries
 	Depends: <<
 		%N (>= %v-%r),
-		kdelibs3-unified (>= %v-1)
+		kdelibs3-unified (>= 3.5.10-10)
 	<<
 	Replaces: <<
 		%N (<< %v-%r),
@@ -1366,8 +1366,8 @@ SplitOff21: <<
 		kstars (<< %v-%r)
 	<<
 	Recommends: <<
-		arts-dev (>= 1.5.10-1),
-		kdelibs3-unified-dev (>= %v-1),
+		arts-dev (>= 1.5.10-10),
+		kdelibs3-unified-dev (>= 3.5.10-10),
 		libart2,
 		libpng14 (>= 1.4.1-2),
 		qt3 (>= 3.3.8-1027)
@@ -1438,14 +1438,14 @@ remove all of the kdenetwork3 packages, run:
 SplitOff22: <<
 	Package: %N-base
 	Description: KDE - kdeedu base package
-	Depends: kdebase3-unified (>= %v-1)
+	Depends: kdebase3-unified (>= 3.5.10-10)
 	Replaces: <<
 		%N (<< %v-%r),
 		%N-shlibs (<< %v-%r)
 	<<
 	Recommends: <<
 		%N (>= %v-%r),
-		kdebase3-unified (>= %v-1)
+		kdebase3-unified (>= 3.5.10-10)
 	<<
 	Files: share/doc/installed-packages/%N-base
 	DescUsage: <<

@@ -24,14 +24,6 @@ my @files = @ARGV;
 my %files;
 
 my $package_lookup = {
-	'10.4' => {
-		'^autoconf2.5'                    => 'autoconf',
-		'^pango1-xft2-shlibs$'            => 'pango1-xft2-ft219-shlibs',
-		'^pango1-xft2-dev$'               => 'pango1-xft2-ft219-dev',
-		'^pango1-xft2$'                   => 'pango1-xft2-ft219',
-		'^vte-dev$'                       => 'vte9-dev',
-		'^vte-shlibs$'                    => 'vte9-shlibs',
-	},
 	'all' => {
 		'^autoconf(2.5|2.6)?$'            => 'autoconf2.6',
 		'^automake1\..*$'                 => 'automake1.11',
@@ -50,6 +42,11 @@ my $package_lookup = {
 		'^libpng3$'                       => 'libpng14',
 		'^libpng3-shlibs$'                => 'libpng14-shlibs',
 		'^libtool14$',                    => 'libtool2',
+		'^pango1-xft2-shlibs$'            => 'pango1-xft2-ft219-shlibs',
+		'^pango1-xft2-dev$'               => 'pango1-xft2-ft219-dev',
+		'^pango1-xft2$'                   => 'pango1-xft2-ft219',
+		'^vte-dev$'                       => 'vte9-dev',
+		'^vte-shlibs$'                    => 'vte9-shlibs',
 	},
 };
 
@@ -57,12 +54,12 @@ my $version_lookup = {
 	'all' => {
 		'^akonadi-.*?(-dev|-shlibs)?$'        => [ '1.3.1',        '1'    ],
 		'^ant-base.*$'                        => [ '1.7.1',        '3'    ],
-		'^arts(-dev|-shlibs)?$'               => [ '1.5.10',       '1'    ],
+		'^arts(-dev|-shlibs)?$'               => [ '1.5.10',       '10'   ],
 		'^atk1(-dev|-shlibs)?$'               => [ '1.26.0',       '1'    ],
 		'^autoconf$'                          => [ '2.63',         '1'    ],
 		'^automoc-.*$'                        => [ '0.9.89',       '0'    ],
 		'^blitz-(mac|x11)(-dev|-shlibs)?$'    => [ '0.0.4',        '3'    ],
-		'^cairo(-dev|-shlibs)?$'              => [ '1.8.10',       '1'    ],
+		'^cairo(-dev|-shlibs)?$'              => [ '1.8.10',       '3'    ],
 		'^cairomm1.*$'                        => [ '1.8.2',        '1'    ],
 		'^cmake$'                             => [ '2.6.4',        '1'    ],
 		'^cocoa-sharp$'                       => [ '0.9.5',        '1'    ],
@@ -97,7 +94,9 @@ my $version_lookup = {
 		'^kdemultimedia4.*$'                  => [ '4.4.1',        '1'    ],
 		'^kdepim4.*$'                         => [ '4.4.1',        '1'    ],
 		'^kdepimlibs4.*$'                     => [ '4.4.1',        '1'    ],
+		'^kde.*3.*$'                          => [ '3.5.10',       '10'   ],
 		'^kipi-plugins4.*$'                   => [ '1.1.0',        '1'    ],
+		'^kjsembed.*$'                        => [ '3.5.10',       '10'   ],
 		'^libart2(-dev|-shlibs)?$'            => [ '2.3.20',       '1'    ],
 		'^libattica.*$'                       => [ '0.1.2',        '1'    ],
 		'^libgdiplus.*$'                      => [ '2.6.2',        '1'    ],

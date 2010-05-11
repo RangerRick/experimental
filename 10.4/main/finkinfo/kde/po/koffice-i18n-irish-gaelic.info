@@ -6,15 +6,15 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <koffice-i18n-irish-gaelic@fink.raccoonfink.com>
 
 Depends: <<
-	kdelibs3-unified (>= 3.5.7-1),
+	kdelibs3-unified (>= 3.5.10-10),
 	xfonts-intl,
 	koffice-base (>= 1.6.3-1)
 <<
 BuildDepends: <<
 	fink (>= 0.29.7-1),
 	arts-dev,
-	kdebase3-unified-dev (>= 3.5.7-1),
-	kdelibs3-unified-dev (>= 3.5.7-1),
+	kdebase3-unified-dev (>= 3.5.10-10),
+	kdelibs3-unified-dev (>= 3.5.10-10),
 	koffice-dev (>= 1.6.3-1),
 	libxml2,
 	libxslt,

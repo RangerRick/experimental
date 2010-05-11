@@ -24,7 +24,7 @@ Depends: <<
 BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
 	qimageblitz-unified-%type_pkg[kde],
-	cairo (>= 1.8.10-1),
+	cairo (>= 1.8.10-3),
 	cmake (>= 2.6.4-1),
 	dbus-dev (>= 1.2.12-1),
 	fink (>= 0.29.7-1),

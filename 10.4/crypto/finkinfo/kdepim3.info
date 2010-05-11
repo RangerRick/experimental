@@ -27,7 +27,7 @@ Depends: <<
 	ktnef (>= %v-%r)
 <<
 BuildDepends: <<
-	arts-dev (>= 1.5.10-1),
+	arts-dev (>= 1.5.10-10),
 	audiofile (>= 0.2.6-11),
 	autoconf2.6 (>= 2.60-1),
 	cctools-single-module,
@@ -43,7 +43,7 @@ BuildDepends: <<
 	gnokii3-dev,
 	gpgme11 (>= 1.0.3-2),
 	ktts (>= %v-1),
-	kdelibs3-unified-dev (>= %v-1),
+	kdelibs3-unified-dev (>= 3.5.10-10),
 	libart2 (>= 2.3.20-1),
 	libiconv-dev,
 	libgettext8-dev,
@@ -150,11 +150,11 @@ SplitOff: <<
 		knode (<< %v-%r)
 	<<
 	Recommends: <<
-		arts-dev (>= 1.5.10-1),
+		arts-dev (>= 1.5.10-10),
 		fink (>= 0.29.7-1),
 		gtk+ (>= 1.2.10-12),
 		glib (>= 1.2.10-8),
-		kdelibs3-unified-dev (>= %v-1),
+		kdelibs3-unified-dev (>= 3.5.10-10),
 		libart2,
 		libjpeg8,
 		libpng14 (>= 1.4.1-2),
@@ -1658,7 +1658,7 @@ remove all of the kdenetwork3 packages, run:
 SplitOff23: <<
 	Package: %N-base
 	Description: KDE - kdepim base package
-	Depends: kdebase3-unified (>= %v-1)
+	Depends: kdebase3-unified (>= 3.5.10-10)
 	Replaces: <<
 		%N (<< %v-%r),
 		%N-dev (<< %v-%r)

@@ -12,7 +12,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	amarok-core (>= %v-1),
-	arts-dev (>= 1.5.10-1),
+	arts-dev (>= 1.5.10-10),
 	autoconf2.6 (>= 2.59-1),
 	cctools-single-module,
 	expat1,
@@ -25,8 +25,8 @@ BuildDepends: <<
 	gst-plugins-base-0.10-dev,
 	gstreamer-0.10-dev,
 	gtk+,
-	kdebase3-unified-dev (>= 3.5.3-1),
-	kdelibs3-unified-dev (>= 3.5.3-1),
+	kdebase3-unified-dev (>= 3.5.10-10),
+	kdelibs3-unified-dev (>= 3.5.10-10),
 	libart2 (>= 2.3.20-1),
 	libflac8-dev,
 	libgpod3,

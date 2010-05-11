@@ -7,8 +7,8 @@ Maintainer: Benjamin Reed <bundle-kde-ssl@fink.raccoonfink.com>
 
 Depends: <<
 	bundle-kde-unified (>= %v-1),
-	kdepim3 (>= %v-1),
-	kdeaddons3 (>= %v-1),
+	kdepim3 (>= 3.5.10-10),
+	kdeaddons3 (>= 3.5.10-10),
 	kgpg (>= %v-1)
 <<
 

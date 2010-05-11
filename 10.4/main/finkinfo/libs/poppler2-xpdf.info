@@ -7,7 +7,7 @@ Maintainer: Benjamin Reed <poppler2@fink.racoonfink.com>
 
 Depends: poppler2-shlibs (>= %v-1)
 BuildDepends: <<
-	cairo (>= 1.8.10-1),
+	cairo (>= 1.8.10-3),
 	expat1,
 	fink (>= 0.29.7-1),
 	fink-package-precedence,

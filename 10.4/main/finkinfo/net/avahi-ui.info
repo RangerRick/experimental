@@ -10,7 +10,7 @@ Depends: libavahi-ui0-shlibs (>= %v-1)
 BuildDepends: <<
 	atk1 (>= 1.26.0-1),
 	avahi-dev (>= %v-1),
-	cairo (>= 1.8.10-1),
+	cairo (>= 1.8.10-3),
 	dbus-dev (>= 1.2.12-1),
 	expat1,
 	fink (>= 0.29.7-1),

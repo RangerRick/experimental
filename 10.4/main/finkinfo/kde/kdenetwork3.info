@@ -1,6 +1,6 @@
 Package: kdenetwork3
 Version: 3.5.10
-Revision: 1
+Revision: 10
 Description: KDE - networking
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdenetwork3@fink.raccoonfink.com>
@@ -19,7 +19,7 @@ Depends: <<
 	lisa (>= %v-%r)
 <<
 BuildDepends: <<
-	arts-dev (>= 1.5.10-1),
+	arts-dev (>= 1.5.10-10),
 	autoconf2.6 (>= 2.60-1),
 	cctools-single-module,
 	libgadu3-dev,
@@ -29,7 +29,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	gettext-tools,
 	gtk+,
-	kdelibs3-unified-dev (>= %v-1),
+	kdelibs3-unified-dev (>= 3.5.10-10),
 	libart2 (>= 2.3.20-1),
 	libbind6-dev,
 	libiconv-dev,
@@ -125,9 +125,9 @@ SplitOff: <<
 		%N-common (<< %v-1)
 	<<
 	Recommends: <<
-		arts-dev (>= 1.5.10-1),
+		arts-dev (>= 1.5.10-10),
 		fink (>= 0.29.7-1),
-		kdelibs3-unified-dev (>= %v-1),
+		kdelibs3-unified-dev (>= 3.5.10-10),
 		libart2,
 		libjpeg8,
 		libpng14 (>= 1.4.1-2),
@@ -542,7 +542,7 @@ remove all of the kdenetwork3 packages, run:
 SplitOff14: <<
 	Package: %N-base
 	Description: KDE - kdenetwork base package
-	Depends: kdebase3-unified (>= %v-1)
+	Depends: kdebase3-unified (>= 3.5.10-10)
 	Replaces: <<
 		%N (<< %v-%r),
 		%N-common (<< %v-1),

@@ -11,7 +11,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	aalib,
-	cairo (>= 1.8.10-1),
+	cairo (>= 1.8.10-3),
 	dbus-dev (>= 1.2.12-1),
 	esound (>= 0.2.38-1),
 	expat1,
@@ -100,7 +100,7 @@ SplitOff: <<
 	Depends: <<
 		aalib-shlibs,
 		audiofile-shlibs,
-		cairo-shlibs (>= 1.8.10-1),
+		cairo-shlibs (>= 1.8.10-3),
 		esound-shlibs (>= 0.2.38-1),
 		gst-plugins-base-0.10-shlibs (>= 0.10.26-1),
 		libcaca-shlibs (>= 0.99-1),

@@ -10,7 +10,7 @@ Depends: <<
 	pkgconfig (>= 0.23-1)
 <<
 BuildDepends: <<
-	cairo (>= 1.8.10-1),
+	cairo (>= 1.8.10-3),
 	fink (>= 0.29.7-1),
 	fink-package-precedence,
 	fontconfig2-dev (>= 2.8.0-4),
@@ -73,7 +73,7 @@ DocFiles: AUTHORS COPYING ChangeLog NEWS README README-XPDF TODO
 SplitOff: <<
 	Package: %N-shlibs
 	Depends: <<
-		cairo-shlibs (>= 1.8.10-1),
+		cairo-shlibs (>= 1.8.10-3),
 		fontconfig2-shlibs (>= 2.8.0-4),
 		freetype219-shlibs (>= 2.3.12-1),
 		glib2-shlibs (>= 2.22.0-1),

@@ -5,16 +5,16 @@ Description: KDE - A perky imitation of Apple's OSX look
 License: GPL
 Maintainer: Benjamin Reed <baghira@fink.raccoonfink.com>
 
-Depends: kdebase3-unified (>= 3.4.2-1)
+Depends: kdebase3-unified (>= 3.5.10-10)
 BuildDepends: <<
-	arts-dev (>= 1.5.10-1),
+	arts-dev (>= 1.5.10-10),
 	autoconf2.6 (>= 2.59-1),
 	fink (>= 0.29.7-1),
 	freetype219 (>= 2.3.12-1),
 	gettext-bin,
 	gettext-tools,
-	kdebase3-unified-dev (>= %v-1),
-	kdelibs3-unified-dev (>= %v-1),
+	kdebase3-unified-dev (>= 3.5.10-10),
+	kdelibs3-unified-dev (>= 3.5.10-10),
 	libart2,
 	libgettext8-dev,
 	libiconv-dev,

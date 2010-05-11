@@ -15,7 +15,7 @@ Depends: <<
 	x11
 <<
 BuildDepends: <<
-	cairo (>= 1.8.10-1),
+	cairo (>= 1.8.10-3),
 	expat1,
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),

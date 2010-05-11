@@ -5,9 +5,9 @@ Description: KDE - Graphical Debugger
 License: GPL
 Maintainer: Benjamin Reed <kdbg@fink.raccoonfink.com>
 
-Depends: kdelibs3-unified (>= 3.5.5-1)
+Depends: kdelibs3-unified (>= 3.5.10-10)
 BuildDepends: <<
-	arts-dev (>= 1.5.10-1),
+	arts-dev (>= 1.5.10-10),
 	autoconf2.6 (>= 2.59-1),
 	automake1.11,
 	cctools-single-module,
@@ -15,7 +15,7 @@ BuildDepends: <<
 	fink (>= 0.29.7-1),
 	freetype219 (>= 2.3.12-1),
 	gettext-tools,
-	kdelibs3-unified-dev (>= 3.5.5-1),
+	kdelibs3-unified-dev (>= 3.5.10-10),
 	libart2 (>= 2.3.20-1),
 	libgettext8-dev,
 	libiconv-dev,

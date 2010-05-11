@@ -1,6 +1,6 @@
 Package: kdeaccessibility3
 Version: 3.5.10
-Revision: 1
+Revision: 10
 Description: KDE - accessibility tools
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdeaccessibility3@fink.raccoonfink.com>
@@ -14,7 +14,7 @@ Depends: <<
 	%N-iconthemes (>= %v-%r)
 <<
 BuildDepends: <<
-	arts-dev (>= 1.5.10-1),
+	arts-dev (>= 1.5.10-10),
 	audiofile (>= 0.2.6-11),
 	autoconf2.6 (>= 2.59-1),
 	cctools-single-module,
@@ -28,8 +28,8 @@ BuildDepends: <<
 	glib2-dev (>= 2.22.0-1),
 	gstreamer-dev (>= 0.8.5-1),
 	gst-plugins-dev (>= 0.8.5-1),
-	kdebase3-unified-dev (>= %v-1),
-	kdelibs3-unified-dev (>= %v-1),
+	kdebase3-unified-dev (>= 3.5.10-10),
+	kdelibs3-unified-dev (>= 3.5.10-10),
 	libart2 (>= 2.3.20-1),
 	libcdio-dev,
 	libgettext8-dev,
@@ -592,7 +592,7 @@ remove all of the kdenetwork3 packages, run:
 SplitOff7: <<
 	Package: %N-base
 	Description: KDE - kdeaccessibility base package
-	Depends: kdebase3-unified (>= %v-1)
+	Depends: kdebase3-unified (>= 3.5.10-10)
 	Replaces: %N (<< %v-%r)
 	Recommends: %N (>= %v-%r)
 	Files: share/doc/installed-packages/%N-base

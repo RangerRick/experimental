@@ -7,17 +7,17 @@ Maintainer: Benjamin Reed <fung-calc@fink.raccoonfink.com>
 
 Depends: <<
 	glut-shlibs,
-	kdelibs3-unified-shlibs (>= 3.5.0-1),
+	kdelibs3-unified-shlibs (>= 3.5.10-10),
 	libpng14-shlibs (>= 1.4.1-2),
 	qt3-shlibs (>= 3.3.8-1027),
 	x11-shlibs
 <<
 BuildDepends: <<
-	arts-dev (>= 1.5.10-1),
+	arts-dev (>= 1.5.10-10),
 	autoconf2.6 (>= 2.59-1),
 	automake1.11,
 	glut,
-	kdelibs3-unified-dev (>= 3.5.0-1),
+	kdelibs3-unified-dev (>= 3.5.10-10),
 	libpng14 (>= 1.4.1-2),
 	qt3 (>= 3.3.8-1027),
 	unsermake,

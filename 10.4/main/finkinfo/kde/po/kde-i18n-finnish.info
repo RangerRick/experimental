@@ -6,14 +6,14 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <kde-i18n-finnish@fink.raccoonfink.com>
 
 Depends: <<
-	kdelibs3-unified (>= %v-1),
+	kdelibs3-unified (>= 3.5.10-10),
 	xfonts-intl
 <<
 BuildDepends: <<
 	fink (>= 0.29.7-1),
 	arts-dev,
-	kdebase3-unified-dev (>= %v-1),
-	kdelibs3-unified-dev (>= %v-1),
+	kdebase3-unified-dev (>= 3.5.10-10),
+	kdelibs3-unified-dev (>= 3.5.10-10),
 	libxml2,
 	libxslt,
 	xfonts-intl

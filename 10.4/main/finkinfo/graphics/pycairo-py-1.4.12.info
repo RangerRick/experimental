@@ -8,7 +8,7 @@ License: LGPL
 Maintainer: Benjamin Reed <pycairo-py@fink.raccoonfink.com>
 
 Depends: <<
-	cairo-shlibs (>= 1.8.10-1),
+	cairo-shlibs (>= 1.8.10-3),
 	expat1-shlibs,
 	fontconfig2-shlibs (>= 2.4.1-1),
 	freetype219-shlibs,
@@ -18,7 +18,7 @@ Depends: <<
 	python%type_pkg[python]
 <<
 BuildDepends: <<
-	cairo (>= 1.8.10-1),
+	cairo (>= 1.8.10-3),
 	expat1,
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219,

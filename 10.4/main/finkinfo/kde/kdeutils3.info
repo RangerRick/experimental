@@ -1,6 +1,6 @@
 Package: kdeutils3
 Version: 3.5.10
-Revision: 2
+Revision: 10
 Description: KDE - miscellaneous utilities
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdeutils3@fink.raccoonfink.com>
@@ -25,7 +25,7 @@ Depends: <<
 	%N-base (>= %v-%r)
 <<
 BuildDepends: <<
-	arts-dev (>= 1.5.10-1),
+	arts-dev (>= 1.5.10-10),
 	autoconf2.6 (>= 2.59-1),
 	cctools-single-module,
 	expat1,
@@ -33,8 +33,8 @@ BuildDepends: <<
 	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	gmp,
-	kdebase3-unified-dev (>= %v-1),
-	kdelibs3-unified-dev (>= %v-1),
+	kdebase3-unified-dev (>= 3.5.10-10),
+	kdelibs3-unified-dev (>= 3.5.10-10),
 	libart2 (>= 2.3.20-1),
 	libgettext8-dev,
 	libiconv-dev,
@@ -909,10 +909,10 @@ SplitOff18: <<
 		%N-ssl (<< %v-%r)
 	<<
 	Recommends: <<
-		arts-dev (>= 1.5.10-1),
+		arts-dev (>= 1.5.10-10),
 		fink (>= 0.29.7-1),
-		kdebase3-unified-dev (>= %v-1),
-		kdelibs3-unified-dev (>= %v-1),
+		kdebase3-unified-dev (>= 3.5.10-10),
+		kdelibs3-unified-dev (>= 3.5.10-10),
 		libart2,
 		libpng14 (>= 1.4.1-2),
 		qt3 (>= 3.3.8-1027)
@@ -982,7 +982,7 @@ remove all of the kdenetwork3 packages, run:
 SplitOff19: <<
 	Package: %N-base
 	Description: KDE - kdeutils base package
-	Depends: kdebase3-unified (>= %v-1)
+	Depends: kdebase3-unified (>= 3.5.10-10)
 	Replaces: <<
 		%N (<< %v-%r),
 		%N-dev (<< %v-%r)

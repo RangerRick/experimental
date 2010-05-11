@@ -14,20 +14,20 @@ SplitOff: <<
 	Description: KDE - convenience package: KDE 3.5
 	Type: bundle
 	Depends: <<
-		arts (>= 1.5.10-1),
-		kdelibs3-unified (>= %v-1),
-		kdebase3-unified (>= %v-1),
-		kdeaccessibility3 (>= %v-1),
-		kdeadmin3 (>= %v-1),
-		kdeartwork3 (>= %v-1),
-		kdeedu3 (>= %v-1),
-		kdegames3 (>= %v-1),
-		kdegraphics3 (>= %v-1),
-		kdenetwork3 (>= %v-1),
-		kdesdk3 (>= %v-1),
-		kdetoys3 (>= %v-1),
-		kdeutils3 (>= %v-1),
-		kdewebdev3 (>= %v-1),
+		arts (>= 1.5.10-10),
+		kdelibs3-unified (>= 3.5.10-10),
+		kdebase3-unified (>= 3.5.10-10),
+		kdeaccessibility3 (>= 3.5.10-10),
+		kdeadmin3 (>= 3.5.10-10),
+		kdeartwork3 (>= 3.5.10-10),
+		kdeedu3 (>= 3.5.10-10),
+		kdegames3 (>= 3.5.10-10),
+		kdegraphics3 (>= 3.5.10-10),
+		kdenetwork3 (>= 3.5.10-10),
+		kdesdk3 (>= 3.5.10-10),
+		kdetoys3 (>= 3.5.10-10),
+		kdeutils3 (>= 3.5.10-10),
+		kdewebdev3 (>= 3.5.10-10),
 		koffice (>= 1.6.0-1)
 	<<
 	DescUsage: <<
