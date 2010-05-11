@@ -1,6 +1,6 @@
 Package: cairo
 Version: 1.8.10
-Revision: 2
+Revision: 3
 
 Source: http://cairographics.org/releases/%n-%v.tar.gz
 Source-MD5: b60a82f405f9400bbfdcf850b1728d25
@@ -60,7 +60,7 @@ InstallScript: <<
 	perl -pi -e 's,xrender >= 0.6,,' %i/lib/pkgconfig/*.pc
 	perl -pi -e 's,^(Libs.private:.*)$,$1 -lXrender -lXext,' %i/lib/pkgconfig/cairo.pc
 	perl -pi -e 's,^(Cflags: .*)$,$1 -I/usr/X11R6/include -I/usr/X11/include,' %i/lib/pkgconfig/cairo.pc
-	perl -pi -e 's,libpng\\d+,,; s,pixman-1 >= [\\d\\.]*,,' %i/lib/pkgconfig/*.pc
+	perl -pi -e 's,libpng\d+,,; s,pixman-1 >= [\d\.]*,,' %i/lib/pkgconfig/*.pc
 <<
 SplitOff: <<
 	Package: %N-shlibs
