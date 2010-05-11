@@ -40,7 +40,7 @@ InfoTest: <<
 <<
 Depends: %N-shlibs (= %v-%r), pkgconfig (>= 0.23)
 #SetLDFLAGS: -L%p/lib/fontconfig2/lib
-SetCFLAGS: -Os -I%p/include/libpng14
+SetCFLAGS: -Os
 ConfigureParams: --build=%m-apple-darwin`uname -r|sed 's/\\..*//'` --disable-xcb --enable-dependency-tracking --disable-gtk-doc --enable-quartz --enable-quartz-font --disable-quartz-image --enable-png --enable-glitz --enable-ps --enable-pdf --disable-atsui --mandir=%p/share/man --disable-static
 CompileScript: <<
 #!/bin/sh -ex
