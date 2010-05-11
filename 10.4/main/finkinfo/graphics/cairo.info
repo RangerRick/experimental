@@ -1,6 +1,6 @@
 Package: cairo
 Version: 1.8.10
-Revision: 2
+Revision: 3
 Description: Vector graphics library
 License: BSD
 Maintainer: Benjamin Reed <cairo@fink.raccoonfink.com>
@@ -47,7 +47,7 @@ PatchScript: <<
 PatchFile: %n.patch
 PatchFile-MD5: c0035b1abb5c8a39fd0d111e3e1f4aff
 
-SetCFLAGS: -Os -I%p/include/libpng14
+SetCFLAGS: -Os
 UseMaxBuildJobs: true
 ConfigureParams: --build=%m-apple-darwin`uname -r|sed 's/\\..*//'` --disable-xcb --enable-dependency-tracking --disable-gtk-doc --enable-quartz --enable-quartz-font --disable-quartz-image --enable-png --enable-glitz --enable-ps --enable-pdf --disable-atsui --mandir=%p/share/man --disable-static
 CompileScript: <<
@@ -69,7 +69,7 @@ InstallScript: <<
 	perl -pi -e 's,xrender >= 0.6,,' %i/lib/pkgconfig/*.pc
 	perl -pi -e 's,^(Libs.private:.*)$,$1 -lXrender -lXext,' %i/lib/pkgconfig/cairo.pc
 	perl -pi -e 's,^(Cflags: .*)$,$1 -I/usr/X11R6/include -I/usr/X11/include,' %i/lib/pkgconfig/cairo.pc
-	perl -pi -e 's,libpng\\d+,,; s,pixman-1 >= [\\d\\.]*,,' %i/lib/pkgconfig/*.pc
+	perl -pi -e 's,libpng\d+,,; s,pixman-1 >= [\d\.]*,,' %i/lib/pkgconfig/*.pc
 <<
 DocFiles: AUTHORS COPYING ChangeLog* INSTALL NEWS README
 SplitOff: <<
