@@ -183,6 +183,7 @@ CompileScript: <<
 		'-I$(QTDIR)/include' '-L$(QTDIR)/lib' \
 		'-I%p/lib/freetype219/include' '-I%p/lib/freetype219/include/freetype2' '-L%p/lib/freetype219/lib' \
 		'-I%p/lib/fontconfig2/include' '-L%p/lib/fontconfig2/lib' \
+		'-I%p/lib/xft2/include' '-L%p/lib/xft2/lib' \
 		'-I%p/include' '-L%p/lib' \
 		'-I/usr/X11R6/include' '-L/usr/X11R6/lib' \
 		$LIBRESOLV -buildkey qt3-jaguar \
