@@ -105,7 +105,7 @@ PatchScript: <<
 	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g;' admin/*
 <<
 PatchFile: kdelibs3-unified.patch
-PatchFile-MD5: 4ed9c8583def4d269d0c412bb3b90777
+PatchFile-MD5: b6582a4019e92f08d688b836dfbd3726
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
