@@ -47,7 +47,7 @@ BuildDepends: <<
 	macosx (>= 10.4.3-1),
 	pkgconfig (>= 0.22-3),
 	x11-dev,
-	xft2-dev
+	xft2-dev (>= 2.1-1)
 <<
 Replaces: qt, qt2, %N-doc, %N-bin, %N-dev, %N-designer
 Conflicts: qt, qt2, %N-dev
@@ -316,7 +316,7 @@ SplitOff: <<
 		libpng14-shlibs,
 		libjpeg8-shlibs,
 		x11-shlibs,
-		xft2-shlibs
+		xft2-shlibs (>= 2.1-1)
 	<<
 	Shlibs: <<
 		%p/lib/libeditor.1.dylib 1.0.0 %n (>= 3.3.6-2)

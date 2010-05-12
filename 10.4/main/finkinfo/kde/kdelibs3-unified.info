@@ -59,7 +59,7 @@ BuildDepends: <<
 	qt3-doc,
 	xdg-base,
 	x11-dev,
-	xft2-dev,
+	xft2-dev (>= 2.1.14-3),
 	xmkmf
 <<
 BuildConflicts: unsermake
@@ -106,7 +106,7 @@ PatchScript: <<
 	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g;' admin/*
 <<
 PatchFile: kdelibs3-unified.patch
-PatchFile-MD5: dd01d55b19dbd69b38230fa42e93a070
+PatchFile-MD5: 579331cd945286f96134da2b1dfc40c4
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
@@ -209,7 +209,7 @@ SplitOff: <<
 		qt3-shlibs (>= 3.3.8-2000),
 		xdg-base,
 		x11-shlibs,
-		xft2-shlibs
+		xft2-shlibs (>= 2.1.14-3)
 	<<
 	Replaces: <<
 		kdelibs3-dev,

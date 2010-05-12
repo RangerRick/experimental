@@ -147,6 +147,7 @@ my $version_lookup = {
 		'^unsermake$'                         => [ '0.4',          '0.20060316.1' ],
 		'^vte9?(-dev|-shlibs)?$'              => [ '0.20.5',       '1'    ],
 		'^webkit-sharp$'                      => [ '0.3',          '1'    ],
+		'^xft2(-dev|-shlibs)?$'               => [ '2.1.14',       '3'    ],
 	},
 };
 

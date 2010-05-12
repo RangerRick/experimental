@@ -690,7 +690,7 @@ diff -Nurd kdelibs-3.5.10/kinit/Makefile.am kdelibs-3.5.10-new/kinit/Makefile.am
  #    Boston, MA 02110-1301, USA.
  
 -INCLUDES = -I$(srcdir)/../libltdl/ $(all_includes) $(KDEINIT_XFT_INCLUDES)
-+INCLUDES = -I$(srcdir)/../libltdl/ -I$(top_srcdir)/kdecore -I$(top_srcdir)/kio -I$(top_srcdir)/kio/kio $(KDEINIT_XFT_INCLUDES) $(all_includes)
++INCLUDES = -I$(srcdir)/../libltdl/ -I$(top_srcdir)/kdecore -I$(top_srcdir)/kdeui -I$(top_srcdir)/kio -I$(top_srcdir)/kio/kio $(KDEINIT_XFT_INCLUDES) $(all_includes)
  
  SUBDIRS = . tests
  
