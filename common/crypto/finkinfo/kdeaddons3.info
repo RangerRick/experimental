@@ -47,8 +47,8 @@ CustomMirror: RangerMirror
 Source: mirror:kde:stable/%v/src/kdeaddons-%v.tar.bz2
 Source-MD5: c69d082407b2c1bb46d078f8ac5d2bea
 SourceDirectory: kdeaddons-%v
-Source2: mirror:custom:kde-admindir/kde-admindir-5e6407d.tar.bz2
-Source2-MD5: 1c35d1b8ae244b5928b4e4f91fcaa529
+Source2: mirror:custom:kde-admindir/kde-admindir-fdf347a.tar.bz2
+Source2-MD5: 60150d6548c00fcdab083c84219fc984
 Source2ExtractDir: kdeaddons-%v
 PatchFile: %n.patch
 PatchFile-MD5: 31c0a3ab36678b48ab095ec70e5ac888

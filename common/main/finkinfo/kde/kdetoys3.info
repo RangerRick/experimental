@@ -36,8 +36,8 @@ CustomMirror: RangerMirror
 Source: mirror:kde:stable/%v/src/kdetoys-%v.tar.bz2
 Source-MD5: 1da4383e2d520dfd572edb33b708822d
 SourceDirectory: kdetoys-%v
-Source2: mirror:custom:kde-admindir/kde-admindir-5e6407d.tar.bz2
-Source2-MD5: 1c35d1b8ae244b5928b4e4f91fcaa529
+Source2: mirror:custom:kde-admindir/kde-admindir-fdf347a.tar.bz2
+Source2-MD5: 60150d6548c00fcdab083c84219fc984
 Source2ExtractDir: kdetoys-%v
 PatchFile: %n.patch
 PatchFile-MD5: 3c547daa8719553cbb1c0971baf7ab8d

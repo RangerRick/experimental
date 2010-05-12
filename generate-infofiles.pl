@@ -65,6 +65,7 @@ my $version_lookup = {
 		'^cocoa-sharp$'                       => [ '0.9.5',        '1'    ],
 		'^dbus(-dev|-shlibs)?$'               => [ '1.2.12',       '1'    ],
 		'^fink$'                              => [ '0.29.7',       '1'    ],
+		'^fink-package-precedence$'           => [ '0.7',          '1'    ],
 		'^freetype219(-shlibs)?$'             => [ '2.3.12',       '1'    ],
 		'^gecko-sharp(-firefox.|-seamonkey)?$'=> [ '2.0',          '1044' ],
 		'^gecko-sharp1(-firefox.|-seamonkey)?$'=> [ '0.6',         '1033' ],

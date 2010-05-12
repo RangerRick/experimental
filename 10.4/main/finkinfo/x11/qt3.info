@@ -25,7 +25,8 @@ BuildDepends: <<
 	libjpeg8,
 	macosx (>= 10.4.3-1),
 	pkgconfig (>= 0.23-1),
-	x11-dev
+	x11-dev,
+	xft2-dev
 <<
 BuildConflicts: autogen-dev
 Provides: %N-bin
@@ -326,7 +327,8 @@ SplitOff: <<
 		libgl-shlibs,
 		libpng14-shlibs,
 		libjpeg8-shlibs,
-		x11-shlibs
+		x11-shlibs,
+		xft2-shlibs
 	<<
 	Conflicts: <<
 		qt-shlibs,

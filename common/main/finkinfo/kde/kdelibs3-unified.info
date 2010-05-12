@@ -59,6 +59,7 @@ BuildDepends: <<
 	qt3-doc,
 	xdg-base,
 	x11-dev,
+	xft2-dev,
 	xmkmf
 <<
 BuildConflicts: unsermake
@@ -96,8 +97,8 @@ CustomMirror: <<
 <<
 Source: mirror:kde:stable/%v/src/kdelibs-%v.tar.bz2
 Source-MD5: 43cd55ed15f63b5738d620ef9f9fd568
-Source2: mirror:custom:kde-admindir/kde-admindir-5e6407d.tar.bz2
-Source2-MD5: 1c35d1b8ae244b5928b4e4f91fcaa529
+Source2: mirror:custom:kde-admindir/kde-admindir-fdf347a.tar.bz2
+Source2-MD5: 60150d6548c00fcdab083c84219fc984
 Source2ExtractDir: kdelibs-%v
 SourceDirectory: kdelibs-%v
 PatchFile: kdelibs3-unified.patch
@@ -132,7 +133,7 @@ CompileScript: <<
 	perl -pi -e 's/-weak_framework /-Wl,-weak_framework,/g' Makefile
 
 	./build-helper.sh make      %N %v %r make
-	fink-package-precedence --prohibit-bdep %N-dev .
+	fink-package-precedence .
 <<
 
 InstallScript: <<
@@ -220,7 +221,8 @@ SplitOff: <<
 		pcre-shlibs,
 		qt3-shlibs (>= 3.3.8-1021),
 		xdg-base,
-		x11-shlibs
+		x11-shlibs,
+		xft2-shlibs
 	<<
 	Replaces: <<
 		kdelibs3-dev,
