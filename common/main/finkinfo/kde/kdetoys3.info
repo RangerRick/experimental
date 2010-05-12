@@ -8,7 +8,7 @@ Maintainer: Benjamin Reed <kdetoys3@fink.raccoonfink.com>
 Depends: amor (>= %v-%r), kde-panel-kmoon (>= %v-%r), kodometer (>= %v-%r), kteatime (>= %v-%r), kworldclock (>= %v-%r), kde-panel-eyes (>= %v-%r), kde-panel-fifteen (>= %v-%r), kde-panel-worldwatch (>= %v-%r), ktux (>= %v-%r), kweather (>= %v-%r)
 BuildDepends: <<
 	arts-dev (>= 1.5.9-1),
-	autoconf (>= 2.59-1),
+	autoconf2.5,
 	cctools-single-module,
 	expat1,
 	fink (>= 0.20.2.1-1),

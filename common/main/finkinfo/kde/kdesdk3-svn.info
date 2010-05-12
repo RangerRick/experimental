@@ -20,7 +20,7 @@ BuildDepends: <<
 	libapr.0-dev,
 	libaprutil.0-dev,
 	arts-dev (>= 1.5.9-1),
-	autoconf (>= 2.59-1),
+	autoconf2.5,
 	cctools-single-module,
 	cyrus-sasl2-dev,
 	db47-aes | db47,

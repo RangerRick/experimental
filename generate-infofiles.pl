@@ -25,7 +25,7 @@ my %files;
 
 my $package_lookup = {
 	'all' => {
-		'^autoconf(2.5|2.6)?$'            => 'autoconf2.6',
+		'^autoconf$'                      => 'autoconf2.6',
 		'^automake1\..*$'                 => 'automake1.11',
 		'^boost1.35.systempython$'        => 'boost1.41.cmake',
 		'^boost1.35.systempython-shlibs$' => 'boost1.41.cmake-shlibs',

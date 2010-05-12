@@ -19,7 +19,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	audiofile (>= 0.2.6-11),
-	autoconf (>= 2.60-1),
+	autoconf2.5,
 	cctools-single-module,
 	esound,
 	expat1,
@@ -62,6 +62,7 @@ SourceDirectory: %n-%v
 PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1
 	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g; s,AH_CHECK_HEADERS,AC_CHECK_HEADERS,g' admin/*
+	perl -pi -e 's,-fPIC,-fpic,g' admin/*
 <<
 PatchFile: %n.patch
 PatchFile-MD5: 9a104e152e9590b3ed5436dc2fc0db4e

@@ -9,7 +9,7 @@ Depends: kde-extra-sounds (>= %v-%r), kde-extra-themes (>= %v-%r), kde-extra-wal
 BuildDepends: <<
 	arts-dev (>= 1.5.9-1),
 	audiofile (>= 0.2.6-11),
-	autoconf (>= 2.59-1),
+	autoconf2.5,
 	cctools-single-module,
 	esound,
 	expat1,

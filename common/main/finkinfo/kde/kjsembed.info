@@ -4,7 +4,7 @@ Revision: 1
 Depends: kdelibs3-unified-shlibs (>= %v-1)
 BuildDepends: <<
 	arts-dev (>= 1.5.9-1),
-	autoconf (>= 2.59-1),
+	autoconf2.5,
 	cctools-single-module,
 	expat1,
 	fink (>= 0.20.2.1-1),
@@ -21,7 +21,7 @@ BuildDepends: <<
 	unsermake (>= 0.4-0.20060316.1),
 	x11-dev
 <<
-Recommends: kdebase3-ssl (>= %v-1) | kdebase3 (>= %v-1)
+Recommends: kdebase3-unified-ssl (>= %v-1)
 Maintainer: Benjamin Reed <kjsembed@fink.raccoonfink.com>
 
 CustomMirror: RangerMirror
@@ -30,10 +30,12 @@ Source-MD5: 7d5119160ac3688ac1a63954d03ab4a8
 Source2: mirror:custom:kde-admindir/kde-admindir-1605.tar.bz2
 Source2-MD5: e2dccadc3d36718ef9a7e3c7789e2bdf
 Source2ExtractDir: kdebindings-%v
+PatchFile: %n.patch
+PatchFile-MD5: c0a5a9f90f5ec657e74a3a0bad2e5e2c
 GCC: 4.0
 
 PatchScript: <<
-	sed -e 's,@FINKPREFIX@,%p,g' %a/%n.patch | patch -p1 
+	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 
 	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g' admin/*.*
 <<
 DocFiles: AUTHORS COPYING* ChangeLog INSTALL NEWS README
