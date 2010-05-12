@@ -21,7 +21,7 @@ BuildDepends: <<
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.12-1),
 	libgl-dev,
-	libpng14 (>= 1.4.1-2),
+	libpng14,
 	libjpeg8,
 	macosx (>= 10.4.3-1),
 	pkgconfig (>= 0.23-1),
@@ -43,8 +43,6 @@ Replaces: <<
 	%N-designer
 <<
 Suggests: <<
-	libpng14,
-	libjpeg8,
 	%N-mysql (>= %v-1),
 	%N-postgresql (>= %v-1)
 <<
@@ -118,7 +116,7 @@ PatchScript: <<
 	done
 <<
 PatchFile: %n.patch
-PatchFile-MD5: 53a3ea25aea5f687fbaef9b88d44c0c1
+PatchFile-MD5: e718fa9a9b61fe3d5f47ff3c2f0bab89
 
 NoSetLDFLAGS: true
 UseMaxBuildJobs: true
@@ -168,12 +166,18 @@ CompileScript: <<
 	else
 		LIBRESOLV=""
 	fi
+
+	if [ -x /usr/bin/gcc-4.2 ]; then
+		export CC="gcc-4.2" CXX="g++-4.2"
+		perl -pi -e 's,= cc,= gcc-4.2,g; s,= c\+\+,= g++-4.2,g' mkspecs/darwin-g++/qmake.conf
+	fi
+
 	# we have to force header/lib ordering or things get really wiggy
 	# looks ugly, but it's better than patching the source
 
 	# TODO: also, can't change the -buildkey until the next major OS release, unless
 	# I want to break binary-compat.  Wish I'd noticed it before it made it into
-	# the wild.   Lookin' forward to 10.5!  :)
+	# the wild.
 
 	echo "yes" | ./configure $DEFINES \
 		'-I$(QTDIR)/include' '-L$(QTDIR)/lib' \
@@ -185,7 +189,7 @@ CompileScript: <<
 		-platform darwin-g++ -xplatform darwin-g++ \
 		-prefix '%p/lib/qt3' -docdir '%p/share/doc/%n' \
 		-headerdir '%p/include/qt' -libdir '%p/lib' \
-		-pch -release -shared -no-exceptions -thread -cups -stl \
+		-no-pch -release -shared -no-exceptions -thread -cups -stl \
 		-qt-gif -plugin-imgfmt-png -plugin-imgfmt-jpeg -plugin-imgfmt-mng \
 		-system-libpng -system-libjpeg -system-zlib -largefile \
 		-sm -xinerama -xrender -xft -xkb \
@@ -200,7 +204,7 @@ CompileScript: <<
 	/usr/bin/find . -name Makefile -print0 | xargs -0 perl -pi -e "s,\\$\\(INSTALL_ROOT\\)$FixifiedSW,\\$\\(INSTALL_ROOT\\)%p,g"
 
 	make
-	fink-package-precedence --prohibit-bdep %N .
+	fink-package-precedence --no-headers .
 <<
 
 InstallScript: <<
@@ -319,7 +323,7 @@ SplitOff: <<
 		fontconfig2-shlibs (>= 2.4.1-1),
 		freetype219-shlibs (>= 2.3.12-1),
 		libgl-shlibs,
-		libpng14-shlibs (>= 1.4.1-2),
+		libpng14-shlibs,
 		libjpeg8-shlibs,
 		x11-shlibs
 	<<
@@ -390,10 +394,7 @@ SplitOff2: <<
 <<
 SplitOff3: <<
 	Package: %N-designer-shlibs
-	Depends: <<
-		%N-shlibs (= %v-%r),
-		x11-shlibs
-	<<
+	Depends: %N-shlibs (= %v-%r)
 	Conflicts: qt2
 	Replaces: <<
 		%N-designer,
@@ -408,12 +409,7 @@ SplitOff3: <<
 <<
 SplitOff4: <<
 	Package: %N-linguist
-	Depends: <<
-		%N-shlibs (= %v-%r),
-		libjpeg8-shlibs,
-		libpng14-shlibs (>= 1.4.1-2),
-		x11
-	<<
+	Depends: %N-shlibs (= %v-%r)
 	Conflicts: qt2
 	Replaces: <<
 		%N-bin,
