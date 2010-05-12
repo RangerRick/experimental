@@ -106,7 +106,7 @@ PatchScript: <<
 	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g;' admin/*
 <<
 PatchFile: kdelibs3-unified.patch
-PatchFile-MD5: b6582a4019e92f08d688b836dfbd3726
+PatchFile-MD5: dd01d55b19dbd69b38230fa42e93a070
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
@@ -134,7 +134,7 @@ CompileScript: <<
 	perl -pi -e 's/-weak_framework /-Wl,-weak_framework,/g' Makefile
 
 	./build-helper.sh make      %N %v %r make
-	fink-package-precedence .
+	fink-package-precedence --prohibit-bdep %N-dev .
 <<
 
 InstallScript: <<

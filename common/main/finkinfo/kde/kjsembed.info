@@ -20,7 +20,8 @@ BuildDepends: <<
 	pcre,
 	pkgconfig (>= 0.22-3),
 	qt3 (>= 3.3.5-3),
-	x11-dev
+	x11-dev,
+	xft2-dev
 <<
 BuildConflicts: unsermake
 Recommends: kdebase3-unified-ssl (>= %v-1)
@@ -33,7 +34,7 @@ Source2: mirror:custom:kde-admindir/kde-admindir-fdf347a.tar.bz2
 Source2-MD5: 60150d6548c00fcdab083c84219fc984
 Source2ExtractDir: kdebindings-%v
 PatchFile: %n.patch
-PatchFile-MD5: c0a5a9f90f5ec657e74a3a0bad2e5e2c
+PatchFile-MD5: 914b107be54e7a5195526b5053a16707
 GCC: 4.0
 
 PatchScript: <<

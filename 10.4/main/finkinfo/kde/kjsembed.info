@@ -24,7 +24,8 @@ BuildDepends: <<
 	pcre,
 	pkgconfig (>= 0.23-1),
 	qt3 (>= 3.3.8-2000),
-	x11-dev
+	x11-dev,
+	xft2-dev
 <<
 BuildConflicts: unsermake
 Recommends: kdebase3-unified-ssl (>= 3.5.10-10)
@@ -45,7 +46,7 @@ PatchScript: <<
 	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g' admin/*.*
 <<
 PatchFile: %n.patch
-PatchFile-MD5: c0a5a9f90f5ec657e74a3a0bad2e5e2c
+PatchFile-MD5: 914b107be54e7a5195526b5053a16707
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
