@@ -70,7 +70,7 @@ Source2ExtractDir: qt-x11-free-%v
 SourceDirectory: qt-x11-free-%v
 PatchScript: <<
 	#!/bin/sh -ex
-	sed -e 's|@PREFIX@|%p|g' <%a/%n.patch | patch -p1
+	sed -e 's|@PREFIX@|%p|g' < %{PatchFile} | patch -p1
 	perl -pi -e 's|cp \-P|/bin/cp \-RL|' qmake/Makefile.unix
 	
 	for patch in \
@@ -117,6 +117,8 @@ PatchScript: <<
 	patch -p0 --fuzz=4 < $patch
 	done
 <<
+PatchFile: %n.patch
+PatchFile-MD5: 53a3ea25aea5f687fbaef9b88d44c0c1
 
 NoSetLDFLAGS: true
 UseMaxBuildJobs: true
