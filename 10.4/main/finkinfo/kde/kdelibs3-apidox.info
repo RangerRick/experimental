@@ -40,7 +40,7 @@ BuildDepends: <<
 	pcre,
 	pcre-bin,
 	pkgconfig (>= 0.23-1),
-	qt3 (>= 3.3.8-1027),
+	qt3 (>= 3.3.8-2000),
 	qt3-doc,
 	xdg-base,
 	x11-dev,
@@ -63,14 +63,11 @@ CustomMirror: <<
 <<
 Source: mirror:kde:stable/%v/src/kdelibs-%v.tar.bz2
 Source-MD5: 43cd55ed15f63b5738d620ef9f9fd568
-Source2: mirror:custom:kde-admindir/kde-admindir-1605.tar.bz2
-Source2-MD5: e2dccadc3d36718ef9a7e3c7789e2bdf
+Source2: mirror:custom:kde-admindir/kde-admindir-5e6407d.tar.bz2
+Source2-MD5: 1c35d1b8ae244b5928b4e4f91fcaa529
 Source2ExtractDir: kdelibs-%v
 SourceDirectory: kdelibs-%v
-PatchScript: <<
-	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g;' admin/*
-	perl -pi -e 's,1.7,1.11,g' admin/cvs.sh
-<<
+PatchScript: 	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g;' admin/*
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
@@ -93,7 +90,7 @@ CompileScript: <<
 InstallScript: <<
 #!/bin/sh -ev
 
-	export HOME=/tmp PREFIX="%p" QTDOCDIR="%p/share/doc/qt3/html"
+	export HOME=/tmp PREFIX="%p" QTDOCDIR="%p/share/doc/qt3/html" USE_UNSERMAKE=0
 	. ./environment-helper.sh
 
 	./build-helper.sh install-apidox %N %v %r make -j1 install-apidox DESTDIR=%d

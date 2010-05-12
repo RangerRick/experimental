@@ -21,7 +21,7 @@ BuildDepends: <<
 	pixman (>= 0.16.0-1),
 	pkgconfig (>= 0.23-1),
 	poppler1 (>= %v-1),
-	qt3 (>= 3.3.8-1027),
+	qt3 (>= 3.3.8-2000),
 	x11-dev,
 	xft2-dev
 <<
@@ -75,7 +75,7 @@ SplitOff: <<
 	Depends: <<
 		expat1-shlibs,
 		poppler1-shlibs (>= %v-1),
-		qt3-shlibs (>= 3.3.8-1027)
+		qt3-shlibs (>= 3.3.8-2000)
 	<<
 	DocFiles: AUTHORS COPYING ChangeLog NEWS README README-XPDF TODO
 	Files: lib/libpoppler-qt.1*.dylib

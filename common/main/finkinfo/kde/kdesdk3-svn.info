@@ -55,8 +55,8 @@ CustomMirror: RangerMirror
 Source: mirror:kde:stable/%v/src/kdesdk-%v.tar.bz2
 Source-MD5: ad711d1ce09242bd13b73a9a005f3143
 SourceDirectory: kdesdk-%v
-Source2: mirror:custom:kde-admindir/kde-admindir-1605.tar.bz2
-Source2-MD5: e2dccadc3d36718ef9a7e3c7789e2bdf
+Source2: mirror:custom:kde-admindir/kde-admindir-5e6407d.tar.bz2
+Source2-MD5: 1c35d1b8ae244b5928b4e4f91fcaa529
 Source2ExtractDir: kdesdk-%v
 
 PatchScript: <<

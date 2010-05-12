@@ -14,13 +14,14 @@ Depends: <<
 	libjpeg8-shlibs,
 	libpng14-shlibs (>= 1.4.1-2),
 	pcre-shlibs,
-	qt3-shlibs (>= 3.3.8-1027)
+	qt3-shlibs (>= 3.3.8-2000)
 <<
 BuildDepends: <<
 	arts-dev (>= 1.5.10-10),
 	aspell-dev,
 	audiofile (>= 0.2.6-11),
 	autoconf2.5,
+	automake1.11,
 	bzip2-dev,
 	cctools-single-module,
 	cups-dev,
@@ -29,6 +30,7 @@ BuildDepends: <<
 	esound,
 	expat1,
 	fink (>= 0.29.7-1),
+	fink-package-precedence,
 	flex-devel,
 	#	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.12-1),
@@ -53,13 +55,13 @@ BuildDepends: <<
 	pcre,
 	pcre-bin,
 	pkgconfig (>= 0.23-1),
-	qt3 (>= 3.3.8-1027),
+	qt3 (>= 3.3.8-2000),
 	qt3-doc,
-	unsermake (>= 0.4-0.20060316.1),
 	xdg-base,
 	x11-dev,
 	xmkmf
 <<
+BuildConflicts: unsermake
 Replaces: <<
 	conectiva-crystal,
 	kbabel (<< 3.1.90-1),
@@ -94,8 +96,8 @@ CustomMirror: <<
 <<
 Source: mirror:kde:stable/%v/src/kdelibs-%v.tar.bz2
 Source-MD5: 43cd55ed15f63b5738d620ef9f9fd568
-Source2: mirror:custom:kde-admindir/kde-admindir-1605.tar.bz2
-Source2-MD5: e2dccadc3d36718ef9a7e3c7789e2bdf
+Source2: mirror:custom:kde-admindir/kde-admindir-5e6407d.tar.bz2
+Source2-MD5: 1c35d1b8ae244b5928b4e4f91fcaa529
 Source2ExtractDir: kdelibs-%v
 SourceDirectory: kdelibs-%v
 PatchScript: <<
@@ -112,7 +114,7 @@ ConfigureParams: --without-lua --enable-cups --with-ldap=framework --with-gssapi
 CompileScript: <<
 #!/bin/sh -ev
 
-	export PREFIX="%p" USE_UNSERMAKE=1
+	export PREFIX="%p" USE_UNSERMAKE=0
 	. ./environment-helper.sh
 
 	case $SW_VERSION in 
@@ -130,16 +132,17 @@ CompileScript: <<
 	perl -pi -e 's/-framework /-Wl,-framework,/g' Makefile
 	perl -pi -e 's/-weak_framework /-Wl,-weak_framework,/g' Makefile
 
-	./build-helper.sh make      %N %v %r unsermake $UNSERMAKEFLAGS
+	./build-helper.sh make      %N %v %r make
+	fink-package-precedence --prohibit-bdep %N-dev .
 <<
 
 InstallScript: <<
 #!/bin/sh -ev
 
-	export PREFIX="%p" USE_UNSERMAKE=1
+	export PREFIX="%p" USE_UNSERMAKE=0
 	. ./environment-helper.sh
 
-	./build-helper.sh install        %N %v %r unsermake -p -j1 install DESTDIR=%d
+	./build-helper.sh install        %N %v %r make -p -j1 install DESTDIR=%d
 
 	cat <<END >%i/bin/kde-update-caches.sh
 #!/bin/sh
@@ -202,7 +205,7 @@ SplitOff: <<
 		macosx (>= 10.4.3-1),
 		openslp-ssl-shlibs | openslp-shlibs,
 		pcre-shlibs,
-		qt3-shlibs (>= 3.3.8-1027),
+		qt3-shlibs (>= 3.3.8-2000),
 		xdg-base,
 		x11-shlibs
 	<<
@@ -421,7 +424,7 @@ SplitOff2: <<
 		openslp-ssl-dev | openslp-dev,
 		pcre,
 		pcre-bin,
-		qt3 (>= 3.3.8-1027),
+		qt3 (>= 3.3.8-2000),
 		qt3-doc
 	<<
 	BuildDependsOnly: true

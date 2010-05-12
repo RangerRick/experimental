@@ -19,7 +19,7 @@ BuildDepends: <<
 	libpng14 (>= 1.4.1-2),
 	pcre,
 	pkgconfig (>= 0.23-1),
-	qt3 (>= 3.3.8-1027),
+	qt3 (>= 3.3.8-2000),
 	x11-dev
 <<
 Recommends: kdebase3-ssl (>= 3.5.10-10) | kdebase3 (>= 3.5.10-10)

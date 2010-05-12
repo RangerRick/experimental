@@ -64,7 +64,7 @@ BuildDepends: <<
 	poppler2,
 	postgresql84-dev,
 	python25,
-	qt3 (>= 3.3.8-1027),
+	qt3 (>= 3.3.8-2000),
 	ruby18-dev,
 	sqlite3-dev,
 	system-openssl-dev,

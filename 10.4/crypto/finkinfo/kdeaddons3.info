@@ -45,7 +45,7 @@ BuildDepends: <<
 	libvorbis0,
 	pkgconfig (>= 0.23-1),
 	pcre,
-	qt3 (>= 3.3.8-1027),
+	qt3 (>= 3.3.8-2000),
 	unsermake (>= 0.4-0.20060316.1),
 	x11-dev,
 	xmkmf
@@ -60,8 +60,8 @@ CustomMirror: <<
 <<
 Source: mirror:kde:stable/%v/src/kdeaddons-%v.tar.bz2
 Source-MD5: c69d082407b2c1bb46d078f8ac5d2bea
-Source2: mirror:custom:kde-admindir/kde-admindir-1605.tar.bz2
-Source2-MD5: e2dccadc3d36718ef9a7e3c7789e2bdf
+Source2: mirror:custom:kde-admindir/kde-admindir-5e6407d.tar.bz2
+Source2-MD5: 1c35d1b8ae244b5928b4e4f91fcaa529
 Source2ExtractDir: kdeaddons-%v
 SourceDirectory: kdeaddons-%v
 PatchScript: <<

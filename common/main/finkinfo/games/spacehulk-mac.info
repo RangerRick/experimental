@@ -9,8 +9,8 @@ CustomMirror: RangerMirror
 Source: http://r.vinot.free.fr/spacehulk/spacehulk-%v-beta1.tar.gz
 Source-MD5: 43eb76b5a2b59e8af2205bff145cbfb2
 SourceDirectory: spacehulk-%v-beta1
-Source2: mirror:custom:kde-admindir/kde-admindir-1605.tar.bz2
-Source2-MD5: e2dccadc3d36718ef9a7e3c7789e2bdf
+Source2: mirror:custom:kde-admindir/kde-admindir-5e6407d.tar.bz2
+Source2-MD5: 1c35d1b8ae244b5928b4e4f91fcaa529
 Source2ExtractDir: spacehulk-%v-beta1
 GCC: 4.0
 

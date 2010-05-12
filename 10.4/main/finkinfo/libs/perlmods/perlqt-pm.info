@@ -24,7 +24,7 @@ BuildDepends: <<
 	libsmoke (>= 1:3.5.2-1),
 	libtool2 (>= 1.5.10-1),
 	perl%type_pkg[perl]-core,
-	qt3 (>= 3.3.8-1027),
+	qt3 (>= 3.3.8-2000),
 	x11-dev,
 	xmkmf
 <<
@@ -48,8 +48,8 @@ CustomMirror: <<
 <<
 Source: mirror:custom:PerlQt-3-20051212.tar.bz2
 Source-MD5: 823632f2396c4d132945942c16ae7437
-Source2: mirror:custom:kde-admindir/kde-admindir-1605.tar.bz2
-Source2-MD5: e2dccadc3d36718ef9a7e3c7789e2bdf
+Source2: mirror:custom:kde-admindir/kde-admindir-5e6407d.tar.bz2
+Source2-MD5: 1c35d1b8ae244b5928b4e4f91fcaa529
 Source2ExtractDir: PerlQt-3
 SourceDirectory: PerlQt-3
 PatchScript: <<

@@ -6,11 +6,11 @@ License: GPL
 Maintainer: Benjamin Reed <spacehulk@fink.raccoonfink.com>
 
 Depends: <<
-	qt3-shlibs (>= 3.3.8-1027),
+	qt3-shlibs (>= 3.3.8-2000),
 	x11-shlibs
 <<
 BuildDepends: <<
-	qt3 (>= 3.3.8-1027),
+	qt3 (>= 3.3.8-2000),
 	x11,
 	x11-dev
 <<

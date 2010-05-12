@@ -7,7 +7,7 @@ Maintainer: Benjamin Reed <qsa@fink.raccoonfink.com>
 
 Depends: %N-shlibs
 BuildDepends: qt3
-Recommends: qt3 (>= 3.3.8-1027)
+Recommends: qt3 (>= 3.3.8-2000)
 BuildDependsOnly: true
 
 CustomMirror: <<
@@ -53,7 +53,7 @@ InstallScript: <<
 DocFiles: INSTALL  LICENSE.GPL  README  RELEASENOTES
 SplitOff: <<
 	Package: %N-shlibs
-	Depends: qt3-shlibs (>= 3.3.8-1027)
+	Depends: qt3-shlibs (>= 3.3.8-2000)
 	DocFiles: LICENSE*
 	Files: lib/libqsa.1*.dylib
 	Shlibs: %p/lib/libqsa.1.dylib 1.0.0 %n (>= 0.1-0)

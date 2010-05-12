@@ -42,7 +42,7 @@ BuildDepends: <<
 	libmad,
 	pcre,
 	pkgconfig (>= 0.23-1),
-	qt3 (>= 3.3.8-1027),
+	qt3 (>= 3.3.8-2000),
 	qt3-doc,
 	system-openssl-dev,
 	xfontpath,
@@ -78,8 +78,8 @@ CustomMirror: <<
 <<
 Source: mirror:kde:stable/%v/src/kdebase-%v.tar.bz2
 Source-MD5: 88237188271fbf1e6bcd40180a75d953
-Source2: mirror:custom:kde-admindir/kde-admindir-1605.tar.bz2
-Source2-MD5: e2dccadc3d36718ef9a7e3c7789e2bdf
+Source2: mirror:custom:kde-admindir/kde-admindir-5e6407d.tar.bz2
+Source2-MD5: 1c35d1b8ae244b5928b4e4f91fcaa529
 Source2ExtractDir: kdebase-%v
 SourceDirectory: kdebase-%v
 PatchScript: <<

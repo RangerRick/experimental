@@ -1,6 +1,6 @@
 Package: qt3
 Version: 3.3.8
-Revision: 1027
+Revision: 2000
 Description: Cross-Platform GUI application framework
 License: GPL
 Maintainer: Benjamin Reed <qt3@fink.raccoonfink.com>
@@ -17,6 +17,7 @@ BuildDepends: <<
 	cctools (>= 446-0) | cctools-single-module,
 	cups-dev,
 	fink (>= 0.29.7-1),
+	fink-package-precedence,
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.12-1),
 	libgl-dev,
@@ -197,6 +198,7 @@ CompileScript: <<
 	/usr/bin/find . -name Makefile -print0 | xargs -0 perl -pi -e "s,\\$\\(INSTALL_ROOT\\)$FixifiedSW,\\$\\(INSTALL_ROOT\\)%p,g"
 
 	make
+	fink-package-precedence --prohibit-bdep %N .
 <<
 
 InstallScript: <<

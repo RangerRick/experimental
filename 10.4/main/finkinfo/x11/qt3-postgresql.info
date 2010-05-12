@@ -1,17 +1,17 @@
 Package: qt3-postgresql
 Version: 3.3.8
-Revision: 1
+Revision: 2000
 Description: PostgreSQL Plugin for the Qt Toolkit
 License: GPL
 Maintainer: Benjamin Reed <qt3-postgresql@fink.raccoonfink.com>
 
 Depends: <<
 	postgresql82-shlibs,
-	qt3-shlibs (>= 3.3.8-1027)
+	qt3-shlibs (>= 3.3.8-2000)
 <<
 BuildDepends: <<
 	postgresql82-dev,
-	qt3 (>= 3.3.8-1027)
+	qt3 (>= 3.3.8-2000)
 <<
 Replaces: <<
 	qt3,

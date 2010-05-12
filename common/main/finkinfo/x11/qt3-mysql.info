@@ -1,6 +1,6 @@
 Package: qt3-mysql
 Version: 3.3.8
-Revision: 1
+Revision: 2000
 GCC: 4.0
 CustomMirror: <<
   Primary: ftp://ftp.trolltech.com/qt/source

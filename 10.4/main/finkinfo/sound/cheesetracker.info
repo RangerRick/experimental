@@ -8,14 +8,14 @@ Maintainer: Benjamin Reed <cheesetracker@fink.raccoonfink.com>
 Depends: <<
 	ladspa,
 	libsigc++12-shlibs,
-	qt3-shlibs (>= 3.3.8-1027),
+	qt3-shlibs (>= 3.3.8-2000),
 	x11-shlibs
 <<
 BuildDepends: <<
 	ladspa-dev,
 	libsigc++12,
 	pkgconfig (>= 0.23-1),
-	qt3 (>= 3.3.8-1027),
+	qt3 (>= 3.3.8-2000),
 	scons (>= 0.90-2),
 	sed,
 	x11,

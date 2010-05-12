@@ -1,6 +1,6 @@
 Package: kjsembed
 Version: 3.5.10
-Revision: 1
+Revision: 10
 Description: KDE - embedded javascript interpreter
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kjsembed@fink.raccoonfink.com>
@@ -9,9 +9,11 @@ Depends: kdelibs3-unified-shlibs (>= 3.5.10-10)
 BuildDepends: <<
 	arts-dev (>= 1.5.10-10),
 	autoconf2.5,
+	automake1.11,
 	cctools-single-module,
 	expat1,
 	fink (>= 0.29.7-1),
+	fink-package-precedence,
 	freetype219 (>= 2.3.12-1),
 	kdelibs3-unified-dev (>= 3.5.10-10),
 	libart2 (>= 2.3.20-1),
@@ -21,10 +23,10 @@ BuildDepends: <<
 	libpng14 (>= 1.4.1-2),
 	pcre,
 	pkgconfig (>= 0.23-1),
-	qt3 (>= 3.3.8-1027),
-	unsermake (>= 0.4-0.20060316.1),
+	qt3 (>= 3.3.8-2000),
 	x11-dev
 <<
+BuildConflicts: unsermake
 Recommends: kdebase3-unified-ssl (>= 3.5.10-10)
 GCC: 4.0
 
@@ -35,8 +37,8 @@ CustomMirror: <<
 <<
 Source: mirror:kde:stable/%v/src/kdebindings-%v.tar.bz2
 Source-MD5: 7d5119160ac3688ac1a63954d03ab4a8
-Source2: mirror:custom:kde-admindir/kde-admindir-1605.tar.bz2
-Source2-MD5: e2dccadc3d36718ef9a7e3c7789e2bdf
+Source2: mirror:custom:kde-admindir/kde-admindir-5e6407d.tar.bz2
+Source2-MD5: 1c35d1b8ae244b5928b4e4f91fcaa529
 Source2ExtractDir: kdebindings-%v
 PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 
@@ -52,24 +54,25 @@ ConfigureParams: --with-distribution='Fink/Mac OS X'
 CompileScript: <<
 #!/bin/sh -ev
 
-	export PREFIX="%p" USE_UNSERMAKE=1
+	export PREFIX="%p" USE_UNSERMAKE=0
 	. ./environment-helper.sh
 
 	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
 	./build-helper.sh configure %N %v %r ./configure %c $CONFIGURE_PARAMS
 	pushd kjsembed
-	../build-helper.sh make      %N %v %r unsermake $UNSERMAKEFLAGS
+	../build-helper.sh make      %N %v %r make
+	fink-package-precedence --prohibit-bdep %N-dev .
 	popd
 <<
 
 InstallScript: <<
 #!/bin/sh -ev
 
-	export PREFIX="%p" USE_UNSERMAKE=1
+	export PREFIX="%p" USE_UNSERMAKE=0
 	. ./environment-helper.sh
 
 	pushd kjsembed
-	../build-helper.sh install %N %v %r unsermake -p -j1 install DESTDIR=%d
+	../build-helper.sh install %N %v %r make -p -j1 install DESTDIR=%d
 	popd
 <<
 DocFiles: AUTHORS COPYING* ChangeLog INSTALL NEWS README

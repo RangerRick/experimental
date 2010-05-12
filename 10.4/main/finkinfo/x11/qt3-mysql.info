@@ -1,17 +1,17 @@
 Package: qt3-mysql
 Version: 3.3.8
-Revision: 1
+Revision: 2000
 Description: MySQL Plugin for the Qt Toolkit
 License: GPL
 Maintainer: Benjamin Reed <qt3-mysql@fink.raccoonfink.com>
 
 Depends: <<
 	mysql14-shlibs,
-	qt3-shlibs (>= 3.3.8-1027)
+	qt3-shlibs (>= 3.3.8-2000)
 <<
 BuildDepends: <<
 	mysql14-dev,
-	qt3 (>= 3.3.8-1027)
+	qt3 (>= 3.3.8-2000)
 <<
 Replaces: <<
 	qt3,

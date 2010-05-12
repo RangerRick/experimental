@@ -1,6 +1,6 @@
 Package: qt3
 Version: 3.3.8
-Revision: 1027
+Revision: 2000
 GCC: 4.0
 CustomMirror: <<
 	Primary: ftp://ftp.trolltech.com/qt/source
@@ -38,6 +38,7 @@ BuildDepends: <<
 	cctools (>= 446) | cctools-single-module,
 	cups-dev,
 	fink (>= 0.17.3-1),
+	fink-package-precedence,
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.7-7),
 	libgl-dev,
@@ -180,6 +181,7 @@ CompileScript: <<
 	/usr/bin/find . -name Makefile -print0 | xargs -0 perl -pi -e "s,\\$\\(INSTALL_ROOT\\)$FixifiedSW,\\$\\(INSTALL_ROOT\\)%p,g"
 
 	make
+	fink-package-precedence --prohibit-bdep %N .
 <<
 InstallScript: <<
 #!/bin/sh -ex

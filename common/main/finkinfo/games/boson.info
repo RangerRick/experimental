@@ -28,8 +28,8 @@ Maintainer: Benjamin Reed <boson@fink.raccoonfink.com>
 CustomMirror: RangerMirror
 Source: mirror:sourceforge:%n/%n-all-%v.tar.bz2
 Source-MD5: 1b91bbdda1ff81d4d60f80c8175d974b
-Source2: mirror:custom:kde-admindir/kde-admindir-1605.tar.bz2
-Source2-MD5: e2dccadc3d36718ef9a7e3c7789e2bdf
+Source2: mirror:custom:kde-admindir/kde-admindir-5e6407d.tar.bz2
+Source2-MD5: 1c35d1b8ae244b5928b4e4f91fcaa529
 Source2ExtractDir: %n-all-%v
 Patch: %n.patch
 GCC: 4.0
