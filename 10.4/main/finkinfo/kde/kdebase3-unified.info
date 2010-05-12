@@ -16,6 +16,7 @@ BuildDepends: <<
 	arts-dev (>= 1.5.10-10),
 	audiofile (>= 0.2.6-11),
 	autoconf2.5,
+	automake1.11,
 	cctools-single-module,
 	cups-dev,
 	cyrus-sasl2-dev,
@@ -24,6 +25,7 @@ BuildDepends: <<
 	esound,
 	expat1,
 	fink (>= 0.29.7-1),
+	fink-package-precedence,
 	#	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.12-1),
 	libgettext8-dev,
@@ -46,10 +48,11 @@ BuildDepends: <<
 	qt3-doc,
 	system-openssl-dev,
 	xfontpath,
-	unsermake (>= 0.4-0.20060316.1),
 	x11-dev,
+	xft2-dev (>= 2.1.14-3),
 	xmkmf
 <<
+BuildConflicts: unsermake
 Provides: kate, kdm, konqueror, konsole, kwrite
 Conflicts: kio-fish
 Replaces: <<
@@ -88,7 +91,7 @@ PatchScript: <<
 	perl -pi -e 's/-Xlinker -framework -Xlinker (\S*)/-Wl,-framework,$1/g; s/-framework (\S*)/-Wl,-framework,$1/g;' configure
 <<
 PatchFile: kdebase3-unified.patch
-PatchFile-MD5: e25a9629d5eb55bc3c3d76575702dda3
+PatchFile-MD5: 51415324375b6d486c14f896299e5b76
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
@@ -102,23 +105,24 @@ CompileScript: <<
 		exit 1
 	fi
 
-	export PREFIX="%p" USE_UNSERMAKE=1
+	export PREFIX="%p" USE_UNSERMAKE=0
 	. ./environment-helper.sh
 
 	perl -pi -e 's,FONTINST_SUBDIR="kfontinst",FONTINST_SUBDIR="",' kcontrol/kfontinst/configure.in.in
 
 	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
 	./build-helper.sh configure %N %v %r ./configure %c $CONFIGURE_PARAMS
-	./build-helper.sh make      %N %v %r unsermake $UNSERMAKEFLAGS KDM_FLAGS="-UHAVE_UTMPX -DBSD_UTMP=1"
+	./build-helper.sh make      %N %v %r make KDM_FLAGS="-UHAVE_UTMPX -DBSD_UTMP=1"
+	fink-package-precedence --prohibit-bdep %N-dev .
 <<
 
 InstallScript: <<
 #!/bin/sh -ev
 
-	export PREFIX="%p" USE_UNSERMAKE=1
+	export PREFIX="%p" USE_UNSERMAKE=0
 	. ./environment-helper.sh
 
-	./build-helper.sh install        %N %v %r unsermake -p -j1 install DESTDIR=%d
+	./build-helper.sh install        %N %v %r make -p -j1 install DESTDIR=%d
 
 	mkdir -p %i/share/doc/installed-packages
 	touch %i/share/doc/installed-packages/%N

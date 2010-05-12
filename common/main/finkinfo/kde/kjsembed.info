@@ -21,7 +21,7 @@ BuildDepends: <<
 	pkgconfig (>= 0.22-3),
 	qt3 (>= 3.3.5-3),
 	x11-dev,
-	xft2-dev
+	xft2-dev (>= 2.1-1)
 <<
 BuildConflicts: unsermake
 Recommends: kdebase3-unified-ssl (>= %v-1)
