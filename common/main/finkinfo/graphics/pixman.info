@@ -1,12 +1,16 @@
 Package: pixman
-Version: 0.18.0
-Revision: 2
+Version: 0.18.2
+Revision: 1
 Source: http://xorg.freedesktop.org/archive/individual/lib/pixman-%v.tar.bz2
-Source-MD5: a1b5a0a145cab653f5c1e8cf2f98f945
+Source-MD5: 8f0c47bbb12a0d9c0d14242596bf6bf9
 
 Conflicts: libpixman1
 Replaces: libpixman1
-BuildDepends: fink (>= 0.24.12-1), pkgconfig (>= 0.22-3)
+BuildDepends: <<
+	fink (>= 0.24.12-1),
+	fink-package-precedence (>= 0.7-1),
+	pkgconfig (>= 0.22-3)
+<<
 BuildDependsOnly: true
 Depends: %N-shlibs (= %v-%r)
 
@@ -19,7 +23,7 @@ PatchScript: <<
 <<
 
 NoSetLDFLAGS: true
-ConfigureParams: --disable-dependency-tracking --disable-gtk --disable-static
+ConfigureParams: --enable-dependency-tracking --disable-gtk --disable-static
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -28,6 +32,7 @@ CompileScript: <<
 	fi
 	./configure %c
 	make
+	fink-package-precedence --prohibit-bdep %N .
 <<
 InstallScript: make -j1 install DESTDIR="%d"
 SplitOff: <<

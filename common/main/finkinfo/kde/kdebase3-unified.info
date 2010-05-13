@@ -26,7 +26,7 @@ BuildDepends: <<
 	esound,
 	expat1,
 	fink (>= 0.26.0-1),
-	fink-package-precedence,
+	fink-package-precedence (>= 0.7-1),
 #	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.7-7),
 	libgettext3-dev,
