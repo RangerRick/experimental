@@ -15,7 +15,7 @@ BuildDepends: <<
 	cups-dev,
 	dbus-dev (>= 1.0.2-1),
 	dbus-qt3-dev,
-	doxygen (>= 1.5.6-1),
+	doxygen1.3,
 	esound,
 	expat1,
 	fink (>= 0.20.2.1-1),
@@ -69,13 +69,14 @@ ConfigureParams: --without-nfs --with-ldap=framework --with-distribution='Fink/M
 CompileScript: <<
 #!/bin/sh -ev
 
+	export PATH="%p/lib/doxygen1.3/bin:$PATH"
 	export HOME=/tmp PREFIX="%p" QTDOCDIR="%p/share/doc/qt3/html" USE_UNSERMAKE=0
 	. ./environment-helper.sh
 	export lt_cv_sys_max_cmd_len=65536
 
 	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
 	./build-helper.sh configure %N %v %r ./configure %c $CONFIGURE_PARAMS
-	./build-helper.sh apidox    %N %v %r make apidox
+	./build-helper.sh apidox    %N %v %r make apidox all_libraries="$ALL_LIBRARIES"
 <<
 
 InstallScript: <<
@@ -84,7 +85,7 @@ InstallScript: <<
 	export HOME=/tmp PREFIX="%p" QTDOCDIR="%p/share/doc/qt3/html"
 	. ./environment-helper.sh
 
-	./build-helper.sh install-apidox %N %v %r make -j1 install-apidox DESTDIR=%d
+	./build-helper.sh install-apidox %N %v %r make -j1 install-apidox-recurse DESTDIR=%d
 
 	mkdir -p %i/share/doc/installed-packages
 	touch %i/share/doc/installed-packages/%N

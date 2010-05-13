@@ -93,7 +93,7 @@ InstallScript: <<
 	export HOME=/tmp PREFIX="%p" QTDOCDIR="%p/share/doc/qt3/html" USE_UNSERMAKE=0
 	. ./environment-helper.sh
 
-	./build-helper.sh install-apidox %N %v %r make -j1 install-apidox DESTDIR=%d
+	./build-helper.sh install-apidox %N %v %r make -j1 install-apidox-recurse DESTDIR=%d
 
 	mkdir -p %i/share/doc/installed-packages
 	touch %i/share/doc/installed-packages/%N
