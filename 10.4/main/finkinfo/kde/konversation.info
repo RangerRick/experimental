@@ -8,7 +8,7 @@ Maintainer: Benjamin Reed <konversation@fink.raccoonfink.com>
 Depends: kdelibs3-unified (>= 3.5.10-10)
 BuildDepends: <<
 	arts-dev (>= 1.5.10-10),
-	autoconf2.6 (>= 2.59-1),
+	autoconf (>= 2.63-1),
 	cctools-single-module,
 	expat1,
 	fink (>= 0.29.7-1),

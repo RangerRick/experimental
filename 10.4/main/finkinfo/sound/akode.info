@@ -7,7 +7,7 @@ Maintainer: Benjamin Reed <akode@fink.raccoonfink.com>
 
 Depends: %N-shlibs (= %v-%r)
 BuildDepends: <<
-	autoconf2.6,
+	autoconf,
 	gettext-tools,
 	jack-dev,
 	libflac8-dev,

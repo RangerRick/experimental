@@ -5,11 +5,14 @@ Description: KDE - base system (API documentation)
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdebase3-apidox@fink.raccoonfink.com>
 
-Depends: kdebase3-unified (>= %v-1)
+Depends: <<
+	kdelibs3-apidox (>= %v-1),
+	kdebase3-unified (>= %v-1)
+<<
 BuildDepends: <<
 	arts-dev (>= 1.5.9-1),
 	audiofile (>= 0.2.6-11),
-	autoconf2.5,
+	autoconf (>= 2.60-1),
 	automake1.11,
 	cctools-single-module,
 	cups-dev,
@@ -23,6 +26,7 @@ BuildDepends: <<
 	libgettext3-dev,
 	gettext-tools,
 	glib2-dev (>= 2.14.0-1),
+	kdelibs3-apidox (>= %v-1),
 	kdelibs3-unified-dev (>= %v-1),
 	lesstif (>= 0.93.18-6),
 	libart2 (>= 2.3.19-1),

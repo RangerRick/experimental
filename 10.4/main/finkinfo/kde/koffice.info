@@ -23,7 +23,7 @@ BuildDepends: <<
 	aspell,
 	aspell-dev,
 	audiofile,
-	autoconf2.6 (>= 2.60-1),
+	autoconf (>= 2.63-1),
 	cctools-single-module,
 	esound (>= 0.2.38-1),
 	expat1,

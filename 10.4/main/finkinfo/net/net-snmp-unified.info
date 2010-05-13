@@ -10,7 +10,7 @@ Depends: <<
 	%N15-shlibs (>= %v-%r)
 <<
 BuildDepends: <<
-	autoconf2.6 (>= 2.63-1),
+	autoconf (>= 2.63-1),
 	automake1.10,
 	expat1,
 	fink (>= 0.29.7-1),

@@ -10,7 +10,7 @@ BuildDepends: <<
 	arts-dev (>= 1.5.10-10),
 	aspell-dev,
 	audiofile (>= 0.2.6-11),
-	autoconf2.5,
+	autoconf (>= 2.63-1),
 	automake1.11,
 	bzip2-dev,
 	cctools-single-module,

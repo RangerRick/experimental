@@ -19,7 +19,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	audiofile (>= 0.2.6-11),
-	autoconf2.5,
+	autoconf (>= 2.60-1),
 	automake1.11,
 	cctools-single-module,
 	esound,

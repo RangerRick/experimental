@@ -4,12 +4,12 @@ Revision: 10
 Depends: kdelibs3-unified-shlibs (>= %v-1)
 BuildDepends: <<
 	arts-dev (>= 1.5.9-1),
-	autoconf2.5,
+	autoconf (>= 2.60-1),
 	automake1.11,
 	cctools-single-module,
 	expat1,
 	fink (>= 0.20.2.1-1),
-	fink-package-precedence,
+	fink-package-precedence (>= 0.7-1),
 	freetype219 (>= 2.3.7-7),
 	kdelibs3-unified-dev (>= %v-1),
 	libart2 (>= 2.3.19-1),
