@@ -11,9 +11,9 @@ Depends: <<
 	x11
 <<
 BuildDepends: <<
-	autoconf2.6 (>= 2.60-1),
+	autoconf2.6,
 	automake1.11,
-	libtool2 (>= 1.5.0-1),
+	libtool2,
 	lua (>= 5.0.2-1),
 	x11-dev
 <<

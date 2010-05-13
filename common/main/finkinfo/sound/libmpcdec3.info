@@ -6,7 +6,7 @@ Source: http://files.musepack.net/source/libmpcdec-%v.tar.bz2
 Source-MD5: f14e07285b9b102a806649074c1d779b
 SourceDirectory: libmpcdec-%v
 Depends: %N-shlibs (>= 1:%v-%r)
-BuildDepends: autoconf (>= 2.60-1), automake1.9, libtool14
+BuildDepends: autoconf2.6, automake1.11, libtool2
 PatchScript: autoreconf -fvi
 DocFiles: AUTHORS COPYING ChangeLog INSTALL README
 Description: Musepack audio compression library

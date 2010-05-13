@@ -11,7 +11,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	fink (>= 0.29.7-1),
-	fink-package-precedence,
+	fink-package-precedence (>= 0.7-1),
 	fontconfig2-dev (>= 2.8.0-4),
 	freetype219 (>= 2.3.12-1),
 	glitz (>= 0.5.6-1),

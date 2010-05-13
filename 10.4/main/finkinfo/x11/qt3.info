@@ -17,7 +17,7 @@ BuildDepends: <<
 	cctools (>= 446-0) | cctools-single-module,
 	cups-dev,
 	fink (>= 0.29.7-1),
-	fink-package-precedence,
+	fink-package-precedence (>= 0.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.12-1),
 	libgl-dev,

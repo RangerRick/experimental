@@ -15,8 +15,8 @@ Depends: <<
 <<
 BuildDepends: <<
 	arts-dev (>= 1.5.9-1),
-	autoconf (>= 2.59-1),
-	automake1.9,
+	autoconf2.6,
+	automake1.11,
 	glut,
 	kdelibs3-unified-dev (>= 3.5.0-1),
 	libpng3 (>= 1.2.5-4),

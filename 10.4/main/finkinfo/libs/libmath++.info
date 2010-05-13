@@ -6,7 +6,7 @@ License: GPL
 Maintainer: Benjamin Reed <libmath_@fink.raccoonfink.com>
 
 BuildDepends: <<
-	autoconf2.6 (>= 2.59-1),
+	autoconf2.6,
 	automake1.11,
 	doxygen,
 	libtool2

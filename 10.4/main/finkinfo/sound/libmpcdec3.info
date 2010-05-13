@@ -8,7 +8,7 @@ Maintainer: Benjamin Reed <libmpcdec3@fink.raccoonfink.com>
 
 Depends: %N-shlibs (>= 1:%v-%r)
 BuildDepends: <<
-	autoconf2.6 (>= 2.60-1),
+	autoconf2.6,
 	automake1.11,
 	libtool2
 <<

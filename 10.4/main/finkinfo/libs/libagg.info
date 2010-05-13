@@ -7,7 +7,7 @@ Maintainer: Benjamin Reed <libagg@fink.raccoonfink.com>
 
 Depends: %N-shlibs (>= %v-%r)
 BuildDepends: <<
-	autoconf2.6 (>= 2.63-1),
+	autoconf2.6,
 	automake1.11,
 	freetype219 (>= 2.3.12-1),
 	libtool2,

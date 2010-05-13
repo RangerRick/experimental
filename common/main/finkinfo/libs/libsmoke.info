@@ -5,12 +5,12 @@ Epoch: 1
 Depends: %N-shlibs (>= %e:%v-%r)
 BuildDepends: <<
 	arts-dev (>= 1.5.9-1),
-	autoconf (>= 2.59-1),
-	automake1.9,
+	autoconf2.6,
+	automake1.11,
 	glut (>= 3.7-3),
 	kdelibs3-unified-dev (>= %v-1),
 	libpng3 (>= 1.2.5-1),
-	libtool14 (>= 1.5.10-1),
+	libtool2,
 	qt3 (>= 3.3.5-1),
 	x11-dev
 <<

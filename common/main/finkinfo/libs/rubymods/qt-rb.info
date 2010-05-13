@@ -5,13 +5,13 @@ Revision: 1
 Depends: ruby%type_pkg[ruby], libsmoke-shlibs (>= 1:%v-1)
 BuildDepends: <<
 	arts-dev (>= 1.5.9-1),
-	autoconf (>= 2.60-4),
-	automake1.9,
+	autoconf2.6,
+	automake1.11,
 	kdelibs3-unified-dev (>= %v-1),
 	glut (>= 3.7-3),
 	libpng3 (>= 1.2.5-1),
 	libsmoke (>= 1:%v-1),
-	libtool14 (>= 1.5.10-1),
+	libtool2,
 	qt3 (>= 3.3.5-1),
 	ruby%type_pkg[ruby]-dev,
 	x11-dev

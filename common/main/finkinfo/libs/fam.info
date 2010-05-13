@@ -2,7 +2,7 @@ Package: fam
 Version: 2.7.0
 Revision: 1
 Depends: %N-shlibs (>= %v-%r)
-BuildDepends: libtool14, autoconf (>= 2.60-1), automake1.9
+BuildDepends: libtool2, autoconf2.6, automake1.11
 
 Source: ftp://oss.sgi.com/projects/%n/download/stable/%n-%v.tar.gz
 Source-MD5: 1bf3ae6c0c58d3201afc97c6a4834e39

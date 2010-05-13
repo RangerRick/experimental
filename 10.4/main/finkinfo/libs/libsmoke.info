@@ -9,12 +9,12 @@ Maintainer: Benjamin Reed <libsmoke@fink.raccoonfink.com>
 Depends: %N-shlibs (>= %e:%v-%r)
 BuildDepends: <<
 	arts-dev (>= 1.5.10-10),
-	autoconf2.6 (>= 2.59-1),
+	autoconf2.6,
 	automake1.11,
 	glut (>= 3.7-3),
 	kdelibs3-unified-dev (>= 3.5.10-10),
 	libpng14 (>= 1.4.1-2),
-	libtool2 (>= 1.5.10-1),
+	libtool2,
 	qt3 (>= 3.3.8-2000),
 	x11-dev
 <<

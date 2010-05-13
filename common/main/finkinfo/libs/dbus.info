@@ -7,8 +7,8 @@ License: OSI-Approved
 Maintainer: Benjamin Reed <dbus@fink.raccoonfink.com>
 
 BuildDepends: <<
-	autoconf (>= 2.63-1),
-	automake1.10,
+	autoconf2.6,
+	automake1.11,
 	expat1,
 	fink (>= 0.24.12-1),
 	gettext-tools,
