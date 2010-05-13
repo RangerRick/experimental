@@ -169,8 +169,10 @@ CompileScript: <<
 	fi
 
 	if [ -x /usr/bin/gcc-4.2 ]; then
-		export CC="gcc-4.2" CXX="g++-4.2"
+		export CC="gcc-4.2 -MD" CXX="g++-4.2 -MD"
 		perl -pi -e 's,= cc,= gcc-4.2,g; s,= c\+\+,= g++-4.2,g' mkspecs/darwin-g++/qmake.conf
+	else
+		export CC="gcc -MD" CXX="g++ -MD"
 	fi
 
 	# we have to force header/lib ordering or things get really wiggy
@@ -181,7 +183,7 @@ CompileScript: <<
 	# the wild.
 
 	echo "yes" | ./configure $DEFINES \
-		'-I$(QTDIR)/include' '-L$(QTDIR)/lib' \
+		"-I`pwd`/include" "-L`pwd`/lib" \
 		'-I%p/lib/freetype219/include' '-I%p/lib/freetype219/include/freetype2' '-L%p/lib/freetype219/lib' \
 		'-I%p/lib/fontconfig2/include' '-L%p/lib/fontconfig2/lib' \
 		'-I%p/lib/xft2/include' '-L%p/lib/xft2/lib' \
@@ -205,8 +207,8 @@ CompileScript: <<
 	pushd %p; FixifiedSW=`/bin/pwd`; popd
 	/usr/bin/find . -name Makefile -print0 | xargs -0 perl -pi -e "s,\\$\\(INSTALL_ROOT\\)$FixifiedSW,\\$\\(INSTALL_ROOT\\)%p,g"
 
-	make
-	fink-package-precedence --no-headers .
+	make CC="$CC" CXX="$CXX"
+	fink-package-precedence --prohibit-bdep %N --depfile-ext=.d .
 <<
 
 InstallScript: <<
@@ -244,7 +246,7 @@ InstallScript: <<
 	done
 
 	# clean up some bad data in the .la and .pc files
-	perl -pi -e "s,^libdir=.*,libdir='%p/lib/%N/lib',; s,-L..QTDIR./lib ,,; s,^includedir=.*,includedir='%p/lib/%N/include'," %i/lib/%N/lib/*.la %i/lib/pkgconfig/*.pc
+	perl -pi -e "s,%b,%p/lib/%N,g; s,^libdir=.*,libdir='%p/lib/%N/lib',; s,-L..QTDIR./lib ,,; s,^includedir=.*,includedir='%p/lib/%N/include'," %i/lib/%N/lib/*.la %i/lib/pkgconfig/*.pc
 
 	# %p/lib/%N/doc
 	ln -sf ../../share/doc/%N %i/lib/%N/doc
