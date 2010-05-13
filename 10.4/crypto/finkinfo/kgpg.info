@@ -46,7 +46,7 @@ CustomMirror: <<
 Source: mirror:kde:stable/%v/src/kdeutils-%v.tar.bz2
 Source-MD5: 038f94275f42df3cae89735506ffbc0b
 Source2: mirror:custom:kde-admindir/kde-admindir-29cde0f.tar.bz2
-Source2-MD5: fb6c4bf4092d8b5ee95acec9e1731dc0
+Source2-MD5: 40e5462e2d292c468358f8d001594519
 Source2ExtractDir: kdeutils-%v
 SourceDirectory: kdeutils-%v
 PatchScript: 	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g;' admin/*

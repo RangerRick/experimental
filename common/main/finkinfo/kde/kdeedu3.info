@@ -30,10 +30,12 @@ BuildDepends: <<
 	arts-dev (>= 1.5.9-1),
 	audiofile (>= 0.2.6-11),
 	autoconf2.5,
+	automake1.11,
 	cctools-single-module,
 	esound,
 	expat1,
 	fink (>= 0.28),
+	fink-package-precedence (>= 0.7-1),
 	freetype219 (>= 2.2.1-5),
 	gettext-tools,
 	glib2-dev (>= 2.12.0-1),
@@ -50,10 +52,10 @@ BuildDepends: <<
 	pcre,
 	pkgconfig (>= 0.21-1),
 	qt3 (>= 3.3.8-1021),
-	unsermake (>= 0.4-0.20060316.1),
 	x11-dev,
 	xmkmf
 <<
+BuildConflicts: unsermake
 Replaces: <<
 	%N-dev (<< %v-%r),
 	%N-shlibs (<< %v-%r)
@@ -70,11 +72,11 @@ CustomMirror: <<
 Source: mirror:kde:stable/%v/src/kdeedu-%v.tar.bz2
 Source-MD5: 1b1466bf4cb0a59b1abd8613a2588142
 Source2: mirror:custom:kde-admindir/kde-admindir-29cde0f.tar.bz2
-Source2-MD5: fb6c4bf4092d8b5ee95acec9e1731dc0
+Source2-MD5: 40e5462e2d292c468358f8d001594519
 Source2ExtractDir: kdeedu-%v
 SourceDirectory: kdeedu-%v
 PatchFile: %n.patch
-PatchFile-MD5: af8e1e69ffcfaa4c2086d133e48e6f08
+PatchFile-MD5: ec0f82046a14e78886c83bf4b2f106c1
 PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 
 	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g;' admin/*
@@ -88,22 +90,23 @@ ConfigureParams: --disable-kig-python-scripting --with-distribution='Fink/Mac OS
 CompileScript: <<
 #!/bin/sh -ev
 
-	export PREFIX="%p" USE_UNSERMAKE=1
+	export PREFIX="%p" USE_UNSERMAKE=0
 	. ./environment-helper.sh
 	export LDFLAGS="-L%p/lib/python2.4/config $LDFLAGS"
 
 	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
 	./build-helper.sh configure %N %v %r ./configure %c $CONFIGURE_PARAMS
-	./build-helper.sh make      %N %v %r unsermake $UNSERMAKEFLAGS kvoctrain/kvoctrain/common-dialogs/prefs.h all
+	./build-helper.sh make      %N %v %r make
+	fink-package-precedence --prohibit-bdep %N-dev .
 <<
 
 InstallScript: <<
 #!/bin/sh -ev
 
-	export PREFIX="%p" USE_UNSERMAKE=1
+	export PREFIX="%p" USE_UNSERMAKE=0
 	. ./environment-helper.sh
 
-	./build-helper.sh install %N %v %r unsermake -p -j1 install DESTDIR=%d
+	./build-helper.sh install %N %v %r make -p -j1 install DESTDIR=%d
 
 	mkdir -p %i/share/doc/installed-packages
 	touch %i/share/doc/installed-packages/%N

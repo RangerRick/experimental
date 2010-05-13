@@ -54,7 +54,7 @@ CustomMirror: RangerMirror
 Source: mirror:kde:stable/amarok/%v/src/amarok-%v.tar.bz2
 Source-MD5: 7f65c4a8f3f0ff9042a5b5dd21b36cc8
 Source2: mirror:custom:kde-admindir/kde-admindir-29cde0f.tar.bz2
-Source2-MD5: fb6c4bf4092d8b5ee95acec9e1731dc0
+Source2-MD5: 40e5462e2d292c468358f8d001594519
 Source2ExtractDir: amarok-%v
 
 PatchScript: <<

@@ -38,7 +38,7 @@ CustomMirror: <<
 Source: mirror:sourceforge:%n/%n-%v.tar.bz2
 Source-MD5: 4f00796daa16ce471ac199c5ce801fe0
 Source2: mirror:custom:kde-admindir/kde-admindir-29cde0f.tar.bz2
-Source2-MD5: fb6c4bf4092d8b5ee95acec9e1731dc0
+Source2-MD5: 40e5462e2d292c468358f8d001594519
 Source2ExtractDir: %n-%v
 
 NoSetCPPFLAGS: true

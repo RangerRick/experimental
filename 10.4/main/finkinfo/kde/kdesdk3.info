@@ -60,7 +60,7 @@ CustomMirror: <<
 Source: mirror:kde:stable/%v/src/kdesdk-%v.tar.bz2
 Source-MD5: ad711d1ce09242bd13b73a9a005f3143
 Source2: mirror:custom:kde-admindir/kde-admindir-29cde0f.tar.bz2
-Source2-MD5: fb6c4bf4092d8b5ee95acec9e1731dc0
+Source2-MD5: 40e5462e2d292c468358f8d001594519
 Source2ExtractDir: kdesdk-%v
 SourceDirectory: kdesdk-%v
 PatchScript: <<
