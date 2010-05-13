@@ -82,7 +82,7 @@ Source2: mirror:custom:kde-admindir/kde-admindir-fdf347a.tar.bz2
 Source2-MD5: 60150d6548c00fcdab083c84219fc984
 Source2ExtractDir: kdebase-%v
 PatchFile: kdebase3-unified.patch
-PatchFile-MD5: 9ce420f44fcfa417b33f5d03e098a318
+PatchFile-MD5: 455f1bac73afcecd64f6115778580f16
 
 PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 
