@@ -36,8 +36,8 @@ CustomMirror: RangerMirror
 Source: mirror:kde:stable/%v/src/kdeadmin-%v.tar.bz2
 Source-MD5: eb23c52c945f31a48f2c9df4330a1262
 SourceDirectory: kdeadmin-%v
-Source2: mirror:custom:kde-admindir/kde-admindir-fdf347a.tar.bz2
-Source2-MD5: 60150d6548c00fcdab083c84219fc984
+Source2: mirror:custom:kde-admindir/kde-admindir-29cde0f.tar.bz2
+Source2-MD5: fb6c4bf4092d8b5ee95acec9e1731dc0
 Source2ExtractDir: kdeadmin-%v
 PatchFile: %n.patch
 PatchFile-MD5: 3abfe1ba46410482f828d680aa8dce69

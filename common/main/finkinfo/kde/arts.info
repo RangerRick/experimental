@@ -57,8 +57,8 @@ CustomMirror: <<
 <<
 Source: mirror:kde:stable/3.5.10/src/%n-%v.tar.bz2
 Source-MD5: 6da172aab2a4a44929b5fdfc30fa3efc
-Source2: mirror:custom:kde-admindir/kde-admindir-fdf347a.tar.bz2
-Source2-MD5: 60150d6548c00fcdab083c84219fc984
+Source2: mirror:custom:kde-admindir/kde-admindir-29cde0f.tar.bz2
+Source2-MD5: fb6c4bf4092d8b5ee95acec9e1731dc0
 Source2ExtractDir: %n-%v
 SourceDirectory: %n-%v
 PatchScript: <<

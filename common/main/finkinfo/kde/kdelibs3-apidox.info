@@ -53,8 +53,8 @@ CustomMirror: RangerMirror
 Source: mirror:kde:stable/%v/src/kdelibs-%v.tar.bz2
 Source-MD5: 43cd55ed15f63b5738d620ef9f9fd568
 SourceDirectory: kdelibs-%v
-Source2: mirror:custom:kde-admindir/kde-admindir-fdf347a.tar.bz2
-Source2-MD5: 60150d6548c00fcdab083c84219fc984
+Source2: mirror:custom:kde-admindir/kde-admindir-29cde0f.tar.bz2
+Source2-MD5: fb6c4bf4092d8b5ee95acec9e1731dc0
 Source2ExtractDir: kdelibs-%v
 
 PatchScript: <<

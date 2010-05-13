@@ -16,8 +16,8 @@ CustomMirror: <<
 <<
 Source: http://r.vinot.free.fr/spacehulk/spacehulk-%v-beta1.tar.gz
 Source-MD5: 43eb76b5a2b59e8af2205bff145cbfb2
-Source2: mirror:custom:kde-admindir/kde-admindir-fdf347a.tar.bz2
-Source2-MD5: 60150d6548c00fcdab083c84219fc984
+Source2: mirror:custom:kde-admindir/kde-admindir-29cde0f.tar.bz2
+Source2-MD5: fb6c4bf4092d8b5ee95acec9e1731dc0
 Source2ExtractDir: spacehulk-%v-beta1
 SourceDirectory: spacehulk-%v-beta1
 
