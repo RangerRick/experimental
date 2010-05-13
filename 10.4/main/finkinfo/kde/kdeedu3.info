@@ -155,7 +155,6 @@ SplitOff: <<
 		share/icons/hicolor/48x48/apps/kalzium*
 		share/icons/hicolor/64x64/apps/kalzium*
 		share/icons/hicolor/scalable/apps/kalzium*
-		share/man/man1/kalzium*
 	<<
 	Shlibs: !%p/lib/libkdeinit_kalzium.dylib
 	Homepage: http://edu.kde.org/kalzium/
@@ -255,12 +254,6 @@ SplitOff10: <<
 		share/icons/hicolor/48x48/apps/kstars*
 		share/icons/hicolor/64x64/apps/kstars*
 		share/icons/hicolor/scalable/apps/kstars*
-		share/man/man1/celestrongps*
-		share/man/man1/fliccd*
-		share/man/man1/indiserver*
-		share/man/man1/lx200*
-		share/man/man1/temma*
-		share/man/man1/v4l*
 	<<
 	Shlibs: !%p/lib/libkdeinit_kstars.dylib
 	Homepage: http://edu.kde.org/kstars/
@@ -350,7 +343,6 @@ SplitOff11: <<
 		share/icons/hicolor/32x32/apps/ktouch*
 		share/icons/hicolor/48x48/apps/ktouch*
 		share/icons/hicolor/scalable/apps/ktouch*
-		share/man/man1/ktouch*
 	<<
 	Shlibs: !%p/lib/libkdeinit_ktouch.dylib
 	Homepage: http://edu.kde.org/ktouch/
@@ -1195,7 +1187,6 @@ SplitOff2: <<
 		share/icons/hicolor/48x48/apps/kbruch*
 		share/icons/hicolor/64x64/apps/kbruch*
 		share/icons/hicolor/scalable/apps/kbruch*
-		share/man/man1/kbruch*
 	<<
 	Shlibs: !%p/lib/libkdeinit_kbruch.dylib
 	Homepage: http://edu.kde.org/kbruch/
@@ -1291,7 +1282,6 @@ SplitOff20: <<
 		lib/libkdeeduplot.*.dylib
 		lib/libkdeeduui.*.dylib
 		lib/libkvoctraincore.*.dylib
-		share/man/man1/spotlight*
 	<<
 	Shlibs: <<
 		%p/lib/libextdate.1.dylib 4.0.0 %N-common (>= 3.4.0-1)
@@ -1533,7 +1523,6 @@ SplitOff3: <<
 		share/icons/hicolor/64x64/apps/keduca*
 		share/mimelnk/application/x-edu*
 		share/services/keduca_part*
-		share/man/man1/keduca*
 	<<
 	Shlibs: <<
 		!%p/lib/libkdeinit_keduca.dylib
@@ -1630,7 +1619,6 @@ SplitOff4: <<
 		share/icons/hicolor/48x48/apps/khangman*
 		share/icons/hicolor/64x64/apps/khangman*
 		share/icons/hicolor/scalable/apps/khangman*
-		share/man/man6/khangman*
 	<<
 	Shlibs: !%p/lib/libkdeinit_khangman.dylib
 	Homepage: http://edu.kde.org/khangman/
@@ -1741,7 +1729,6 @@ SplitOff5: <<
 		share/services/kfile_drgeo.*
 		share/services/kfile_kig.*
 		share/services/kig*
-		share/man/man1/kig*
 	<<
 	Shlibs: !%p/lib/libkdeinit_kig.dylib
 	Homepage: http://edu.kde.org/kig/
@@ -2039,7 +2026,6 @@ SplitOff8: <<
 		share/icons/hicolor/scalable/apps/kmplot*
 		share/mimelnk/application/x-kmplot*
 		share/services/kmplot*
-		share/man/man1/kmplot*
 	<<
 	Shlibs: !%p/lib/libkdeinit_kmplot.dylib
 	Homepage: http://edu.kde.org/kmplot/
