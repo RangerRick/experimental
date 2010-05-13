@@ -82,7 +82,7 @@ Source2: mirror:custom:kde-admindir/kde-admindir-fdf347a.tar.bz2
 Source2-MD5: 60150d6548c00fcdab083c84219fc984
 Source2ExtractDir: kdebase-%v
 PatchFile: kdebase3-unified.patch
-PatchFile-MD5: 5e58b319fa24820c5f34fb3527aadd4d
+PatchFile-MD5: 9ce420f44fcfa417b33f5d03e098a318
 
 PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 
@@ -105,6 +105,7 @@ CompileScript: <<
 
 	export PREFIX="%p" USE_UNSERMAKE=0
 	. ./environment-helper.sh
+	export PKG_CONFIG_PATH="%p/lib/freetype219/lib/pkgconfig:%p/lib/fontconfig2/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 	perl -pi -e 's,FONTINST_SUBDIR="kfontinst",FONTINST_SUBDIR="",' kcontrol/kfontinst/configure.in.in
 
