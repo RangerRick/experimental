@@ -91,7 +91,7 @@ PatchScript: <<
 	perl -pi -e 's/-Xlinker -framework -Xlinker (\S*)/-Wl,-framework,$1/g; s/-framework (\S*)/-Wl,-framework,$1/g;' configure
 <<
 PatchFile: kdebase3-unified.patch
-PatchFile-MD5: 51415324375b6d486c14f896299e5b76
+PatchFile-MD5: 5e58b319fa24820c5f34fb3527aadd4d
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
