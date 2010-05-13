@@ -76,7 +76,7 @@ Source2-MD5: 40e5462e2d292c468358f8d001594519
 Source2ExtractDir: kdeedu-%v
 SourceDirectory: kdeedu-%v
 PatchFile: %n.patch
-PatchFile-MD5: ec0f82046a14e78886c83bf4b2f106c1
+PatchFile-MD5: 5a16726332dce25eec666bb88828811f
 PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 
 	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g;' admin/*
