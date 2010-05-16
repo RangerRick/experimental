@@ -7,13 +7,14 @@ Source-MD5: e5ef0c29c55b4f0f5aeed7955b4d383b
 
 BuildDepends: <<
 	db48-aes | db48,
+	fink-package-precedence (>= 0.7-1),
 	gmp,
 	gtk-doc,
 	libcurl4,
 	libiconv,
 	libmpfr1,
 	libraptor1-dev (>= 1.4.17-1),
-	librasqal-dev (>= 0.9.16-2),
+	librasqal2-dev (>= 0.9.19-1),
 	libssh2.1,
 	libxml2,
 	libxslt,
@@ -26,7 +27,7 @@ BuildDepends: <<
 Depends: <<
 	db48-aes-shlibs | db48-shlibs,
 	libraptor1-shlibs (>= 1.4.17-1),
-	librasqal-shlibs (>= 0.9.16-2),
+	librasqal2-shlibs (>= 0.9.19-1),
 	libssh2.1-shlibs,
 	pcre-shlibs,
 	sqlite3-shlibs
@@ -44,6 +45,13 @@ ConfigureParams: --disable-dependency-tracking --with-raptor=system --with-rasqa
 
 InfoTest: TestScript: make check || exit 2
 
+CompileScript: <<
+#!/bin/sh -ev
+
+	./configure %c
+	make
+	fink-package-precedence --prohibit-bdep redland-dev .
+<<
 InstallScript: <<
 	make -j1 install DESTDIR=%d
 	find %i/share/gtk-doc -name \*.html | xargs perl -pi -e 's,/usr/share,%p/share,g'

@@ -1,23 +1,23 @@
-Package: librasqal-shlibs
-Version: 0.9.16
-Revision: 4
+Package: librasqal2-shlibs
+Version: 0.9.19
+Revision: 1
 Description: RDF query library
 License: GPL/LGPL
-Maintainer: Benjamin Reed <librasqal@fink.racoonfink.com>
+Maintainer: Benjamin Reed <librasqal@fink.raccoonfink.com>
 
 Depends: <<
 	libmpfr1-shlibs,
-	libraptor1-shlibs (>= 1.4.17-1),
+	libraptor1-shlibs (>= 1.4.18-1),
 	libssh2.1-shlibs,
 	pcre-shlibs
 <<
 BuildDepends: <<
 	gmp,
-	gtk-doc (>= 1.13-5),
+	gtk-doc,
 	libcurl4,
 	libiconv,
 	libmpfr1,
-	libraptor1-dev (>= 1.4.17-1),
+	libraptor1-dev (>= 1.4.18-1),
 	libssh2.1,
 	libxml2,
 	libxslt,
@@ -28,20 +28,22 @@ BuildDepends: <<
 InfoTest: <<
 	TestDepends: <<
 		perl588-core,
-		raptor-bin (>= 1.4.17-1),
+		raptor-bin (>= 1.4.18-1),
 		xml-dom-pm588
 	<<
-	TestScript: make PERL=%p/bin/perl5.8.8 check || exit 2
+	TestScript: <<
+		make PERL=%p/bin/perl5.8.8 check || exit 2
+	<<
 <<
 
 Source: http://download.librdf.org/source/rasqal-%v.tar.gz
-Source-MD5: fca8706f2c4619e2fa3f8f42f8fc1e9d
+Source-MD5: 9bc1b40ffe1bdc794887d845d153bd4e
 PatchScript: 	perl -pi -e 's,(\@CPPFLAGS\@),-I%p/lib/system-openssl/include \1,' `find . -name Makefile.in`
 
 SetCPPFLAGS: -I%p/lib/system-openssl/include
 SetLDFLAGS: -L%p/lib/system-openssl/lib
 UseMaxBuildJobs: true
-ConfigureParams: --disable-dependency-tracking --without-redland --enable-gtk-doc
+ConfigureParams: --disable-dependency-tracking --without-redland
 
 InstallScript: make -j1 install DESTDIR=%d
 DocFiles: AUTHORS COPYING* ChangeLog* LICENSE* NEWS* NOTICE README* RELEASE*
@@ -52,7 +54,7 @@ SplitOff: <<
 	Files: bin/roqet share/man/man1/roqet.1
 <<
 SplitOff2: <<
-	Package: librasqal-dev
+	Package: librasqal2-dev
 	Depends: <<
 		%N (= %v-%r),
 		pkgconfig (>= 0.23-1)
@@ -61,7 +63,7 @@ SplitOff2: <<
 	DocFiles: COPYING* LICENSE* README*
 	Files: bin include lib/librasqal.{a,la,dylib} lib/pkgconfig share/gtk-doc share/man
 <<
-Shlibs: %p/lib/librasqal.1.dylib 2.0.0 %n (>= 0.9.16-1)
+Shlibs: %p/lib/librasqal.2.dylib 3.0.0 %n (>= 0.9.19-1)
 
 Homepage: http://librdf.org/rasqal
 DescDetail: <<
