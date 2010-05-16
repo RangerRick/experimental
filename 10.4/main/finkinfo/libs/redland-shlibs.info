@@ -15,6 +15,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	db48-aes | db48,
+	fink-package-precedence (>= 0.7-1),
 	gmp,
 	gtk-doc,
 	libcurl4,
@@ -43,7 +44,14 @@ PatchScript: <<
 SetCPPFLAGS: -I%p/lib/system-openssl/include -I%p/include/db4
 SetLDFLAGS: -L%p/lib/system-openssl/lib
 UseMaxBuildJobs: true
-ConfigureParams: --disable-dependency-tracking --with-raptor=system --with-rasqal=system --without-threestore --without-mysql --without-postgresql
+ConfigureParams: --enable-dependency-tracking --with-raptor=system --with-rasqal=system --without-threestore --without-mysql --without-postgresql
+CompileScript: <<
+#!/bin/sh -ev
+
+	./configure %c
+	make
+	fink-package-precedence --prohibit-bdep redland-dev .
+<<
 
 InstallScript: <<
 	make -j1 install DESTDIR=%d

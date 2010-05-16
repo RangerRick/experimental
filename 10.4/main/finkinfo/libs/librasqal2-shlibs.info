@@ -44,7 +44,7 @@ PatchScript: 	perl -pi -e 's,(\@CPPFLAGS\@),-I%p/lib/system-openssl/include \1,'
 SetCPPFLAGS: -I%p/lib/system-openssl/include
 SetLDFLAGS: -L%p/lib/system-openssl/lib
 UseMaxBuildJobs: true
-ConfigureParams: --disable-dependency-tracking --without-redland
+ConfigureParams: --enable-dependency-tracking --without-redland
 CompileScript: <<
 #!/bin/sh -ev
 

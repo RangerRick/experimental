@@ -34,7 +34,7 @@ PatchScript: <<
 
 SetCPPFLAGS: -I%p/lib/system-openssl/include
 SetLDFLAGS: -L%p/lib/system-openssl/lib
-ConfigureParams: --disable-dependency-tracking --without-redland --enable-gtk-doc
+ConfigureParams: --enable-dependency-tracking --without-redland --enable-gtk-doc
 
 InfoTest: <<
 	TestDepends: <<

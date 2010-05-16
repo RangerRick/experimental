@@ -41,7 +41,7 @@ PatchScript: <<
 
 SetCPPFLAGS: -I%p/lib/system-openssl/include -I%p/include/db4
 SetLDFLAGS: -L%p/lib/system-openssl/lib
-ConfigureParams: --disable-dependency-tracking --with-raptor=system --with-rasqal=system --without-threestore --without-mysql --without-postgresql 
+ConfigureParams: --enable-dependency-tracking --with-raptor=system --with-rasqal=system --without-threestore --without-mysql --without-postgresql 
 
 InfoTest: TestScript: make check || exit 2
 
