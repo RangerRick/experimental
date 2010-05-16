@@ -52,10 +52,11 @@ CompileScript: <<
 	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[soprano]" KDE4_INSTALL_PREFIX="%p/opt/soprano/%type_pkg[soprano]"
 	. %p/sbin/kde4-buildenv.sh
 
+	export CC="$CC -MD" CXX="$CXX -MD"
 	mkdir -p build
 	pushd build
 		cmake $KDE4_CMAKE_ARGS -DCLUCENE_LIBRARY_DIR:PATH="%p/lib" ..
-		make VERBOSE=1 CC="$CC -MD" CXX="$CXX -MD"
+		make VERBOSE=1
 	popd
 	fink-package-precedence --prohibit-bdep %n --depfile-ext=.d .
 <<
