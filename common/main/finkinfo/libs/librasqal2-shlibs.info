@@ -8,7 +8,7 @@ Source-MD5: 9bc1b40ffe1bdc794887d845d153bd4e
 BuildDepends: <<
 	fink-package-precedence (>= 0.7-1),
 	gmp,
-	gtk-doc,
+	gtk-doc (>= 1.8-1),
 	libcurl4,
 	libiconv,
 	libmpfr1,
