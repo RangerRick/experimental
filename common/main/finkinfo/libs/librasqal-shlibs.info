@@ -72,6 +72,8 @@ SplitOff2: <<
 		%N (= %v-%r),
 		pkgconfig (>= 0.22-3)
 	<<
+	Conflicts: librasqal2-dev
+	Replaces: librasqal2-dev
 	BuildDependsOnly: true
 	Files: bin include lib/librasqal.{a,la,dylib} lib/pkgconfig share/gtk-doc share/man
 	DocFiles: COPYING* LICENSE* README*
