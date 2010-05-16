@@ -12,7 +12,7 @@ BuildDepends: <<
 	gtk-doc (>= 1.8-1),
 	libcurl4,
 	libiconv,
-	libmpfr1,
+	libmpfr1 (>= 2.4.2-2),
 	libraptor1-dev (>= 1.4.18-1),
 	libssh2.1,
 	libxml2,
@@ -23,7 +23,7 @@ BuildDepends: <<
 <<
 
 Depends: <<
-	libmpfr1-shlibs,
+	libmpfr1-shlibs (>= 2.4.2-2),
 	libraptor1-shlibs (>= 1.4.18-1),
 	libssh2.1-shlibs,
 	pcre-shlibs
@@ -33,13 +33,12 @@ PatchScript: <<
 	perl -pi -e 's,(\@CPPFLAGS\@),-I%p/lib/system-openssl/include \1,' `find . -name Makefile.in`
 <<
 
-SetCPPFLAGS: -I%p/lib/system-openssl/include
-SetLDFLAGS: -L%p/lib/system-openssl/lib
+SetCPPFLAGS: -I%p/lib/system-openssl/include -I%p/lib/flex/include
+SetLDFLAGS: -L%p/lib/system-openssl/lib -I%p/lib/flex/lib
 ConfigureParams: --enable-dependency-tracking --without-redland --enable-gtk-doc
 
 InfoTest: <<
 	TestDepends: <<
-		bash (>= 4.0-1),
 		flex-devel (>= 2.5-1),
 		perl588-core,
 		raptor-bin (>= 1.4.18-1),
@@ -48,7 +47,7 @@ InfoTest: <<
 	TestScript: <<
 		#!/bin/sh -ev
 		export PATH="%p/lib/flex/bin:$PATH"
-		make SHELL=%p/bin/bash PERL=perl5.8.8 check || exit 2
+		make PERL=perl5.8.8 check || exit 2
 	<<
 <<
 
