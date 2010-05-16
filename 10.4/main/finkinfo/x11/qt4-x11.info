@@ -25,7 +25,7 @@ BuildDepends: <<
 	glib2-dev (>= 2.22.0-1),
 	gstreamer-0.10-dev,
 	gst-plugins-base-0.10-dev,
-	kde4-buildenv (>= 4.4.0-1),
+	kde4-buildenv (>= 4.4.3-1),
 	libgettext8-dev,
 	libiconv-dev (>= 1.12-3),
 	libjpeg8,

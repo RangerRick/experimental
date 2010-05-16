@@ -16,7 +16,7 @@ BuildDepends: <<
 	freetype219 (>= 2.3.12-1),
 	(%type_pkg[qt] = x11) glib2-dev,
 	glitz,
-	kde4-buildenv (>= 4.4.0-1),
+	kde4-buildenv (>= 4.4.3-1),
 	(%type_pkg[qt] = x11) libgettext8-dev,
 	libiconv-dev,
 	libjpeg8,

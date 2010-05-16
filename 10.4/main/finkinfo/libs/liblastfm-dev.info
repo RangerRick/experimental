@@ -12,7 +12,7 @@ BuildDepends: <<
 	cmake (>= 2.6.4-1),
 	fftw3,
 	fink (>= 0.29.7-1),
-	kde4-buildenv (>= 4.4.0-1),
+	kde4-buildenv (>= 4.4.3-1),
 	libsamplerate0-dev,
 	qt4-%type_pkg[lastfm] (>= 4.6.1-1)
 <<

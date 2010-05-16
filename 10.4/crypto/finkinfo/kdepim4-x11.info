@@ -39,7 +39,7 @@ BuildDepends: <<
 	glib2-dev (>= 2.22.0-1),
 	gpgme11,
 	gnokii3-dev,
-	kde4-buildenv (>= 4.4.0-1),
+	kde4-buildenv (>= 4.4.3-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.4.1-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
 	kdepimlibs4-%type_pkg[kde]-dev (>= 4.4.1-1),

@@ -31,7 +31,7 @@ BuildDepends: <<
 	giflib,
 	glib2-dev (>= 2.22.0-1),
 	gpsd-dev,
-	kde4-buildenv (>= 4.4.0-1),
+	kde4-buildenv (>= 4.4.3-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
 	kdepimlibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
 	libgettext8-dev,
