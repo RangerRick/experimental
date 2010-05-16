@@ -9,7 +9,7 @@ BuildDepends: <<
 	fink-package-precedence (>= 0.7-1),
 	flex-devel (>= 2.5-1),
 	gmp,
-	gtk-doc,
+	gtk-doc (>= 1.8-1),
 	libcurl4,
 	libiconv,
 	libmpfr1,
