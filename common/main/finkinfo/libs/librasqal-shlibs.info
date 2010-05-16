@@ -8,7 +8,7 @@ Source-MD5: fca8706f2c4619e2fa3f8f42f8fc1e9d
 BuildDepends: <<
 	fink-package-precedence (>= 0.7-1),
 	flex-devel (>= 2.5-1),
-	gmp,
+	gmp (>= 4.3.2-5),
 	gtk-doc (>= 1.13-5),
 	libcurl4,
 	libiconv,
@@ -23,6 +23,7 @@ BuildDepends: <<
 <<
 
 Depends: <<
+	gmp-shlibs (>= 4.3.2-5),
 	libmpfr1-shlibs (>= 2.4.2-2),
 	libraptor1-shlibs (>= 1.4.17-1),
 	libssh2.1-shlibs,
