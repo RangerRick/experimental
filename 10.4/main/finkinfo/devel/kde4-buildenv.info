@@ -19,7 +19,7 @@ CustomMirror: <<
 <<
 NoSourceDirectory: true
 Source: mirror:custom:%n/%n-%v-%r.sh
-Source-MD5: 2ac0fe814eb8734fcfd12ebb35f77373
+Source-MD5: 9d3b6b3fa62facb01dce67e82e085218
 Source2: mirror:custom:%n/normalize-filenames-4.2.3-1.sh
 Source2-MD5: aa5d58694004df09f486abc9907f7e0a
 
