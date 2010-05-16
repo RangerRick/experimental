@@ -13,6 +13,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	fink-package-precedence (>= 0.7-1),
+	flex-devel (>= 2.5-1),
 	gmp,
 	gtk-doc,
 	libcurl4,
@@ -29,12 +30,15 @@ BuildDepends: <<
 InfoTest: <<
 	TestDepends: <<
 		bash (>= 4.0-1),
+		flex-devel (>= 2.5-1),
 		perl588-core,
 		raptor-bin (>= 1.4.18-1),
 		xml-dom-pm588
 	<<
 	TestScript: <<
-		make SHELL=%p/bin/bash PERL=%p/bin/perl5.8.8 check || exit 2
+		#!/bin/sh -ev
+		export PATH="%p/lib/flex/bin:$PATH"
+		make SHELL=%p/bin/bash PERL=perl5.8.8 check || exit 2
 	<<
 <<
 
@@ -49,6 +53,7 @@ ConfigureParams: --enable-dependency-tracking --without-redland --enable-gtk-doc
 CompileScript: <<
 #!/bin/sh -ev
 
+	export PATH="%p/lib/flex/bin:$PATH"
 	./configure %c
 	make
 	fink-package-precedence --prohibit-bdep librasqal2-dev .
