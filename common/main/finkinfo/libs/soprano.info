@@ -57,7 +57,7 @@ CompileScript: <<
 		cmake $KDE4_CMAKE_ARGS -DCLUCENE_LIBRARY_DIR:PATH="%p/lib" ..
 		make VERBOSE=1 CC="$CC -MD" CXX="$CXX -MD"
 	popd
-	fink-package-precedence --prohibit-bdep %n .
+	fink-package-precedence --prohibit-bdep %n --depfile-ext=.d .
 <<
 
 InstallScript: <<
