@@ -14,7 +14,7 @@ Depends: <<
 BuildDepends: <<
 	fink-package-precedence (>= 0.7-1),
 	gmp,
-	gtk-doc,
+	gtk-doc (>= 1.13-5),
 	libcurl4,
 	libiconv,
 	libmpfr1,
