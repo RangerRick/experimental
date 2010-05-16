@@ -58,10 +58,8 @@ PatchFile: %n.patch
 PatchFile-MD5: 495e383d8f8f070a6752a74c9d5dd3bd
 
 SetLDFLAGS: -lglib-2.0
-SetMAKEFLAGS: -j1
 NoSetLDFLAGS: true
-NoSetMAKEFLAGS: true
-UseMaxBuildJobs: false
+UseMaxBuildJobs: true
 CompileScript: <<
 #!/bin/sh -ev
 
