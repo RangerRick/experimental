@@ -12,6 +12,7 @@ Depends: <<
 	pcre-shlibs
 <<
 BuildDepends: <<
+	fink-package-precedence (>= 0.7-1),
 	gmp,
 	gtk-doc (>= 1.13-5),
 	libcurl4,
@@ -42,6 +43,13 @@ SetCPPFLAGS: -I%p/lib/system-openssl/include
 SetLDFLAGS: -L%p/lib/system-openssl/lib
 UseMaxBuildJobs: true
 ConfigureParams: --disable-dependency-tracking --without-redland --enable-gtk-doc
+CompileScript: <<
+#!/bin/sh -ev
+
+	./configure %c
+	make
+	fink-package-precedence --prohibit-bdep librasqal-dev .
+<<
 
 InstallScript: make -j1 install DESTDIR=%d
 DocFiles: AUTHORS COPYING* ChangeLog* LICENSE* NEWS* NOTICE README* RELEASE*
@@ -57,6 +65,8 @@ SplitOff2: <<
 		%N (= %v-%r),
 		pkgconfig (>= 0.23-1)
 	<<
+	Conflicts: librasqal2-dev
+	Replaces: librasqal2-dev
 	BuildDependsOnly: true
 	DocFiles: COPYING* LICENSE* README*
 	Files: bin include lib/librasqal.{a,la,dylib} lib/pkgconfig share/gtk-doc share/man

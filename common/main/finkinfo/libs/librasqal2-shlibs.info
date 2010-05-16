@@ -70,6 +70,8 @@ SplitOff: <<
 
 SplitOff2: <<
 	Package: librasqal2-dev
+	Conflicts: librasqal-dev
+	Replaces: librasqal-dev
 	Depends: <<
 		%N (= %v-%r),
 		pkgconfig (>= 0.22-3)
