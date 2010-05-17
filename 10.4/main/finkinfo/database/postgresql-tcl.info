@@ -72,7 +72,7 @@ InstallScript: <<
 		make -j1 install DESTDIR=%d INSTALLSITEMAN3DIR=%i/share/man/man3
 	popd
 
-	install_name_tool -id %p/lib/pgtcl1.7/libpgtcl-1.7.dylib %i/lib/pgtcl1.7/libpgtcl-1.7.dylib
+	install_name_tool -id %p/lib/pgtcl1.7/libpgtcl1.7.dylib %i/lib/pgtcl1.7/libpgtcl1.7.dylib
 
 	rm -R %i/include
 <<
