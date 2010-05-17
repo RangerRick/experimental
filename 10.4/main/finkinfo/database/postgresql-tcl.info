@@ -82,7 +82,7 @@ SplitOff2: <<
 	Depends: postgresql-tcl (>= %v-%r)
 	DocFiles: COPYRIGHT HISTORY INSTALL
 <<
-Shlibs: !%p/lib/libpgtcl-1.7/libpgtcl-1.7.dylib
+Shlibs: !%p/lib/pgtcl1.7/libpgtcl1.7.dylib
 
 PostInstScript: <<
 	cat <<END

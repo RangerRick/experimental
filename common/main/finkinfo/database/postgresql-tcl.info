@@ -77,7 +77,7 @@ InstallScript: <<
 
 	rm -R %i/include
 <<
-Shlibs: !%p/lib/libpgtcl-1.7/libpgtcl-1.7.dylib
+Shlibs: !%p/lib/pgtcl1.7/libpgtcl1.7.dylib
 DocFiles: COPYRIGHT HISTORY INSTALL
 SplitOff2: <<
 	Package: postgresql-ssl-tcl
