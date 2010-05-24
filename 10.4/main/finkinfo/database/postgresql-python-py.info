@@ -1,6 +1,6 @@
 Info2: <<
 Package: postgresql-python-py%type_pkg[python]
-Version: 8.2.16
+Version: 8.2.17
 Revision: 1
 Distribution: (%type_pkg[python] = 23) 10.3, (%type_pkg[python] = 23) 10.4
 Description: PostgreSQL Python tools
@@ -37,9 +37,9 @@ Replaces: <<
 <<
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: cb3be1e35ca9bba64d65a2ab337fb1a0
-Source2: ftp://ftp.druid.net/pub/distrib/PyGreSQL-3.8.1.tgz
-Source2-MD5: 5575979dac93c9c5795d7693a8f91c86
+Source-MD5: 583c21c036357480a85dd3710e40a261
+Source2: ftp://ftp.druid.net/pub/distrib/PyGreSQL-4.0.tgz
+Source2-MD5: 1aca50e59ff4cc56abe9452a9a49c5ff
 PatchScript: sed -e 's|@INSTPREFIX@|%p|g' -e 's|python2.1|python%type_raw[python]|g' < %{PatchFile} | patch -p1
 PatchFile: postgresql82.patch
 PatchFile-MD5: 964107a0f601e15937e79df17ffea814
@@ -60,11 +60,11 @@ CompileScript: <<
 	./configure %c
 
 	pushd src/pl/plpython
-	make BE_DLLLIBS="-bundle_loader %p/bin/postgres"
+		make BE_DLLLIBS="-bundle_loader %p/bin/postgres"
 	popd
 
-	pushd ../PyGreSQL-3.8.1
-	python%type_raw[python] setup.py build
+	pushd ../PyGreSQL-4.0
+		python%type_raw[python] setup.py build
 	popd
 <<
 
@@ -72,13 +72,13 @@ InstallScript: <<
 #!/bin/sh -ev
 
 	pushd src/pl/plpython
-	make install DESTDIR=%d INSTALLSITEMAN3DIR=%i/share/man/man3
+		make install DESTDIR=%d INSTALLSITEMAN3DIR=%i/share/man/man3
 	popd
 
-	pushd ../PyGreSQL-3.8.1
-	python%type_raw[python] setup.py install --root="%d"
-	install -d -m 755 %i/share/doc/%N
-	install -c -m 755 tutorial/* docs/*.txt %i/share/doc/%N/
+	pushd ../PyGreSQL-4.0
+		python%type_raw[python] setup.py install --root="%d"
+		install -d -m 755 %i/share/doc/%N
+		install -c -m 755 tutorial/* docs/*.txt %i/share/doc/%N/
 	popd
 
 	mv %i/lib/postgresql-8.2/plpython.so %i/lib/postgresql-8.2/plpython-%type_pkg[python].so

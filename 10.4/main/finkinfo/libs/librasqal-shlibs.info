@@ -1,23 +1,26 @@
 Package: librasqal-shlibs
-Version: 0.9.19
-Revision: 1
+Version: 0.9.16
+Revision: 4
 Description: RDF query library
 License: GPL/LGPL
-Maintainer: Benjamin Reed <librasqal@fink.raccoonfink.com>
+Maintainer: Benjamin Reed <librasqal@fink.racoonfink.com>
 
 Depends: <<
-	libmpfr1-shlibs,
-	libraptor1-shlibs (>= 1.4.18-1),
+	gmp-shlibs (>= 4.3.2-5),
+	libmpfr1-shlibs (>= 2.4.2-2),
+	libraptor1-shlibs (>= 1.4.17-1),
 	libssh2.1-shlibs,
 	pcre-shlibs
 <<
 BuildDepends: <<
-	gmp,
-	gtk-doc,
+	fink-package-precedence (>= 0.7-1),
+	flex-devel (>= 2.5-1),
+	gmp (>= 4.3.2-5),
+	gtk-doc (>= 1.13-5),
 	libcurl4,
 	libiconv,
-	libmpfr1,
-	libraptor1-dev (>= 1.4.18-1),
+	libmpfr1 (>= 2.4.2-2),
+	libraptor1-dev (>= 1.4.17-1),
 	libssh2.1,
 	libxml2,
 	libxslt,
@@ -27,25 +30,34 @@ BuildDepends: <<
 <<
 InfoTest: <<
 	TestDepends: <<
+		flex-devel (>= 2.5-1),
 		perl588-core,
-		raptor-bin (>= 1.4.18-1),
+		raptor-bin (>= 1.4.17-1),
 		xml-dom-pm588
 	<<
 	TestScript: <<
-		perl -pi -e 's,/.*/bin/perl,%p/bin/perl5.8.8,' tests/*/*/Makefile tests/improve
-		perl -pi -e 's,^PERL = perl,PERL = %p/bin/perl5.8.8,' tests/*/*/Makefile
-		make check || exit 2
+		#!/bin/sh -ev
+		export PATH="%p/lib/flex/bin:$PATH"
+		make PERL=perl5.8.8 check || exit 2
 	<<
 <<
 
 Source: http://download.librdf.org/source/rasqal-%v.tar.gz
-Source-MD5: 9bc1b40ffe1bdc794887d845d153bd4e
+Source-MD5: fca8706f2c4619e2fa3f8f42f8fc1e9d
 PatchScript: 	perl -pi -e 's,(\@CPPFLAGS\@),-I%p/lib/system-openssl/include \1,' `find . -name Makefile.in`
 
-SetCPPFLAGS: -I%p/lib/system-openssl/include
-SetLDFLAGS: -L%p/lib/system-openssl/lib
+SetCPPFLAGS: -I%p/lib/system-openssl/include -I%p/lib/flex/include
+SetLDFLAGS: -L%p/lib/system-openssl/lib -I%p/lib/flex/lib
 UseMaxBuildJobs: true
-ConfigureParams: --disable-dependency-tracking --without-redland
+ConfigureParams: --enable-dependency-tracking --without-redland --enable-gtk-doc
+CompileScript: <<
+#!/bin/sh -ev
+
+	export PATH="%p/lib/flex/bin:$PATH"
+	./configure %c
+	make
+	fink-package-precedence --prohibit-bdep librasqal-dev .
+<<
 
 InstallScript: make -j1 install DESTDIR=%d
 DocFiles: AUTHORS COPYING* ChangeLog* LICENSE* NEWS* NOTICE README* RELEASE*
@@ -61,6 +73,8 @@ SplitOff2: <<
 		%N (= %v-%r),
 		pkgconfig (>= 0.23-1)
 	<<
+	Conflicts: librasqal2-dev
+	Replaces: librasqal2-dev
 	BuildDependsOnly: true
 	DocFiles: COPYING* LICENSE* README*
 	Files: bin include lib/librasqal.{a,la,dylib} lib/pkgconfig share/gtk-doc share/man

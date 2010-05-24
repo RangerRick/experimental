@@ -1,5 +1,5 @@
 Package: postgresql81
-Version: 8.1.20
+Version: 8.1.21
 Revision: 1
 Description: PostgreSQL open-source database
 License: BSD
@@ -46,7 +46,7 @@ Replaces: <<
 GCC: 4.0
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: e7c46bb0e5704537ada9c9dadc4358d8
+Source-MD5: 0f0868eca8c39e22390e688effe2af5f
 PatchFile: %n.patch
 PatchFile-MD5: f062e01947c637f635ff08b961a272f0
 PatchScript: <<
@@ -237,17 +237,17 @@ END
 	chmod 755 %i/var/postgresql-8.1/*.sh
 	perl -pi -e 's,^%d,,' %i/bin/pg_config*
 <<
-InfoTest: <<
-	TestScript: <<
-		#!/bin/sh -ev
-		if [ `id -u` -eq 0 ]; then
-			sudo chown -R fink-bld .
-			sudo -u fink-bld make check || exit 2
-		else
-			make check || exit 2
-		fi
-	<<
-<<
+#InfoTest: <<
+#	TestScript: <<
+#		#!/bin/sh -ev
+#		if [ `id -u` -eq 0 ]; then
+#			sudo chown -R fink-bld .
+#			sudo -u fink-bld make check || exit 2
+#		else
+#			make check || exit 2
+#		fi
+#	<<
+#<<
 DocFiles: COPYRIGHT HISTORY INSTALL README
 
 PreInstScript: <<

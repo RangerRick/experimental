@@ -12,7 +12,7 @@ BuildDepends: <<
 	fink (>= 0.29.7-1),
 	fink-package-precedence,
 	glitz,
-	kde4-buildenv (>= 4.4.0-1),
+	kde4-buildenv (>= 4.4.3-1),
 	qt4-%type_pkg[qt] (>= 4.6.1-1),
 	poppler2 (>= %v-1)
 <<

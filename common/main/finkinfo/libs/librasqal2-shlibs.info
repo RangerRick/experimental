@@ -1,19 +1,19 @@
-Package: librasqal-shlibs
-Version: 0.9.16
-Revision: 4
+Package: librasqal2-shlibs
+Version: 0.9.19
+Revision: 1
 
 Source: http://download.librdf.org/source/rasqal-%v.tar.gz
-Source-MD5: fca8706f2c4619e2fa3f8f42f8fc1e9d
+Source-MD5: 9bc1b40ffe1bdc794887d845d153bd4e
 
 BuildDepends: <<
 	fink-package-precedence (>= 0.7-1),
 	flex-devel (>= 2.5-1),
 	gmp (>= 4.3.2-5),
-	gtk-doc (>= 1.13-5),
+	gtk-doc (>= 1.8-1),
 	libcurl4,
 	libiconv,
 	libmpfr1 (>= 2.4.2-2),
-	libraptor1-dev (>= 1.4.17-1),
+	libraptor1-dev (>= 1.4.18-1),
 	libssh2.1,
 	libxml2,
 	libxslt,
@@ -25,7 +25,7 @@ BuildDepends: <<
 Depends: <<
 	gmp-shlibs (>= 4.3.2-5),
 	libmpfr1-shlibs (>= 2.4.2-2),
-	libraptor1-shlibs (>= 1.4.17-1),
+	libraptor1-shlibs (>= 1.4.18-1),
 	libssh2.1-shlibs,
 	pcre-shlibs
 <<
@@ -42,7 +42,7 @@ InfoTest: <<
 	TestDepends: <<
 		flex-devel (>= 2.5-1),
 		perl588-core,
-		raptor-bin (>= 1.4.17-1),
+		raptor-bin (>= 1.4.18-1),
 		xml-dom-pm588
 	<<
 	TestScript: <<
@@ -58,12 +58,12 @@ CompileScript: <<
 	export PATH="%p/lib/flex/bin:$PATH"
 	./configure %c
 	make
-	fink-package-precedence --prohibit-bdep librasqal-dev .
+	fink-package-precedence --prohibit-bdep librasqal2-dev .
 <<
 InstallScript: make -j1 install DESTDIR=%d
 DocFiles: AUTHORS COPYING* ChangeLog* LICENSE* NEWS* NOTICE README* RELEASE*
 
-Shlibs: %p/lib/librasqal.1.dylib 2.0.0 %n (>= 0.9.16-1)
+Shlibs: %p/lib/librasqal.2.dylib 3.0.0 %n (>= 0.9.19-1)
 
 SplitOff: <<
 	Package: rasqal-bin
@@ -75,13 +75,13 @@ SplitOff: <<
 <<
 
 SplitOff2: <<
-	Package: librasqal-dev
+	Package: librasqal2-dev
+	Conflicts: librasqal-dev
+	Replaces: librasqal-dev
 	Depends: <<
 		%N (= %v-%r),
 		pkgconfig (>= 0.22-3)
 	<<
-	Conflicts: librasqal2-dev
-	Replaces: librasqal2-dev
 	BuildDependsOnly: true
 	Files: bin include lib/librasqal.{a,la,dylib} lib/pkgconfig share/gtk-doc share/man
 	DocFiles: COPYING* LICENSE* README*
@@ -101,4 +101,4 @@ and others.
 Description: RDF query library
 License: GPL/LGPL
 Homepage: http://librdf.org/rasqal
-Maintainer: Benjamin Reed <librasqal@fink.racoonfink.com>
+Maintainer: Benjamin Reed <librasqal@fink.raccoonfink.com>

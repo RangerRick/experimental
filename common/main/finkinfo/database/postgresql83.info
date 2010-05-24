@@ -1,5 +1,5 @@
 Package: postgresql83
-Version: 8.3.10
+Version: 8.3.11
 Revision: 1
 Description: PostgreSQL open-source database
 License: BSD
@@ -46,7 +46,7 @@ Replaces: <<
 GCC: 4.0
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: 315118130e1800a87f0effe69b947810
+Source-MD5: 9dfbc971bd9ea7e2c2a042deba8213f9
 PatchFile: %n.patch
 PatchFile-MD5: 13c7e9ba3d4f396395a45e6aa649e48b
 PatchScript: <<
@@ -235,17 +235,17 @@ END
 	chmod 755 %i/var/postgresql-8.3/*.sh
 	perl -pi -e 's,^%d,,' %i/bin/pg_config*
 <<
-InfoTest: <<
-	TestScript: <<
-		#!/bin/sh -ev
-		if [ `id -u` -eq 0 ]; then
-			sudo chown -R fink-bld .
-			sudo -u fink-bld make check || exit 2
-		else
-			make check || exit 2
-		fi
-	<<
-<<
+#InfoTest: <<
+#	TestScript: <<
+#		#!/bin/sh -ev
+#		if [ `id -u` -eq 0 ]; then
+#			sudo chown -R fink-bld .
+#			sudo -u fink-bld make check || exit 2
+#		else
+#			make check || exit 2
+#		fi
+#	<<
+#<<
 DocFiles: COPYRIGHT HISTORY INSTALL README
 
 PreInstScript: <<
