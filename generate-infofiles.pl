@@ -879,7 +879,7 @@ sub transform_type {
 		} elsif ($tree =~ /^10.4/) {
 			@versions = qw(5.8.1 5.8.4 5.8.6 5.8.8 5.10.0);
 		}
-		$type = "perl(@versions)";
+		$type =~ s/perl\s*\(0\)/perl(@versions)/;
 	} elsif ($type =~ /^python\s*\(0\)/i) {
 		my @versions = qw(2.1 2.2 2.3 2.4 2.5 2.6);
 		if ($tree =~ /^10.3/) {
