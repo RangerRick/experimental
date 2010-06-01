@@ -3,12 +3,10 @@ Package: sub-install-pm%type_pkg[perl]
 Version: 0.925
 Revision: 1
 Depends: <<
-	fink (>= 0.28.0-1),
 	perl%type_pkg[perl]-core,
 <<
 BuildDepends: <<
 	fink (>= 0.28.0-1),
-	perl%type_pkg[perl]-core,
 <<
 Source: mirror:cpan:modules/by-module/Sub/Sub-Install-%v.tar.gz
 Source-MD5: 694aaec771c42280746a9a6279683263
