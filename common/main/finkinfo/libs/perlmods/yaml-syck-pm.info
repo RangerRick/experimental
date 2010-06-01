@@ -1,0 +1,33 @@
+Info4: <<
+Package: yaml-syck-pm%type_pkg[perl]
+Version: 1.09
+Revision: 1
+Type: perl(0)
+Description: Fast, lightweight YAML loader and dumper
+License: BSD
+Maintainer: Benjamin Reed <yaml-syck-pm@fink.raccoonfink.com>
+
+# Dependencies:
+Depends: perl%type_pkg[perl]-core
+
+# Unpack Phase:
+Source: mirror:cpan:modules/by-module/YAML/YAML-Syck-%v.tar.gz
+Source-MD5: b21a90e9075c7b92d8f4e75fd1cf5f10
+
+# Install Phase:
+UpdatePOD: True
+DocFiles: COPYING Changes README COMPATIBILITY
+InstallScript: <<
+  %{default_script}
+  mv %i/share/man %i/lib/perl5/%type_raw[perl]
+<<
+
+# Additional Info:
+DescDetail: <<
+YAML::Syck is a fast, lightweight YAML loader and dumper library.
+
+Please type "perldoc YAML::Syck" after installation to see the
+module usage information.
+<<
+Homepage: http://search.cpan.org/dist/YAML-Syck/
+<<
