@@ -1,12 +1,9 @@
 Info2: <<
 Package: universal-can-pm%type_pkg[perl]
-Version: 1.12
+Version: 1.16
 Revision: 1
 Description: UNIVERSAL::can module hack
-Depends: <<
-	fink (>= 0.20.1-1),
-	perl%type_pkg[perl]-core
-<<
+Depends: perl%type_pkg[perl]-core
 BuildDepends: <<
 	fink (>= 0.20.2.1-1),
 	module-build-pm%type_pkg[perl],
@@ -20,9 +17,9 @@ License: Artistic
 Maintainer: Benjamin Reed <universal-can-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:authors/id/C/CH/CHROMATIC/UNIVERSAL-can-%v.tar.gz
-Source-MD5: 4386c4f7479447fc5b51e8c3770cd2f4
+Source-MD5: 8c0ea4949453a710b4d71477c5b9fcb8
 
-DocFiles: Changes MANIFEST README SIGNATURE
+DocFiles: Changes MANIFEST README
 CompileScript: <<
 #!/bin/sh -ex
 	exec 2>&1
@@ -36,11 +33,13 @@ CompileScript: <<
 		--install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
 		--install_path script=%i/bin
 	./Build
-	./Build test
 <<
 InstallScript: <<
 	./Build install
 	find %d -name .packlist -exec rm -rf {} \;
+<<
+InfoTest: <<
+	TestScript: ./Build test || exit 2
 <<
 
 DescDetail: <<
