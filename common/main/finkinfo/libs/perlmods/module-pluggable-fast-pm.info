@@ -1,7 +1,7 @@
 Info2: <<
 Package: module-pluggable-fast-pm%type_pkg[perl]
-Version: 0.18
-Revision: 1022
+Version: 0.19
+Revision: 1
 Description: Fast plugins with instantiation
 Type: perl(0)
 License: Artistic
@@ -21,7 +21,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:cpan:modules/by-module/Module/Module-Pluggable-Fast-%v.tar.gz
-Source-MD5: 37e511a6828448618b12bb85186f79b9
+Source-MD5: e0eeb561a04bb4f28a4f06774bf315f2
 
 UpdatePOD: true
 InstallScript: <<
