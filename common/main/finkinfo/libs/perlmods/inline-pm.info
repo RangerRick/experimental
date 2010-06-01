@@ -1,20 +1,21 @@
-Info2: <<
+Info4: <<
 Package: inline-pm%type_pkg[perl]
-Version: 0.45
+Version: 0.46
 Revision: 1
 Depends: <<
+	data-dumper-pm%type_pkg[perl],
+	digest-md5-pm%type_pkg[perl],
 	perl%type_pkg[perl]-core,
 	rec-descent-pm (>= 1.80-16)
 <<
 BuildDepends: <<
 	fink (>= 0.28.0-1),
-	perl%type_pkg[perl]-core,
-	rec-descent-pm (>= 1.80-16)
 <<
 Replaces: inline-pm (<= 0.43-3), inline-pm560, inline-pm580
 Source: mirror:cpan:modules/by-module/Inline/Inline-%v.tar.gz
+Source-MD5: 4c2f14829fbe83cb456e9c5c0dac06b3 
 PatchFile: inline-pm.patch
-PatchFile-MD5: c54c4880d257afff626a52d855d069f9
+PatchFile-MD5: 2538fb24ae8de991b228621ebf8da15e
 Type: perl(0)
 UpdatePOD: true
 InstallScript: <<
@@ -29,5 +30,4 @@ DescPort: <<
 License: Artistic
 Maintainer: Benjamin Reed <inline-pm@fink.raccoonfink.com>
 Homepage: http://search.cpan.org/dist/Inline
-Source-MD5: 63140a6c911f1576fdee71ba4457610f 
 <<
