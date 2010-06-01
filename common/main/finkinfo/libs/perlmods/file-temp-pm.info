@@ -1,6 +1,6 @@
 Info2: <<
 Package: file-temp-pm%type_pkg[perl]
-Version: 0.21
+Version: 0.22
 Revision: 1
 Depends: <<
 	file-spec-pm%type_pkg[perl],
@@ -14,7 +14,7 @@ BuildDepends: <<
 	test-simple-pm%type_pkg[perl]
 <<
 Source: mirror:cpan:modules/by-module/File/File-Temp-%v.tar.gz
-Source-MD5: d1631d9797fe11ded7cf4b93284c8c8e
+Source-MD5: a7e93cf2015881ded1f22b5b2d0cb391
 Type: perl(0)
 UpdatePOD: true
 InstallScript: <<

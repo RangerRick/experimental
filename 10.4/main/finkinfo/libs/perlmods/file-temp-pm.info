@@ -1,6 +1,6 @@
 Info2: <<
 Package: file-temp-pm%type_pkg[perl]
-Version: 0.21
+Version: 0.22
 Revision: 1
 Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
 Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
@@ -22,7 +22,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:cpan:modules/by-module/File/File-Temp-%v.tar.gz
-Source-MD5: d1631d9797fe11ded7cf4b93284c8c8e
+Source-MD5: a7e93cf2015881ded1f22b5b2d0cb391
 
 UseMaxBuildJobs: true
 
