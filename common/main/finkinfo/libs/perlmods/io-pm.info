@@ -1,7 +1,7 @@
 Info2: <<
 Package: io-pm%type_pkg[perl]
-Version: 1.2301
-Revision: 2
+Version: 1.25
+Revision: 1
 Description: IO routines for perl
 Depends: perl%type_pkg[perl]-core
 BuildDepends: system-perl
@@ -12,7 +12,7 @@ License: Artistic
 Maintainer: Benjamin Reed <io-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/IO/IO-%v.tar.gz
-Source-MD5: 4f209b75851b27f39a4d221d01a19b92
+Source-MD5: b88aaf2bb7437725b11e9eb48dfb6c93
 
 UpdatePOD: true
 DocFiles: ChangeLog README
