@@ -1,4 +1,4 @@
-Info2: <<
+Info4: <<
 Package: test-use-ok-pm%type_pkg[perl]
 Version: 0.02
 Revision: 1
@@ -13,11 +13,7 @@ Depends: <<
 	perl%type_pkg[perl]-core,
 	test-simple-pm%type_pkg[perl]
 <<
-BuildDepends: <<
-	fink (>= 0.29.7-1),
-	perl%type_pkg[perl]-core,
-	test-simple-pm%type_pkg[perl]
-<<
+BuildDepends: fink (>= 0.29.7-1)
 
 Source: mirror:cpan:modules/by-module/Test/Test-use-ok-%v.tar.gz
 Source-MD5: c49b0bbb37a6764b8b96d9fcef954ba2
@@ -27,8 +23,8 @@ UseMaxBuildJobs: true
 
 UpdatePOD: true
 InstallScript: <<
-	%{default_script}
-	mv %i/share/man %i/lib/perl5/%type_raw[perl]
+%{default_script}
+mv %i/share/man %i/lib/perl5/%type_raw[perl]
 <<
 DocFiles: MANIFEST* SIGNATURE
 
