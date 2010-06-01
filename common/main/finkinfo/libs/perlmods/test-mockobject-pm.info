@@ -4,7 +4,6 @@ Version: 1.09
 Revision: 1
 Description: Emulate troublesome interfaces
 Depends: <<
-	fink (>= 0.20.1-1),
 	perl%type_pkg[perl]-core,
 	scalar-list-utils-pm%type_pkg[perl],
 	test-exception-pm,
@@ -15,23 +14,15 @@ Depends: <<
 BuildDepends: <<
 	fink (>= 0.20.2.1-1),
 	module-build-pm%type_pkg[perl],
-	perl%type_pkg[perl]-core,
-	scalar-list-utils-pm%type_pkg[perl],
-	test-exception-pm,
-	test-simple-pm%type_pkg[perl],
-	universal-isa-pm%type_pkg[perl] (>= 0.06-1),
-	universal-can-pm%type_pkg[perl] (>= 1.11-1)
 <<
 
 Type: perl(0)
-NoPerlTests: true
 License: Artistic
 Maintainer: Benjamin Reed <test-mockobject-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Test/Test-MockObject-%v.tar.gz
 Source-MD5: 3c9c2842d40fa8c389563c227804d7d8
 
-UpdatePOD: true
 DocFiles: Changes MANIFEST README
 CompileScript: <<
 #!/bin/sh -ex
@@ -46,11 +37,13 @@ CompileScript: <<
 		--install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
 		--install_path script=%i/bin
 	./Build
-	./Build test
 <<
 InstallScript: <<
 	./Build install
 	find %d -name .packlist -exec rm -rf {} \;
+<<
+InfoTest: <<
+	TestScript: ./Build test || exit 2
 <<
 
 DescDetail: <<
