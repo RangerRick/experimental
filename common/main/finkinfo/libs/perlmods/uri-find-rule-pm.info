@@ -1,4 +1,4 @@
-Info2: <<
+Info4: <<
 Package: uri-find-rule-pm%type_pkg[perl]
 Version: 0.8
 Revision: 2
@@ -6,15 +6,11 @@ Depends: <<
 	perl%type_pkg[perl]-core,
 	uri-find-pm%type_pkg[perl],
 	uri-pm%type_pkg[perl],
-	text-glob-pm
+	text-glob-pm,
 <<
 BuildDepends: <<
-	uri-find-pm%type_pkg[perl],
-	uri-pm%type_pkg[perl],
-	text-glob-pm,
-	module-build-pm%type_pkg[perl],
 	fink (>= 0.20.2.1-1),
-	perl%type_pkg[perl]-core
+	module-build-pm%type_pkg[perl],
 <<
 Replaces: <<
 	uri-find-rule-pm560,
@@ -43,11 +39,13 @@ CompileScript: <<
     --install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
     --install_path script=%i/bin
   ./Build
-  ./Build test
 <<
 InstallScript: <<
 	./Build install
 	find %d -name .packlist -exec rm -rf {} \;
+<<
+InfoTest: <<
+	TestScript: ./Build test || exit 2
 <<
 DocFiles: MANIFEST* README
 Description: Simplified interface to URI::Find
