@@ -1,7 +1,7 @@
 Info2: <<
 Package: getopt-mixed-pm%type_pkg[perl]
-Version: 1.008
-Revision: 1025
+Version: 1.10
+Revision: 1
 Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
 Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
 Description: Read command-line arguments
@@ -16,7 +16,7 @@ BuildDepends: <<
 Provides: getopt-mixed-pm
 
 Source: mirror:cpan:authors/id/C/CJ/CJM/Getopt-Mixed-%v.tar.gz
-Source-MD5: 7d492669944f93809b7963f2c88865e7
+Source-MD5: 9d384322a4368b326efdf899bce5838a
 
 UseMaxBuildJobs: true
 
