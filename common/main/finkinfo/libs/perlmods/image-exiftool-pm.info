@@ -1,11 +1,11 @@
 Info2: <<
 Package: image-exiftool-pm
-Version: 7.67
+Version: 8.15
 Revision: 1
 ###
 ###
 Source: mirror:cpan:modules/by-module/Image/Image-ExifTool-%v.tar.gz
-Source-MD5: 4b60741cd725683eb11ae0866e5941e5
+Source-MD5: 750cc49c18ef1ed65300bc39bc4e6536
 ###
 Type: perl
 UpdatePOD: true
