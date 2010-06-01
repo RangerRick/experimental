@@ -16,25 +16,11 @@ Depends: <<
 	yaml-pm (>= 0.35-1)
 <<
 BuildDepends: <<
-	config-simple-pm,
-	crypt-ssleay-pm%type_pkg[perl],
 	fink (>= 0.20.2.1-1),
-	io-stringy-pm,
-	libwww-pm%type_pkg[perl],
-	log-dispatch-pm%type_pkg[perl],
-	module-build-pm%type_pkg[perl],
-	perl%type_pkg[perl]-core,
-	time-date-pm,
-	time-hires-pm%type_pkg[perl],
-	uri-find-rule-pm%type_pkg[perl],
-	uri-pm%type_pkg[perl],
-	xml-simple-pm%type_pkg[perl],
-	yaml-pm (>= 0.35-1)
 <<
 Source: mirror:cpan:modules/by-module/Net/Net-Delicious-%v.tar.gz
 Source-MD5: 3f45a7e235fbbca82dbf2c51f4a6535c
 Type: perl(0)
-NoPerlTests: true
 UpdatePOD: true
 CompileScript: <<
 #!/bin/sh -ex
@@ -49,11 +35,13 @@ CompileScript: <<
     --install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
     --install_path script=%i/bin
   ./Build
-  ./Build test
 <<
 InstallScript: <<
 	./Build install
 	find %d -name .packlist -exec rm -rf {} \;
+<<
+InfoTest: <<
+	TestScript: ./Build test || exit 2
 <<
 DocFiles: MANIFEST* README
 Description: Talk to del.icio.us through perl

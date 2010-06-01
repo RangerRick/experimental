@@ -22,22 +22,8 @@ Depends: <<
 	xml-simple-pm%type_pkg[perl],
 	yaml-pm (>= 0.35-1)
 <<
-BuildDepends: <<
-	config-simple-pm,
-	crypt-ssleay-pm%type_pkg[perl],
-	fink (>= 0.29.7-1),
-	io-stringy-pm,
-	libwww-pm%type_pkg[perl],
-	log-dispatch-pm%type_pkg[perl],
-	module-build-pm%type_pkg[perl],
-	perl%type_pkg[perl]-core,
-	time-date-pm,
-	time-hires-pm%type_pkg[perl],
-	uri-find-rule-pm%type_pkg[perl],
-	uri-pm%type_pkg[perl],
-	xml-simple-pm%type_pkg[perl],
-	yaml-pm (>= 0.35-1)
-<<
+BuildDepends: fink (>= 0.29.7-1)
+InfoTest: 	TestScript: ./Build test || exit 2
 
 Source: mirror:cpan:modules/by-module/Net/Net-Delicious-%v.tar.gz
 Source-MD5: 3f45a7e235fbbca82dbf2c51f4a6535c
@@ -56,7 +42,6 @@ CompileScript: <<
     --install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
     --install_path script=%i/bin
   ./Build
-  ./Build test
 <<
 
 UpdatePOD: true
@@ -64,7 +49,6 @@ InstallScript: <<
 	./Build install
 	find %d -name .packlist -exec rm -rf {} \;
 <<
-NoPerlTests: true
 DocFiles: MANIFEST* README
 
 Homepage: http://search.cpan.org/dist/Net-Delicious

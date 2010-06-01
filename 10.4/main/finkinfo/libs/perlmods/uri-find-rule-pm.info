@@ -1,7 +1,7 @@
 Info4: <<
 Package: uri-find-rule-pm%type_pkg[perl]
 Version: 0.8
-Revision: 2
+Revision: 3
 Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
 Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
 Description: Simplified interface to URI::Find

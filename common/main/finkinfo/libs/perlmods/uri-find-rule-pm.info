@@ -1,7 +1,7 @@
 Info4: <<
 Package: uri-find-rule-pm%type_pkg[perl]
 Version: 0.8
-Revision: 2
+Revision: 3
 Depends: <<
 	perl%type_pkg[perl]-core,
 	uri-find-pm%type_pkg[perl],

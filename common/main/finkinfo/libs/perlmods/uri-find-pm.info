@@ -35,6 +35,7 @@ InstallScript: <<
 	mv %i/bin/urifind %i/bin/urifind-%type_raw[perl]
 <<
 InfoTest: <<
+	TestDepends: test-simple-pm%type_pkg[perl] (>= 0.94-1)
 	TestScript: ./Build test || exit 2
 <<
 PostInstScript: <<
