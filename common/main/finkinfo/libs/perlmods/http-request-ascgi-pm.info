@@ -1,17 +1,30 @@
-Info2: <<
+Info4: <<
 Package: http-request-ascgi-pm%type_pkg[perl]
-Version: 0.5
-Revision: 2
+Version: 1.2
+Revision: 1
 Description: Set up a CGI enviroment from an HTTP::Request
-Depends: fink (>= 0.20.1-1), perl%type_pkg[perl]-core, class-accessor-pm, libwww-pm%type_pkg[perl], test-simple-pm%type_pkg[perl]
-BuildDepends: perl%type_pkg[perl]-core, fink (>= 0.20.2.1-1), class-accessor-pm, libwww-pm%type_pkg[perl], test-simple-pm%type_pkg[perl]
+Depends: <<
+	class-accessor-pm,
+	fink (>= 0.20.1-1),
+	libwww-pm%type_pkg[perl] (>= 5.836-1),
+	perl%type_pkg[perl]-core,
+	uri-pm%type_pkg[perl],
+<<
+BuildDepends: <<
+	class-accessor-pm,
+	fink (>= 0.20.2.1-1),
+	libwww-pm%type_pkg[perl] (>= 5.836-1),
+	perl%type_pkg[perl]-core,
+	test-simple-pm%type_pkg[perl],
+	uri-pm%type_pkg[perl],
+<<
 
 Type: perl(0)
 License: Artistic
 Maintainer: Benjamin Reed <http-request-ascgi-pm@fink.raccoonfink.com>
 
-Source: mirror:cpan:authors/id/C/CH/CHANSEN/HTTP-Request-AsCGI-%v.tar.gz
-Source-MD5: e1f5d332969d072a19d9649ed7d77f59
+Source: mirror:cpan:modules/by-module/HTTP/HTTP-Request-AsCGI-%v.tar.gz
+Source-MD5: 82f4749a702992d405d2a8f8118e87ec
 
 UpdatePOD: true
 DocFiles: Changes MANIFEST README
