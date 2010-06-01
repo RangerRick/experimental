@@ -1,17 +1,20 @@
-Info2: <<
+Info4: <<
 Package: text-simpletable-pm%type_pkg[perl]
-Version: 0.05
+Version: 2.03
 Revision: 1
 Description: Simple eyecandy ASCII tables
-Depends: fink (>= 0.20.1-1), perl%type_pkg[perl]-core
-BuildDepends: perl%type_pkg[perl]-core, fink (>= 0.20.2.1-1), module-build-pm%type_pkg[perl]
+Depends: perl%type_pkg[perl]-core
+BuildDepends: <<
+	fink (>= 0.20.2.1-1),
+	module-build-pm%type_pkg[perl],
+<<
 
 Type: perl(0)
 License: Artistic
 Maintainer: Benjamin Reed <text-simpletable-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Text/Text-SimpleTable-%v.tar.gz
-Source-MD5: 90f884fec82f85df903ad7934b5351a6
+Source-MD5: a79a1f53846c111e8f6056702c39fa17
 
 InstallScript: <<
 	%{default_script}
