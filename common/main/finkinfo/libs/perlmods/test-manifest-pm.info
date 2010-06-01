@@ -1,6 +1,6 @@
 Info2: <<
 Package: test-manifest-pm%type_pkg[perl]
-Version: 1.22
+Version: 1.23
 Revision: 1
 Depends: <<
 	perl%type_pkg[perl]-core,
@@ -17,14 +17,10 @@ Replaces: <<
 <<
 Provides: test-manifest-pm
 Source: mirror:cpan:modules/by-module/Test/Test-Manifest-%v.tar.gz
-Source-MD5: 298156323748c74decdca79904ebd881
+Source-MD5: 81c8744987b67d35af05a74a3c7f1742
 SourceDirectory: Test-Manifest-%v
 Type: perl(0)
 UpdatePOD: true
-InstallScript: <<
-	%{default_script}
-	mv %i/share/man %i/lib/perl5/%type_raw[perl]
-<<
 DocFiles: Changes MANIFEST
 Description: Perl module for using t/test_manifest files
 DescDetail: <<
