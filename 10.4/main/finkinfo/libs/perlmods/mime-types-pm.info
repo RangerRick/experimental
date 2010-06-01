@@ -1,6 +1,6 @@
 Info2: <<
 Package: mime-types-pm%type_pkg[perl]
-Version: 1.27
+Version: 1.29
 Revision: 1
 Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
 Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
@@ -21,7 +21,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:cpan:modules/by-module/MIME/MIME-Types-%v.tar.gz
-Source-MD5: 9407dfdd3a5adb7bf569ed2a184f1640
+Source-MD5: 4944fea4b6f2be96745fde90607c43f7
 
 UseMaxBuildJobs: true
 
