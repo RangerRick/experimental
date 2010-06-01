@@ -17,7 +17,6 @@ SourceDirectory: Net-Daemon
 UseMaxBuildJobs: true
 
 UpdatePOD: true
-NoPerlTests: true
 DocFiles: ChangeLog MANIFEST README
 
 Homepage: http://search.cpan.org/dist/Net-Daemon
