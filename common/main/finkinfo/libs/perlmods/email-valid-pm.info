@@ -10,7 +10,6 @@ Source-MD5: c350766bff1e73aff4fe7ac6c96acdb8
 ###
 Type: perl(0)
 UpdatePOD: true
-NoPerlTests: true
 ###
 DocFiles: Changes README
 ###
