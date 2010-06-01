@@ -1,6 +1,6 @@
-Info2: <<
+Info4: <<
 Package: xml-rss-pm%type_pkg[perl]
-Version: 1.43
+Version: 1.48
 Revision: 1
 Depends: <<
 	datetime-pm%type_pkg[perl],
@@ -9,23 +9,16 @@ Depends: <<
 	html-parser-pm%type_pkg[perl],
 	libwww-pm%type_pkg[perl],
 	perl%type_pkg[perl]-core,
-	xml-parser-pm%type_pkg[perl] (>= 2.23-1)
+	xml-parser-pm%type_pkg[perl] (>= 2.23-1),
 <<
 BuildDepends: <<
-	datetime-pm%type_pkg[perl],
-	datetime-format-mail-pm%type_pkg[perl],
-	datetime-format-w3cdtf-pm%type_pkg[perl],
 	fink (>= 0.20.2.1-1),
-	html-parser-pm%type_pkg[perl],
-	libwww-pm%type_pkg[perl],
-	perl%type_pkg[perl]-core,
 	test-manifest-pm%type_pkg[perl] (>= 0.9-1),
-	xml-parser-pm%type_pkg[perl] (>= 2.23-1)
 <<
 Replaces: xml-rss-pm560, xml-rss-pm561, xml-rss-pm580, xml-rss-pm581, xml-rss-pm584, xml-rss-pm585, xml-rss-pm (<< 1.04-1)
 Provides: xml-rss-pm
 Source: mirror:cpan:modules/by-module/XML/XML-RSS-%v.tar.gz
-Source-MD5: dce2dd92ad4cfb34aa8e928a35b73648
+Source-MD5: e58370261d5ce7e871fffed211ff9bd3
 SourceDirectory: XML-RSS-%v
 Type: perl(0)
 UpdatePOD: true
