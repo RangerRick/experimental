@@ -1,6 +1,6 @@
 Info3: <<
 Package: variable-magic-pm%type_pkg[perl]
-Version: 0.30
+Version: 0.42
 Revision: 1
 Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
 Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
@@ -19,7 +19,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:cpan:modules/by-module/Variable/Variable-Magic-%v.tar.gz
-Source-MD5: 1850fb2c5770b48df0d9a13b5713a643
+Source-MD5: 503c75e461e84de9f11c3735672abdd6
 
 UseMaxBuildJobs: true
 
