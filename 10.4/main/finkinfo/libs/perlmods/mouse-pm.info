@@ -1,6 +1,6 @@
 Info4: <<
 Package: mouse-pm%type_pkg[perl]
-Version: 0.17
+Version: 0.59
 Revision: 1
 Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
 Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
@@ -14,13 +14,17 @@ Depends: <<
 	perl%type_pkg[perl]-core
 <<
 BuildDepends: <<
+	devel-ppport-pm%type_pkg[perl] (>= 3.19-1),
 	fink (>= 0.29.7-1),
 	perl%type_pkg[perl]-core,
-	test-exception-pm
+	test-exception-pm,
+	test-requires-pm,
+	test-simple-pm%type_pkg[perl] (>= 0.94-1)
 <<
+InfoTest: TestScript: make FULLPERL="/usr/bin/arch -%m `which perl%type_raw[perl]`" test || exit 2
 
-Source: mirror:cpan:authors/id/S/SA/SARTAK/Mouse-%v.tar.gz
-Source-MD5: b7be6042224bc24f9a4f28e9c89c72de
+Source: mirror:cpan:authors/id/G/GF/GFUJI/Mouse-%v.tar.gz
+Source-MD5: 72ec389188ad456cfb01a27cd41b03b1
 
 UseMaxBuildJobs: true
 
