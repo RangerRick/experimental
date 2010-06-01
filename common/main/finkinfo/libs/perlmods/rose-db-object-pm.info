@@ -1,29 +1,24 @@
-Info2: <<
+Info4: <<
 Package: rose-db-object-pm%type_pkg[perl]
-Version: 0.783
+Version: 0.788
 Revision: 1
 Description: Extensible, high performance RDBMS-OO mapper
 Depends: <<
+	bit-vector-pm%type_pkg[perl],
 	clone-pm%type_pkg[perl] (>= 0.29-1),
 	dbi-pm%type_pkg[perl] (>= 1.40-1),
-	fink (>= 0.20.1-1),
+	list-moreutils-pm%type_pkg[perl],
 	math-bigint-pm%type_pkg[perl],
 	perl%type_pkg[perl]-core,
 	rose-datetime-pm%type_pkg[perl] (>= 0.532-1),
 	rose-object-pm%type_pkg[perl] (>= 0.854-1),
-	rose-db-pm%type_pkg[perl] (>= 0.753-1),
-	test-simple-pm%type_pkg[perl]
+	rose-db-pm%type_pkg[perl] (>= 0.761-1),
+	scalar-list-utils-pm%type_pkg[perl],
+	time-clock-pm (>= 1.00-1),
 <<
 BuildDepends: <<
-	clone-pm%type_pkg[perl] (>= 0.29-1),
-	dbi-pm%type_pkg[perl] (>= 1.40-1),
 	fink (>= 0.20.2.1-1),
-	math-bigint-pm%type_pkg[perl],
-	perl%type_pkg[perl]-core,
-	rose-datetime-pm%type_pkg[perl] (>= 0.532-1),
-	rose-object-pm%type_pkg[perl] (>= 0.854-1),
-	rose-db-pm%type_pkg[perl] (>= 0.753-1),
-	test-simple-pm%type_pkg[perl]
+	test-simple-pm%type_pkg[perl],
 <<
 
 Type: perl(0)
@@ -31,7 +26,7 @@ License: Artistic
 Maintainer: Benjamin Reed <rose-db-object-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Rose/Rose-DB-Object-%v.tar.gz
-Source-MD5: 4642e4084d89303bafd7bba8a9bd109f
+Source-MD5: 14bceee9739cfb18c40bb67641bd7a78
 
 NoPerlTests: true
 UpdatePOD: true

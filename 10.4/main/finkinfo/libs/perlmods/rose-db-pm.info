@@ -1,6 +1,6 @@
 Info2: <<
 Package: rose-db-pm%type_pkg[perl]
-Version: 0.754
+Version: 0.761
 Revision: 1
 Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
 Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
@@ -14,34 +14,24 @@ Depends: <<
 	clone-pp-pm,
 	datetime-format-pg-pm%type_pkg[perl] (>= 0.11-1),
 	datetime-format-mysql-pm%type_pkg[perl],
+	datetime-format-oracle-pm%type_pkg[perl],
 	dbd-pg-unified-pm%type_pkg[perl] | dbd-mysql-pm%type_pkg[perl] | dbd-sqlite-pm%type_pkg[perl],
 	dbi-pm%type_pkg[perl],
-	fink (>= 0.29.7-1),
 	perl%type_pkg[perl]-core,
 	rose-object-pm%type_pkg[perl] (>= 0.854-1),
 	rose-datetime-pm%type_pkg[perl] (>= 0.532-1),
+	scalar-list-utils-pm%type_pkg[perl],
 	sql-reservedwords-pm%type_pkg[perl],
-	test-simple-pm%type_pkg[perl],
+	time-clock-pm,
 	yaml-syck-pm%type_pkg[perl]
 <<
 BuildDepends: <<
-	bit-vector-pm%type_pkg[perl],
-	clone-pp-pm,
-	datetime-format-pg-pm%type_pkg[perl] (>= 0.11-1),
-	datetime-format-mysql-pm%type_pkg[perl],
-	dbd-pg-unified-pm%type_pkg[perl] | dbd-mysql-pm%type_pkg[perl] | dbd-sqlite-pm%type_pkg[perl],
-	dbi-pm%type_pkg[perl],
 	fink (>= 0.29.7-1),
-	perl%type_pkg[perl]-core,
-	rose-object-pm%type_pkg[perl] (>= 0.854-1),
-	rose-datetime-pm%type_pkg[perl] (>= 0.532-1),
-	sql-reservedwords-pm%type_pkg[perl],
-	test-simple-pm%type_pkg[perl],
-	yaml-syck-pm%type_pkg[perl]
+	test-simple-pm%type_pkg[perl]
 <<
 
 Source: mirror:cpan:modules/by-module/Rose/Rose-DB-%v.tar.gz
-Source-MD5: 3b97e33e9dfa9ff83aa418f564fd40ce
+Source-MD5: 513f220e0afeb538c388d50938387b6c
 
 UseMaxBuildJobs: true
 

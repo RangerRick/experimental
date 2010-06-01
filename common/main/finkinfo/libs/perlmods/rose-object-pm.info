@@ -1,17 +1,14 @@
-Info2: <<
+Info4: <<
 Package: rose-object-pm%type_pkg[perl]
-Version: 0.855
+Version: 0.858
 Revision: 1
 Description: Simple object base class
 Depends: <<
-	fink (>= 0.20.1-1),
 	perl%type_pkg[perl]-core,
-	test-simple-pm%type_pkg[perl]
 <<
 BuildDepends: <<
 	fink (>= 0.20.2.1-1),
-	perl%type_pkg[perl]-core,
-	test-simple-pm%type_pkg[perl]
+	test-simple-pm%type_pkg[perl],
 <<
 
 Type: perl(0)
@@ -19,7 +16,7 @@ License: Artistic
 Maintainer: Benjamin Reed <rose-object-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Rose/Rose-Object-%v.tar.gz
-Source-MD5: d9632687f60e78cf5b5ea4f2a0384c53
+Source-MD5: 2db7f8e0f2159deba263c4bc19da2779
 
 UpdatePOD: true
 DocFiles: Changes MANIFEST
