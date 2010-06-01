@@ -1,6 +1,6 @@
 Info2: <<
 Package: digest-pm%type_pkg[perl]
-Version: 1.15
+Version: 1.16
 Revision: 1
 Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
 Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
@@ -32,7 +32,7 @@ Replaces: <<
 <<
 
 Source: mirror:cpan:modules/by-module/Digest/Digest-%v.tar.gz
-Source-MD5: 83be88df645ef0981d991f86dcba6da7
+Source-MD5: df65b3c12785ff9bbf14521551f0268d
 
 UseMaxBuildJobs: true
 
