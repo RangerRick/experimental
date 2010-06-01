@@ -1,6 +1,6 @@
-Info2: <<
+Info4: <<
 Package: test-warn-pm%type_pkg[perl]
-Version: 0.11
+Version: 0.21
 Revision: 1
 Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
 Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
@@ -14,30 +14,22 @@ Depends: <<
 	file-spec-pm%type_pkg[perl],
 	perl%type_pkg[perl]-core,
 	sub-uplevel-pm (>= 0.12-1),
-	test-builder-tester-pm (>= 1.01-1),
+	test-builder-tester-pm (>= 1.02-1),
+	test-simple-pm%type_pkg[perl],
 	test-exception-pm,
 	tree-dag-node-pm
 <<
-BuildDepends: <<
-	array-compare-pm%type_pkg[perl],
-	file-spec-pm%type_pkg[perl],
-	fink (>= 0.29.7-1),
-	perl%type_pkg[perl]-core,
-	sub-uplevel-pm (>= 0.12-1),
-	test-builder-tester-pm (>= 1.01-1),
-	test-exception-pm,
-	tree-dag-node-pm
-<<
+BuildDepends: fink (>= 0.29.7-1)
 
-Source: mirror:cpan:modules/by-module/Test/Test-Warn-%v.tar.gz
-Source-MD5: 1000ef6d94b54ca9eb75fb994a7e8bec
+Source: mirror:cpan:modules/by-module/Test/Test-Warn-%v.zip
+Source-MD5: d33c38d18d2bedac52bfdbaf94c8744d
 
 UseMaxBuildJobs: true
 
 UpdatePOD: true
 InstallScript: <<
-	%{default_script}
-	mv %i/share/man %i/lib/perl5/%type_raw[perl]
+%{default_script}
+mv %i/share/man %i/lib/perl5/%type_raw[perl]
 <<
 DocFiles: Changes MANIFEST README
 
