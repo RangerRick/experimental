@@ -1,11 +1,14 @@
-Info2: <<
+Info4: <<
 Package: text-csv-xs-pm%type_pkg[perl]
-Version: 0.60
+Version: 0.73
 Revision: 1
 Depends: perl%type_pkg[perl]-core
-BuildDepends: test-simple-pm%type_pkg[perl], fink (>= 0.20.1-1)
+BuildDepends: <<
+	fink (>= 0.20.1-1),
+	test-simple-pm%type_pkg[perl],
+<<
 Source: mirror:cpan:modules/by-module/Text/Text-CSV_XS-%v.tgz
-Source-MD5: a9f0934a58bba602a5d447792d9ded04
+Source-MD5: e048b3c4eb6ff2dd9dc4ae67be358ca4
 Type: perl(0)
 UpdatePOD: True
 DocFiles: ChangeLog MANIFEST META.yml README examples/*

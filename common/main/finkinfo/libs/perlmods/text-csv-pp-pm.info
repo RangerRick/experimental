@@ -1,11 +1,15 @@
-Info2: <<
+Info4: <<
 Package: text-csv-pp-pm%type_pkg[perl]
-Version: 1.10
+Version: 1.17
 Revision: 1
 Depends: perl%type_pkg[perl]-core
-BuildDepends: test-simple-pm%type_pkg[perl], fink (>= 0.20.1-1)
+BuildDepends: <<
+	test-harness-pm%type_pkg[perl],
+	test-simple-pm%type_pkg[perl],
+	fink (>= 0.20.1-1),
+<<
 Source: mirror:cpan:modules/by-module/Text/Text-CSV-%v.tar.gz
-Source-MD5: ea28c3e4d37125b34c68ce2a03e6315a
+Source-MD5: b03e37a760083732fa32308ec68f788f
 Type: perl(0)
 UpdatePOD: True
 DocFiles: MANIFEST README Changes META.yml
