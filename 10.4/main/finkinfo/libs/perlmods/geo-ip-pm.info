@@ -1,6 +1,6 @@
 Info3: <<
 Package: geo-ip-pm%type_pkg[perl]
-Version: 1.36
+Version: 1.38
 Revision: 1
 Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
 Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
@@ -30,7 +30,7 @@ Replaces: <<
 <<
 
 Source: http://www.maxmind.com/download/geoip/api/perl/Geo-IP-%v.tar.gz
-Source-MD5: e3cc9477bcf4344988c703e8b141f21a
+Source-MD5: 22ab07f98c79b316062881ed72cdc3c6
 
 UseMaxBuildJobs: true
 ConfigureParams: LIBS='-L%p/lib' INC='-I%p/include'

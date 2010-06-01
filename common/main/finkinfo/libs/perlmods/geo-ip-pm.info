@@ -1,6 +1,6 @@
 Info3: <<
 Package: geo-ip-pm%type_pkg[perl]
-Version: 1.36
+Version: 1.38
 Revision: 1
 Description: Look up a country based on IP or hostname
 Depends: <<
@@ -20,7 +20,7 @@ License: Artistic
 Maintainer: Benjamin Reed <geo-ip-pm@fink.raccoonfink.com>
 
 Source: http://www.maxmind.com/download/geoip/api/perl/Geo-IP-%v.tar.gz
-Source-MD5: e3cc9477bcf4344988c703e8b141f21a
+Source-MD5: 22ab07f98c79b316062881ed72cdc3c6
 ConfigureParams: LIBS='-L%p/lib' INC='-I%p/include'
 
 UpdatePOD: true
