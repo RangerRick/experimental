@@ -1,7 +1,7 @@
 Info2: <<
 Package: mime-tools-pm%type_pkg[perl]
-Version: 5.427
-Revision: 2
+Version: 5.428
+Revision: 1
 Epoch: 1
 Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
 Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
@@ -33,10 +33,14 @@ Replaces: <<
 <<
 
 Source: mirror:cpan:authors/id/D/DO/DONEILL/MIME-tools-%v.tar.gz
-Source-MD5: 4333caa7238cb9eafb5f7fb39fcbd8e7
+Source-MD5: dc9bef4af5ca86b729f5277fa52879f4
 SourceDirectory: MIME-tools-%v
 
 UseMaxBuildJobs: true
+CompileScript: <<
+	ARCHFLAGS="" echo no | perl%type_raw[perl] Makefile.PL %c
+	make
+<<
 
 UpdatePOD: true
 InstallScript: <<

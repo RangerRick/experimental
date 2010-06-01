@@ -1,7 +1,7 @@
 Info2: <<
 Package: mime-tools-pm%type_pkg[perl]
-Version: 5.427
-Revision: 2
+Version: 5.428
+Revision: 1
 Epoch: 1
 Depends: <<
 	fink (>= 0.28.0-1),
@@ -17,10 +17,14 @@ Depends: <<
 Replaces: mime-tools-pm, mime-tools-pm560, mime-tools-pm561, mime-tools-pm580, mime-tools-pm581, mime-tools-pm584, mime-tools-pm585
 Provides: mime-tools-pm
 Source: mirror:cpan:authors/id/D/DO/DONEILL/MIME-tools-%v.tar.gz
-Source-MD5: 4333caa7238cb9eafb5f7fb39fcbd8e7
+Source-MD5: dc9bef4af5ca86b729f5277fa52879f4
 SourceDirectory: MIME-tools-%v
 Type: perl(0)
 UpdatePOD: true
+CompileScript: <<
+	ARCHFLAGS="" echo no | perl%type_raw[perl] Makefile.PL %c
+	make
+<<
 InstallScript: <<
 	%{default_script}
 	mv %i/share/man %i/lib/perl5/%type_raw[perl]
