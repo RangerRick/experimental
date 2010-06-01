@@ -10,14 +10,11 @@ License: Artistic
 Maintainer: Benjamin Reed <tie-toobject-pm@fink.raccoonfink.com>
 
 Depends: <<
-	fink (>= 0.29.7-1),
 	perl%type_pkg[perl]-core,
 	scalar-list-utils-pm%type_pkg[perl]
 <<
 BuildDepends: <<
 	fink (>= 0.29.7-1),
-	perl%type_pkg[perl]-core,
-	scalar-list-utils-pm%type_pkg[perl],
 	test-use-ok-pm%type_pkg[perl]
 <<
 
