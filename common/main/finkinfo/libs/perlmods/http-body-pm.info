@@ -1,6 +1,6 @@
-Info2: <<
+Info4: <<
 Package: http-body-pm%type_pkg[perl]
-Version: 1.05
+Version: 1.07
 Revision: 1
 Description: HTTP body parser
 Conflicts: http-body-pm
@@ -9,13 +9,11 @@ Depends: <<
 	file-temp-pm%type_pkg[perl] (>= 0.14-1),
 	libwww-pm%type_pkg[perl],
 	perl%type_pkg[perl]-core,
-	yaml-pm (>= 0.39-1)
 <<
 BuildDepends: <<
-	file-temp-pm%type_pkg[perl] (>= 0.14-1),
-	libwww-pm%type_pkg[perl],
-	perl%type_pkg[perl]-core,
-	yaml-pm (>= 0.39-1)
+	fink (>= 0.29-1),
+	test-deep-pm,
+	test-simple-pm%type_pkg[perl] (>= 0.86-1),
 <<
 
 Type: perl(0)
@@ -23,7 +21,7 @@ License: Artistic
 Maintainer: Benjamin Reed <http-body-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/HTTP/HTTP-Body-%v.tar.gz
-Source-MD5: 1379184350749d108de4b0f47610a2b7
+Source-MD5: 926414bd380f7e626ac72881fc537de1
 
 InstallScript: <<
 	%{default_script}
