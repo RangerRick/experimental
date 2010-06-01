@@ -10,11 +10,7 @@ Depends: <<
 	sub-install-pm%type_pkg[perl] (>= 0.92-1),
 <<
 BuildDepends: <<
-	data-optlist-pm%type_pkg[perl] (>= 0.100-1),
 	fink (>= 0.28.0-1),
-	params-util-pm%type_pkg[perl] (>= 0.14-1),
-	perl%type_pkg[perl]-core,
-	sub-install-pm%type_pkg[perl] (>= 0.92-1),
 <<
 Source: mirror:cpan:modules/by-module/Sub/Sub-Exporter-%v.tar.gz
 Source-MD5: db90a0d73a5ca2d185dd6c6d2fc848f0
