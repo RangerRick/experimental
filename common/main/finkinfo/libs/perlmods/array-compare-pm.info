@@ -1,18 +1,25 @@
 Info2: <<
 Package: array-compare-pm%type_pkg[perl]
-Version: 1.17
+Version: 1.18
 Revision: 1
 Description: Perl extension for comparing arrays
-Depends: fink (>= 0.20.1-1), perl%type_pkg[perl]-core
-BuildDepends: perl%type_pkg[perl]-core, fink (>= 0.20.2.1-1), module-build-pm%type_pkg[perl]
+Depends: <<
+	fink (>= 0.20.1-1),
+	perl%type_pkg[perl]-core
+<<
+BuildDepends: <<
+	perl%type_pkg[perl]-core,
+	fink (>= 0.20.2.1-1),
+	module-build-pm%type_pkg[perl]
+<<
 
 Type: perl(0)
-NoPerlTests: true
 License: Artistic
 Maintainer: Benjamin Reed <array-compare-pm@fink.raccoonfink.com>
 
-Source: mirror:cpan:modules/by-module/Array/Array-Compare-%v.tar.gz
-Source-MD5: 0159ebb79529528db4cc68051532d22d
+#Source: mirror:cpan:modules/by-module/Array/Array-Compare-%v.tar.gz
+Source: mirror:cpan:authors/id/D/DA/DAVECROSS/Array-Compare-%v.tar.gz
+Source-MD5: ebca871a2e9c37b389232a6be6700373
 
 DocFiles: Changes MANIFEST README
 CompileScript: <<
@@ -33,6 +40,9 @@ CompileScript: <<
 InstallScript: <<
 	./Build install
 	find %d -name .packlist -exec rm -rf {} \;
+<<
+InfoTest: <<
+	TestScript: ./Build test || exit 2
 <<
 
 DescDetail: <<
