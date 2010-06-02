@@ -1,7 +1,7 @@
 Info2: <<
 Package: datetime-format-w3cdtf-pm%type_pkg[perl]
-Version: 0.04
-Revision: 1021
+Version: 0.05
+Revision: 1
 Description: Parse and format W3CDTF datetime strings
 Type: perl(0)
 License: Artistic
@@ -17,7 +17,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:cpan:modules/by-module/DateTime/DateTime-Format-W3CDTF-%v.tar.gz
-Source-MD5: 5ad0a41bb5de08f9c16395ea311bb491
+Source-MD5: 86b23720f1d2f40ca1fec0a4096a5ff4
 
 UpdatePOD: true
 InstallScript: <<

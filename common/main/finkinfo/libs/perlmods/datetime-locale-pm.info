@@ -1,29 +1,28 @@
 Info2: <<
 Package: datetime-locale-pm%type_pkg[perl]
-Version: 0.42
+Version: 0.45
 Revision: 1
 Description: Localization support for DateTime
 Depends: <<
 	fink (>= 0.20.1-1),
 	list-moreutils-pm%type_pkg[perl],
-	params-validate-pm%type_pkg[perl],
+	params-validate-pm%type_pkg[perl] (>= 0.91-1),
 	perl%type_pkg[perl]-core
 <<
 BuildDepends: <<
 	fink (>= 0.20.2.1-1),
 	module-build-pm%type_pkg[perl],
 	list-moreutils-pm%type_pkg[perl],
-	params-validate-pm%type_pkg[perl],
+	params-validate-pm%type_pkg[perl] (>= 0.91-1),
 	perl%type_pkg[perl]-core
 <<
 
-NoPerlTests: true
 Type: perl(0)
 License: Artistic
 Maintainer: Benjamin Reed <datetime-locale-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/DateTime/DateTime-Locale-%v.tar.gz
-Source-MD5: 2f40350ef1c697f1bc402220824f6a7a
+Source-MD5: 8ba6a4b70f8fa7d987529c2e2c708862
 
 UpdatePOD: true
 DocFiles: Changes LICENSE* MANIFEST MANIFEST.base README SIGNATURE
@@ -40,11 +39,13 @@ CompileScript: <<
 		--install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
 		--install_path script=%i/bin
 	./Build
-	./Build test
 <<
 InstallScript: <<
 	./Build install
 	find %d -name .packlist -exec rm -rf {} \;
+<<
+InfoTest: <<
+	TestScript: ./Build test || exit 2
 <<
 
 DescDetail: <<

@@ -1,6 +1,6 @@
 Info2: <<
 Package: datetime-timezone-pm%type_pkg[perl]
-Version: 0.84
+Version: 1.19
 Revision: 1
 Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
 Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
@@ -22,9 +22,10 @@ BuildDepends: <<
 	params-validate-pm%type_pkg[perl] (>= 0.72-1),
 	perl%type_pkg[perl]-core
 <<
+InfoTest: 	TestScript: ./Build test || exit 2
 
 Source: mirror:cpan:modules/by-module/DateTime/DateTime-TimeZone-%v.tar.gz
-Source-MD5: e6f36fa00425d64377aeae74a7da0ac3
+Source-MD5: 2ed65ed36f32b2e68da1a0517484e366
 
 UseMaxBuildJobs: true
 CompileScript: <<
@@ -40,7 +41,6 @@ CompileScript: <<
 		--install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
 		--install_path script=%i/bin
 	./Build
-	./Build test
 <<
 
 UpdatePOD: true

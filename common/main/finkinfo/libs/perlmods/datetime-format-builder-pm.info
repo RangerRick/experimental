@@ -1,6 +1,6 @@
 Info3: <<
 Package: datetime-format-builder-pm%type_pkg[perl]
-Version: 0.7901
+Version: 0.80
 Revision: 1
 Description: Create DateTime parser classes and objects
 Depends: <<
@@ -24,15 +24,14 @@ BuildDepends: <<
 <<
 
 Type: perl(0)
-NoPerlTests: true
 License: Artistic
 Maintainer: Benjamin Reed <datetime-format-builder-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:authors/id/D/DR/DROLSKY/DateTime-Format-Builder-%v.tar.gz
-Source-MD5: 43407285237cdc3cdd2c08b936229198
+Source-MD5: f6c5d5a17b5b7478ff555a2d3cce5136
 
 UpdatePOD: true
-DocFiles: AUTHORS Artistic COPYING CREDITS Changes INSTALL LICENCE MANIFEST README SIGNATURE
+DocFiles: AUTHORS Artistic COPYING CREDITS Changes LICENCE MANIFEST README SIGNATURE
 CompileScript: <<
 #!/bin/sh -ex
 	exec 2>&1
@@ -46,13 +45,15 @@ CompileScript: <<
 		--install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
 		--install_path script=%i/bin
 	./Build
-	./Build test
 <<
 InstallScript: <<
 	./Build install
 	find %d -name .packlist -exec rm -rf {} \;
 	install -d -m 755 %i/share/doc/%N
 	mv examples %i/share/doc/%N/
+<<
+InfoTest: <<
+	TestScript: ./Build test || exit 2
 <<
 
 DescDetail: <<

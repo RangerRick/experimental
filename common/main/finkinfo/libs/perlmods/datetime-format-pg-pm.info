@@ -1,6 +1,6 @@
 Info2: <<
 Package: datetime-format-pg-pm%type_pkg[perl]
-Version: 0.16002
+Version: 0.16004
 Revision: 1
 Description: Parse and format PostgreSQL dates and times
 Depends: <<
@@ -23,7 +23,7 @@ License: Artistic
 Maintainer: Benjamin Reed <datetime-format-pg-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/DateTime/DateTime-Format-Pg-%v.tar.gz
-Source-MD5: 381bb4e599cae0da2c0c8a48d4b0e759
+Source-MD5: 50421a0de9321bd3462f9e755878531e
 
 UpdatePOD: true
 DocFiles: Changes LICENSE MANIFEST README

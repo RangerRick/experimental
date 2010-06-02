@@ -6,7 +6,7 @@ Description: Convert between DateTime and RFC2822/822
 Depends: <<
 	fink (>= 0.20.1-1),
 	perl%type_pkg[perl]-core,
-	datetime-pm%type_pkg[perl] (>= 0.1705-1),
+	datetime-pm%type_pkg[perl] (>= 0.55-1),
 	params-validate-pm%type_pkg[perl] (>= 0.67-1),
 	test-simple-pm%type_pkg[perl]
 <<
@@ -14,13 +14,12 @@ BuildDepends: <<
 	perl%type_pkg[perl]-core,
 	fink (>= 0.20.2.1-1),
 	module-build-pm%type_pkg[perl],
-	datetime-pm%type_pkg[perl] (>= 0.1705-1),
+	datetime-pm%type_pkg[perl] (>= 0.55-1),
 	params-validate-pm%type_pkg[perl] (>= 0.67-1),
 	test-simple-pm%type_pkg[perl]
 <<
 
 Type: perl(0)
-NoPerlTests: true
 License: Artistic
 Maintainer: Benjamin Reed <datetime-format-mail-pm@fink.raccoonfink.com>
 
@@ -42,11 +41,13 @@ CompileScript: <<
 		--install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
 		--install_path script=%i/bin
 	./Build
-	./Build test
 <<
 InstallScript: <<
 	./Build install
 	find %d -name .packlist -exec rm -rf {} \;
+<<
+InfoTest: <<
+	TestScript: ./Build test || exit 2
 <<
 
 DescDetail: <<

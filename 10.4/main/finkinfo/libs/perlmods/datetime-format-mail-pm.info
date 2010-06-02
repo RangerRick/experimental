@@ -12,7 +12,7 @@ Maintainer: Benjamin Reed <datetime-format-mail-pm@fink.raccoonfink.com>
 Depends: <<
 	fink (>= 0.29.7-1),
 	perl%type_pkg[perl]-core,
-	datetime-pm%type_pkg[perl] (>= 0.1705-1),
+	datetime-pm%type_pkg[perl] (>= 0.55-1),
 	params-validate-pm%type_pkg[perl] (>= 0.67-1),
 	test-simple-pm%type_pkg[perl]
 <<
@@ -20,10 +20,11 @@ BuildDepends: <<
 	perl%type_pkg[perl]-core,
 	fink (>= 0.29.7-1),
 	module-build-pm%type_pkg[perl],
-	datetime-pm%type_pkg[perl] (>= 0.1705-1),
+	datetime-pm%type_pkg[perl] (>= 0.55-1),
 	params-validate-pm%type_pkg[perl] (>= 0.67-1),
 	test-simple-pm%type_pkg[perl]
 <<
+InfoTest: 	TestScript: ./Build test || exit 2
 
 Source: mirror:cpan:modules/by-module/DateTime/DateTime-Format-Mail-%v.tar.gz
 Source-MD5: 15e36249e866463bd0237262a8e43b16
@@ -42,7 +43,6 @@ CompileScript: <<
 		--install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
 		--install_path script=%i/bin
 	./Build
-	./Build test
 <<
 
 UpdatePOD: true
@@ -50,7 +50,6 @@ InstallScript: <<
 	./Build install
 	find %d -name .packlist -exec rm -rf {} \;
 <<
-NoPerlTests: true
 DocFiles: AUTHORS COPYING CREDITS Changes META.yml README
 
 Homepage: http://search.cpan.org/dist/DateTime-Format-Mail
