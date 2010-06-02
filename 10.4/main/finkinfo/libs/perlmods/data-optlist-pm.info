@@ -1,6 +1,6 @@
 Info3: <<
 Package: data-optlist-pm%type_pkg[perl]
-Version: 0.104
+Version: 0.106
 Revision: 1
 Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
 Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
@@ -13,17 +13,17 @@ Depends: <<
 	fink (>= 0.29.7-1),
 	params-util-pm%type_pkg[perl] (>= 0.14-1),
 	perl%type_pkg[perl]-core,
-	sub-install-pm%type_pkg[perl] (>= 0.92-1)
+	sub-install-pm%type_pkg[perl] (>= 0.921-1)
 <<
 BuildDepends: <<
 	fink (>= 0.29.7-1),
 	params-util-pm%type_pkg[perl] (>= 0.14-1),
 	perl%type_pkg[perl]-core,
-	sub-install-pm%type_pkg[perl] (>= 0.92-1)
+	sub-install-pm%type_pkg[perl] (>= 0.921-1)
 <<
 
 Source: mirror:cpan:modules/by-module/Data/Data-OptList-%v.tar.gz
-Source-MD5: 95620446a0e49917b01a789e8a60cdd3
+Source-MD5: d2e2e74540f9a388a7d180849d63d03a
 
 UseMaxBuildJobs: true
 
