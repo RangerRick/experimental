@@ -1,6 +1,6 @@
 Info3: <<
 Package: b-hooks-endofscope-pm%type_pkg[perl]
-Version: 0.06
+Version: 0.09
 Revision: 1
 Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
 Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
@@ -13,17 +13,17 @@ Depends: <<
 	fink (>= 0.29.7-1),
 	perl%type_pkg[perl]-core,
 	sub-exporter-pm%type_pkg[perl],
-	variable-magic-pm%type_pkg[perl] (>= 0.27-1)
+	variable-magic-pm%type_pkg[perl] (>= 0.34-1)
 <<
 BuildDepends: <<
 	fink (>= 0.29.7-1),
 	perl%type_pkg[perl]-core,
 	sub-exporter-pm%type_pkg[perl],
-	variable-magic-pm%type_pkg[perl] (>= 0.27-1)
+	variable-magic-pm%type_pkg[perl] (>= 0.34-1)
 <<
 
 Source: mirror:cpan:modules/by-module/B/B-Hooks-EndOfScope-%v.tar.gz
-Source-MD5: ebc1f0f45918cdd3de182a836db21a22
+Source-MD5: 83d941d374d6718cdd5c2721c40f660f
 
 UseMaxBuildJobs: true
 
