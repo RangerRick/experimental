@@ -1,12 +1,15 @@
 Info3: <<
 Package: cgi-simple-pm%type_pkg[perl]
-Version: 1.106
+Version: 1.112
 Revision: 1
 
 Source: mirror:cpan:modules/by-module/CGI/CGI-Simple-%v.tar.gz
-Source-MD5: 2f997bd3ff941fc3001cc271583a81b5
+Source-MD5: 6a59dd252317b94fffe0aa3fdae206c7
 
-Depends: perl%type_pkg[perl]-core
+Depends: <<
+	io-stringy-pm,
+	perl%type_pkg[perl]-core
+<<
 BuildDepends: <<
 	fink (>= 0.28.0-1),
 	module-build-pm%type_pkg[perl],
@@ -14,8 +17,6 @@ BuildDepends: <<
 <<
 Replaces: cgi-simple-pm
 Type: perl(0)
-NoPerlTests: true
-UpdatePOD: true
 
 DocFiles: Changes META.yml README
 
@@ -32,11 +33,13 @@ CompileScript: <<
 		--install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
 		--install_path script=%i/bin
 	./Build
-	./Build test
 <<
 InstallScript: <<
 	./Build install
 	find %d -name .packlist -exec rm -rf {} \;
+<<
+InfoTest: <<
+	TestScript: ./Build test || exit 2
 <<
 
 Description: Simple OO CGI interface
