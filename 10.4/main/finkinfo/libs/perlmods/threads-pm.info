@@ -14,7 +14,13 @@ BuildDepends: fink (>= 0.29.7-1)
 InfoTest: <<
 TestScript: <<
 	#!/bin/sh -ev
-	make FULLPERL="/usr/bin/arch -%m `which perl%type_raw[perl]`" test || exit 2
+	export FULLPERL="/usr/bin/arch -%m `which perl%type_raw[perl]`"
+	case `sw_vers -productVersion` in
+		10.4*)
+			export FULLPERL=`which perl%type_raw[perl]`
+			;;
+	esac
+	make FULLPERL="$FULLPERL" test || exit 2
 <<
 <<
 

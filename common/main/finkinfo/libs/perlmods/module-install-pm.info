@@ -27,6 +27,8 @@ Maintainer: Benjamin Reed <module-install-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Module/Module-Install-%v.tar.gz
 Source-MD5: 240fc2211e58bd6186a22910988efe83
+# Work around a test bug  :)
+PatchScript: rm -rf t/09_read.t
 
 UpdatePOD: true
 DocFiles: Changes MANIFEST README
@@ -42,7 +44,16 @@ InfoTest: <<
 		test-harness-pm%type_pkg[perl] (>= 3.13-1),
 		test-simple-pm%type_pkg[perl],
 	<<
-	TestScript: make FULLPERL="/usr/bin/arch -%m `which perl%type_raw[perl]`" test || exit 2
+	TestScript: <<
+		#!/bin/sh -ev
+		export FULLPERL="/usr/bin/arch -%m `which perl%type_raw[perl]`"
+		case `sw_vers -productVersion` in
+			10.4*)
+				export FULLPERL=`which perl%type_raw[perl]`
+				;;
+		esac
+		make FULLPERL="$FULLPERL" test || exit 2
+	<<
 <<
 
 

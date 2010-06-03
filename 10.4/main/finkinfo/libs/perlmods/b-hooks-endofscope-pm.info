@@ -1,4 +1,4 @@
-Info3: <<
+Info4: <<
 Package: b-hooks-endofscope-pm%type_pkg[perl]
 Version: 0.09
 Revision: 1
@@ -10,17 +10,12 @@ License: Artistic
 Maintainer: Benjamin Reed <b-hooks-endofscope-pm@fink.raccoonfink.com>
 
 Depends: <<
-	fink (>= 0.29.7-1),
 	perl%type_pkg[perl]-core,
 	sub-exporter-pm%type_pkg[perl],
 	variable-magic-pm%type_pkg[perl] (>= 0.34-1)
 <<
-BuildDepends: <<
-	fink (>= 0.29.7-1),
-	perl%type_pkg[perl]-core,
-	sub-exporter-pm%type_pkg[perl],
-	variable-magic-pm%type_pkg[perl] (>= 0.34-1)
-<<
+BuildDepends: fink (>= 0.29.7-1)
+InfoTest: TestDepends: extutils-makemaker-pm%type_pkg[perl] (>= 6.31-1)
 
 Source: mirror:cpan:modules/by-module/B/B-Hooks-EndOfScope-%v.tar.gz
 Source-MD5: 83d941d374d6718cdd5c2721c40f660f

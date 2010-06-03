@@ -32,7 +32,16 @@ InstallScript: <<
 	mv %i/bin/release %i/bin/release-%type_pkg[perl]
 <<
 InfoTest: <<
-	TestScript: make FULLPERL="/usr/bin/arch -%m `which perl%type_raw[perl]`" test || exit 2
+	TestScript: <<
+		#!/bin/sh -ev
+		export FULLPERL="/usr/bin/arch -%m `which perl%type_raw[perl]`"
+		case `sw_vers -productVersion` in
+			10.4*)
+				export FULLPERL=`which perl%type_raw[perl]`
+				;;
+		esac
+		make FULLPERL="$FULLPERL" test || exit 2
+	<<
 <<
 
 DescDetail: <<

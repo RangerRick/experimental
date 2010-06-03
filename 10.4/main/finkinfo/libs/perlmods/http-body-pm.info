@@ -21,6 +21,7 @@ BuildDepends: <<
 <<
 Conflicts: http-body-pm
 Replaces: http-body-pm
+InfoTest: TestDepends: io-pm%type_pkg[perl] (>= 1.14-1)
 
 Source: mirror:cpan:modules/by-module/HTTP/HTTP-Body-%v.tar.gz
 Source-MD5: 926414bd380f7e626ac72881fc537de1

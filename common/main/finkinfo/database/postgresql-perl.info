@@ -56,7 +56,7 @@ CompileScript: <<
 
 	# pl/perl
 	pushd src/pl/plperl
-		make BE_DLLLIBS="-bundle_loader %p/bin/postgres"
+		make shared_libperl=yes BE_DLLLIBS="-bundle_loader %p/bin/postgres"
 	popd
 
 	# Pg perl module

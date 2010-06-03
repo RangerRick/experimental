@@ -11,9 +11,6 @@ BuildDepends: <<
 	devel-ppport-pm%type_pkg[perl] (>= 3.19-1),
 	fink (>= 0.28.0-1),
 	perl%type_pkg[perl]-core,
-	test-exception-pm,
-	test-requires-pm,
-	test-simple-pm%type_pkg[perl] (>= 0.94-1),
 <<
 
 Type: perl(0)
@@ -31,7 +28,23 @@ InstallScript: <<
 	mv %i/share/man %i/lib/perl5/%type_raw[perl]/
 <<
 InfoTest: <<
-	TestScript: make FULLPERL="/usr/bin/arch -%m `which perl%type_raw[perl]`" test || exit 2
+	TestDepends: <<
+		mro-compat-pm%type_pkg[perl],
+		test-exception-pm,
+		test-output-pm%type_pkg[perl],
+		test-requires-pm,
+		test-simple-pm%type_pkg[perl] (>= 0.94-1),
+	<<
+	TestScript: <<
+		#!/bin/sh -ev
+		export FULLPERL="/usr/bin/arch -%m `which perl%type_raw[perl]`"
+		case `sw_vers -productVersion` in
+			10.4*)
+				export FULLPERL=`which perl%type_raw[perl]`
+				;;
+		esac
+		make FULLPERL="$FULLPERL" test || exit 2
+	<<
 <<
 
 DocFiles: Changes

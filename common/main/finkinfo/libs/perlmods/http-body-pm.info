@@ -27,6 +27,7 @@ InstallScript: <<
 	%{default_script}
 	mv %i/share/man %i/lib/perl5/%type_raw[perl]
 <<
+InfoTest: TestDepends: io-pm%type_pkg[perl] (>= 1.14-1)
 
 UpdatePOD: true
 DocFiles: Changes MANIFEST README
