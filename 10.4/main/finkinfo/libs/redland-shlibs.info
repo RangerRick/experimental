@@ -10,6 +10,7 @@ Depends: <<
 	libraptor1-shlibs (>= 1.4.17-1),
 	librasqal2-shlibs (>= 0.9.19-1),
 	libssh2.1-shlibs,
+	libtool2-shlibs,
 	pcre-shlibs,
 	sqlite3-shlibs
 <<
@@ -17,13 +18,14 @@ BuildDepends: <<
 	db48-aes | db48,
 	fink-package-precedence (>= 0.7-1),
 	gmp,
-	gtk-doc,
+	gtk-doc (>= 1.13-5),
 	libcurl4,
 	libiconv,
 	libmpfr1,
 	libraptor1-dev (>= 1.4.17-1),
 	librasqal2-dev (>= 0.9.19-1),
 	libssh2.1,
+	libtool2,
 	libxml2,
 	libxslt,
 	pcre,
@@ -44,7 +46,7 @@ PatchScript: <<
 SetCPPFLAGS: -I%p/lib/system-openssl/include -I%p/include/db4
 SetLDFLAGS: -L%p/lib/system-openssl/lib
 UseMaxBuildJobs: true
-ConfigureParams: --enable-dependency-tracking --with-raptor=system --with-rasqal=system --without-threestore --without-mysql --without-postgresql
+ConfigureParams: --enable-dependency-tracking --enable-gtk-doc --with-raptor=system --with-rasqal=system --without-threestore --without-mysql --without-postgresql
 CompileScript: <<
 #!/bin/sh -ev
 
@@ -53,10 +55,7 @@ CompileScript: <<
 	fink-package-precedence --prohibit-bdep redland-dev .
 <<
 
-InstallScript: <<
-	make -j1 install DESTDIR=%d
-	find %i/share/gtk-doc -name \*.html | xargs perl -pi -e 's,/usr/share,%p/share,g'
-<<
+InstallScript: make -j1 install DESTDIR=%d
 DocFiles: AUTHORS COPYING* ChangeLog* LICENSE* NEWS* NOTICE README* RELEASE*
 SplitOff: <<
 	Package: redland-bin
