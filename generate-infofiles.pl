@@ -371,7 +371,7 @@ sub transform_fields {
 		if (exists $properties->{'Distribution'}) {
 			die "type = perl, but distribution is already set!\n";
 		} else {
-			$properties->{'Distribution'} = '(%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6';
+			$properties->{'Distribution'} = '(%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6';
 		}
 	}
 
