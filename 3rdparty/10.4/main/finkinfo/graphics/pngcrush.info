@@ -1,0 +1,30 @@
+Package: pngcrush
+Version: 1.7.11
+Revision: 1
+Description: Optimizer for PNG files
+License: OSI-Approved
+Maintainer: Ben Hines <bhines@alumni.ucsd.edu>
+
+Source: mirror:sourceforge:pmt/%n-%v.tar.bz2
+Source-MD5: 8f033c547a428132fe273e1771b7624e
+
+UseMaxBuildJobs: true
+CompileScript: make CC=gcc-4.2 LD=gcc-4.2 CFLAGS="-I. -O2 -Wall -DPNGCRUSH_COUNT_COLORS"
+
+InstallScript: <<
+ install -d %i/bin
+ install -s -m 755 %n %i/bin/%n
+<<
+
+Homepage: http://pmt.sourceforge.net/pngcrush/
+DescDetail: <<
+pngcrush's main purpose is to reduce the size of the PNG IDAT datastream
+by trying various compression levels an PNG filter methods. It also can
+be used to remove unwanted ancillary chunks, or to add certain chunks
+including gAMA, tRNS, iCCP, and textual chunks.
+<<
+DescUsage: <<
+ pngcrush [options] infile.png outfile.png
+ See /sw/share/doc/pngcrush/README.txt for options.
+<<
+

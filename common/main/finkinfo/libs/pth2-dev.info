@@ -1,6 +1,6 @@
 Package: pth2-dev
 Version: 2.0.7
-Revision: 1022
+Revision: 1023
 Source: mirror:gnu:pth/pth-%v.tar.gz
 Source-MD5: 9cb4a25331a4c4db866a31cbe507c793
 Depends: pth2-shlibs (>= %v-%r)
@@ -9,13 +9,8 @@ Replaces: pth
 BuildDependsOnly: true
 NoSetMAKEFLAGS: true
 SetMAKEFLAGS: -j1
-ConfigureParams: --mandir='${prefix}/share/man' --disable-pthread
-CompileScript: <<
-#!/bin/sh -ex
-  ./configure %c
-  make
-  make test
-<<
+ConfigureParams: --mandir='${prefix}/share/man' --disable-pthread --enable-optimize --host=%m-apple-darwin`uname -r|cut -f1 -d.`
+InfoTest: TestScript: make test || exit 2
 InstallScript: make -j1 install DESTDIR=%d
 SplitOff: <<
   Package: pth2-shlibs
