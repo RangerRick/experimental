@@ -65,5 +65,9 @@ SplitOff: <<
 
 Homepage: http://cairographics.org/pycairo
 DescDetail: Pycairo is set of Python bindings for the cairo graphics library.
+DescPackaging: <<
+WARNING: ABI break 1.8.2->1.8.4!
+See: https://bugs.freedesktop.org/show_bug.cgi?id=18947
+<<
 <<
 

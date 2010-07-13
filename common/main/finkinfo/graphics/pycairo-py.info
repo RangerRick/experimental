@@ -1,14 +1,16 @@
 Info4: <<
 Package: pycairo-py%type_pkg[python]
 
-# WARNING: ABI break 1.8.2->1.8.4!
-# See: https://bugs.freedesktop.org/show_bug.cgi?id=18947
 Version: 1.8.10
 Revision: 1
 
 Description: Python bindings for the cairo library
 DescDetail: <<
 Pycairo is set of Python bindings for the cairo graphics library.
+<<
+DescPackaging: <<
+WARNING: ABI break 1.8.2->1.8.4!
+See: https://bugs.freedesktop.org/show_bug.cgi?id=18947
 <<
 Homepage: http://cairographics.org/pycairo
 License: LGPL
