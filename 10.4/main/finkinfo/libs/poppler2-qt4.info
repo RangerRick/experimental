@@ -10,7 +10,7 @@ Maintainer: Benjamin Reed <poppler2@fink.racoonfink.com>
 Depends: %N-shlibs (>= %v-1)
 BuildDepends: <<
 	fink (>= 0.29.7-1),
-	fink-package-precedence,
+	fink-package-precedence (>= 0.7-1),
 	glitz,
 	kde4-buildenv (>= 4.4.3-1),
 	qt4-%type_pkg[qt] (>= 4.6.1-1),

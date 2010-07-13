@@ -14,7 +14,7 @@ BuildDepends: <<
 	atk1 (>= 1.28.0-1),
 	cairo (>= 1.8.8-3),
 	fink (>= 0.24.12),
-	fink-package-precedence,
+	fink-package-precedence (>= 0.7-1),
 	fontconfig2-dev (>= 2.8.0-4),
 	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),

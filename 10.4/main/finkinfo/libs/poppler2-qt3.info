@@ -9,7 +9,7 @@ Depends: %N-shlibs (>= %v-%r)
 BuildDepends: <<
 	expat1,
 	fink (>= 0.29.7-1),
-	fink-package-precedence,
+	fink-package-precedence (>= 0.7-1),
 	fontconfig2-dev,
 	freetype219,
 	libiconv-dev,

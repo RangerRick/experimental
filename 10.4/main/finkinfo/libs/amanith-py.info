@@ -3,7 +3,7 @@ Package: amanith-py%type_pkg[python]
 Version: 0.3.34
 Revision: 1
 Description: Python binding to Amanith
-Type: python(2.3 2.4 2.5 2.6)
+Type: python(2.3 2.4 2.5 2.6 2.7)
 License: OSI-Approved
 Maintainer: Benjamin Reed <amanith-py@fink.raccoonfink.com>
 

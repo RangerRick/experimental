@@ -881,11 +881,9 @@ sub transform_type {
 		}
 		$type =~ s/perl\s*\(0\)/perl(@versions)/;
 	} elsif ($type =~ /^python\s*\(0\)/i) {
-		my @versions = qw(2.1 2.2 2.3 2.4 2.5 2.6);
-		if ($tree =~ /^10.3/) {
-			@versions = qw(2.2 2.3 2.4);
-		} elsif ($tree =~ /^10.4/) {
-			@versions = qw(2.3 2.4 2.5 2.6);
+		my @versions = qw(2.3 2.4 2.5 2.6 2.7);
+		if ($tree =~ /^10.4/) {
+			@versions = qw(2.3 2.4 2.5 2.6 2.7);
 		}
 		$type = "python(@versions)";
 	} elsif ($type =~ /^java\s\(0\)/i) {
