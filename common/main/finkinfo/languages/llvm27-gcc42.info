@@ -24,14 +24,14 @@ CompileScript: <<
 
 	case %m in
 		powerpc)
-			WITH_TUNE="" ;;
+			EXTRAS="" ;;
 		*)
-			WITH_TUNE="--with-tune=generic" ;;
+			EXTRAS="--with-tune=generic --with-arch=nocona" ;;
 	esac
 
 	# won't let me do objc++  :(
 	pushd build
-		../configure --prefix=%p/opt/llvm-%v --mandir=%p/opt/llvm-%v/share/man --with-gmp=%p --with-mpfr=%p --with-libiconv-prefix=%p --program-prefix=llvm- --enable-llvm=%p/opt/llvm-%v --enable-languages=c,c++,fortran,objc --with-arch=nocona $WITH_TUNE
+		../configure --prefix=%p/opt/llvm-%v --mandir=%p/opt/llvm-%v/share/man --with-gmp=%p --with-mpfr=%p --with-libiconv-prefix=%p --program-prefix=llvm- --enable-llvm=%p/opt/llvm-%v --enable-languages=c,c++,fortran,objc $EXTRAS
 		make LLVM_VERSION_INFO=%v
 	popd
 <<
