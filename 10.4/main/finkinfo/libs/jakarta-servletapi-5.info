@@ -35,13 +35,13 @@ PatchScript: perl -pi -e 's,<javac,<javac target="1.5" source="1.4",g' */build.x
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
-  for dir in jsr152 jsr154; do
-    pushd $dir
-    ant dist
-    popd
-  done
+	#!/bin/sh -ex
+	
+	for dir in jsr152 jsr154; do
+	pushd $dir
+	ant dist
+	popd
+	done
 <<
 
 InstallScript: <<

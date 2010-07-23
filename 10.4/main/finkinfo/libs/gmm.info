@@ -14,12 +14,12 @@ Source-MD5: b62bced3e8975292ffd83f2cb8b331f8
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	if [ -x /usr/bin/gcc-4.2 ]; then
-		export CC=gcc-4.2 CXX=g++-4.2 CPP=cpp-4.2
+	export CC=gcc-4.2 CXX=g++-4.2 CPP=cpp-4.2
 	else
-		export CC=gcc-4.0 CXX=g++-4.0 CPP=cpp-4.0
+	export CC=gcc-4.0 CXX=g++-4.0 CPP=cpp-4.0
 	fi
 	./configure %c
 	make

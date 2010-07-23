@@ -29,15 +29,15 @@ NoSetMAKEFLAGS: true
 UseMaxBuildJobs: false
 ConfigureParams: --enable-shared --with-tcllib=%p/lib --mandir=%p/share/man --enable-local-libpng --enable-local-zlib --disable-perl --disable-python --disable-ruby
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	export PKG_CONFIG_PATH="%p/lib/freetype219/lib/pkgconfig:$PKG_CONFIG_PATH" lt_cv_sys_max_cmd_len=65536
 	for file in %p/bin/perl5.8* /usr/bin/perl5.8*; do
-		[ -z "$PERLBIN" ] && [ -f "$file" ] && PERLBIN="$file"
+	[ -z "$PERLBIN" ] && [ -f "$file" ] && PERLBIN="$file"
 	done
 	[ -z "$PERLBIN" ] && exit 1
 	export ac_cv_path_PERL=no
-
+	
 	export LIBS="-L`pwd`/src -L`pwd`/src/.libs -L%p/lib"
 	./configure %c
 	perl -pi -e "s,pod2man,$PERLBIN /usr/bin/pod2man,g" doc/Makefile

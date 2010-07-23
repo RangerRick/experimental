@@ -19,11 +19,11 @@ SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true
 UseMaxBuildJobs: false
 CompileScript: <<
-#!/bin/sh -ex
-
-  export lt_cv_sys_max_cmd_len=65536
-  ./configure --prefix=%p/lib/flex
-  make
+	#!/bin/sh -ex
+	
+	export lt_cv_sys_max_cmd_len=65536
+	./configure --prefix=%p/lib/flex
+	make
 <<
 
 InstallScript: <<

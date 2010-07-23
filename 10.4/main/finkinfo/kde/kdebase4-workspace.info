@@ -71,18 +71,18 @@ PatchFile-MD5: fee95a2c9a51b2999852a418353f35df
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[kde]"
 	. %p/sbin/kde4-buildenv.sh
-
+	
 	mkdir -p build
 	pushd build
-#			-DPYTHON_EXECUTABLE:FILEPATH=%p/bin/python2.6 \
-#			-DPYTHON_LIBRARY:FILEPATH=%p/lib/python2.6/config/libpython2.6.dylib \
-		cmake $KDE4_CMAKE_ARGS \
-			..
-		make VERBOSE=1
+	#			-DPYTHON_EXECUTABLE:FILEPATH=%p/bin/python2.6 \
+	#			-DPYTHON_LIBRARY:FILEPATH=%p/lib/python2.6/config/libpython2.6.dylib \
+	cmake $KDE4_CMAKE_ARGS \
+	..
+	make VERBOSE=1
 	popd
 <<
 

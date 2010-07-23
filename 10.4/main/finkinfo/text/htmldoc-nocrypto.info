@@ -33,9 +33,9 @@ SetCPPFLAGS: -I%p/include
 UseMaxBuildJobs: true
 ConfigureParams: --mandir=${prefix}/share/man --with-openssl-libs=%p/lib --with-openssl-includes=%p/include --with-x=no --with-gui=no
 CompileScript: <<
-./configure --prefix=%p/opt/%N --with-openssl-libs=%p/lib/system-openssl/lib --with-openssl-includes=%p/lib/system-openssl/include --with-x=no --with-gui=no
-make
-fink-package-precedence .
+	./configure --prefix=%p/opt/%N --with-openssl-libs=%p/lib/system-openssl/lib --with-openssl-includes=%p/lib/system-openssl/include --with-x=no --with-gui=no
+	make
+	fink-package-precedence .
 <<
 
 InstallScript: make -j1 install DESTDIR="%d"

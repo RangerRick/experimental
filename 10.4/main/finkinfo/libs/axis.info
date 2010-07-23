@@ -39,17 +39,17 @@ Patch: %n.patch
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
-  find . -name commons-httpclient.jar -exec rm -rf {} \;
-  find . -name commons-discovery.jar  -exec rm -rf {} \;
-  find . -name commons-logging.jar    -exec rm -rf {} \;
-  find . -name commons-net.jar        -exec rm -rf {} \;
-  find . -name log4j\*.jar            -exec rm -rf {} \;
-  find . -name mailapi\*.jar          -exec rm -rf {} \;
-  find . -name jakarta-oro\*.jar      -exec rm -rf {} \;
-  find . -name wsdl4j\*.jar           -exec rm -rf {} \;
-  ant dist
+	#!/bin/sh -ex
+	
+	find . -name commons-httpclient.jar -exec rm -rf {} \;
+	find . -name commons-discovery.jar  -exec rm -rf {} \;
+	find . -name commons-logging.jar    -exec rm -rf {} \;
+	find . -name commons-net.jar        -exec rm -rf {} \;
+	find . -name log4j\*.jar            -exec rm -rf {} \;
+	find . -name mailapi\*.jar          -exec rm -rf {} \;
+	find . -name jakarta-oro\*.jar      -exec rm -rf {} \;
+	find . -name wsdl4j\*.jar           -exec rm -rf {} \;
+	ant dist
 <<
 
 InstallScript: <<

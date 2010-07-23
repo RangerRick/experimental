@@ -70,17 +70,17 @@ PatchFile-MD5: dcfc6e5d1d854a10d8fd004d7cc5645c
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[kde]"
 	. %p/sbin/kde4-buildenv.sh
 	export CMAKE_INCLUDE_PATH="%p/include/libmal:$CMAKE_INCLUDE_PATH"
 	export CPPFLAGS="-I%p/include/libmal $CPPFLAGS"
-
+	
 	mkdir -p build
 	pushd build
-		cmake $KDE4_CMAKE_ARGS ..
-		make VERBOSE=1
+	cmake $KDE4_CMAKE_ARGS ..
+	make VERBOSE=1
 	popd
 <<
 

@@ -43,21 +43,21 @@ NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 ConfigureParams: --prefix=%p --with-docdir=%p/share/doc --mandir=%p/share/man --enable-multibyte --enable-recode --with-CXX --without-perl --without-python --with-openssl --with-libraries=%p/lib --with-includes=%p/include --with-tcl --with-tclconfig=%p/lib --with-tkconfig=%p/lib --without-java --enable-odbc --with-pam --with-rendezvous
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export lt_cv_sys_max_cmd_len=65536
 	export CPPFLAGS="-I%p/lib/system-openssl/include -I%p/include/postgresql -I%p/include -DHAVE_OPTRESET -fno-common"
 	export LDFLAGS="-L%p/lib/system-openssl/lib -L%p/lib"
-
+	
 	pushd ../libpgtcl-1.7
-		./configure --prefix=%p --with-postgres-lib=%p/lib --with-postgres-include=%p/include/postgresql --with-tcl=%p/lib
-		make binaries libraries
+	./configure --prefix=%p --with-postgres-lib=%p/lib --with-postgres-include=%p/include/postgresql --with-tcl=%p/lib
+	make binaries libraries
 	popd
-
+	
 	./configure %c
-
+	
 	pushd src/pl/tcl
-		make BE_DLLLIBS="-bundle_loader %p/bin/postgres-8.2"
+	make BE_DLLLIBS="-bundle_loader %p/bin/postgres-8.2"
 	popd
 <<
 

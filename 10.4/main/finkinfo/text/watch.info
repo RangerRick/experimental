@@ -13,8 +13,8 @@ Source-MD5: 5389800bf413e70365d982bac9438d31
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh
-  gcc -L%p/lib -I%p/include -lncurses -o watch watch.c
+	#!/bin/sh
+	gcc -L%p/lib -I%p/include -lncurses -o watch watch.c
 <<
 
 InstallScript: <<

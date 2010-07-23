@@ -46,11 +46,11 @@ NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 ConfigureParams: --prefix=%p --with-qt-dir=%p --with-qt-includes=%p/include/qt --with-extra-libs=%p/lib --with-extra-includes=%p/include --enable-mt --with-pic --enable-rpath --enable-shared=yes --enable-static=no --mandir=%i/share/man --with-xinerama --disable-final --disable-dependency-tracking
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export PREFIX="%p"
 	. ./environment-helper.sh
-
+	
 	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
 	./build-helper.sh configure %N %v %r ./configure %c
 	./build-helper.sh make      %N %v %r make

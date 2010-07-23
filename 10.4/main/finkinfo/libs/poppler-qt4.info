@@ -56,8 +56,8 @@ NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man SYSTEM_XPDFRC=%p/etc/xpdfrc.poppler1 --enable-dependency-tracking --enable-zlib --disable-poppler-glib --enable-poppler-qt4 --disable-poppler-qt FREETYPE_CONFIG=%p/lib/freetype219/bin/freetype-config PKG_CONFIG_PATH="%p/lib/fontconfig2/lib/pkgconfig:%p/lib/freetype219/lib/pkgconfig:$PKG_CONFIG_PATH"
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export QTDIR=%p/lib/qt4%type_raw[qt4]
 	export QTINC=%p/lib/qt4%type_raw[qt4]/include
 	export QTLIB=%p/lib/qt4%type_raw[qt4]/lib
@@ -65,24 +65,24 @@ CompileScript: <<
 	export jpeg_incdir="%p/include"
 	./configure %c
 	pushd qt4/src
-		case %type_raw[qt4] in
-			-x11)
-				perl -pi -e 's,libpoppler-qt4,libpoppler-qt4-x11,g; s,libpoppler_qt4,libpoppler_qt4_x11,g;' Makefile
-				;;
-			-mac)
-				perl -pi -e 's,libpoppler-qt4,libpoppler-qt4-mac,g; s,libpoppler_qt4,libpoppler_qt4_mac,g;' Makefile
-				;;
-		esac
-		make
+	case %type_raw[qt4] in
+	-x11)
+	perl -pi -e 's,libpoppler-qt4,libpoppler-qt4-x11,g; s,libpoppler_qt4,libpoppler_qt4_x11,g;' Makefile
+	;;
+	-mac)
+	perl -pi -e 's,libpoppler-qt4,libpoppler-qt4-mac,g; s,libpoppler_qt4,libpoppler_qt4_mac,g;' Makefile
+	;;
+	esac
+	make
 	popd
 	make poppler-qt4.pc
 	case %type_raw[qt4] in
-		-x11)
-			perl -pi -e 's#-lpoppler-qt4#-L%p/lib/qt4%type_raw[qt4]/lib -lQtCore -lQtGui -lQtXml -lpoppler-qt4#' poppler-qt4.pc
-			;;
-		-mac)
-			perl -pi -e 's#-lpoppler-qt4#-L%p/lib/qt4%type_raw[qt4]/lib -Wl,-F%p/lib/qt4%type_raw[qt4]/lib -Wl,-framework,QtCore -Wl,-framework,QtGui -Wl,-framework,QtXml -lpoppler-qt4#' poppler-qt4.pc
-			;;
+	-x11)
+	perl -pi -e 's#-lpoppler-qt4#-L%p/lib/qt4%type_raw[qt4]/lib -lQtCore -lQtGui -lQtXml -lpoppler-qt4#' poppler-qt4.pc
+	;;
+	-mac)
+	perl -pi -e 's#-lpoppler-qt4#-L%p/lib/qt4%type_raw[qt4]/lib -Wl,-F%p/lib/qt4%type_raw[qt4]/lib -Wl,-framework,QtCore -Wl,-framework,QtGui -Wl,-framework,QtXml -lpoppler-qt4#' poppler-qt4.pc
+	;;
 	esac
 	fink-package-precedence --prohibit-bdep %n .
 <<

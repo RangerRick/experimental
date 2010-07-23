@@ -19,24 +19,24 @@ PatchScript: sed 's|@PREFIX@|%p|g' < %a/%n.patch | patch -p1
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
-export WANT_AUTOMAKE="1.7"
-export WANT_AUTOCONF_2_5=1
-
-aclocal &&
-autoheader -f &&
-autoconf -f &&
-glibtoolize --automake -c -f &&
-automake -a -c -f
-
-export lt_cv_sys_max_cmd_len=65536
-
-./configure %c
-make
-pushd doc
-make api-doc
-popd
+	#!/bin/sh -ex
+	
+	export WANT_AUTOMAKE="1.7"
+	export WANT_AUTOCONF_2_5=1
+	
+	aclocal &&
+	autoheader -f &&
+	autoconf -f &&
+	glibtoolize --automake -c -f &&
+	automake -a -c -f
+	
+	export lt_cv_sys_max_cmd_len=65536
+	
+	./configure %c
+	make
+	pushd doc
+	make api-doc
+	popd
 <<
 
 InstallScript: <<

@@ -17,15 +17,15 @@ Patch: %n.patch
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
+	#!/bin/sh -ev
 	mkdir GL
 	ln -s /System/Library/Frameworks/OpenGL.framework/Headers/* GL/
 	ln -s /System/Library/Frameworks/GLUT.framework/Headers/* GL/
 	make lib/libglui.a
 	ranlib lib/libglui.a
 	c++ -dynamiclib -o libglui-aqua.2.2.dylib -install_name %p/lib/libglui-aqua.2.dylib \
-		-compatibility_version 2 -current_version 2.2 -all_load lib/libglui.a \
-		-Wl,-framework,OpenGL -Wl,-framework,GLUT
+	-compatibility_version 2 -current_version 2.2 -all_load lib/libglui.a \
+	-Wl,-framework,OpenGL -Wl,-framework,GLUT
 <<
 
 InstallScript: <<

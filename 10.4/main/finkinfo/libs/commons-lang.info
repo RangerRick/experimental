@@ -22,8 +22,8 @@ PatchScript: cp LICENSE.txt ../LICENSE
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	ant jar javadoc -Dcompile.target=1.5 -Dcompile.source=1.4
 <<
 

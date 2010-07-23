@@ -74,16 +74,16 @@ Source-MD5: f239138dc3a7b890c82204ff49bb3edd
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[kde]"
 	. %p/sbin/kde4-buildenv.sh
 	export PATH="%p/lib/ggz2/bin:$PATH"
-
+	
 	mkdir -p build
 	pushd build
-		cmake $KDE4_CMAKE_ARGS ..
-		make VERBOSE=1
+	cmake $KDE4_CMAKE_ARGS ..
+	make VERBOSE=1
 	popd
 <<
 

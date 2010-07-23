@@ -32,8 +32,8 @@ SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true
 UseMaxBuildJobs: false
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	make JC_FLAGS="-source 1.4 -target 1.4" PREFIX="%p"
 <<
 

@@ -15,11 +15,11 @@ Source-MD5: dafa161bc9c61e57636a6085c87c1fe8
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	pushd bindings/ruby
-		%p/bin/ruby%type_raw[ruby] extconf.rb
-		make
+	%p/bin/ruby%type_raw[ruby] extconf.rb
+	make
 	popd
 <<
 

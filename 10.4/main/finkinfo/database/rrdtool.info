@@ -46,18 +46,18 @@ ConfigureParams: <<
 --disable-ruby
 <<
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	export PKG_CONFIG_PATH="%p/lib/freetype219/lib/pkgconfig:%p/lib/pango-ft219/lib/pkgconfig:$PKG_CONFIG_PATH" lt_cv_sys_max_cmd_len=65536 PERLBIN="/usr/bin/perl" POD2MAN="/usr/bin/pod2man" POD2HTML="/usr/bin/pod2html"
-
+	
 	case `sw_vers -productVersion` in
-		10.[01234]*)
-			;;
-		*)
-			export LDFLAGS="$LDFLAGS -Wl,-dead_strip_dylibs"
-			;;
+	10.[01234]*)
+	;;
+	*)
+	export LDFLAGS="$LDFLAGS -Wl,-dead_strip_dylibs"
+	;;
 	esac
-
+	
 	./configure %c
 	make TCL_SHLIB_LD='${CC} -dynamiclib -Wl,-single_module'
 <<

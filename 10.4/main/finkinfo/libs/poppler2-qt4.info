@@ -42,21 +42,21 @@ PatchFile-MD5: d55290728c849111601a20f85252f7fb
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[qt]"
 	. %p/sbin/kde4-buildenv.sh
-
+	
 	./configure \
-		--prefix=$KDE4_INSTALL_PREFIX \
-		--mandir=%p/share/man \
-		--enable-dependency-tracking --disable-static \
-		--enable-zlib --enable-libopenjpeg --enable-cairo-output \
-		--disable-poppler-glib --disable-gdk --disable-gtk-test \
-		--disable-poppler-qt --enable-poppler-qt4 \
-		--disable-splash-output
+	--prefix=$KDE4_INSTALL_PREFIX \
+	--mandir=%p/share/man \
+	--enable-dependency-tracking --disable-static \
+	--enable-zlib --enable-libopenjpeg --enable-cairo-output \
+	--disable-poppler-glib --disable-gdk --disable-gtk-test \
+	--disable-poppler-qt --enable-poppler-qt4 \
+	--disable-splash-output
 	pushd qt4
-		make -j1
+	make -j1
 	popd
 	make -j1 poppler-qt4.pc
 	fink-package-precedence --prohibit-bdep %n .

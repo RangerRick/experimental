@@ -59,8 +59,8 @@ PatchScript: <<
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	ANTLR_JAR=`find %p/share/antlr* %p/share/java -name antlr\*.jar 2>/dev/null | head -1`
 	install -d -m 755 lib
 	ant -Dantlr.jar="$ANTLR_JAR" -Dstruts-legacy.jar="%b/../struts-legacy-1.0/struts-legacy.jar" dist

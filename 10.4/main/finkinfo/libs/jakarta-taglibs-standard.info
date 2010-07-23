@@ -35,22 +35,22 @@ PatchScript: perl -pi -e 's,<javac,<javac target="1.4" source="1.4",g' build.xml
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	cp README_bin.txt ../README
 	CLASSES=`find /System/Library/Frameworks/JavaVM.framework/Versions/1.4* -name classes.jar | head -1`
 	perl -pi -e "s,bootclasspath=.*,bootclasspath=\"\\\${xalan.jar}:$CLASSES\"," build.xml
 	ant \
-		-Dservlet24.jar=%p/share/java/jakarta-servletapi-5/servlet24.jar \
-		-Djsp20.jar=%p/share/java/jakarta-servletapi-5/jsp20.jar \
-		-Djaxp-api.jar=../../jaxp-api.jar \
-		-Ddom.jar=../../dom.jar \
-		-Dsax.jar=../../sax.jar \
-		-Dxalan.jar=%p/share/java/xalan-j/xalan.jar \
-		-DxercesImpl.jar=%p/share/java/xerces-j/xercesImpl.jar \
-		-Dbuild.dir=build \
-		-Ddist.dir=dist \
-		release
+	-Dservlet24.jar=%p/share/java/jakarta-servletapi-5/servlet24.jar \
+	-Djsp20.jar=%p/share/java/jakarta-servletapi-5/jsp20.jar \
+	-Djaxp-api.jar=../../jaxp-api.jar \
+	-Ddom.jar=../../dom.jar \
+	-Dsax.jar=../../sax.jar \
+	-Dxalan.jar=%p/share/java/xalan-j/xalan.jar \
+	-DxercesImpl.jar=%p/share/java/xerces-j/xercesImpl.jar \
+	-Dbuild.dir=build \
+	-Ddist.dir=dist \
+	release
 <<
 
 InstallScript: <<

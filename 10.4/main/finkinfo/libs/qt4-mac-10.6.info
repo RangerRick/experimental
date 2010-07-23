@@ -60,21 +60,21 @@ PatchFile-MD5: 495e383d8f8f070a6752a74c9d5dd3bd
 NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	EXTRA_ARGS="-confirm-license -no-pch -verbose"
 	if [ "%m" = "x86_64" ]; then
-		EXTRA_ARGS="$EXTRA_ARGS -arch x86_64 -cocoa"
+	EXTRA_ARGS="$EXTRA_ARGS -arch x86_64 -cocoa"
 	fi
 	find . -name ._\* -exec rm -rf {} \;
 	sh ./configure-for-fink.sh "%p" "%N" $EXTRA_ARGS -make "libs tools docs"
 	find . -name Makefile\* -print0 | xargs -0 perl -pi -e 's,-I%p/include,-isystem %p/include,g'
 	case `sw_vers -productVersion` in
-		10.6*)
-			perl -pi -e 's,-pipe,-pipe -isysroot /Developer/SDKs/MacOSX10.5.sdk,g'            src/plugins/phonon/qt7/Makefile.*
-			perl -pi -e 's,^(LIBS .*),$1 -isysroot /Developer/SDKs/MacOSX10.5.sdk,g'          src/plugins/phonon/qt7/Makefile.*
-			perl -pi -e 's,MACOSX_DEPLOYMENT_TARGET = 10.4,MACOSX_DEPLOYMENT_TARGET = 10.5,g' src/plugins/phonon/qt7/Makefile.*
-			;;
+	10.6*)
+	perl -pi -e 's,-pipe,-pipe -isysroot /Developer/SDKs/MacOSX10.5.sdk,g'            src/plugins/phonon/qt7/Makefile.*
+	perl -pi -e 's,^(LIBS .*),$1 -isysroot /Developer/SDKs/MacOSX10.5.sdk,g'          src/plugins/phonon/qt7/Makefile.*
+	perl -pi -e 's,MACOSX_DEPLOYMENT_TARGET = 10.4,MACOSX_DEPLOYMENT_TARGET = 10.5,g' src/plugins/phonon/qt7/Makefile.*
+	;;
 	esac
 	touch src/3rdparty/phonon/gstreamer/phonon-config-gstreamer.h
 	make

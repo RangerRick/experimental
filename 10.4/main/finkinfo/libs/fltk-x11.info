@@ -37,8 +37,8 @@ SetMACOSX_DEPLOYMENT_TARGET: 10.3
 UseMaxBuildJobs: true
 ConfigureParams: --enable-shared --with-x --enable-xft --mandir='${prefix}/share/man'
 CompileScript: <<
-  ./configure %c
-  make FONTCONFIGLIB=-lfontconfig CC=gcc CXX=g++
+	./configure %c
+	make FONTCONFIGLIB=-lfontconfig CC=gcc CXX=g++
 <<
 
 InstallScript: <<

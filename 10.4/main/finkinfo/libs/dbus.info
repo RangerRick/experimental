@@ -67,35 +67,35 @@ ConfigureParams: <<
 	ac_cv_func_poll=no
 <<
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	if [ -x /usr/bin/gcc-4.2 ]; then
-		export CC=gcc-4.2
-		export CXX=g++-4.2
-		export CPP=cpp-4.2
+	export CC=gcc-4.2
+	export CXX=g++-4.2
+	export CPP=cpp-4.2
 	fi
-
+	
 	MBID=`id -u messagebus 2>/dev/null || echo 0`
 	if [ $MBID -eq 0 ]; then
-		echo "You must install the 'passwd' package for D-Bus to build properly."
-		echo "Try running 'fink reinstall passwd', and then answer 'yes' when it asks to create users."
-		exit 1
+	echo "You must install the 'passwd' package for D-Bus to build properly."
+	echo "Try running 'fink reinstall passwd', and then answer 'yes' when it asks to create users."
+	exit 1
 	fi
-
+	
 	# D-Bus 0.62 for backwards-compatibility
 	pushd dbus-0.62
-		./configure %c
-		pushd dbus
-			make
-		popd
+	./configure %c
+	pushd dbus
+	make
 	popd
-
+	popd
+	
 	# D-Bus %v
 	./configure %c
 	make
 	# temporary, for the glib bindings
 	make -j1 install DESTDIR="%b/tmproot"
-
+	
 	# D-Bus GLib bindings
 	pushd dbus-glib*
 	PKG_CONFIG_PATH="%b/tmproot%p/lib/pkgconfig" ./configure %c --enable-gtk-doc

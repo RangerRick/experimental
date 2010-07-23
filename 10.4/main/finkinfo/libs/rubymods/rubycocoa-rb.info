@@ -27,8 +27,8 @@ PatchScript: <<
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	%p/bin/ruby%type_raw[ruby] install.rb config --build-universal=no --install-prefix="%i" --install-root="%d" --frameworks=%p/lib/Frameworks --xcode-extras="%p/share/doc/%N/XCode Extras" --examples="%p/share/doc/%N/Examples" --documentation="%p/share/doc/%N/Documentation"
 	find . -name Makefile | xargs perl -pi -e 's/-Wl,-undefined,dynamic_lookup//g'
 	%p/bin/ruby%type_raw[ruby] install.rb setup

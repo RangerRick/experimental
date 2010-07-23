@@ -40,13 +40,13 @@ NoSetMAKEFLAGS: true
 UseMaxBuildJobs: false
 ConfigureParams: --with-distribution='Fink/Mac OS X'
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export HOME=/tmp PREFIX="%p" lt_cv_sys_max_cmd_len=65536 QTDOCDIR="%p/share/doc/qt3/html"
 	. ./environment-helper.sh
-
+	
 	export CC=gcc CXX=g++
-
+	
 	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
 	./build-helper.sh configure %N %v %r ./configure %c
 	pushd smoke

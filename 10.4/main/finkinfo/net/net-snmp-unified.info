@@ -64,12 +64,12 @@ ConfigureParams: <<
 	--without-python-modules
 <<
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	ln -sf darwin9.h include/net-snmp/system/darwin10.h
 	eval "`/usr/bin/perl -V:archname -V:version`"
 	export PERLMAKEARGS="PREFIX=%p INSTALLPRIVLIB=%p/lib/perl5/$version INSTALLARCHLIB=%p/lib/perl5/$version/$archname INSTALLSITELIB=%p/lib/perl5/$version INSTALLSITEARCH=%p/lib/perl5/$version/$archname INSTALLMAN1DIR=%p/lib/perl5/$version INSTALLMAN3DIR=%p/lib/perl5/$version INSTALLSITEMAN1DIR=%p/lib/perl5/$version INSTALLSITEMAN3DIR=%p/lib/perl5/$version INSTALLBIN=%p/bin INSTALLSITEBIN=%p/bin INSTALLSCRIPT=%p/bin"
-
+	
 	PERLPROG=/usr/bin/perl ./configure %c --with-perl-modules="$PERLMAKEARGS"
 	make
 <<

@@ -38,18 +38,18 @@ PatchFile-MD5: 8f1f0d651be532a77d2130eeb04c1b8c
 UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --enable-shared --disable-dependency-tracking
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	if [ -x "/usr/bin/gcc-4.2" ]; then
-		export CC="gcc-4.2"
-		export CXX="g++-4.2"
-		export CPP="cpp-4.2"
+	export CC="gcc-4.2"
+	export CXX="g++-4.2"
+	export CPP="cpp-4.2"
 	fi
-
+	
 	export lt_cv_sys_max_cmd_len=65536 PG_CONFIG=%p/opt/postgresql-8.4/bin/pg_config
 	export CPPFLAGS="-I%p/lib/system-openssl/include"
 	export LDFLAGS="-L%p/lib/system-openssl/lib"
-
+	
 	./configure %c
 	make
 <<

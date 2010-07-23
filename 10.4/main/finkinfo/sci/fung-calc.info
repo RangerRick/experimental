@@ -43,14 +43,14 @@ NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 ConfigureParams: --includedir=%p/include --libdir=%p/lib --prefix=%p --with-qt-dir=%p --with-qt-includes=%p/include/qt --with-extra-libs=%p/lib --with-extra-includes=%p/include --with-pic --enable-rpath --enable-shared=yes --enable-static=no --mandir=%p/share/man --with-xinerama --with-pam --disable-final --enable-kde-app
 CompileScript: <<
-#!/bin/sh -e
-
-  export PREFIX=%p USE_UNSERMAKE=1
-  . ./environment-helper.sh
-
-  ./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
-  ./build-helper.sh configure %N %v %r ./configure %c
-  ./build-helper.sh make      %N %v %r unsermake $UNSERMAKEFLAGS LIB_QT='-lqt-mt $(LIBZ) $(LIBPNG) -lXext $(LIB_X11) $(LIBSM)'
+	#!/bin/sh -e
+	
+	export PREFIX=%p USE_UNSERMAKE=1
+	. ./environment-helper.sh
+	
+	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
+	./build-helper.sh configure %N %v %r ./configure %c
+	./build-helper.sh make      %N %v %r unsermake $UNSERMAKEFLAGS LIB_QT='-lqt-mt $(LIBZ) $(LIBPNG) -lXext $(LIB_X11) $(LIBSM)'
 <<
 
 InstallScript: <<

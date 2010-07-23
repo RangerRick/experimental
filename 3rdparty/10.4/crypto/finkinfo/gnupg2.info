@@ -50,8 +50,8 @@ SetLDFLAGS: -L%p/lib/system-openssl/lib
 UseMaxBuildJobs: true
 ConfigureParams: --libexecdir='${prefix}/lib' --with-libiconv-prefix=%p --disable-dependency-tracking
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	./configure %c
 	make pkgdatadir=%p/share/gnupg2
 <<

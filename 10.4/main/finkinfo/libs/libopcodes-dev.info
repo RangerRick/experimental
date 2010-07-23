@@ -22,8 +22,8 @@ SetCPPFLAGS: -I%p/lib/libiberty/include -I%p/lib/libbfd/include
 SetLIBS: -L%p/lib/libiberty/lib -L%p/lib/libbfd/lib
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	./configure --prefix=%p/lib/libopcodes --enable-install-libopcodes --enable-install-libbfd --mandir=%p/share/man --infodir=%p/share/info
 	make BFD_H=%p/lib/libbfd/include/bfd.h
 <<

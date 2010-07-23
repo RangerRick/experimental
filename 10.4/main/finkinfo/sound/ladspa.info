@@ -17,10 +17,10 @@ PatchFile-MD5: 718eb20ebabad6f8d88e8bb3037266bd
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-  pushd src && \
-  make targets && \
-  popd
+	#!/bin/sh -ev
+	pushd src && \
+	make targets && \
+	popd
 <<
 
 InstallScript: <<

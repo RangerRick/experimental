@@ -25,13 +25,13 @@ PatchFile-MD5: 32a9a4c1e7ce193332cb6aab9603141c
 UseMaxBuildJobs: true
 ConfigureParams: --docdir=%p/share/doc/%N --with-ogg=%p --disable-sdltest --disable-dependency-tracking ac_cv_prog_HAVE_DOXYGEN=false ac_cv_prog_HAVE_PDFLATEX=false ac_cv_prog_HAVE_BIBTEX=false ac_cv_prog_HAVE_TRANSFIG=false --build=%m-apple-darwin`uname -r|cut -f1 -d.` --host=%m-apple-darwin`uname -r|cut -f1 -d.`
 CompileScript: <<
-#!/bin/sh -ev
-if [ "%m" == "x86_64" ] ; then
-./configure %c --disable-asm
-else
-./configure %c
-fi
-make
+	#!/bin/sh -ev
+	if [ "%m" == "x86_64" ] ; then
+	./configure %c --disable-asm
+	else
+	./configure %c
+	fi
+	make
 <<
 
 InstallScript: make -j1 install DESTDIR="%d"

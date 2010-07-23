@@ -394,7 +394,7 @@ sub print_indent {
 
 	if ($text =~ /\n/) {
 		$return .= "\t" x $indent . $field_name . ": <<\n";
-		if ($field_name =~ /^(builddepends|conffiles|conflicts|custommirror|depends|enhances|files|patchscript|recommends|replaces|runtimedepends|shlibs|suggests)$/i) {
+		if ($field_name =~ /^(builddepends|compilescript|conffiles|conflicts|custommirror|depends|enhances|files|patchscript|recommends|replaces|runtimedepends|shlibs|suggests)$/i) {
 			for my $line (split(/\n/, $text)) {
 				$line =~ s/^\s+//;
 				$return .= "\t" x ($indent + 1) . $line . "\n";

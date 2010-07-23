@@ -20,8 +20,8 @@ SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true
 UseMaxBuildJobs: false
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	make prefix="%p"
 <<
 

@@ -74,8 +74,8 @@ NoSetMAKEFLAGS: true
 UseMaxBuildJobs: false
 ConfigureParams: --without-check --libexecdir=%p/lib/%n --mandir=%p/share/man --enable-gtk-doc --disable-static --disable-dependency-tracking --disable-sdltest --disable-directfb --disable-dts --disable-divx --disable-libmms --disable-swfdec --disable-ivorbis --disable-xvid --disable-opengl --enable-tests --enable-failing-tests PKG_CONFIG_PATH="%p/lib/fontconfig2/lib/pkgconfig:%p/lib/freetype219/lib/pkgconfig:$PKG_CONFIG_PATH" FREETYPE_CONFIG=%p/lib/freetype219/bin/freetype-config (%m = x86_64) --disable-osx_video (%m = x86_64) --disable-quicktime
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	export PKG_CONFIG_PATH="%p/lib/system-openssl/lib/pkgconfig:$PKG_CONFIG_PATH"
 	export ac_cv_path_PYTHON=%p/bin/python2.5
 	export PATH="%p/lib/xmkmf/bin:$PATH"

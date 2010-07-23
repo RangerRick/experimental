@@ -60,21 +60,21 @@ NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man SYSTEM_XPDFRC=%p/etc/xpdfrc.%N --enable-dependency-tracking --enable-zlib --disable-poppler-glib --enable-cairo-output --disable-poppler-qt --disable-poppler-qt4 --disable-gtk-test FREETYPE_CONFIG=%p/lib/freetype219/bin/freetype-config PKG_CONFIG_PATH="%p/lib/fontconfig2/lib/pkgconfig:%p/lib/freetype219/lib/pkgconfig:%p/lib/pango-ft219/lib:$PKG_CONFIG_PATH"
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	./configure %c
 	make
-
+	
 	if [ -f %p/lib/fontconfig2/lib/libfontconfig.a ] && [ ! -f %p/lib/fontconfig2/lib/libfontconfig.dylib ]; then
 	echo "here we go..."
-		mkdir fink-fc
-		( cd fink-fc && ar x %p/lib/fontconfig2/lib/libfontconfig.a ) || exit 1
-		for a in poppler/.libs/libpoppler.a; do
-			ar d $a libfontconfig.a
-			ar d $a libfontconfig.a
-			ar ru $a fink-fc/*.o
-			ranlib $a
-		done
+	mkdir fink-fc
+	( cd fink-fc && ar x %p/lib/fontconfig2/lib/libfontconfig.a ) || exit 1
+	for a in poppler/.libs/libpoppler.a; do
+	ar d $a libfontconfig.a
+	ar d $a libfontconfig.a
+	ar ru $a fink-fc/*.o
+	ranlib $a
+	done
 	fi
 	fink-package-precedence --prohibit-bdep %n .
 <<

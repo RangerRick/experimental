@@ -78,14 +78,14 @@ NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 ConfigureParams: --disable-mysql --disable-postgresql --without-nmm --without-mas --without-helix --without-libvisual --with-distribution='Fink/Mac OS X' --with-libgpod --with-mp4v2 --with-mp4v2-dir=%p --with-xine --without-gstreamer --without-gstreamer10
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export PREFIX="%p" USE_UNSERMAKE=1 CC=gcc CXX=g++ RUBY=%p/bin/ruby1.8
 	. ./environment-helper.sh
-
+	
 	./build-helper.sh cvs       %{Ni} %v %r make -f admin/Makefile.common cvs
 	./build-helper.sh configure %{Ni} %v %r ./configure %c $CONFIGURE_PARAMS
-
+	
 	unsermake amarok/src/amarokcore/amarokconfig.h
 	pushd amarok/src/engine/xine
 	../../../../build-helper.sh make      %{Ni} %v %r unsermake $UNSERMAKEFLAGS

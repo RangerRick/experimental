@@ -23,11 +23,11 @@ SetCFLAGS: -Os
 UseMaxBuildJobs: true
 ConfigureParams: --disable-dependency-tracking --enable-glib --disable-gobject --disable-qt3 --disable-qt4 --disable-gtk --disable-dbus --enable-expat --disable-dbm --disable-gdbm --disable-libdaemon --disable-python --disable-pygtk --disable-python-dbus --disable-mono --disable-monodoc --disable-doxygen-doc --disable-doxygen-dot --disable-doxygen-html  --with-distro=freebsd --disable-autoipd
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	./configure %c
 	pushd avahi-glib
-		make libavahi_glib_la_DEPENDENCIES= libavahi_glib_la_LIBADD='$(AM_LDADD) -lavahi-common $(GLIB20_LIBS)'
+	make libavahi_glib_la_DEPENDENCIES= libavahi_glib_la_LIBADD='$(AM_LDADD) -lavahi-common $(GLIB20_LIBS)'
 	popd
 	make avahi-glib.pc
 <<

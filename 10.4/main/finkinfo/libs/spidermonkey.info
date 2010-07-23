@@ -23,8 +23,8 @@ PatchScript: sed -e 's,@FINKPREFIX@,%p,g' %a/%n.patch | patch -p2
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	make -j1 -f Makefile.ref LIBDIR="/lib" SO_SUFFIX="dylib" JS_THREADSAFE=1 JS_HAS_FILE_OBJECT=1
 	ranlib Darwin_OPT.OBJ/libjs.a
 <<

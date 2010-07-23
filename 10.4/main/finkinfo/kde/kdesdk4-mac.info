@@ -56,15 +56,15 @@ Source-MD5: 4dc275062bb38a338e83ed8f6f4854bc
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[kde]"
 	. %p/sbin/kde4-buildenv.sh
-
+	
 	mkdir -p build
 	pushd build
-		cmake -DPERL_EXECUTABLE:FILEPATH=/usr/bin/perl -DSVN_LIBRARIES:FILEPATH="%p/lib/libsvn_client-1.dylib;%p/lib/libaprutil.dylib" $KDE4_CMAKE_ARGS ..
-		make VERBOSE=1
+	cmake -DPERL_EXECUTABLE:FILEPATH=/usr/bin/perl -DSVN_LIBRARIES:FILEPATH="%p/lib/libsvn_client-1.dylib;%p/lib/libaprutil.dylib" $KDE4_CMAKE_ARGS ..
+	make VERBOSE=1
 	popd
 <<
 

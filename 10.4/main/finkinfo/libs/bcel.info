@@ -25,11 +25,11 @@ PatchScript: 	perl -pi -e 's,<javac,<javac target="1.5" source="1.4",g' build.xm
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
-  mkdir examples
-  touch manifest.txt
-  ant dist -Dnoget=true
+	#!/bin/sh -ex
+	
+	mkdir examples
+	touch manifest.txt
+	ant dist -Dnoget=true
 <<
 
 InstallScript: <<

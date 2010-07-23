@@ -38,12 +38,12 @@ NoSetMAKEFLAGS: true
 UseMaxBuildJobs: false
 ConfigureParams: --build=%m-apple-darwin`uname -r|cut -f1 -d.` --enable-gtk-doc --mandir=%p/share/man --infodir=%p/share/info --disable-dependency-tracking --enable-prototype-checking
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	if [ "%m" = "powerpc" ]; then
-		export CPPFLAGS="$CPPFLAGS -force_cpusubtype_ALL"
+	export CPPFLAGS="$CPPFLAGS -force_cpusubtype_ALL"
 	fi
-
+	
 	export CCACHE_DISABLE=1
 	./configure %c
 	make

@@ -35,8 +35,8 @@ PatchScript: perl -pi -e 's,<javac,<javac target="1.4" source="1.4",g' build.xml
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	ant package2
 	$JAVA_HOME/bin/javadoc -source 1.4 -sourcepath src -d api `find src -name \*.java`
 <<

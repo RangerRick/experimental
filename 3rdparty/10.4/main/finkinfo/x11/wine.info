@@ -76,25 +76,25 @@ NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 ConfigureParams: --x-includes=/usr/X11R6/include --x-libraries=/usr/X11R6/lib
 CompileScript: <<
-#!/bin/sh -ev
- export CPATH=%p/include/dbus-1.0:%p/lib/dbus-1.0/include:%p/include:/usr/X11R6/include
- export LDFLAGS="-L/%p/lib/system-openssl/lib -L%p/lib -L/usr/X11R6/lib"
- export LD_LIBRARY_PATH=%p/lib
- export CPPFLAGS="-I/%p/lib/system-openssl/include -I%p/include -I/usr/X11R6/include"
- export ac_cv_lib_soname_gsm=%p/lib/libgsm.a
- # strip out all non ascii to something that sed and gcc script will eat
- tr -cd '\11\12\40-\176' <AUTHORS >AUTHORS.tmp
- mv AUTHORS.tmp AUTHORS
- # change the library detection so that the full path name of the library is retained
- perl -pi.bak -e 's|\^\.\*\\\/\\\(lib|^[^\\/]*\\\(.*lib|g' configure
- ./configure %c  --disable-win16 --without-openal
- # small safety measure: preventing libSystem from coming up too early in the link line (and hence also in load commands)
- # (specifically for wineesd.drv.so winearts.drv.so sane.ds.so and msxml3.dll.so).
- # For further safety, we can then as well remove the remaining -L%p/lib and -I%p/include flags ...
- perl -pi.bak -e 's,\-L%p/lib ,,g; s:\-I%p/include( |,):\1:g; s,\-l(m|dl|pthread)([^a-z]),\2,g' config.status
- ./config.status
- make depend
- make
+	#!/bin/sh -ev
+	export CPATH=%p/include/dbus-1.0:%p/lib/dbus-1.0/include:%p/include:/usr/X11R6/include
+	export LDFLAGS="-L/%p/lib/system-openssl/lib -L%p/lib -L/usr/X11R6/lib"
+	export LD_LIBRARY_PATH=%p/lib
+	export CPPFLAGS="-I/%p/lib/system-openssl/include -I%p/include -I/usr/X11R6/include"
+	export ac_cv_lib_soname_gsm=%p/lib/libgsm.a
+	# strip out all non ascii to something that sed and gcc script will eat
+	tr -cd '\11\12\40-\176' <AUTHORS >AUTHORS.tmp
+	mv AUTHORS.tmp AUTHORS
+	# change the library detection so that the full path name of the library is retained
+	perl -pi.bak -e 's|\^\.\*\\\/\\\(lib|^[^\\/]*\\\(.*lib|g' configure
+	./configure %c  --disable-win16 --without-openal
+	# small safety measure: preventing libSystem from coming up too early in the link line (and hence also in load commands)
+	# (specifically for wineesd.drv.so winearts.drv.so sane.ds.so and msxml3.dll.so).
+	# For further safety, we can then as well remove the remaining -L%p/lib and -I%p/include flags ...
+	perl -pi.bak -e 's,\-L%p/lib ,,g; s:\-I%p/include( |,):\1:g; s,\-l(m|dl|pthread)([^a-z]),\2,g' config.status
+	./config.status
+	make depend
+	make
 <<
 
 DocFiles: ANNOUNCE AUTHORS COPYING.LIB LICENSE README VERSION

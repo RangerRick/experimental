@@ -18,7 +18,7 @@ Source-MD5: dc30ce4bfdd83df0da5b460c8b93c76d
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
+	#!/bin/sh -ev
 	export BUILD_BZIP2=0
 	export BZIP2_INCLUDE=%p/include
 	export BZIP2_LIB=%p/lib

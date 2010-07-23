@@ -27,8 +27,8 @@ SetLDFLAGS: -L/usr/X11/lib -L/usr/X11R6/lib
 UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --infodir=%p/share/info --disable-sdltest
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	export PATH="%p/lib/xmkmf/bin:$PATH"
 	sh autogen.sh %c
 	make

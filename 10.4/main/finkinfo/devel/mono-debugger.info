@@ -24,8 +24,8 @@ Source-MD5: a6cac2d8dc8f788a7b2b35cd3f7204dc
 UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --disable-dependency-tracking
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	export lt_cv_sys_max_cmd_len=65536
 	export MONO_PATH=%b/browser:$MONO_PATH
 	./configure %c

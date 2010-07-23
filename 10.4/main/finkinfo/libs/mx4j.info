@@ -52,12 +52,12 @@ PatchFile-MD5: 0927861a55f49ee2d6d2bab54ea6f111
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	find . -name jetty -exec rm -rf {} \; || :
 	pushd build
-		export CLASSPATH="%b/saxon-xml-apis.jar:%b/saxon.jar:$CLASSPATH"
-		ANT_OPTS="-Djavax.xml.transform.TransformerFactory=com.icl.saxon.TransformerFactoryImpl" ant release -Ddocbook.dtd.zip.file=%b/%n-docbook.zip -Ddocbook.xsl.zip.file=%b/%n-docbookx.zip
+	export CLASSPATH="%b/saxon-xml-apis.jar:%b/saxon.jar:$CLASSPATH"
+	ANT_OPTS="-Djavax.xml.transform.TransformerFactory=com.icl.saxon.TransformerFactoryImpl" ant release -Ddocbook.dtd.zip.file=%b/%n-docbook.zip -Ddocbook.xsl.zip.file=%b/%n-docbookx.zip
 	popd
 <<
 

@@ -27,21 +27,21 @@ PatchFile-MD5: fb804ac32c99a1ebb17e8e9ad44d8e84
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	if [ -x /usr/bin/gcc-4.2 ]; then
-		export CC=gcc-4.2 CXX=g++-4.2 CPP=cpp-4.2
+	export CC=gcc-4.2 CXX=g++-4.2 CPP=cpp-4.2
 	fi
-
+	
 	export lt_cv_sys_max_cmd_len=65536
 	./configure --prefix=%p --qtdir=%p
 	make
-
+	
 	pushd ../qca-sasl-%v
 	./configure --with-sasl-inc=%p/include --with-sasl-lib=%p/lib --qtdir=%p
 	make
 	popd
-
+	
 	pushd ../qca-tls-%v
 	./configure --qtdir=%p --with-openssl-inc=%p/lib/system-openssl/include --with-openssl-lib=%p/lib/system-openssl/lib
 	make LIBS='-L%p/lib/system-openssl/lib -lssl -lcrypto -L%p/lib -lqt-mt $(SUBLIBS)'

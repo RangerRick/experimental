@@ -51,8 +51,8 @@ SetLDFLAGS: -L%p/lib/system-openssl/lib -I%p/lib/flex/lib
 UseMaxBuildJobs: true
 ConfigureParams: --enable-dependency-tracking --without-redland --enable-gtk-doc
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export PATH="%p/lib/flex/bin:$PATH"
 	./configure %c
 	make

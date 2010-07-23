@@ -54,20 +54,20 @@ Source-MD5: f5c5f042ccc34fb877c6080ae2ff8bc5
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[kde]"
 	. %p/sbin/kde4-buildenv.sh
-
+	
 	if [ "%type_pkg[kde]" = "mac" ]; then
-		# why does this not get found the normal way??
-		export KDE4_CMAKE_ARGS="$KDE4_CMAKE_ARGS -DQT_QTHELP_LIBRARY:FILEPATH=%p/lib/qt4-mac/lib/QtHelp.framework"
+	# why does this not get found the normal way??
+	export KDE4_CMAKE_ARGS="$KDE4_CMAKE_ARGS -DQT_QTHELP_LIBRARY:FILEPATH=%p/lib/qt4-mac/lib/QtHelp.framework"
 	fi
-
+	
 	mkdir -p build
 	pushd build
-		cmake $KDE4_CMAKE_ARGS ..
-		make VERBOSE=1
+	cmake $KDE4_CMAKE_ARGS ..
+	make VERBOSE=1
 	popd
 <<
 

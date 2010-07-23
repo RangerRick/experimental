@@ -25,8 +25,8 @@ PatchScript: perl -pi -e 's,<javac,<javac target="1.4" source="1.4",g' build.xml
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	ant dist
 	mv dist/lib/*.jar dist/lib/%n.jar
 	$JAVA_HOME/bin/javadoc -sourcepath src -d api com.jcraft.jsch

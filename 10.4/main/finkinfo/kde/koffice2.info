@@ -64,30 +64,30 @@ PatchFile-MD5: 600f503702af7e42b51c6a69604931c6
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[kde]"
 	. %p/sbin/kde4-buildenv.sh
 	export CMAKE_INCLUDE_PATH="%p/include/libwpd-0.8:$CMAKE_INCLUDE_PATH"
 	find . -type f -name DEBUG -exec rm -rf {} \; || :
-
+	
 	mkdir -p build
 	pushd build
-		touch config.h
-		cmake \
-			-DGLEW_INCLUDE_DIR:PATH=%p/include \
-			-DGLEW_GLEW_LIBRARY:PATH=%p/lib/libGLEW.dylib \
-			-DGSL_INCLUDE_DIR:PATH=%p/include \
-			-DGSL_LIBRARIES:FILEPATH=%p/lib/libgsl.dylib \
-			-DKDCRAW_INCLUDE_DIR:PATH=%p/opt/kde4/%type_pkg[kde]/include \
-			-DKDCRAW_LIBRARIES:FILEPATH=%p/opt/kde4/%type_pkg[kde]/lib/libkdcraw.dylib \
-			-DPSTOEDIT_EXECUTABLE:FILEPATH=%p/bin/pstoedit \
-			-DWPD_INCLUDE_DIR:PATH=%p/include/libwpd-0.8 \
-			-DWPD_LIBRARIES:FILEPATH=%p/lib/libwpd-0.8.dylib \
-			-DWV2_INCLUDE_DIR:STRING='-I%p/include -I%p/include/libgsf-1 -I%p/include/glib-2.0 -I%p/lib/glib-2.0/include -I%p/include/libxml2 -I%p/include' \
-			-DWV2_LIBRARIES:FILEPATH=%p/lib/libwv2.dylib \
-			$KDE4_CMAKE_ARGS ..
-		make VERBOSE=1
+	touch config.h
+	cmake \
+	-DGLEW_INCLUDE_DIR:PATH=%p/include \
+	-DGLEW_GLEW_LIBRARY:PATH=%p/lib/libGLEW.dylib \
+	-DGSL_INCLUDE_DIR:PATH=%p/include \
+	-DGSL_LIBRARIES:FILEPATH=%p/lib/libgsl.dylib \
+	-DKDCRAW_INCLUDE_DIR:PATH=%p/opt/kde4/%type_pkg[kde]/include \
+	-DKDCRAW_LIBRARIES:FILEPATH=%p/opt/kde4/%type_pkg[kde]/lib/libkdcraw.dylib \
+	-DPSTOEDIT_EXECUTABLE:FILEPATH=%p/bin/pstoedit \
+	-DWPD_INCLUDE_DIR:PATH=%p/include/libwpd-0.8 \
+	-DWPD_LIBRARIES:FILEPATH=%p/lib/libwpd-0.8.dylib \
+	-DWV2_INCLUDE_DIR:STRING='-I%p/include -I%p/include/libgsf-1 -I%p/include/glib-2.0 -I%p/lib/glib-2.0/include -I%p/include/libxml2 -I%p/include' \
+	-DWV2_LIBRARIES:FILEPATH=%p/lib/libwv2.dylib \
+	$KDE4_CMAKE_ARGS ..
+	make VERBOSE=1
 	popd
 <<
 

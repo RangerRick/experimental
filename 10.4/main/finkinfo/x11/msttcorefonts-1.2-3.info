@@ -39,9 +39,9 @@ Source9-MD5: 0d7ea16cac6261f8513a061fbfcdb2b5
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh
+	#!/bin/sh
 	for file in *.exe; do
-		%p/bin/cabextract -L $file
+	%p/bin/cabextract -L $file
 	done
 <<
 

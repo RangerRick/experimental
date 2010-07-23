@@ -45,23 +45,23 @@ SetCPPFLAGS: -fno-common -I%p/lib/freetype219/include -I%p/lib/freetype219/inclu
 UseMaxBuildJobs: true
 ConfigureParams: --disable-static --enable-shared --with-tcllib=%p/lib --mandir=%p/share/man --enable-perl --disable-python
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	export PKG_CONFIG_PATH="%p/lib/freetype219/lib/pkgconfig:$PKG_CONFIG_PATH" lt_cv_sys_max_cmd_len=65536
 	eval "`perl$perlversion -V:archname`"
 	./configure %c
-
+	
 	export PERLMAKEARGS="PREFIX=%p INSTALLPRIVLIB=%p/lib/perl5/%type_raw[perl] INSTALLARCHLIB=%p/lib/perl5/%type_raw[perl]/$archname INSTALLSITELIB=%p/lib/perl5/%type_raw[perl] INSTALLSITEARCH=%p/lib/perl5/%type_raw[perl]/$archname INSTALLMAN1DIR=%p/lib/perl5/%type_raw[perl] INSTALLMAN3DIR=%p/lib/perl5/%type_raw[perl] INSTALLSITEMAN1DIR=%p/lib/perl5/%type_raw[perl] INSTALLSITEMAN3DIR=%p/lib/perl5/%type_raw[perl] INSTALLBIN=%p/bin INSTALLSITEBIN=%p/bin INSTALLSCRIPT=%p/bin"
-
+	
 	pushd bindings/perl-piped
-		perl%type_raw[perl] Makefile.PL $PERLMAKEARGS
-		make
-		make test
+	perl%type_raw[perl] Makefile.PL $PERLMAKEARGS
+	make
+	make test
 	popd
 	pushd bindings/perl-shared
-		perl%type_raw[perl] Makefile.PL $PERLMAKEARGS
-		make INC="-I%p/include -I../../src" OTHERLDFLAGS="-L%p/lib -lrrd"
-		make test
+	perl%type_raw[perl] Makefile.PL $PERLMAKEARGS
+	make INC="-I%p/include -I../../src" OTHERLDFLAGS="-L%p/lib -lrrd"
+	make test
 	popd
 <<
 

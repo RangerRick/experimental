@@ -17,8 +17,8 @@ PatchScript: mv INSTALL INSTALL.txt
 UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --infodir=%p/share/info --disable-dependency-tracking
 CompileScript: <<
- ./configure %c
- make
+	./configure %c
+	make
 <<
 
 InstallScript: make install DESTDIR=%d

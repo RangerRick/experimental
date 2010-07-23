@@ -29,8 +29,8 @@ PatchScript: <<
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	ant -Dnoget=true dist
 <<
 

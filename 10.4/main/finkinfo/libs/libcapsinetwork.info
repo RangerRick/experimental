@@ -29,11 +29,11 @@ NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --infodir=%p/share/info
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	export lt_cv_sys_max_cmd_len=65536
 	if [ -x /usr/bin/gcc-4.2 ]; then
-		export CC=gcc-4.2 CXX=g++-4.2 CPP=cpp-4.2
+	export CC=gcc-4.2 CXX=g++-4.2 CPP=cpp-4.2
 	fi
 	./configure %c
 	perl -pi -e 's,-no-undefined,,g' src/Makefile

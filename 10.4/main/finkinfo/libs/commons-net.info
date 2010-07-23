@@ -30,8 +30,8 @@ PatchScript: <<
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	mkdir -p target/lib
 	ant dist -Dnoget=true
 	mv dist/commons-net-*.jar commons-net.jar

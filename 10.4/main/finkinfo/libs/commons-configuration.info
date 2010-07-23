@@ -65,8 +65,8 @@ PatchScript: perl -pi -e 's,<javac,<javac target="1.5" source="1.4",g; s,depends
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	cp ../apache-LICENSE-2.0 ../LICENSE
 	ant dist -Dnoget=true
 <<

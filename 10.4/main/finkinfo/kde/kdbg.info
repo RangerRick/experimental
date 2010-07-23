@@ -48,11 +48,11 @@ NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 ConfigureParams: --with-distribution='Fink/Mac OS X'
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export PREFIX="%p" USE_UNSERMAKE=0 XMLLINT=/usr/bin/xmllint
 	. ./environment-helper.sh
-
+	
 	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
 	./build-helper.sh configure %N %v %r ./configure %c $CONFIGURE_PARAMS
 	./build-helper.sh make      %N %v %r make $UNSERMAKEFLAGS

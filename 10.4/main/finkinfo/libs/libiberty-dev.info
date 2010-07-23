@@ -18,8 +18,8 @@ Patch: %N.patch
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	pushd libiberty
 	./configure --prefix=%p/lib/libiberty --enable-install-libiberty --mandir=%p/share/man --infodir=%p/share/info
 	make

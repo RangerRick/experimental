@@ -70,17 +70,17 @@ SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true
 UseMaxBuildJobs: false
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	if [ -f /usr/lib/libXplugin.dylib ]; then
-		make WORLDOPTS= World
+	make WORLDOPTS= World
 	else
-		echo "Whoa there, buddy, you're missing a library that *has* to be installed"
-		echo "for this to build.  Not only that, it's part of the 'essential' install"
-		echo "for Panther, so if you don't have it, either you're trying to build this"
-		echo "package on 10.2 (and you're a naughty, naughty person), or your OSX"
-		echo "install is corrupt.  I'm going to bail now."
-		exit 1
+	echo "Whoa there, buddy, you're missing a library that *has* to be installed"
+	echo "for this to build.  Not only that, it's part of the 'essential' install"
+	echo "for Panther, so if you don't have it, either you're trying to build this"
+	echo "package on 10.2 (and you're a naughty, naughty person), or your OSX"
+	echo "install is corrupt.  I'm going to bail now."
+	exit 1
 	fi
 <<
 

@@ -23,11 +23,11 @@ NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --infodir=%p/share/info --with-zlib=/usr --with-png=%p --with-jpeg=%p --with-tiff=%p
 CompileScript: <<
-#!/bin/sh -ex
-
-  export lt_cv_sys_max_cmd_len=65536
-  ./configure %c --with-java=$JAVA_HOME
-  make
+	#!/bin/sh -ex
+	
+	export lt_cv_sys_max_cmd_len=65536
+	./configure %c --with-java=$JAVA_HOME
+	make
 <<
 
 InstallScript: <<

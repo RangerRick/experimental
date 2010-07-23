@@ -41,8 +41,8 @@ PatchFile-MD5: 0766b380d002bc6a50cdf6a58e3c38c5
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	export PKG_CONFIG_PATH="%p/lib/pango-ft219/lib/pkgconfig:$PKG_CONFIG_PATH"
 	mkdir build
 	cp bin/*.dll bin/*.exe build/

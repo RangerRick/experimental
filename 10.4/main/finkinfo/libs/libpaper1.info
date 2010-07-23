@@ -25,8 +25,8 @@ Patch: %n.patch
 UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --disable-dependency-tracking --sysconfdir=%p/etc
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	touch NEWS AUTHORS
 	autoreconf -f -v -i
 	./configure %c

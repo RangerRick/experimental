@@ -50,16 +50,16 @@ SetCFLAGS: -Os
 UseMaxBuildJobs: true
 ConfigureParams: --disable-dependency-tracking --enable-glib --enable-gobject --disable-qt3 --disable-qt4 --enable-gtk --enable-dbus --enable-expat --disable-dbm --disable-gdbm --enable-libdaemon --disable-python --disable-pygtk --disable-python-dbus --disable-mono --disable-monodoc --disable-doxygen-doc --disable-doxygen-dot --disable-doxygen-html --with-distro=freebsd --disable-autoipd --with-avahi-priv-access-group=network
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	./configure %c
-
+	
 	for dir in avahi-gobject avahi-discover-standalone avahi-ui; do
-		pushd $dir
-			make
-		popd
+	pushd $dir
+	make
+	popd
 	done
-
+	
 	make avahi-gobject.pc avahi-ui.pc
 <<
 

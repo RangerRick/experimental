@@ -38,14 +38,14 @@ PatchScript: 	perl -pi -e 's,REQUIRES.*=.*sql.*,,' plugins/src/sqldrivers/*/*.pr
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	if [ -x /usr/bin/gcc-4.2 ]; then
-		export CC="gcc-4.2 -MD" CXX="g++-4.2 -MD"
+	export CC="gcc-4.2 -MD" CXX="g++-4.2 -MD"
 	else
-		export CC="gcc -MD" CXX="g++ -MD"
+	export CC="gcc -MD" CXX="g++ -MD"
 	fi
-
+	
 	pushd plugins/src/sqldrivers/mysql
 	qmake -o Makefile "INCLUDEPATH += %p/include/mysql" "LIBS += -L%p/lib" mysql.pro 
 	make CC="$CC" CXX="$CXX"

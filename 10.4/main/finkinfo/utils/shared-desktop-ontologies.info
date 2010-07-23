@@ -17,13 +17,13 @@ Source-MD5: 6c004e1c377f768cae5b321bc111876b
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export CMAKE_LIBRARY_PATH="%p/lib" CMAKE_INCLUDE_PATH="%p/include"
 	mkdir -p build
 	pushd build
-		cmake -DCMAKE_INSTALL_PREFIX="%p" ..
-		make
+	cmake -DCMAKE_INSTALL_PREFIX="%p" ..
+	make
 	popd
 <<
 

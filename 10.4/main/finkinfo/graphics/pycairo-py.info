@@ -33,9 +33,9 @@ PatchScript: <<
 UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --enable-dependency-tracking PKG_CONFIG_PATH=%p/lib/fontconfig2/lib/pkgconfig
 CompileScript: <<
-PYTHON=%p/bin/python%type_raw[python] ./configure %c
-make
-fink-package-precedence --prohibit-bdep %n-dev .
+	PYTHON=%p/bin/python%type_raw[python] ./configure %c
+	make
+	fink-package-precedence --prohibit-bdep %n-dev .
 <<
 
 InstallScript: make -j1 install DESTDIR=%d

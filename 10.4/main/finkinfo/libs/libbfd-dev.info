@@ -18,8 +18,8 @@ SourceDirectory: binutils-%v/bfd
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	./configure --prefix=%p/lib/libbfd --enable-install-libbfd --mandir=/sw/share/man --infodir=/sw/share/info
 	make
 <<

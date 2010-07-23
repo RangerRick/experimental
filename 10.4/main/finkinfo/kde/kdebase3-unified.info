@@ -98,19 +98,19 @@ NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 ConfigureParams: --with-sudo-kdesu-backend --without-nfs --with-ldap=framework --with-distribution='Fink/Mac OS X'
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	if [ `id -un` != "root" ]; then
-		echo "you must be root to build this package, it creates setuid binaries!"
-		exit 1
+	echo "you must be root to build this package, it creates setuid binaries!"
+	exit 1
 	fi
-
+	
 	export PREFIX="%p" USE_UNSERMAKE=0
 	. ./environment-helper.sh
 	export PKG_CONFIG_PATH="%p/lib/freetype219/lib/pkgconfig:%p/lib/fontconfig2/lib/pkgconfig:$PKG_CONFIG_PATH"
-
+	
 	perl -pi -e 's,FONTINST_SUBDIR="kfontinst",FONTINST_SUBDIR="",' kcontrol/kfontinst/configure.in.in
-
+	
 	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
 	./build-helper.sh configure %N %v %r ./configure %c $CONFIGURE_PARAMS
 	./build-helper.sh make      %N %v %r make KDM_FLAGS="-UHAVE_UTMPX -DBSD_UTMP=1"

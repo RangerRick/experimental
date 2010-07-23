@@ -22,14 +22,14 @@ PatchFile-MD5: 940ff297391280c99254ea287d9ccaf6
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export CMAKE_INCLUDE_PATH="%p/lib/system-openssl/include"
 	export CMAKE_LIBRARY_PATH="%p/lib/system-openssl/lib"
 	mkdir build
 	pushd build
-		cmake -DCMAKE_INSTALL_PREFIX="%p" ..
-		make
+	cmake -DCMAKE_INSTALL_PREFIX="%p" ..
+	make
 	popd
 <<
 

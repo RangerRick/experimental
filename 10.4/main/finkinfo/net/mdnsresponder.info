@@ -13,13 +13,13 @@ SourceDirectory: mDNSResponder-%v
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
-  pushd mDNSPosix
-
-  make os=jaguar
-
-  popd
+	#!/bin/sh -ex
+	
+	pushd mDNSPosix
+	
+	make os=jaguar
+	
+	popd
 <<
 
 InstallScript: <<

@@ -1,0 +1,37 @@
+Package: llvm27
+Version: 2.7
+Revision: 1
+Source: http://llvm.org/releases/%v/llvm-%v.tgz
+Source-MD5: ac322661f20e7d6c810b1869f886ad9b
+DocFiles: *.TXT README.txt
+
+Homepage: http://llvm.org/
+Maintainer: Benjamin Reed <llvm@fink.raccoonfink.com>
+Description: Modular and reusable compiler
+CompileScript: <<
+#!/bin/sh -ev
+
+	./configure --prefix=%p/opt/llvm-2.7 --enable-bindings=none
+	make
+<<
+InstallScript: <<
+#!/bin/sh -ev
+	make -j1 install DESTDIR="%d"
+
+	install -d -m 755 %i/share/doc/%N
+	mv %i/opt/llvm-%v/docs/llvm/* %i/share/doc/%N/
+	rm -rf %i/opt/llvm-%v/docs
+<<
+
+InfoTest: <<
+	TestDepends: dejagnu
+	TestScript: make check || exit 1
+<<
+
+DescDetail: <<
+The LLVM Project is a collection of modular and reusable compiler and
+toolchain technologies.  Despite its name, LLVM has little to do with
+traditional virtual machines, though it does provide helpful libraries
+that can be used to build them.
+<<
+License: BSD

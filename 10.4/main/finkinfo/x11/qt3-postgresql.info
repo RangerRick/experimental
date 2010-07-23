@@ -38,14 +38,14 @@ PatchScript: 	perl -pi -e 's,REQUIRES.*=.*sql.*,,' plugins/src/sqldrivers/*/*.pr
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	if [ -x /usr/bin/gcc-4.2 ]; then
-		export CC="gcc-4.2 -MD" CXX="g++-4.2 -MD"
+	export CC="gcc-4.2 -MD" CXX="g++-4.2 -MD"
 	else
-		export CC="gcc -MD" CXX="g++ -MD"
+	export CC="gcc -MD" CXX="g++ -MD"
 	fi
-
+	
 	export PATH="%p/opt/postgresql-9.0/bin:$PATH"
 	pushd plugins/src/sqldrivers/psql
 	qmake -o Makefile "INCLUDEPATH += %p/opt/postgresql-9.0/include %p/opt/postgresql-9.0/include/server" psql.pro 

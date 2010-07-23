@@ -43,11 +43,11 @@ NoSetMAKEFLAGS: true
 UseMaxBuildJobs: false
 ConfigureParams: --enable-aspell --enable-dynamic --enable-shared --enable-ui-readline --enable-ui-ncurses --with-ncurses=%p --with-readline=%p --with-libgsm --with-python=no --with-openssl --enable-libgadu-openssl --with-pthread --disable-ioctld --sysconfdir=%p/etc --mandir=%p/share/man --disable-dependency-tracking
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	export PKG_CONFIG_PATH="%p/lib/system-openssl/lib/pkgconfig:$PKG_CONFIG_PATH"
 	export lt_cv_sys_max_cmd_len=65536
-# export ac_cv_path_PYTHON=%p/bin/python2.5
+	# export ac_cv_path_PYTHON=%p/bin/python2.5
 	./configure %c
 	make
 <<

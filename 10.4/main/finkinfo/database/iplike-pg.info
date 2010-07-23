@@ -56,10 +56,10 @@ PatchScript: <<
 UseMaxBuildJobs: true
 ConfigureParams: --disable-dependency-tracking (%m != x86_64) --with-jvm-arch=32 (%m = x86_64) --with-jvm-arch=64
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	if [ "%type_pkg[postgresql]" -ge 84 ]; then
-		EXTRA_ARGS="--with-pgsql=%p/opt/postgresql-%type_raw[postgresql]/bin/pg_config"
+	EXTRA_ARGS="--with-pgsql=%p/opt/postgresql-%type_raw[postgresql]/bin/pg_config"
 	fi
 	./configure %c $EXTRA_ARGS
 	make

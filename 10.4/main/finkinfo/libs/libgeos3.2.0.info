@@ -16,8 +16,8 @@ Source-MD5: bfad7129680f0107b6ca9a2b92a2c440
 
 UseMaxBuildJobs: true
 CompileScript: <<
-./configure --prefix=%p/opt/%N
-make
+	./configure --prefix=%p/opt/%N
+	make
 <<
 
 InstallScript: make -j1 install-strip DESTDIR=%d

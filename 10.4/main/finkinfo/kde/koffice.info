@@ -106,26 +106,26 @@ NoSetMAKEFLAGS: true
 UseMaxBuildJobs: false
 ConfigureParams: --enable-mysql --enable-pgsql --with-pgsqlincdir=%p/include/postgresql --with-pgsqllibdir=%p/lib --with-pqxx-includes=%p/include --with-pqxx-libraries=%p/lib --with-distribution='Fink/Mac OS X' --with-pythondir=%p
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export PREFIX="%p" USE_UNSERMAKE=1
-
+	
 	. ./environment-helper.sh
 	export ac_cv_prog_RUBY=%p/bin/ruby1.8
 	export CONFIGURE_PARAMS=`echo $CONFIGURE_PARAMS | sed -e 's,--disable-dependency-tracking,,'`
-
+	
 	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
 	./build-helper.sh configure %N %v %r ./configure %c $CONFIGURE_PARAMS
-
+	
 	# why does this work??
 	find . -name \*.h | xargs touch
-
+	
 	# only do the imagemagick one; graphicsmagick code is trying to use some structs that don't exist
 	perl -pi -e 's,have_graphicsmagick=yes,have_graphicsmagick=no,g' configure
-
+	
 	MAKEFLAGS="-j1" ./build-helper.sh make-drivers %N %v %r unsermake $UNSERMAKEFLAGS kexi/kexidb/drivers/sqlite/kexidb_sqlite3driver.la kexi/kexidb/drivers/sqlite2/kexidb_sqlite2driver.la
 	MAKEFLAGS="-j1" ./build-helper.sh make-ksqlite %N %v %r unsermake $UNSERMAKEFLAGS kexi/3rdparty/kexisql3/src/ksqlite
-	                ./build-helper.sh make         %N %v %r unsermake $UNSERMAKEFLAGS
+	./build-helper.sh make         %N %v %r unsermake $UNSERMAKEFLAGS
 <<
 
 InstallScript: <<

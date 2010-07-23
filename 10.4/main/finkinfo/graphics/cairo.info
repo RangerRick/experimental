@@ -51,14 +51,14 @@ SetCFLAGS: -Os
 UseMaxBuildJobs: true
 ConfigureParams: --build=%m-apple-darwin`uname -r|sed 's/\\..*//'` --disable-xcb --enable-dependency-tracking --disable-gtk-doc --enable-quartz --enable-quartz-font --disable-quartz-image --enable-png --enable-glitz --enable-ps --enable-pdf --disable-atsui --mandir=%p/share/man --disable-static
 CompileScript: <<
-#!/bin/sh -ex
+	#!/bin/sh -ex
 	if [ -x /usr/bin/gcc-4.2 ]; then
-		export CC="gcc-4.2"
+	export CC="gcc-4.2"
 	fi
-
+	
 	export PKG_CONFIG_PATH="%p/lib/fontconfig2/lib/pkgconfig:`pwd`:$PKG_CONFIG_PATH"
 	ac_cv_prog_GS= ./configure %c
-#	find . -name Makefile | xargs perl -pi -e 's,^CAIRO_CFLAGS = ,CAIRO_CFLAGS = -I%p/lib/fontconfig2/include ,'
+	#	find . -name Makefile | xargs perl -pi -e 's,^CAIRO_CFLAGS = ,CAIRO_CFLAGS = -I%p/lib/fontconfig2/include ,'
 	make
 	fink-package-precedence --prohibit-bdep %n .
 <<

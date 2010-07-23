@@ -21,8 +21,8 @@ PatchScript: perl -pi -e 's,<javac,<javac target="1.4" source="1.4",g' build.xml
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	rm -rf ant*.jar
 	mkdir lib
 	ant jar -Djakarta-site2.dir=.

@@ -19,11 +19,11 @@ PatchFile-MD5: ea470b7f4b385a68b211a89fd7a756c9
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
+	#!/bin/sh -ev
 	mkdir build
 	pushd build
-		cmake -DCMAKE_INSTALL_PREFIX=%p ..
-		make
+	cmake -DCMAKE_INSTALL_PREFIX=%p ..
+	make
 	popd
 <<
 

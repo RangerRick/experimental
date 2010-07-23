@@ -25,8 +25,8 @@ PatchScript: sed -e 's,@FINKPREFIX@,%p,g' %a/%n.patch | patch -p1
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	export AMANITHDIR=`pwd`
 	rm -rf include/GL src/support/glew.c
 	qmake

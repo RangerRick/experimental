@@ -20,13 +20,13 @@ NoSetMAKEFLAGS: true
 UseMaxBuildJobs: false
 ConfigureParams: --mandir=%p/share/man
 CompileScript: <<
-#!/bin/sh -ex
-
-  export lt_cv_sys_max_cmd_len=65536
-  export MONO_PATH=%b/server:%b/test:$MONO_PATH
-  ./configure %c
-  make
-  make check
+	#!/bin/sh -ex
+	
+	export lt_cv_sys_max_cmd_len=65536
+	export MONO_PATH=%b/server:%b/test:$MONO_PATH
+	./configure %c
+	make
+	make check
 <<
 
 InstallScript: <<

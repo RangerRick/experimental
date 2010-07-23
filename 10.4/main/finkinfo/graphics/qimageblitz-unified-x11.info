@@ -29,16 +29,16 @@ NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[blitz]"
 	. %p/sbin/kde4-buildenv.sh
-
+	
 	mkdir -p build
 	pushd build
-		touch config.h
-		cmake $KDE4_CMAKE_ARGS ..
-		make VERBOSE=1
+	touch config.h
+	cmake $KDE4_CMAKE_ARGS ..
+	make VERBOSE=1
 	popd
 <<
 

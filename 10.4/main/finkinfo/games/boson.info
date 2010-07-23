@@ -45,11 +45,11 @@ NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 ConfigureParams: --with-distribution='Fink/Mac OS X'
 CompileScript: <<
-#!/bin/sh -e
-
+	#!/bin/sh -e
+	
 	export PREFIX="%p"
 	. ./environment-helper.sh
-
+	
 	mkdir build
 	pushd build
 	../build-helper.sh cmake %N %v %r cmake -DCMAKE_INSTALL_PREFIX='%p' ..

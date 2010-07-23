@@ -39,12 +39,12 @@ NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 ConfigureParams: --with-pgconfig=%p/opt/postgresql-%type_raw[postgresql]/bin/pg_config --with-geosconfig=%p/opt/libgeos3.2.0/bin/geos-config --with-projdir=%p --with-xml2config=%p/bin/xml2-config
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export lt_cv_sys_max_cmd_len=65536
 	export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home"
 	export PATH="/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home/bin:$PATH"
-
+	
 	./configure %c
 	make
 	pushd java/jdbc

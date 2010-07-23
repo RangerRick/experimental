@@ -45,17 +45,17 @@ NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 ConfigureParams: --disable-dependency-tracking --with-distribution='Fink/Mac OS X'
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export PREFIX="%p" USE_UNSERMAKE=1
 	. ./environment-helper.sh
-
+	
 	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
-
+	
 	for package in mpeg mpc xiph; do
-		perl -pi -e "s,have_akode_${package}=no,have_akode_${package}=yes,g" configure
+	perl -pi -e "s,have_akode_${package}=no,have_akode_${package}=yes,g" configure
 	done
-
+	
 	export DO_NOT_COMPILE="kmid kscd mpg123_artsplugin oggvorbis_artsplugin"
 	./build-helper.sh configure %N %v %r ./configure %c $CONFIGURE_PARAMS
 	./build-helper.sh make      %N %v %r unsermake $UNSERMAKEFLAGS

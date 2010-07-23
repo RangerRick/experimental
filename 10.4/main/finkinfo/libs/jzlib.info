@@ -19,8 +19,8 @@ SourceDirectory: %n-%v
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	$JAVA_HOME/bin/javac -target 1.4 -source 1.4 `find com -name \*.java`
 	jar -cvf jzlib.jar `find com -name \*.class`
 	mkdir -p api

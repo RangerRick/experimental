@@ -32,8 +32,8 @@ PatchScript: <<
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	ant compile jar javadoc
 <<
 

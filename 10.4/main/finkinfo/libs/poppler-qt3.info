@@ -45,8 +45,8 @@ NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man SYSTEM_XPDFRC=%p/etc/xpdfrc.poppler1 --enable-dependency-tracking --enable-zlib --disable-poppler-glib --disable-poppler-qt4 PKG_CONFIG_PATH="%p/lib/pango-ft219/lib/pkgconfig:%p/lib/fontconfig2/lib/pkgconfig:%p/lib/freetype219/lib/pkgconfig:$PKG_CONFIG_PATH" FREETYPE_CONFIG=%p/lib/freetype219/bin/freetype-config
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	unset QTDIR
 	export QTINC=%p/include/qt
 	export QTLIB=%p/lib

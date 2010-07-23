@@ -27,8 +27,8 @@ NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 CompileScript: <<
-./configure %c
-make all
+	./configure %c
+	make all
 <<
 
 InstallScript: <<

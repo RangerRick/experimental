@@ -156,7 +156,7 @@ ConfigureParams: <<
 --enable-vcd
 <<
 CompileScript: <<
-#!/bin/sh -ev
+	#!/bin/sh -ev
 	export CPATH=%p/include:/usr/X11R6/include:/usr/X11/include
 	export PKG_CONFIG_PATH=%p/lib/fontconfig2/lib/pkgconfig:%p/lib/freetype219/lib/pkgconfig:%p/lib/pkgconfig:/usr/X11R6/lib/pkgconfig:${PKG_CONFIG_PATH}
 	[ "%m" = "powerpc" ] && export EXTRA_CONFIG_PARAMS="--enable-altivec"

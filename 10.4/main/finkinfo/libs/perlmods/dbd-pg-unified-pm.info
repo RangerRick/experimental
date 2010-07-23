@@ -32,8 +32,8 @@ Source-MD5: 96b24b29d876bbbcc7c194115917a2f0
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	export POSTGRES_INCLUDE=%p/opt/postgresql-8.4/include POSTGRES_LIB=%p/opt/postgresql-8.4/lib
 	%{default_script}
 <<

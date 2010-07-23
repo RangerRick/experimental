@@ -22,9 +22,9 @@ Source-MD5: d4b9f3bf6bd7fdc9f03c66a352a2c0da
 
 UseMaxBuildJobs: true
 CompileScript: <<
-  %{default_script}
-  # on 10.6, Test::Harness "compatibility" API does not honor arch -i386 perl stuff properly
-  rm -rf %i/lib/perl5/%type_raw[perl]/Test/Harness.pm
+	%{default_script}
+	# on 10.6, Test::Harness "compatibility" API does not honor arch -i386 perl stuff properly
+	rm -rf %i/lib/perl5/%type_raw[perl]/Test/Harness.pm
 <<
 
 UpdatePOD: true

@@ -77,16 +77,16 @@ NoSetMAKEFLAGS: true
 UseMaxBuildJobs: false
 ConfigureParams: --disable-dependency-tracking --with-qtdoc-dir=%p/share/doc/qt3/html --with-kdelibsdoxy-dir=%p/share/doc/kde/en/kdelibs-apidocs --enable-vba --with-db-includedir=%p/include/db4 --with-db-libdir=%p/lib --with-pic --with-distribution='Fink/Mac OS X'
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export HOME=/tmp PREFIX="%p" QTDOCDIR="%p/share/doc/qt3/html" USE_UNSERMAKE=0
 	. ./environment-helper.sh
 	export lt_cv_sys_max_cmd_len=65536 LEX="%p/lib/flex/bin/flex" LEXLIB="%p/lib/flex/lib/libfl_pic.a"
-
+	
 	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
-
+	
 	perl -pi -e 's/s,\@all_includes\@,\$all_includes,/s,\@all_includes\@,\$CPPFLAGS \$all_includes,/; s/s,\@all_libraries\@,\$all_libraries,/s,\@all_libraries\@,\$LDFLAGS \$all_libraries,/' configure
-
+	
 	./build-helper.sh configure %N %v %r ./configure %c $CONFIGURE_PARAMS
 	./build-helper.sh make      %N %v %r make 
 <<

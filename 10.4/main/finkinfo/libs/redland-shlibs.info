@@ -48,8 +48,8 @@ SetLDFLAGS: -L%p/lib/system-openssl/lib
 UseMaxBuildJobs: true
 ConfigureParams: --enable-dependency-tracking --enable-gtk-doc --with-raptor=system --with-rasqal=system --without-threestore --without-mysql --without-postgresql
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	./configure %c
 	make
 	fink-package-precedence --prohibit-bdep redland-dev .

@@ -24,15 +24,15 @@ SourceDirectory: oxygen-icons-%v
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[kde]"
 	. %p/sbin/kde4-buildenv.sh
-
+	
 	mkdir -p build
 	pushd build
-		cmake $KDE4_CMAKE_ARGS ..
-		make VERBOSE=1
+	cmake $KDE4_CMAKE_ARGS ..
+	make VERBOSE=1
 	popd
 <<
 

@@ -71,25 +71,25 @@ SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true
 UseMaxBuildJobs: false
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[kde]"
 	. %p/sbin/kde4-buildenv.sh
 	export CMAKE_INCLUDE_PATH="%p/Library/Frameworks/R.framework/Headers:$CMAKE_INCLUDE_PATH"
 	export CMAKE_LIBRARY_PATH="%p/Library/Frameworks/R.framework/Libraries:$CMAKE_LIBRARY_PATH"
-
+	
 	# work around eigen2 bug
 	case `sw_vers -productVersion` in
-		10.5*)
-			export CC="gcc"
-			export CXX="g++"
-			;;
+	10.5*)
+	export CC="gcc"
+	export CXX="g++"
+	;;
 	esac
-
+	
 	mkdir -p build
 	pushd build
-		cmake -DR_INCLUDEDIR="%p/Library/Frameworks/R.framework/Headers" -DXPLANET_EXECUTABLE=%p/bin/xplanet $KDE4_CMAKE_ARGS ..
-		make VERBOSE=1
+	cmake -DR_INCLUDEDIR="%p/Library/Frameworks/R.framework/Headers" -DXPLANET_EXECUTABLE=%p/bin/xplanet $KDE4_CMAKE_ARGS ..
+	make VERBOSE=1
 	popd
 <<
 

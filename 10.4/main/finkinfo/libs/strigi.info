@@ -31,14 +31,14 @@ PatchFile-MD5: 5fe7eefcbc2db3a4bb4453b76cdf0568
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export CMAKE_LIBRARY_PATH="%p/lib" CMAKE_INCLUDE_PATH="%p/include"
 	mkdir -p build
 	pushd build
-		# sqlite and hyperestraier are both busted
-		cmake -DENABLE_QT4:BOOL=OFF -DENABLE_FAM:BOOL=OFF -DENABLE_SQLITE:BOOL=OFF -DENABLE_HYPERESTRAIER:BOOL=OFF -DCMAKE_INSTALL_PREFIX="%p" -D__STRIGI_HAVE_GCC_VISIBILITY:BOOL=OFF ..
-		make
+	# sqlite and hyperestraier are both busted
+	cmake -DENABLE_QT4:BOOL=OFF -DENABLE_FAM:BOOL=OFF -DENABLE_SQLITE:BOOL=OFF -DENABLE_HYPERESTRAIER:BOOL=OFF -DCMAKE_INSTALL_PREFIX="%p" -D__STRIGI_HAVE_GCC_VISIBILITY:BOOL=OFF ..
+	make
 	popd
 <<
 

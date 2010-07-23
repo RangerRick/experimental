@@ -26,8 +26,8 @@ SourceDirectory: apt-file-%v
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	perl -pi -e 's,/usr/bin/perl,%p/bin/perl-%type_pkg[perl],' apt-file
 <<
 

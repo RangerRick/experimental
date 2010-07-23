@@ -35,9 +35,9 @@ CompileScript: <<
 	#!/bin/sh -ev
 	export FULLPERL="/usr/bin/arch -%m `which perl%type_raw[perl]`"
 	case `sw_vers -productVersion` in
-		10.4*)
-			export FULLPERL=`which perl%type_raw[perl]`
-			;;
+	10.4*)
+	export FULLPERL=`which perl%type_raw[perl]`
+	;;
 	esac
 	$FULLPERL Makefile.PL verbose %c
 	perl -pi -e 's,-arch [^ ]*,,g; s,-O3,-Os,g' Makefile

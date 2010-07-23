@@ -84,8 +84,8 @@ NoSetMAKEFLAGS: true
 UseMaxBuildJobs: false
 ConfigureParams: --without-check --libexecdir=%p/lib/%n --mandir=%p/share/man --enable-gtk-doc --disable-static --disable-dependency-tracking --enable-tests --enable-failing-tests --disable-schemas-install PKG_CONFIG_PATH="%p/lib/pango-ft219/lib/pkgconfig:%p/lib/fontconfig2/lib/pkgconfig:%p/lib/freetype219/lib/pkgconfig:$PKG_CONFIG_PATH" FREETYPE_CONFIG=%p/lib/freetype219/bin/freetype-config
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	export ac_cv_path_PYTHON=%p/bin/python2.5
 	export PATH="%p/lib/xmkmf/bin:$PATH"
 	./configure %c

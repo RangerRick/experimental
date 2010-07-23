@@ -48,17 +48,17 @@ PatchScript: sed 's|@PREFIX@|%p|g' <%a/%f.patch | patch -p1
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh
-export QTDIR=`pwd`
-export DYLD_LIBRARY_PATH="$QTDIR/lib:%p/lib:$DYLD_LIBRARY_PATH"
-export PATH="$QTDIR/bin:$PATH"
-if [ -f /usr/X11R6/lib/libfontconfig.dylib ]; then
+	#!/bin/sh
+	export QTDIR=`pwd`
+	export DYLD_LIBRARY_PATH="$QTDIR/lib:%p/lib:$DYLD_LIBRARY_PATH"
+	export PATH="$QTDIR/bin:$PATH"
+	if [ -f /usr/X11R6/lib/libfontconfig.dylib ]; then
 	FONTCONFIG="-lfontconfig"
-else
+	else
 	FONTCONFIG=
-fi
-echo yes | ./configure -platform darwin-c++ -shared -system-zlib -system-libpng -system-jpeg -gif -xft -sm -I/usr/X11R6/include/freetype2 -I%p/include -L%p/lib $FONTCONFIG
-make PREFIX=%p
+	fi
+	echo yes | ./configure -platform darwin-c++ -shared -system-zlib -system-libpng -system-jpeg -gif -xft -sm -I/usr/X11R6/include/freetype2 -I%p/include -L%p/lib $FONTCONFIG
+	make PREFIX=%p
 <<
 
 InstallScript: <<

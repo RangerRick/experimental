@@ -29,19 +29,19 @@ SourceDirectory: %n-%v-src
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export CLASSPATH=`pwd`/../avalon-framework-4.1.3.jar:`pwd`/../logkit-1.0.1.jar:"$CLASSPATH"
 	ant compile -Dlog4j12.jar=%p/share/java/log4j/log4j.jar \
-		-Djunit.jar=%p/share/java/junit/junit.jar \
-		-Dlogkit.jar=`pwd`/../logkit-1.0.1.jar \
-		-Davalon-framework.jar=`pwd`/../avalon-framework-4.1.3.jar \
-		-Dservletapi.jar=%p/share/java/jakarta-servletapi/servlet.jar \
-		-Dcore.jar.name=%n.jar \
-		-Dapi.jar.name=%n-api.jar \
-		-Dadapters.jar.name=%n-adapters.jar \
-		-Dsource.version=1.4 \
-		-Dtarget.version=1.5
+	-Djunit.jar=%p/share/java/junit/junit.jar \
+	-Dlogkit.jar=`pwd`/../logkit-1.0.1.jar \
+	-Davalon-framework.jar=`pwd`/../avalon-framework-4.1.3.jar \
+	-Dservletapi.jar=%p/share/java/jakarta-servletapi/servlet.jar \
+	-Dcore.jar.name=%n.jar \
+	-Dapi.jar.name=%n-api.jar \
+	-Dadapters.jar.name=%n-adapters.jar \
+	-Dsource.version=1.4 \
+	-Dtarget.version=1.5
 	javadoc -sourcepath src/java -d api `find src/java -name \*.java`
 <<
 

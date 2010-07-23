@@ -26,8 +26,8 @@ PatchFile-MD5: a7fccb386d0011775c1884112619dfc7
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	QTDIR="%p/lib/qt4-%type_pkg[qca]"
 	export PATH="$QTDIR/bin:$PATH"
 	./configure --prefix="%p/opt/qca2/%type_pkg[qca]" --no-framework --release --no-separate-debug-info

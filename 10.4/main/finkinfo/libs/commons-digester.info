@@ -32,8 +32,8 @@ PatchScript: <<
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	ant dist
 	pushd src/examples/rss
 	export CLASSPATH="%b/dist/commons-digester.jar:$CLASSPATH"

@@ -24,11 +24,11 @@ PatchScript: sed 's:@PREFIX@:%p:g' <%a/%n.patch | patch -p1
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
- $JAVA_HOME/bin/javac -target 1.2 -source 1.2 -classpath %p/share/java/jta-spec/*.jar javax/sql/*.java
- mkdir -p api
- $JAVA_HOME/bin/javadoc -classpath %p/share/java/jta-spec/*.jar -sourcepath . -d api javax.sql
+	#!/bin/sh -ex
+	
+	$JAVA_HOME/bin/javac -target 1.2 -source 1.2 -classpath %p/share/java/jta-spec/*.jar javax/sql/*.java
+	mkdir -p api
+	$JAVA_HOME/bin/javadoc -classpath %p/share/java/jta-spec/*.jar -sourcepath . -d api javax.sql
 <<
 
 InstallScript: <<

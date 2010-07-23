@@ -32,15 +32,15 @@ NoSetCPPFLAGS: true
 NoSetMAKEFLAGS: true
 UseMaxBuildJobs: false
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	if [ -x /usr/bin/gcc-4.2 ]; then
-		export CC="gcc-4.2 -MD" CXX="g++-4.2 -MD"
-		perl -pi -e 's,= cc,= gcc-4.2,g; s,= c\+\+,= g++-4.2,g' mkspecs/darwin-g++/qmake.conf
+	export CC="gcc-4.2 -MD" CXX="g++-4.2 -MD"
+	perl -pi -e 's,= cc,= gcc-4.2,g; s,= c\+\+,= g++-4.2,g' mkspecs/darwin-g++/qmake.conf
 	else
-		export CC="gcc -MD" CXX="g++ -MD"
+	export CC="gcc -MD" CXX="g++ -MD"
 	fi
-
+	
 	./configure --prefix %p --docdir %p/share/doc/%N --release --install /usr/bin/install
 	mv libpng libpng_UNUSED
 	make INSTALL=%p/lib/doxygen1.3 DOCDIR=%p/share/doc/%N CC="$CC" CXX="$CXX"

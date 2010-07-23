@@ -26,8 +26,8 @@ SourceRename: libopensync-%v.tar.bz2
 UseMaxBuildJobs: true
 ConfigureParams: --disable-dependency-tracking --enable-python=2.6 --libexecdir=%p/sbin
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	find . -name Makefile.in | xargs perl -pi -e 's,-Werror,,'
 	PYTHON=%p/bin/python2.6 ./configure %c
 	make

@@ -26,8 +26,8 @@ PatchFile-MD5: 201713e3bafc1fc9829cf1450c74909a
 
 UseMaxBuildJobs: true
 CompileScript: <<
- ./build.sh
- rm -f lib/ant*.jar
+	./build.sh
+	rm -f lib/ant*.jar
 <<
 
 InstallScript: <<

@@ -20,8 +20,8 @@ PatchScript: perl -pi -e 's,<javac,<javac target="1.5" source="1.4",g' build.xml
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -xe
-
+	#!/bin/sh -xe
+	
 	ant dist
 <<
 

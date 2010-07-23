@@ -25,13 +25,13 @@ PatchScript: perl -pi -e 's,-Wno-long-double,,g' configure
 UseMaxBuildJobs: true
 ConfigureParams: --enable-shared=no --disable-imfexamples --disable-osx-universal-binaries --disable-dependency-tracking --with-gl-includes=/usr/X11R6/include
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	if [ -x /usr/bin/gcc-4.2 ]; then
-		export CC="gcc-4.2"
-		export CXX="g++-4.2"
+	export CC="gcc-4.2"
+	export CXX="g++-4.2"
 	fi
-
+	
 	./configure %c
 	make
 <<

@@ -29,16 +29,16 @@ NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 ConfigureParams: --disable-dependency-tracking --with-pic --enable-shared --disable-static --mandir=%i/share/man --infodir=%p/share/info --libexecdir=%p/lib --without-docs
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	case `sw_vers -productVersion` in
-		10.[01234]*)
-			;;
-		*)
-			export LDFLAGS="$LDFLAGS -Wl,-dead_strip_dylibs"
-			;;
+	10.[01234]*)
+	;;
+	*)
+	export LDFLAGS="$LDFLAGS -Wl,-dead_strip_dylibs"
+	;;
 	esac
-
+	
 	./configure %c
 	make CCLD=g++
 <<

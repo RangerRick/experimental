@@ -47,9 +47,9 @@ PatchFile-MD5: 3237b6c87dbfb31af458726aba443376
 UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --infodir=%p/share/info --disable-update-mimedb --disable-update-desktopdb --disable-dependency-tracking --disable-gtksourceview2 --enable-monoextensions --enable-versioncontrol --enable-subversion --enable-gnomeplatform --disable-macplatform --enable-aspnet --enable-c
 CompileScript: <<
-#!/bin/sh -ex
-
-#	export MONO_PATH="%i/lib:`pwd`/build/bin:$MONO_PATH"
+	#!/bin/sh -ex
+	
+	#	export MONO_PATH="%i/lib:`pwd`/build/bin:$MONO_PATH"
 	export lt_cv_sys_max_cmd_len=65536
 	perl -pi -e 's/hardcode_direct=yes/hardcode_direct=no/g;' configure
 	./configure %c

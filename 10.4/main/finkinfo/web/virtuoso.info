@@ -72,23 +72,23 @@ ConfigureParams: <<
 --disable-dependency-tracking
 <<
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	export PERL=/usr/bin/perl
 	export PYTHON=/usr/bin/python
 	export RUBY=%p/bin/ruby1.8
 	export PATH=%p/lib/flex/bin:$PATH
-
+	
 	./configure %c
 	perl -pi -e 's,-arch [^ ]*,,g; s,-I/usr/local/include,,g; s,-L/usr/local/lib,,g' binsrc/hosting/*/Makefile
 	for ENTRY in `$PERL -MExtUtils::Embed -e ldopts`; do
-		case $ENTRY in
-			*DynaLoader.a)
-				ln -s $ENTRY libDynaLoader.a
-				perl -pi -e "s, /System, -L`pwd` -L/System,g; s,/DynaLoader.a, -lDynaLoader,g" binsrc/hosting/perl/Makefile
-				break
-				;;
-		esac
+	case $ENTRY in
+	*DynaLoader.a)
+	ln -s $ENTRY libDynaLoader.a
+	perl -pi -e "s, /System, -L`pwd` -L/System,g; s,/DynaLoader.a, -lDynaLoader,g" binsrc/hosting/perl/Makefile
+	break
+	;;
+	esac
 	done
 	make
 <<

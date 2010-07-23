@@ -25,8 +25,8 @@ PatchScript: perl -pi -e 's,source="1.4",source="1.4" target="1.5",g' build.xml
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	ln -s %p/share/java/jsapi/jsapi.jar lib/
 	ant -Dsrc_dir=. all
 	rm -rf lib/jsapi.jar

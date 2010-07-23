@@ -29,11 +29,11 @@ PatchFile-MD5: 13d8f4ae42173a6bd8d035530247d90a
 UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --with-apxs=%p/sbin/apxs --with-mono-prefix=%p --with-apr-config=%p/bin/apr-config --enable-debug
 CompileScript: <<
-#!/bin/sh -ex
-
-  export lt_cv_sys_max_cmd_len=65536
-  ./configure %c
-  make
+	#!/bin/sh -ex
+	
+	export lt_cv_sys_max_cmd_len=65536
+	./configure %c
+	make
 <<
 
 InstallScript: <<

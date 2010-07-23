@@ -30,14 +30,14 @@ PatchScript: <<
 UseMaxBuildJobs: true
 ConfigureParams: --disable-dependency-tracking (%m != x86_64) --with-jvm-arch=32 (%m = x86_64) --with-jvm-arch=64
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	case `sw_vers -productVersion` in
-		10.[01234]*)
-			;;
-		*)
-			export LDFLAGS="$LDFLAGS -Wl,-dead_strip_dylibs"
-			;;
+	10.[01234]*)
+	;;
+	*)
+	export LDFLAGS="$LDFLAGS -Wl,-dead_strip_dylibs"
+	;;
 	esac
 	./configure %c
 	make

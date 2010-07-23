@@ -22,16 +22,16 @@ Source-MD5: bf4ced109a367b4c5d71fe63c043270e
 UseMaxBuildJobs: true
 ConfigureParams: --disable-static --disable-dependency-tracking --disable-doxygen
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	case `sw_vers -productVersion` in
-		10.[01234]*)
-			;;
-		*)
-			export LDFLAGS="$LDFLAGS -Wl,-dead_strip_dylibs"
-			;;
+	10.[01234]*)
+	;;
+	*)
+	export LDFLAGS="$LDFLAGS -Wl,-dead_strip_dylibs"
+	;;
 	esac
-
+	
 	./configure %c
 	make
 <<

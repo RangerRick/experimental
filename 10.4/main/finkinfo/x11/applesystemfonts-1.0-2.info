@@ -18,9 +18,9 @@ NoSourceDirectory: true
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh
+	#!/bin/sh
 	for file in `find /Library /System/Library -name \*.dfont -print`; do
-		fondu -force $file
+	fondu -force $file
 	done
 <<
 

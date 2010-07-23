@@ -36,8 +36,8 @@ NoSetLDFLAGS: true
 NoSetMAKEFLAGS: true
 UseMaxBuildJobs: false
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	nant -t:mono-2.0
 <<
 

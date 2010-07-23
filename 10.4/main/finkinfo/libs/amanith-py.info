@@ -24,12 +24,12 @@ Patch: %{ni}.patch
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/bash -ev
-
+	#!/bin/bash -ev
+	
 	install -d -m 755 amanith/include
 	ln -s %p/include/amanith amanith/include/
 	ln -s %p/lib amanith/
-
+	
 	%p/bin/python%type_raw[python] setup.py build
 <<
 

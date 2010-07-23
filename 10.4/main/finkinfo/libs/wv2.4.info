@@ -44,12 +44,12 @@ PatchFile-MD5: e58e285b36fc55462c13c42d2954a0d8
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	mkdir build
 	pushd build
-		cmake -DCMAKE_INSTALL_PREFIX=%p -DICONV_INCLUDE_DIR=%p/include -DICONV_LIBRARIES=%p/lib/libiconv.dylib ..
-		make VERBOSE=1
+	cmake -DCMAKE_INSTALL_PREFIX=%p -DICONV_INCLUDE_DIR=%p/include -DICONV_LIBRARIES=%p/lib/libiconv.dylib ..
+	make VERBOSE=1
 	popd
 <<
 

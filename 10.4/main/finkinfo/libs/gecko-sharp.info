@@ -53,15 +53,15 @@ NoSetMAKEFLAGS: true
 UseMaxBuildJobs: false
 ConfigureParams: --mandir=%p/share/man --disable-dependency-tracking PKG_CONFIG_PATH="%p/lib/pango-ft219/lib/pkgconfig" lt_cv_sys_max_cmd_len=65536
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	export MONODOC=%p/bin/monodocer
 	if [ "%type_raw[gecko]" == "-firefox3" ]; then
-		MOZILLA_FLAGS="--with-mozilla-headers=%p/include/firefox3 --with-mozilla-libs=%p/lib/firefox3"
+	MOZILLA_FLAGS="--with-mozilla-headers=%p/include/firefox3 --with-mozilla-libs=%p/lib/firefox3"
 	elif [ "%type_raw[gecko]" == "-firefox2" ]; then
-		MOZILLA_FLAGS="--with-mozilla-headers=%p/include/firefox2 --with-mozilla-libs=%p/lib/firefox2"
+	MOZILLA_FLAGS="--with-mozilla-headers=%p/include/firefox2 --with-mozilla-libs=%p/lib/firefox2"
 	else
-		MOZILLA_FLAGS="--with-mozilla-headers=%p/include/seamonkey --with-mozilla-libs=%p/lib/seamonkey"
+	MOZILLA_FLAGS="--with-mozilla-headers=%p/include/seamonkey --with-mozilla-libs=%p/lib/seamonkey"
 	fi
 	./configure %c $MOZILLA_FLAGS
 	make

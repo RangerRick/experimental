@@ -32,11 +32,11 @@ SetCPPFLAGS: -fno-common -D__unix__ -DDARWIN
 UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --disable-dependency-tracking
 CompileScript: <<
-#!/bin/sh -ex
-
-  export lt_cv_sys_max_cmd_len=65536
-  ./configure %c
-  make
+	#!/bin/sh -ex
+	
+	export lt_cv_sys_max_cmd_len=65536
+	./configure %c
+	make
 <<
 
 InstallScript: make install DESTDIR=%d

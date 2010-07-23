@@ -42,10 +42,10 @@ NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 ConfigureParams: --enable-visibility-hiding --mandir=%p/share/man --disable-dependency-tracking --with-freetype-config=%p/lib/freetype219/bin/freetype-config
 CompileScript: <<
-#!/bin/sh -ev
- export PATH=%p/lib/xmkmf/bin:$PATH 
- ./configure %c
- make
+	#!/bin/sh -ev
+	export PATH=%p/lib/xmkmf/bin:$PATH 
+	./configure %c
+	make
 <<
 
 InstallScript: make install DESTDIR=%d

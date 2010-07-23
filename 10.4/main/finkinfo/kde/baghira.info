@@ -42,11 +42,11 @@ PatchFile-MD5: 8995ee6389e4ce3288f348cf27731568
 UseMaxBuildJobs: true
 ConfigureParams: --with-distribution='Fink/Mac OS X'
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	export PREFIX="%p" USE_UNSERMAKE=1
 	. ./environment-helper.sh
-
+	
 	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
 	./build-helper.sh configure %N %v %r ./configure %c $CONFIGURE_PARAMS
 	./build-helper.sh make      %N %v %r unsermake $UNSERMAKEFLAGS

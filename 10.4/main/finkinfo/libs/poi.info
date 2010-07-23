@@ -40,8 +40,8 @@ PatchScript: perl -pi -e 's,<javac,<javac target="1.4" source="1.4",g' build.xml
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	ant -Ddisconnected=true -Dmain.docs.notRequired=true -Dmain.test.notRequired=true dist
 <<
 

@@ -60,8 +60,8 @@ NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --disable-static --disable-dependency-tracking
 CompileScript: <<
-#!/bin/sh -ex
-
+	#!/bin/sh -ex
+	
 	mkdir -p `pwd`/pkgconfig
 	ln -s %p/lib/pkgconfig/gtkhtml-3.14.pc `pwd`/pkgconfig/gtkhtml-3.6.pc
 	ln -s %p/lib/pkgconfig/libgtkhtml-3.14.pc `pwd`/pkgconfig/libgtkhtml-3.6.pc

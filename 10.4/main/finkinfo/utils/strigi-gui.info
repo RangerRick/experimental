@@ -34,19 +34,19 @@ PatchFile-MD5: e286fcc9bcb9c04384e6f953bf2d2768
 
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[strigi]" KDE4_INSTALL_PREFIX="%p/opt/strigi/%type_pkg[strigi]"
 	. %p/sbin/kde4-buildenv.sh
-
+	
 	mkdir -p build
 	pushd build
-		cmake -DBUILD_DAEMON:BOOL=OFF -DENABLE_FAM:BOOL=OFF -DENABLE_SQLITE:BOOL=OFF $KDE4_CMAKE_ARGS -D__STRIGI_HAVE_GCC_VISIBILITY:BOOL=OFF ..
-		for dir in src/archivereader/qclient src/searchclient; do
-			pushd "$dir"
-				make VERBOSE=1
-			popd
-		done
+	cmake -DBUILD_DAEMON:BOOL=OFF -DENABLE_FAM:BOOL=OFF -DENABLE_SQLITE:BOOL=OFF $KDE4_CMAKE_ARGS -D__STRIGI_HAVE_GCC_VISIBILITY:BOOL=OFF ..
+	for dir in src/archivereader/qclient src/searchclient; do
+	pushd "$dir"
+	make VERBOSE=1
+	popd
+	done
 	popd
 <<
 

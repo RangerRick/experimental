@@ -21,8 +21,8 @@ SetCFLAGS: -Os
 SetCPPFLAGS: -DHAVE_KQUEUE=1 -DNDEBUG
 UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	rm -rf configure
 	autoreconf -f -v -i
 	./configure --prefix=%p/lib/%N --mandir=%p/share/man --sysconfdir=%p/etc --bindir=%p/bin --sbindir=%p/sbin --libexecdir=%p/sbin
