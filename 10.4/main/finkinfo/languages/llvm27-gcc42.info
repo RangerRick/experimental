@@ -1,33 +1,39 @@
 Package: llvm27-gcc42
 Version: 2.7
 Revision: 1
-Source: http://llvm.org/releases/%v/llvm-gcc-4.2-%v.source.tgz
-Source-MD5: c5033005ceac1988b7cdc908445090f0
-DocFiles: CHANGES* COPYING* ChangeLog* MAINTAINERS README*
+Description: GCC frontend for LLVM
+License: GPL
+Maintainer: Benjamin Reed <llvm-gcc42@fink.raccoonfink.com>
 
+Depends: %N-shlibs (= %v-%r)
 BuildDepends: <<
 	gmp,
 	libmpfr4,
 	llvm27 (>= %v-1)
 <<
-Depends: %N-shlibs (= %v-%r)
+InfoTest: <<
+	TestDepends: dejagnu
+	TestScript: make check || exit 1
+<<
 
-Homepage: http://llvm.org/
-Maintainer: Benjamin Reed <llvm-gcc42@fink.raccoonfink.com>
-Description: GCC frontend for LLVM
+Source: http://llvm.org/releases/%v/llvm-gcc-4.2-%v.source.tgz
+Source-MD5: c5033005ceac1988b7cdc908445090f0
+
+UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export PATH="%p/opt/llvm-2.7/bin:$PATH"
 	export TRIPLET=%m-apple-darwin`sw_vers -productVersion | cut -d. -f1`
 	mkdir build
-
+	
 	# won't let me do objc++  :(
 	pushd build
-		../configure --prefix=%p/opt/llvm-%v --mandir=%p/opt/llvm-%v/share/man --with-gmp=%p --with-mpfr=%p --with-libiconv-prefix=%p --program-prefix=llvm- --enable-llvm=%p/opt/llvm-%v --enable-languages=c,c++,fortran,objc --with-arch=nocona --with-tune=generic
-		make LLVM_VERSION_INFO=%v
+	../configure --prefix=%p/opt/llvm-%v --mandir=%p/opt/llvm-%v/share/man --with-gmp=%p --with-mpfr=%p --with-libiconv-prefix=%p --program-prefix=llvm- --enable-llvm=%p/opt/llvm-%v --enable-languages=c,c++,fortran,objc --with-arch=nocona --with-tune=generic
+	make LLVM_VERSION_INFO=%v
 	popd
 <<
+
 InstallScript: <<
 #!/bin/sh -ev
 	pushd build
@@ -38,7 +44,7 @@ InstallScript: <<
 		ln -s /usr/lib/libstdc++.dylib libstdc++.dylib
 	popd
 <<
-
+DocFiles: CHANGES* COPYING* ChangeLog* MAINTAINERS README*
 SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for llvm27-gcc42
@@ -59,11 +65,7 @@ SplitOff: <<
 	<<
 <<
 
-InfoTest: <<
-	TestDepends: dejagnu
-	TestScript: make check || exit 1
-<<
-
+Homepage: http://llvm.org/
 DescDetail: <<
 The LLVM Project is a collection of modular and reusable compiler and
 toolchain technologies.  Despite its name, LLVM has little to do with
@@ -76,4 +78,4 @@ other languages supported by the GCC compiler frontends, and provides
 high-fidelity drop-in compatibility with their respective versions of
 GCC.
 <<
-License: GPL
+
