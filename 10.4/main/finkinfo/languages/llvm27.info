@@ -6,10 +6,7 @@ License: BSD
 Maintainer: Benjamin Reed <llvm@fink.raccoonfink.com>
 
 BuildDepends: cmake (>= 2.6.4-1)
-InfoTest: <<
-	#TestDepends: dejagnu
-	TestScript: make check || exit 1
-<<
+InfoTest: 	TestScript: make check || exit 1
 
 Source: http://llvm.org/releases/%v/llvm-%v.tgz
 Source-MD5: ac322661f20e7d6c810b1869f886ad9b

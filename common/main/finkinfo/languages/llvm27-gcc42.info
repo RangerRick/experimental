@@ -22,9 +22,16 @@ CompileScript: <<
 	export TRIPLET=%m-apple-darwin`sw_vers -productVersion | cut -d. -f1`
 	mkdir build
 
+	case %m in
+		powerpc)
+			WITH_TUNE="" ;;
+		*)
+			WITH_TUNE="--with-tune=generic" ;;
+	esac
+
 	# won't let me do objc++  :(
 	pushd build
-		../configure --prefix=%p/opt/llvm-%v --mandir=%p/opt/llvm-%v/share/man --with-gmp=%p --with-mpfr=%p --with-libiconv-prefix=%p --program-prefix=llvm- --enable-llvm=%p/opt/llvm-%v --enable-languages=c,c++,fortran,objc --with-arch=nocona --with-tune=generic
+		../configure --prefix=%p/opt/llvm-%v --mandir=%p/opt/llvm-%v/share/man --with-gmp=%p --with-mpfr=%p --with-libiconv-prefix=%p --program-prefix=llvm- --enable-llvm=%p/opt/llvm-%v --enable-languages=c,c++,fortran,objc --with-arch=nocona $WITH_TUNE
 		make LLVM_VERSION_INFO=%v
 	popd
 <<
