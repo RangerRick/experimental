@@ -7,7 +7,7 @@ Maintainer: Benjamin Reed <llvm@fink.raccoonfink.com>
 
 BuildDepends: cmake (>= 2.6.4-1)
 InfoTest: <<
-	TestDepends: dejagnu
+	#TestDepends: dejagnu
 	TestScript: make check || exit 1
 <<
 

@@ -45,7 +45,6 @@ Shlibs: <<
 <<
 
 InfoTest: <<
-	TestDepends: dejagnu
 	TestScript: make check || exit 1
 <<
 
