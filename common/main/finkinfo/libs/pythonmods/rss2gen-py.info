@@ -1,0 +1,22 @@
+Info2: <<
+Package: rss2gen-py%type_pkg[python]
+Version: 1.0.0
+Revision: 1
+Type: python (2.5 2.6 2.7)
+Description: Python API for generating RSS feeds
+Maintainer: Benjamin Reed <rss2gen-py@fink.raccoonfink.com>
+License: BSD
+Homepage: http://www.dalkescientific.com/Python/PyRSS2Gen.html
+
+Source: http://www.dalkescientific.com/Python/PyRSS2Gen-%v.tar.gz
+Source-MD5: b37ed0c9cfa4438a73dbbb0207f3aff6
+
+Depends: python%type_pkg[python]
+BuildDepends: fink (>= 0.24.12), setuptools-py%type_pkg[python]
+
+CompileScript: %p/bin/python%type_raw[python] setup.py build
+
+InstallScript: %p/bin/python%type_raw[python] setup.py install --root=%d
+
+DocFiles: README LICENSE PKG-INFO
+<<
