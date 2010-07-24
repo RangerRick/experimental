@@ -10,8 +10,12 @@ Maintainer: Benjamin Reed <flexget@fink.raccoonfink.com>
 Depends: <<
 	python%type_pkg[python],
 	beautifulsoup-py%type_pkg[python],
-	html5lib-py%type_pkg[python],
 	feedparser-py%type_pkg[python],
+	googlechart-py%type_pkg[python],
+	html5lib-py%type_pkg[python],
+	nzb-py%type_pkg[python],
+	progressbar-py%type_pkg[python],
+	rss2gen-py%type_pkg[python],
 	sqlalchemy-py%type_pkg[python],
 	yaml-py%type_pkg[python]
 <<
