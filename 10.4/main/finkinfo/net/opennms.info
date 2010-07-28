@@ -356,6 +356,7 @@ ConfFiles: <<
 	%p/var/opennms/etc/nsclient-datacollection-config.xml
 	%p/var/opennms/etc/opennms-datasources.xml
 	%p/var/opennms/etc/opennms-server.xml
+	%p/var/opennms/etc/opennms.conf
 	%p/var/opennms/etc/opennms.properties
 	%p/var/opennms/etc/otrs.properties
 	%p/var/opennms/etc/poll-outages.xml
