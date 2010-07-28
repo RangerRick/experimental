@@ -395,9 +395,20 @@ sub print_indent {
 	if ($text =~ /\n/) {
 		$return .= "\t" x $indent . $field_name . ": <<\n";
 		if ($field_name =~ /^(builddepends|compilescript|conffiles|conflicts|custommirror|depends|enhances|files|patchscript|recommends|replaces|runtimedepends|shlibs|suggests)$/i) {
+			my $heredocs = 0;
 			for my $line (split(/\n/, $text)) {
-				$line =~ s/^\s+//;
-				$return .= "\t" x ($indent + 1) . $line . "\n";
+				if ($line =~ /^END$/) {
+					$heredocs = 1;
+					last;
+				}
+			}
+			if ($heredocs) {
+				$return .= $text . "\n";
+			} else {
+				for my $line (split(/\n/, $text)) {
+					$line =~ s/^\s+//;
+					$return .= "\t" x ($indent + 1) . $line . "\n";
+				}
 			}
 		} else {
 			$return .= $text . "\n";
