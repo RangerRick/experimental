@@ -1,6 +1,6 @@
-diff -Nurd kdelibs-4.4.1/cmake/modules/FindFAM.cmake kdelibs-4.4.1-new/cmake/modules/FindFAM.cmake
---- kdelibs-4.4.1/cmake/modules/FindFAM.cmake	2008-05-21 07:06:10.000000000 -0400
-+++ kdelibs-4.4.1-new/cmake/modules/FindFAM.cmake	2010-03-06 12:39:25.000000000 -0500
+diff -Nurd kdelibs-4.4.95/cmake/modules/FindFAM.cmake kdelibs-4.4.95-new/cmake/modules/FindFAM.cmake
+--- kdelibs-4.4.95/cmake/modules/FindFAM.cmake	2008-05-21 06:06:10.000000000 -0500
++++ kdelibs-4.4.95-new/cmake/modules/FindFAM.cmake	2010-07-30 23:43:42.000000000 -0500
 @@ -16,12 +16,12 @@
    set(FAM_FIND_QUIETLY TRUE)
  endif (FAM_INCLUDE_DIR)
@@ -20,9 +20,9 @@ diff -Nurd kdelibs-4.4.1/cmake/modules/FindFAM.cmake kdelibs-4.4.1-new/cmake/mod
  
  MARK_AS_ADVANCED(FAM_INCLUDE_DIR FAM_LIBRARIES)
  
-diff -Nurd kdelibs-4.4.1/cmake/modules/FindSoprano.cmake kdelibs-4.4.1-new/cmake/modules/FindSoprano.cmake
---- kdelibs-4.4.1/cmake/modules/FindSoprano.cmake	2009-12-04 18:10:02.000000000 -0500
-+++ kdelibs-4.4.1-new/cmake/modules/FindSoprano.cmake	2010-03-06 12:39:25.000000000 -0500
+diff -Nurd kdelibs-4.4.95/cmake/modules/FindSoprano.cmake kdelibs-4.4.95-new/cmake/modules/FindSoprano.cmake
+--- kdelibs-4.4.95/cmake/modules/FindSoprano.cmake	2009-12-04 17:10:02.000000000 -0600
++++ kdelibs-4.4.95-new/cmake/modules/FindSoprano.cmake	2010-07-30 23:43:42.000000000 -0500
 @@ -46,14 +46,14 @@
  include(FindLibraryWithDebug)
  
@@ -40,32 +40,9 @@ diff -Nurd kdelibs-4.4.1/cmake/modules/FindSoprano.cmake kdelibs-4.4.1-new/cmake
    HINTS
    ${BIN_INSTALL_DIR}
    ${KDE4_BIN_INSTALL_DIR}
-diff -Nurd kdelibs-4.4.1/cmake/modules/Qt4ConfigDependentSettings.cmake kdelibs-4.4.1-new/cmake/modules/Qt4ConfigDependentSettings.cmake
---- kdelibs-4.4.1/cmake/modules/Qt4ConfigDependentSettings.cmake	2010-01-19 18:15:16.000000000 -0500
-+++ kdelibs-4.4.1-new/cmake/modules/Qt4ConfigDependentSettings.cmake	2010-03-06 12:39:38.000000000 -0500
-@@ -77,7 +77,18 @@
- 
- # QtOpenGL dependencies
- QT_QUERY_QMAKE(QMAKE_LIBS_OPENGL "QMAKE_LIBS_OPENGL")
--SEPARATE_ARGUMENTS(QMAKE_LIBS_OPENGL)
-+IF(Q_WS_MAC)
-+# On the Mac OpenGL is probably frameworks and QMAKE_LIBS_OPENGL can be e.g. "-framework OpenGL -framework AGL".
-+# The separate_arguments() call in the other branch makes "-framework;-OpenGL;-framework;-lAGL" appear in the 
-+# linker command. So we need to protect the "-framework foo" as non-separatable strings.
-+# We do this by replacing the space after "-framework" with an underscore, then calling separate_arguments(),
-+# and then we replace the underscores again with spaces. So we get proper linker commands. Alex
-+  STRING(REGEX REPLACE "-framework +" "-framework_" QMAKE_LIBS_OPENGL "${QMAKE_LIBS_OPENGL}")
-+  SEPARATE_ARGUMENTS(QMAKE_LIBS_OPENGL)
-+  STRING(REGEX REPLACE "-framework_" "-framework " QMAKE_LIBS_OPENGL "${QMAKE_LIBS_OPENGL}")
-+ELSE(Q_WS_MAC)
-+  SEPARATE_ARGUMENTS(QMAKE_LIBS_OPENGL)
-+ENDIF(Q_WS_MAC)
- SET (QT_QTOPENGL_LIB_DEPENDENCIES ${QT_QTOPENGL_LIB_DEPENDENCIES} ${QMAKE_LIBS_OPENGL})
- 
- 
-diff -Nurd kdelibs-4.4.1/config.h.cmake kdelibs-4.4.1-new/config.h.cmake
---- kdelibs-4.4.1/config.h.cmake	2009-10-26 05:15:52.000000000 -0400
-+++ kdelibs-4.4.1-new/config.h.cmake	2010-03-06 12:39:25.000000000 -0500
+diff -Nurd kdelibs-4.4.95/config.h.cmake kdelibs-4.4.95-new/config.h.cmake
+--- kdelibs-4.4.95/config.h.cmake	2009-10-26 04:15:52.000000000 -0500
++++ kdelibs-4.4.95-new/config.h.cmake	2010-07-30 23:43:43.000000000 -0500
 @@ -74,6 +74,7 @@
  #cmakedefine HAVE_UNISTD_H 1
  #cmakedefine HAVE_ARPA_NAMESER_COMPAT_H
@@ -84,9 +61,9 @@ diff -Nurd kdelibs-4.4.1/config.h.cmake kdelibs-4.4.1-new/config.h.cmake
  #cmakedefine   HAVE_MADVISE 1
  #cmakedefine   HAVE_MMAP 1
  #cmakedefine   HAVE_MKSTEMPS 1
-diff -Nurd kdelibs-4.4.1/doc/api/Doxyfile.local kdelibs-4.4.1-new/doc/api/Doxyfile.local
---- kdelibs-4.4.1/doc/api/Doxyfile.local	2008-10-30 10:18:53.000000000 -0400
-+++ kdelibs-4.4.1-new/doc/api/Doxyfile.local	2010-03-06 12:39:25.000000000 -0500
+diff -Nurd kdelibs-4.4.95/doc/api/Doxyfile.local kdelibs-4.4.95-new/doc/api/Doxyfile.local
+--- kdelibs-4.4.95/doc/api/Doxyfile.local	2008-10-30 09:18:53.000000000 -0500
++++ kdelibs-4.4.95-new/doc/api/Doxyfile.local	2010-07-30 23:43:43.000000000 -0500
 @@ -173,6 +173,7 @@
          Q_WS_MAC="" \
  	Q_OS_UNIX="" \
@@ -95,9 +72,9 @@ diff -Nurd kdelibs-4.4.1/doc/api/Doxyfile.local kdelibs-4.4.1-new/doc/api/Doxyfi
          Q_OS_MACX="" \
  \
  	Q_SLOTS="slots" \
-diff -Nurd kdelibs-4.4.1/kde3support/kdecore/k3processcontroller.cpp kdelibs-4.4.1-new/kde3support/kdecore/k3processcontroller.cpp
---- kdelibs-4.4.1/kde3support/kdecore/k3processcontroller.cpp	2008-05-21 07:06:17.000000000 -0400
-+++ kdelibs-4.4.1-new/kde3support/kdecore/k3processcontroller.cpp	2010-03-06 12:39:25.000000000 -0500
+diff -Nurd kdelibs-4.4.95/kde3support/kdecore/k3processcontroller.cpp kdelibs-4.4.95-new/kde3support/kdecore/k3processcontroller.cpp
+--- kdelibs-4.4.95/kde3support/kdecore/k3processcontroller.cpp	2008-05-21 06:06:17.000000000 -0500
++++ kdelibs-4.4.95-new/kde3support/kdecore/k3processcontroller.cpp	2010-07-30 23:43:43.000000000 -0500
 @@ -114,7 +114,7 @@
  
  K3ProcessController::~K3ProcessController()
@@ -107,9 +84,9 @@ diff -Nurd kdelibs-4.4.1/kde3support/kdecore/k3processcontroller.cpp kdelibs-4.4
  /* not sure why, but this is causing lockups */
    close( d->fd[0] );
    close( d->fd[1] );
-diff -Nurd kdelibs-4.4.1/kde4-check-sycoca.sh kdelibs-4.4.1-new/kde4-check-sycoca.sh
---- kdelibs-4.4.1/kde4-check-sycoca.sh	1969-12-31 19:00:00.000000000 -0500
-+++ kdelibs-4.4.1-new/kde4-check-sycoca.sh	2010-03-06 12:39:25.000000000 -0500
+diff -Nurd kdelibs-4.4.95/kde4-check-sycoca.sh kdelibs-4.4.95-new/kde4-check-sycoca.sh
+--- kdelibs-4.4.95/kde4-check-sycoca.sh	1969-12-31 18:00:00.000000000 -0600
++++ kdelibs-4.4.95-new/kde4-check-sycoca.sh	2010-07-30 23:43:43.000000000 -0500
 @@ -0,0 +1,18 @@
 +#!/bin/sh
 +
@@ -129,9 +106,9 @@ diff -Nurd kdelibs-4.4.1/kde4-check-sycoca.sh kdelibs-4.4.1-new/kde4-check-sycoc
 +	echo "* you've installed KDE4 (@KDETYPE@) applications since last time you ran init -- updating desktop cache"
 +	("$FULLPREFIX/bin/kbuildsycoca4" >"$LOCAL_SYCOCA_DIR/kbuildsycoca4.log" 2>&1 && touch "$LOCAL_SYCOCA_DIR/$TOUCHFILE") &
 +fi
-diff -Nurd kdelibs-4.4.1/kde4-postinst.sh kdelibs-4.4.1-new/kde4-postinst.sh
---- kdelibs-4.4.1/kde4-postinst.sh	1969-12-31 19:00:00.000000000 -0500
-+++ kdelibs-4.4.1-new/kde4-postinst.sh	2010-03-06 12:39:25.000000000 -0500
+diff -Nurd kdelibs-4.4.95/kde4-postinst.sh kdelibs-4.4.95-new/kde4-postinst.sh
+--- kdelibs-4.4.95/kde4-postinst.sh	1969-12-31 18:00:00.000000000 -0600
++++ kdelibs-4.4.95-new/kde4-postinst.sh	2010-07-30 23:43:43.000000000 -0500
 @@ -0,0 +1,81 @@
 +#!/bin/sh
 +
@@ -214,9 +191,9 @@ diff -Nurd kdelibs-4.4.1/kde4-postinst.sh kdelibs-4.4.1-new/kde4-postinst.sh
 +echo "== KDE4 Applications Have Been Updated =="
 +echo "You should start a new shell, or run $FULLPREFIX/bin/kde4-check-sycoca.sh to update the KDE4 application database."
 +echo ""
-diff -Nurd kdelibs-4.4.1/kdecore/config/kconfig.cpp kdelibs-4.4.1-new/kdecore/config/kconfig.cpp
---- kdelibs-4.4.1/kdecore/config/kconfig.cpp	2009-09-16 07:44:19.000000000 -0400
-+++ kdelibs-4.4.1-new/kdecore/config/kconfig.cpp	2010-03-06 12:39:25.000000000 -0500
+diff -Nurd kdelibs-4.4.95/kdecore/config/kconfig.cpp kdelibs-4.4.95-new/kdecore/config/kconfig.cpp
+--- kdelibs-4.4.95/kdecore/config/kconfig.cpp	2010-06-16 07:03:24.000000000 -0500
++++ kdelibs-4.4.95-new/kdecore/config/kconfig.cpp	2010-07-30 23:43:43.000000000 -0500
 @@ -70,7 +70,7 @@
  #ifdef Q_WS_WIN
              QFile::decodeName( qgetenv("WINDIR") + "/kde4rc" );
@@ -226,59 +203,9 @@ diff -Nurd kdelibs-4.4.1/kdecore/config/kconfig.cpp kdelibs-4.4.1-new/kdecore/co
  #endif
          if (!KStandardDirs::checkAccess(etc_kderc, R_OK)) {
              etc_kderc.clear();
-diff -Nurd kdelibs-4.4.1/kdecore/kernel/kcmdlineargs.cpp kdelibs-4.4.1-new/kdecore/kernel/kcmdlineargs.cpp
---- kdelibs-4.4.1/kdecore/kernel/kcmdlineargs.cpp	2010-02-04 04:22:37.000000000 -0500
-+++ kdelibs-4.4.1-new/kdecore/kernel/kcmdlineargs.cpp	2010-03-06 12:39:25.000000000 -0500
-@@ -737,10 +737,6 @@
-       argument = opt.mid(j+1);
-       opt = opt.left(j);
-    }
--#ifdef Q_WS_MACX
--   if(opt.startsWith("psn_")) // krazy:exclude=strings
--      opt = "psn";
--#endif
- 
-    bool enabled = true;
-    int result = 0;
-@@ -801,10 +797,6 @@
-    {
-       if (s->ignoreUnknown)
-          return;
--#ifdef Q_WS_MACX
--		if (_opt.startsWith("psn_")) // krazy:exclude=strings
--			return;
--#endif
-       KCmdLineArgs::enable_i18n();
-       KCmdLineArgs::usageError( i18n("Unknown option '%1'.", QString::fromLocal8Bit(_opt)));
-    }
-@@ -821,10 +813,6 @@
-       {
-          if (s->ignoreUnknown)
-             return;
--#ifdef Q_WS_MACX
--			if (_opt.startsWith("psn_")) // krazy:exclude=strings
--				return;
--#endif
-          KCmdLineArgs::enable_i18n();
-          KCmdLineArgs::usageError( i18n("Unknown option '%1'.", QString::fromLocal8Bit(_opt)));
-       }
-@@ -889,6 +877,13 @@
-          {
-             KCmdLineArgs::usage(option.mid(5));
-          }
-+#ifdef Q_WS_MAC
-+         // skip the finder -psn_* crap
-+         else if (option.startsWith("psn_"))
-+         {
-+            continue;
-+         }
-+#endif
-          else if ((option == "version") || (option == "v"))
-          {
-             KCmdLineArgs::enable_i18n();
-diff -Nurd kdelibs-4.4.1/kdecore/kernel/kkernel_mac.cpp kdelibs-4.4.1-new/kdecore/kernel/kkernel_mac.cpp
---- kdelibs-4.4.1/kdecore/kernel/kkernel_mac.cpp	2009-01-06 12:27:48.000000000 -0500
-+++ kdelibs-4.4.1-new/kdecore/kernel/kkernel_mac.cpp	2010-03-06 12:39:25.000000000 -0500
+diff -Nurd kdelibs-4.4.95/kdecore/kernel/kkernel_mac.cpp kdelibs-4.4.95-new/kdecore/kernel/kkernel_mac.cpp
+--- kdelibs-4.4.95/kdecore/kernel/kkernel_mac.cpp	2009-01-06 11:27:48.000000000 -0600
++++ kdelibs-4.4.95-new/kdecore/kernel/kkernel_mac.cpp	2010-07-30 23:43:44.000000000 -0500
 @@ -21,7 +21,7 @@
  
  #include <config.h>
@@ -347,9 +274,9 @@ diff -Nurd kdelibs-4.4.1/kdecore/kernel/kkernel_mac.cpp kdelibs-4.4.1-new/kdecor
  QString mac_app_filename() {
  	static QString appFileName;
  	if (appFileName.isEmpty()) {
-diff -Nurd kdelibs-4.4.1/kdecore/kernel/kkernel_mac.h kdelibs-4.4.1-new/kdecore/kernel/kkernel_mac.h
---- kdelibs-4.4.1/kdecore/kernel/kkernel_mac.h	2009-01-01 11:28:04.000000000 -0500
-+++ kdelibs-4.4.1-new/kdecore/kernel/kkernel_mac.h	2010-03-06 12:39:25.000000000 -0500
+diff -Nurd kdelibs-4.4.95/kdecore/kernel/kkernel_mac.h kdelibs-4.4.95-new/kdecore/kernel/kkernel_mac.h
+--- kdelibs-4.4.95/kdecore/kernel/kkernel_mac.h	2009-01-01 10:28:04.000000000 -0600
++++ kdelibs-4.4.95-new/kdecore/kernel/kkernel_mac.h	2010-07-30 23:43:44.000000000 -0500
 @@ -21,7 +21,7 @@
  
  #include <QtCore/qglobal.h> // defines Q_OS_MACX
@@ -366,69 +293,10 @@ diff -Nurd kdelibs-4.4.1/kdecore/kernel/kkernel_mac.h kdelibs-4.4.1-new/kdecore/
 -#endif  // Q_OS_MACX
 +#endif  // MAC
  #endif  // KKERNEL_MAC_H
-diff -Nurd kdelibs-4.4.1/kdecore/kernel/kstandarddirs.cpp kdelibs-4.4.1-new/kdecore/kernel/kstandarddirs.cpp
---- kdelibs-4.4.1/kdecore/kernel/kstandarddirs.cpp	2009-12-10 18:14:42.000000000 -0500
-+++ kdelibs-4.4.1-new/kdecore/kernel/kstandarddirs.cpp	2010-03-06 12:39:25.000000000 -0500
-@@ -1215,10 +1215,19 @@
-     QString bundle = path;
-     bundle += ".app/Contents/MacOS/" + bundle.section('/', -1);
-     info.setFile( bundle );
--    if ( info.exists() && ( ignore || info.isExecutable() )
--         && ( info.isFile() || info.isSymLink() ) ) {
--        kDebug(180) << "getBundle(): returning " << bundle;
--        return bundle;
-+    FILE *file;
-+    if (file = fopen(info.absoluteFilePath().toUtf8().constData(), "r")) {
-+        fclose(file);
-+        struct stat _stat;
-+        if ((stat(info.absoluteFilePath().toUtf8().constData(), &_stat)) < 0) {
-+            return QString();
-+        }
-+        if ( ignore || (_stat.st_mode & S_IXUSR) ) {
-+            if ( ((_stat.st_mode & S_IFMT) == S_IFREG) || ((_stat.st_mode & S_IFMT) == S_IFLNK) ) {
-+                kDebug(180) << "getBundle(): returning " << bundle;
-+                return bundle;
-+            }
-+        }
-     }
-     return QString();
- }
-@@ -1235,6 +1244,23 @@
- #endif
-     QFileInfo info( path );
-     QFileInfo orig = info;
-+#if defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
-+    FILE *file;
-+    if (file = fopen(orig.absoluteFilePath().toUtf8().constData(), "r")) {
-+        fclose(file);
-+        struct stat _stat;
-+        if ((stat(orig.absoluteFilePath().toUtf8().constData(), &_stat)) < 0) {
-+            return QString();
-+        }
-+        if ( ignoreExecBit || (_stat.st_mode & S_IXUSR) ) {
-+            if ( ((_stat.st_mode & S_IFMT) == S_IFREG) || ((_stat.st_mode & S_IFMT) == S_IFLNK) ) {
-+                orig.makeAbsolute();
-+                return orig.filePath();
-+            }
-+        }
-+    }
-+    return QString();
-+#else
-     if( info.exists() && info.isSymLink() )
-         info = QFileInfo( info.canonicalFilePath() );
-     if( info.exists() && ( ignoreExecBit || info.isExecutable() ) && info.isFile() ) {
-@@ -1246,6 +1272,7 @@
-     }
-     //kDebug(180) << "checkExecutable(): failed, returning empty string";
-     return QString();
-+#endif
- }
- 
- QString KStandardDirs::findExe( const QString& appname,
-diff -Nurd kdelibs-4.4.1/kdecore/localization/klocale.cpp kdelibs-4.4.1-new/kdecore/localization/klocale.cpp
---- kdelibs-4.4.1/kdecore/localization/klocale.cpp	2009-12-10 18:14:43.000000000 -0500
-+++ kdelibs-4.4.1-new/kdecore/localization/klocale.cpp	2010-03-06 12:39:25.000000000 -0500
-@@ -2341,7 +2341,7 @@
+diff -Nurd kdelibs-4.4.95/kdecore/localization/klocale.cpp kdelibs-4.4.95-new/kdecore/localization/klocale.cpp
+--- kdelibs-4.4.95/kdecore/localization/klocale.cpp	2010-06-16 07:03:24.000000000 -0500
++++ kdelibs-4.4.95-new/kdecore/localization/klocale.cpp	2010-07-30 23:43:45.000000000 -0500
+@@ -2426,7 +2426,7 @@
      // workaround
  
      QByteArray systemLocale = nl_langinfo(CODESET);
@@ -437,10 +305,10 @@ diff -Nurd kdelibs-4.4.1/kdecore/localization/klocale.cpp kdelibs-4.4.1-new/kdec
      // Mac OX X is UTF-8, always.
      systemLocale = "UTF-8";
  #endif //Q_OS_MAC
-diff -Nurd kdelibs-4.4.1/kdecore/tests/kconfigtest.cpp kdelibs-4.4.1-new/kdecore/tests/kconfigtest.cpp
---- kdelibs-4.4.1/kdecore/tests/kconfigtest.cpp	2010-02-26 13:30:08.000000000 -0500
-+++ kdelibs-4.4.1-new/kdecore/tests/kconfigtest.cpp	2010-03-06 12:39:25.000000000 -0500
-@@ -415,7 +415,7 @@
+diff -Nurd kdelibs-4.4.95/kdecore/tests/kconfigtest.cpp kdelibs-4.4.95-new/kdecore/tests/kconfigtest.cpp
+--- kdelibs-4.4.95/kdecore/tests/kconfigtest.cpp	2010-03-03 12:30:55.000000000 -0600
++++ kdelibs-4.4.95-new/kdecore/tests/kconfigtest.cpp	2010-07-30 23:43:45.000000000 -0500
+@@ -435,7 +435,7 @@
    QCOMPARE(group.readPathEntry("homePath2", QString()), QString("file://") + HOMEPATH );
    QVERIFY(group.hasKey("URL"));
    QCOMPARE(group.readEntry("URL", QString()), QString("file://") + HOMEPATH );
@@ -449,65 +317,9 @@ diff -Nurd kdelibs-4.4.1/kdecore/tests/kconfigtest.cpp kdelibs-4.4.1-new/kdecore
    // I don't know if this will work on windows
    // This test hangs on OS X
    QVERIFY(group.hasKey("hostname"));
-diff -Nurd kdelibs-4.4.1/kded/CMakeLists.txt kdelibs-4.4.1-new/kded/CMakeLists.txt
---- kdelibs-4.4.1/kded/CMakeLists.txt	2009-10-02 10:55:17.000000000 -0400
-+++ kdelibs-4.4.1-new/kded/CMakeLists.txt	2010-03-06 12:39:25.000000000 -0500
-@@ -13,6 +13,12 @@
- 
- kde4_add_kdeinit_executable(kded4  ${kded_KDEINIT_SRCS})
- 
-+if (Q_WS_MAC)
-+    set_target_properties(kded4 PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/Info.plist.template)
-+    set_target_properties(kded4 PROPERTIES MACOSX_BUNDLE_GUI_IDENTIFIER "org.kded.kded4")
-+    set_target_properties(kded4 PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME "KDE Daemon")
-+endif (Q_WS_MAC)
-+
- target_link_libraries(kdeinit_kded4  ${KDE4_KIO_LIBS} ${X11_LIBRARIES})
- 
- install(TARGETS kdeinit_kded4 ${INSTALL_TARGETS_DEFAULT_ARGS})
-diff -Nurd kdelibs-4.4.1/kded/Info.plist.template kdelibs-4.4.1-new/kded/Info.plist.template
---- kdelibs-4.4.1/kded/Info.plist.template	1969-12-31 19:00:00.000000000 -0500
-+++ kdelibs-4.4.1-new/kded/Info.plist.template	2010-03-06 12:39:25.000000000 -0500
-@@ -0,0 +1,36 @@
-+<?xml version="1.0" encoding="UTF-8"?>
-+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-+<plist version="1.0">
-+<dict>
-+    <key>CFBundleDevelopmentRegion</key>
-+    <string>English</string>
-+    <key>CFBundleExecutable</key>
-+    <string>${MACOSX_BUNDLE_EXECUTABLE_NAME}</string>
-+    <key>CFBundleGetInfoString</key>
-+    <string>${MACOSX_BUNDLE_INFO_STRING}</string>
-+    <key>CFBundleIconFile</key>
-+    <string>${MACOSX_BUNDLE_ICON_FILE}</string>
-+    <key>CFBundleIdentifier</key>
-+    <string>${MACOSX_BUNDLE_GUI_IDENTIFIER}</string>
-+    <key>CFBundleInfoDictionaryVersion</key>
-+    <string>6.0</string>
-+    <key>CFBundleLongVersionString</key>
-+    <string>${MACOSX_BUNDLE_LONG_VERSION_STRING}</string>
-+    <key>CFBundleName</key>
-+    <string>${MACOSX_BUNDLE_BUNDLE_NAME}</string>
-+    <key>CFBundlePackageType</key>
-+    <string>APPL</string>
-+    <key>CFBundleShortVersionString</key>
-+    <string>${MACOSX_BUNDLE_SHORT_VERSION_STRING}</string>
-+    <key>CFBundleVersion</key>
-+    <string>${MACOSX_BUNDLE_BUNDLE_VERSION}</string>
-+    <key>CSResourcesFileMapped</key>
-+    <true/>
-+    <key>LSRequiresCarbon</key>
-+    <true/>
-+    <key>LSUIElement</key>
-+    <string>1</string>
-+    <key>NSHumanReadableCopyright</key>
-+    <string>${MACOSX_BUNDLE_COPYRIGHT}</string>
-+</dict>
-+</plist>
-diff -Nurd kdelibs-4.4.1/kdeui/kernel/kapplication.cpp kdelibs-4.4.1-new/kdeui/kernel/kapplication.cpp
---- kdelibs-4.4.1/kdeui/kernel/kapplication.cpp	2009-12-31 08:29:25.000000000 -0500
-+++ kdelibs-4.4.1-new/kdeui/kernel/kapplication.cpp	2010-03-06 12:39:25.000000000 -0500
+diff -Nurd kdelibs-4.4.95/kdeui/kernel/kapplication.cpp kdelibs-4.4.95-new/kdeui/kernel/kapplication.cpp
+--- kdelibs-4.4.95/kdeui/kernel/kapplication.cpp	2010-07-06 01:54:49.000000000 -0500
++++ kdelibs-4.4.95-new/kdeui/kernel/kapplication.cpp	2010-07-30 23:43:46.000000000 -0500
 @@ -96,6 +96,9 @@
  #include <Carbon/Carbon.h>
  #include <QImage>
@@ -518,7 +330,7 @@ diff -Nurd kdelibs-4.4.1/kdeui/kernel/kapplication.cpp kdelibs-4.4.1-new/kdeui/k
  #include <kkernel_mac.h>
  #endif
  
-@@ -451,7 +454,7 @@
+@@ -458,7 +461,7 @@
       ::exit(127);
    }
  
@@ -527,68 +339,9 @@ diff -Nurd kdelibs-4.4.1/kdeui/kernel/kapplication.cpp kdelibs-4.4.1-new/kdeui/k
    mac_initialize_dbus();
  #endif
  
-diff -Nurd kdelibs-4.4.1/kdeui/kernel/kuniqueapplication.cpp kdelibs-4.4.1-new/kdeui/kernel/kuniqueapplication.cpp
---- kdelibs-4.4.1/kdeui/kernel/kuniqueapplication.cpp	2009-07-17 17:46:25.000000000 -0400
-+++ kdelibs-4.4.1-new/kdeui/kernel/kuniqueapplication.cpp	2010-03-06 12:39:25.000000000 -0500
-@@ -66,7 +66,7 @@
- #  endif
- #endif
- 
--#ifdef Q_WS_MAC
-+#if defined(Q_OS_DARWIN) || defined (Q_OS_MAC)
- #include <kkernel_mac.h>
- #endif
- 
-@@ -117,16 +117,10 @@
-   s_kuniqueapplication_startCalled = true;
- 
-   addCmdLineOptions(); // Make sure to add cmd line options
--#ifdef Q_WS_WIN
-+#if defined(Q_WS_WIN) || defined(Q_WS_MACX)
-   Private::s_nofork = true;
- #else
-   KCmdLineArgs *args = KCmdLineArgs::parsedArgs("kuniqueapp");
--#ifdef Q_WS_MACX
--  // avoid focus loss caused by extra fork when launched from Finder
--  if(args->isSet("psn"))
--     Private::s_nofork = true;
--  else
--#endif
-   Private::s_nofork = !args->isSet("fork");
- #endif
- 
-@@ -141,14 +135,15 @@
-         appName.prepend(s);
-      }
- 
--#ifdef Q_WS_MAC
--  mac_initialize_dbus();
--#endif
--
-   bool forceNewProcess = Private::s_multipleInstances || flags & NonUniqueInstance;
- 
-   if (Private::s_nofork)
-   {
-+
-+#if defined(Q_OS_DARWIN) || defined (Q_OS_MAC)
-+     mac_initialize_dbus();
-+#endif
-+
-      QDBusConnectionInterface* dbusService = tryToInitDBusConnection();
- 
-      QString pid = QString::number(getpid());
-@@ -182,7 +177,7 @@
-      // We'll call newInstance in the constructor. Do nothing here.
-      return true;
- 
--#ifdef Q_WS_MACX
-+#if defined(Q_OS_DARWIN) || defined (Q_OS_MAC)
-   } else {
-     mac_fork_and_reexec_self();
- #endif
-diff -Nurd kdelibs-4.4.1/kdeui/util/kpassivepopup.cpp kdelibs-4.4.1-new/kdeui/util/kpassivepopup.cpp
---- kdelibs-4.4.1/kdeui/util/kpassivepopup.cpp	2009-12-31 08:29:27.000000000 -0500
-+++ kdelibs-4.4.1-new/kdeui/util/kpassivepopup.cpp	2010-03-06 12:39:25.000000000 -0500
+diff -Nurd kdelibs-4.4.95/kdeui/util/kpassivepopup.cpp kdelibs-4.4.95-new/kdeui/util/kpassivepopup.cpp
+--- kdelibs-4.4.95/kdeui/util/kpassivepopup.cpp	2009-12-31 07:29:27.000000000 -0600
++++ kdelibs-4.4.95-new/kdeui/util/kpassivepopup.cpp	2010-07-30 23:43:46.000000000 -0500
 @@ -49,7 +49,11 @@
  
  static const int DEFAULT_POPUP_TYPE = KPassivePopup::Boxed;
@@ -612,9 +365,9 @@ diff -Nurd kdelibs-4.4.1/kdeui/util/kpassivepopup.cpp kdelibs-4.4.1-new/kdeui/ut
          setLineWidth( 2 );
      }
      else if( d->popupStyle == Balloon )
-diff -Nurd kdelibs-4.4.1/kdeui/windowmanagement/kwindowinfo_mac.cpp kdelibs-4.4.1-new/kdeui/windowmanagement/kwindowinfo_mac.cpp
---- kdelibs-4.4.1/kdeui/windowmanagement/kwindowinfo_mac.cpp	2009-07-17 17:46:29.000000000 -0400
-+++ kdelibs-4.4.1-new/kdeui/windowmanagement/kwindowinfo_mac.cpp	2010-03-06 12:39:26.000000000 -0500
+diff -Nurd kdelibs-4.4.95/kdeui/windowmanagement/kwindowinfo_mac.cpp kdelibs-4.4.95-new/kdeui/windowmanagement/kwindowinfo_mac.cpp
+--- kdelibs-4.4.95/kdeui/windowmanagement/kwindowinfo_mac.cpp	2009-07-17 16:46:29.000000000 -0500
++++ kdelibs-4.4.95-new/kdeui/windowmanagement/kwindowinfo_mac.cpp	2010-07-30 23:43:46.000000000 -0500
 @@ -59,14 +59,14 @@
  {
      ProcessInfoRec pinfo;
@@ -650,9 +403,9 @@ diff -Nurd kdelibs-4.4.1/kdeui/windowmanagement/kwindowinfo_mac.cpp kdelibs-4.4.
              FSSpec spec;
              ref = parentRef;
              FSGetCatalogInfo(&ref, kFSCatInfoNone, 0, &name, &spec, &parentRef);
-diff -Nurd kdelibs-4.4.1/kdeui/windowmanagement/kwindowinfo_mac_p.h kdelibs-4.4.1-new/kdeui/windowmanagement/kwindowinfo_mac_p.h
---- kdelibs-4.4.1/kdeui/windowmanagement/kwindowinfo_mac_p.h	2009-05-27 15:54:57.000000000 -0400
-+++ kdelibs-4.4.1-new/kdeui/windowmanagement/kwindowinfo_mac_p.h	2010-03-06 12:39:26.000000000 -0500
+diff -Nurd kdelibs-4.4.95/kdeui/windowmanagement/kwindowinfo_mac_p.h kdelibs-4.4.95-new/kdeui/windowmanagement/kwindowinfo_mac_p.h
+--- kdelibs-4.4.95/kdeui/windowmanagement/kwindowinfo_mac_p.h	2009-05-27 14:54:57.000000000 -0500
++++ kdelibs-4.4.95-new/kdeui/windowmanagement/kwindowinfo_mac_p.h	2010-07-30 23:43:46.000000000 -0500
 @@ -43,7 +43,7 @@
      pid_t pid() const { return m_pid; }
      void setProcessSerialNumber(const ProcessSerialNumber& psn);
@@ -662,9 +415,9 @@ diff -Nurd kdelibs-4.4.1/kdeui/windowmanagement/kwindowinfo_mac_p.h kdelibs-4.4.
      FSSpec iconSpec;
  #else
      FSRef iconSpec;
-diff -Nurd kdelibs-4.4.1/kdeui/windowmanagement/kwindowsystem_mac.cpp kdelibs-4.4.1-new/kdeui/windowmanagement/kwindowsystem_mac.cpp
---- kdelibs-4.4.1/kdeui/windowmanagement/kwindowsystem_mac.cpp	2009-07-17 17:46:29.000000000 -0400
-+++ kdelibs-4.4.1-new/kdeui/windowmanagement/kwindowsystem_mac.cpp	2010-03-06 12:39:26.000000000 -0500
+diff -Nurd kdelibs-4.4.95/kdeui/windowmanagement/kwindowsystem_mac.cpp kdelibs-4.4.95-new/kdeui/windowmanagement/kwindowsystem_mac.cpp
+--- kdelibs-4.4.95/kdeui/windowmanagement/kwindowsystem_mac.cpp	2009-07-17 16:46:29.000000000 -0500
++++ kdelibs-4.4.95-new/kdeui/windowmanagement/kwindowsystem_mac.cpp	2010-07-30 23:43:46.000000000 -0500
 @@ -141,7 +141,7 @@
  
      m_noEmit = false;
@@ -701,10 +454,10 @@ diff -Nurd kdelibs-4.4.1/kdeui/windowmanagement/kwindowsystem_mac.cpp kdelibs-4.
      // not supported for 'global' windows; only for windows in the current process
      if (hasWId(winid)) return;
  
-diff -Nurd kdelibs-4.4.1/kimgio/CMakeLists.txt kdelibs-4.4.1-new/kimgio/CMakeLists.txt
---- kdelibs-4.4.1/kimgio/CMakeLists.txt	2009-09-16 07:44:15.000000000 -0400
-+++ kdelibs-4.4.1-new/kimgio/CMakeLists.txt	2010-03-06 12:39:26.000000000 -0500
-@@ -96,7 +96,7 @@
+diff -Nurd kdelibs-4.4.95/kimgio/CMakeLists.txt kdelibs-4.4.95-new/kimgio/CMakeLists.txt
+--- kdelibs-4.4.95/kimgio/CMakeLists.txt	2010-02-03 02:50:40.000000000 -0600
++++ kdelibs-4.4.95-new/kimgio/CMakeLists.txt	2010-07-30 23:43:46.000000000 -0500
+@@ -104,7 +104,7 @@
      add_definitions(${OPENEXR_DEFINITIONS})
      set(kimg_exr_LIB_SRCS exr.cpp)
      kde4_add_plugin(kimg_exr ${kimg_exr_LIB_SRCS})
@@ -713,89 +466,9 @@ diff -Nurd kdelibs-4.4.1/kimgio/CMakeLists.txt kdelibs-4.4.1-new/kimgio/CMakeLis
  
  install(TARGETS kimg_exr  DESTINATION ${PLUGIN_INSTALL_DIR}/plugins/imageformats/ )
  install( FILES exr.desktop DESTINATION  ${SERVICES_INSTALL_DIR}/qimageioplugins/ )
-diff -Nurd kdelibs-4.4.1/kinit/CMakeLists.txt kdelibs-4.4.1-new/kinit/CMakeLists.txt
---- kdelibs-4.4.1/kinit/CMakeLists.txt	2009-12-17 11:33:40.000000000 -0500
-+++ kdelibs-4.4.1-new/kinit/CMakeLists.txt	2010-03-06 12:39:26.000000000 -0500
-@@ -36,13 +36,16 @@
-   set(kdeinit_LIBS kparts)
- endif (WIN32)
- 
--if (APPLE OR WIN32)
-+if (Q_WS_MAC OR WIN32)
-   # this has to be GUI on OSX because it launches GUI apps and need a quartz context
-   # and on Windows this makes kdeinit4 create separate console window
-   kde4_add_executable(kdeinit4 ${kdeinit_SRCS})
--else (APPLE OR WIN32)
-+  set_target_properties(kdeinit4 PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/Info.plist.template)
-+  set_target_properties(kdeinit4 PROPERTIES MACOSX_BUNDLE_GUI_IDENTIFIER "org.kde.kdeinit4")
-+  set_target_properties(kdeinit4 PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME "KDE Init")
-+else (Q_WS_MAC OR WIN32)
-   kde4_add_executable(kdeinit4 NOGUI ${kdeinit_SRCS})
--endif (APPLE OR WIN32)
-+endif (Q_WS_MAC OR WIN32)
- 
- target_link_libraries(kdeinit4 ${KDE4_KDECORE_LIBS} ${kdeinit_LIBS} ${KINIT_SOCKET_LIBRARY} )
- if (Q_WS_X11)
-@@ -51,6 +54,16 @@
- 
- install(TARGETS kdeinit4 ${INSTALL_TARGETS_DEFAULT_ARGS} )
- 
-+########### kdeinit4_helper ###############
-+
-+set(kdeinit4_helper_SRCS helper.cpp)
-+
-+kde4_add_executable(kdeinit4_helper NOGUI ${kdeinit4_helper_SRCS})
-+
-+target_link_libraries(kdeinit4_helper ${QT_QTCORE_LIBRARY})
-+
-+install(TARGETS kdeinit4_helper DESTINATION ${LIBEXEC_INSTALL_DIR} )
-+
- ########### kwrapper4 ###############
- if (WIN32)
-   set(kwrapper_SRCS kwrapper_win.cpp  )
-diff -Nurd kdelibs-4.4.1/kinit/Info.plist.template kdelibs-4.4.1-new/kinit/Info.plist.template
---- kdelibs-4.4.1/kinit/Info.plist.template	1969-12-31 19:00:00.000000000 -0500
-+++ kdelibs-4.4.1-new/kinit/Info.plist.template	2010-03-06 12:39:26.000000000 -0500
-@@ -0,0 +1,36 @@
-+<?xml version="1.0" encoding="UTF-8"?>
-+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-+<plist version="1.0">
-+<dict>
-+    <key>CFBundleDevelopmentRegion</key>
-+    <string>English</string>
-+    <key>CFBundleExecutable</key>
-+    <string>${MACOSX_BUNDLE_EXECUTABLE_NAME}</string>
-+    <key>CFBundleGetInfoString</key>
-+    <string>${MACOSX_BUNDLE_INFO_STRING}</string>
-+    <key>CFBundleIconFile</key>
-+    <string>${MACOSX_BUNDLE_ICON_FILE}</string>
-+    <key>CFBundleIdentifier</key>
-+    <string>${MACOSX_BUNDLE_GUI_IDENTIFIER}</string>
-+    <key>CFBundleInfoDictionaryVersion</key>
-+    <string>6.0</string>
-+    <key>CFBundleLongVersionString</key>
-+    <string>${MACOSX_BUNDLE_LONG_VERSION_STRING}</string>
-+    <key>CFBundleName</key>
-+    <string>${MACOSX_BUNDLE_BUNDLE_NAME}</string>
-+    <key>CFBundlePackageType</key>
-+    <string>APPL</string>
-+    <key>CFBundleShortVersionString</key>
-+    <string>${MACOSX_BUNDLE_SHORT_VERSION_STRING}</string>
-+    <key>CFBundleVersion</key>
-+    <string>${MACOSX_BUNDLE_BUNDLE_VERSION}</string>
-+    <key>CSResourcesFileMapped</key>
-+    <true/>
-+    <key>LSRequiresCarbon</key>
-+    <true/>
-+    <key>LSUIElement</key>
-+    <string>1</string>
-+    <key>NSHumanReadableCopyright</key>
-+    <string>${MACOSX_BUNDLE_COPYRIGHT}</string>
-+</dict>
-+</plist>
-diff -Nurd kdelibs-4.4.1/kinit/helper.cpp kdelibs-4.4.1-new/kinit/helper.cpp
---- kdelibs-4.4.1/kinit/helper.cpp	1969-12-31 19:00:00.000000000 -0500
-+++ kdelibs-4.4.1-new/kinit/helper.cpp	2010-03-06 12:39:26.000000000 -0500
+diff -Nurd kdelibs-4.4.95/kinit/helper.cpp kdelibs-4.4.95-new/kinit/helper.cpp
+--- kdelibs-4.4.95/kinit/helper.cpp	1969-12-31 18:00:00.000000000 -0600
++++ kdelibs-4.4.95-new/kinit/helper.cpp	2010-07-30 23:43:47.000000000 -0500
 @@ -0,0 +1,42 @@
 +#include <stdio.h>
 +#include <stdlib.h>
@@ -839,10 +512,10 @@ diff -Nurd kdelibs-4.4.1/kinit/helper.cpp kdelibs-4.4.1-new/kinit/helper.cpp
 +    exit( func(argc - 1, argv)); /* Launch! */
 +}
 +
-diff -Nurd kdelibs-4.4.1/kinit/kinit.cpp kdelibs-4.4.1-new/kinit/kinit.cpp
---- kdelibs-4.4.1/kinit/kinit.cpp	2010-01-31 14:28:05.000000000 -0500
-+++ kdelibs-4.4.1-new/kinit/kinit.cpp	2010-03-06 12:39:26.000000000 -0500
-@@ -72,7 +72,7 @@
+diff -Nurd kdelibs-4.4.95/kinit/kinit.cpp kdelibs-4.4.95-new/kinit/kinit.cpp
+--- kdelibs-4.4.95/kinit/kinit.cpp	2010-06-01 13:19:11.000000000 -0500
++++ kdelibs-4.4.95-new/kinit/kinit.cpp	2010-07-30 23:43:47.000000000 -0500
+@@ -73,7 +73,7 @@
  #endif
  #endif
  
@@ -851,7 +524,7 @@ diff -Nurd kdelibs-4.4.1/kinit/kinit.cpp kdelibs-4.4.1-new/kinit/kinit.cpp
  #include <kkernel_mac.h>
  #endif
  
-@@ -528,6 +528,14 @@
+@@ -534,6 +534,14 @@
        init_startup_info( startup_id, name, envc, envs );
  #endif
  
@@ -866,7 +539,7 @@ diff -Nurd kdelibs-4.4.1/kinit/kinit.cpp kdelibs-4.4.1-new/kinit/kinit.cpp
    d.errorMsg = 0;
    d.fork = fork();
    switch(d.fork) {
-@@ -553,7 +561,6 @@
+@@ -559,7 +567,6 @@
       if (cwd && *cwd) {
           (void)chdir(cwd);
       } else {
@@ -874,7 +547,7 @@ diff -Nurd kdelibs-4.4.1/kinit/kinit.cpp kdelibs-4.4.1-new/kinit/kinit.cpp
           (void)chdir(docPath.constData());
       }
  
-@@ -589,9 +596,9 @@
+@@ -595,9 +602,9 @@
       {
         int r;
         QByteArray procTitle;
@@ -886,7 +559,7 @@ diff -Nurd kdelibs-4.4.1/kinit/kinit.cpp kdelibs-4.4.1-new/kinit/kinit.cpp
         QString argvexe = s_instance->dirs()->findExe(QString::fromLatin1(d.argv[0]));
         if (!argvexe.isEmpty()) {
            QByteArray cstr = argvexe.toLocal8Bit();
-@@ -668,7 +675,6 @@
+@@ -674,7 +681,6 @@
  
          QByteArray executable = execpath;
  #ifdef Q_WS_MAC
@@ -894,7 +567,7 @@ diff -Nurd kdelibs-4.4.1/kinit/kinit.cpp kdelibs-4.4.1-new/kinit/kinit.cpp
          if (!bundlepath.isEmpty())
             executable = QFile::encodeName(bundlepath);
  #endif
-@@ -682,25 +688,13 @@
+@@ -688,25 +694,13 @@
          exit(255);
       }
  
@@ -925,7 +598,7 @@ diff -Nurd kdelibs-4.4.1/kinit/kinit.cpp kdelibs-4.4.1-new/kinit/kinit.cpp
       if (d.debug_wait)
       {
          fprintf(stderr, "kdeinit4: Suspending process\n"
-@@ -714,8 +708,18 @@
+@@ -720,8 +714,18 @@
          setup_tty( tty );
       }
  
@@ -945,7 +618,7 @@ diff -Nurd kdelibs-4.4.1/kinit/kinit.cpp kdelibs-4.4.1-new/kinit/kinit.cpp
       break;
    }
    default:
-@@ -1625,12 +1629,10 @@
+@@ -1667,12 +1671,10 @@
           launch_klauncher = 0;
        if (strcmp(safe_argv[i], "--no-kded") == 0)
           launch_kded = 0;
@@ -959,7 +632,7 @@ diff -Nurd kdelibs-4.4.1/kinit/kinit.cpp kdelibs-4.4.1-new/kinit/kinit.cpp
           do_fork = false;
        if (strcmp(safe_argv[i], "--suicide") == 0)
           d.suicide = true;
-@@ -1650,7 +1652,7 @@
+@@ -1692,7 +1694,7 @@
        {
          printf("Usage: kdeinit4 [options]\n");
       // printf("    --no-dcop         Do not start dcopserver\n");
@@ -968,8 +641,8 @@ diff -Nurd kdelibs-4.4.1/kinit/kinit.cpp kdelibs-4.4.1-new/kinit/kinit.cpp
          printf("    --nofork          Do not fork\n");
  #else
          printf("    --no-fork         Do not fork\n");
-@@ -1667,7 +1669,7 @@
-    cleanup_fds();
+@@ -1713,7 +1715,7 @@
+    (void)dup2(2, 1);
  
     if (do_fork) {
 -#ifdef Q_WS_MACX
@@ -977,34 +650,9 @@ diff -Nurd kdelibs-4.4.1/kinit/kinit.cpp kdelibs-4.4.1-new/kinit/kinit.cpp
        mac_fork_and_reexec_self();
  #else
        if (pipe(d.initpipe) != 0) {
-diff -Nurd kdelibs-4.4.1/kinit/klauncher_main.cpp kdelibs-4.4.1-new/kinit/klauncher_main.cpp
---- kdelibs-4.4.1/kinit/klauncher_main.cpp	2009-08-28 12:03:07.000000000 -0400
-+++ kdelibs-4.4.1-new/kinit/klauncher_main.cpp	2010-03-06 12:39:26.000000000 -0500
-@@ -48,6 +48,10 @@
- }
- #endif
- 
-+#if defined(Q_OS_DARWIN) || defined (Q_OS_MAC)
-+#include <kkernel_mac.h>
-+#endif
-+
- extern "C" KDE_EXPORT int kdemain( int argc, char**argv )
- {
- #ifndef Q_WS_WIN
-@@ -61,6 +65,10 @@
-    }
- #endif
- 
-+#if defined(Q_OS_DARWIN) || defined (Q_OS_MAC)
-+   mac_initialize_dbus();
-+#endif
-+
-    KComponentData componentData("klauncher", "kdelibs4");
-    KGlobal::locale();
- 
-diff -Nurd kdelibs-4.4.1/kio/kfile/kfsprocess.cpp kdelibs-4.4.1-new/kio/kfile/kfsprocess.cpp
---- kdelibs-4.4.1/kio/kfile/kfsprocess.cpp	2008-05-21 07:08:03.000000000 -0400
-+++ kdelibs-4.4.1-new/kio/kfile/kfsprocess.cpp	2010-03-06 12:39:26.000000000 -0500
+diff -Nurd kdelibs-4.4.95/kio/kfile/kfsprocess.cpp kdelibs-4.4.95-new/kio/kfile/kfsprocess.cpp
+--- kdelibs-4.4.95/kio/kfile/kfsprocess.cpp	2008-05-21 06:08:03.000000000 -0500
++++ kdelibs-4.4.95-new/kio/kfile/kfsprocess.cpp	2010-07-30 23:43:47.000000000 -0500
 @@ -83,7 +83,7 @@
  
  KfsProcessController::~KfsProcessController()
@@ -1014,10 +662,10 @@ diff -Nurd kdelibs-4.4.1/kio/kfile/kfsprocess.cpp kdelibs-4.4.1-new/kio/kfile/kf
  /* not sure why, but this is causing lockups */
    close( m_fd[0] );
    close( m_fd[1] );
-diff -Nurd kdelibs-4.4.1/kio/kfile/kpropertiesdialog.cpp kdelibs-4.4.1-new/kio/kfile/kpropertiesdialog.cpp
---- kdelibs-4.4.1/kio/kfile/kpropertiesdialog.cpp	2010-02-26 13:30:10.000000000 -0500
-+++ kdelibs-4.4.1-new/kio/kfile/kpropertiesdialog.cpp	2010-03-06 12:39:26.000000000 -0500
-@@ -1813,7 +1813,7 @@
+diff -Nurd kdelibs-4.4.95/kio/kfile/kpropertiesdialog.cpp kdelibs-4.4.95-new/kio/kfile/kpropertiesdialog.cpp
+--- kdelibs-4.4.95/kio/kfile/kpropertiesdialog.cpp	2010-06-16 07:03:24.000000000 -0500
++++ kdelibs-4.4.95-new/kio/kfile/kpropertiesdialog.cpp	2010-07-30 23:43:47.000000000 -0500
+@@ -1812,7 +1812,7 @@
  #ifdef HAVE_GETGROUPLIST
      // pick the groups to which the user belongs
      int groupCount = 0;
@@ -1026,9 +674,9 @@ diff -Nurd kdelibs-4.4.1/kio/kfile/kpropertiesdialog.cpp kdelibs-4.4.1-new/kio/k
      QVarLengthArray<int> groups;
  #else
      QVarLengthArray<gid_t> groups;
-diff -Nurd kdelibs-4.4.1/kpty/kptydevice.cpp kdelibs-4.4.1-new/kpty/kptydevice.cpp
---- kdelibs-4.4.1/kpty/kptydevice.cpp	2009-03-27 10:47:33.000000000 -0400
-+++ kdelibs-4.4.1-new/kpty/kptydevice.cpp	2010-03-06 12:39:26.000000000 -0500
+diff -Nurd kdelibs-4.4.95/kpty/kptydevice.cpp kdelibs-4.4.95-new/kpty/kptydevice.cpp
+--- kdelibs-4.4.95/kpty/kptydevice.cpp	2009-03-27 09:47:33.000000000 -0500
++++ kdelibs-4.4.95-new/kpty/kptydevice.cpp	2010-07-30 23:43:47.000000000 -0500
 @@ -42,7 +42,7 @@
  # include <sys/time.h>
  #endif
@@ -1038,9 +686,9 @@ diff -Nurd kdelibs-4.4.1/kpty/kptydevice.cpp kdelibs-4.4.1-new/kpty/kptydevice.c
    // "the other end's output queue size" - kinda braindead, huh?
  # define PTY_BYTES_AVAILABLE TIOCOUTQ
  #elif defined(TIOCINQ)
-diff -Nurd kdelibs-4.4.1/kross/qts/CMakeLists.txt kdelibs-4.4.1-new/kross/qts/CMakeLists.txt
---- kdelibs-4.4.1/kross/qts/CMakeLists.txt	2009-07-06 07:19:27.000000000 -0400
-+++ kdelibs-4.4.1-new/kross/qts/CMakeLists.txt	2010-03-06 12:39:26.000000000 -0500
+diff -Nurd kdelibs-4.4.95/kross/qts/CMakeLists.txt kdelibs-4.4.95-new/kross/qts/CMakeLists.txt
+--- kdelibs-4.4.95/kross/qts/CMakeLists.txt	2009-07-06 06:19:27.000000000 -0500
++++ kdelibs-4.4.95-new/kross/qts/CMakeLists.txt	2010-07-30 23:43:47.000000000 -0500
 @@ -8,7 +8,7 @@
      set_target_properties(krossqtsplugin PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION})
  endif (NOT CYGWIN)
@@ -1050,20 +698,9 @@ diff -Nurd kdelibs-4.4.1/kross/qts/CMakeLists.txt kdelibs-4.4.1-new/kross/qts/CM
  
  ########### next target ###############
  
-diff -Nurd kdelibs-4.4.1/kutils/kidletime/xscreensaverbasedpoller.cpp kdelibs-4.4.1-new/kutils/kidletime/xscreensaverbasedpoller.cpp
---- kdelibs-4.4.1/kutils/kidletime/xscreensaverbasedpoller.cpp	2009-07-28 15:44:03.000000000 -0400
-+++ kdelibs-4.4.1-new/kutils/kidletime/xscreensaverbasedpoller.cpp	2010-03-06 12:39:26.000000000 -0500
-@@ -22,6 +22,7 @@
- 
- #include <QX11Info>
- 
-+#include <X11/Xlib.h>
- #include <X11/extensions/scrnsaver.h>
- 
- #ifdef HAVE_XTEST
-diff -Nurd kdelibs-4.4.1/solid/solid/managerbase.cpp kdelibs-4.4.1-new/solid/solid/managerbase.cpp
---- kdelibs-4.4.1/solid/solid/managerbase.cpp	2009-03-10 08:26:04.000000000 -0400
-+++ kdelibs-4.4.1-new/solid/solid/managerbase.cpp	2010-03-06 12:39:26.000000000 -0500
+diff -Nurd kdelibs-4.4.95/solid/solid/managerbase.cpp kdelibs-4.4.95-new/solid/solid/managerbase.cpp
+--- kdelibs-4.4.95/solid/solid/managerbase.cpp	2010-07-23 16:10:47.000000000 -0500
++++ kdelibs-4.4.95-new/solid/solid/managerbase.cpp	2010-07-30 23:43:47.000000000 -0500
 @@ -23,7 +23,8 @@
  
  #include "backends/fakehw/fakemanager.h"
@@ -1076,10 +713,10 @@ diff -Nurd kdelibs-4.4.1/solid/solid/managerbase.cpp kdelibs-4.4.1-new/solid/sol
  #include "backends/hal/halmanager.h"
 @@ -48,7 +49,7 @@
      if (!solidFakeXml.isEmpty()) {
-         m_backend = new Solid::Backends::Fake::FakeManager(0, solidFakeXml);
+         m_backends << new Solid::Backends::Fake::FakeManager(0, solidFakeXml);
      } else {
 -#        if defined (Q_OS_MAC)
 +#        if (defined (Q_OS_MAC) || defined(Q_OS_DARWIN))
-             m_backend = new Solid::Backends::IOKit::IOKitManager(0);
+             m_backends << new Solid::Backends::IOKit::IOKitManager(0);
  #        elif defined (Q_OS_UNIX)
-             m_backend = new Solid::Backends::Hal::HalManager(0);
+             m_backends << new Solid::Backends::Hal::HalManager(0);

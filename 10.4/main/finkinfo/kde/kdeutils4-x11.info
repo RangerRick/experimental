@@ -1,7 +1,7 @@
 Info4: <<
 Package: kdeutils4-x11
-Version: 4.4.1
-Revision: 2
+Version: 4.4.95
+Revision: 1
 Description: KDE4 - Utilities
 Type: kde (x11)
 License: GPL/LGPL
@@ -46,8 +46,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/kdeutils-%v.tar.bz2
-Source-MD5: 7dd3dfd7cde8cae0d61f85dba4685dd1
+Source: mirror:kde:unstable/%v/src/kdeutils-%v.tar.bz2
+Source-MD5: 3468794192d63f8fbb3cf8a6561b10f0
 PatchFile: kdeutils4.patch
 PatchFile-MD5: 2e679d1fe33c92f5a353b7a6c4ee590a
 

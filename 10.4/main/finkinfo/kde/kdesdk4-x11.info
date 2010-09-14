@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdesdk4-x11
-Version: 4.4.1
+Version: 4.4.95
 Revision: 1
 Description: KDE4 - Developer Utilities
 Type: kde (x11)
@@ -51,8 +51,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/kdesdk-%v.tar.bz2
-Source-MD5: 4dc275062bb38a338e83ed8f6f4854bc
+Source: mirror:kde:unstable/%v/src/kdesdk-%v.tar.bz2
+Source-MD5: dad703106655da586b2dd81de1432cbe
 
 UseMaxBuildJobs: true
 CompileScript: <<

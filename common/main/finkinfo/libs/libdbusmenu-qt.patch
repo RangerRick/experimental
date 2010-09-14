@@ -1,0 +1,28 @@
+diff -Nurd libdbusmenu-qt-0.3.0/CMakeLists.txt libdbusmenu-qt-0.3.0-new/CMakeLists.txt
+--- libdbusmenu-qt-0.3.0/CMakeLists.txt	2010-03-09 09:28:24.000000000 -0600
++++ libdbusmenu-qt-0.3.0-new/CMakeLists.txt	2010-07-31 00:53:32.000000000 -0500
+@@ -46,6 +46,13 @@
+ 
+ configure_file(dbusmenu-qt.pc.in ${CMAKE_BINARY_DIR}/dbusmenu-qt.pc @ONLY)
+ 
++SET (LIB_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/lib" CACHE STRING "Directory where lib will install")
++
++set(CMAKE_INSTALL_NAME_DIR ${LIB_INSTALL_DIR})
++
++set(CMAKE_INSTALL_RPATH_USE_LINK_PATH  TRUE)
++set(CMAKE_INSTALL_RPATH "${LIB_INSTALL_DIR}" )
++
+ install(FILES ${CMAKE_BINARY_DIR}/dbusmenu-qt.pc
+     DESTINATION lib${LIB_SUFFIX}/pkgconfig
+     )
+diff -Nurd libdbusmenu-qt-0.3.0/tools/testapp/CMakeLists.txt libdbusmenu-qt-0.3.0-new/tools/testapp/CMakeLists.txt
+--- libdbusmenu-qt-0.3.0/tools/testapp/CMakeLists.txt	2010-03-09 09:28:24.000000000 -0600
++++ libdbusmenu-qt-0.3.0-new/tools/testapp/CMakeLists.txt	2010-07-31 00:56:47.000000000 -0500
+@@ -9,6 +9,7 @@
+     ${QT_QTGUI_INCLUDE_DIR}
+     ${QT_QTDBUS_INCLUDE_DIR}
+     ${QJSON_INCLUDE_DIR}
++    ${QJSON_INCLUDE_DIR}/..
+     )
+ 
+ add_executable(dbusmenubench-qtapp ${qtapp_SRCS})

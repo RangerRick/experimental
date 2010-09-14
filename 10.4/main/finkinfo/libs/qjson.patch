@@ -1,0 +1,23 @@
+diff -Nurd qjson/CMakeLists.txt qjson-new/CMakeLists.txt
+--- qjson/CMakeLists.txt	2009-12-03 18:02:16.000000000 -0600
++++ qjson-new/CMakeLists.txt	2010-07-31 00:41:18.000000000 -0500
+@@ -11,8 +11,6 @@
+ # where to look first for cmake modules, before ${CMAKE_ROOT}/Modules/ is checked
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules")
+ 
+-set(CMAKE_INSTALL_NAME_DIR ${LIB_INSTALL_DIR})
+-
+ # compile in debug mode
+ IF(NOT CMAKE_BUILD_TYPE)
+   SET(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING
+@@ -41,6 +39,10 @@
+ SET (INCLUDE_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/include" CACHE PATH "The directory the headers are installed in")
+ SET (CMAKE_MODULES_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/share/apps/cmake/modules" CACHE PATH "The directory to install FindQRpc.cmake to")
+ 
++set(CMAKE_INSTALL_NAME_DIR ${LIB_INSTALL_DIR})
++
++set(CMAKE_INSTALL_RPATH_USE_LINK_PATH  TRUE)
++set(CMAKE_INSTALL_RPATH "${LIB_INSTALL_DIR}" )
+ 
+ set(QJSON_LIB_MAJOR_VERSION "0")
+ set(QJSON_LIB_MINOR_VERSION "7")

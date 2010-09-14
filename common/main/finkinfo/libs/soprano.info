@@ -1,6 +1,6 @@
 Info4: <<
 Package: soprano-%type_pkg[soprano]
-Version: 2.4.3
+Version: 2.4.64
 Revision: 1
 Type: soprano (x11 mac)
 Description: C++ RDF framework
@@ -33,12 +33,12 @@ BuildDepends: <<
 	sqlite3-dev,
 	system-openssl-dev,
 	qt4-%type_pkg[soprano] (>= 4.4.0-1),
-	virtuoso,
+	virtuoso (>= 6.1.2-1),
 <<
 GCC: 4.0
 
 Source: mirror:sourceforge:soprano/soprano-%v.tar.bz2
-Source-MD5: e2bfa179a03810af60618110f5f832e2
+Source-MD5: edb7f48dd4cc0d5baa75797520c189fc
 PatchFile: soprano.patch
 PatchFile-MD5: 1447c93a237bfa38369081d46d17b0f0
 PatchScript: <<
@@ -109,7 +109,7 @@ SplitOff: <<
 		librasqal2-shlibs (>= 0.9.19-1),
 		redland-shlibs (>= 1.0.8-3),
 		qt4-%type_pkg[soprano]-core-shlibs (>= 4.4.0-1),
-		virtuoso,
+		virtuoso (>= 6.1.2-1),
 	<<
 	DocFiles: COPYING*
 	Recommends: %N (>= %v-%r)

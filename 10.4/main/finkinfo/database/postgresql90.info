@@ -1,7 +1,7 @@
 Info4: <<
 Package: postgresql90
 Version: 9.0.0
-Revision: 0.beta3.1
+Revision: 0.rc1.1
 Description: PostgreSQL open-source database
 License: BSD
 Maintainer: Benjamin Reed <postgresql90@fink.raccoonfink.com>
@@ -40,11 +40,11 @@ TestScript: <<
 <<
 <<
 
-Source: mirror:postgresql:source/v9.0beta3/postgresql-9.0beta3.tar.bz2
-Source-MD5: 135c1bdeb42e93f93db30bf75002ce4b
+Source: mirror:postgresql:source/v9.0rc1/postgresql-9.0rc1.tar.bz2
+Source-MD5: c10400b541b8ce2e8c083c6538712429
 PatchScript: sed -e 's|@BUILDDIR@|%b|g' -e 's|@INSTPREFIX@|%p|g' < %{PatchFile} | patch -p1
 PatchFile: %n.patch
-PatchFile-MD5: 0dd214f6cb16477770be69ac3d804b33
+PatchFile-MD5: 3a631636c02956ab807bd4b08eef5e00
 
 SetCPPFLAGS: -I%p/lib/system-openssl/include -DHAVE_OPTRESET -fno-common
 SetLDFLAGS: -L%p/lib/system-openssl/lib -F/System/Library/Frameworks

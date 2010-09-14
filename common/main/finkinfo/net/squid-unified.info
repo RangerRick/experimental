@@ -1,27 +1,21 @@
 Info4: <<
 Package: squid-unified
-Version: 3.0.stable21
+Version: 3.1.8
 Revision: 1
 Epoch: 1
-Source: http://www.squid-cache.org/Versions/v3/3.0/squid-3.0.STABLE21.tar.bz2
-Source-MD5: 279168fe1fe5b38bbf6eee12babbc4ad
+Source: http://www.squid-cache.org/Versions/v3/3.1/squid-%v.tar.bz2
+Source-MD5: a8160dfba55ab7c400c622b72d39fc13
 Depends: daemonic
 BuildDepends: <<
 	fink (>= 0.28.0-1),
 	system-openssl-dev,
 <<
 Replaces: squid (<< %v-%r), squid-ssl (<< %v-%r)
-PatchFile: %n.patch
-PatchFile-MD5: 0764b028ddccf6969711548dfac0d1b8
-PatchScript: <<
-	%{default_script}
-	perl -pi -e 's,-Werror,,' configure
-<<
 
 NoSetCPPFLAGS: true
 SetCPPFLAGS: -I%p/lib/system-openssl/include -I%p/include
 NoSetLDFLAGS: true
-SetLDFLAGS: -L%p/lib/system-openssl/lib
+SetLDFLAGS: -L%p/lib/system-openssl/lib -L%p/lib
 NoSetLIBS: true
 SetLIBS: -L%p/lib
 
@@ -122,8 +116,7 @@ if [ $1 != "upgrade" ]; then
 	daemonic remove squid-unified
 fi
 <<
-DocFiles: CO* CREDITS ChangeLog QUICKSTART README* RELEASENOTES* SPONSORS TODO
-
+DocFiles: CO* CREDITS ChangeLog QUICKSTART README* RELEASENOTES* SPONSORS
 Description: Proxy caching server
 DescDetail: <<
 Squid is a high-performance proxy caching server for Web clients,

@@ -1,6 +1,6 @@
 Info4: <<
 Package: kipi-plugins4-%type_pkg[kde]
-Version: 1.1.0
+Version: 1.3.0
 Revision: 1
 Description: KDE4 - image plugins
 Type: kde (x11 mac)
@@ -49,7 +49,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:sourceforge:kipi/kipi-plugins-%v.tar.bz2
-Source-MD5: f1a92d0fe29bd68de08551a5e607015e
+Source-MD5: 01095ed3d523fbc5e27dc9ba3ee47240
 PatchFile: kipi-plugins4.patch
 PatchFile-MD5: 13e237e1cf48e325eb5c42f057360b51
 

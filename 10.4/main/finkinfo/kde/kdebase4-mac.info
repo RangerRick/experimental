@@ -1,6 +1,6 @@
 Info3: <<
 Package: kdebase4-mac
-Version: 4.4.1
+Version: 4.4.95
 Revision: 1
 Description: KDE4 - base runtime
 Type: kde (mac)
@@ -56,8 +56,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/kdebase-%v.tar.bz2
-Source-MD5: 489602de000f1dd4bee682765510fa44
+Source: mirror:kde:unstable/%v/src/kdebase-%v.tar.bz2
+Source-MD5: e14030ded0fe7cdbc834102df8ba238c
 SourceDirectory: kdebase-%v
 PatchScript: <<
 	%{default_script}

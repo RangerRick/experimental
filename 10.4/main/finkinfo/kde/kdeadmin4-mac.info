@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdeadmin4-mac
-Version: 4.4.1
+Version: 4.4.95
 Revision: 1
 Description: KDE4 - UNIX admin tools
 Type: kde (mac)
@@ -34,8 +34,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/kdeadmin-%v.tar.bz2
-Source-MD5: 6a69c96bf7ad38ea78972e926a2281e7
+Source: mirror:kde:unstable/%v/src/kdeadmin-%v.tar.bz2
+Source-MD5: 752254a4801af68bd717d30bd747d7c0
 PatchFile: kdeadmin4.patch
 PatchFile-MD5: f5f3a82363cb00afc69fa1fcdbaca09f
 

@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdewebdev4-mac
-Version: 4.4.1
+Version: 4.4.95
 Revision: 1
 Description: KDE4 - Web Development
 Type: kde (mac)
@@ -40,8 +40,8 @@ BuildDepends: <<
 BuildConflicts: libtidy-dev
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/kdewebdev-%v.tar.bz2
-Source-MD5: 875dbbf8d76a045ba308cbd6b491f7a3
+Source: mirror:kde:unstable/%v/src/kdewebdev-%v.tar.bz2
+Source-MD5: 4292b1d3761b5eb153d3e948f72568d2
 
 UseMaxBuildJobs: true
 CompileScript: <<

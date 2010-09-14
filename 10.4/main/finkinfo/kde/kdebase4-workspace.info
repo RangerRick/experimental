@@ -1,6 +1,6 @@
 Info3: <<
 Package: kdebase4-workspace-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.4.95
 Revision: 1
 Description: KDE4 - base applications and tools
 Type: kde (x11)
@@ -62,8 +62,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/kdebase-workspace-%v.tar.bz2
-Source-MD5: c5a5826ce0e8b0faa760971850b29111
+Source: mirror:kde:unstable/%v/src/kdebase-workspace-%v.tar.bz2
+Source-MD5: c033ad8d0cf200ee0e3ee0097c290956
 SourceDirectory: kdebase-workspace-%v
 PatchScript: sed -e 's,@FINKPREFIX@,%p,g; s,@FINKTYPE@,%type_pkg[kde],g' %{PatchFile} | patch -p1
 PatchFile: kdebase4-workspace.patch

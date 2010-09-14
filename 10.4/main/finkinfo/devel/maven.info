@@ -6,15 +6,15 @@ Type: java(1.5)
 License: BSD
 Maintainer: Benjamin Reed <maven@fink.raccoonfink.com>
 
-Depends: system-java (>= 1.4-1)
+Depends: system-java (>= 1.5-1)
 BuildDepends: fink (>= 0.29.7-1)
 
-Source: mirror:apache:%n/binaries/apache-%n-%v-bin.tar.bz2
-Source-MD5: c581a15cb0001d9b771ad6df7c8156f8
+Source: mirror:apache:%n/binaries/apache-%n-%v-bin.tar.gz
+Source-MD5: 3f829ed854cbacdaca8f809e4954c916
 SourceDirectory: apache-%n-%v
 PatchScript: sed -e 's,@FINKPREFIX@,%p,g' < %{PatchFile} | patch -p1
 PatchFile: %n.patch
-PatchFile-MD5: 3da755f98c82474b1d7dce54a19b2551
+PatchFile-MD5: 04fe9cb9a4e11299faf370a0c6413503
 
 UseMaxBuildJobs: true
 CompileScript: echo "none needed"
@@ -29,12 +29,15 @@ InstallScript: <<
 
 	install -d -m 755 %i/bin
 	mv bin/mvn %i/bin/
-	ln -sf mvn %i/bin/m2
 	rm -rf bin
 	chmod 755 %i/bin/*
-
+	
 	install -d -m 755 %i/share/maven
 	mv boot conf lib %i/share/maven/
+
+	# Some Maven plugins expect the mvn executable to be located in $M2_HOME/bin
+	install -d -m 755 %i/share/maven/bin
+	ln -s %p/bin/mvn %i/share/maven/bin/mvn
 <<
 DocFiles: *.txt
 

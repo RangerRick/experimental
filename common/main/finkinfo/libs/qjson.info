@@ -1,0 +1,66 @@
+Info3: <<
+Package: qjson-%type_pkg[qt]
+Version: 0.7.1
+Revision: 1
+Type: qt (x11 mac)
+Description: JSON support for Qt
+License: GPL/LGPL
+Maintainer: Benjamin Reed <qjson@fink.raccoonfink.com>
+
+Depends: %N-shlibs (= %v-%r)
+BuildDependsOnly: true
+BuildDepends: <<
+	cmake (>= 2.6.1-2),
+	fink (>= 0.28-1),
+	kde4-buildenv (>= 4.2-3),
+	qt4-%type_pkg[qt] (>= 4.5.0-1),
+	(%type_pkg[qt] = x11) x11-dev,
+	system-openssl-dev
+<<
+GCC: 4.0
+
+Source: mirror:sourceforge:qjson/qjson-%v.tar.bz2
+Source-MD5: 5a833ad606c164ed8aa69f0873366ace
+SourceDirectory: qjson
+PatchFile: qjson.patch
+PatchFile-MD5: ff2dbdb1e2cf066804b5238bce7c3b0a
+
+DocFiles: COPYING README doc/*html*
+
+CompileScript: <<
+#!/bin/sh -ev
+
+	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[qt]"
+	. %p/sbin/kde4-buildenv.sh
+
+	mkdir -p build
+	pushd build
+		cmake $KDE4_CMAKE_ARGS ..
+		make
+	popd
+<<
+
+InstallScript: <<
+#!/bin/sh -ev
+
+	pushd build
+		make -j1 install/fast DESTDIR="%d"
+	popd
+<<
+
+SplitOff: <<
+	Package: %N-shlibs
+	Description: Shared libs for QJSON
+	Depends: qt4-%type_pkg[qt]-core-shlibs (>= 4.5.0-1)
+	DocFiles: COPYING README
+	Files: opt/kde4/%type_pkg[qt]/lib/libqjson.0*.dylib
+	Shlibs: %p/opt/kde4/%type_pkg[qt]/lib/libqjson.0.dylib 0.0.0 %n (>= 0.7.1-1)
+<<
+
+DescDetail: <<
+QJson is a qt-based library that maps JSON data to QVariant
+objects: JSON arrays will be mapped to QVariantList instances,
+while JSON objects will be mapped to QVariantMap.
+<<
+
+<<

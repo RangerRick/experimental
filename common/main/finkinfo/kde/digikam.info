@@ -1,6 +1,6 @@
 Info4: <<
 Package: digikam-%type_pkg[kde]
-Version: 1.1.0
+Version: 1.3.0
 Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - photo management
@@ -16,7 +16,7 @@ under Linux systems.
 <<
 
 Source: mirror:sourceforge:digikam/digikam-%v.tar.bz2
-Source-MD5: 94a536e7387325c7b73ab2ac7b0a9a62
+Source-MD5: 25d09fdab2b2450c6c6075aab3377fce
 PatchFile: digikam.patch
 PatchFile-MD5: 066618ee8a44c560ff0a347be08567ca
 

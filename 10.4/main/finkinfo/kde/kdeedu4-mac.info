@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdeedu4-mac
-Version: 4.4.1
+Version: 4.4.95
 Revision: 1
 Description: KDE4 - Edutainment software
 Type: kde (mac)
@@ -45,7 +45,7 @@ BuildDepends: <<
 	kde4-buildenv (>= 4.4.3-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.4.1-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
-	libattica-%type_pkg[kde]-dev (>= 0.1.2-1),
+	libattica-%type_pkg[kde]-dev (>= 0.1.4-1),
 	libgettext8-dev,
 	libxml2,
 	libxslt,
@@ -62,8 +62,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/kdeedu-%v.tar.bz2
-Source-MD5: ef4bb9307043d807f97d8758a9ac1f8f
+Source: mirror:kde:unstable/%v/src/kdeedu-%v.tar.bz2
+Source-MD5: e1157aed480593ea4a6beaf2ef62dc2f
 PatchFile: kdeedu4.patch
 PatchFile-MD5: c78374a968a3b46310f1f78d05e04ced
 
@@ -294,7 +294,7 @@ SplitOff17: <<
 	Package: parley4-%type_pkg[kde]
 	Description: KDE4 - memorization program
 	Depends: <<
-		libattica-%type_pkg[kde]-shlibs (>= 0.1.2-1),
+		libattica-%type_pkg[kde]-shlibs (>= 0.1.4-1),
 		libxml2-shlibs (>= 2.6.32-1),
 		libxslt-shlibs (>= 1.1.0-1),
 		%N-base (>= %v-%r)
@@ -324,7 +324,7 @@ SplitOff18: <<
 	Package: cantor4-%type_pkg[kde]
 	Description: KDE4 - math application
 	Depends: <<
-		libattica-%type_pkg[kde]-shlibs (>= 0.1.2-1),
+		libattica-%type_pkg[kde]-shlibs (>= 0.1.4-1),
 		r-base,
 		%N-base (>= %v-%r)
 	<<

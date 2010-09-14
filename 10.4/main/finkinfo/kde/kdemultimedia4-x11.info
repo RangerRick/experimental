@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdemultimedia4-x11
-Version: 4.4.1
+Version: 4.4.95
 Revision: 1
 Description: KDE4 - Multimedia Apps
 Type: kde (x11)
@@ -43,8 +43,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/kdemultimedia-%v.tar.bz2
-Source-MD5: 757a70465395512f245fac6f9e3b7c59
+Source: mirror:kde:unstable/%v/src/kdemultimedia-%v.tar.bz2
+Source-MD5: e2786b5451f8176c15b73a5dcc655c0b
 PatchFile: kdemultimedia4.patch
 PatchFile-MD5: 585ccb0fa9592bbab477ff50969d18b9
 

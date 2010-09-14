@@ -1,6 +1,6 @@
 Info4: <<
 Package: virtuoso
-Version: 6.1.0
+Version: 6.1.2
 Revision: 1
 Distribution: 10.4, 10.5
 Description: SQL/RDF/XML data management server
@@ -34,7 +34,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:sourceforge:%n/%n-opensource-%v.tar.gz
-Source-MD5: 49135390d27ab3e445f5e9481ab677bb
+Source-MD5: 0519e1f104428e0c8b25fad89e3c57ef
 PatchFile: %n.patch
 PatchFile-MD5: dd21aa1a461f52a915d0cdbcc4e9229a
 

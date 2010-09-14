@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.1
 Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - office suite

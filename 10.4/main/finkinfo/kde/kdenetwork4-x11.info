@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdenetwork4-x11
-Version: 4.4.1
+Version: 4.4.95
 Revision: 1
 Description: KDE4 - Network Apps
 Type: kde (x11)
@@ -52,8 +52,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/kdenetwork-%v.tar.bz2
-Source-MD5: e1a0da88d27feb7c921a26c0dc9782b7
+Source: mirror:kde:unstable/%v/src/kdenetwork-%v.tar.bz2
+Source-MD5: c4df72e6aa996f1f6ac6d391a7d4b2f4
 PatchFile: kdenetwork4.patch
 PatchFile-MD5: 7468d341e1ab88bbfd1cacbd8035fb9e
 

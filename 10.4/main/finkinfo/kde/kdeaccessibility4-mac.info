@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdeaccessibility4-mac
-Version: 4.4.1
+Version: 4.4.95
 Revision: 1
 Description: KDE4 - accessibility software
 Type: kde (mac)
@@ -34,8 +34,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/kdeaccessibility-%v.tar.bz2
-Source-MD5: 2099ab7d7543bc2d1d1f390c2d03b8c2
+Source: mirror:kde:unstable/%v/src/kdeaccessibility-%v.tar.bz2
+Source-MD5: 1648ca5ddff37eaa950498622bac48d7
 
 UseMaxBuildJobs: true
 CompileScript: <<

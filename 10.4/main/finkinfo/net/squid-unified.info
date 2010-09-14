@@ -1,6 +1,6 @@
 Info4: <<
 Package: squid-unified
-Version: 3.0.stable21
+Version: 3.1.8
 Revision: 1
 Epoch: 1
 Description: Proxy caching server
@@ -17,17 +17,11 @@ Replaces: <<
 	squid-ssl (<< %v-%r)
 <<
 
-Source: http://www.squid-cache.org/Versions/v3/3.0/squid-3.0.STABLE21.tar.bz2
-Source-MD5: 279168fe1fe5b38bbf6eee12babbc4ad
-PatchScript: <<
-	%{default_script}
-	perl -pi -e 's,-Werror,,' configure
-<<
-PatchFile: %n.patch
-PatchFile-MD5: 0764b028ddccf6969711548dfac0d1b8
+Source: http://www.squid-cache.org/Versions/v3/3.1/squid-%v.tar.bz2
+Source-MD5: a8160dfba55ab7c400c622b72d39fc13
 
 SetCPPFLAGS: -I%p/lib/system-openssl/include -I%p/include
-SetLDFLAGS: -L%p/lib/system-openssl/lib
+SetLDFLAGS: -L%p/lib/system-openssl/lib -L%p/lib
 SetLIBS: -L%p/lib
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
@@ -88,7 +82,7 @@ rm -f %i/etc/mime.conf.default
 install -d -m 755 %i/share/doc/%n
 mv %i/share/mib.txt %i/share/doc/%n/mib.txt
 <<
-DocFiles: CO* CREDITS ChangeLog QUICKSTART README* RELEASENOTES* SPONSORS TODO
+DocFiles: CO* CREDITS ChangeLog QUICKSTART README* RELEASENOTES* SPONSORS
 SplitOff: <<
 	Package: squid
 	Depends: <<

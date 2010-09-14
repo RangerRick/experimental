@@ -1,0 +1,59 @@
+Info4: <<
+Package: libdbusmenu-qt-%type_pkg[qt]
+Version: 0.3.0
+Revision: 1
+Type: qt (x11 mac)
+Description: DBus protocol for menus
+License: LGPL
+Maintainer: Benjamin Reed <libdbusmenu-qt@fink.raccoonfink.com>
+
+Depends: <<
+	%N-shlibs (= %v-%r),
+	qjson-%type_pkg[qt]-shlibs (>= 0.5-1),
+<<
+BuildDependsOnly: true
+BuildDepends: <<
+	cmake (>= 2.6.1-2),
+	fink (>= 0.28.0-1),
+	kde4-buildenv (>= 4.3.1-2),
+	system-openssl-dev,
+	qjson-%type_pkg[qt] (>= 0.5-1),
+	qt4-%type_pkg[qt] (>= 4.4.0-1)
+<<
+GCC: 4.0
+
+Source: http://people.canonical.com/~agateau/dbusmenu/libdbusmenu-qt-%v.tar.bz2
+Source-MD5: cf239e0408b8b2be75e1cc731340e8dd
+PatchFile: libdbusmenu-qt.patch
+PatchFile-MD5: 05017c9250d2f6375513350492196b69
+
+CompileScript: <<
+#!/bin/sh -ev
+
+	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[qt]"
+	. %p/sbin/kde4-buildenv.sh
+
+	mkdir -p build
+	pushd build
+		cmake $KDE4_CMAKE_ARGS ..
+		make VERBOSE=1
+	popd
+<<
+
+InstallScript: <<
+#!/bin/sh -ev
+
+	pushd build
+		make -j1 install/fast DESTDIR="%d"
+	popd
+<<
+
+SplitOff: <<
+	Package: %N-shlibs
+	Description: Shared libraries for libdbusmenu
+	Depends: qt4-%type_pkg[qt]-gui-shlibs (>= 4.4.0-1)
+	Files: opt/kde4/%type_pkg[qt]/lib/libdbusmenu-qt.2*.dylib
+	Shlibs: %p/opt/kde4/%type_pkg[qt]/lib/libdbusmenu-qt.2.dylib 2.0.0 %n (>= 0.3.0-1)
+<<
+
+<<
