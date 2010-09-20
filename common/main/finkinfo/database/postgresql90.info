@@ -31,7 +31,7 @@ BuildDepends: <<
 
 GCC: 4.0
 
-Source: mirror:postgresql:source/v9.0.0/postgresql-9.0.0.tar.bz2
+Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
 Source-MD5: 14c2122cc322e69ab2ab702ed7714bbe
 PatchFile: %n.patch
 PatchFile-MD5: 3a631636c02956ab807bd4b08eef5e00

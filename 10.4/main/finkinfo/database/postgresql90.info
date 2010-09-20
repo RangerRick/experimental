@@ -41,7 +41,7 @@ TestScript: <<
 <<
 <<
 
-Source: mirror:postgresql:source/v9.0.0/postgresql-9.0.0.tar.bz2
+Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
 Source-MD5: 14c2122cc322e69ab2ab702ed7714bbe
 PatchScript: sed -e 's|@BUILDDIR@|%b|g' -e 's|@INSTPREFIX@|%p|g' < %{PatchFile} | patch -p1
 PatchFile: %n.patch
