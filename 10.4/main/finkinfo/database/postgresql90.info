@@ -215,9 +215,13 @@ if [ -z "$PG_ID" ]; then
 fi
 if [ -d "%p/var/postgresql-9.0/data" ]; then
 	if [ `%p/bin/dpkg -s postgresql90 | grep -c 9.0.0-0` -gt 0 ]; then
-		echo "Error!  The PostgreSQL 9.0 on-disk format has changed since the 9.0 betas."
+		echo ""
+		echo '!!! ERROR !!!'
+		echo ""
+		echo "The PostgreSQL 9.0 on-disk format has changed since the 9.0 betas."
 		echo "You must remove %p/var/postgresql-9.0/data before proceeding."
 		echo "You should probably back up with pg_dump if there's anything important.  ;)"
+		echo ""
 		exit 1
 	fi
 fi
@@ -244,9 +248,13 @@ SplitOff2: <<
 [ -x %p/var/postgresql-9.0/update-alternatives.sh ] && %p/var/postgresql-9.0/update-alternatives.sh
 if [ -d "%p/var/postgresql-9.0/data" ]; then
 	if [ `%p/bin/dpkg -s postgresql90 | grep -c 9.0.0-0` -gt 0 ]; then
-		echo "Error!  The PostgreSQL 9.0 on-disk format has changed since the 9.0 betas."
+		echo ""
+		echo '!!! ERROR !!!'
+		echo ""
+		echo "The PostgreSQL 9.0 on-disk format has changed since the 9.0 betas."
 		echo "You must remove %p/var/postgresql-9.0/data before proceeding."
 		echo "You should probably back up with pg_dump if there's anything important.  ;)"
+		echo ""
 		exit 1
 	fi
 fi
@@ -264,9 +272,13 @@ if [ -z "$PG_ID" ]; then
 fi
 if [ -d "%p/var/postgresql-9.0/data" ]; then
 	if [ `%p/bin/dpkg -s postgresql90 | grep -c 9.0.0-0` -gt 0 ]; then
-		echo "Error!  The PostgreSQL 9.0 on-disk format has changed since the 9.0 betas."
+		echo ""
+		echo '!!! ERROR !!!'
+		echo ""
+		echo "The PostgreSQL 9.0 on-disk format has changed since the 9.0 betas."
 		echo "You must remove %p/var/postgresql-9.0/data before proceeding."
 		echo "You should probably back up with pg_dump if there's anything important.  ;)"
+		echo ""
 		exit 1
 	fi
 fi
