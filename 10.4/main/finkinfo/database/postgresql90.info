@@ -213,18 +213,6 @@ if [ -z "$PG_ID" ]; then
 	echo "asks if you want to update your users."
 	exit 1
 fi
-if [ -d "%p/var/postgresql-9.0/data" ]; then
-	if [ `%p/bin/dpkg -s postgresql90 | grep -c 9.0.0-0` -gt 0 ]; then
-		echo ""
-		echo '!!! ERROR !!!'
-		echo ""
-		echo "The PostgreSQL 9.0 on-disk format has changed since the 9.0 betas."
-		echo "You must remove %p/var/postgresql-9.0/data before proceeding."
-		echo "You should probably back up with pg_dump if there's anything important.  ;)"
-		echo ""
-		exit 1
-	fi
-fi
 	<<
 	PostInstScript: [ -x %p/var/postgresql-9.0/update-alternatives.sh ] && %p/var/postgresql-9.0/update-alternatives.sh
 	PreRmScript: [ -x %p/var/postgresql-9.0/remove-alternatives.sh ] && %p/var/postgresql-9.0/remove-alternatives.sh
@@ -269,18 +257,6 @@ if [ -z "$PG_ID" ]; then
 	echo "Please do a 'fink reinstall passwd' and make sure you hit 'y' when it"
 	echo "asks if you want to update your users."
 	exit 1
-fi
-if [ -d "%p/var/postgresql-9.0/data" ]; then
-	if [ `%p/bin/dpkg -s postgresql90 | grep -c 9.0.0-0` -gt 0 ]; then
-		echo ""
-		echo '!!! ERROR !!!'
-		echo ""
-		echo "The PostgreSQL 9.0 on-disk format has changed since the 9.0 betas."
-		echo "You must remove %p/var/postgresql-9.0/data before proceeding."
-		echo "You should probably back up with pg_dump if there's anything important.  ;)"
-		echo ""
-		exit 1
-	fi
 fi
 <<
 PostInstScript: <<

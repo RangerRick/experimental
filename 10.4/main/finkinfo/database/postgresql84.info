@@ -1,7 +1,7 @@
 Info4: <<
 Package: postgresql84
 Version: 8.4.4
-Revision: 1
+Revision: 2
 Description: PostgreSQL open-source database
 License: BSD
 Maintainer: Benjamin Reed <postgresql84@fink.raccoonfink.com>
