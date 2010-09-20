@@ -14,6 +14,7 @@ Depends: <<
 	readline5-shlibs,
 	%N-shlibs (>= %v-%r)
 <<
+Provides: postgresql-server
 BuildDepends: <<
 	bison,
 	fink (>= 0.29.7-1),

@@ -27,6 +27,7 @@ BuildDepends: <<
 	tcltk,
 	tcltk-dev
 <<
+Provides: postgresql-server
 GCC: 4.0
 InfoTest: <<
 TestScript: <<

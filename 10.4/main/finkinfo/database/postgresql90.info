@@ -1,7 +1,7 @@
 Info4: <<
 Package: postgresql90
 Version: 9.0.0
-Revision: 0.rc1.1
+Revision: 1
 Description: PostgreSQL open-source database
 License: BSD
 Maintainer: Benjamin Reed <postgresql90@fink.raccoonfink.com>
@@ -27,6 +27,7 @@ BuildDepends: <<
 	tcltk,
 	tcltk-dev
 <<
+Provides: postgresql-server
 GCC: 4.0
 InfoTest: <<
 TestScript: <<
@@ -40,8 +41,8 @@ TestScript: <<
 <<
 <<
 
-Source: mirror:postgresql:source/v9.0rc1/postgresql-9.0rc1.tar.bz2
-Source-MD5: c10400b541b8ce2e8c083c6538712429
+Source: mirror:postgresql:source/v9.0.0/postgresql-9.0.0.tar.bz2
+Source-MD5: 14c2122cc322e69ab2ab702ed7714bbe
 PatchScript: sed -e 's|@BUILDDIR@|%b|g' -e 's|@INSTPREFIX@|%p|g' < %{PatchFile} | patch -p1
 PatchFile: %n.patch
 PatchFile-MD5: 3a631636c02956ab807bd4b08eef5e00
@@ -213,8 +214,8 @@ if [ -z "$PG_ID" ]; then
 	exit 1
 fi
 if [ -d "%p/var/postgresql-9.0/data" ]; then
-	if [ `%p/bin/dpkg -s postgresql90 | grep -c 9.0.0-0.beta1` -gt 0 ]; then
-		echo "Error!  The PostgreSQL 9.0 on-disk format has changed since 9.0 beta1."
+	if [ `%p/bin/dpkg -s postgresql90 | grep -c 9.0.0-0` -gt 0 ]; then
+		echo "Error!  The PostgreSQL 9.0 on-disk format has changed since the 9.0 betas."
 		echo "You must remove %p/var/postgresql-9.0/data before proceeding."
 		echo "You should probably back up with pg_dump if there's anything important.  ;)"
 		exit 1
@@ -242,8 +243,8 @@ SplitOff2: <<
 	PostInstScript: <<
 [ -x %p/var/postgresql-9.0/update-alternatives.sh ] && %p/var/postgresql-9.0/update-alternatives.sh
 if [ -d "%p/var/postgresql-9.0/data" ]; then
-	if [ `%p/bin/dpkg -s postgresql90 | grep -c 9.0.0-0.beta1` -gt 0 ]; then
-		echo "Error!  The PostgreSQL 9.0 on-disk format has changed since 9.0 beta1."
+	if [ `%p/bin/dpkg -s postgresql90 | grep -c 9.0.0-0` -gt 0 ]; then
+		echo "Error!  The PostgreSQL 9.0 on-disk format has changed since the 9.0 betas."
 		echo "You must remove %p/var/postgresql-9.0/data before proceeding."
 		echo "You should probably back up with pg_dump if there's anything important.  ;)"
 		exit 1
@@ -262,8 +263,8 @@ if [ -z "$PG_ID" ]; then
 	exit 1
 fi
 if [ -d "%p/var/postgresql-9.0/data" ]; then
-	if [ `%p/bin/dpkg -s postgresql90 | grep -c 9.0.0-0.beta1` -gt 0 ]; then
-		echo "Error!  The PostgreSQL 9.0 on-disk format has changed since 9.0 beta1."
+	if [ `%p/bin/dpkg -s postgresql90 | grep -c 9.0.0-0` -gt 0 ]; then
+		echo "Error!  The PostgreSQL 9.0 on-disk format has changed since the 9.0 betas."
 		echo "You must remove %p/var/postgresql-9.0/data before proceeding."
 		echo "You should probably back up with pg_dump if there's anything important.  ;)"
 		exit 1
