@@ -1,10 +1,10 @@
 Info4: <<
 Package: flexget
-Version: 1.0r1333
+Version: 1.0r1419
 Revision: 1
 Type: python(2.6)
 Source: http://download.flexget.com/unstable/FlexGet-%v-py%type_raw[python].egg
-Source-MD5: 9b9d9306b15ba2eb8bd0958f7be5d8a5
+Source-MD5: 5756a623167a76af41f51ffb9c53fa6b
 NoSourceDirectory: true
 BuildDepends: <<
 	fink (>= 0.28.0-1),
