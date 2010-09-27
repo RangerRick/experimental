@@ -1,14 +1,18 @@
 Package: libpaper1
-Version: 1.1.21
-Revision: 2
+Version: 1.1.24
+Revision: 1
 Depends: %N-shlibs (>= %v-%r)
-BuildDepends: libtool2, autoconf2.6, automake1.11
+BuildDepends: <<
+	fink (>= 0.24.12-1),
+	libtool2,
+	autoconf2.6,
+	automake1.11
+<<
 
 CustomMirror: RangerMirror
 Source: mirror:debian:pool/main/libp/libpaper/libpaper_%v.tar.gz
-Source-MD5: 6397f8d60a157119c1de5d19e4d82436
+Source-MD5: 5bc87d494ba470aba54f6d2d51471834
 SourceDirectory: libpaper-%v
-Patch: %n.patch
 
 ConfigureParams: --mandir=%p/share/man --disable-dependency-tracking --sysconfdir=%p/etc
 CompileScript: <<

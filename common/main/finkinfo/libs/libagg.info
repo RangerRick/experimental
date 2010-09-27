@@ -1,6 +1,6 @@
 Package: libagg
 Version: 2.5
-Revision: 1
+Revision: 2
 Description: 2D rendering engine for C++
 License: BSD
 Maintainer: Benjamin Reed <libagg@fink.raccoonfink.com>
@@ -24,7 +24,7 @@ Source-MD5: 0229a488bc47be10a2fee6cf0b2febd6
 SetCFLAGS: -Os
 SetCXXFLAGS: -Os
 SetLDFLAGS: -L/usr/X11/lib -L/usr/X11R6/lib
-ConfigureParams: --mandir=%p/share/man --infodir=%p/share/info --disable-sdltest
+ConfigureParams: --mandir=%p/share/man --infodir=%p/share/info --disable-sdltest --enable-examples=no --enable-ctrl=no
 CompileScript: <<
 #!/bin/sh -ex
 
@@ -54,7 +54,6 @@ SplitOff: <<
 	Shlibs: <<
 		%p/lib/libagg.2.dylib             3.0.0 libagg-shlibs (>= 2.3-1)
 		%p/lib/libaggfontfreetype.2.dylib 3.0.0 libagg-shlibs (>= 2.4-1)
-		%p/lib/libaggplatformmac.2.dylib  3.0.0 libagg-shlibs (>= 2.4-1)
 		%p/lib/libaggplatformsdl.2.dylib  3.0.0 libagg-shlibs (>= 2.4-1)
 		%p/lib/libaggplatformX11.2.dylib  3.0.0 libagg-shlibs (>= 2.3-1)
 	<<
