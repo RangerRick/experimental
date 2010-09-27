@@ -62,11 +62,11 @@ SplitOff: <<
 		lib/libaggplatform*.2*.dylib
 	<<
 	Shlibs: <<
-		%p/lib/libagg.2.dylib             3.0.0 libagg-shlibs (>= 2.3-1)
-		%p/lib/libaggfontfreetype.2.dylib 3.0.0 libagg-shlibs (>= 2.4-1)
-		%p/lib/libaggplatformsdl.2.dylib  3.0.0 libagg-shlibs (>= 2.4-1)
-		%p/lib/libaggplatformX11.2.dylib  3.0.0 libagg-shlibs (>= 2.3-1)
-		%p/lib/libaggplatformmac.2.dylib  3.0.0 libagg-shlibs (>= 2.5-1) 32
+		%p/lib/libagg.2.dylib                           3.0.0 libagg-shlibs (>= 2.3-1)
+		%p/lib/libaggfontfreetype.2.dylib               3.0.0 libagg-shlibs (>= 2.4-1)
+		%p/lib/libaggplatformsdl.2.dylib                3.0.0 libagg-shlibs (>= 2.4-1)
+		%p/lib/libaggplatformX11.2.dylib                3.0.0 libagg-shlibs (>= 2.3-1)
+		(%m != x86_64) %p/lib/libaggplatformmac.2.dylib 3.0.0 libagg-shlibs (>= 2.5-1)
 	<<
 <<
 SplitOff2: <<
