@@ -1,5 +1,5 @@
 Package: mysql-java
-Version: 5.1.10
+Version: 5.1.13
 Revision: 1
 CustomMirror: <<
  eur-AR: ftp://mysql.abideweb.com/mirrors/MySQL/
@@ -57,7 +57,7 @@ CustomMirror: <<
  oce-AU: ftp://planetmirror.com/pub/mysql/
 <<
 Source: mirror:custom:Downloads/Connector-J/mysql-connector-java-%v.tar.gz
-Source-MD5: f9da616de868ddd1acf1428334f3313d
+Source-MD5: 6bb2bc742d96341ddd4621c07a6fcba1
 Depends: system-java (>= 1.5-1)
 Type: java(1.5)
 CompileScript: echo "none needed"
