@@ -54,7 +54,7 @@ BuildDepends: <<
 	pkgconfig (>= 0.23-1),
 	slang,
 	speex3 (>= 1.1.5-1),
-	taglib (>= 1.6.1-5),
+	taglib (>= 1.6.3-1),
 	wavpack1-dev,
 	x11-dev,
 	xft2-dev,
@@ -116,7 +116,7 @@ SplitOff: <<
 		libvorbis0-shlibs,
 		slang-shlibs,
 		speex3-shlibs (>= 1.1.5-1),
-		taglib-shlibs (>= 1.6.1-5),
+		taglib-shlibs (>= 1.6.3-1),
 		wavpack1-shlibs,
 		x11-shlibs
 	<<

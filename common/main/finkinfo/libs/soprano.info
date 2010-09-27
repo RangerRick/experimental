@@ -1,6 +1,6 @@
 Info4: <<
 Package: soprano-%type_pkg[soprano]
-Version: 2.4.64
+Version: 2.5.2
 Revision: 1
 Type: soprano (x11 mac)
 Description: C++ RDF framework
@@ -38,7 +38,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:sourceforge:soprano/soprano-%v.tar.bz2
-Source-MD5: edb7f48dd4cc0d5baa75797520c189fc
+Source-MD5: c5562bae458cad6f5d4f344277a9a48a
 PatchFile: soprano.patch
 PatchFile-MD5: 1447c93a237bfa38369081d46d17b0f0
 PatchScript: <<

@@ -4,8 +4,8 @@ Package: qimageblitz-unified-x11
 #else
 Package: qimageblitz-unified-mac
 #endif
-Version: 0.0.4
-Revision: 2000
+Version: 0.0.6
+Revision: 1
 #ifdef TYPE_X11
 Type: blitz (x11)
 #else
@@ -26,8 +26,8 @@ Replaces: <<
 <<
 
 GCC: 4.0
-Source: mirror:sourceforge:qimageblitz/qimageblitz-%v.tar.bz2
-Source-MD5: cb87c7f1c0455e8984ee4830f1e749cf
+Source: mirror:kde:stable/qimageblitz/qimageblitz-%v.tar.bz2
+Source-MD5: 0ae2f7d4e0876764a97ca73799f61df4
 
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true

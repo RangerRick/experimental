@@ -1,6 +1,6 @@
 Info4: <<
 Package: libdbusmenu-qt-%type_pkg[qt]
-Version: 0.3.0
+Version: 0.6.4
 Revision: 1
 Description: DBus protocol for menus
 Type: qt (x11 mac)
@@ -22,10 +22,10 @@ BuildDepends: <<
 BuildDependsOnly: true
 GCC: 4.0
 
-Source: http://people.canonical.com/~agateau/dbusmenu/libdbusmenu-qt-%v.tar.bz2
-Source-MD5: cf239e0408b8b2be75e1cc731340e8dd
+Source: http://launchpad.net/libdbusmenu-qt/trunk/%v/+download/libdbusmenu-qt-%v.tar.bz2
+Source-MD5: c300e681a95ccdb69df42c66fe57c9a1
 PatchFile: libdbusmenu-qt.patch
-PatchFile-MD5: 05017c9250d2f6375513350492196b69
+PatchFile-MD5: 85cde11d4eec83b69f4726dc8bb0848c
 
 UseMaxBuildJobs: true
 CompileScript: <<
@@ -36,7 +36,7 @@ CompileScript: <<
 	
 	mkdir -p build
 	pushd build
-	cmake $KDE4_CMAKE_ARGS ..
+	cmake $KDE4_CMAKE_ARGS -DBUILD_TESTS:BOOLEAN=OFF ..
 	make VERBOSE=1
 	popd
 <<

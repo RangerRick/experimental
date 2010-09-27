@@ -1,7 +1,7 @@
 Info4: <<
 Package: taglib
-Version: 1.6.1
-Revision: 5
+Version: 1.6.3
+Revision: 1
 Description: Audio meta-data library
 License: LGPL
 Maintainer: Benjamin Reed <taglib@fink.raccoonfink.com>
@@ -20,7 +20,7 @@ CustomMirror: <<
 	nam-US: http://ranger.befunk.com/fink
 <<
 Source: http://ktown.kde.org/~wheeler/files/src/%n-%v.tar.gz
-Source-MD5: db0502b3c3448ff1f1f9b090c1daa5f7
+Source-MD5: ddf02f4e1d2dc30f76734df806e613eb
 PatchFile: %n.patch
 PatchFile-MD5: 6574a9274cf593111487b7313c6ff174
 
