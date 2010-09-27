@@ -1,7 +1,7 @@
-Info3: <<
+Info4: <<
 Package: liblastfm-%type_pkg[lastfm]-dev
-Version: 0.3.0
-Revision: 2
+Version: 0.3.3
+Revision: 1
 Type: lastfm (x11 mac)
 Depends: <<
 	liblastfm-%type_pkg[lastfm]-shlibs (= %v-%r),
@@ -17,8 +17,10 @@ BuildDepends: <<
 BuildDependsOnly: true
 
 GCC: 4.0
-Source: http://cdn.last.fm/src/liblastfm-%v.tar.bz2
-Source-MD5: 3f73222ebc31635941832b01e7a494b6
+Source: http://github.com/mxcl/liblastfm/tarball/%v
+Source-MD5: fe339bf46aefc515c251200d10262f79
+SourceRename: %n-%v.tar.gz
+SourceDirectory: mxcl-liblastfm-1c739eb
 
 PatchFile: liblastfm-dev.patch
 PatchFile-MD5: b878f7800a49676f545081cf293fa3e0
@@ -47,9 +49,9 @@ InstallScript: <<
 #!/bin/sh -ev
 
 	make -j1 install DESTDIR="%d"
-	install_name_tool -id "%p/opt/lastfm/%type_pkg[lastfm]/lib/liblastfm.0.dylib"                         "%i/opt/lastfm/%type_pkg[lastfm]/lib/liblastfm.0.3.0.dylib"
-	install_name_tool -id "%p/opt/lastfm/%type_pkg[lastfm]/lib/liblastfm_fingerprint.0.dylib"             "%i/opt/lastfm/%type_pkg[lastfm]/lib/liblastfm_fingerprint.0.1.0.dylib"
-	install_name_tool -change "liblastfm.0.dylib" "%p/opt/lastfm/%type_pkg[lastfm]/lib/liblastfm.0.dylib" "%i/opt/lastfm/%type_pkg[lastfm]/lib/liblastfm_fingerprint.0.1.0.dylib"
+	install_name_tool -id "%p/opt/lastfm/%type_pkg[lastfm]/lib/liblastfm.0.dylib"                         "%i/opt/lastfm/%type_pkg[lastfm]/lib/liblastfm.0.3.3.dylib"
+	install_name_tool -id "%p/opt/lastfm/%type_pkg[lastfm]/lib/liblastfm_fingerprint.0.dylib"             "%i/opt/lastfm/%type_pkg[lastfm]/lib/liblastfm_fingerprint.0.3.3.dylib"
+	install_name_tool -change "liblastfm.0.dylib" "%p/opt/lastfm/%type_pkg[lastfm]/lib/liblastfm.0.dylib" "%i/opt/lastfm/%type_pkg[lastfm]/lib/liblastfm_fingerprint.0.3.3.dylib"
 
 	install -d -m 755 %i/share/doc/%N
 	find demos -name _build -o -name Makefile -exec rm -rf {} \; || :
@@ -64,8 +66,8 @@ SplitOff: <<
 		opt/lastfm/%type_pkg[lastfm]/lib/liblastfm_fingerprint.0*.dylib
 	<<
 	Shlibs: <<
-		%p/opt/lastfm/%type_pkg[lastfm]/lib/liblastfm.0.dylib             0.3.0 %n (>= 0.3.0-1)
-		%p/opt/lastfm/%type_pkg[lastfm]/lib/liblastfm_fingerprint.0.dylib 0.1.0 %n (>= 0.3.0-1)
+		%p/opt/lastfm/%type_pkg[lastfm]/lib/liblastfm.0.dylib             0.3.0 %n (>= 0.3.3-1)
+		%p/opt/lastfm/%type_pkg[lastfm]/lib/liblastfm_fingerprint.0.dylib 0.3.0 %n (>= 0.3.3-1)
 	<<
 <<
 
