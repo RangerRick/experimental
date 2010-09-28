@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdelibs4-%type_pkg[kde]
-Version: 4.4.95
+Version: 4.5.1
 Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - essential libraries
@@ -57,8 +57,8 @@ BuildDepends: <<
 BuildConflicts: gamin-dev
 GCC: 4.0
 
-Source: mirror:kde:unstable/%v/src/kdelibs-%v.tar.bz2
-Source-MD5: 7ae2d54c39eccc670684ebda44176728
+Source: mirror:kde:stable/%v/src/kdelibs-%v.tar.bz2
+Source-MD5: f91f16b4349f8a2ca41dab5ca95f3877
 SourceDirectory: kdelibs-%v
 PatchFile: kdelibs4.patch
 PatchFile-MD5: 8de3fc7717396c9626ff7a1e0b338a4d
