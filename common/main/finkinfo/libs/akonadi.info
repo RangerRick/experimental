@@ -29,6 +29,7 @@ GCC: 4.0
 
 Source: http://download.akonadi-project.org/akonadi-%v.tar.bz2
 Source-MD5: ed19efb982f7debd7e109cf1397d0588
+PatchScript: perl -pi -e 's,SHARED,MODULE,g' qsqlite/*.txt
 
 CompileScript: <<
 #!/bin/sh -ev
@@ -39,7 +40,7 @@ CompileScript: <<
 
 	mkdir build
 	pushd build
-		cmake $KDE4_CMAKE_ARGS ..
+		cmake $KDE4_CMAKE_ARGS -DINSTALL_QSQLITE_IN_QT_PREFIX:BOOLEAN=ON ..
 		make VERBOSE=1
 	popd
 <<
