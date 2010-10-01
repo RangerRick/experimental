@@ -57,18 +57,18 @@ SplitOff: <<
 	Description: Shared libraries for llvm27-gcc42
 	Depends: llvm27 (>= %v-1)
 	Files: <<
-		opt/llvm-%v/lib/i386/libgfortran.2*.dylib
-		opt/llvm-%v/lib/i386/libgomp.1*.dylib
+		opt/llvm-%v/lib/%m/libgfortran.2*.dylib
+		opt/llvm-%v/lib/%m/libgomp.1*.dylib
 		opt/llvm-%v/lib/libgcc_s.1*.dylib
 		opt/llvm-%v/lib/libgfortran.2*.dylib
 		opt/llvm-%v/lib/libgomp.1*.dylib
 	<<
 	Shlibs: <<
-		%p/opt/llvm-%v/lib/i386/libgfortran.2.dylib 3.0.0 %N-shlibs (>= 2.7-1)
-		%p/opt/llvm-2.7/lib/i386/libgomp.1.dylib    2.0.0 %N-shlibs (>= 2.7-1)
-		%p/opt/llvm-2.7/lib/libgcc_s.1.dylib        1.0.0 %N-shlibs (>= 2.7-1)
-		%p/opt/llvm-2.7/lib/libgfortran.2.dylib     3.0.0 %N-shlibs (>= 2.7-1)
-		%p/opt/llvm-2.7/lib/libgomp.1.dylib         2.0.0 %N-shlibs (>= 2.7-1)
+		%p/opt/llvm-%v/lib/%m/libgfortran.2.dylib 3.0.0 %N-shlibs (>= 2.7-1)
+		%p/opt/llvm-%v/lib/%m/libgomp.1.dylib     2.0.0 %N-shlibs (>= 2.7-1)
+		%p/opt/llvm-%v/lib/libgcc_s.1.dylib       1.0.0 %N-shlibs (>= 2.7-1)
+		%p/opt/llvm-%v/lib/libgfortran.2.dylib    3.0.0 %N-shlibs (>= 2.7-1)
+		%p/opt/llvm-%v/lib/libgomp.1.dylib        2.0.0 %N-shlibs (>= 2.7-1)
 	<<
 <<
 

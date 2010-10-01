@@ -142,6 +142,8 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/*.so
 		opt/kde4/%type_pkg[kde]/lib/kde4/libexec
 		opt/kde4/%type_pkg[kde]/lib/kde4/plugins
+		opt/kde4/%type_pkg[kde]/lib/libkatepartinterfaces.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkcmutils.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkde3support.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdecore.5*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdefakes.5*.dylib
@@ -149,8 +151,10 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libkdeui.5*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdewebkit.5*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdnssd.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkemoticons.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkfile.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkhtml.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkidletime.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkimproxy.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkio.5*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkjs.4*.dylib
@@ -162,6 +166,7 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libknotifyconfig.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkntlm.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkparts.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkprintutils.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkpty.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkrosscore.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkrossqtsplugin.4*.dylib
@@ -177,6 +182,9 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libthreadweaver.4*.dylib
 	<<
 	Shlibs: <<
+		%p/opt/kde4/%type_pkg[kde]/lib/libkatepartinterfaces.4.dylib  4.0.0 %n (>= 4.5.1-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkcmutils.4.dylib            4.0.0 %n (>= 4.5.1-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkemoticons.4.dylib          4.0.0 %n (>= 4.5.1-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkde3support.4.dylib         4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkdecore.5.dylib             5.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkdefakes.5.dylib            5.0.0 %n (>= 4.2.4-1)
@@ -186,6 +194,7 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libkdnssd.4.dylib              4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkfile.4.dylib               4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkhtml.5.dylib               5.0.0 %n (>= 4.2.4-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkidletime.4.dylib           4.0.0 %n (>= 4.5.1-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkimproxy.4.dylib            4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkio.5.dylib                 5.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkjs.4.dylib                 4.0.0 %n (>= 4.2.4-1)
@@ -197,6 +206,7 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libknotifyconfig.4.dylib       4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkntlm.4.dylib               4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkparts.4.dylib              4.0.0 %n (>= 4.2.4-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkprintutils.4.dylib         4.0.0 %n (>= 4.5.1-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkpty.4.dylib                4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkrosscore.4.dylib           4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkrossqtsplugin.4.dylib      4.0.0 %n (>= 4.2.4-1)
