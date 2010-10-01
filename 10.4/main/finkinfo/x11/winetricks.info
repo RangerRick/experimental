@@ -22,7 +22,7 @@ Source: mirror:custom:%n/%n-%v
 Source-MD5: f5823c765572a90df2b52b476915cd59
 PatchScript: patch -p0 %n-%v %{PatchFile}
 PatchFile: %n.patch
-PatchFile-MD5: a00392392592f8d27a1bb4ded35f053c
+PatchFile-MD5: 8c56e7d0f9877e83940ee2eac3a16f52
 
 UseMaxBuildJobs: true
 CompileScript: true
