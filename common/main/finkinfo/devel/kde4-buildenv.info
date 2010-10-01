@@ -1,5 +1,5 @@
 Package: kde4-buildenv
-Version: 4.4.3
+Version: 4.5.1
 Revision: 1
 
 CustomMirror: <<
@@ -10,7 +10,7 @@ CustomMirror: <<
 	nam-CA: http://www.southofheaven.net/befunk
 <<
 Source: mirror:custom:%n/%n-%v-%r.sh
-Source-MD5: 9d3b6b3fa62facb01dce67e82e085218
+Source-MD5: f95f83ec15fadb226c9e387690edc4f6
 Source2: mirror:custom:%n/normalize-filenames-4.2.3-1.sh
 Source2-MD5: aa5d58694004df09f486abc9907f7e0a
 Depends: cmake (>= 2.6.3-1), fink (>= 0.29.7-1)
