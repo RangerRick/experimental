@@ -1,6 +1,6 @@
 Package: dbus1.3-shlibs
-Version: 1.2.16
-Revision: 101
+Version: 1.2.24
+Revision: 1
 Description: Message bus system for applications
 License: OSI-Approved
 Maintainer: Benjamin Reed <dbus@fink.racoonfink.com>
@@ -20,14 +20,14 @@ BuildDepends: <<
 Replaces: dbus-shlibs
 
 Source: http://dbus.freedesktop.org/releases/dbus/dbus-%v.tar.gz
-Source-MD5: c7a47b851ebe02f6726b65b78d1b730b
+Source-MD5: 565346cecd9cfecf1463540c6086cc2c
 PatchScript: <<
 	/usr/bin/sed -e 's,org.freedesktop.dbus-session,org.finkproject.dbus-session,g' -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | /usr/bin/patch -p1
 	perl -pi -e 's,DBUS_LAUNCHD_SESSION_BUS_SOCKET,DBUS_FINK_SESSION_BUS_SOCKET,g; s,org.freedesktop.dbus-session,org.finkproject.dbus-session,g' README* *.in bus/*.in bus/*.am dbus/*.c dbus/*.h
 	autoreconf -fvi
 <<
 PatchFile: %n.patch
-PatchFile-MD5: ae012eb9450cd4070f918beed3aee1c1
+PatchFile-MD5: fff43ac64d121a05ba254ce45c9c7251
 
 SetCFLAGS: -Os -g
 UseMaxBuildJobs: true
