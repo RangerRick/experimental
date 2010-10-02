@@ -10,7 +10,7 @@ SourceDirectory: qt-kde-qt-mac
 PatchFile: %n.patch
 PatchFile-MD5: 495e383d8f8f070a6752a74c9d5dd3bd
 PatchScript: <<
-	patch -p1 --fuzz=4 < %{PatchFile}
+	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 --fuzz=4
 	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp
 	perl -pi -e 's,CFG_MAC_XARCH=auto,CFG_MAC_XARCH=no,g' configure
 <<
