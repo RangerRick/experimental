@@ -237,6 +237,7 @@ SplitOff2: <<
 	BuildDependsOnly: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
+		opt/kde4/%type_pkg[kde]/lib/libkatepartinterfaces.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkde3support.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdecore.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdefakes.dylib
@@ -244,8 +245,10 @@ SplitOff2: <<
 		opt/kde4/%type_pkg[kde]/lib/libkdeui.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdewebkit.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdnssd.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkemoticons.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkfile.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkhtml.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkidletime.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkimproxy.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkio.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkjs.dylib
@@ -257,6 +260,7 @@ SplitOff2: <<
 		opt/kde4/%type_pkg[kde]/lib/libknotifyconfig.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkntlm.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkparts.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkprintutils.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkpty.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkrosscore.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkrossqtsplugin.dylib
