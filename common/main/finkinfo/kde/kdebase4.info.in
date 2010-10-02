@@ -64,8 +64,6 @@ GCC: 4.0
 Source: mirror:kde:stable/%v/src/kdebase-%v.tar.bz2
 Source-MD5: 9249b29618eed5dd5c7bfccacb3e0c43
 SourceDirectory: kdebase-%v
-PatchFile: kdebase4.patch
-PatchFile-MD5: d2a988e7312e8487e4a2cc5e3d39ae8b
 
 PatchScript: <<
 	%{default_script}

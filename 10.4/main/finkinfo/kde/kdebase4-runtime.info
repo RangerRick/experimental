@@ -64,8 +64,6 @@ GCC: 4.0
 Source: mirror:kde:stable/%v/src/kdebase-runtime-%v.tar.bz2
 Source-MD5: 83542744f8a23ff2b2621d152ce38fcc
 SourceDirectory: kdebase-runtime-%v
-PatchFile: kdebase4-runtime.patch
-PatchFile-MD5: 4dd9be27d3bd3b1c3aff060fd6cb91ed
 
 UseMaxBuildJobs: true
 CompileScript: <<

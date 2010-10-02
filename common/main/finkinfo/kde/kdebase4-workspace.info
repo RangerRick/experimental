@@ -66,7 +66,7 @@ Source: mirror:kde:stable/%v/src/kdebase-workspace-%v.tar.bz2
 Source-MD5: c030fa3530c3675636778d1561b012bd
 SourceDirectory: kdebase-workspace-%v
 PatchFile: kdebase4-workspace.patch
-PatchFile-MD5: fee95a2c9a51b2999852a418353f35df
+PatchFile-MD5: 67538ceb7847089ec74d307bbecbf0fb
 PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g; s,@FINKTYPE@,%type_pkg[kde],g' %{PatchFile} | patch -p1
 <<
