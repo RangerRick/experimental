@@ -1,11 +1,11 @@
 Info4: <<
 Package: qt4-mac
-Version: 4.6.2
-Revision: 3
+Version: 4.6.3
+Revision: 1
 GCC: 4.0
 CustomMirror: RangerMirror
-Source: mirror:custom:qt/qt-%v-mac-eee74602dae3693d86aa8972e4ca4e198ad8969f.tar.gz
-Source-MD5: 1862bbdd8342a8f163a58cf3ced0905d
+Source: mirror:custom:qt/qt-%v-mac-4979d9cf083278279bf9df7f92d76616353f022a.tar.gz
+Source-MD5: 85273fa2b6c776672a73e65012cc6231
 SourceDirectory: qt-kde-qt-mac
 PatchFile: %n.patch
 PatchFile-MD5: 495e383d8f8f070a6752a74c9d5dd3bd

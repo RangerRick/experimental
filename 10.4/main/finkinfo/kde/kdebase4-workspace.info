@@ -53,7 +53,7 @@ BuildDepends: <<
 	#	python26,
 	#	pyqt4-py26,
 	qca2-%type_pkg[kde] (>= 2.0.2-1),
-	qt4-%type_pkg[kde] (>= 4.6.1-1),
+	qt4-%type_pkg[kde] (>= 4.6.3-1),
 	strigi-dev (>= 0.6.3-1),
 	strigi-gui-%type_pkg[kde]-dev (>= 0.7.2-1),
 	(-%type_pkg[kde] = x11) x11-dev,

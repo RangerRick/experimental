@@ -15,7 +15,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	libiconv-dev (>= 1.12-3),
 	system-openssl-dev,
-	qt4-%type_pkg[qca] (>= 4.6.1-1)
+	qt4-%type_pkg[qca] (>= 4.6.3-1)
 <<
 GCC: 4.0
 
@@ -50,7 +50,7 @@ DocFiles: COPYING INSTALL README TODO
 SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for QCA
-	Depends: qt4-%type_pkg[qca]-gui-shlibs (>= 4.6.1-1)
+	Depends: qt4-%type_pkg[qca]-gui-shlibs (>= 4.6.3-1)
 	Recommends: %N (>= %v-%r)
 	DocFiles: COPYING
 	Files: opt/qca2/%type_pkg[qca]/lib/libqca.2*.dylib
