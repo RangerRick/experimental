@@ -1,6 +1,6 @@
 Package: librasqal-shlibs
 Version: 0.9.16
-Revision: 4
+Revision: 5
 Description: RDF query library
 License: GPL/LGPL
 Maintainer: Benjamin Reed <librasqal@fink.racoonfink.com>

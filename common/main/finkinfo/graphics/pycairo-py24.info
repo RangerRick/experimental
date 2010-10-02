@@ -9,7 +9,7 @@ Pycairo is set of Python bindings for the cairo graphics library.
 <<
 Homepage: http://cairographics.org/pycairo
 License: LGPL
-Maintainer: Benjamin Reed <pycairo-py@fink.racoonfink.com>
+Maintainer: Benjamin Reed <pycairo-py@fink.raccoonfink.com>
 BuildDepends: <<
 	cairo (>= 1.6-1),
 	expat1,

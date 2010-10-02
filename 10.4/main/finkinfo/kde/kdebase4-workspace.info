@@ -94,6 +94,7 @@ InstallScript: <<
 		make -j1 install/fast DESTDIR="%d"
 	popd
 
+	find %i -name \*.pyc -exec rm -rf {} \;
 	for file in kdesktop ktip panel; do
 		echo Hidden=true > %i/opt/kde4/%type_pkg[kde]/share/autostart/${file}.desktop
 	done
@@ -130,6 +131,7 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libkwinnvidiahack.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkworkspace.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/liblsofui.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/liboxygenstyle.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libplasma-geolocation-interface.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libplasmaclock.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libplasmagenericshell.4*.dylib
@@ -137,7 +139,7 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libprocessui.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libsolidcontrol.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libsolidcontrolifaces.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libsystemsettingsview.1*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libsystemsettingsview.2*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libtaskmanager.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libweather_ion.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/strigi
@@ -156,6 +158,7 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libkwinnvidiahack.4.dylib                4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkworkspace.4.dylib                    4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/liblsofui.4.dylib                        4.0.0 %n (>= 4.2.4-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/liboxygenstyle.4.dylib                   4.0.0 %n (>= 4.5.1-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libplasma-geolocation-interface.4.dylib  4.0.0 %n (>= 4.3.0-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libplasmaclock.4.dylib                   4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libplasmagenericshell.4.dylib            4.0.0 %n (>= 4.4.1-1)
@@ -163,7 +166,7 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libprocessui.4.dylib                     4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libsolidcontrol.4.dylib                  4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libsolidcontrolifaces.4.dylib            4.0.0 %n (>= 4.2.4-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libsystemsettingsview.1.dylib            1.0.0 %n (>= 4.4.1-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libsystemsettingsview.2.dylib            2.0.0 %n (>= 4.5.1-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libtaskmanager.4.dylib                   4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libweather_ion.4.dylib                   4.0.0 %n (>= 4.2.4-1)
 	<<
@@ -188,6 +191,7 @@ SplitOff2: <<
 		opt/kde4/%type_pkg[kde]/lib/libkwinnvidiahack.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkworkspace.dylib
 		opt/kde4/%type_pkg[kde]/lib/liblsofui.dylib
+		opt/kde4/%type_pkg[kde]/lib/liboxygenstyle.dylib
 		opt/kde4/%type_pkg[kde]/lib/libplasma-geolocation-interface.dylib
 		opt/kde4/%type_pkg[kde]/lib/libplasmaclock.dylib
 		opt/kde4/%type_pkg[kde]/lib/libplasmagenericshell.dylib
@@ -212,9 +216,9 @@ Shlibs: <<
 	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_ksysguard.dylib
 	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kwin.dylib
 	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kwin_rules_dialog.dylib
-	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kxkb.dylib
 	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_plasma-desktop.dylib
 	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_plasma-netbook.dylib
+	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_plasma-windowed.dylib
 <<
 
 PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :

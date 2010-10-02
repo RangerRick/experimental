@@ -1,6 +1,6 @@
 Package: gst-plugins-base-0.10
-Version: 0.10.26
-Revision: 2
+Version: 0.10.30
+Revision: 1
 Description: Base plugins for GStreamer
 License: GPL/LGPL
 Maintainer: Benjamin Reed <gst-plugins-base-0.10@fink.raccoonfink.com>
@@ -9,36 +9,39 @@ Depends: %N-shlibs (= %v-%r)
 BuildDepends: <<
 	avahi-dev,
 	bison,
-	cairo (>= 1.6-1),
-	dbus1.3-dev (>= 1.0-1),
-	dbus-glib1.2-dev (>= 1.0-1),
+	cairo (>= 1.8.8-1),
+	dbus-dev (>= 1.2.12-1),
 	expat1,
-	fink (>= 0.28.0-1),
+	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.5-1),
+	freetype219 (>= 2.3.7-7),
 	gconf2-dev (>= 2.20.0-1),
 	gettext-tools,
-	glib2-dev (>= 2.14.0-1),
+	glib2-dev (>= 2.18.4-1),
+	glitz,
 	gnome-vfs2-unified-dev (>= 1:2.20.0-1),
-	gstreamer-0.10-dev (>= 0.10.23-1),
-	gtk+2-dev (>= 2.12.0-1),
+	gstreamer-0.10-dev (>= 0.10.26-1),
+	gtk+2-dev (>= 2.14.7-1),
 	gtk-doc (>= 1.8-1),
-	intltool (>= 0.36.0-1),
+	intltool40 (>= 0.36.0-1),
 	libavahi-glib1-dev,
 	libbonobo2-dev (>= 2.20.0-1),
 	libcdparanoia0-dev (>= 3a9.8-11),
-	libgettext3-dev,
+	libgettext8-dev,
 	libiconv-dev,
-	liboil-0.3 (>= 0.3.14-1),
-	libxml2 (>= 2.6.27-1),
-	libxml2-py25,
+	libogg,
+	liboil-0.3 (>= 0.3.17-2),
+	libtheora0,
+	libvorbis0,
+	libxml2 (>= 2.6.32-1),
+	libxml2-py26,
 	orbit2-dev (>= 2.14.10-1),
-	pango1-xft2-ft219-dev (>= 1.18.4-4),
-	pixman (>= 0.10.0-1),
-	pkgconfig (>= 0.21-1),
+	pango1-xft2-ft219-dev (>= 1.22.4-1),
+	pixman (>= 0.16.0-1),
+	pkgconfig (>= 0.23-1),
 	popt,
-	python25,
-	pyxml-py25,
+	python26,
+	pyxml-py26,
 	x11-dev,
 	xmkmf
 <<
@@ -46,13 +49,13 @@ BuildConflicts: coreutils-default (<< 5.96-1)
 Replaces: gst-plugins-bad-0.10 (<< 0.10.10-1)
 
 Source: http://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-%v.tar.bz2
-Source-MD5: b6e051245508a24db89cd32cfaa009b3
-PatchFile: %n.patch
-PatchFile-MD5: 1ff290b1a5dab2f4372b2a955ebd7f28
+Source-MD5: 3ad90152b58563e1314af26c263f3c4c
 PatchScript: <<
 	sed -e 's,@GSTVERSION@,%v,' %{PatchFile} | patch -p1
 	perl -pi -e 's,osxvideosink,sdlvideosink,g;' configure
 <<
+PatchFile: %n.patch
+PatchFile-MD5: 1ff290b1a5dab2f4372b2a955ebd7f28
 
 SetCFLAGS: -Os -funroll-loops -fstrict-aliasing -fno-common
 SetCPPFLAGS: -fno-common -I%p/lib/freetype219/include/freetype2 -I%p/lib/freetype219/include -I%p/include/libcdparanoia -I%p/include
@@ -67,7 +70,7 @@ ConfigureParams: --without-check --libexecdir=%p/lib/%n --mandir=%p/share/man --
 CompileScript: <<
 #!/bin/sh -ex
 
-	export ac_cv_path_PYTHON=%p/bin/python2.5
+	export ac_cv_path_PYTHON=%p/bin/python2.6
 	export PATH="%p/lib/xmkmf/bin:$PATH"
 	./configure %c
 	make
@@ -83,22 +86,25 @@ SplitOff: <<
 	Description: Base shared library plugins for GStreamer
 	Depends: <<
 		expat1-shlibs,
-		freetype219-shlibs (>= 2.3.5-1),
+		freetype219-shlibs (>= 2.3.7-7),
 		gconf2-shlibs (>= 2.20.0-1),
 		gnome-vfs2-unified-shlibs (>= 1:2.20.0-1),
-		gstreamer-0.10-shlibs (>= 0.10.23-1),
-		gtk+2-shlibs (>= 2.12.0-1),
+		gstreamer-0.10-shlibs (>= 0.10.26-1),
+		gtk+2-shlibs (>= 2.14.7-1),
 		libbonobo2-shlibs (>= 2.20.0-1),
 		libcdparanoia0-shlibs,
 		libogg-shlibs,
-		liboil-0.3-shlibs (>= 0.3.14-1),
+		liboil-0.3-shlibs (>= 0.3.17-2),
 		libtheora0-shlibs,
 		libvorbis0-shlibs,
 		orbit2-shlibs (>= 2.14.10-1),
-		pango1-xft2-ft219-shlibs (>= 1.18.4-4),
+		pango1-xft2-ft219-shlibs (>= 1.22.4-1),
 		x11-shlibs
 	<<
-	Replaces: %N, gst-plugins-bad-0.10-shlibs (<< 0.10.10-1)
+	Replaces: <<
+		%N,
+		gst-plugins-bad-0.10-shlibs (<< 0.10.10-1)
+	<<
 	Recommends: gconf2 (>= 2.20.0-1)
 	Files: <<
 		lib/libgst*-0.10.*.dylib
@@ -124,8 +130,8 @@ SplitOff: <<
 SplitOff2: <<
 	Package: %N-dev
 	Depends: %N (= %v-%r)
-	BuildDependsOnly: True
 	Replaces: gst-plugins-bad-0.10-dev (<< 0.10.10-1)
+	BuildDependsOnly: True
 	Files: <<
 		include
 		lib
