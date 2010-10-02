@@ -1,3 +1,4 @@
+Info4: <<
 Package: redland-shlibs
 Version: 1.0.11
 Revision: 1
@@ -23,7 +24,6 @@ BuildDepends: <<
 	pkgconfig (>= 0.22-3),
 	sqlite3-dev,
 	system-openssl-dev,
-	virtuoso (>= 6.1.0-1),
 <<
 
 Depends: <<
@@ -34,7 +34,6 @@ Depends: <<
 	libtool2-shlibs,
 	pcre-shlibs,
 	sqlite3-shlibs,
-	virtuoso (>= 6.1.0-1),
 <<
 
 PatchScript: <<
@@ -45,7 +44,7 @@ PatchScript: <<
 
 SetCPPFLAGS: -I%p/lib/system-openssl/include -I%p/include/db4
 SetLDFLAGS: -L%p/lib/system-openssl/lib
-ConfigureParams: --enable-dependency-tracking --enable-gtk-doc --with-raptor=system --with-rasqal=system --without-threestore --without-mysql --without-postgresql 
+ConfigureParams: --enable-dependency-tracking --enable-gtk-doc --with-raptor=system --with-rasqal=system --without-threestore --without-mysql --without-postgresql --without-virtuoso
 
 InfoTest: TestScript: make check || exit 2
 
@@ -111,3 +110,4 @@ Description: RDF manipulation library
 License: GPL/LGPL
 Homepage: http://librdf.org/
 Maintainer: Benjamin Reed <redland@fink.raccoonfink.com>
+<<

@@ -29,7 +29,7 @@ PatchScript: <<
 
 SetCPPFLAGS: -I%p/lib/system-openssl/include
 SetLDFLAGS: -L%p/lib/system-openssl/lib
-ConfigureParams: --disable-dependency-tracking --disable-static --enable-gtk-doc
+ConfigureParams: --enable-dependency-tracking --disable-static --enable-gtk-doc
 
 InfoTest: TestScript: make check || exit 2
 

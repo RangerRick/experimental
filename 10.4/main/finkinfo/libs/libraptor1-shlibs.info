@@ -30,7 +30,7 @@ PatchScript: 	perl -pi -e 's,(\@CPPFLAGS\@),-I%p/lib/system-openssl/include \1,'
 SetCPPFLAGS: -I%p/lib/system-openssl/include
 SetLDFLAGS: -L%p/lib/system-openssl/lib
 UseMaxBuildJobs: true
-ConfigureParams: --disable-dependency-tracking --disable-static --enable-gtk-doc
+ConfigureParams: --enable-dependency-tracking --disable-static --enable-gtk-doc
 CompileScript: <<
 	%{default_script}
 	fink-package-precedence --prohibit-bdep libraptor1-dev .

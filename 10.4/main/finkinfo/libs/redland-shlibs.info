@@ -1,3 +1,4 @@
+Info4: <<
 Package: redland-shlibs
 Version: 1.0.11
 Revision: 1
@@ -12,8 +13,7 @@ Depends: <<
 	libssh2.1-shlibs,
 	libtool2-shlibs,
 	pcre-shlibs,
-	sqlite3-shlibs,
-	virtuoso (>= 6.1.2-1)
+	sqlite3-shlibs
 <<
 BuildDepends: <<
 	db48-aes | db48,
@@ -32,8 +32,7 @@ BuildDepends: <<
 	pcre,
 	pkgconfig (>= 0.23-1),
 	sqlite3-dev,
-	system-openssl-dev,
-	virtuoso (>= 6.1.2-1)
+	system-openssl-dev
 <<
 InfoTest: TestScript: make check || exit 2
 
@@ -48,7 +47,7 @@ PatchScript: <<
 SetCPPFLAGS: -I%p/lib/system-openssl/include -I%p/include/db4
 SetLDFLAGS: -L%p/lib/system-openssl/lib
 UseMaxBuildJobs: true
-ConfigureParams: --enable-dependency-tracking --enable-gtk-doc --with-raptor=system --with-rasqal=system --without-threestore --without-mysql --without-postgresql
+ConfigureParams: --enable-dependency-tracking --enable-gtk-doc --with-raptor=system --with-rasqal=system --without-threestore --without-mysql --without-postgresql --without-virtuoso
 CompileScript: <<
 	#!/bin/sh -ev
 	
@@ -103,5 +102,6 @@ Resource Description Framework (RDF).
 * Querying with SPARQL and RDQL using the Rasqal RDF Query Library.
 * Data aggregation and recording provenance support with Redland contexts.
 * Portable, fast and with no known memory leaks.
+<<
 <<
 
