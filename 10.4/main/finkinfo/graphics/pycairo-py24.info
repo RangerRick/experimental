@@ -6,7 +6,7 @@ Distribution: 10.4, 10.5
 Description: Python bindings for the cairo library
 Type: python 2.4
 License: LGPL
-Maintainer: Benjamin Reed <pycairo-py@fink.racoonfink.com>
+Maintainer: Benjamin Reed <pycairo-py@fink.raccoonfink.com>
 
 Depends: <<
 	cairo-shlibs (>= 1.8.10-3),

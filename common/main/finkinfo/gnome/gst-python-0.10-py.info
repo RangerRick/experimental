@@ -42,7 +42,8 @@ Replaces: <<
 	gst-python-0.10-py23,
 	gst-python-0.10-py24,
 	gst-python-0.10-py25,
-	gst-python-0.10-py25
+	gst-python-0.10-py26,
+	gst-python-0.10-py27
 <<
 GCC: 4.0
 
@@ -70,7 +71,7 @@ CompileScript: <<
 
 InstallScript: <<
 #!/bin/sh -ex
-	make install DESTDIR=%d examplesdir=%p/share/doc/%N/examples
+	make -j1 install DESTDIR=%d examplesdir=%p/share/doc/%N/examples
 
 	# these are in gst-python-0.10-defs instead
 	rm -rf %i/share/gst-python/0.10/defs

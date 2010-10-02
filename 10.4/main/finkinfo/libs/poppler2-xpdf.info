@@ -3,7 +3,7 @@ Version: 0.6.4
 Revision: 5
 Description: PDF rendering library (alternate interface)
 License: GPL
-Maintainer: Benjamin Reed <poppler2@fink.racoonfink.com>
+Maintainer: Benjamin Reed <poppler2@fink.raccoonfink.com>
 
 Depends: poppler2-shlibs (>= %v-1)
 BuildDepends: <<

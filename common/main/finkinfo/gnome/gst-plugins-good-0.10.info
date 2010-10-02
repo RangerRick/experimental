@@ -43,6 +43,7 @@ BuildDepends: <<
 	liboil-0.3 (>= 0.3.17-2),
 	libpng3,
 	libshout4,
+	libspeex1,
 	libtheora0,
 	libusb,
 	libvorbis0,
@@ -54,7 +55,6 @@ BuildDepends: <<
 	pyxml-py26,
 	pkgconfig (>= 0.23-1),
 	slang,
-	speex3 (>= 1.1.5-1),
 	taglib (>= 1.6.1-3),
 	wavpack1-dev,
 	x11-dev,
@@ -81,13 +81,13 @@ SetLIBS: -L%p/lib -lz
 NoSetCFLAGS: true
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
-NoSetMAKEFLAGS: true
 ConfigureParams: --without-check --libexecdir=%p/lib/%n --mandir=%p/share/man --enable-gtk-doc --disable-static --disable-dependency-tracking --enable-tests --enable-failing-tests --disable-schemas-install PKG_CONFIG_PATH="%p/lib/pango-ft219/lib/pkgconfig:%p/lib/fontconfig2/lib/pkgconfig:%p/lib/freetype219/lib/pkgconfig:$PKG_CONFIG_PATH" FREETYPE_CONFIG=%p/lib/freetype219/bin/freetype-config
 CompileScript: <<
 #!/bin/sh -ex
 
 	export ac_cv_path_PYTHON=%p/bin/python2.6
 	export PATH="%p/lib/xmkmf/bin:$PATH"
+	export PERL5LIB="%p/share/gtk-doc/data:$PERL5LIB"
 	./configure %c
 	make
 <<
@@ -112,10 +112,10 @@ SplitOff: <<
 		libogg-shlibs,
 		libpng3-shlibs (>= 1.2.8-1),
 		libshout4-shlibs,
+		libspeex1-shlibs,
 		libtheora0-shlibs,
 		libvorbis0-shlibs,
 		slang-shlibs,
-		speex3-shlibs (>= 1.1.5-1),
 		taglib-shlibs (>= 1.6.1-3),
 		wavpack1-shlibs,
 		x11-shlibs

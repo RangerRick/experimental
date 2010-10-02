@@ -60,17 +60,15 @@ PatchScript: <<
 	perl -pi -e 's,Quicktime,QuickTime,' sys/qtwrapper/{{qt{wrapper,utils},codecmapping}.h,audiodecoders.c}
 <<
 PatchFile: %n.patch
-PatchFile-MD5: b86814242b83a86e17fe58e3c9cc17cf
+PatchFile-MD5: 76935e4b23dd448d7a518ce9f228d427
 
 SetCFLAGS: -Os -funroll-loops -fstrict-aliasing -fno-common
 SetCPPFLAGS: -fno-common -I%p/lib/system-openssl/include -I%p/lib/freetype219/include/freetype2 -I%p/lib/freetype219/include -I%p/include -I/usr/X11R6/include
 SetLDFLAGS: -L%p/lib/system-openssl/lib -L%p/lib/freetype219/lib
 SetLIBS: -L%p/lib -L/usr/X11R6/lib -lz
-SetMAKEFLAGS: -j1
 NoSetCFLAGS: true
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
-NoSetMAKEFLAGS: true
 ConfigureParams: --without-check --libexecdir=%p/lib/%n --mandir=%p/share/man --enable-gtk-doc --disable-static --disable-dependency-tracking --disable-sdltest --disable-directfb --disable-dts --disable-divx --disable-libmms --disable-swfdec --disable-ivorbis --disable-xvid --disable-opengl --enable-tests --enable-failing-tests PKG_CONFIG_PATH="%p/lib/fontconfig2/lib/pkgconfig:%p/lib/freetype219/lib/pkgconfig:$PKG_CONFIG_PATH" FREETYPE_CONFIG=%p/lib/freetype219/bin/freetype-config (%m = x86_64) --disable-osx_video (%m = x86_64) --disable-quicktime
 CompileScript: <<
 #!/bin/sh -ex
@@ -78,6 +76,7 @@ CompileScript: <<
 	export PKG_CONFIG_PATH="%p/lib/system-openssl/lib/pkgconfig:$PKG_CONFIG_PATH"
 	export ac_cv_path_PYTHON=%p/bin/python2.6
 	export PATH="%p/lib/xmkmf/bin:$PATH"
+	export PERL5LIB="%p/share/gtk-doc/data:$PERL5LIB"
 	./configure %c
 	perl -pi -e 's,-no-undefined,,' ext/mpeg2enc/Makefile
 	make
@@ -85,7 +84,7 @@ CompileScript: <<
 
 InstallScript: <<
 #!/bin/sh -ex
-	make install DESTDIR=%d
+	make -j1 install DESTDIR=%d
 <<
 DocFiles: AUTHORS COPYING* ChangeLog INSTALL NEWS README RELEASE REQUIREMENTS
 SplitOff: <<
