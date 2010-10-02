@@ -10,9 +10,9 @@ Depends: <<
 	bundle-kde4-mac (>= %v-1),
 	kdeartwork4-mac (>= %v-1),
 	kdegames4-mac (>= %v-1),
-	kdegraphics4-mac (>= 4.4.1-1),
+	kdegraphics4-mac (>= 4.5.1-1),
 	kdenetwork4-mac (>= %v-1),
-	kdepim4-mac (>= 4.4.1-1),
+	kdepim4-mac (>= 4.5.1-1),
 	kdetoys4-mac (>= %v-1),
 	kdeutils4-mac (>= %v-1)
 <<

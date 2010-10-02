@@ -14,7 +14,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	fink (>= 0.29.7-1),
-	kde4-buildenv (>= 4.4.3-1),
+	kde4-buildenv (>= 4.5.1-1),
 	qt4-%type_pkg[qt] (>= 4.6.1-1),
 	(%type_pkg[qt] = x11) x11-dev
 <<

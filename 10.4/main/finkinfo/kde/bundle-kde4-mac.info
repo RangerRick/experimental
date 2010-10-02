@@ -9,9 +9,9 @@ Maintainer: Benjamin Reed <bundle-kde4@fink.raccoonfink.com>
 Depends: <<
 	kdeaccessibility4-mac (>= %v-1),
 	kdeadmin4-mac (>= %v-1),
-	kdebase4-runtime-mac (>= 4.4.1-1),
-	kdeedu4-mac (>= 4.4.1-1),
-	kdemultimedia4-mac (>= 4.4.1-1),
+	kdebase4-runtime-mac (>= 4.5.1-1),
+	kdeedu4-mac (>= 4.5.1-1),
+	kdemultimedia4-mac (>= 4.5.1-1),
 	kdesdk4-mac (>= %v-1),
 	kdewebdev4-mac (>= %v-1)
 <<

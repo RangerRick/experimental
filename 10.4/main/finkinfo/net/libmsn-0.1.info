@@ -7,7 +7,7 @@ Maintainer: Benjamin Reed <libmsn@fink.raccoonfink.com>
 
 Depends: %N-shlibs (= %v-%r)
 BuildDepends: <<
-	cmake (>= 2.6.4-1),
+	cmake (>= 2.8.2-1),
 	fink (>= 0.29.7-1),
 	system-openssl-dev
 <<

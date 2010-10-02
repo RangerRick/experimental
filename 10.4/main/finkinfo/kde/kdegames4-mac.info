@@ -47,7 +47,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
-	cmake (>= 2.6.4-1),
+	cmake (>= 2.8.2-1),
 	dbus-dev (>= 1.2.12-1),
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
@@ -55,9 +55,9 @@ BuildDepends: <<
 	ggz-client-libs2-dev,
 	libggz2,
 	glib2-dev (>= 2.22.0-1),
-	kde4-buildenv (>= 4.4.3-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.4.1-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
+	kde4-buildenv (>= 4.5.1-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.5.1-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
 	libgettext8-dev,
 	pkgconfig (>= 0.23-1),
 	qca2-%type_pkg[kde] (>= 2.0.2-1),
@@ -782,7 +782,7 @@ SplitOff40: <<
 SplitOff41: <<
 	Package: %N-base-shlibs
 	Description: KDE4 - kdegames base shared libraries
-	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1)
+	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.5.1-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/libkdegames.5*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkggzgames.4*.dylib
@@ -803,7 +803,7 @@ SplitOff42: <<
 	Description: KDE4 - kdegames base package
 	Depends: <<
 		%n-shlibs (>= %v-%r),
-		kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1),
+		kdebase4-runtime-%type_pkg[kde] (>= 4.5.1-1),
 		qca2-%type_pkg[kde]-shlibs (>= 2.0.2-1)
 	<<
 	Files: opt

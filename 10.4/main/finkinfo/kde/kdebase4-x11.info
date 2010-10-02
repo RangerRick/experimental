@@ -9,8 +9,8 @@ Maintainer: Benjamin Reed <kdebase4@fink.raccoonfink.com>
 
 Depends: <<
 	%N-shlibs (= %v-%r),
-	kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1),
-	kdelibs4-%type_pkg[kde] (>= 4.4.1-1),
+	kdebase4-runtime-%type_pkg[kde] (>= 4.5.1-1),
+	kdelibs4-%type_pkg[kde] (>= 4.5.1-1),
 	libknotificationitem1-%type_pkg[kde] (>= 4.3.4-1),
 	strigi-gui-%type_pkg[kde] (>= 0.7.2-1)
 <<
@@ -19,7 +19,7 @@ BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
 	qimageblitz-unified-%type_pkg[kde] (>= 0.0.6-1),
 	bzip2-dev,
-	cmake (>= 2.6.4-1),
+	cmake (>= 2.8.2-1),
 	cups-dev,
 	cyrus-sasl2-dev,
 	dbus-dev (>= 1.2.12-1),
@@ -30,9 +30,9 @@ BuildDepends: <<
 	gettext-tools,
 	giflib,
 	glib2-dev (>= 2.22.0-1),
-	kde4-buildenv (>= 4.4.3-1),
-	kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
+	kde4-buildenv (>= 4.5.1-1),
+	kdebase4-runtime-%type_pkg[kde] (>= 4.5.1-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
 	libgettext8-dev,
 	libidn,
 	libjasper.1,

@@ -5,7 +5,7 @@ Description: Modular and reusable compiler
 License: BSD
 Maintainer: Benjamin Reed <llvm@fink.raccoonfink.com>
 
-BuildDepends: cmake (>= 2.6.4-1)
+BuildDepends: cmake (>= 2.8.2-1)
 InfoTest: 	TestScript: make check || exit 1
 
 Source: http://llvm.org/releases/%v/llvm-%v.tgz

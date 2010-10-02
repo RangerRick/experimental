@@ -10,13 +10,13 @@ Maintainer: Benjamin Reed <soprano@fink.raccoonfink.com>
 Depends: %N-shlibs (= %v-%r)
 BuildDepends: <<
 	clucene-core (>= 0.9.20-1),
-	cmake (>= 2.6.4-1),
+	cmake (>= 2.8.2-1),
 	db48-aes | db48,
 	dbus-dev (>= 1.2.12-1),
 	fink (>= 0.29.7-1),
 	fink-package-precedence (>= 0.7-1),
 	gmp,
-	kde4-buildenv (>= 4.4.3-1),
+	kde4-buildenv (>= 4.5.1-1),
 	libcurl4,
 	libiconv,
 	libmpfr1,

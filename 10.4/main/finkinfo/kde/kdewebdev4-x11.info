@@ -16,16 +16,16 @@ Depends: <<
 BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
 	boost1.41.cmake,
-	cmake (>= 2.6.4-1),
+	cmake (>= 2.8.2-1),
 	dbus-dev (>= 1.2.12-1),
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),
-	kde4-buildenv (>= 4.4.3-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.4.1-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
+	kde4-buildenv (>= 4.5.1-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.5.1-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
 	libgettext8-dev,
 	libxml2,
 	libxslt,
@@ -102,7 +102,7 @@ SplitOff10: <<
 SplitOff11: <<
 	Package: %N-base
 	Description: KDE4 - kdewebdev base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1)
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.5.1-1)
 	Files: opt share/doc/installed-packages/%n
 <<
 SplitOff2: <<

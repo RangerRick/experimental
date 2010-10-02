@@ -8,8 +8,8 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <oxygen-icons@fink.raccoonfink.com>
 
 BuildDepends: <<
-	cmake (>= 2.6.4-1),
-	kde4-buildenv (>= 4.4.3-1)
+	cmake (>= 2.8.2-1),
+	kde4-buildenv (>= 4.5.1-1)
 <<
 Replaces: <<
 	kdebase4-runtime-%type_pkg[kde] (<< 4.3.0-1),

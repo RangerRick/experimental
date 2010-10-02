@@ -19,7 +19,7 @@ BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
 	qimageblitz-unified-%type_pkg[kde],
 	boost1.41.cmake,
-	cmake (>= 2.6.4-1),
+	cmake (>= 2.8.2-1),
 	create-resources (>= 0.1-1),
 	dbus-dev (>= 1.2.12-1),
 	eigen2,
@@ -31,10 +31,10 @@ BuildDepends: <<
 	gmm,
 	graphicsmagick-dev (>= 1.1-1),
 	gsl (>= 1.7-1),
-	kde4-buildenv (>= 4.4.3-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.4.1-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.4.1-1),
+	kde4-buildenv (>= 4.5.1-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.5.1-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
 	lcms,
 	libexiv2-0.19,
 	libgettext8-dev,
@@ -134,8 +134,8 @@ SplitOff10: <<
 	Description: KDE4 - koffice base shared libraries
 	Depends: <<
 		karbon2-%type_pkg[kde]-shlibs (>= %v-%r),
-		kdebase4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.4.1-1),
+		kdebase4-%type_pkg[kde]-shlibs (>= 4.5.1-1),
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.5.1-1),
 		kdepimlibs4-%type_pkg[kde]-shlibs,
 		lcms-shlibs,
 		libwpd-0.8-shlibs (>= 0.8.14-1),
@@ -206,7 +206,7 @@ SplitOff12: <<
 	Description: KDE4 - koffice base package
 	Depends: <<
 		create-resources (>= 0.1-1),
-		kdebase4-runtime-%type_pkg[kde] (>= 4.4.1-1),
+		kdebase4-runtime-%type_pkg[kde] (>= 4.5.1-1),
 		%N-base-shlibs (>= %v-%r)
 	<<
 	Files: <<
