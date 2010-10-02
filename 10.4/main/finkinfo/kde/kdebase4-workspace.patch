@@ -1300,6 +1300,15 @@ diff -Nurd kdebase-workspace-4.5.1/plasma/generic/dataengines/metadata/CMakeList
  target_link_libraries(plasma_engine_metadata
  		      ${KDE4_KIO_LIBS}
                        ${KDE4_KDECORE_LIBS}
+diff -Nurd kdebase-workspace-4.5.1/plasma/netbook/shell/CMakeLists.txt kdebase-workspace-4.5.1-new/plasma/netbook/shell/CMakeLists.txt
+--- kdebase-workspace-4.5.1/plasma/netbook/shell/CMakeLists.txt	2010-07-07 13:10:15.000000000 -0400
++++ kdebase-workspace-4.5.1-new/plasma/netbook/shell/CMakeLists.txt	2010-10-02 14:33:10.000000000 -0400
+@@ -1,4 +1,4 @@
+-include_directories(${KDEBASE_WORKSPACE_SOURCE_DIR}/libs ${KDEBASE_WORKSPACE_SOURCE_DIR}/libs/plasmagenericshell ${KDEBASE_WORKSPACE_SOURCE_DIR}/plasma/netbook/shell/scripting/ ${KDEBASE_WORKSPACE_SOURCE_DIR}/libs/kephal ${KDEBASE_WORKSPACE_SOURCE_DIR}/libs/kworkspace)
++include_directories(${KDEBASE_WORKSPACE_SOURCE_DIR}/libs ${KDEBASE_WORKSPACE_SOURCE_DIR}/libs/plasmagenericshell ${KDEBASE_WORKSPACE_SOURCE_DIR}/plasma/netbook/shell/scripting/ ${KDEBASE_WORKSPACE_SOURCE_DIR}/libs/kephal ${KDEBASE_WORKSPACE_SOURCE_DIR}/libs/kworkspace ${OPENGL_INCLUDE_DIR})
+ 
+ 
+ set(plasma-netbook_SRCS
 diff -Nurd kdebase-workspace-4.5.1/plasma/netbook/shell/plasmaapp.cpp kdebase-workspace-4.5.1-new/plasma/netbook/shell/plasmaapp.cpp
 --- kdebase-workspace-4.5.1/plasma/netbook/shell/plasmaapp.cpp	2010-07-06 02:54:32.000000000 -0400
 +++ kdebase-workspace-4.5.1-new/plasma/netbook/shell/plasmaapp.cpp	2010-10-02 11:21:26.000000000 -0400
