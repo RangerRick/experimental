@@ -12,7 +12,8 @@ Depends: <<
 	libssh2.1-shlibs,
 	libtool2-shlibs,
 	pcre-shlibs,
-	sqlite3-shlibs
+	sqlite3-shlibs,
+	virtuoso (>= 6.1.2-1)
 <<
 BuildDepends: <<
 	db48-aes | db48,
@@ -31,7 +32,8 @@ BuildDepends: <<
 	pcre,
 	pkgconfig (>= 0.23-1),
 	sqlite3-dev,
-	system-openssl-dev
+	system-openssl-dev,
+	virtuoso (>= 6.1.2-1)
 <<
 InfoTest: TestScript: make check || exit 2
 

@@ -22,7 +22,8 @@ BuildDepends: <<
 	pcre,
 	pkgconfig (>= 0.22-3),
 	sqlite3-dev,
-	system-openssl-dev
+	system-openssl-dev,
+	virtuoso (>= 6.1.0-1),
 <<
 
 Depends: <<
@@ -32,7 +33,8 @@ Depends: <<
 	libssh2.1-shlibs,
 	libtool2-shlibs,
 	pcre-shlibs,
-	sqlite3-shlibs
+	sqlite3-shlibs,
+	virtuoso (>= 6.1.0-1),
 <<
 
 PatchScript: <<
