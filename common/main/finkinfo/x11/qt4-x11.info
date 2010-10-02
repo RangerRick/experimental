@@ -8,7 +8,7 @@ Source: mirror:custom:qt/qt-%v-mac-4979d9cf083278279bf9df7f92d76616353f022a.tar.
 Source-MD5: 85273fa2b6c776672a73e65012cc6231
 SourceDirectory: qt-kde-qt-mac
 PatchFile: %n.patch
-PatchFile-MD5: 495e383d8f8f070a6752a74c9d5dd3bd
+PatchFile-MD5: e8cffaea5896586e31b680f8b1ae6492
 PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 --fuzz=4
 	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp

@@ -1,0 +1,12 @@
+diff -Nurd kdebase-runtime-4.5.1/kioslave/thumbnail/CMakeLists.txt kdebase-runtime-4.5.1-new/kioslave/thumbnail/CMakeLists.txt
+--- kdebase-runtime-4.5.1/kioslave/thumbnail/CMakeLists.txt	2010-01-26 19:22:22.000000000 -0500
++++ kdebase-runtime-4.5.1-new/kioslave/thumbnail/CMakeLists.txt	2010-10-02 11:44:28.000000000 -0400
+@@ -101,7 +101,7 @@
+ 
+    kde4_add_plugin(exrthumbnail ${exrthumbnail_PART_SRCS})
+ 
+-   target_link_libraries(exrthumbnail ${KDE4_KIO_LIBS} ${OPENEXR_LIBRARIES})
++   target_link_libraries(exrthumbnail ${KDE4_KIO_LIBS} ${OPENEXR_LIBRARIES} z)
+ 
+    install(TARGETS exrthumbnail DESTINATION ${PLUGIN_INSTALL_DIR})
+    install( FILES exrthumbnail.desktop DESTINATION ${SERVICES_INSTALL_DIR})

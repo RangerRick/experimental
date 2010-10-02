@@ -34,6 +34,7 @@ BuildDepends: <<
 	kde4-buildenv (>= 4.5.1-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
 	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
+	libdbusmenu-qt-%type_pkg[kde] (>= 0.6.4-1),
 	libgettext8-dev,
 	libidn,
 	libjasper.1,
@@ -67,7 +68,7 @@ Source-MD5: c030fa3530c3675636778d1561b012bd
 SourceDirectory: kdebase-workspace-%v
 PatchScript: sed -e 's,@FINKPREFIX@,%p,g; s,@FINKTYPE@,%type_pkg[kde],g' %{PatchFile} | patch -p1
 PatchFile: kdebase4-workspace.patch
-PatchFile-MD5: 67538ceb7847089ec74d307bbecbf0fb
+PatchFile-MD5: bf06b8d638512d38dafa5fb0410bd42a
 
 UseMaxBuildJobs: true
 CompileScript: <<
