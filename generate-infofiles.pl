@@ -118,6 +118,7 @@ my $version_lookup = {
 		'^libpng3(-shlibs)?$'                 => [ '1.2.8',        '1'    ],
 		'^libpng14(-shlibs)?$'                => [ '1.4.1',        '2'    ],
 		'^libpqxx2(-dev|-shlibs)?$'           => [ '1:2.6.8',      '1'    ],
+		'^libraptor1(-dev|-shlibs)?$'         => [ '1.4.21',       '1'    ],
 		'^librasqal(-dev|-shlibs)?$'          => [ '0.9.16',       '4'    ],
 		'^librasqal2(-dev|-shlibs)?$'         => [ '0.9.20',       '1'    ],
 		'^librsvg2(-bin|-dev|-shlibs)?$'      => [ '2.24.0',       '1'    ],

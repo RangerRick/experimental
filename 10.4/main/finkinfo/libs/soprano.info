@@ -20,14 +20,14 @@ BuildDepends: <<
 	libcurl4,
 	libiconv,
 	libmpfr1,
-	libraptor1-dev (>= 1.4.16-1),
-	librasqal2-dev (>= 0.9.19-1),
+	libraptor1-dev (>= 1.4.21-1),
+	librasqal2-dev (>= 0.9.20-1),
 	libssh2.1,
 	libxml2,
 	libxslt,
 	pcre (>= 7.6-1),
 	pkgconfig (>= 0.23-1),
-	redland-dev (>= 1.0.9-1),
+	redland-dev (>= 1.0.11-1),
 	sqlite3-dev,
 	system-openssl-dev,
 	qt4-%type_pkg[soprano] (>= 4.6.3-1),
@@ -84,8 +84,8 @@ SplitOff: <<
 	Depends: <<
 		clucene-core-shlibs (>= 0.9.20-1),
 		dbus-shlibs (>= 1.2.12-1),
-		librasqal2-shlibs (>= 0.9.19-1),
-		redland-shlibs (>= 1.0.9-1),
+		librasqal2-shlibs (>= 0.9.20-1),
+		redland-shlibs (>= 1.0.11-1),
 		qt4-%type_pkg[soprano]-core-shlibs (>= 4.6.3-1),
 		virtuoso (>= 6.1.2-1)
 	<<

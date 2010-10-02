@@ -7,7 +7,7 @@ Maintainer: Benjamin Reed <redland@fink.raccoonfink.com>
 
 Depends: <<
 	db48-aes-shlibs | db48-shlibs,
-	libraptor1-shlibs (>= 1.4.17-1),
+	libraptor1-shlibs (>= 1.4.21-1),
 	librasqal2-shlibs (>= 0.9.20-1),
 	libssh2.1-shlibs,
 	libtool2-shlibs,
@@ -22,7 +22,7 @@ BuildDepends: <<
 	libcurl4,
 	libiconv,
 	libmpfr1,
-	libraptor1-dev (>= 1.4.17-1),
+	libraptor1-dev (>= 1.4.21-1),
 	librasqal2-dev (>= 0.9.20-1),
 	libssh2.1,
 	libtool2,
