@@ -62,7 +62,7 @@ Source: mirror:kde:stable/%v/src/kdelibs-%v.tar.bz2
 Source-MD5: f91f16b4349f8a2ca41dab5ca95f3877
 SourceDirectory: kdelibs-%v
 PatchFile: kdelibs4.patch
-PatchFile-MD5: 8de3fc7717396c9626ff7a1e0b338a4d
+PatchFile-MD5: b01a1f09ac188f8793600d1cd36217af
 PatchScript: sed -e 's,@KDEPREFIX@,%p,g' -e 's,@KDETYPE@,%type_pkg[kde],g' %{PatchFile} | patch -p1
 
 CompileScript: <<
