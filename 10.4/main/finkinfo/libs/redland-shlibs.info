@@ -1,5 +1,5 @@
 Package: redland-shlibs
-Version: 1.0.9
+Version: 1.0.11
 Revision: 1
 Description: RDF manipulation library
 License: GPL/LGPL
@@ -8,7 +8,7 @@ Maintainer: Benjamin Reed <redland@fink.raccoonfink.com>
 Depends: <<
 	db48-aes-shlibs | db48-shlibs,
 	libraptor1-shlibs (>= 1.4.17-1),
-	librasqal2-shlibs (>= 0.9.19-1),
+	librasqal2-shlibs (>= 0.9.20-1),
 	libssh2.1-shlibs,
 	libtool2-shlibs,
 	pcre-shlibs,
@@ -23,7 +23,7 @@ BuildDepends: <<
 	libiconv,
 	libmpfr1,
 	libraptor1-dev (>= 1.4.17-1),
-	librasqal2-dev (>= 0.9.19-1),
+	librasqal2-dev (>= 0.9.20-1),
 	libssh2.1,
 	libtool2,
 	libxml2,
@@ -36,7 +36,7 @@ BuildDepends: <<
 InfoTest: TestScript: make check || exit 2
 
 Source: http://download.librdf.org/source/redland-%v.tar.gz
-Source-MD5: e5ef0c29c55b4f0f5aeed7955b4d383b
+Source-MD5: e1769361c907a216c6a75fc692ba412b
 PatchScript: <<
 	perl -pi -e 's,(\@CPPFLAGS\@),-I%p/lib/system-openssl/include \1,' `find . -name Makefile.in`
 	perl -pi -e 's,for bdbc_version in ,for bdbc_version in 4.8 ,g' configure

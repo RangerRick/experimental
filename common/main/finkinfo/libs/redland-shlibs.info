@@ -1,9 +1,9 @@
 Package: redland-shlibs
-Version: 1.0.9
+Version: 1.0.11
 Revision: 1
 
 Source: http://download.librdf.org/source/redland-%v.tar.gz
-Source-MD5: e5ef0c29c55b4f0f5aeed7955b4d383b
+Source-MD5: e1769361c907a216c6a75fc692ba412b
 
 BuildDepends: <<
 	db48-aes | db48,
