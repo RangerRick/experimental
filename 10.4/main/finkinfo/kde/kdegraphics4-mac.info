@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdegraphics4-mac
-Version: 4.4.95
+Version: 4.5.1
 Revision: 1
 Description: KDE4 - Graphics applications
 Type: kde (mac)
@@ -56,8 +56,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:unstable/%v/src/kdegraphics-%v.tar.bz2
-Source-MD5: 7a3daf83b66a4d988c140a372cb47710
+Source: mirror:kde:stable/%v/src/kdegraphics-%v.tar.bz2
+Source-MD5: 11c3da572a6205bf5d898e8958d4aadd
 PatchFile: kdegraphics4.patch
 PatchFile-MD5: 58db7d2be3e24f2ebb52b2f83599aa2b
 

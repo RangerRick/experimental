@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdenetwork4-mac
-Version: 4.4.95
+Version: 4.5.1
 Revision: 1
 Description: KDE4 - Network Apps
 Type: kde (mac)
@@ -51,8 +51,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:unstable/%v/src/kdenetwork-%v.tar.bz2
-Source-MD5: c4df72e6aa996f1f6ac6d391a7d4b2f4
+Source: mirror:kde:stable/%v/src/kdenetwork-%v.tar.bz2
+Source-MD5: f8a20b6120ac72d5a90b3840367f548e
 PatchFile: kdenetwork4.patch
 PatchFile-MD5: 7468d341e1ab88bbfd1cacbd8035fb9e
 

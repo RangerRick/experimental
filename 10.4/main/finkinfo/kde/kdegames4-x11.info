@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdegames4-x11
-Version: 4.4.95
+Version: 4.5.1
 Revision: 1
 Description: KDE4 - Games
 Type: kde (x11)
@@ -69,8 +69,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:unstable/%v/src/kdegames-%v.tar.bz2
-Source-MD5: 71aa289073feabefbd4bb74584f82c84
+Source: mirror:kde:stable/%v/src/kdegames-%v.tar.bz2
+Source-MD5: 5035681670a214f1879a3bdfb7b206ff
 
 UseMaxBuildJobs: true
 CompileScript: <<

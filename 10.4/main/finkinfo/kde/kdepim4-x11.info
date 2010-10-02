@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdepim4-x11
-Version: 4.4.1
+Version: 4.4.6
 Revision: 1
 Description: KDE4 - Personal Information Management
 Type: kde (x11)
@@ -64,7 +64,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdepim-%v.tar.bz2
-Source-MD5: da724cf0d5ab813648ebf9749091174e
+Source-MD5: dab253004c2660c75b61a3caeb117ed1
 PatchFile: kdepim4.patch
 PatchFile-MD5: dcfc6e5d1d854a10d8fd004d7cc5645c
 

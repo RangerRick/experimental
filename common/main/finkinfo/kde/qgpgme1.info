@@ -1,6 +1,6 @@
 Info3: <<
 Package: qgpgme1-%type_pkg[kde]
-Version: 4.4.95
+Version: 4.5.1
 Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - GPG Encryption Support
@@ -50,8 +50,8 @@ BuildDepends: <<
 Replaces: kdepimlibs4-%type_pkg[kde]-dev (<< 4.2.1-2)
 GCC: 4.0
 
-Source: mirror:kde:unstable/%v/src/kdepimlibs-%v.tar.bz2
-Source-MD5: 144a37beb219e77ee785f6a5eca9756c
+Source: mirror:kde:stable/%v/src/kdepimlibs-%v.tar.bz2
+Source-MD5: 746fb01e233d518d04d3b3c6cf1e2b26
 SourceDirectory: kdepimlibs-%v
 
 CompileScript: <<

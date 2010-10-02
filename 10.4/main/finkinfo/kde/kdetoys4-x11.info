@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdetoys4-x11
-Version: 4.4.95
+Version: 4.5.1
 Revision: 1
 Description: KDE4 - Toys
 Type: kde (x11)
@@ -35,8 +35,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:unstable/%v/src/kdetoys-%v.tar.bz2
-Source-MD5: 301fbc8a6a9559e8aa5802e38cb23a5f
+Source: mirror:kde:stable/%v/src/kdetoys-%v.tar.bz2
+Source-MD5: a066bc387fd160c3e75fecead6cb0487
 
 UseMaxBuildJobs: true
 CompileScript: <<

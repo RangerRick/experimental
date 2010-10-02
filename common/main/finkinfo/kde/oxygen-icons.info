@@ -1,6 +1,6 @@
 Info4: <<
 Package: oxygen-icons-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.1
 Revision: 1
 Type: kde (mac x11)
 Description: KDE4 - Oxygen icons
@@ -19,7 +19,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/oxygen-icons-%v.tar.bz2
-Source-MD5: 9e91b94f2e743d5dc0bd740ed0acb025
+Source-MD5: 02aa5d1145378a686b1329dca02fc681
 SourceDirectory: oxygen-icons-%v
 
 CompileScript: <<

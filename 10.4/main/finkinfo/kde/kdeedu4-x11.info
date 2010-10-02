@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdeedu4-x11
-Version: 4.4.95
+Version: 4.5.1
 Revision: 1
 Description: KDE4 - Edutainment software
 Type: kde (x11)
@@ -62,8 +62,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:unstable/%v/src/kdeedu-%v.tar.bz2
-Source-MD5: e1157aed480593ea4a6beaf2ef62dc2f
+Source: mirror:kde:stable/%v/src/kdeedu-%v.tar.bz2
+Source-MD5: 43c31e897b8ec759876c15adba5e0a12
 PatchFile: kdeedu4.patch
 PatchFile-MD5: c78374a968a3b46310f1f78d05e04ced
 

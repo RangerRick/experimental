@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdetoys4-mac
 Type: kde (mac)
 #endif
-Version: 4.4.95
+Version: 4.5.1
 Revision: 1
 Description: KDE4 - Toys
 License: GPL/LGPL
@@ -15,8 +15,8 @@ Maintainer: Benjamin Reed <kdetoys4@fink.raccoonfink.com>
 DescDetail: <<
 <<
 
-Source: mirror:kde:unstable/%v/src/kdetoys-%v.tar.bz2
-Source-MD5: 301fbc8a6a9559e8aa5802e38cb23a5f
+Source: mirror:kde:stable/%v/src/kdetoys-%v.tar.bz2
+Source-MD5: a066bc387fd160c3e75fecead6cb0487
 
 Depends: <<
 #ifdef TYPE_X11

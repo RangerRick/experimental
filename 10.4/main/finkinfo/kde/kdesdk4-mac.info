@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdesdk4-mac
-Version: 4.4.95
+Version: 4.5.1
 Revision: 1
 Description: KDE4 - Developer Utilities
 Type: kde (mac)
@@ -51,8 +51,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:unstable/%v/src/kdesdk-%v.tar.bz2
-Source-MD5: dad703106655da586b2dd81de1432cbe
+Source: mirror:kde:stable/%v/src/kdesdk-%v.tar.bz2
+Source-MD5: 091d24625aa42355da4e6c272abd37e1
 
 UseMaxBuildJobs: true
 CompileScript: <<

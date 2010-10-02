@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdeartwork4-x11
-Version: 4.4.95
+Version: 4.5.1
 Revision: 1
 Description: KDE4 - Styles and themes
 Type: kde (x11)
@@ -41,8 +41,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:unstable/%v/src/kdeartwork-%v.tar.bz2
-Source-MD5: 9d619bd967ef50910b220de938c5cb37
+Source: mirror:kde:stable/%v/src/kdeartwork-%v.tar.bz2
+Source-MD5: fe193afd6c8009ceacb46c97e67c96b8
 PatchScript: sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1
 PatchFile: kdeartwork4.patch
 PatchFile-MD5: b94a13ece2796d7bc4f5382fd8b7da38

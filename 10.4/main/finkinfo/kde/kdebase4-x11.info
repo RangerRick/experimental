@@ -1,6 +1,6 @@
 Info3: <<
 Package: kdebase4-x11
-Version: 4.4.95
+Version: 4.5.1
 Revision: 1
 Description: KDE4 - base runtime
 Type: kde (x11)
@@ -56,8 +56,8 @@ BuildDepends: <<
 <<
 GCC: 4.0
 
-Source: mirror:kde:unstable/%v/src/kdebase-%v.tar.bz2
-Source-MD5: e14030ded0fe7cdbc834102df8ba238c
+Source: mirror:kde:stable/%v/src/kdebase-%v.tar.bz2
+Source-MD5: 9249b29618eed5dd5c7bfccacb3e0c43
 SourceDirectory: kdebase-%v
 PatchScript: <<
 	%{default_script}
