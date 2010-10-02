@@ -9,7 +9,7 @@ Maintainer: Damian Dimmich <damian@tauri-tec.com>
 Depends: <<
 	arts-shlibs,
 	audiofile-shlibs,
-	dbus1.3-shlibs,
+	dbus-shlibs,
 	esound-shlibs,
 	fontconfig2-shlibs,
 	freetype219-shlibs,
@@ -33,7 +33,7 @@ BuildDepends: <<
 	arts-dev,
 	audiofile,
 	bison,
-	dbus1.3-dev,
+	dbus-dev,
 	esound,
 	fontconfig2-dev,
 	flex-devel (>= 2.5.33-0),

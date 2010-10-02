@@ -12,7 +12,7 @@ BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
 	bzip2-dev,
 	cmake (>= 2.8.2-1),
-	dbus1.3-dev (>= 1.2.0-1),
+	dbus1.3-dev (>= 1.2.16-1),
 	fink (>= 0.29.7-1),
 	freetype219 (>= 2.3.12-1),
 	gettext-tools,

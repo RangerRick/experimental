@@ -105,7 +105,7 @@ SplitOff: <<
 	Description: Shared libraries for Soprano
 	Depends: <<
 		clucene-core-shlibs (>= 0.9.20-1),
-		dbus-shlibs (>= 1.2-1),
+		dbus1.3-shlibs (>= 1.2-1),
 		librasqal2-shlibs (>= 0.9.19-1),
 		redland-shlibs (>= 1.0.8-3),
 		qt4-%type_pkg[soprano]-core-shlibs (>= 4.4.0-1),

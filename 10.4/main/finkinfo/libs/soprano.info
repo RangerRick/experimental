@@ -12,7 +12,7 @@ BuildDepends: <<
 	clucene-core (>= 0.9.20-1),
 	cmake (>= 2.8.2-1),
 	db48-aes | db48,
-	dbus1.3-dev (>= 1.2.0-1),
+	dbus-dev (>= 1.2.0-1),
 	fink (>= 0.29.7-1),
 	fink-package-precedence (>= 0.7-1),
 	gmp,
@@ -83,7 +83,7 @@ SplitOff: <<
 	Description: Shared libraries for Soprano
 	Depends: <<
 		clucene-core-shlibs (>= 0.9.20-1),
-		dbus1.3-shlibs (>= 1.2-1),
+		dbus1.3-shlibs (>= 1.2.16-1),
 		librasqal2-shlibs (>= 0.9.20-1),
 		redland-shlibs (>= 1.0.11-1),
 		qt4-%type_pkg[soprano]-core-shlibs (>= 4.6.3-1),

@@ -12,7 +12,8 @@ Depends: <<
 BuildDepends: <<
 	aalib,
 	cairo (>= 1.8.10-3),
-	dbus1.3-dev (>= 1.0-1),
+	dbus1.3-dev (>= 1.2.16-1),
+	dbus-glib1.2-dev (>= 0.84-1),
 	esound (>= 0.2.38-1),
 	expat1,
 	fontconfig2-dev (>= 2.4.1-1),

@@ -7,7 +7,7 @@ Maintainer: Benjamin Reed <avahi@fink.raccoonfink.com>
 
 Depends: <<
 	daemonic,
-	dbus (>= 1.2.12-1),
+	dbus (>= 1.0-1),
 	expat1-shlibs,
 	libavahi-client3-shlibs (= %v-%r),
 	libavahi-core6-shlibs (= %v-%r),
@@ -17,7 +17,8 @@ Depends: <<
 	passwd (>= 20070804-1)
 <<
 BuildDepends: <<
-	dbus1.3-dev (>= 1.0-1),
+	dbus1.3-dev (>= 1.2.16-1),
+	dbus-glib1.2-dev (>= 0.84-1),
 	expat1,
 	gettext-bin,
 	gettext-tools,
@@ -49,7 +50,8 @@ DocFiles: LICENSE docs/*
 SplitOff: <<
 	Package: libavahi-client3-shlibs
 	Depends: <<
-		dbus1.3-shlibs (>= 1.0-1),
+		dbus1.3-shlibs (>= 1.2.16-1),
+		dbus-glib1.2-shlibs (>= 0.84-1),
 		libavahi-common3-shlibs (>= %v-%r),
 		libgettext8-shlibs,
 		libiconv

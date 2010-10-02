@@ -76,7 +76,7 @@ DocFiles: AUTHORS COPYING ChangeLog HACKING NEWS README*
 SplitOff: <<
 	Package: dbus-dev
 	Depends: <<
-		dbus1.3-shlibs (= %v-%r),
+		dbus-shlibs (= %v-%r),
 		dbus1.3-dev,
 		dbus-glib1.2-dev
 	<<

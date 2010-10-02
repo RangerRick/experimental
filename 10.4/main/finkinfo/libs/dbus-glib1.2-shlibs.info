@@ -20,7 +20,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	pkgconfig (>= 0.23-1)
 <<
-Replaces: dbus1.3-shlibs
+Replaces: dbus-shlibs
 
 Source: http://dbus.freedesktop.org/releases/dbus-glib/dbus-glib-%v.tar.gz
 Source-MD5: 69fbe31fb3ee778715dff44cdd5178bf
@@ -71,7 +71,7 @@ SplitOff: <<
 	<<
 	Replaces: <<
 		dbus (<< %v-%r),
-		dbus1.3-dev
+		dbus-dev
 	<<
 	BuildDependsOnly: false
 	DocFiles: AUTHORS COPYING ChangeLog HACKING NEWS README

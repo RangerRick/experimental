@@ -18,7 +18,7 @@ BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
 	cmake (>= 2.8.2-1),
 	qimageblitz-unified-%type_pkg[kde],
-	dbus1.3-dev (>= 1.2.12-1),
+	dbus-dev (>= 1.2.12-1),
 	libgadu3-dev,
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),

@@ -17,7 +17,7 @@ BuildDepends: <<
 	libtool2,
 	pkgconfig (>= 0.23-1)
 <<
-Replaces: dbus1.3-shlibs
+Replaces: dbus-shlibs
 
 Source: http://dbus.freedesktop.org/releases/dbus/dbus-%v.tar.gz
 Source-MD5: c7a47b851ebe02f6726b65b78d1b730b
@@ -103,7 +103,7 @@ SplitOff: <<
 	<<
 	Replaces: <<
 		dbus (<< %v-%r),
-		dbus1.3-dev
+		dbus-dev
 	<<
 	BuildDependsOnly: false
 	DocFiles: AUTHORS COPYING ChangeLog HACKING NEWS README*

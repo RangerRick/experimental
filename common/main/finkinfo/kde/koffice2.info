@@ -60,7 +60,7 @@ BuildDepends: <<
 	boost1.35.systempython,
 	cmake (>= 2.6.3-1),
 	create-resources (>= 0.1-1),
-	dbus-dev (>= 1.2.12-1),
+	dbus1.3-dev (>= 1.0-1),
 	eigen2,
 	fink (>= 0.28.0-1),
 	fontconfig2-dev (>= 2.4.1-1),

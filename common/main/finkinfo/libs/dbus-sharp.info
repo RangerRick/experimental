@@ -4,7 +4,8 @@ Version: 0.70
 Revision: 1024
 Architecture: i386, powerpc
 BuildDepends: <<
-	dbus-dev (>= 1.2-1),
+	dbus1.3-dev (>= 1.0-1),
+	dbus-glib1.2-dev (>= 1.0-1),
 	fink (>= 0.28-1),
 	glib2-dev (>= 2.14.0-1),
 	mono-dev (>= 2.0-1),
@@ -13,7 +14,8 @@ BuildDepends: <<
 	pkgconfig (>= 0.22-3),
 <<
 Depends: <<
-	dbus-shlibs (>= 1.2-1),
+	dbus1.3-shlibs (>= 1.2-1),
+	dbus-glib1.2-shlibs (>= 1.0-1),
 	mono (>= 2.0-1)
 <<
 Source: http://finch.finkproject.org/~ranger/distfiles/%n-%v.tar.bz2

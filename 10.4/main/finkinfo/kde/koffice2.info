@@ -21,7 +21,7 @@ BuildDepends: <<
 	boost1.41.cmake,
 	cmake (>= 2.8.2-1),
 	create-resources (>= 0.1-1),
-	dbus1.3-dev (>= 1.2.12-1),
+	dbus1.3-dev (>= 1.2.16-1),
 	eigen2,
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
