@@ -15,7 +15,7 @@ BuildDepends: <<
 	audiofile (>= 0.2.6-11),
 	atk1 (>= 1.26.0-1),
 	bison,
-	dbus-dev (>= 1.2.12-1),
+	dbus1.3-dev (>= 1.0.2-1027),
 	esound (>= 0.2.34-1),
 	freetype219 (>= 2.3.12-1),
 	gconf2-dev (>= 2.20.1-1),

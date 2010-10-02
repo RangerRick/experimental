@@ -1,19 +1,19 @@
 Package: dbus-qt3-dev
 Version: 0.70
-Revision: 1
+Revision: 1023
 Description: D-BUS Qt bindings
 License: Restrictive/Distributable
-Maintainer: Benjamin Reed <dbus-qt3@fink.raccoonfink.com>
+Maintainer: Benjamin Reed <dbus-qt3@fink.racoonfink.com>
 
 Depends: dbus-qt3-shlibs (>= %v-%r)
 BuildDepends: <<
-	dbus-dev (>= 1.2.12-1),
+	dbus1.3-dev (>= 1.0-1),
 	expat1,
 	gettext-tools,
 	libgettext8-dev,
 	libiconv-dev,
-	pkgconfig (>= 0.23-1),
-	qt3,
+	pkgconfig,
+	qt3 (>= 3.3.8-2000),
 	x11-dev
 <<
 BuildDependsOnly: true
@@ -32,11 +32,11 @@ SplitOff: <<
 	Package: dbus-qt3-shlibs
 	Description: Shared libraries for D-BUS Qt3 bindings
 	Depends: <<
-		dbus-shlibs (>= 1.2.12-1),
-		qt3-shlibs
+		dbus1.3-shlibs (>= 1.0-1),
+		qt3-shlibs (>= 3.3.8-2000)
 	<<
 	Files: lib/libdbus-qt-1.*.dylib
-	Shlibs: %p/lib/libdbus-qt-1.1.dylib 2.0.0 %n (>= 0.60-1)
+	Shlibs: %p/lib/libdbus-qt-1.1.dylib 2.0.0 %n (>= 0.70-1023)
 <<
 
 Homepage: http://dbus.freedesktop.org/

@@ -18,7 +18,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	cups-dev,
-	dbus-dev (>= 1.2.12-1),
+	dbus1.3-dev (>= 1.2.12-1),
 	expat1,
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
@@ -249,7 +249,7 @@ SplitOff: <<
 SplitOff2: <<
 	Package: %N-core-shlibs
 	Depends: <<
-		dbus-shlibs (>= 1.2.12-1),
+		dbus1.3-shlibs (>= 1.2.12-1),
 		fink (>= 0.29.7-1),
 		fontconfig2-shlibs (>= 2.4.1-1),
 		freetype219-shlibs (>= 2.3.12-1),

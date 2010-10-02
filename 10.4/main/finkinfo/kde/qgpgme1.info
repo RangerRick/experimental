@@ -18,7 +18,7 @@ BuildDepends: <<
 	cmake (>= 2.8.2-1),
 	cups-dev,
 	cyrus-sasl2-dev,
-	dbus-dev (>= 1.2.12-1),
+	dbus1.3-dev (>= 1.2.0-1),
 	expat1,
 	fink (>= 0.29.7-1),
 	freetype219 (>= 2.3.12-1),

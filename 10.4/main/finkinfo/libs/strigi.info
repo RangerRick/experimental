@@ -14,7 +14,7 @@ BuildDepends: <<
 	bzip2-dev,
 	clucene-core (>= 0.9.20-1),
 	cmake (>= 2.8.2-1),
-	dbus-dev (>= 1.2.12-1),
+	dbus1.3-dev (>= 1.2.0-1),
 	fink (>= 0.29.7-1),
 	libexiv2-0.19,
 	libiconv-dev,
