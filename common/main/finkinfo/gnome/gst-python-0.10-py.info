@@ -3,7 +3,8 @@ Package: gst-python-0.10-py%type_pkg[python]
 Version: 0.10.19
 Revision: 1
 Description: Python interface to GStreamer
-Type: python(2.5 2.6 2.7)
+# No 2.7 until pyxml supports it
+Type: python(2.5 2.6)
 License: LGPL
 Maintainer: Benjamin Reed <gst-python-0.10@fink.raccoonfink.com>
 

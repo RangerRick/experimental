@@ -45,7 +45,7 @@ Source: mirror:kde:stable/%v/src/kdeartwork-%v.tar.bz2
 Source-MD5: fe193afd6c8009ceacb46c97e67c96b8
 PatchScript: sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1
 PatchFile: kdeartwork4.patch
-PatchFile-MD5: b94a13ece2796d7bc4f5382fd8b7da38
+PatchFile-MD5: e70341f0bf8658ea0d2289cf7e44cb40
 
 UseMaxBuildJobs: true
 CompileScript: <<
