@@ -175,7 +175,7 @@ SplitOff: <<
 		amrnb-shlibs,
 		audiofile-shlibs,
 		bzip2-shlibs,
-		dbus-shlibs (>= 1.0-1),
+		dbus-shlibs (>= 1.2.24-1),
 		esound-shlibs (>= 0.2.38-1),
 		expat1-shlibs,
 		faac-shlibs,

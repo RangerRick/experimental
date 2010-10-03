@@ -10,7 +10,7 @@ Maintainer: Benjamin Reed <kdelibs4@fink.raccoonfink.com>
 Depends: <<
 	%N-shlibs (= %v-%r),
 	aspell,
-	dbus (>= 1.2.12-1),
+	dbus (>= 1.2.24-1),
 	default-icon-theme (>= 0.5-2),
 	hspell,
 	shared-desktop-ontologies (>= 0.5-1),
