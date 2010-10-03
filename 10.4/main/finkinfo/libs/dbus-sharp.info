@@ -8,12 +8,12 @@ License: Restrictive/Distributable
 Maintainer: Benjamin Reed <dbus-mono@fink.raccoonfink.com>
 
 Depends: <<
-	dbus1.3-shlibs (>= 1.2.16-1),
+	dbus1.3-shlibs (>= 1.2.24-1),
 	dbus-glib1.2-shlibs (>= 0.84-1),
 	mono (>= 2.6.2-1)
 <<
 BuildDepends: <<
-	dbus1.3-dev (>= 1.2.16-1),
+	dbus1.3-dev (>= 1.2.24-1),
 	dbus-glib1.2-dev (>= 0.84-1),
 	fink (>= 0.29.7-1),
 	glib2-dev (>= 2.22.0-1),

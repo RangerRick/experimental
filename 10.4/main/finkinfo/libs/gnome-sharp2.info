@@ -18,7 +18,7 @@ BuildDepends: <<
 	atk1 (>= 1.26.0-1),
 	audiofile (>= 0.2.6-11),
 	cairo (>= 1.8.10-3),
-	dbus1.3-dev (>= 1.2.16-1),
+	dbus1.3-dev (>= 1.2.24-1),
 	dbus-glib1.2-dev (>= 0.84-1),
 	esound,
 	expat1,
