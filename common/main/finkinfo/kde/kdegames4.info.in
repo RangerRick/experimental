@@ -80,6 +80,7 @@ BuildDepends: <<
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev,
+	twisted2-py26,
 <<
 GCC: 4.0
 

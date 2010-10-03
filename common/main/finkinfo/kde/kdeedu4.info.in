@@ -118,6 +118,8 @@ InstallScript: <<
 	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libcantorlibs.dylib
 	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libhtmesh.a
 
+	rm -rf %i/opt/kde4/%type_pkg[kde]/share/apps/kvtml
+
 	if [ -f "%i/opt/kde4/%type_pkg[kde]/bin/radselect_bin.app/Contents/Resources/radselect_bin.icns" ]; then
 		install -d -m 755 "%i/opt/kde4/%type_pkg[kde]/bin/kitenradselect.app/Contents/Resources"
 		mv "%i/opt/kde4/%type_pkg[kde]/bin/radselect_bin.app/Contents/Resources/radselect_bin.icns" "%i/opt/kde4/%type_pkg[kde]/bin/kitenradselect.app/Contents/Resources"
@@ -443,6 +445,7 @@ SplitOff14: <<
 		opt/kde4/%type_pkg[kde]/bin/kturtle*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kturtle*
 		opt/kde4/%type_pkg[kde]/share/apps/kturtle
+		opt/kde4/%type_pkg[kde]/share/config/kturtle*
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kturtle
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kturtle*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kturtle*
@@ -488,7 +491,8 @@ SplitOff16: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/*marble*
 		opt/kde4/%type_pkg[kde]/lib/kde4/*worldclock*
 		opt/kde4/%type_pkg[kde]/lib/kde4/plugins/marble
-		opt/kde4/%type_pkg[kde]/lib/libmarblewidget.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libmarblewidget.0.10*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libmarblewidget.10*.dylib
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/marble*
 		opt/kde4/%type_pkg[kde]/share/apps/marble*
 		opt/kde4/%type_pkg[kde]/share/config.kcfg/marble*
@@ -496,7 +500,7 @@ SplitOff16: <<
 		opt/kde4/%type_pkg[kde]/share/kde4/services/marble*
 		opt/kde4/%type_pkg[kde]/share/kde4/services/*worldclock*
 	<<
-	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libmarblewidget.4.dylib 4.0.0 %n (>= 4.2.4-1)
+	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libmarblewidget.10.dylib 10.0.0 %n (>= 4.5.1-1)
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
 SplitOff17: <<
@@ -575,6 +579,8 @@ SplitOff19: <<
 	<<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/rocs*
+		opt/kde4/%type_pkg[kde]/lib/librocslib.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/kde4/rocs*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/rocs*
 		opt/kde4/%type_pkg[kde]/share/apps/rocs
 		opt/kde4/%type_pkg[kde]/share/config.kcfg/rocs*
@@ -584,7 +590,10 @@ SplitOff19: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/actions/rocs*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/actions/rocs*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/actions/rocs*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/rocs*
+		opt/kde4/%type_pkg[kde]/share/kde4/servicetypes/Rocs*
 	<<
+	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/librocslib.4.dylib
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
 SplitOff20: <<

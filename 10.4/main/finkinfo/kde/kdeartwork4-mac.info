@@ -66,6 +66,8 @@ InstallScript: <<
 		make -j1 install/fast DESTDIR="%d"
 	popd
 
+	rm -rf %i/share/opt/kde4/%type_pkg[kde]/share/apps/aurorae
+
 	mkdir -p %i/share/doc/installed-packages
 	touch %i/share/doc/installed-packages/%N
 	touch %i/share/doc/installed-packages/%N-base

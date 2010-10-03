@@ -65,7 +65,8 @@ BuildDepends: <<
 	soprano-%type_pkg[kde]-dev (>= 2.5.2-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
-	system-openssl-dev
+	system-openssl-dev,
+	twisted2-py26
 <<
 GCC: 4.0
 

@@ -59,6 +59,8 @@ InstallScript: <<
 		make -j1 install/fast DESTDIR="%d"
 	popd
 
+	rm -rf %i/opt/kde4/%type_pkg[kde]/share/doc/HTML/en/jovie
+
 	mkdir -p %i/share/doc/installed-packages
 	touch %i/share/doc/installed-packages/%N
 	touch %i/share/doc/installed-packages/%N-base
