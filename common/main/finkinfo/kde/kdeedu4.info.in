@@ -19,7 +19,7 @@ A collection of fun and educational apps for KDE.
 Source: mirror:kde:stable/%v/src/kdeedu-%v.tar.bz2
 Source-MD5: 43c31e897b8ec759876c15adba5e0a12
 PatchFile: kdeedu4.patch
-PatchFile-MD5: c78374a968a3b46310f1f78d05e04ced
+PatchFile-MD5: 58d3b65ffdbe6a318793bfcf87d198f0
 
 Depends: <<
 	blinken4-%type_pkg[kde]    (>= %v-%r),
@@ -62,6 +62,8 @@ BuildDepends: <<
 	kdelibs4-%type_pkg[kde]-dev (>= 4.2.0-1),
 	libattica-%type_pkg[kde]-dev (>= 0.1.2-1),
 	libgettext3-dev,
+	libopenbabel3-dev,
+	libspectre1,
 	libxml2,
 	libxslt,
 	ocaml,
@@ -97,7 +99,7 @@ CompileScript: <<
 
 	mkdir -p build
 	pushd build
-		cmake -DR_INCLUDEDIR="%p/Library/Frameworks/R.framework/Headers" -DXPLANET_EXECUTABLE=%p/bin/xplanet $KDE4_CMAKE_ARGS ..
+		cmake -DR_INCLUDE_DIR="%p/Library/Frameworks/R.framework/Headers" -DXPLANET_EXECUTABLE=%p/bin/xplanet $KDE4_CMAKE_ARGS ..
 		make VERBOSE=1
 	popd
 <<
@@ -178,6 +180,7 @@ SplitOff3: <<
 	Package: kalzium4-%type_pkg[kde]
 	Description: periodic system of the elements
 	Depends: <<
+		libopenbabel3-shlibs,
 		ocaml,
 		%N-base (>= %v-%r)
 	<<
@@ -531,6 +534,7 @@ SplitOff18: <<
 	Description: KDE4 - math application
 	Depends: <<
 		libattica-%type_pkg[kde]-shlibs (>= 0.1.2-1),
+		libspectre1-shlibs,
 		r-base,
 		%N-base (>= %v-%r),
 	<<
