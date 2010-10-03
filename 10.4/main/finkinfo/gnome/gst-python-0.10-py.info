@@ -23,6 +23,7 @@ BuildDepends: <<
 	glib2-dev (>= 2.22.0-1),
 	gtk+2-dev (>= 2.14.7-1),
 	gtk-doc (>= 1.13-5),
+	libffi,
 	libiconv-dev,
 	liboil-0.3 (>= 0.3.17-2),
 	libgettext8-dev,

@@ -1,7 +1,7 @@
 Info4: <<
 Package: libxine1
-Version: 1.1.16.3
-Revision: 2
+Version: 1.1.19
+Revision: 1
 Distribution: 10.4, 10.5
 Description: Xine video/media player library
 License: LGPL
@@ -39,7 +39,7 @@ BuildDepends: <<
 	libavcodec-dev,
 	libavutil-dev,
 	libbonobo2-dev (>= 2.20.0-1),
-	libcaca-dev (>= 0.99-1),
+	libcaca-dev (>= 0.99.beta16-1),
 	libcdio-dev,
 	libdvdnav,
 	libfaad1-dev,
@@ -89,7 +89,7 @@ Recommends: libdvdcss-shlibs
 BuildDependsOnly: true
 
 Source: mirror:sourceforge:xine/xine-lib-%v.tar.bz2
-Source-MD5: 4f508abf088cf427a731f85634c8260d
+Source-MD5: a410a0f0617e1d6309f0cbe907f73f8a
 PatchScript: <<
 	%{default_script}
 	perl -pi -e 's,libXv.so,libXv.dylib,g; s,x\*\.so\),x*.dylib),; s,s/\\\.so\$//,s/\.dylib\$//,' configure
@@ -195,7 +195,7 @@ SplitOff: <<
 		libavcodec51-shlibs,
 		libavutil49-shlibs,
 		libbonobo2-shlibs (>= 2.20.0-1),
-		libcaca-shlibs (>= 0.99-1),
+		libcaca-shlibs (>= 0.99.beta16-1),
 		libcdio7-shlibs,
 		libdvdnav4-shlibs,
 		libfaad1-shlibs,
