@@ -11,7 +11,6 @@ Depends: %N-shlibs (= %v-%r)
 BuildDepends: <<
 	a52dec-dev,
 	aalib,
-	amrnb-dev,
 	audiofile,
 	avahi-dev,
 	bzip2-dev,
@@ -51,18 +50,19 @@ BuildDepends: <<
 	libjpeg8,
 	libmad,
 	libmng2,
-	libmodplug,
+	libmodplug1,
 	libmpcdec5,
 	libncurses5 (>= 5.4-20041023-1006),
 	libncursesw5,
 	libogg,
+	libopencore-amr0-dev,
 	libpostproc-dev,
 	libtheora0,
 	libtiff,
 	libtool2,
 	libvcd-dev (>= 0.7.21-10),
 	libvorbis0,
-	libx264-dev,
+	libx264-98-dev,
 	libxml2 (>= 2.6.32-1),
 	orbit2-dev (>= 2.14.9-1),
 	pkgconfig (>= 0.23-1),
@@ -96,7 +96,7 @@ PatchScript: <<
 	if [ `sw_vers -productVersion | cut -d. -f1-2` = "10.4" ]; then perl -pi -e 's,MacOSX10.5.sdk,MacOSX10.4u.sdk,g' src/audio_out/Makefile.in; fi
 <<
 PatchFile: libxine1.patch
-PatchFile-MD5: 630f55e102108174c95ae21675e0cd64
+PatchFile-MD5: d5b6a70f9fcb09d2772452716bddf1fb
 
 SetCFLAGS: -Os -fomit-frame-pointer -fexpensive-optimizations -ffast-math
 SetLDFLAGS: -Wl,-dylib_file,/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
@@ -172,10 +172,9 @@ SplitOff: <<
 	Depends: <<
 		a52dec-shlibs,
 		aalib-shlibs,
-		amrnb-shlibs,
 		audiofile-shlibs,
 		bzip2-shlibs,
-		dbus-shlibs (>= 1.2.24-1),
+		dbus1.3-shlibs (>= 1.2.24-1),
 		esound-shlibs (>= 0.2.38-1),
 		expat1-shlibs,
 		faac-shlibs,
@@ -207,18 +206,19 @@ SplitOff: <<
 		libjpeg8-shlibs,
 		libmad-shlibs,
 		libmng2-shlibs,
-		libmodplug-shlibs,
+		libmodplug1-shlibs,
 		libmpcdec5-shlibs,
 		libncurses5-shlibs (>= 5.4-20041023-1006),
 		libncursesw5-shlibs,
 		libogg-shlibs,
+		libopencore-amr0-shlibs,
 		libpostproc51-shlibs,
 		libtheora0-shlibs,
 		libtiff-shlibs,
 		libtool2-shlibs,
 		libvcd0-shlibs (>= 0.7.21-10),
 		libvorbis0-shlibs,
-		libx264-57-shlibs,
+		libx264-98-shlibs,
 		libxml2-shlibs (>= 2.6.32-1),
 		orbit2-shlibs (>= 2.14.9-1),
 		sdl-shlibs (>= 1.2.9-1001),
@@ -241,8 +241,8 @@ SplitOff: <<
 		share/xine
 	<<
 	Shlibs: <<
-		%p/lib/libxine.1.dylib            28.0.0 %n (>= 1.1.16-1)
-		%p/lib/libxineMacOSXVideo.1.dylib 28.0.0 %n (>= 1.1.16-1)
+		%p/lib/libxine.1.dylib            31.0.0 %n (>= 1.1.19-1)
+		%p/lib/libxineMacOSXVideo.1.dylib 31.0.0 %n (>= 1.1.19-1)
 	<<
 <<
 
