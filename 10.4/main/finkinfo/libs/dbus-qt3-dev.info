@@ -7,7 +7,7 @@ Maintainer: Benjamin Reed <dbus-qt3@fink.raccoonfink.com>
 
 Depends: dbus-qt3-shlibs (>= %v-%r)
 BuildDepends: <<
-	dbus1.3-dev (>= 1.2.16-1),
+	dbus1.3-dev (>= 1.2.24-1),
 	expat1,
 	gettext-tools,
 	libgettext8-dev,
@@ -32,7 +32,7 @@ SplitOff: <<
 	Package: dbus-qt3-shlibs
 	Description: Shared libraries for D-BUS Qt3 bindings
 	Depends: <<
-		dbus1.3-shlibs (>= 1.2.16-1),
+		dbus1.3-shlibs (>= 1.2.24-1),
 		qt3-shlibs (>= 3.3.8-2000)
 	<<
 	Files: lib/libdbus-qt-1.*.dylib

@@ -11,7 +11,7 @@ BuildDepends: <<
 	atk1 (>= 1.26.0-1),
 	avahi-dev (>= %v-1),
 	cairo (>= 1.8.10-3),
-	dbus1.3-dev (>= 1.2.16-1),
+	dbus1.3-dev (>= 1.2.24-1),
 	expat1,
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),

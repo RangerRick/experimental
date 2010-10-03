@@ -16,7 +16,7 @@ BuildDepends: <<
 	automake1.11,
 	cctools-single-module,
 	cups-dev,
-	dbus1.3-dev (>= 1.2.16-1),
+	dbus1.3-dev (>= 1.2.24-1),
 	dbus-qt3-dev (>= 1.0-1),
 	doxygen1.3,
 	esound,
