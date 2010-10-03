@@ -56,7 +56,7 @@ BuildDepends: <<
 	libncurses5 (>= 5.4-20041023-1006),
 	libncursesw5,
 	libogg,
-	libopencore-amr0-dev,
+	libopencore-amr0,
 	libpostproc-dev,
 	libtheora0,
 	libtiff,
@@ -99,8 +99,8 @@ PatchScript: <<
 PatchFile: libxine1.patch
 PatchFile-MD5: d5b6a70f9fcb09d2772452716bddf1fb
 
-SetCFLAGS: -Os -fomit-frame-pointer -fexpensive-optimizations -ffast-math
-SetLDFLAGS: -Wl,-dylib_file,/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+SetCFLAGS: -Os -fomit-frame-pointer -fexpensive-optimizations -ffast-math -I%p/lib/fontconfig2/include
+SetLDFLAGS: -Wl,-dylib_file,/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib -L%p/lib/fontconfig2/lib
 UseMaxBuildJobs: true
 ConfigureParams: <<
 --libexecdir=%p/lib/libxine \
@@ -155,7 +155,7 @@ ConfigureParams: <<
 <<
 CompileScript: <<
 	#!/bin/sh -ev
-	export CPATH=%p/include:/usr/X11R6/include:/usr/X11/include
+	export CPATH=%p/lib/fontconfig2/include:%p/include:/usr/X11R6/include:/usr/X11/include
 	export PKG_CONFIG_PATH=%p/lib/fontconfig2/lib/pkgconfig:%p/lib/freetype219/lib/pkgconfig:%p/lib/pkgconfig:/usr/X11R6/lib/pkgconfig:${PKG_CONFIG_PATH}
 	[ "%m" = "powerpc" ] && export EXTRA_CONFIG_PARAMS="--enable-altivec"
 	./configure %c $EXTRA_CONFIG_PARAMS

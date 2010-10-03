@@ -93,8 +93,8 @@ PatchScript: <<
 	if [ "%m" = "x86_64" ]; then perl -pi -e 's, deinterlace , ,' src/post/Makefile.in; fi
 <<
 
-SetCFLAGS: -Os -fomit-frame-pointer -fexpensive-optimizations -ffast-math
-SetLDFLAGS: -Wl,-dylib_file,/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+SetCFLAGS: -Os -fomit-frame-pointer -fexpensive-optimizations -ffast-math -I%p/lib/fontconfig2/include
+SetLDFLAGS: -Wl,-dylib_file,/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib -L%p/lib/fontconfig2/lib
 SetMACOSX_DEPLOYMENT_TARGET: 10.5
 ConfigureParams: <<
 	--target=%m-apple-darwin`uname -r|cut -f1 -d.` \
@@ -150,7 +150,7 @@ ConfigureParams: <<
 <<
 CompileScript: <<
 #!/bin/sh -ev
-	export CPATH=%p/include:/usr/X11R6/include:/usr/X11/include
+	export CPATH=%p/lib/fontconfig2/include:%p/include:/usr/X11R6/include:/usr/X11/include
 	export PKG_CONFIG_PATH=%p/lib/fontconfig2/lib/pkgconfig:%p/lib/freetype219/lib/pkgconfig:%p/lib/pkgconfig:/usr/X11R6/lib/pkgconfig:${PKG_CONFIG_PATH}
 	[ "%m" = "powerpc" ] && export EXTRA_CONFIG_PARAMS="--enable-altivec"
 	./configure %c $EXTRA_CONFIG_PARAMS
