@@ -8,7 +8,7 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <kdebase4-runtime@fink.raccoonfink.com>
 
 Depends: <<
-	dbus (>= 1.2.12-1),
+	dbus (>= 1.2.24-1),
 	kdepimlibs4-%type_pkg[kde] (>= 4.5.1-1),
 	libxine1-shlibs,
 	oxygen-icons-%type_pkg[kde] (>= 4.5.1-1),

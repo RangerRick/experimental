@@ -17,7 +17,7 @@ BuildDepends: <<
 	audiofile,
 	avahi-dev,
 	cairo (>= 1.8.10-3),
-	dbus-dev (>= 1.0-1),
+	dbus-dev (>= 1.2.24-1),
 	docbook-utils,
 	esound (>= 0.2.38-1),
 	expat1,

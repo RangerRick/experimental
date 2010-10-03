@@ -48,7 +48,7 @@ Depends: <<
 BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
 	cmake (>= 2.8.2-1),
-	dbus-dev (>= 1.2.12-1),
+	dbus-dev (>= 1.2.24-1),
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.12-1),
@@ -287,7 +287,7 @@ SplitOff17: <<
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kmahjongg*
 		opt/kde4/%type_pkg[kde]/share/apps/kmahjongg*
 		opt/kde4/%type_pkg[kde]/share/config.kcfg/kmahjongg*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kmahjongg
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/k*jongg
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kmahjongg*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kmahjongg*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kmahjongg*
@@ -345,6 +345,13 @@ SplitOff2: <<
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/bovo*
 		opt/kde4/%type_pkg[kde]/share/apps/bovo
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/bovo
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/bovo*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/bovo*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/bovo*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/bovo*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/bovo*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/bovo*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/bovo*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
@@ -417,17 +424,24 @@ SplitOff23: <<
 	Depends: %N-base (>= %v-%r)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/kpat*
+		opt/kde4/%type_pkg[kde]/lib/libkcardgame.dylib
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kpat*
 		opt/kde4/%type_pkg[kde]/share/apps/kconf_update/kpat*
 		opt/kde4/%type_pkg[kde]/share/apps/kpat
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/kpat*
+		opt/kde4/%type_pkg[kde]/share/config/kpat*
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kpat
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kpat*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/24x24/apps/kpat*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/256x256/apps/kpat*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/24x24/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kpat*
 	<<
+	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libkcardgame.dylib
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
 SplitOff24: <<
@@ -739,6 +753,18 @@ SplitOff37: <<
 		opt/kde4/%type_pkg[kde]/share/kde4/services/*pala*
 		opt/kde4/%type_pkg[kde]/share/kde4/servicetypes/*pala*
 		opt/kde4/%type_pkg[kde]/share/mime/packages/pala*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/*palapeli*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/*palapeli*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/24x24/apps/*palapeli*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/*palapeli*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/*palapeli*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/*palapeli*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/mimetypes/*palapeli*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/mimetypes/*palapeli*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/24x24/mimetypes/*palapeli*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/mimetypes/*palapeli*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/mimetypes/*palapeli*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/mimetypes/*palapeli*
 	<<
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libpala.0.dylib 0.0.0 %n (>= 4.3.98-1)
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :

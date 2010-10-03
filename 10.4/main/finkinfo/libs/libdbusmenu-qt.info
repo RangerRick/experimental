@@ -8,11 +8,13 @@ License: LGPL
 Maintainer: Benjamin Reed <libdbusmenu-qt@fink.raccoonfink.com>
 
 Depends: <<
+	dbus (>= 1.2.24-1),
 	%N-shlibs (= %v-%r),
 	qjson-%type_pkg[qt]-shlibs (>= 0.5-1)
 <<
 BuildDepends: <<
 	cmake (>= 2.8.2-1),
+	dbus1.3-dev (>= 1.2.24-1),
 	fink (>= 0.29.7-1),
 	kde4-buildenv (>= 4.5.1-1),
 	system-openssl-dev,
