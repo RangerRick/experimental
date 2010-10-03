@@ -1,6 +1,6 @@
 Info2: <<
 Package: gst-python-0.10-defs
-Version: 0.10.18
+Version: 0.10.19
 Revision: 1
 Description: Python interface to GStreamer (data files)
 License: LGPL
@@ -10,7 +10,8 @@ Replaces: <<
 	gst-python-0.10-py23,
 	gst-python-0.10-py24,
 	gst-python-0.10-py25,
-	gst-python-0.10-py26
+	gst-python-0.10-py26,
+	gst-python-0.10-py27
 <<
 
 Source: http://gstreamer.freedesktop.org/src/gst-python/gst-python-%v.tar.bz2

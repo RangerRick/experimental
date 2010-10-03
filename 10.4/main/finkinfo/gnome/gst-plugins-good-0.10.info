@@ -1,6 +1,6 @@
 Package: gst-plugins-good-0.10
-Version: 0.10.18
-Revision: 2
+Version: 0.10.25
+Revision: 1
 Description: "Good" plugins for GStreamer
 License: LGPL
 Maintainer: Benjamin Reed <gst-plugins-good-0.10@fink.raccoonfink.com>
@@ -11,9 +11,9 @@ Depends: <<
 <<
 BuildDepends: <<
 	aalib,
+	audiofile,
 	cairo (>= 1.8.10-3),
-	dbus1.3-dev (>= 1.2.16-1),
-	dbus-glib1.2-dev (>= 0.84-1),
+	dbus-dev (>= 1.2.12-1),
 	esound (>= 0.2.38-1),
 	expat1,
 	fontconfig2-dev (>= 2.4.1-1),
@@ -24,8 +24,8 @@ BuildDepends: <<
 	glib2-dev (>= 2.22.0-1),
 	glitz (>= 0.5.6-1),
 	gnome-vfs2-unified-dev (>= 1:2.24.0-1),
-	gstreamer-0.10-dev (>= 0.10.26-1),
-	gst-plugins-base-0.10-dev (>= 0.10.26-1),
+	gstreamer-0.10-dev (>= 0.10.30-1),
+	gst-plugins-base-0.10-dev (>= 0.10.30-1),
 	gtk+2-dev (>= 2.14.7-1),
 	gtk-doc (>= 1.13-5),
 	ladspa-dev,
@@ -43,18 +43,18 @@ BuildDepends: <<
 	liboil-0.3 (>= 0.3.17-2),
 	libpng14,
 	libshout4,
+	libspeex1,
 	libtheora0,
 	libusb,
 	libvorbis0,
 	libxml2 (>= 2.6.32-1),
-	libxml2-py25,
+	libxml2-py26,
 	pango1-xft2-ft219-dev (>= 1.24.0-1),
 	pixman (>= 0.16.0-1),
-	python25,
-	pyxml-py25,
+	python26,
+	pyxml-py26,
 	pkgconfig (>= 0.23-1),
 	slang,
-	speex3 (>= 1.1.5-1),
 	taglib (>= 1.6.3-1),
 	wavpack1-dev,
 	x11-dev,
@@ -64,7 +64,7 @@ BuildDepends: <<
 Replaces: gst-plugins-bad-0.10
 
 Source: http://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-%v.tar.bz2
-Source-MD5: 9519530e6021698fa1e12a29f16e2feb
+Source-MD5: d734bc866788d1d6fc74c4ff1318926c
 PatchScript: <<
 	#!/bin/sh -ev
 	perl -pi -e 's,CFLAGS -Werror,CFLAGS,g' configure
@@ -81,14 +81,14 @@ SetLIBS: -L%p/lib -lz
 NoSetCFLAGS: true
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true
-NoSetMAKEFLAGS: true
-UseMaxBuildJobs: false
+UseMaxBuildJobs: true
 ConfigureParams: --without-check --libexecdir=%p/lib/%n --mandir=%p/share/man --enable-gtk-doc --disable-static --disable-dependency-tracking --enable-tests --enable-failing-tests --disable-schemas-install PKG_CONFIG_PATH="%p/lib/pango-ft219/lib/pkgconfig:%p/lib/fontconfig2/lib/pkgconfig:%p/lib/freetype219/lib/pkgconfig:$PKG_CONFIG_PATH" FREETYPE_CONFIG=%p/lib/freetype219/bin/freetype-config
 CompileScript: <<
 	#!/bin/sh -ex
 	
-	export ac_cv_path_PYTHON=%p/bin/python2.5
+	export ac_cv_path_PYTHON=%p/bin/python2.6
 	export PATH="%p/lib/xmkmf/bin:$PATH"
+	export PERL5LIB="%p/share/gtk-doc/data:$PERL5LIB"
 	./configure %c
 	make
 <<
@@ -103,7 +103,7 @@ SplitOff: <<
 		audiofile-shlibs,
 		cairo-shlibs (>= 1.8.10-3),
 		esound-shlibs (>= 0.2.38-1),
-		gst-plugins-base-0.10-shlibs (>= 0.10.26-1),
+		gst-plugins-base-0.10-shlibs (>= 0.10.30-1),
 		libcaca-shlibs (>= 0.99-1),
 		libcdio7-shlibs,
 		libdv4-shlibs,
@@ -113,10 +113,10 @@ SplitOff: <<
 		libogg-shlibs,
 		libpng14-shlibs (>= 1.4.1-2),
 		libshout4-shlibs,
+		libspeex1-shlibs,
 		libtheora0-shlibs,
 		libvorbis0-shlibs,
 		slang-shlibs,
-		speex3-shlibs (>= 1.1.5-1),
 		taglib-shlibs (>= 1.6.3-1),
 		wavpack1-shlibs,
 		x11-shlibs
@@ -124,8 +124,8 @@ SplitOff: <<
 	Replaces: gst-plugins-bad-0.10-shlibs
 	Recommends: <<
 		gconf2 (>= 2.16.0-1),
-		gstreamer-0.10 (>= 0.10.26-1),
-		gst-plugins-base-0.10 (>= 0.10.26-1)
+		gstreamer-0.10 (>= 0.10.30-1),
+		gst-plugins-base-0.10 (>= 0.10.30-1)
 	<<
 	Files: lib
 <<

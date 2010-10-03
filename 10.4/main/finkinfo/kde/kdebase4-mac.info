@@ -99,6 +99,7 @@ SplitOff: <<
 	Recommends: %N (>= %v-%r)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/libdolphinprivate.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkbookmarkmodel_private.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkonq.5*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkonqsidebarplugin.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkonquerorprivate.4*.dylib
@@ -106,6 +107,7 @@ SplitOff: <<
 	<<
 	Shlibs: <<
 		!%p/opt/kde4/%type_pkg[kde]/lib/libdolphinprivate.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/libkbookmarkmodel_private.4.dylib
 		!%p/opt/kde4/%type_pkg[kde]/lib/libkonquerorprivate.4.dylib
 		!%p/opt/kde4/%type_pkg[kde]/lib/libkonsoleprivate.dylib
 		%p/opt/kde4/%type_pkg[kde]/lib/libkonq.5.dylib               5.0.0 %n (>= 4.2.4-1)
@@ -126,6 +128,7 @@ SplitOff2: <<
 	<<
 <<
 Shlibs: <<
+	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_dolphin.dylib
 	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_keditbookmarks.dylib
 	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kfmclient.dylib
 	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_konqueror.dylib

@@ -22,7 +22,6 @@ Depends: <<
 #ifdef TYPE_X11
 	amor4-%type_pkg[kde] (>= %v-%r),
 	ktux4-%type_pkg[kde] (>= %v-%r),
-	kweather4-%type_pkg[kde] (>= %v-%r),
 #endif
 	kteatime4-%type_pkg[kde] (>= %v-%r),
 <<
@@ -117,25 +116,6 @@ SplitOff2: <<
 <<
 #ifdef TYPE_X11
 SplitOff3: <<
-	Package: kweather4-%type_pkg[kde]
-	Description: KDE4 - weather display applet
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/kweather*
-		opt/kde4/%type_pkg[kde]/lib/kde4/kcm_weather*
-		opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kweatherreport.dylib
-		opt/kde4/%type_pkg[kde]/share/apps/kweather*
-		opt/kde4/%type_pkg[kde]/share/dbus-1/interfaces/org.kde.kweather.*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kweather
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kweather*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kweather*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kweather*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/*weather*
-	<<
-	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kweatherreport.dylib
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff4: <<
 	Package: ktux4-%type_pkg[kde]
 	Description: KDE4 - tux screensaver
 	Depends: <<

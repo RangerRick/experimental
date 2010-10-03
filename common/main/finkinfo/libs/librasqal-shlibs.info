@@ -1,6 +1,6 @@
 Package: librasqal-shlibs
 Version: 0.9.16
-Revision: 4
+Revision: 5
 
 Source: http://download.librdf.org/source/rasqal-%v.tar.gz
 Source-MD5: fca8706f2c4619e2fa3f8f42f8fc1e9d
@@ -101,4 +101,4 @@ and others.
 Description: RDF query library
 License: GPL/LGPL
 Homepage: http://librdf.org/rasqal
-Maintainer: Benjamin Reed <librasqal@fink.racoonfink.com>
+Maintainer: Benjamin Reed <librasqal@fink.raccoonfink.com>

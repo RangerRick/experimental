@@ -1,6 +1,6 @@
-diff -Nurd kdeedu-4.3.98/cantor/src/CMakeLists.txt kdeedu-4.3.98-new/cantor/src/CMakeLists.txt
---- kdeedu-4.3.98/cantor/src/CMakeLists.txt	2010-01-19 18:20:08.000000000 -0500
-+++ kdeedu-4.3.98-new/cantor/src/CMakeLists.txt	2010-02-01 15:46:19.000000000 -0500
+diff -Nurd kdeedu-4.5.1/cantor/src/CMakeLists.txt kdeedu-4.5.1-new/cantor/src/CMakeLists.txt
+--- kdeedu-4.5.1/cantor/src/CMakeLists.txt	2010-06-08 06:10:25.000000000 -0400
++++ kdeedu-4.5.1-new/cantor/src/CMakeLists.txt	2010-10-02 22:01:24.000000000 -0400
 @@ -3,7 +3,10 @@
  #########################################################################
  add_subdirectory(lib)
@@ -22,11 +22,11 @@ diff -Nurd kdeedu-4.3.98/cantor/src/CMakeLists.txt kdeedu-4.3.98-new/cantor/src/
  set(cantor_SRCS
     main.cpp
     cantor.cpp
-diff -Nurd kdeedu-4.3.98/cantor/src/lib/CMakeLists.txt kdeedu-4.3.98-new/cantor/src/lib/CMakeLists.txt
---- kdeedu-4.3.98/cantor/src/lib/CMakeLists.txt	2009-10-26 05:15:03.000000000 -0400
-+++ kdeedu-4.3.98-new/cantor/src/lib/CMakeLists.txt	2010-02-01 14:57:19.000000000 -0500
+diff -Nurd kdeedu-4.5.1/cantor/src/lib/CMakeLists.txt kdeedu-4.5.1-new/cantor/src/lib/CMakeLists.txt
+--- kdeedu-4.5.1/cantor/src/lib/CMakeLists.txt	2010-06-08 06:10:24.000000000 -0400
++++ kdeedu-4.5.1-new/cantor/src/lib/CMakeLists.txt	2010-10-02 22:01:24.000000000 -0400
 @@ -1,5 +1,5 @@
- set(GENERIC_LIB_VERSION "0.0.1")
+ set(GENERIC_LIB_VERSION "0.0.2")
 -set(GENERIC_LIB_SOVERSION "1")
 +set(GENERIC_LIB_SOVERSION "0")
  
@@ -41,9 +41,9 @@ diff -Nurd kdeedu-4.3.98/cantor/src/lib/CMakeLists.txt kdeedu-4.3.98-new/cantor/
  kde4_add_kcfg_files(cantor_LIB_SRCS settings.kcfgc)
  install(FILES cantor_libs.kcfg DESTINATION ${KCFG_INSTALL_DIR})
  
-diff -Nurd kdeedu-4.3.98/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt kdeedu-4.3.98-new/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt
---- kdeedu-4.3.98/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt	2009-05-27 15:53:49.000000000 -0400
-+++ kdeedu-4.3.98-new/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt	2010-02-01 14:54:16.000000000 -0500
+diff -Nurd kdeedu-4.5.1/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt kdeedu-4.5.1-new/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt
+--- kdeedu-4.5.1/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt	2010-06-08 06:10:42.000000000 -0400
++++ kdeedu-4.5.1-new/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt	2010-10-02 22:01:24.000000000 -0400
 @@ -5,6 +5,7 @@
   ${CMAKE_BINARY_DIR}/src/plugins/positionprovider/gpsd
   ${QT_INCLUDE_DIR}
@@ -60,9 +60,9 @@ diff -Nurd kdeedu-4.3.98/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt
 +set( GpsdPositionProviderPlugin_LIBS ${libgps_LIBRARIES} ${libgps_LDFLAGS} )
  
  marble_add_plugin( GpsdPositionProviderPlugin ${gpsd_SRCS} )
-diff -Nurd kdeedu-4.3.98/step/step/CMakeLists.txt kdeedu-4.3.98-new/step/step/CMakeLists.txt
---- kdeedu-4.3.98/step/step/CMakeLists.txt	2009-03-27 10:46:55.000000000 -0400
-+++ kdeedu-4.3.98-new/step/step/CMakeLists.txt	2010-02-01 14:54:16.000000000 -0500
+diff -Nurd kdeedu-4.5.1/step/step/CMakeLists.txt kdeedu-4.5.1-new/step/step/CMakeLists.txt
+--- kdeedu-4.5.1/step/step/CMakeLists.txt	2010-06-08 06:11:49.000000000 -0400
++++ kdeedu-4.5.1-new/step/step/CMakeLists.txt	2010-10-02 22:01:24.000000000 -0400
 @@ -41,6 +41,7 @@
  
  if(STEPCORE_WITH_GSL)
@@ -71,9 +71,9 @@ diff -Nurd kdeedu-4.3.98/step/step/CMakeLists.txt kdeedu-4.3.98-new/step/step/CM
  endif(STEPCORE_WITH_GSL)
  
  if(STEP_WITH_QALCULATE)
-diff -Nurd kdeedu-4.3.98/step/stepcore/CMakeLists.txt kdeedu-4.3.98-new/step/stepcore/CMakeLists.txt
---- kdeedu-4.3.98/step/stepcore/CMakeLists.txt	2008-04-10 05:30:31.000000000 -0400
-+++ kdeedu-4.3.98-new/step/stepcore/CMakeLists.txt	2010-02-01 14:54:16.000000000 -0500
+diff -Nurd kdeedu-4.5.1/step/stepcore/CMakeLists.txt kdeedu-4.5.1-new/step/stepcore/CMakeLists.txt
+--- kdeedu-4.5.1/step/stepcore/CMakeLists.txt	2010-06-08 06:11:49.000000000 -0400
++++ kdeedu-4.5.1-new/step/stepcore/CMakeLists.txt	2010-10-02 22:01:24.000000000 -0400
 @@ -23,7 +23,7 @@
  
  if(STEPCORE_WITH_GSL)

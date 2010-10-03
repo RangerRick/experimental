@@ -1,9 +1,9 @@
 Package: dbus-qt3-dev
 Version: 0.70
-Revision: 1023
+Revision: 1024
 Description: D-BUS Qt bindings
 License: Restrictive/Distributable
-Maintainer: Benjamin Reed <dbus-qt3@fink.racoonfink.com>
+Maintainer: Benjamin Reed <dbus-qt3@fink.raccoonfink.com>
 
 Depends: dbus-qt3-shlibs (>= %v-%r)
 BuildDepends: <<
