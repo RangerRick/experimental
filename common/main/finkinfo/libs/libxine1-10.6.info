@@ -20,6 +20,7 @@ BuildDepends: <<
 	expat1,
 	faac-dev,
 	fink (>= 0.26.0-1),
+	fink-package-precedence (>= 0.7-1),
 	ffmpeg-dev,
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.5-1),
@@ -96,7 +97,6 @@ SetCFLAGS: -Os -fomit-frame-pointer -fexpensive-optimizations -ffast-math
 SetLDFLAGS: -Wl,-dylib_file,/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
 SetMACOSX_DEPLOYMENT_TARGET: 10.5
 ConfigureParams: <<
-	--disable-dependency-tracking \
 	--target=%m-apple-darwin`uname -r|cut -f1 -d.` \
 	--libexecdir=%p/lib/libxine \
 	--mandir=%p/share/man \
@@ -155,6 +155,7 @@ CompileScript: <<
 	[ "%m" = "powerpc" ] && export EXTRA_CONFIG_PARAMS="--enable-altivec"
 	./configure %c $EXTRA_CONFIG_PARAMS
 	make
+	fink-package-precedence --prohibit-bdep %N .
 <<
 
 InstallScript: <<

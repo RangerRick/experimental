@@ -20,6 +20,7 @@ BuildDepends: <<
 	expat1,
 	faac-dev,
 	fink (>= 0.29.7-1),
+	fink-package-precedence (>= 0.7-1),
 	ffmpeg-dev,
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.12-1),
@@ -102,7 +103,6 @@ SetCFLAGS: -Os -fomit-frame-pointer -fexpensive-optimizations -ffast-math
 SetLDFLAGS: -Wl,-dylib_file,/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
 UseMaxBuildJobs: true
 ConfigureParams: <<
---disable-dependency-tracking \
 --libexecdir=%p/lib/libxine \
 --mandir=%p/share/man \
 --enable-static \
@@ -160,6 +160,7 @@ CompileScript: <<
 	[ "%m" = "powerpc" ] && export EXTRA_CONFIG_PARAMS="--enable-altivec"
 	./configure %c $EXTRA_CONFIG_PARAMS
 	make
+	fink-package-precedence --prohibit-bdep %N .
 <<
 
 InstallScript: <<
