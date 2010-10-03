@@ -24,7 +24,7 @@ BuildDepends: <<
 	qimageblitz-unified-%type_pkg[kde],
 	cairo (>= 1.8.10-3),
 	cmake (>= 2.8.2-1),
-	dbus-dev (>= 1.2.24-1),
+	dbus1.3-dev (>= 1.2.24-1),
 	fink (>= 0.29.7-1),
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.12-1),
@@ -41,6 +41,7 @@ BuildDepends: <<
 	libgphoto2,
 	libjpeg8,
 	libpgf,
+	libspectre1,
 	libtiff,
 	pkgconfig (>= 0.23-1),
 	poppler2,
@@ -59,7 +60,7 @@ GCC: 4.0
 Source: mirror:kde:stable/%v/src/kdegraphics-%v.tar.bz2
 Source-MD5: 11c3da572a6205bf5d898e8958d4aadd
 PatchFile: kdegraphics4.patch
-PatchFile-MD5: 58db7d2be3e24f2ebb52b2f83599aa2b
+PatchFile-MD5: 970e1af405b484c701b89a40a08ce504
 
 UseMaxBuildJobs: true
 CompileScript: <<
@@ -377,6 +378,7 @@ SplitOff8: <<
 		libchm-shlibs,
 		libdjvulibre21-shlibs,
 		libepub-shlibs,
+		libspectre1-shlibs,
 		poppler2-qt4-%type_pkg[kde]-shlibs (>= 0.6.4-4),
 		qca2-%type_pkg[kde]-shlibs (>= 2.0.2-1),
 		%N-base (>= %v-%r)

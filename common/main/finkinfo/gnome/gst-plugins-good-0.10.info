@@ -13,7 +13,7 @@ BuildDepends: <<
 	aalib,
 	audiofile,
 	cairo (>= 1.8.8-1),
-	dbus-dev (>= 1.2.12-1),
+	dbus1.3-dev (>= 1.2.12-1),
 	esound (>= 0.2.38-1),
 	expat1,
 	fontconfig2-dev (>= 2.4.1-1),
