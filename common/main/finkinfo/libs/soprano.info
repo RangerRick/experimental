@@ -14,7 +14,7 @@ BuildDepends: <<
 	clucene-core (>= 0.9.20-1),
 	cmake (>= 2.6.1-2),
 	db48-aes | db48,
-	dbus-dev (>= 1.2.0-1),
+	dbus1.3-dev (>= 1.2.0-1),
 	fink (>= 0.28.0-1),
 	fink-package-precedence (>= 0.7-1),
 	gmp,
