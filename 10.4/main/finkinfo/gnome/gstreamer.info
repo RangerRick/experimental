@@ -12,7 +12,7 @@ BuildDepends: <<
 	atk1 (>= 1.26.0-1),
 	bison,
 	cairo (>= 1.8.10-3),
-	dbus-dev (>= 1.2.24-1),
+	dbus1.3-dev (>= 1.2.24-1),
 	esound (>= 0.2.38-1),
 	expat1,
 	fink (>= 0.29.7-1),

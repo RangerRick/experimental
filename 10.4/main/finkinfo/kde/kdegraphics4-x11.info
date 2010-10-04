@@ -423,6 +423,7 @@ SplitOff8: <<
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/okular*
 		opt/kde4/%type_pkg[kde]/share/apps/okular
 		opt/kde4/%type_pkg[kde]/share/config.kcfg/okular*
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/gssettings*
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/okular
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/okular*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/okular*
