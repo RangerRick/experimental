@@ -1,7 +1,7 @@
 Info2: <<
 Package: gst-python-0.10-py%type_pkg[python]
 Version: 0.10.19
-Revision: 1
+Revision: 2
 Description: Python interface to GStreamer
 # No 2.7 until pyxml supports it
 Type: python(2.5 2.6)
