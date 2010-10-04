@@ -85,7 +85,7 @@ BuildDependsOnly: true
 Source: mirror:sourceforge:xine/xine-lib-%v.tar.bz2
 Source-MD5: a410a0f0617e1d6309f0cbe907f73f8a
 PatchFile: libxine1.patch
-PatchFile-MD5: d5b6a70f9fcb09d2772452716bddf1fb
+PatchFile-MD5: eb707912fcc62447b03d3d6f7db603eb
 PatchScript: <<
 	%{default_script}
 	perl -pi -e 's,libXv.so,libXv.dylib,g; s,x\*\.so\),x*.dylib),; s,s/\\\.so\$//,s/\.dylib\$//,' configure

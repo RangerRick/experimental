@@ -97,7 +97,7 @@ PatchScript: <<
 	if [ `sw_vers -productVersion | cut -d. -f1-2` = "10.4" ]; then perl -pi -e 's,MacOSX10.5.sdk,MacOSX10.4u.sdk,g' src/audio_out/Makefile.in; fi
 <<
 PatchFile: libxine1.patch
-PatchFile-MD5: d5b6a70f9fcb09d2772452716bddf1fb
+PatchFile-MD5: eb707912fcc62447b03d3d6f7db603eb
 
 SetCFLAGS: -Os -fomit-frame-pointer -fexpensive-optimizations -ffast-math -I%p/lib/fontconfig2/include
 SetLDFLAGS: -Wl,-dylib_file,/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib -L%p/lib/fontconfig2/lib
