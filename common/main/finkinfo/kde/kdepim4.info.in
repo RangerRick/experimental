@@ -15,7 +15,7 @@ Maintainer: Benjamin Reed <kdepim4@fink.raccoonfink.com>
 DescDetail: <<
 <<
 
-Source: mirror:kde:stable/%v/src/kdepim-%v.tar.bz2
+Source: mirror:kde:stable/kdepim-%v/src/kdepim-%v.tar.bz2
 Source-MD5: dab253004c2660c75b61a3caeb117ed1
 PatchFile: kdepim4.patch
 PatchFile-MD5: dcfc6e5d1d854a10d8fd004d7cc5645c
@@ -52,7 +52,7 @@ BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.88-1),
 	boost1.35.systempython,
 	cmake (>= 2.6.3-1),
-	dbus-dev (>= 1.2.12-1),
+	dbus1.3-dev (>= 1.2.12-1),
 	fink (>= 0.28.0-1),
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.7-7),
