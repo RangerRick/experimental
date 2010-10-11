@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-japanese-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Japanese
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-ja-%v.tar.bz2
 #SourceDirectory: kde-l10n-ja-%v
-Source-MD5: cc3b0f96ee11939445128cf156090441
+Source-MD5: e71147163b8cfecc5114e4bd7e752253
 
 CompileScript: <<
 #!/bin/sh -ev

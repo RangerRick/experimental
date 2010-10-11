@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-norwegian-bokmaal-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Norwegian Bokmaal
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-nb-%v.tar.bz2
 #SourceDirectory: kde-l10n-nb-%v
-Source-MD5: b95decdfe08d34c65e92db4bd1b544d4
+Source-MD5: d70d2de92fe7ede3f9f1ce1e779c6fa3
 
 CompileScript: <<
 #!/bin/sh -ev

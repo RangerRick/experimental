@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-l10n-turkish-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 
 Description: KDE4 - KOffice languages for Turkish
@@ -24,7 +24,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-tr-%v.tar.bz2
 #SourceDirectory: koffice-l10n-tr-%v
-Source-MD5: adc72dfece17921e06c960afe79e750b
+Source-MD5: d452c050e888f9590b73561f72bc4255
 
 CompileScript: <<
 #!/bin/sh -ev

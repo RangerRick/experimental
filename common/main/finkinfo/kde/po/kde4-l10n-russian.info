@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-russian-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Russian
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-ru-%v.tar.bz2
 #SourceDirectory: kde-l10n-ru-%v
-Source-MD5: a1e7851144651221d05c38d0d51a3326
+Source-MD5: 664108c46f0f67d1bdd8aafe09801473
 
 CompileScript: <<
 #!/bin/sh -ev

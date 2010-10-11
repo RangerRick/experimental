@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-l10n-uk-english-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 
 Description: KDE4 - KOffice languages for UK English
@@ -24,7 +24,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-en_GB-%v.tar.bz2
 #SourceDirectory: koffice-l10n-en_GB-%v
-Source-MD5: 0e315c409be12f09563994753ae54da7
+Source-MD5: e989a0ed9b17d7e8dc1fd6dbc5c26835
 
 CompileScript: <<
 #!/bin/sh -ev

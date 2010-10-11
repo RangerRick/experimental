@@ -1,6 +1,6 @@
 Info4: <<
 Package: amarok2-%type_pkg[kde]
-Version: 2.3.1
+Version: 2.3.2
 Revision: 1
 Description: KDE4 - music player
 Type: kde (x11 mac)
@@ -9,8 +9,8 @@ Maintainer: Benjamin Reed <amarok2@fink.raccoonfink.com>
 
 Depends: <<
 	dbus (>= 1.2.24-1),
-	kdebase4-%type_pkg[kde] (>= 4.5.1-1),
-	kdemultimedia4-%type_pkg[kde]-base-shlibs (>= 4.5.1-1),
+	kdebase4-%type_pkg[kde] (>= 4.5.2-1),
+	kdemultimedia4-%type_pkg[kde]-base-shlibs (>= 4.5.2-1),
 	libgpod4-shlibs,
 	liblastfm-%type_pkg[kde]-shlibs,
 	libmp4v21-shlibs,
@@ -36,9 +36,9 @@ BuildDepends: <<
 	glib2-dev (>= 2.22.0-1),
 	gtk+2-dev (>= 2.14.7-1),
 	kde4-buildenv (>= 4.5.1-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.5.1-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
-	kdemultimedia4-%type_pkg[kde]-dev (>= 4.5.1-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kdemultimedia4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	libgettext8-dev,
 	libgpod4,
 	liblastfm-%type_pkg[kde]-dev,
@@ -63,7 +63,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/amarok/%v/src/amarok-%v.tar.bz2
-Source-MD5: 6679adaf5cc757b1515a9f03cdcb6066
+Source-MD5: 4e03dc009f8b44d9b8dfb5f6d1034081
 SourceDirectory: amarok-%v
 PatchFile: amarok2.patch
 PatchFile-MD5: 8b800d79d954c8ad6ce516d8e009d658

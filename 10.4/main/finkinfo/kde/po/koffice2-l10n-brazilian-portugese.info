@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-l10n-brazilian-portugese-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 Description: KDE4 - KOffice languages for Brazilian Portugese
 Type: kde (x11 mac)
@@ -18,7 +18,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-pt_BR-%v.tar.bz2
-Source-MD5: e7f5d000d1280603ff3ac23b229ae04d
+Source-MD5: 54817bbbea7f541f2983243a45ade2b1
 
 UseMaxBuildJobs: true
 CompileScript: <<

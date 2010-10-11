@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-esperanto-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Esperanto
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-eo-%v.tar.bz2
 #SourceDirectory: kde-l10n-eo-%v
-Source-MD5: 346dc3219c310f0fdc9777d2b4f9c617
+Source-MD5: e910fa7793612481305a37c4c09e8eb9
 
 CompileScript: <<
 #!/bin/sh -ev

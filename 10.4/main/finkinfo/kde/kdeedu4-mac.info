@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdeedu4-mac
-Version: 4.5.1
+Version: 4.5.2
 Revision: 1
 Description: KDE4 - Edutainment software
 Type: kde (mac)
@@ -43,8 +43,8 @@ BuildDepends: <<
 	gpsd (>= 2.35-1),
 	gsl,
 	kde4-buildenv (>= 4.5.1-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.5.1-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	libattica-%type_pkg[kde]-dev (>= 0.1.4-1),
 	libgettext8-dev,
 	libopenbabel3-dev,
@@ -65,7 +65,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdeedu-%v.tar.bz2
-Source-MD5: 43c31e897b8ec759876c15adba5e0a12
+Source-MD5: 65ff4441860ffc8442dac7a2d3d88e31
 PatchFile: kdeedu4.patch
 PatchFile-MD5: 58d3b65ffdbe6a318793bfcf87d198f0
 
@@ -473,7 +473,7 @@ SplitOff3: <<
 SplitOff30: <<
 	Package: %N-base-shlibs
 	Description: KDE4 - base kdeedu shared libraries
-	Depends: kdebase4-%type_pkg[kde]-shlibs (>= 4.5.1-1)
+	Depends: kdebase4-%type_pkg[kde]-shlibs (>= 4.5.2-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/libkdeeduui.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkeduvocdocument.4*.dylib
@@ -501,7 +501,7 @@ SplitOff32: <<
 	Description: KDE4 - kdeedu base package
 	Depends: <<
 		%N-base-shlibs (>= %v-%r),
-		kdebase4-runtime-%type_pkg[kde] (>= 4.5.1-1)
+		kdebase4-runtime-%type_pkg[kde] (>= 4.5.2-1)
 	<<
 	Files: opt
 <<

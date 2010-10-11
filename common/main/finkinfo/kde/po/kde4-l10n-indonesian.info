@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-indonesian-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Indonesian
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-id-%v.tar.bz2
 #SourceDirectory: kde-l10n-id-%v
-Source-MD5: 9715dfd1c3836d912b57c21c64cd6943
+Source-MD5: a3c9d1ebdb974ab6a605af96d509f5bf
 
 CompileScript: <<
 #!/bin/sh -ev

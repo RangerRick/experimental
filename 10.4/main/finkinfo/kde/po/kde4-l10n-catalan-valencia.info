@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-catalan-valencia-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 Description: KDE4 - languages for Catalan (Valencia)
 Type: kde (x11 mac)
@@ -8,7 +8,7 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <kde4-l10n-catalan-valencia@fink.raccoonfink.com>
 
 Depends: <<
-	kdelibs4-%type_pkg[kde] (>= 4.5.1-1),
+	kdelibs4-%type_pkg[kde] (>= 4.5.2-1),
 	(%type_pkg[kde] = x11) xfonts-intl
 <<
 BuildDepends: <<
@@ -16,13 +16,13 @@ BuildDepends: <<
 	cmake (>= 2.8.2-1),
 	fink (>= 0.29.7-1),
 	gettext-tools (>= 0.17-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	libgettext8-dev,
 	(%type_pkg[kde] = x11) xfonts-intl
 <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-ca@valencia-%v.tar.bz2
-Source-MD5: 25db9ebf3081269de3ff6536bf397138
+Source-MD5: 9b886553ba2218ae3eed2d15ca7e2018
 
 UseMaxBuildJobs: true
 CompileScript: <<

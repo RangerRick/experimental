@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-walloon-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Walloon
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-wa-%v.tar.bz2
 #SourceDirectory: kde-l10n-wa-%v
-Source-MD5: 58ab0bac3687d70d58b2c568a6433967
+Source-MD5: bd63914d2586798f732fa468ef5b4a4c
 
 CompileScript: <<
 #!/bin/sh -ev

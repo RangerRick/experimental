@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-l10n-italian-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 
 Description: KDE4 - KOffice languages for Italian
@@ -24,7 +24,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-it-%v.tar.bz2
 #SourceDirectory: koffice-l10n-it-%v
-Source-MD5: 7a1629378689466844ea457beaf05873
+Source-MD5: b25740e9670b8156ca71a168721e3783
 
 CompileScript: <<
 #!/bin/sh -ev

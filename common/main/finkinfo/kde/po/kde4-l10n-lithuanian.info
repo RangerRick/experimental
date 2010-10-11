@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-lithuanian-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Lithuanian
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-lt-%v.tar.bz2
 #SourceDirectory: kde-l10n-lt-%v
-Source-MD5: cac388cc2c0801b7056e120379241c86
+Source-MD5: b0fc8332500eb25b4a44d3cbc4b93ddb
 
 CompileScript: <<
 #!/bin/sh -ev

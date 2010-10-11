@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-l10n-german-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 Description: KDE4 - KOffice languages for German
 Type: kde (x11 mac)
@@ -18,7 +18,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-de-%v.tar.bz2
-Source-MD5: 3fbc300cc777591e128bb2e454348540
+Source-MD5: 15d340247b23fe6aad767ab94713b4a0
 
 UseMaxBuildJobs: true
 CompileScript: <<

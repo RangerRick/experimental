@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-serbian-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Serbian
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-sr-%v.tar.bz2
 #SourceDirectory: kde-l10n-sr-%v
-Source-MD5: fe669fbab183f0c4b80c7609e2aafd6e
+Source-MD5: f09a1a379305b6d8f63ced337b9cbb2b
 
 CompileScript: <<
 #!/bin/sh -ev

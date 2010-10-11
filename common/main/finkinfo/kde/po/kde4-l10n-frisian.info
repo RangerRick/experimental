@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-frisian-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Frisian
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-fy-%v.tar.bz2
 #SourceDirectory: kde-l10n-fy-%v
-Source-MD5: d85ec1fc1ee1ddb6b9823a0fc9478ef5
+Source-MD5: fab58d2f769672962766abdf6195f46b
 
 CompileScript: <<
 #!/bin/sh -ev

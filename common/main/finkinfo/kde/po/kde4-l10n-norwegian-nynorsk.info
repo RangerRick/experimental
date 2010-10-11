@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-norwegian-nynorsk-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Norwegian Nynorsk
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-nn-%v.tar.bz2
 #SourceDirectory: kde-l10n-nn-%v
-Source-MD5: ff46d4e744c06dbdda4d6c1bcdebef46
+Source-MD5: 42e4281e0dd502dc61f6e0d58bb05abd
 
 CompileScript: <<
 #!/bin/sh -ev

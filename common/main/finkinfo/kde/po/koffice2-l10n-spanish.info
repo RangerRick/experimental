@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-l10n-spanish-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 
 Description: KDE4 - KOffice languages for Spanish
@@ -24,7 +24,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-es-%v.tar.bz2
 #SourceDirectory: koffice-l10n-es-%v
-Source-MD5: 7cf8b879087106e847d2ecc3f8b56ca0
+Source-MD5: 5a278bd75486c6c796d9ed4097ca371b
 
 CompileScript: <<
 #!/bin/sh -ev

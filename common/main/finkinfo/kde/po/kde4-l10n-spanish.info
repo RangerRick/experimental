@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-spanish-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Spanish
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-es-%v.tar.bz2
 #SourceDirectory: kde-l10n-es-%v
-Source-MD5: 951d9ebee2ed57218f28fcad7086d484
+Source-MD5: d61eaeb26a2dcc132129d2fbc128ac68
 
 CompileScript: <<
 #!/bin/sh -ev

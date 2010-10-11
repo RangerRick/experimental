@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-l10n-catalan-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 Description: KDE4 - KOffice languages for Catalan
 Type: kde (x11 mac)
@@ -18,7 +18,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-ca-%v.tar.bz2
-Source-MD5: 0c08e177ef14588106272cc6001b31c9
+Source-MD5: 142d0626eac29c19a1d2b66dfc0ded16
 
 UseMaxBuildJobs: true
 CompileScript: <<

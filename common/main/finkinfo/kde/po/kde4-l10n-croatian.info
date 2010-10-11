@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-croatian-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Croatian
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-hr-%v.tar.bz2
 #SourceDirectory: kde-l10n-hr-%v
-Source-MD5: 462ca836cc1ce75b78d2fef48f1e8956
+Source-MD5: 974830a78dfa6d62ce943b577d53d489
 
 CompileScript: <<
 #!/bin/sh -ev

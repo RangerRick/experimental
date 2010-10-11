@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-l10n-estonian-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 
 Description: KDE4 - KOffice languages for Estonian
@@ -24,7 +24,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-et-%v.tar.bz2
 #SourceDirectory: koffice-l10n-et-%v
-Source-MD5: 8005fcc46a9550c03bcae69096123a8f
+Source-MD5: 47ad097296ef143cc6a9ae0a538e01c4
 
 CompileScript: <<
 #!/bin/sh -ev

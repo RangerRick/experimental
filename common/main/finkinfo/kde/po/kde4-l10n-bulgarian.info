@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-bulgarian-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Bulgarian
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-bg-%v.tar.bz2
 #SourceDirectory: kde-l10n-bg-%v
-Source-MD5: 6c2689b513be7b8d3091b7626fadd41f
+Source-MD5: d6e05d20134ab82e3383f4564a80e9ee
 
 CompileScript: <<
 #!/bin/sh -ev

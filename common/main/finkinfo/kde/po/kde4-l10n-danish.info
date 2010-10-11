@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-danish-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Danish
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-da-%v.tar.bz2
 #SourceDirectory: kde-l10n-da-%v
-Source-MD5: f58c4e40d7dfc81ecc474065605ef6ab
+Source-MD5: 944504de86406d42cc191e3b43cd4f78
 
 CompileScript: <<
 #!/bin/sh -ev

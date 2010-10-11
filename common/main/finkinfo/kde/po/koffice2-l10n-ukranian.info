@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-l10n-ukranian-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 
 Description: KDE4 - KOffice languages for Ukranian
@@ -24,7 +24,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-uk-%v.tar.bz2
 #SourceDirectory: koffice-l10n-uk-%v
-Source-MD5: ae45e6c4d3577e01a1330bfd76389b95
+Source-MD5: fd11c70ce44c9ba70bb19ab722fac4f1
 
 CompileScript: <<
 #!/bin/sh -ev

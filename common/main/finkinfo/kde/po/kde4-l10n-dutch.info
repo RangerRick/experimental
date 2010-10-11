@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-dutch-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Dutch
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-nl-%v.tar.bz2
 #SourceDirectory: kde-l10n-nl-%v
-Source-MD5: 3bcd3e1af34e7aee927ebab16210adad
+Source-MD5: 0efa67b22adef40d14e981b6ef1c23c8
 
 CompileScript: <<
 #!/bin/sh -ev

@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-l10n-greek-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 
 Description: KDE4 - KOffice languages for Greek
@@ -24,7 +24,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-el-%v.tar.bz2
 #SourceDirectory: koffice-l10n-el-%v
-Source-MD5: 7420519a9052a4ad5938e03e765472fb
+Source-MD5: c08c1066cef43ce670ac66e001b4ea18
 
 CompileScript: <<
 #!/bin/sh -ev

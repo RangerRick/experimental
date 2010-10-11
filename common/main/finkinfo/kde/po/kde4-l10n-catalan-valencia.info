@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-catalan-valencia-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Catalan (Valencia)
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-ca@valencia-%v.tar.bz2
 #SourceDirectory: kde-l10n-ca@valencia-%v
-Source-MD5: 25db9ebf3081269de3ff6536bf397138
+Source-MD5: 9b886553ba2218ae3eed2d15ca7e2018
 
 CompileScript: <<
 #!/bin/sh -ev

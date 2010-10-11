@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-l10n-low-saxon-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 
 Description: KDE4 - KOffice languages for Low Saxon
@@ -24,7 +24,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-nds-%v.tar.bz2
 #SourceDirectory: koffice-l10n-nds-%v
-Source-MD5: df9ec5d060d8ce9da27b8aa2d3b5fe7c
+Source-MD5: abeda39cb2130e44c0b1efd4b9c8bf03
 
 CompileScript: <<
 #!/bin/sh -ev

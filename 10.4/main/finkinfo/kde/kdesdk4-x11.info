@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdesdk4-x11
-Version: 4.5.1
+Version: 4.5.2
 Revision: 1
 Description: KDE4 - Developer Utilities
 Type: kde (x11)
@@ -33,9 +33,9 @@ BuildDepends: <<
 	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),
 	kde4-buildenv (>= 4.5.1-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.5.1-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	libgettext8-dev,
 	libhunspell (>= 1.2.8-1004),
 	libxslt,
@@ -52,7 +52,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdesdk-%v.tar.bz2
-Source-MD5: 091d24625aa42355da4e6c272abd37e1
+Source-MD5: ef8b55b47e66bfd86993f60075097f54
 
 UseMaxBuildJobs: true
 CompileScript: <<
@@ -247,7 +247,7 @@ SplitOff20: <<
 SplitOff21: <<
 	Package: %N-base
 	Description: KDE4 - kdesdk base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.5.1-1)
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.5.2-1)
 	Files: opt
 <<
 SplitOff3: <<
@@ -293,7 +293,7 @@ SplitOff4: <<
 	Package: kbugbuster4-%type_pkg[kde]
 	Description: KDE4 - bugzilla client
 	Depends: <<
-		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.5.1-1),
+		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.5.2-1),
 		%N-base (>= %v-%r)
 	<<
 	Files: <<

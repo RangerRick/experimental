@@ -1,0 +1,51 @@
+Info4: <<
+Package: koffice2-l10n-russian-%type_pkg[kde]
+Version: 2.2.2
+Revision: 1
+
+Description: KDE4 - KOffice languages for Russian
+DescDetail: Language files for the KDE office suite: Russian
+
+Type: kde (x11 mac)
+License: GPL/LGPL
+Maintainer: Benjamin Reed <koffice2-l10n-russian@fink.raccoonfink.com>
+
+Depends: <<
+	koffice2-%type_pkg[kde]-base (>= %v-1),
+<<
+BuildDepends: <<
+	automoc-%type_pkg[kde] (>= 0.9.89-0),
+	cmake (>= 2.6.3-1),
+	fink (>= 0.28.0-1),
+	gettext-tools (>= 0.17-1),
+	koffice2-%type_pkg[kde]-dev (>= %v-1),
+	libgettext3-dev,
+<<
+
+Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-ru-%v.tar.bz2
+#SourceDirectory: koffice-l10n-ru-%v
+Source-MD5: d9e07a3fb20c527b450177b81fc43269
+
+CompileScript: <<
+#!/bin/sh -ev
+
+	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[kde]"
+	. %p/sbin/kde4-buildenv.sh
+
+	mkdir -p build
+	pushd build
+		cmake $KDE4_CMAKE_ARGS ..
+		make
+	popd
+<<
+InstallScript: <<
+#!/bin/sh -ev
+
+	pushd build
+		make -j1 install/fast DESTDIR="%d"
+	popd
+
+	mkdir -p %i/share/doc/kde-installed-packages
+	touch %i/share/doc/kde-installed-packages/koffice2-l10n-russian-%type_pkg[kde]
+<<
+<<

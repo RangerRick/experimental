@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-irish-gaelic-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Irish Gaelic
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-ga-%v.tar.bz2
 #SourceDirectory: kde-l10n-ga-%v
-Source-MD5: 5bb46217ae7b85bbac2547b558260e8d
+Source-MD5: d1f2c106b6d4b333618b674f9a1f36c5
 
 CompileScript: <<
 #!/bin/sh -ev

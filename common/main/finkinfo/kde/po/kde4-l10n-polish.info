@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-polish-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Polish
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-pl-%v.tar.bz2
 #SourceDirectory: kde-l10n-pl-%v
-Source-MD5: 10e82b40038565dd11ee0746feb30f0d
+Source-MD5: 83d751c113635977c9b3df5256fee8f7
 
 CompileScript: <<
 #!/bin/sh -ev

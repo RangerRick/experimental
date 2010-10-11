@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdeedu4-mac
 Type: kde (mac)
 #endif
-Version: 4.5.1
+Version: 4.5.2
 Revision: 1
 Description: KDE4 - Edutainment software
 License: GPL/LGPL
@@ -17,7 +17,7 @@ A collection of fun and educational apps for KDE.
 <<
 
 Source: mirror:kde:stable/%v/src/kdeedu-%v.tar.bz2
-Source-MD5: 43c31e897b8ec759876c15adba5e0a12
+Source-MD5: 65ff4441860ffc8442dac7a2d3d88e31
 PatchFile: kdeedu4.patch
 PatchFile-MD5: 58d3b65ffdbe6a318793bfcf87d198f0
 

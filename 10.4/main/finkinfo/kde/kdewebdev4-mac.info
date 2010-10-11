@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdewebdev4-mac
-Version: 4.5.1
+Version: 4.5.2
 Revision: 1
 Description: KDE4 - Web Development
 Type: kde (mac)
@@ -23,9 +23,9 @@ BuildDepends: <<
 	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),
 	kde4-buildenv (>= 4.5.1-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.5.1-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	libgettext8-dev,
 	libxml2,
 	libxslt,
@@ -41,7 +41,7 @@ BuildConflicts: libtidy-dev
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdewebdev-%v.tar.bz2
-Source-MD5: 766ff0dbe696e8c69347466554b01241
+Source-MD5: b3269db8c1a6a1383b1d381f97dea02e
 
 UseMaxBuildJobs: true
 CompileScript: <<
@@ -102,7 +102,7 @@ SplitOff10: <<
 SplitOff11: <<
 	Package: %N-base
 	Description: KDE4 - kdewebdev base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.5.1-1)
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.5.2-1)
 	Files: opt share/doc/installed-packages/%n
 <<
 SplitOff2: <<

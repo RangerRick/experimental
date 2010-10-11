@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdetoys4-mac
-Version: 4.5.1
+Version: 4.5.2
 Revision: 1
 Description: KDE4 - Toys
 Type: kde (mac)
@@ -17,8 +17,8 @@ BuildDepends: <<
 	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),
 	kde4-buildenv (>= 4.5.1-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.5.1-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	libgettext8-dev,
 	pkgconfig (>= 0.23-1),
 	qt4-%type_pkg[kde] (>= 4.6.3-1),
@@ -30,7 +30,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdetoys-%v.tar.bz2
-Source-MD5: a066bc387fd160c3e75fecead6cb0487
+Source-MD5: 4ac497a3b30d728b2c69af44feabf87f
 
 UseMaxBuildJobs: true
 CompileScript: <<
@@ -60,7 +60,7 @@ InstallScript: <<
 SplitOff10: <<
 	Package: %N-base
 	Description: KDE4 - kdetoys base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.5.1-1)
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.5.2-1)
 	Files: opt share/doc/installed-packages/%n
 <<
 SplitOff2: <<

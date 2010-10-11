@@ -1,6 +1,6 @@
 Info4: <<
 Package: amarok2-%type_pkg[kde]
-Version: 2.3.1
+Version: 2.3.2
 Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - music player
@@ -14,7 +14,7 @@ looks good doing it.
 <<
 
 Source: mirror:kde:stable/amarok/%v/src/amarok-%v.tar.bz2
-Source-MD5: 6679adaf5cc757b1515a9f03cdcb6066
+Source-MD5: 4e03dc009f8b44d9b8dfb5f6d1034081
 SourceDirectory: amarok-%v
 PatchFile: amarok2.patch
 PatchFile-MD5: 8b800d79d954c8ad6ce516d8e009d658

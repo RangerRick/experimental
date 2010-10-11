@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-punjabi-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Punjabi
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-pa-%v.tar.bz2
 #SourceDirectory: kde-l10n-pa-%v
-Source-MD5: a25116bd36b67c17ff64f3bc2d95d8ae
+Source-MD5: 7dea3a9342f359f8e9a189fde2703dea
 
 CompileScript: <<
 #!/bin/sh -ev

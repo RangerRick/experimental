@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-korean-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Korean
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-ko-%v.tar.bz2
 #SourceDirectory: kde-l10n-ko-%v
-Source-MD5: cb1594602e243582a6037ecefa29159e
+Source-MD5: 9b32cd519006d1934a358983c30f9a8a
 
 CompileScript: <<
 #!/bin/sh -ev

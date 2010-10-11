@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-thai-%type_pkg[kde]
-Version: 4.3.90
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Thai
@@ -18,16 +18,15 @@ BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
 	cmake (>= 2.6.3-1),
 	fink (>= 0.28.0-1),
-	gettext-tools-0.17,
+	gettext-tools (>= 0.17-1),
 	kdelibs4-%type_pkg[kde]-dev (>= %v-1),
 	libgettext3-dev,
 	(%type_pkg[kde] = x11) xfonts-intl,
 <<
 
-Source: mirror:kde:unstable/%v/src/kde-l10n/kde-l10n-th-%v.tar.bz2
-
-SourceDirectory: kde-l10n-th-%v
-Source-MD5: 7b9f05d635ea1853c7413f34c8c18eaf
+Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-th-%v.tar.bz2
+#SourceDirectory: kde-l10n-th-%v
+Source-MD5: 708499add7cf02b9dc005ac0d7ab869a
 
 CompileScript: <<
 #!/bin/sh -ev

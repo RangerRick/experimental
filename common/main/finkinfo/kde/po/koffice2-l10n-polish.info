@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-l10n-polish-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 
 Description: KDE4 - KOffice languages for Polish
@@ -24,7 +24,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-pl-%v.tar.bz2
 #SourceDirectory: koffice-l10n-pl-%v
-Source-MD5: ce5559820fb1fb1fbfddd0508495d103
+Source-MD5: 04d3e186bfe74a7bbb2e96e4079435c5
 
 CompileScript: <<
 #!/bin/sh -ev

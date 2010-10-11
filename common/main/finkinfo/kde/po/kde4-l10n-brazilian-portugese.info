@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-brazilian-portugese-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Brazilian Portugese
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-pt_BR-%v.tar.bz2
 #SourceDirectory: kde-l10n-pt_BR-%v
-Source-MD5: 94d0e9263bd10a149c63eb935465f821
+Source-MD5: 916edb81333163bb0b14adf3e27d2624
 
 CompileScript: <<
 #!/bin/sh -ev

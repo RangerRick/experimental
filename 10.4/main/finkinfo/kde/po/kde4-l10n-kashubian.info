@@ -8,7 +8,7 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <kde4-l10n-kashubian@fink.raccoonfink.com>
 
 Depends: <<
-	kdelibs4-%type_pkg[kde] (>= 4.5.1-1),
+	kdelibs4-%type_pkg[kde] (>= 4.5.2-1),
 	(%type_pkg[kde] = x11) xfonts-intl
 <<
 BuildDepends: <<
@@ -16,7 +16,7 @@ BuildDepends: <<
 	cmake (>= 2.8.2-1),
 	fink (>= 0.29.7-1),
 	gettext-tools (>= 0.17-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	libgettext8-dev,
 	(%type_pkg[kde] = x11) xfonts-intl
 <<

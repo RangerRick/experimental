@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-latvian-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Latvian
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-lv-%v.tar.bz2
 #SourceDirectory: kde-l10n-lv-%v
-Source-MD5: 5424ecac484961889632fcda36c388f2
+Source-MD5: 0ce9baaec744ed3a6c7b5b4f92ea0dec
 
 CompileScript: <<
 #!/bin/sh -ev

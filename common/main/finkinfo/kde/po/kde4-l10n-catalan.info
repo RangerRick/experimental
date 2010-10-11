@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-catalan-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Catalan
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-ca-%v.tar.bz2
 #SourceDirectory: kde-l10n-ca-%v
-Source-MD5: 1592af9f2cd2883c1ef54b754a820388
+Source-MD5: 96eb0c95ef1eb2addd81289ebf55acc2
 
 CompileScript: <<
 #!/bin/sh -ev

@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdemultimedia4-x11
-Version: 4.5.1
+Version: 4.5.2
 Revision: 1
 Description: KDE4 - Multimedia Apps
 Type: kde (x11)
@@ -22,8 +22,8 @@ BuildDepends: <<
 	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),
 	kde4-buildenv (>= 4.5.1-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.5.1-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	lame,
 	lame-dev,
 	libflac8-dev,
@@ -44,7 +44,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdemultimedia-%v.tar.bz2
-Source-MD5: 906f62dca51234f2ea056e30f4854da9
+Source-MD5: 63613acce56cbc393588f7b2d15e758b
 PatchFile: kdemultimedia4.patch
 PatchFile-MD5: 585ccb0fa9592bbab477ff50969d18b9
 
@@ -143,7 +143,7 @@ SplitOff21: <<
 	Package: %N-base-shlibs
 	Description: KDE4 - kdemultimedia base shared libraries
 	Depends: <<
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.5.1-1),
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.5.2-1),
 		libmusicbrainz4-shlibs
 	<<
 	Files: <<
@@ -160,7 +160,7 @@ SplitOff22: <<
 	Description: KDE4 - kdemultimedia base package
 	Depends: <<
 		%N-base-shlibs (>= %v-%r),
-		kdebase4-runtime-%type_pkg[kde] (>= 4.5.1-1)
+		kdebase4-runtime-%type_pkg[kde] (>= 4.5.2-1)
 	<<
 	Files: opt
 <<

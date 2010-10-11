@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-l10n-chinese-simplified-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 
 Description: KDE4 - KOffice languages for Chinese Simplified
@@ -24,7 +24,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-zh_CN-%v.tar.bz2
 #SourceDirectory: koffice-l10n-zh_CN-%v
-Source-MD5: 31998e9526d51a7f4f81ea76d0108aee
+Source-MD5: 52a81ed273b4bf7d7d9fb71d4dc91b0d
 
 CompileScript: <<
 #!/bin/sh -ev

@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-estonian-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 Description: KDE4 - languages for Estonian
 Type: kde (x11 mac)
@@ -8,7 +8,7 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <kde4-l10n-estonian@fink.raccoonfink.com>
 
 Depends: <<
-	kdelibs4-%type_pkg[kde] (>= 4.5.1-1),
+	kdelibs4-%type_pkg[kde] (>= 4.5.2-1),
 	(%type_pkg[kde] = x11) xfonts-intl
 <<
 BuildDepends: <<
@@ -16,13 +16,13 @@ BuildDepends: <<
 	cmake (>= 2.8.2-1),
 	fink (>= 0.29.7-1),
 	gettext-tools (>= 0.17-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	libgettext8-dev,
 	(%type_pkg[kde] = x11) xfonts-intl
 <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-et-%v.tar.bz2
-Source-MD5: 0310df6eda48c1c8025c95be412cef84
+Source-MD5: 45a8aefa17f0a7a94e951e90d87d03e4
 
 UseMaxBuildJobs: true
 CompileScript: <<

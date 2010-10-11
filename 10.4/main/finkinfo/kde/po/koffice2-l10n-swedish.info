@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-l10n-swedish-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 Description: KDE4 - KOffice languages for Swedish
 Type: kde (x11 mac)
@@ -18,7 +18,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-sv-%v.tar.bz2
-Source-MD5: 1b1d43467e3ac34b087dd2867ec7533c
+Source-MD5: 79c1cc4b5ddba4952c9f21c561978b51
 
 UseMaxBuildJobs: true
 CompileScript: <<

@@ -35,6 +35,7 @@ hu = Hungarian
 hne = Chhattisgarhi
 is = Icelandic
 id = Indonesian
+ia = Interlingua
 ga = Irish Gaelic
 it = Italian
 ja = Japanese

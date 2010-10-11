@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdemultimedia4-mac
 Type: kde (mac)
 #endif
-Version: 4.5.1
+Version: 4.5.2
 Revision: 1
 Description: KDE4 - Multimedia Apps
 License: GPL/LGPL
@@ -16,7 +16,7 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:stable/%v/src/kdemultimedia-%v.tar.bz2
-Source-MD5: 906f62dca51234f2ea056e30f4854da9
+Source-MD5: 63613acce56cbc393588f7b2d15e758b
 PatchFile: kdemultimedia4.patch
 PatchFile-MD5: 585ccb0fa9592bbab477ff50969d18b9
 

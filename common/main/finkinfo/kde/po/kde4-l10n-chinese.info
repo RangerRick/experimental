@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-chinese-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Chinese
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-zh_TW-%v.tar.bz2
 #SourceDirectory: kde-l10n-zh_TW-%v
-Source-MD5: c595a37c9bc59fe15a23624ae6923d0f
+Source-MD5: b702ac400360e0f723401a38bd95ab14
 
 CompileScript: <<
 #!/bin/sh -ev

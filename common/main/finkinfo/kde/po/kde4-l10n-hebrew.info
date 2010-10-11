@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-hebrew-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Hebrew
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-he-%v.tar.bz2
 #SourceDirectory: kde-l10n-he-%v
-Source-MD5: f2fba8dfc8a9feaa817cc9bea7d2c349
+Source-MD5: dc3c80c88c32e0c076b7ef1445fb4955
 
 CompileScript: <<
 #!/bin/sh -ev

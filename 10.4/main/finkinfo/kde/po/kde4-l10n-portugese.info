@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-portugese-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 Description: KDE4 - languages for Portugese
 Type: kde (x11 mac)
@@ -8,7 +8,7 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <kde4-l10n-portugese@fink.raccoonfink.com>
 
 Depends: <<
-	kdelibs4-%type_pkg[kde] (>= 4.5.1-1),
+	kdelibs4-%type_pkg[kde] (>= 4.5.2-1),
 	(%type_pkg[kde] = x11) xfonts-intl
 <<
 BuildDepends: <<
@@ -16,13 +16,13 @@ BuildDepends: <<
 	cmake (>= 2.8.2-1),
 	fink (>= 0.29.7-1),
 	gettext-tools (>= 0.17-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	libgettext8-dev,
 	(%type_pkg[kde] = x11) xfonts-intl
 <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-pt-%v.tar.bz2
-Source-MD5: b77d1845e81a661ee76b67922df28e6d
+Source-MD5: 0a719ae8688fb088b456ea82d548573f
 
 UseMaxBuildJobs: true
 CompileScript: <<

@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdeartwork4-mac
 Type: kde (mac)
 #endif
-Version: 4.5.1
+Version: 4.5.2
 Revision: 1
 Description: KDE4 - Styles and themes
 License: GPL/LGPL
@@ -19,7 +19,7 @@ provided with the official release of KDE.
 <<
 
 Source: mirror:kde:stable/%v/src/kdeartwork-%v.tar.bz2
-Source-MD5: fe193afd6c8009ceacb46c97e67c96b8
+Source-MD5: 7fdcd18386829451b8bced1336238436
 PatchFile: kdeartwork4.patch
 PatchFile-MD5: e70341f0bf8658ea0d2289cf7e44cb40
 PatchScript: sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1

@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-l10n-portugese-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 
 Description: KDE4 - KOffice languages for Portugese
@@ -24,7 +24,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-pt-%v.tar.bz2
 #SourceDirectory: koffice-l10n-pt-%v
-Source-MD5: 8b119e25247b5cb0ac5b25421c7c7317
+Source-MD5: 0dd7eb1b88030978c1e165cc713a72d3
 
 CompileScript: <<
 #!/bin/sh -ev

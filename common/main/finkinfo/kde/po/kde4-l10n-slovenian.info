@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-slovenian-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Slovenian
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-sl-%v.tar.bz2
 #SourceDirectory: kde-l10n-sl-%v
-Source-MD5: bf0d218b0940df041eed4bce5f387504
+Source-MD5: 60061dcd93d9d9f59f5193d523f47db1
 
 CompileScript: <<
 #!/bin/sh -ev

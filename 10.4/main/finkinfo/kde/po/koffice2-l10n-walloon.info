@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-l10n-walloon-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 Description: KDE4 - KOffice languages for Walloon
 Type: kde (x11 mac)
@@ -18,7 +18,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-wa-%v.tar.bz2
-Source-MD5: 8c6228beacd6134520faa1c4e801d903
+Source-MD5: 24bba80d7138d4b5d3f7464ac549c13e
 
 UseMaxBuildJobs: true
 CompileScript: <<

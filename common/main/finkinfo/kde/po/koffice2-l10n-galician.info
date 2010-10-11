@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-l10n-galician-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 
 Description: KDE4 - KOffice languages for Galician
@@ -24,7 +24,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-gl-%v.tar.bz2
 #SourceDirectory: koffice-l10n-gl-%v
-Source-MD5: 3375c38057295c77748d5a0faeebbdba
+Source-MD5: c948cd9b86a91ab97c5b2ce13133e582
 
 CompileScript: <<
 #!/bin/sh -ev

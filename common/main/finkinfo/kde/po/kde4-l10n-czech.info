@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-czech-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Czech
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-cs-%v.tar.bz2
 #SourceDirectory: kde-l10n-cs-%v
-Source-MD5: 69564d3a38b60739ba89acb75f0d4b2e
+Source-MD5: 90e533f949603a99a2fd90d88a3d81ce
 
 CompileScript: <<
 #!/bin/sh -ev

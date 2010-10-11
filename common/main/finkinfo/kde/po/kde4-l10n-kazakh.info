@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-kazakh-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Kazakh
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-kk-%v.tar.bz2
 #SourceDirectory: kde-l10n-kk-%v
-Source-MD5: fcc34d4c0e9f0cccd232b2deb512110d
+Source-MD5: c677eaed7df8a7135e4ae31caf861ec8
 
 CompileScript: <<
 #!/bin/sh -ev

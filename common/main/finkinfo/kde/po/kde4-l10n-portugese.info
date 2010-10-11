@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-portugese-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Portugese
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-pt-%v.tar.bz2
 #SourceDirectory: kde-l10n-pt-%v
-Source-MD5: b77d1845e81a661ee76b67922df28e6d
+Source-MD5: 0a719ae8688fb088b456ea82d548573f
 
 CompileScript: <<
 #!/bin/sh -ev

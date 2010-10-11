@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-german-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for German
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-de-%v.tar.bz2
 #SourceDirectory: kde-l10n-de-%v
-Source-MD5: 7bc2b371fb392b247d52d72e876c08f9
+Source-MD5: 97168bf0f356994749ce559f7ccdc1da
 
 CompileScript: <<
 #!/bin/sh -ev

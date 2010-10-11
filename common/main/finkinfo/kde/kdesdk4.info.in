@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdesdk4-mac
 Type: kde (mac)
 #endif
-Version: 4.5.1
+Version: 4.5.2
 Revision: 1
 Description: KDE4 - Developer Utilities
 License: GPL/LGPL
@@ -16,7 +16,7 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:stable/%v/src/kdesdk-%v.tar.bz2
-Source-MD5: 091d24625aa42355da4e6c272abd37e1
+Source-MD5: ef8b55b47e66bfd86993f60075097f54
 
 Depends: <<
 	cervisia4-%type_pkg[kde] (>= %v-%r),

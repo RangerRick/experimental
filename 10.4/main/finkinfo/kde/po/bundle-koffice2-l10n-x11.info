@@ -1,37 +1,37 @@
 Package: bundle-koffice2-l10n-x11
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 Description: KOffice2 - all language support
 Type: bundle
 Maintainer: Benjamin Reed <bundle-koffice2-l10n@fink.raccoonfink.com>
 
 Depends: <<
-	koffice2-l10n-catalan-x11 (>= 2.1.1-1),
-	koffice2-l10n-danish-x11 (>= 2.1.1-1),
-	koffice2-l10n-german-x11 (>= 2.1.1-1),
-	koffice2-l10n-greek-x11 (>= 2.1.1-1),
-	koffice2-l10n-uk-english-x11 (>= 2.1.1-1),
-	koffice2-l10n-spanish-x11 (>= 2.1.1-1),
-	koffice2-l10n-estonian-x11 (>= 2.1.1-1),
-	koffice2-l10n-french-x11 (>= 2.1.1-1),
-	koffice2-l10n-frisian-x11 (>= 2.1.1-1),
-	koffice2-l10n-galician-x11 (>= 2.1.1-1),
-	koffice2-l10n-chhattisgarhi-x11 (>= 2.1.1-1),
-	koffice2-l10n-italian-x11 (>= 2.1.1-1),
-	koffice2-l10n-japanese-x11 (>= 2.1.1-1),
-	koffice2-l10n-kazakh-x11 (>= 2.1.1-1),
-	koffice2-l10n-norwegian-bokmaal-x11 (>= 2.1.1-1),
-	koffice2-l10n-low-saxon-x11 (>= 2.1.1-1),
-	koffice2-l10n-dutch-x11 (>= 2.1.1-1),
-	koffice2-l10n-polish-x11 (>= 2.1.1-1),
-	koffice2-l10n-portugese-x11 (>= 2.1.1-1),
-	koffice2-l10n-brazilian-portugese-x11 (>= 2.1.1-1),
-	koffice2-l10n-swedish-x11 (>= 2.1.1-1),
-	koffice2-l10n-turkish-x11 (>= 2.1.1-1),
-	koffice2-l10n-ukranian-x11 (>= 2.1.1-1),
-	koffice2-l10n-walloon-x11 (>= 2.1.1-1),
-	koffice2-l10n-chinese-simplified-x11 (>= 2.1.1-1),
-	koffice2-l10n-chinese-x11 (>= 2.1.1-1)
+	koffice2-l10n-catalan-x11 (>= 2.2.2-1),
+	koffice2-l10n-catalan-valencia-x11 (>= 2.2.2-1),
+	koffice2-l10n-danish-x11 (>= 2.2.2-1),
+	koffice2-l10n-german-x11 (>= 2.2.2-1),
+	koffice2-l10n-greek-x11 (>= 2.2.2-1),
+	koffice2-l10n-uk-english-x11 (>= 2.2.2-1),
+	koffice2-l10n-spanish-x11 (>= 2.2.2-1),
+	koffice2-l10n-estonian-x11 (>= 2.2.2-1),
+	koffice2-l10n-french-x11 (>= 2.2.2-1),
+	koffice2-l10n-galician-x11 (>= 2.2.2-1),
+	koffice2-l10n-italian-x11 (>= 2.2.2-1),
+	koffice2-l10n-japanese-x11 (>= 2.2.2-1),
+	koffice2-l10n-kazakh-x11 (>= 2.2.2-1),
+	koffice2-l10n-norwegian-bokmaal-x11 (>= 2.2.2-1),
+	koffice2-l10n-low-saxon-x11 (>= 2.2.2-1),
+	koffice2-l10n-dutch-x11 (>= 2.2.2-1),
+	koffice2-l10n-polish-x11 (>= 2.2.2-1),
+	koffice2-l10n-portugese-x11 (>= 2.2.2-1),
+	koffice2-l10n-brazilian-portugese-x11 (>= 2.2.2-1),
+	koffice2-l10n-russian-x11 (>= 2.2.2-1),
+	koffice2-l10n-swedish-x11 (>= 2.2.2-1),
+	koffice2-l10n-turkish-x11 (>= 2.2.2-1),
+	koffice2-l10n-ukranian-x11 (>= 2.2.2-1),
+	koffice2-l10n-walloon-x11 (>= 2.2.2-1),
+	koffice2-l10n-chinese-simplified-x11 (>= 2.2.2-1),
+	koffice2-l10n-chinese-x11 (>= 2.2.2-1)
 <<
 
 UseMaxBuildJobs: true

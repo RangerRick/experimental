@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdenetwork4-x11
-Version: 4.5.1
+Version: 4.5.2
 Revision: 1
 Description: KDE4 - Network Apps
 Type: kde (x11)
@@ -26,9 +26,9 @@ BuildDepends: <<
 	glib2-dev (>= 2.22.0-1),
 	gmp,
 	kde4-buildenv (>= 4.5.1-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.5.1-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	libgcrypt,
 	libgettext8-dev,
 	libidn,
@@ -53,7 +53,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdenetwork-%v.tar.bz2
-Source-MD5: f8a20b6120ac72d5a90b3840367f548e
+Source-MD5: 5fa30d2c8bf911dd24e277b001f015e9
 PatchFile: kdenetwork4.patch
 PatchFile-MD5: 7468d341e1ab88bbfd1cacbd8035fb9e
 
@@ -268,7 +268,7 @@ SplitOff6: <<
 SplitOff7: <<
 	Package: %N-base
 	Description: KDE4 - kdenetwork base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.5.1-1)
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.5.2-1)
 	Files: opt
 <<
 

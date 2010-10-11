@@ -1,11 +1,11 @@
 #!/usr/bin/perl
 
-my $KDEVERSION              = '4.4.1';
+my $KDEVERSION              = '4.5.2';
 my $KDEDIRECTORY            = 'stable/%v/src/';
 my $KDERELNUM               = 1;
 my $KDEI18NRELNUM           = 1;
 my $SOURCEDIRECTORYAPPEND   = "";
-my $KOVERSION               = '2.1.1';
+my $KOVERSION               = '2.2.2';
 my $KODIRECTORY             = 'stable/koffice-%v/src/';
 my $KORELNUM                = '1';
 my $KOI18NRELNUM            = 1;
@@ -195,9 +195,9 @@ InstallScript: <<
 <<
 END
 		print $contents if ($VERBOSE);
-		my $infofile = "../../../crypto/finkinfo/po/koffice2-l10n-${normalized}.info";
+		my $infofile = "koffice2-l10n-${normalized}.info";
 		unless ($DRYRUN) {
-			open(FILEOUT, ">$infofile") or die "can't write to $infofile: $!\n";
+			open(FILEOUT, ">po/$infofile") or die "can't write to $infofile: $!\n";
 			print FILEOUT $contents;
 			close(FILEOUT);
 		}
@@ -226,7 +226,7 @@ END
 		close(FILEOUT);
 
 		$packagelist = join(', ', map { $_ . '-' . $type . " (>= ${KOVERSION}-${KOI18NRELNUM})" } @kopackages);
-		open(FILEOUT, ">../../../crypto/finkinfo/po/bundle-koffice2-l10n-$type.info") or die "can't write to bundle-koffice2-l10n-$type.info: $!\n";
+		open(FILEOUT, ">po/bundle-koffice2-l10n-$type.info") or die "can't write to bundle-koffice2-l10n-$type.info: $!\n";
 		print FILEOUT <<END;
 Package: bundle-koffice2-l10n-$type
 Version: ${KOVERSION}

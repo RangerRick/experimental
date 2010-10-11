@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-hungarian-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Hungarian
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-hu-%v.tar.bz2
 #SourceDirectory: kde-l10n-hu-%v
-Source-MD5: fbd892f683f4433de57d81565329afa2
+Source-MD5: cb709a33e8020b8358fb00c2e6aede8e
 
 CompileScript: <<
 #!/bin/sh -ev

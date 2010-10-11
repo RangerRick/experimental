@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-romanian-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Romanian
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-ro-%v.tar.bz2
 #SourceDirectory: kde-l10n-ro-%v
-Source-MD5: cbf21f4bd4593aa29a342de46b8e36ce
+Source-MD5: 62e4e93bcfbb212918eded76156fee2d
 
 CompileScript: <<
 #!/bin/sh -ev

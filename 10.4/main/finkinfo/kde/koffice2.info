@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-%type_pkg[kde]
-Version: 2.2.1
+Version: 2.2.2
 Revision: 1
 Description: KDE4 - office suite
 Type: kde (x11 mac)
@@ -32,9 +32,9 @@ BuildDepends: <<
 	graphicsmagick-dev (>= 1.1-1),
 	gsl (>= 1.7-1),
 	kde4-buildenv (>= 4.5.1-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.5.1-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.1-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	lcms,
 	libexiv2-0.19,
 	libgettext8-dev,
@@ -58,7 +58,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/koffice-%v/koffice-%v.tar.bz2
-Source-MD5: 9955f30f43ed3f6970870f55015a1a18
+Source-MD5: f987ef488888311db04f313ef2c1ed74
 PatchFile: koffice2.patch
 PatchFile-MD5: 600f503702af7e42b51c6a69604931c6
 
@@ -134,8 +134,8 @@ SplitOff10: <<
 	Description: KDE4 - koffice base shared libraries
 	Depends: <<
 		karbon2-%type_pkg[kde]-shlibs (>= %v-%r),
-		kdebase4-%type_pkg[kde]-shlibs (>= 4.5.1-1),
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.5.1-1),
+		kdebase4-%type_pkg[kde]-shlibs (>= 4.5.2-1),
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.5.2-1),
 		kdepimlibs4-%type_pkg[kde]-shlibs,
 		lcms-shlibs,
 		libwpd-0.8-shlibs (>= 0.8.14-1),
@@ -206,7 +206,7 @@ SplitOff12: <<
 	Description: KDE4 - koffice base package
 	Depends: <<
 		create-resources (>= 0.1-1),
-		kdebase4-runtime-%type_pkg[kde] (>= 4.5.1-1),
+		kdebase4-runtime-%type_pkg[kde] (>= 4.5.2-1),
 		%N-base-shlibs (>= %v-%r)
 	<<
 	Files: <<

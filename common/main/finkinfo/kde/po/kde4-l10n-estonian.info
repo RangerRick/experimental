@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-estonian-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Estonian
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-et-%v.tar.bz2
 #SourceDirectory: kde-l10n-et-%v
-Source-MD5: 0310df6eda48c1c8025c95be412cef84
+Source-MD5: 45a8aefa17f0a7a94e951e90d87d03e4
 
 CompileScript: <<
 #!/bin/sh -ev

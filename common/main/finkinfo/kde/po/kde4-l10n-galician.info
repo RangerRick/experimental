@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-galician-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Galician
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-gl-%v.tar.bz2
 #SourceDirectory: kde-l10n-gl-%v
-Source-MD5: 7d3e071f8905d736e1ea98bf6586ee59
+Source-MD5: f0ecfb3c9b935608dd92efe379b40ab0
 
 CompileScript: <<
 #!/bin/sh -ev

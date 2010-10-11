@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-l10n-danish-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 Description: KDE4 - KOffice languages for Danish
 Type: kde (x11 mac)
@@ -18,7 +18,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-da-%v.tar.bz2
-Source-MD5: 637b752f4d9fb64d1efe663beb64191f
+Source-MD5: 0cd6ff9e2bddf4306c316150e015fc6f
 
 UseMaxBuildJobs: true
 CompileScript: <<

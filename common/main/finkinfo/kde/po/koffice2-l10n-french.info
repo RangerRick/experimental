@@ -1,6 +1,6 @@
 Info4: <<
 Package: koffice2-l10n-french-%type_pkg[kde]
-Version: 2.1.1
+Version: 2.2.2
 Revision: 1
 
 Description: KDE4 - KOffice languages for French
@@ -24,7 +24,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/koffice-%v/src/koffice-l10n/koffice-l10n-fr-%v.tar.bz2
 #SourceDirectory: koffice-l10n-fr-%v
-Source-MD5: f49b01f8e8169bf289ba30240e686a97
+Source-MD5: 25242975ae4d8575fec807665ee3da06
 
 CompileScript: <<
 #!/bin/sh -ev

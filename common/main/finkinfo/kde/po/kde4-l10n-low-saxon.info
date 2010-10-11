@@ -1,6 +1,6 @@
 Info4: <<
 Package: kde4-l10n-low-saxon-%type_pkg[kde]
-Version: 4.4.1
+Version: 4.5.2
 Revision: 1
 
 Description: KDE4 - languages for Low Saxon
@@ -26,7 +26,7 @@ BuildDepends: <<
 
 Source: mirror:kde:stable/%v/src/kde-l10n/kde-l10n-nds-%v.tar.bz2
 #SourceDirectory: kde-l10n-nds-%v
-Source-MD5: 48e010b6da68d8ba750c70b4aba5d1e6
+Source-MD5: 7eaf3e795e62f5442b12285438bb08c9
 
 CompileScript: <<
 #!/bin/sh -ev
