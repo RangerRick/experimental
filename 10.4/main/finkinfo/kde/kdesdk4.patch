@@ -1,0 +1,12 @@
+diff -Nurd kdesdk-4.5.2/poxml/CMakeLists.txt kdesdk-4.5.2-new/poxml/CMakeLists.txt
+--- kdesdk-4.5.2/poxml/CMakeLists.txt	2010-08-27 04:12:51.000000000 -0400
++++ kdesdk-4.5.2-new/poxml/CMakeLists.txt	2010-10-17 22:27:58.000000000 -0400
+@@ -8,6 +8,8 @@
+ endif (ANTLR2_FOUND AND ANTLR2_EXECUTABLE)
+ macro_log_feature(HAVE_ANTLR "Antlr" "Language tool for constructing recognizers, compilers, etc" "http://www.antlr2.org/" FALSE "2.x" "Used for the po2xml and swappo tools.")
+ 
++include_directories(${ANTLR2_INCLUDE_DIR})
++
+ ########### next target ###############
+ 
+ set(split2po_SRCS split.cpp parser.cpp)

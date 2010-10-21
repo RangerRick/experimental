@@ -32,6 +32,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	libidn,
 	libjpeg8,
+	libktorrent-%type_pkg[kde],
 	libmeanwhile,
 	libmsn-0.3,
 	libortp,
@@ -54,7 +55,7 @@ GCC: 4.0
 Source: mirror:kde:stable/%v/src/kdenetwork-%v.tar.bz2
 Source-MD5: 5fa30d2c8bf911dd24e277b001f015e9
 PatchFile: kdenetwork4.patch
-PatchFile-MD5: 7468d341e1ab88bbfd1cacbd8035fb9e
+PatchFile-MD5: 31def4ca4ab7c2f29cd54653d2de459c
 
 UseMaxBuildJobs: true
 CompileScript: <<
@@ -125,9 +126,11 @@ SplitOff3: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/plasma_kget_*
 		opt/kde4/%type_pkg[kde]/lib/libkgetcore.4*.dylib
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kget*
+		opt/kde4/%type_pkg[kde]/share/apps/dolphinpart/kpartplugins/kget*
 		opt/kde4/%type_pkg[kde]/share/apps/kget
 		opt/kde4/%type_pkg[kde]/share/apps/khtml/kpartplugins/kget_*
 		opt/kde4/%type_pkg[kde]/share/config.kcfg/kget*
+		opt/kde4/%type_pkg[kde]/share/dbus-1/services/org.kde.kget.service
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kget
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kget*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kget*

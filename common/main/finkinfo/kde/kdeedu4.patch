@@ -1,6 +1,6 @@
-diff -Nurd kdeedu-4.5.1/cantor/src/CMakeLists.txt kdeedu-4.5.1-new/cantor/src/CMakeLists.txt
---- kdeedu-4.5.1/cantor/src/CMakeLists.txt	2010-06-08 06:10:25.000000000 -0400
-+++ kdeedu-4.5.1-new/cantor/src/CMakeLists.txt	2010-10-02 22:01:24.000000000 -0400
+diff -Nurd kdeedu-4.5.2/cantor/src/CMakeLists.txt kdeedu-4.5.2-new/cantor/src/CMakeLists.txt
+--- kdeedu-4.5.2/cantor/src/CMakeLists.txt	2010-06-08 06:10:25.000000000 -0400
++++ kdeedu-4.5.2-new/cantor/src/CMakeLists.txt	2010-10-13 14:29:33.000000000 -0400
 @@ -3,7 +3,10 @@
  #########################################################################
  add_subdirectory(lib)
@@ -22,9 +22,9 @@ diff -Nurd kdeedu-4.5.1/cantor/src/CMakeLists.txt kdeedu-4.5.1-new/cantor/src/CM
  set(cantor_SRCS
     main.cpp
     cantor.cpp
-diff -Nurd kdeedu-4.5.1/cantor/src/lib/CMakeLists.txt kdeedu-4.5.1-new/cantor/src/lib/CMakeLists.txt
---- kdeedu-4.5.1/cantor/src/lib/CMakeLists.txt	2010-06-08 06:10:24.000000000 -0400
-+++ kdeedu-4.5.1-new/cantor/src/lib/CMakeLists.txt	2010-10-02 22:01:24.000000000 -0400
+diff -Nurd kdeedu-4.5.2/cantor/src/lib/CMakeLists.txt kdeedu-4.5.2-new/cantor/src/lib/CMakeLists.txt
+--- kdeedu-4.5.2/cantor/src/lib/CMakeLists.txt	2010-06-08 06:10:24.000000000 -0400
++++ kdeedu-4.5.2-new/cantor/src/lib/CMakeLists.txt	2010-10-13 14:29:33.000000000 -0400
 @@ -1,5 +1,5 @@
  set(GENERIC_LIB_VERSION "0.0.2")
 -set(GENERIC_LIB_SOVERSION "1")
@@ -41,13 +41,13 @@ diff -Nurd kdeedu-4.5.1/cantor/src/lib/CMakeLists.txt kdeedu-4.5.1-new/cantor/sr
  kde4_add_kcfg_files(cantor_LIB_SRCS settings.kcfgc)
  install(FILES cantor_libs.kcfg DESTINATION ${KCFG_INSTALL_DIR})
  
-diff -Nurd kdeedu-4.5.1/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt kdeedu-4.5.1-new/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt
---- kdeedu-4.5.1/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt	2010-06-08 06:10:42.000000000 -0400
-+++ kdeedu-4.5.1-new/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt	2010-10-02 22:01:24.000000000 -0400
+diff -Nurd kdeedu-4.5.2/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt kdeedu-4.5.2-new/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt
+--- kdeedu-4.5.2/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt	2010-09-30 17:21:44.000000000 -0400
++++ kdeedu-4.5.2-new/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt	2010-10-13 14:29:33.000000000 -0400
 @@ -5,6 +5,7 @@
   ${CMAKE_BINARY_DIR}/src/plugins/positionprovider/gpsd
   ${QT_INCLUDE_DIR}
-  ${libgps_INCLUDE_DIRS}
+  ${LIBGPS_INCLUDE_DIR}
 + ${libgps_INCLUDEDIR}
  )
  
@@ -56,13 +56,24 @@ diff -Nurd kdeedu-4.5.1/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt 
   GpsdThread.cpp
  )
  
--set( GpsdPositionProviderPlugin_LIBS ${libgps_LIBRARIES} )
-+set( GpsdPositionProviderPlugin_LIBS ${libgps_LIBRARIES} ${libgps_LDFLAGS} )
+-set( GpsdPositionProviderPlugin_LIBS ${LIBGPS_LIBRARIES} )
++set( GpsdPositionProviderPlugin_LIBS ${LIBGPS_LIBRARIES} ${libgps_LDFLAGS} )
  
  marble_add_plugin( GpsdPositionProviderPlugin ${gpsd_SRCS} )
-diff -Nurd kdeedu-4.5.1/step/step/CMakeLists.txt kdeedu-4.5.1-new/step/step/CMakeLists.txt
---- kdeedu-4.5.1/step/step/CMakeLists.txt	2010-06-08 06:11:49.000000000 -0400
-+++ kdeedu-4.5.1-new/step/step/CMakeLists.txt	2010-10-02 22:01:24.000000000 -0400
+diff -Nurd kdeedu-4.5.2/marble/src/plugins/positionprovider/gpsd/GpsdPositionProviderPlugin.cpp kdeedu-4.5.2-new/marble/src/plugins/positionprovider/gpsd/GpsdPositionProviderPlugin.cpp
+--- kdeedu-4.5.2/marble/src/plugins/positionprovider/gpsd/GpsdPositionProviderPlugin.cpp	2010-09-30 17:21:44.000000000 -0400
++++ kdeedu-4.5.2-new/marble/src/plugins/positionprovider/gpsd/GpsdPositionProviderPlugin.cpp	2010-10-13 14:33:19.000000000 -0400
+@@ -13,6 +13,7 @@
+ #include "GpsdThread.h"
+ #include "MarbleDebug.h"
+ 
++using namespace std;
+ using namespace Marble;
+ 
+ QString GpsdPositionProviderPlugin::name() const
+diff -Nurd kdeedu-4.5.2/step/step/CMakeLists.txt kdeedu-4.5.2-new/step/step/CMakeLists.txt
+--- kdeedu-4.5.2/step/step/CMakeLists.txt	2010-06-08 06:11:49.000000000 -0400
++++ kdeedu-4.5.2-new/step/step/CMakeLists.txt	2010-10-13 14:29:33.000000000 -0400
 @@ -41,6 +41,7 @@
  
  if(STEPCORE_WITH_GSL)
@@ -71,9 +82,9 @@ diff -Nurd kdeedu-4.5.1/step/step/CMakeLists.txt kdeedu-4.5.1-new/step/step/CMak
  endif(STEPCORE_WITH_GSL)
  
  if(STEP_WITH_QALCULATE)
-diff -Nurd kdeedu-4.5.1/step/stepcore/CMakeLists.txt kdeedu-4.5.1-new/step/stepcore/CMakeLists.txt
---- kdeedu-4.5.1/step/stepcore/CMakeLists.txt	2010-06-08 06:11:49.000000000 -0400
-+++ kdeedu-4.5.1-new/step/stepcore/CMakeLists.txt	2010-10-02 22:01:24.000000000 -0400
+diff -Nurd kdeedu-4.5.2/step/stepcore/CMakeLists.txt kdeedu-4.5.2-new/step/stepcore/CMakeLists.txt
+--- kdeedu-4.5.2/step/stepcore/CMakeLists.txt	2010-06-08 06:11:49.000000000 -0400
++++ kdeedu-4.5.2-new/step/stepcore/CMakeLists.txt	2010-10-13 14:29:33.000000000 -0400
 @@ -23,7 +23,7 @@
  
  if(STEPCORE_WITH_GSL)

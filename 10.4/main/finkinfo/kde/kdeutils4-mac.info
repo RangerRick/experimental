@@ -45,7 +45,7 @@ GCC: 4.0
 Source: mirror:kde:stable/%v/src/kdeutils-%v.tar.bz2
 Source-MD5: f87f29de2b5ffed215e5c46a05851804
 PatchFile: kdeutils4.patch
-PatchFile-MD5: 2e679d1fe33c92f5a353b7a6c4ee590a
+PatchFile-MD5: e430ed80c7335792e1f51109a83ed46d
 
 UseMaxBuildJobs: true
 CompileScript: <<
@@ -73,14 +73,11 @@ InstallScript: <<
 	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libkastengui.dylib
 	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libkdelirc_shared.dylib
 	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libkerfuffle.dylib
-	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/liboktetakastencontrollers.dylib
-	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/liboktetakastencore.dylib
-	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/liboktetakastengui.dylib
-	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/liboktetacore.dylib
-	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/liboktetagui.dylib
+	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libkremotecontrol.dylib
 	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libsuperkaramba.dylib
 
 	rm -rf %i/opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kgpg
+	rm -rf %i/opt/kde4/%type_pkg[kde]/share/doc/HTML/en/printer-applet
 
 	mkdir -p %i/share/doc/installed-packages
 	touch %i/share/doc/installed-packages/%N
@@ -114,7 +111,49 @@ SplitOff: <<
 	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libkerfuffle.4.dylib
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff11: <<
+SplitOff10: <<
+	Package: okteta4-%type_pkg[kde]
+	Description: KDE4 - hex editor
+	Depends: %N-base (>= %v-%r)
+	Replaces: %N-base (<< 4.4.1-1)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/okteta*
+		opt/kde4/%type_pkg[kde]/lib/kde4/libkbytearray*
+		opt/kde4/%type_pkg[kde]/lib/kde4/oktetapart*
+		opt/kde4/%type_pkg[kde]/lib/kde4/plugins/designer/okteta*
+		opt/kde4/%type_pkg[kde]/lib/libkastencontrollers.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkastencore.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkastengui.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/liboktetakastencontrollers.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/liboktetakastencore.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/liboktetakastengui.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/liboktetacore.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/liboktetagui.4*.dylib
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/okteta*
+		opt/kde4/%type_pkg[kde]/share/apps/okteta*
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/structview*
+		opt/kde4/%type_pkg[kde]/share/config/okteta*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/okteta
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/okteta*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/okteta*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/okteta*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/kbytearray*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/okteta*
+		opt/kde4/%type_pkg[kde]/share/mime/packages/okteta*
+	<<
+	Shlibs: <<
+		!%p/opt/kde4/%type_pkg[kde]/lib/libkastencontrollers.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/libkastencore.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/libkastengui.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetakastencontrollers.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetakastencore.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetakastengui.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetacore.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetagui.4.dylib
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff12: <<
 	Package: sweeper4-%type_pkg[kde]
 	Description: KDE4 - history and temp file cleaner
 	Depends: %N-base (>= %v-%r)
@@ -123,6 +162,7 @@ SplitOff11: <<
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/sweeper*
 		opt/kde4/%type_pkg[kde]/share/apps/sweeper
 		opt/kde4/%type_pkg[kde]/share/dbus-1/interfaces/org.kde.sweeper*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/sweeper
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
@@ -249,42 +289,21 @@ SplitOff8: <<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
 SplitOff9: <<
-	Package: okteta4-%type_pkg[kde]
-	Description: KDE4 - hex editor
-	Depends: %N-base (>= %v-%r)
-	Replaces: %N-base (<< 4.4.1-1)
+	Package: okteta4-%type_pkg[kde]-dev
+	Description: KDE4 - Okteta development headers and libs
+	Depends: okteta4-%type_pkg[kde] (= %v-%r)
+	BuildDependsOnly: true
 	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/okteta*
-		opt/kde4/%type_pkg[kde]/lib/kde4/libkbytearray*
-		opt/kde4/%type_pkg[kde]/lib/kde4/oktetapart*
-		opt/kde4/%type_pkg[kde]/lib/libkastencontrollers.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkastencore.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkastengui.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/liboktetakastencontrollers.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/liboktetakastencore.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/liboktetakastengui.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/liboktetacore.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/liboktetagui.4*.dylib
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/okteta*
-		opt/kde4/%type_pkg[kde]/share/apps/okteta*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/okteta
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/okteta*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/okteta*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/okteta*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/kbytearray*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/okteta*
+		opt/kde4/%type_pkg[kde]/include/KDE/Kasten
+		opt/kde4/%type_pkg[kde]/include/KDE/Okteta
+		opt/kde4/%type_pkg[kde]/include/kasten
+		opt/kde4/%type_pkg[kde]/include/okteta
+		opt/kde4/%type_pkg[kde]/lib/liboktetakastencontrollers.dylib
+		opt/kde4/%type_pkg[kde]/lib/liboktetakastencore.dylib
+		opt/kde4/%type_pkg[kde]/lib/liboktetakastengui.dylib
+		opt/kde4/%type_pkg[kde]/lib/liboktetacore.dylib
+		opt/kde4/%type_pkg[kde]/lib/liboktetagui.dylib
 	<<
-	Shlibs: <<
-		!%p/opt/kde4/%type_pkg[kde]/lib/libkastencontrollers.4.dylib
-		!%p/opt/kde4/%type_pkg[kde]/lib/libkastencore.4.dylib
-		!%p/opt/kde4/%type_pkg[kde]/lib/libkastengui.4.dylib
-		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetakastencontrollers.4.dylib
-		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetakastencore.4.dylib
-		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetakastengui.4.dylib
-		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetacore.4.dylib
-		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetagui.4.dylib
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
 
 DescDetail: 

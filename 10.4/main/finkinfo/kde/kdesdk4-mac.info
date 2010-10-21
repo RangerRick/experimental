@@ -21,9 +21,11 @@ Depends: <<
 	umbrello4-%type_pkg[kde] (>= %v-%r),
 	%N-accounts-plugin (>= %v-%r),
 	%N-svn-provider (>= %v-%r),
-	%N-scripts (>= %v-%r)
+	%N-scripts (>= %v-%r),
+	%N-dolphin-plugins (>= %v-%r)
 <<
 BuildDepends: <<
+	antlr,
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
 	boost1.41.cmake,
 	cmake (>= 2.8.2-1),
@@ -36,6 +38,7 @@ BuildDepends: <<
 	kdebase4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	libantlr3c,
 	libgettext8-dev,
 	libhunspell (>= 1.2.8-1004),
 	libxslt,
@@ -53,6 +56,8 @@ GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdesdk-%v.tar.bz2
 Source-MD5: ef8b55b47e66bfd86993f60075097f54
+PatchFile: kdesdk4.patch
+PatchFile-MD5: 055a2ba43d7e3fb1b884efedabccfbe4
 
 UseMaxBuildJobs: true
 CompileScript: <<
@@ -131,10 +136,8 @@ SplitOff10: <<
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/umbrello
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/umbrello*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/umbrello*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/mimetypes/umbrello*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/umbrello*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/umbrello*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/mimetypes/umbrello*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/umbrello*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/umbrello*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/umbrello*
@@ -165,10 +168,8 @@ SplitOff12: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/kded_ksvnd*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kio_perldoc*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kio_svn*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kdesvn*
 		opt/kde4/%type_pkg[kde]/share/apps/kio_perldoc
 		opt/kde4/%type_pkg[kde]/share/dbus-1/interfaces/org.kde.ksvnd*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kdesvn*
 		opt/kde4/%type_pkg[kde]/share/kde4/services/ServiceMenus/subversion*
 		opt/kde4/%type_pkg[kde]/share/kde4/services/kded/ksvnd*
 		opt/kde4/%type_pkg[kde]/share/kde4/services/perldoc*
@@ -202,6 +203,8 @@ SplitOff15: <<
 	Replaces: %N-base (<< 4.2.4-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/kdesrc-build.desktop
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kdesrc-build
 		opt/kde4/%type_pkg[kde]/share/man/man1
 	<<
 <<
@@ -212,6 +215,17 @@ SplitOff16: <<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4/*kdeaccounts*
 		opt/kde4/%type_pkg[kde]/share/apps/kabc/formats/*kdeaccounts*
+	<<
+<<
+SplitOff17: <<
+	Package: %N-dolphin-plugins
+	Description: KDE4 - plugins for the Dolphin file manager
+	Depends: %N-base (>= %v-%r)
+	Replaces: %N-base (<< %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/lib/kde4/fileview*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/fileview*
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/fileview*
 	<<
 <<
 SplitOff2: <<
@@ -263,6 +277,7 @@ SplitOff3: <<
 		opt/kde4/%type_pkg[kde]/lib/libktexteditor_codesnippets_core.0*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kate.dylib
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kate*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/ktesnippets*
 		opt/kde4/%type_pkg[kde]/share/apps/kate*
 		opt/kde4/%type_pkg[kde]/share/apps/kconf_update/kate*
 		opt/kde4/%type_pkg[kde]/share/apps/ktexteditor*
@@ -280,7 +295,7 @@ SplitOff3: <<
 		opt/kde4/%type_pkg[kde]/share/kde4/services/plasma-applet-kate*
 		opt/kde4/%type_pkg[kde]/share/kde4/servicetypes/kate*
 		opt/kde4/%type_pkg[kde]/share/man/man1/kate*
-		opt/kde4/%type_pkg[kde]/share/mime/packages/kateplugin*
+		opt/kde4/%type_pkg[kde]/share/mime/packages/ktesnippets*
 	<<
 	Shlibs: <<
 		!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kate.dylib
@@ -406,7 +421,6 @@ SplitOff9: <<
 		opt/kde4/%type_pkg[kde]/bin/split2po*
 		opt/kde4/%type_pkg[kde]/bin/swappo*
 		opt/kde4/%type_pkg[kde]/bin/xml2pot*
-		opt/kde4/%type_pkg[kde]/lib/libantlr.4*.dylib
 	<<
 	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libantlr.4.dylib
 <<

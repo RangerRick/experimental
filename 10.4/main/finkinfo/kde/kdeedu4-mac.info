@@ -67,7 +67,7 @@ GCC: 4.0
 Source: mirror:kde:stable/%v/src/kdeedu-%v.tar.bz2
 Source-MD5: 65ff4441860ffc8442dac7a2d3d88e31
 PatchFile: kdeedu4.patch
-PatchFile-MD5: 58d3b65ffdbe6a318793bfcf87d198f0
+PatchFile-MD5: 9a48449956d52b96e10b535719d44f42
 
 SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true
@@ -432,8 +432,6 @@ SplitOff20: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/step*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/step*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/step*
-		opt/kde4/%type_pkg[kde]/share/icons/oxygen/22x22/actions/pointer*
-		opt/kde4/%type_pkg[kde]/share/icons/oxygen/22x22/actions/step_object_*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<

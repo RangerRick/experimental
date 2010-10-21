@@ -12,7 +12,6 @@ Depends: <<
 	%N-console-tools (>= %v-%r),
 	%N-plugins (>= %v-%r),
 	%N-wizards (>= %v-%r),
-	nepomuk-email-feeder4-%type_pkg[kde] (>= %v-%r),
 	kontact4-%type_pkg[kde] (>= %v-%r),
 	%N-resources (>= %v-%r),
 	akregator4-%type_pkg[kde] (>= %v-%r),
@@ -42,7 +41,7 @@ BuildDepends: <<
 	kdebase4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
-	libassuan,
+	libassuan2,
 	libgettext8-dev,
 	libgpg-error,
 	libidn,
@@ -65,7 +64,7 @@ GCC: 4.0
 Source: mirror:kde:stable/kdepim-%v/src/kdepim-%v.tar.bz2
 Source-MD5: dab253004c2660c75b61a3caeb117ed1
 PatchFile: kdepim4.patch
-PatchFile-MD5: dcfc6e5d1d854a10d8fd004d7cc5645c
+PatchFile-MD5: 21a532b8b478913d12ee8e67122b9879
 
 UseMaxBuildJobs: true
 CompileScript: <<
@@ -475,8 +474,6 @@ SplitOff26: <<
 		opt/kde4/%type_pkg[kde]/bin/kleopatra*
 		opt/kde4/%type_pkg[kde]/bin/kwatchgnupg*
 		opt/kde4/%type_pkg[kde]/lib/kde4/kcm_kleopatra*
-		opt/kde4/%type_pkg[kde]/lib/libkleopatraclientcore.0*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkleopatraclientgui.0*.dylib
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/kleopatra*
 		opt/kde4/%type_pkg[kde]/share/apps/kleopatra*
 		opt/kde4/%type_pkg[kde]/share/apps/kwatchgnupg
@@ -739,21 +736,6 @@ SplitOff35: <<
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kabcclient*
 		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/konsolekalendar*
 		opt/kde4/%type_pkg[kde]/share/man/man1/kabcclient*
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff36: <<
-	Package: nepomuk-email-feeder4-%type_pkg[kde]
-	Description: KDE4 - nepomuk email scanner
-	Depends: <<
-		libmessagecore4-%type_pkg[kde]-shlibs (>= %v-%r),
-		libmessageviewer0-%type_pkg[kde]-shlibs (>= %v-%r),
-		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.5.2-1),
-		%N-base (>= %v-%r)
-	<<
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/akonadi_nepomuk*
-		opt/kde4/%type_pkg[kde]/share/akonadi/agents/nepomukemailfeeder*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
