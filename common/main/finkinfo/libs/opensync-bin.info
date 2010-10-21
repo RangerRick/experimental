@@ -1,7 +1,7 @@
 Info4: <<
 Package: opensync-bin
 Version: 0.39
-Revision: 1
+Revision: 2
 BuildDepends: <<
 	cmake (>= 2.4-1),
 	fink (>= 0.28.0-1),
@@ -26,11 +26,14 @@ Replaces: opensync (<< 0.22-6)
 CompileScript: <<
 #!/bin/sh -ex
 
-	export KDE4_PREFIX="%p" KDE4_INSTALL_PREFIX="%p"
+	export KDE4_PREFIX="%p" KDE4_INSTALL_PREFIX="%p" KDE4_PYTHON_EXECUTABLE="%p/bin/python2.6"
 	. %p/sbin/kde4-buildenv.sh
 	mkdir build
 	pushd build
-		cmake $KDE4_CMAKE_ARGS -DPYTHON_EXECUTABLE=%p/bin/python2.6 ..
+		for dir in %p/share/swig/*; do
+			SWIG_DIR="$dir"
+		done
+		cmake $KDE4_CMAKE_ARGS -DSWIG_DIR="$SWIG_DIR" ..
 		make
 	popd
 <<
