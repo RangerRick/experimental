@@ -16,7 +16,7 @@ BuildDepends: <<
 	automoc-%type_pkg[akonadi],
 	boost1.41.cmake,
 	cmake (>= 2.8.2-1),
-	kde4-buildenv (>= 4.5.1-1),
+	kde4-buildenv (>= 4.5.2-1),
 	mysql-unified (>= 5.0-1),
 	mysql-unified-dev (>= 5.0-1),
 	python25,

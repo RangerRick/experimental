@@ -24,7 +24,7 @@ BuildDepends: <<
 	gettext-tools,
 	giflib,
 	hspell,
-	kde4-buildenv (>= 4.5.1-1),
+	kde4-buildenv (>= 4.5.2-1),
 	(%type_pkg[kde] = x11) kdebase4-workspace-%type_pkg[kde]-dev (>= 4.5.2-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	kdevplatform-%type_pkg[kde]-dev (>= 0.9.93-1),

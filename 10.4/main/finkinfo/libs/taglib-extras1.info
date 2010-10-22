@@ -17,7 +17,7 @@ BuildDepends: <<
 	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	giflib,
-	kde4-buildenv (>= 4.5.1-1),
+	kde4-buildenv (>= 4.5.2-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	libgettext8-dev,
 	libjpeg8,

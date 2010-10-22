@@ -23,7 +23,7 @@ BuildDepends: <<
 	freetts,
 	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),
-	kde4-buildenv (>= 4.5.1-1),
+	kde4-buildenv (>= 4.5.2-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	libgettext8-dev,

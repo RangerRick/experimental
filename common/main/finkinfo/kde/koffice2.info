@@ -13,8 +13,8 @@ KOffice is a free, integrated office suite for KDE, the K Desktop Environment.
 
 Source: mirror:kde:stable/koffice-%v/koffice-%v.tar.bz2
 Source-MD5: f987ef488888311db04f313ef2c1ed74
-PatchFile: koffice2.patch
-PatchFile-MD5: 600f503702af7e42b51c6a69604931c6
+#PatchFile: koffice2.patch
+#PatchFile-MD5: 600f503702af7e42b51c6a69604931c6
 
 Depends: <<
 	karbon2-%type_pkg[kde] (>= %v-%r),
@@ -29,27 +29,30 @@ Depends: <<
 #-- The following OPTIONAL packages could NOT be located on your system.
 #-- Consider installing them to enable more features from this software.
 #-----------------------------------------------------------------------------
-#   * OpenCTL (0.9.10 or higher)  <http://www.openctl.org>
-#     Free Color Transformation Language implementation
-#     Required for High Dynamic Range Color Spaces, YCbCr and LMS support
-#   * OpenShiva  <http://www.openshiva.org>
-#     OpenShiva interpreter for the Shiva Kernel Language
-#     Required for Shiva based Generators and Filters
+#   * libpq  <http://www.postgresql.org>
+#     C application programmer's interface to PostgreSQL
+#     Required by Kexi PostgreSQL Migration driver
+#   * libpqxx  <http://pqxx.org/development/libpqxx/>
+#     Official C++ client API for PostgreSQL
+#     Required by Kexi PostgreSQL Migration driver
+#   * FreeTDS  <http://www.freetds.org>
+#     Open source implementation of the TDS (Tabular Data Stream) protocol
+#     Required by Kexi Sybase Migration driver
+#   * XBase  <http://linux.techass.com/projects/xdb/>
+#     XBase compatible C++ class library
+#     Required by Kexi XBase Migration driver
+#   * LibRCPS (0.3 or higher)  <http://www.librcps.org>
+#     Resource Conflict Project Scheduling Library
+#     Required by KPlato RCPS Plugin
+#   * FFTW3  <http://www.fftw.org/>
+#     A fast, free C FFT library
+#     Required by the Krita for fast convolution operators
 #   * QtShiva  <http://www.openshiva.org>
 #     Qt bindings for the OpenShiva interpreter
 #     Required for Shiva based Generators and Filters
-#   * GraphicsMagick (1.1 or higher)  <http://www.graphicsmagick.org>
-#     GraphicsMagick Image Processing System
-#     Required by the Krita GraphicsMagick filter for various file formats (including PSD, XCF). Version 1.2 is broken!
 #   * Spnav  <http://spacenav.sourceforge.net/>
 #     3Dconnexion device driver and SDK
 #     Required by SpaceNavigator 3D mouse plugin
-#   * wvWare  <http://sourceforge.net/projects/wvware>
-#     Microsoft Word .doc Library
-#     Required by the KWord .doc filter
-#   * WPG  <http://libwpg.sourceforge.net/>
-#     WordPerfect Graphics Library
-#     Required by the Karbon WPG import filter
 #   * KDE PIM iCalendar  <http://www.kde.org/>
 #     KDE Personal Information Management iCalendar Libraries
 #     Required by KPlato filter (available as a module in KDE)
@@ -78,9 +81,12 @@ BuildDepends: <<
 	libexiv2-0.18,
 	libgettext3-dev,
 	libkdcraw-8-%type_pkg[kde]-dev (>= 4.2.0-1),
+	libqtgtl-%type_pkg[kde],
 	libwpd-0.8-dev (>= 0.8.14-1),
+	libwpg-dev (>= 0.1.3-1),
 	libxml2,
 	libxslt,
+	opengtl-dev,
 	pkgconfig (>= 0.22-3),
 	poppler2,
 	poppler2-qt4-%type_pkg[kde] (>= 0.6.4-4),

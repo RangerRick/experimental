@@ -38,7 +38,7 @@ BuildDepends: <<
 	glib2-dev (>= 2.22.0-1),
 	gpgme11,
 	gnokii3-dev,
-	kde4-buildenv (>= 4.5.1-1),
+	kde4-buildenv (>= 4.5.2-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
 	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
@@ -488,10 +488,6 @@ SplitOff26: <<
 		opt/kde4/%type_pkg[kde]/share/icons/oxygen/64x64/apps/kleopatra*
 		opt/kde4/%type_pkg[kde]/share/icons/oxygen/scalable/apps/kleopatra*
 		opt/kde4/%type_pkg[kde]/share/kde4/services/kleopatra*
-	<<
-	Shlibs: <<
-		%p/opt/kde4/%type_pkg[kde]/lib/libkleopatraclientcore.0.dylib 0.0.0 %n (>= 4.2.4-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkleopatraclientgui.0.dylib  0.0.0 %n (>= 4.2.4-1)
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<

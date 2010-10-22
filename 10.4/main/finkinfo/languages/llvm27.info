@@ -29,8 +29,8 @@ CompileScript: <<
 	mv ../clang-%v tools/clang
 	mkdir build
 	pushd build
-	cmake $CMAKE_OPTIONS -DCMAKE_INSTALL_PREFIX=%p/opt/llvm-%v ..
-	make
+	cmake $CMAKE_OPTIONS -DCMAKE_INSTALL_PREFIX=%p/opt/llvm-%v -DLLVM_ENABLE_ASSERTIONS=OFF -DCMAKE_BUILD_TYPE=Release ..
+	make VERBOSE=1
 	popd
 <<
 
