@@ -1,5 +1,5 @@
 Package: postgresql82
-Version: 8.2.17
+Version: 8.2.18
 Revision: 1
 Description: PostgreSQL open-source database
 License: BSD
@@ -46,7 +46,7 @@ Replaces: <<
 GCC: 4.0
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: 583c21c036357480a85dd3710e40a261
+Source-MD5: 84fec909791729e5e0e00b84c5f6c055
 PatchFile: %n.patch
 PatchFile-MD5: 964107a0f601e15937e79df17ffea814
 PatchScript: <<

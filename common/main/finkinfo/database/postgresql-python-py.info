@@ -1,6 +1,6 @@
 Info2: <<
 Package: postgresql-python-py%type_pkg[python]
-Version: 8.2.17
+Version: 8.2.18
 Revision: 1
 Distribution: (%type_pkg[python] = 23) 10.3, (%type_pkg[python] = 23) 10.4
 Description: PostgreSQL Python tools
@@ -37,8 +37,8 @@ Replaces: <<
 <<
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: 583c21c036357480a85dd3710e40a261
-Source2: ftp://ftp.druid.net/pub/distrib/PyGreSQL-4.0.tgz
+Source-MD5: 84fec909791729e5e0e00b84c5f6c055
+Source2: ftp://ftp.pygresql.org/pub/distrib/PyGreSQL-4.0.tgz
 Source2-MD5: 1aca50e59ff4cc56abe9452a9a49c5ff
 PatchFile: postgresql82.patch
 PatchFile-MD5: 964107a0f601e15937e79df17ffea814

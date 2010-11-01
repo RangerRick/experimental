@@ -1,7 +1,7 @@
 Info4: <<
 Package: qt4-mac
 Version: 4.6.3
-Revision: 1
+Revision: 2
 Distribution: 10.4, 10.5
 Description: Cross-Platform framework (Mac version)
 License: LGPL
@@ -10,9 +10,9 @@ Maintainer: Benjamin Reed <qt4-mac@fink.raccoonfink.com>
 Depends: <<
 	%N-core-shlibs (= %v-%r),
 	%N-gui-shlibs (= %v-%r),
-	%N-designer (= %v-%r),
-	%N-linguist (= %v-%r),
-	%N-doc (= %v-%r),
+	%N-designer (>= %v-%r),
+	%N-linguist (>= %v-%r),
+	%N-doc (>= %v-%r),
 	pkgconfig (>= 0.23-1),
 	macosx (>= 10.4.3-1)
 <<
@@ -62,7 +62,7 @@ UseMaxBuildJobs: true
 CompileScript: <<
 	#!/bin/sh -ev
 	
-	EXTRA_ARGS="-confirm-license -no-pch -verbose"
+	EXTRA_ARGS="-confirm-license -no-pch -verbose -no-separate-debug-info"
 	if [ "%m" = "x86_64" ]; then
 	EXTRA_ARGS="$EXTRA_ARGS -arch x86_64 -cocoa"
 	fi
@@ -163,7 +163,7 @@ SplitOff: <<
 	<<
 	Replaces: <<
 		%N-core-shlibs (<< 4.6.0-1),
-		%N (<< 4.6.0-1)
+		%N (<< 4.6.3-2)
 	<<
 	Suggests: <<
 		%N-designer,
@@ -186,6 +186,7 @@ SplitOff: <<
 		lib/%N/lib/QtGui.framework/QtGui_debug
 		lib/%N/lib/QtGui.framework/Versions/4/QtGui
 		lib/%N/lib/QtGui.framework/Versions/4/QtGui_debug
+		lib/%N/lib/QtGui.framework/Versions/4/Resources/qt_menu.nib
 		lib/%N/lib/QtGui.framework/Versions/Current
 		lib/%N/lib/QtHelp.framework/QtHelp
 		lib/%N/lib/QtHelp.framework/QtHelp_debug

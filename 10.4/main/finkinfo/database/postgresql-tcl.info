@@ -1,5 +1,5 @@
 Package: postgresql-tcl
-Version: 8.2.17
+Version: 8.2.18
 Revision: 1
 Description: PostgreSQL TCL tools
 License: BSD
@@ -29,7 +29,7 @@ Replaces: <<
 <<
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: 583c21c036357480a85dd3710e40a261
+Source-MD5: 84fec909791729e5e0e00b84c5f6c055
 Source2: http://pgfoundry.org/frs/download.php/2151/libpgtcl-1.7.tar.gz
 Source2-MD5: e71ed886d5de5f5f455bc02136494448
 PatchScript: sed 's|@INSTPREFIX@|%p|g' < %{PatchFile} | patch -p1

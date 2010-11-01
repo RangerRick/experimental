@@ -1,5 +1,5 @@
 Package: postgresql81
-Version: 8.1.21
+Version: 8.1.22
 Revision: 1
 Description: PostgreSQL open-source database
 License: BSD
@@ -46,7 +46,7 @@ Replaces: <<
 GCC: 4.0
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: 0f0868eca8c39e22390e688effe2af5f
+Source-MD5: 51bede633280d1d34a98207d6b44ab0f
 PatchFile: %n.patch
 PatchFile-MD5: f062e01947c637f635ff08b961a272f0
 PatchScript: <<

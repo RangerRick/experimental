@@ -1,7 +1,7 @@
 Info4: <<
 Package: qt4-mac
 Version: 4.6.3
-Revision: 1
+Revision: 2
 GCC: 4.0
 CustomMirror: RangerMirror
 Source: mirror:custom:qt/qt-%v-mac-4979d9cf083278279bf9df7f92d76616353f022a.tar.gz
@@ -19,9 +19,9 @@ Description: Cross-Platform framework (Mac version)
 Depends: <<
 	%N-core-shlibs (= %v-%r),
 	%N-gui-shlibs (= %v-%r),
-	%N-designer (= %v-%r),
-	%N-linguist (= %v-%r),
-	%N-doc (= %v-%r),
+	%N-designer (>= %v-%r),
+	%N-linguist (>= %v-%r),
+	%N-doc (>= %v-%r),
 	pkgconfig (>= 0.22-1),
 	macosx (>= 10.4.3-1)
 <<
@@ -52,7 +52,7 @@ NoSetLDFLAGS: true
 CompileScript: <<
 #!/bin/sh -ev
 
-	EXTRA_ARGS="-confirm-license -no-pch -verbose"
+	EXTRA_ARGS="-confirm-license -no-pch -verbose -no-separate-debug-info"
 	if [ "%m" = "x86_64" ]; then
 		EXTRA_ARGS="$EXTRA_ARGS -arch x86_64 -cocoa"
 	fi
@@ -162,7 +162,7 @@ SplitOff: <<
 	Package: %N-gui-shlibs
 	DocFiles: LGPL* LICENSE*
 	Suggests: %N-designer, %N-linguist, %N-doc
-	Replaces: %N-core-shlibs (<< 4.6.0-1), %N (<< 4.6.0-1)
+	Replaces: %N-core-shlibs (<< 4.6.0-1), %N (<< 4.6.3-2)
 	Depends: <<
 		%N-core-shlibs (= %v-%r),
 		libmng2-shlibs,
@@ -183,6 +183,7 @@ SplitOff: <<
 		lib/%N/lib/QtGui.framework/QtGui_debug
 		lib/%N/lib/QtGui.framework/Versions/4/QtGui
 		lib/%N/lib/QtGui.framework/Versions/4/QtGui_debug
+		lib/%N/lib/QtGui.framework/Versions/4/Resources/qt_menu.nib
 		lib/%N/lib/QtGui.framework/Versions/Current
 		lib/%N/lib/QtHelp.framework/QtHelp
 		lib/%N/lib/QtHelp.framework/QtHelp_debug
