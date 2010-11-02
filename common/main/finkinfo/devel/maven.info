@@ -1,12 +1,12 @@
 Package: maven
-Version: 2.2.1
+Version: 3.0
 Revision: 1
 Type: java(1.5)
 Source: mirror:apache:%n/binaries/apache-%n-%v-bin.tar.gz
-Source-MD5: 3f829ed854cbacdaca8f809e4954c916
+Source-MD5: 505560ca377b990a965c4e4f8da42daa
 SourceDirectory: apache-%n-%v
 PatchFile: %n.patch
-PatchFile-MD5: 04fe9cb9a4e11299faf370a0c6413503
+PatchFile-MD5: cd123d58b82db3ea80ce823059f2737a
 PatchScript: sed -e 's,@FINKPREFIX@,%p,g' < %{PatchFile} | patch -p1
 Depends: system-java (>= 1.5-1)
 BuildDepends: fink (>= 0.26.0-1)
@@ -19,6 +19,7 @@ InstallScript: <<
 	echo "CLASSWORLDS_CONF=%p/etc/maven/m2.conf" >> %i/etc/maven/mavenrc
 	mv bin/m2.conf %i/etc/maven/
 
+	rm -rf bin/*.bat
 	install -d -m 755 %i/bin
 	mv bin/mvn %i/bin/
 	rm -rf bin

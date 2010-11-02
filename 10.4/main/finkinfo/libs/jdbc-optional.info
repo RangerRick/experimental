@@ -1,8 +1,8 @@
 Package: jdbc-optional
 Version: 2.0
-Revision: 4
+Revision: 6
 Description: JDBC Data Access API Addon
-Type: java(1.4)
+Type: java
 License: Restrictive/Distributable
 Maintainer: Benjamin Reed <jdbc-optional@fink.raccoonfink.com>
 
@@ -20,15 +20,17 @@ Provides: jdbc2
 Source: http://distfiles.opendarwin.org/jdbc2_0-stdext-src.zip
 Source-MD5: 1e07819fada0482b16edc8628e0aa43e
 SourceDirectory: .
-PatchScript: sed 's:@PREFIX@:%p:g' <%a/%n.patch | patch -p1
+PatchScript: sed 's:@PREFIX@:%p:g' <%{PatchFile} | patch -p1
+PatchFile: %n.patch
+PatchFile-MD5: f9d44d8b41a6a39a95e8622999f720d3
 
 UseMaxBuildJobs: true
 CompileScript: <<
 	#!/bin/sh -ex
 	
-	$JAVA_HOME/bin/javac -target 1.2 -source 1.2 -classpath %p/share/java/jta-spec/*.jar javax/sql/*.java
+	javac -target 1.2 -source 1.2 -classpath %p/share/java/jta-spec/*.jar javax/sql/*.java
 	mkdir -p api
-	$JAVA_HOME/bin/javadoc -classpath %p/share/java/jta-spec/*.jar -sourcepath . -d api javax.sql
+	javadoc -classpath %p/share/java/jta-spec/*.jar -sourcepath . -d api javax.sql
 <<
 
 InstallScript: <<

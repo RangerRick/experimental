@@ -1,5 +1,5 @@
 Package: jdom
-Version: 1.0
+Version: 1.1.1
 Revision: 1
 Epoch: 1
 Depends: xerces-j, xalan-j, system-java (>= 1.4-1)
@@ -7,8 +7,8 @@ BuildDepends: ant-base, system-java-dev (>= 1.4-1)
 Type: java(1.4)
 
 Source: http://jdom.org/dist/source/%n-%v.tar.gz
-Source-MD5: ce29ecc05d63fdb419737fd00c04c281
-PatchScript: perl -pi -e 's,<javac,<javac target="1.4" source="1.4",g; s,classic,modern,g' build.xml
+Source-MD5: 0ad116194e3101fb08fab8f6f00cc58f
+SourceDirectory: %n
 
 CompileScript: ant package javadoc-link
 InstallScript: <<

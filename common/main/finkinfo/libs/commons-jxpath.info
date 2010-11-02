@@ -1,12 +1,11 @@
 Package: commons-jxpath
-Version: 1.2
-Revision: 3
+Version: 1.3
+Revision: 1
 Type: java(1.5)
 Source: mirror:apache:jakarta/commons/jxpath/source/%n-%v-src.tar.gz
-Source-MD5: e3a6201ca1d967717a196940ec6362fc
-SourceDirectory: %n-%v
+Source-MD5: 9af6ed5d009061986d709a370829860e
 PatchScript: <<
-	perl -pi -e 's,<javac,<javac target="1.5" source="1.4",g' build.xml
+	perl -pi -e 's,<javac,<javac target="1.5" source="1.4",g; s,depends="internal-test",,g' build.xml
 	perl -pi -e 's,enum,e,g' `find src -name \*.java`
 <<
 BuildDepends: <<

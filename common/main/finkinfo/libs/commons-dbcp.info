@@ -1,9 +1,10 @@
 Package: commons-dbcp
-Version: 1.2.2
-Revision: 2
+Version: 1.4
+Revision: 1
 Type: java(1.5)
-Source: mirror:apache:jakarta/commons/dbcp/binaries/%n-%v.tar.gz
-Source-MD5: 6957d443325f08f07bfd1d2142a59799
+Source: mirror:apache:jakarta/commons/dbcp/binaries/%n-%v-bin.tar.gz
+Source-MD5: bd272e9611b0d880fd02493377d4691b
+SourceDirectory: %n-%v
 BuildDepends: fink (>= 0.22.2-1)
 Depends: <<
 	commons-pool (>= 1.2-1),

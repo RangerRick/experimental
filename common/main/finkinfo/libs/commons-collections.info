@@ -1,6 +1,6 @@
 Package: commons-collections
-Version: 3.2
-Revision: 4
+Version: 3.2.1
+Revision: 1
 BuildDepends: <<
 	ant-base (>= 1.6.5-1),
 	ant-junit (>= 1.6.5-1),
@@ -12,7 +12,7 @@ BuildDepends: <<
 <<
 Depends: system-java (>= 1.5-1)
 Source: mirror:apache:jakarta/commons/collections/source/%n-%v-src.tar.gz
-Source-MD5: dbf80727b384bfb9c220d78af30ebc14
+Source-MD5: 031ce05872ddb0462f0dcce1e5babbe9
 SourceDirectory: %n-%v-src
 PatchScript: perl -pi -e 's,<javac,<javac target="1.5" source="1.4",g' build.xml
 Type: java(1.5)
@@ -32,7 +32,7 @@ InstallScript: <<
 	find %i/share/doc/%n -type d -exec chmod 755 {} \;
 	find %i/share/doc/%n -type f -exec chmod 644 {} \;
 
-	mv %n-%v.jar %n.jar
+	mv build/%n-%v.jar %n.jar
 <<
 DocFiles: *.txt *.html
 Homepage: http://jakarta.apache.org/commons/collections.html

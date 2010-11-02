@@ -1,5 +1,5 @@
 Package: xerces-j-docs
-Version: 2.9.1
+Version: 2.10.0
 Revision: 1
 Description: Documentation for xerces-j
 Type: java
@@ -7,23 +7,23 @@ License: BSD
 Maintainer: Benjamin Reed <xerces-j-docs@fink.raccoonfink.com>
 
 Depends: <<
-	xerces-j (>= %v-1),
+	xerces-j (>= 2.10.0-1),
 	system-java (>= 1.5-1)
 <<
 BuildDepends: <<
-	ant-base (>= 1.7.1-3),
+	ant-base (>= 1.8.1-1),
 	fink (>= 0.29.7-1),
 	fink-mirrors (>= 0.22.1.1-1),
 	system-java-dev (>= 1.5-1)
 <<
 
 Source: mirror:apache:xml/xerces-j/Xerces-J-src.%v.tar.gz
-Source-MD5: e340cba4a2abf4f0f833488380821153
+Source-MD5: c08cd12a8463e426d7ef51483a6e1e95
 Source2: mirror:apache:xml/xerces-j/Xerces-J-tools.%v.tar.gz
-Source2-MD5: 6b50c65f2c31d66bb258aa5be79b0e21
-Source2ExtractDir: xerces-2_9_1
-SourceDirectory: xerces-2_9_1
-PatchScript: 	perl -pi -e 's,<javac,<javac target="1.5",g' build.xml
+Source2-MD5: 108a4a1fb8c665deec7ed2543d16a69f
+Source2ExtractDir: xerces-2_10_0
+SourceDirectory: xerces-2_10_0
+PatchScript: perl -pi -e 's,\r,,g' build.sh
 
 UseMaxBuildJobs: true
 CompileScript: sh build.sh docs javadocs

@@ -1,5 +1,5 @@
 Package: ecj
-Version: 3.2.2
+Version: 3.6.1
 Revision: 1
 Description: Eclipse Compiler for Java
 Type: java (1.5)
@@ -17,17 +17,17 @@ CustomMirror: <<
 	nam-US: http://ftp.us.xemacs.org/pub/mirrors/eclipse/eclipse/downloads/drops
 	nam-US: http://mirrors.ibiblio.org/pub/mirrors/eclipse/eclipse/downloads/drops
 <<
-Source: mirror:custom:R-%v-200702121330/%nsrc.zip
+Source: mirror:custom:R-%v-201009090800/%nsrc-%v.zip
 SourceRename: %n-%v.zip
 NoSourceDirectory: true
-Source-MD5: f9d7b548658c84231b00fada8d4b4f1b
+Source-MD5: 8a2b6222349dad952e7451fd47b6022b
 
 CompileScript: <<
   
   # Compile the Java sources
   find org -name *.java > files
   mkdir classes
-  javac -d classes -classpath %p/lib/ant/lib/ant.jar @files
+  javac -target 1.5 -source 1.5 -d classes -classpath %p/lib/ant/lib/ant.jar @files
   rm -f files
 
   # Put the classes into a JAR

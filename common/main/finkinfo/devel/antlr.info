@@ -1,6 +1,6 @@
 Package: antlr
 Version: 2.7.7
-Revision: 1003
+Revision: 1004
 GCC: 4.0
 Maintainer: Benjamin Reed <antlr@fink.raccoonfink.com>
 Conflicts: pccts

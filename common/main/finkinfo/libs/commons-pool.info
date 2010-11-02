@@ -1,11 +1,9 @@
 Package: commons-pool
-Version: 1.3
-Revision: 3
+Version: 1.5.5
+Revision: 1
 Type: java(1.5)
 Source: mirror:apache:jakarta/commons/pool/source/%n-%v-src.tar.gz
-Source-MD5: a2dcdff75de2af76f5f2169494ed3499
-SourceDirectory: %n-%v-src
-PatchScript: perl -pi -e 's,source="1.3",source="1.4",g; s,target="1.3",target="1.5",g;' build.xml
+Source-MD5: 1a71f00c8ab265efae3724295636f2e0
 BuildDepends: <<
 	ant-base (>= 1.6.5-1),
 	ant-junit (>= 1.6.5-1),
@@ -18,10 +16,9 @@ Depends: <<
 	commons-collections (>= 3.1-1),
 	system-java (>= 1.5-1)
 <<
-CompileScript: ant dist
+CompileScript: ant -Djavac.target.version=1.5 -Djavac.source.version=1.5 dist
 JarFiles: dist/*.jar
 InstallScript: <<
-	mv dist/%n-%v.jar dist/%n.jar
 	mkdir -p %i/share/doc/%N
 	(cd dist/docs; gnutar -cf - .) | (cd %i/share/doc/%N; gnutar -xf -)
 	find %i/share/doc/%N -type d -exec chmod 755 {} \;

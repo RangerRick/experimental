@@ -1,9 +1,9 @@
 Package: commons-lang
-Version: 2.3
-Revision: 2
+Version: 2.5
+Revision: 1
 Type: java(1.5)
 Source: mirror:apache:jakarta/commons/lang/source/%n-%v-src.tar.gz
-Source-MD5: 2ae988b339daec234019a7066f96733e
+Source-MD5: e96700da2046aa31a2c39839cf7b6cc9
 BuildDepends: <<
 	ant-base (>= 1.6.5-1),
 	ant-junit (>= 1.6.5-1),
@@ -19,11 +19,11 @@ CompileScript: <<
 
 	ant jar javadoc -Dcompile.target=1.5 -Dcompile.source=1.4
 <<
-JarFiles: dist/*.jar
+JarFiles: target/*.jar
 InstallScript: <<
-	mv dist/commons-lang-%v.jar dist/commons-lang.jar
+	mv target/commons-lang-%v.jar target/commons-lang.jar
 	mkdir -p %i/share/doc/%n
-	(cd dist/docs; gnutar -cf - .) | (cd %i/share/doc/%n; gnutar -xf -)
+	(cd target/apidocs; gnutar -cf - .) | (cd %i/share/doc/%n; gnutar -xf -)
 	find %i/share/doc/%n -type d -exec chmod 755 {} \;
 	find %i/share/doc/%n -type f -exec chmod 644 {} \;
 <<

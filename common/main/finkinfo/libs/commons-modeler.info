@@ -1,9 +1,9 @@
 Package: commons-modeler
-Version: 2.0
-Revision: 2
+Version: 2.0.1
+Revision: 1
 Type: java(1.5)
 Source: mirror:apache:jakarta/commons/modeler/source/%n-%v-src.tar.gz
-Source-MD5: 43983c66113ddaa9880e4a7ea7d38db4
+Source-MD5: 9ad2dc25be91c38b93346653736856dd
 SourceDirectory: %n-%v-src
 BuildDepends: <<
 	ant-base (>= 1.6.5-1),

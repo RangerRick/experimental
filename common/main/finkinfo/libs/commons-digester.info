@@ -1,22 +1,10 @@
 Package: commons-digester
-Version: 1.8
-Revision: 2
+Version: 2.1
+Revision: 1
 Type: java(1.5)
-Source: mirror:apache:jakarta/commons/digester/source/%n-%v-src.tar.gz
-Source-MD5: 689f41905a68c67f7231f9afbb3e2147
-SourceDirectory: %n-%v-src
-PatchScript: <<
-	cp LICENSE.txt ../LICENSE
-	perl -pi -e 's,<javac,<javac target="1.5" source="1.4",g' build.xml
-<<
-CompileScript: <<
-#!/bin/sh -ex
-
-	ant dist
-	pushd src/examples/rss
-	export CLASSPATH="%b/dist/commons-digester.jar:$CLASSPATH"
-	ant dist
-<<
+Source: mirror:apache:jakarta/commons/digester/binaries/%n-%v-bin.tar.gz
+Source-MD5: aba0ed75f9c0947609295480b5e5fd3d
+SourceDirectory: %n-%v
 BuildDepends: <<
 	ant-base (>= 1.6.5-1),
 	commons-logging (>= 1.1-1),
@@ -32,7 +20,8 @@ Depends: <<
 	commons-beanutils (>= 1.7-1),
 	system-java (>= 1.5-1)
 <<
-JarFiles: dist/*.jar src/examples/rss/dist/*.jar
+JarFiles: *.jar
+CompileScript: echo "none needed"
 InstallScript: <<
 	mkdir -p %i/share/doc/%n
 	mkdir -p %i/share/doc/%n/rss

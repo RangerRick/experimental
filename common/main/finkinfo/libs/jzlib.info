@@ -1,6 +1,6 @@
 Package: jzlib
 Version: 1.0.7
-Revision: 2
+Revision: 3
 Source: http://www.jcraft.com/%n/%n-%v.tar.gz
 Source-MD5: 3c52a0afb970e8a1fb2d34f30d330a83
 SourceDirectory: %n-%v
@@ -10,10 +10,10 @@ Type: java(1.5)
 CompileScript: <<
 #!/bin/sh -ex
 
-	$JAVA_HOME/bin/javac -target 1.4 -source 1.4 `find com -name \*.java`
+	javac -target 1.4 -source 1.4 `find com -name \*.java`
 	jar -cvf jzlib.jar `find com -name \*.class`
 	mkdir -p api
-	$JAVA_HOME/bin/javadoc -sourcepath . -d api `find com -name \*.java`
+	javadoc -sourcepath . -d api `find com -name \*.java`
 <<
 InstallScript: <<
 #!/bin/sh -ex
