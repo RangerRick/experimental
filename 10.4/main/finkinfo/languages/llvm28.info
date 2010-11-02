@@ -39,8 +39,11 @@ InstallScript: <<
 	pushd build
 		make -j1 install/fast DESTDIR="%d"
 	popd
+
+	install_name_tool -id "%p/opt/llvm-%v/lib/liblibclang.dylib" "%i/opt/llvm-%v/lib/liblibclang.dylib"
 <<
 DocFiles: *.TXT README.txt
+Shlibs: 	%p/opt/llvm-%v/lib/liblibclang.dylib 1.0.0 %n (>= 2.8-1)
 
 Homepage: http://llvm.org/
 DescDetail: <<
