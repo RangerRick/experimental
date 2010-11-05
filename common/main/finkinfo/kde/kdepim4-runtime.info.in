@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdepim4-runtime-mac
 Type: kde (mac)
 #endif
-Version: 4.4.6
+Version: 4.4.7
 Revision: 1
 Description: KDE4 - PIM (Runtime)
 License: GPL/LGPL
@@ -16,7 +16,7 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:stable/kdepim-%v/src/kdepim-runtime-%v.tar.bz2
-Source-MD5: b690b2f0e926d03fc1c6c51a9bb14fdd
+Source-MD5: c408db0e6b9531e68cfac041aaaaa1e4
 PatchFile: kdepim4-runtime.patch
 PatchFile-MD5: d33cbac50e8b63213413b1a347342058
 

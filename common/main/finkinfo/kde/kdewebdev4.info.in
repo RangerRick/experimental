@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdewebdev4-mac
 Type: kde (mac)
 #endif
-Version: 4.5.2
+Version: 4.5.3
 Revision: 1
 Description: KDE4 - Web Development
 License: GPL/LGPL
@@ -16,7 +16,7 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:stable/%v/src/kdewebdev-%v.tar.bz2
-Source-MD5: b3269db8c1a6a1383b1d381f97dea02e
+Source-MD5: a5430df45a1c4b35e2fd3ef2dab12130
 #PatchFile: kdewebdev4.patch
 #PatchFile-MD5: 07ced1828f9aa79f0ef340034277eab1
 

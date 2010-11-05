@@ -7,8 +7,8 @@ License: Restrictive/Distributable
 Maintainer: Benjamin Reed <netrexx@fink.raccoonfink.com>
 
 Depends: <<
-	xalan-j (>= 2.0-1),
-	xerces-j (>= 2.0-1),
+	xalan-j (>= 2.7.1-1),
+	xerces-j (>= 2.10.0-1),
 	system-java (>= 1.4-1)
 <<
 BuildDepends: <<

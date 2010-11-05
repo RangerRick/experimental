@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdeaccessibility4-x11
-Version: 4.5.2
+Version: 4.5.3
 Revision: 1
 Description: KDE4 - accessibility software
 Type: kde (x11)
@@ -23,9 +23,9 @@ BuildDepends: <<
 	freetts,
 	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),
-	kde4-buildenv (>= 4.5.2-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.5.2-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kde4-buildenv (>= 4.5.3-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.5.3-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.3-1),
 	libgettext8-dev,
 	pkgconfig (>= 0.23-1),
 	qt4-%type_pkg[kde] (>= 4.6.3-1),
@@ -37,7 +37,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdeaccessibility-%v.tar.bz2
-Source-MD5: 4110603b3c0c3cabbb514cb4c0517520
+Source-MD5: 8866b1594bcb426234a70640bfed5472
 
 UseMaxBuildJobs: true
 CompileScript: <<
@@ -130,7 +130,7 @@ SplitOff6: <<
 SplitOff7: <<
 	Package: %N-base
 	Description: KDE4 - kdeaccessibility base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.5.2-1)
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.5.3-1)
 	Files: opt share/doc/installed-packages/%N-base
 <<
 

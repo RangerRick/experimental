@@ -1,6 +1,6 @@
 Info3: <<
 Package: kdepimlibs4-%type_pkg[kde]
-Version: 4.5.2
+Version: 4.5.3
 Revision: 1
 Description: KDE4 - PIM support libraries
 Type: kde (x11 mac)
@@ -9,7 +9,7 @@ Maintainer: Benjamin Reed <kdepimlibs4@fink.raccoonfink.com>
 
 Depends: <<
 	%N-shlibs (= %v-%r),
-	kdelibs4-%type_pkg[kde] (>= 4.5.2-1),
+	kdelibs4-%type_pkg[kde] (>= 4.5.3-1),
 	libkholidays4-%type_pkg[kde] (>= %v-%r)
 <<
 BuildDepends: <<
@@ -28,8 +28,8 @@ BuildDepends: <<
 	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	giflib,
-	kde4-buildenv (>= 4.5.2-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kde4-buildenv (>= 4.5.3-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.3-1),
 	libgettext8-dev,
 	libical,
 	libidn,
@@ -53,7 +53,7 @@ Replaces: kontact4-%type_pkg[kde] (<< 4.4.1-1)
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdepimlibs-%v.tar.bz2
-Source-MD5: 01a85ceba5f9761eeba9548b05b8f0a2
+Source-MD5: 6c8906b12635dd4c8fff89118cc3fffd
 SourceDirectory: kdepimlibs-%v
 PatchFile: kdepimlibs4.patch
 PatchFile-MD5: 227cdbbe6457a69a42e0cca4fbceb074
@@ -86,7 +86,7 @@ SplitOff: <<
 		akonadi-%type_pkg[kde]-shlibs (>= 1.4.0-1),
 		boost1.41.cmake-shlibs,
 		cyrus-sasl2-shlibs,
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.5.2-1),
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.5.3-1),
 		libical-shlibs,
 		openldap24-shlibs
 	<<
@@ -161,7 +161,7 @@ SplitOff10: <<
 SplitOff2: <<
 	Package: libkholidays4-%type_pkg[kde]-shlibs
 	Description: KDE4 - holiday calendar shared libraries
-	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.5.2-1)
+	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.5.3-1)
 	Files: opt/kde4/%type_pkg[kde]/lib/libkholidays.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkholidays.4.dylib 4.0.0 %n (>= 4.3.0-1)
 <<

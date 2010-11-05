@@ -1,6 +1,6 @@
 Info3: <<
 Package: kdepimlibs4-%type_pkg[kde]
-Version: 4.5.2
+Version: 4.5.3
 Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - PIM support libraries
@@ -55,7 +55,7 @@ Replaces: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdepimlibs-%v.tar.bz2
-Source-MD5: 01a85ceba5f9761eeba9548b05b8f0a2
+Source-MD5: 6c8906b12635dd4c8fff89118cc3fffd
 SourceDirectory: kdepimlibs-%v
 PatchFile: kdepimlibs4.patch
 PatchFile-MD5: 227cdbbe6457a69a42e0cca4fbceb074

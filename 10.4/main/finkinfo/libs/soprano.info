@@ -16,7 +16,7 @@ BuildDepends: <<
 	fink (>= 0.29.7-1),
 	fink-package-precedence (>= 0.7-1),
 	gmp,
-	kde4-buildenv (>= 4.5.2-1),
+	kde4-buildenv (>= 4.5.3-1),
 	libcurl4,
 	libiconv,
 	libmpfr1,

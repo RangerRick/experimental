@@ -6,14 +6,14 @@ Type: kde (x11)
 Package: kdegraphics4-mac
 Type: kde (mac)
 #endif
-Version: 4.5.2
+Version: 4.5.3
 Revision: 1
 Description: KDE4 - Graphics applications
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdegraphics4@fink.raccoonfink.com>
 
 Source: mirror:kde:stable/%v/src/kdegraphics-%v.tar.bz2
-Source-MD5: f65c05227f4d4870eb62b0cd1679393f
+Source-MD5: b5542bfaf9fb43775c48e2950ae05a9c
 PatchFile: kdegraphics4.patch
 PatchFile-MD5: 970e1af405b484c701b89a40a08ce504
 
@@ -34,7 +34,6 @@ Depends: <<
 	%N-strigi-analyzers-%type_pkg[kde] (>= %v-%r),
 <<
 
-# TODO: package these
 BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.88-1),
 	qimageblitz-unified-%type_pkg[kde],

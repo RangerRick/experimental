@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdegraphics4-mac
-Version: 4.5.2
+Version: 4.5.3
 Revision: 1
 Description: KDE4 - Graphics applications
 Type: kde (mac)
@@ -29,9 +29,9 @@ BuildDepends: <<
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),
-	kde4-buildenv (>= 4.5.2-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.5.2-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kde4-buildenv (>= 4.5.3-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.5.3-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.3-1),
 	lcms,
 	libchm,
 	libdjvulibre21-dev,
@@ -58,7 +58,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdegraphics-%v.tar.bz2
-Source-MD5: f65c05227f4d4870eb62b0cd1679393f
+Source-MD5: b5542bfaf9fb43775c48e2950ae05a9c
 PatchFile: kdegraphics4.patch
 PatchFile-MD5: 970e1af405b484c701b89a40a08ce504
 
@@ -298,7 +298,7 @@ SplitOff30: <<
 SplitOff31: <<
 	Package: %N-base
 	Description: KDE4 - kdegraphics base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.5.2-1)
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.5.3-1)
 	Replaces: gsthumbnail4-%type_pkg[kde]
 	Files: opt
 <<

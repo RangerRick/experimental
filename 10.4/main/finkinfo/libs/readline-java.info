@@ -14,7 +14,7 @@ Depends: <<
 	system-java (>= 1.4-1)
 <<
 BuildDepends: <<
-	ant-base (>= 1.7.1-3),
+	ant-base (>= 1.8.1-1),
 	commons-logging,
 	commons-collections,
 	fink (>= 0.29.7-1),
