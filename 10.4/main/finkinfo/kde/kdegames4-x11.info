@@ -436,7 +436,6 @@ SplitOff23: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/24x24/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/256x256/apps/kpat*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/24x24/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kpat*
