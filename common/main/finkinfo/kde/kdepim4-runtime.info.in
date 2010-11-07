@@ -81,10 +81,10 @@ InstallScript: <<
 		make -j1 install/fast DESTDIR="%d"
 	popd
 
-	rm -rf %p/opt/kde4/x11/lib/libakonadi-xml.dylib
-	rm -rf %p/opt/kde4/x11/lib/libkdepim-copy.dylib
-	rm -rf %p/opt/kde4/x11/lib/libmaildir.dylib
-	rm -rf %p/opt/kde4/x11/lib/libmbox.dylib
+	rm -rf %i/opt/kde4/x11/lib/libakonadi-xml.dylib
+	rm -rf %i/opt/kde4/x11/lib/libkdepim-copy.dylib
+	rm -rf %i/opt/kde4/x11/lib/libmaildir.dylib
+	rm -rf %i/opt/kde4/x11/lib/libmbox.dylib
 
 	mkdir -p %i/share/doc/installed-packages
 	touch %i/share/doc/installed-packages/%N
