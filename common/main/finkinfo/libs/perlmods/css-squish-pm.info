@@ -1,0 +1,51 @@
+Info2: <<
+Package: css-squish-pm%type_pkg[perl]
+Version: 0.09
+Revision: 1
+Description: Compact many CSS files into one
+Type: perl(0)
+License: Artistic
+Maintainer: Benjamin Reed <css-squish-pm@fink.raccoonfink.com>
+
+Depends: <<
+	file-spec-pm%type_pkg[perl],
+	perl%type_pkg[perl]-core,
+	scalar-list-utils-pm%type_pkg[perl],
+	uri-pm%type_pkg[perl],
+<<
+BuildDepends: <<
+	fink (>= 0.26.0-1),
+	test-longstring-pm,
+<<
+
+Source: mirror:cpan:modules/by-module/CSS/CSS-Squish-%v.tar.gz
+Source-MD5: 1cd98fa9f4ae734eb82e0d021ac1a8e4
+
+UpdatePOD: true
+DocFiles: CHANGES README
+
+InstallScript: <<
+	%{default_script}
+	mv %i/share/man %i/lib/perl5/%type_raw[perl]
+<<
+
+Homepage: http://search.cpan.org/dist/CSS-Squish
+DescDetail: <<
+This module takes a list of CSS files and concatenates them, making sure to
+honor any valid @import statements included in the files.
+
+The benefit of this is that you get to keep your CSS as individual files,
+but can serve it to users in one big file, saving the overhead of possibly
+dozens of HTTP requests.
+
+Following the CSS 2.1 spec, @import statements must be the first rules in a
+CSS file.  Media-specific @import statements will be honored by enclosing
+the included file in an @media rule.  This has the side effect of actually
+improving compatibility in Internet Explorer, which ignores media-specific
+@import rules but understands @media rules.
+
+It is possible that future versions will include methods to compact
+whitespace and other parts of the CSS itself, but this functionality is
+not supported at the current time.
+<<
+<<

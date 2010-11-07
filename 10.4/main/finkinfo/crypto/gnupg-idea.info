@@ -88,17 +88,17 @@ PatchScript: <<
 	perl -pi -e 's,test x._tar_bad = x0,true,g' configure
 <<
 
-UseMaxBuildJobs: true
+UseMaxBuildJobs: false
 ConfigureParams: --libexecdir='${prefix}/lib' --with-libiconv-prefix=%p --disable-dependency-tracking (%m = x86_64) --disable-asm
 
 InstallScript: <<
-	make install DESTDIR="%d"
+	make -j1 install DESTDIR="%d"
 
 	mkdir -p %i/share/doc/%n/documentation
 	mv gnupg-docs/* %i/share/doc/%n/documentation
 	install -m 644 %i/share/gnupg/FAQ %i/share/doc/%n
-	install -m 644 %i/share/gnupg/faq.html %i/share/doc/%n
-	rm -rf %i/share/locale/locale.alias
+	install -m 644 doc/*.info %i/share/info/
+	rm -rf %i/share/locale/locale.alias %i/share/man/man1/gpg-zip*
 <<
 DocFiles: AUTHORS BUGS COPYING ChangeLog README TODO PROJECTS THANKS
 

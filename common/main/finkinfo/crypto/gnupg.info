@@ -26,6 +26,7 @@ Depends: <<
 	openldap24-shlibs,
 	readline5-shlibs
 <<
+UseMaxBuildJobs: false
 Conflicts: gnupg-egd, gnupg-idea, gnupg-testing
 Replaces: gnupg-egd, gnupg-idea, gnupg-testing
 CustomMirror: <<
@@ -76,9 +77,8 @@ InstallScript: <<
 	mkdir -p %i/share/doc/%n/documentation
 	mv gnupg-docs/* %i/share/doc/%n/documentation
 	install -m 644 %i/share/gnupg/FAQ %i/share/doc/%n
-	install -m 644 %i/share/gnupg/faq.html %i/share/doc/%n
 	install -m 644 doc/*.info %i/share/info/
-	rm -rf %i/share/locale/locale.alias
+	rm -rf %i/share/locale/locale.alias %i/share/man/man1/gpg-zip*
 <<
 DocFiles: AUTHORS BUGS COPYING ChangeLog README TODO PROJECTS THANKS
 InfoDocs: gnupg1.info

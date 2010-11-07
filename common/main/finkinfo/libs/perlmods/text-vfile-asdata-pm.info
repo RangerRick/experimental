@@ -1,0 +1,35 @@
+Info2: <<
+Package: text-vfile-asdata-pm%type_pkg[perl]
+Version: 0.07
+Revision: 1
+Description: Parse vFile formatted files
+Type: perl(0)
+License: Artistic
+Maintainer: Benjamin Reed <text-vfile-asdata-pm@fink.raccoonfink.com>
+
+Depends: <<
+	class-accessor-chained-pm,
+	perl%type_pkg[perl]-core,
+<<
+BuildDepends: <<
+	fink (>= 0.26.0-1),
+	test-simple-pm%type_pkg[perl] (>= 0.88-1),
+<<
+
+Source: mirror:cpan:modules/by-module/Text/Text-vFile-asData-%v.tar.gz
+Source-MD5: 1f0fc1fbef2111a936db3eb4678ddccc
+
+UpdatePOD: true
+DocFiles: Changes examples/*
+
+InstallScript: <<
+	%{default_script}
+	mv %i/share/man %i/lib/perl5/%type_raw[perl]
+<<
+
+Homepage: http://search.cpan.org/dist/Text-vFile-asData
+DescDetail: <<
+Text::vFile::asData reads vFile format files, such as
+vCard (RFC 2426) and vCalendar (RFC 2445).
+<<
+<<
