@@ -1,6 +1,6 @@
 Package: gnupg
 Version: 1.4.11
-Revision: 1
+Revision: 2
 Description: Gnu privacy guard - A Free PGP replacement
 License: GPL
 Maintainer: Benjamin Reed <gnupg@fink.raccoonfink.com>
@@ -69,8 +69,9 @@ Source2: mirror:sourceforge:fink/gnupg-docs-20021001.tar.gz
 Source2-MD5: 5e34b5be84adc6a898e164b99fce45d8
 Source2ExtractDir: %n-%v
 ConfigureParams: --libexecdir='${prefix}/lib' --with-libiconv-prefix=%p --disable-dependency-tracking (%m = x86_64) --disable-asm
+PatchScript: perl -pi -e 's,test x._tar_bad = x0,true,g' configure
 InstallScript: <<
-	make install DESTDIR="%d"
+	make -j1 install DESTDIR="%d"
 
 	mkdir -p %i/share/doc/%n/documentation
 	mv gnupg-docs/* %i/share/doc/%n/documentation

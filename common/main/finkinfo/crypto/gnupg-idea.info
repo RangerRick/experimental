@@ -1,6 +1,6 @@
 Package: gnupg-idea
 Version: 1.4.11
-Revision: 1
+Revision: 2
 Epoch: 1
 Description: Gnu privacy guard (with IDEA cipher)
 License: GPL
@@ -75,10 +75,11 @@ Source3-MD5: 9dc3bc086824a8c7a331f35e09a3e57f
 Source3ExtractDir: gnupg-%v/cipher
 PatchScript: <<
 	gunzip cipher/idea.c.gz
+	perl -pi -e 's,test x._tar_bad = x0,true,g' configure
 <<
 ConfigureParams: --libexecdir='${prefix}/lib' --with-libiconv-prefix=%p --disable-dependency-tracking (%m = x86_64) --disable-asm
 InstallScript: <<
-	make install DESTDIR="%d"
+	make -j1 install DESTDIR="%d"
 
 	mkdir -p %i/share/doc/%n/documentation
 	mv gnupg-docs/* %i/share/doc/%n/documentation
