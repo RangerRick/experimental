@@ -8,8 +8,8 @@ Maintainer: Benjamin Reed <junit@fink.raccoonfink.com>
 
 Depends: <<
 	junit (>= 3.8.1-4),
-	xalan-j (>= 1.0-1),
-	xerces-j (>= 1.0-1),
+	xalan-j (>= 2.7.1-1),
+	xerces-j (>= 2.10.0-1),
 	system-java (>= 1.5-1)
 <<
 BuildDepends: <<

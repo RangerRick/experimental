@@ -1,6 +1,6 @@
 Info3: <<
 Package: kdebase4-runtime-%type_pkg[kde]
-Version: 4.5.2
+Version: 4.5.3
 Revision: 1
 Description: KDE4 - base applications and tools (runtime)
 Type: kde (x11 mac)
@@ -9,9 +9,9 @@ Maintainer: Benjamin Reed <kdebase4-runtime@fink.raccoonfink.com>
 
 Depends: <<
 	dbus (>= 1.2.24-1),
-	kdepimlibs4-%type_pkg[kde] (>= 4.5.2-1),
+	kdepimlibs4-%type_pkg[kde] (>= 4.5.3-1),
 	libxine1-shlibs,
-	oxygen-icons-%type_pkg[kde] (>= 4.5.2-1),
+	oxygen-icons-%type_pkg[kde] (>= 4.5.3-1),
 	strigi-gui-%type_pkg[kde] (>= 0.7.2-1)
 <<
 BuildDepends: <<
@@ -30,9 +30,9 @@ BuildDepends: <<
 	gettext-tools,
 	giflib,
 	glib2-dev (>= 2.22.0-1),
-	kde4-buildenv (>= 4.5.2-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kde4-buildenv (>= 4.5.3-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.3-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.3-1),
 	libgettext8-dev,
 	libidn,
 	libjasper.1,
@@ -62,7 +62,7 @@ Replaces: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdebase-runtime-%v.tar.bz2
-Source-MD5: 6503a445c52fc1055152d46fca56eb0a
+Source-MD5: 4b5d4e1a56280490e6f7559cd953ceec
 SourceDirectory: kdebase-runtime-%v
 PatchFile: kdebase4-runtime.patch
 PatchFile-MD5: 8399ddc01690f2150e311b7d6e51e9cb

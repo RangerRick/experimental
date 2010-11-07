@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdeutils4-mac
 Type: kde (mac)
 #endif
-Version: 4.5.2
+Version: 4.5.3
 Revision: 1
 Description: KDE4 - Utilities
 License: GPL/LGPL
@@ -16,7 +16,7 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:stable/%v/src/kdeutils-%v.tar.bz2
-Source-MD5: f87f29de2b5ffed215e5c46a05851804
+Source-MD5: a90c2914752c517cfb4a5549943cdcb6
 PatchFile: kdeutils4.patch
 PatchFile-MD5: e430ed80c7335792e1f51109a83ed46d
 

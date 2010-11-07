@@ -1,6 +1,6 @@
 Info3: <<
 Package: kdebase4-workspace-%type_pkg[kde]
-Version: 4.5.2
+Version: 4.5.3
 Revision: 1
 Description: KDE4 - base applications and tools
 Type: kde (x11)
@@ -9,8 +9,8 @@ Maintainer: Benjamin Reed <kdebase4-workspace@fink.raccoonfink.com>
 
 Depends: <<
 	%N-shlibs (= %v-%r),
-	kdelibs4-%type_pkg[kde] (>= 4.5.2-1),
-	kdepimlibs4-%type_pkg[kde] (>= 4.5.2-1),
+	kdelibs4-%type_pkg[kde] (>= 4.5.3-1),
+	kdepimlibs4-%type_pkg[kde] (>= 4.5.3-1),
 	libknotificationitem1-%type_pkg[kde] (>= 4.3.4-1),
 	pyqt4-py26
 <<
@@ -31,9 +31,9 @@ BuildDepends: <<
 	giflib,
 	glib2-dev (>= 2.22.0-1),
 	gpsd-dev,
-	kde4-buildenv (>= 4.5.2-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kde4-buildenv (>= 4.5.3-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.3-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.3-1),
 	libdbusmenu-qt-%type_pkg[kde] (>= 0.6.4-1),
 	libgettext8-dev,
 	libidn,
@@ -64,7 +64,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdebase-workspace-%v.tar.bz2
-Source-MD5: 0174c22b75e9a2b477ee166da2ca7319
+Source-MD5: 9537fb2e759c8bff53bd73512b006539
 SourceDirectory: kdebase-workspace-%v
 PatchScript: sed -e 's,@FINKPREFIX@,%p,g; s,@FINKTYPE@,%type_pkg[kde],g' %{PatchFile} | patch -p1
 PatchFile: kdebase4-workspace.patch
@@ -105,8 +105,8 @@ SplitOff: <<
 	Depends: <<
 		glib2-shlibs (>= 2.22.0-1),
 		gpsd-shlibs,
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.5.2-1),
-		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.5.2-1),
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.5.3-1),
+		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.5.3-1),
 		libknotificationitem1-%type_pkg[kde]-shlibs (>= 4.3.4-1),
 		libusb-shlibs,
 		(%type_pkg[kde] = x11) libxklavier12-shlibs,
@@ -141,7 +141,6 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libsolidcontrolifaces.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libsystemsettingsview.2*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libtaskmanager.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libweather_ion.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/strigi
 	<<
 	Shlibs: <<
@@ -168,7 +167,6 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libsolidcontrolifaces.4.dylib            4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libsystemsettingsview.2.dylib            2.0.0 %n (>= 4.5.1-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libtaskmanager.4.dylib                   4.0.0 %n (>= 4.2.4-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libweather_ion.4.dylib                   4.0.0 %n (>= 4.2.4-1)
 	<<
 <<
 SplitOff2: <<

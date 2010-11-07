@@ -9,7 +9,7 @@ Maintainer: Benjamin Reed <axis@fink.raccoonfink.com>
 Depends: <<
 	commons-discovery (>= 0.2-2),
 	commons-httpclient (>= 2.0-1),
-	commons-logging (>= 1.0.4-1),
+	commons-logging (>= 1.1.1-1),
 	commons-net (>= 1.1-1),
 	jaf,
 	jakarta-oro,
@@ -21,7 +21,7 @@ BuildDepends: <<
 	ant-base,
 	commons-discovery (>= 0.2-2),
 	commons-httpclient (>= 2.0-1),
-	commons-logging (>= 1.0.4-1),
+	commons-logging (>= 1.1.1-1),
 	commons-net (>= 1.1-1),
 	fink (>= 0.29.7-1),
 	fink-mirrors (>= 0.21.1.1-1),

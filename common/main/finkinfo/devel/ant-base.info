@@ -1,7 +1,7 @@
 Info4: <<
 Package: ant-base
 Version: 1.8.1
-Revision: 1
+Revision: 2
 Type: java
 Maintainer: Benjamin Reed <ant-base@fink.raccoonfink.com>
 #
@@ -53,6 +53,8 @@ SplitOff2: <<
 	Description: Optional tasks for Ant
 	Depends: <<
 		ant-base (>= %v-1),
+	<<
+	Recommends: <<
 		antlr (>= 2.7.4-3),
 		bcel,
 		commons-logging,

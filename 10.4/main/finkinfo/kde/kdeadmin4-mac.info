@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdeadmin4-mac
-Version: 4.5.2
+Version: 4.5.3
 Revision: 1
 Description: KDE4 - UNIX admin tools
 Type: kde (mac)
@@ -21,9 +21,9 @@ BuildDepends: <<
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),
-	kde4-buildenv (>= 4.5.2-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.5.2-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kde4-buildenv (>= 4.5.3-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.5.3-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.3-1),
 	libgettext8-dev,
 	pkgconfig (>= 0.23-1),
 	qt4-%type_pkg[kde] (>= 4.6.3-1),
@@ -35,7 +35,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdeadmin-%v.tar.bz2
-Source-MD5: 6363315b99bc7f7915ad38e557d1c99f
+Source-MD5: 30c77e654c966e8d9e41e74e8d951af2
 PatchFile: kdeadmin4.patch
 PatchFile-MD5: f5f3a82363cb00afc69fa1fcdbaca09f
 
@@ -126,7 +126,7 @@ SplitOff5: <<
 SplitOff6: <<
 	Package: %N-base
 	Description: KDE4 - kdeadmin base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.5.2-1)
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.5.3-1)
 	Files: opt share/doc/installed-packages/%n
 <<
 

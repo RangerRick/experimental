@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdegames4-mac
-Version: 4.5.2
+Version: 4.5.3
 Revision: 1
 Description: KDE4 - Games
 Type: kde (mac)
@@ -55,9 +55,9 @@ BuildDepends: <<
 	ggz-client-libs2-dev,
 	libggz2,
 	glib2-dev (>= 2.22.0-1),
-	kde4-buildenv (>= 4.5.2-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.5.2-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.2-1),
+	kde4-buildenv (>= 4.5.3-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.5.3-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.5.3-1),
 	libgettext8-dev,
 	pkgconfig (>= 0.23-1),
 	qca2-%type_pkg[kde] (>= 2.0.2-1),
@@ -71,7 +71,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdegames-%v.tar.bz2
-Source-MD5: 3e7c5ff0f0b3482d1b927cc00e033111
+Source-MD5: df43122fa0d53c011ac1867144c7ba25
 
 UseMaxBuildJobs: true
 CompileScript: <<
@@ -436,7 +436,6 @@ SplitOff23: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/24x24/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/256x256/apps/kpat*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/24x24/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kpat*
@@ -809,7 +808,7 @@ SplitOff40: <<
 SplitOff41: <<
 	Package: %N-base-shlibs
 	Description: KDE4 - kdegames base shared libraries
-	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.5.2-1)
+	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.5.3-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/libkdegames.5*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkggzgames.4*.dylib
@@ -830,7 +829,7 @@ SplitOff42: <<
 	Description: KDE4 - kdegames base package
 	Depends: <<
 		%n-shlibs (>= %v-%r),
-		kdebase4-runtime-%type_pkg[kde] (>= 4.5.2-1),
+		kdebase4-runtime-%type_pkg[kde] (>= 4.5.3-1),
 		qca2-%type_pkg[kde]-shlibs (>= 2.0.2-1)
 	<<
 	Files: opt

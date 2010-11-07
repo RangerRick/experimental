@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdegames4-mac
 Type: kde (mac)
 #endif
-Version: 4.5.2
+Version: 4.5.3
 Revision: 1
 Description: KDE4 - Games
 License: GPL/LGPL
@@ -16,7 +16,7 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:stable/%v/src/kdegames-%v.tar.bz2
-Source-MD5: 3e7c5ff0f0b3482d1b927cc00e033111
+Source-MD5: df43122fa0d53c011ac1867144c7ba25
 #PatchFile: kdegames4.patch
 #PatchFile-MD5: db0daf5cb355d99ac3454cbd926d3781
 
@@ -582,7 +582,6 @@ SplitOff23: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/24x24/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/256x256/apps/kpat*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/24x24/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kpat*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kpat*

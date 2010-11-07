@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdesdk4-mac
 Type: kde (mac)
 #endif
-Version: 4.5.2
+Version: 4.5.3
 Revision: 1
 Description: KDE4 - Developer Utilities
 License: GPL/LGPL
@@ -16,7 +16,7 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:stable/%v/src/kdesdk-%v.tar.bz2
-Source-MD5: ef8b55b47e66bfd86993f60075097f54
+Source-MD5: d523900d164e60edf952a767827e2bee
 PatchFile: kdesdk4.patch
 PatchFile-MD5: 055a2ba43d7e3fb1b884efedabccfbe4
 

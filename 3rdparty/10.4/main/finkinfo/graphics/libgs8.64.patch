@@ -1,0 +1,150 @@
+diff -Nurd -x'*~' ghostscript-8.64.orig/base/Makefile.in ghostscript-8.64/base/Makefile.in
+--- ghostscript-8.64.orig/base/Makefile.in	2008-10-02 15:33:22.000000000 -0400
++++ ghostscript-8.64/base/Makefile.in	2009-09-13 02:10:57.000000000 -0400
+@@ -67,8 +67,8 @@
+ # The following must be substituted using @datadir@ and @libdir@
+ # to avoid adding RPM generation paths (CUPS STR #1112)
+ gsdir = @datadir@/ghostscript
+-gsdatadir = $(gsdir)/$(GS_DOT_VERSION)
+-gssharedir = @libdir@/ghostscript/$(GS_DOT_VERSION)
++gsdatadir = $(gsdir)/libgs$(GS_DOT_VERSION)
++gssharedir = @libdir@/ghostscript/libgs$(GS_DOT_VERSION)
+ gsincludedir = @includedir@/ghostscript/
+ 
+ docdir=$(gsdatadir)/doc
+diff -Nurd -x'*~' ghostscript-8.64.orig/base/devs.mak ghostscript-8.64/base/devs.mak
+--- ghostscript-8.64.orig/base/devs.mak	2008-11-07 13:49:34.000000000 -0500
++++ ghostscript-8.64/base/devs.mak	2009-09-13 03:58:50.000000000 -0400
+@@ -526,7 +526,7 @@
+ ### NON PORTABLE, ONLY UNIX WITH GCC SUPPORT
+ 
+ $(GLOBJ)X11.so : $(x11alt_) $(x11_)
+-	$(CCLD) -shared -Wl,'-soX11.so' $(x11alt_) $(x11_) -L/usr/X11R6/lib -lXt -lSM -lICE -lXext -lX11 $(XLIBDIRS)
++	$(CCLD) -bundle -undefined dynamic_lookup -o X11.so $(x11alt_) $(x11_) -L/usr/X11R6/lib -lXt -lSM -lICE -lXext -lX11 $(XLIBDIRS)
+ 	mv X11.so $(GLOBJ)X11.so
+ 
+ ###### --------------- Memory-buffered printer devices --------------- ######
+diff -Nurd -x'*~' ghostscript-8.64.orig/base/unix-dll.mak ghostscript-8.64/base/unix-dll.mak
+--- ghostscript-8.64.orig/base/unix-dll.mak	2008-09-13 16:22:25.000000000 -0400
++++ ghostscript-8.64/base/unix-dll.mak	2009-03-16 01:26:48.000000000 -0400
+@@ -34,28 +34,28 @@
+ # simple loader (no support for display device)
+ GSSOC_XENAME=$(GS)c$(XE)
+ GSSOC_XE=$(BINDIR)/$(GSSOC_XENAME)
+-GSSOC=$(BINDIR)/$(SOBINRELDIR)/$(GSSOC_XENAME)
++#GSSOC=$(BINDIR)/$(SOBINRELDIR)/$(GSSOC_XENAME)
+ 
+ # loader suporting display device using Gtk+
+ GSSOX_XENAME=$(GS)x$(XE)
+ GSSOX_XE=$(BINDIR)/$(GSSOX_XENAME)
+-GSSOX=$(BINDIR)/$(SOBINRELDIR)/$(GSSOX_XENAME)
++#GSSOX=$(BINDIR)/$(SOBINRELDIR)/$(GSSOX_XENAME)
+ 
+ # shared library
+ GS_SONAME_BASE=lib$(GS)
+ 
+ # GNU/Linux
+-GS_SOEXT=so
+-GS_SONAME=$(GS_SONAME_BASE).$(GS_SOEXT)
+-GS_SONAME_MAJOR=$(GS_SONAME).$(GS_VERSION_MAJOR)
+-GS_SONAME_MAJOR_MINOR=$(GS_SONAME).$(GS_VERSION_MAJOR).$(GS_VERSION_MINOR)
+-LDFLAGS_SO=-shared -Wl,-soname=$(GS_SONAME_MAJOR)
++#GS_SOEXT=so
++#GS_SONAME=$(GS_SONAME_BASE).$(GS_SOEXT)
++#GS_SONAME_MAJOR=$(GS_SONAME).$(GS_VERSION_MAJOR)
++#GS_SONAME_MAJOR_MINOR=$(GS_SONAME).$(GS_VERSION_MAJOR).$(GS_VERSION_MINOR)
++#LDFLAGS_SO=-shared -Wl,-soname=$(GS_SONAME_MAJOR)
+ 
+ # MacOS X
+-#GS_SOEXT=dylib
+-#GS_SONAME=$(GS_SONAME_BASE).$(GS_SOEXT)
+-#GS_SONAME_MAJOR=$(GS_SONAME_BASE).$(GS_VERSION_MAJOR).$(GS_SOEXT)
+-#GS_SONAME_MAJOR_MINOR=$(GS_SONAME_BASE).$(GS_VERSION_MAJOR).$(GS_VERSION_MINOR).$(GS_SOEXT)
++GS_SOEXT=dylib
++GS_SONAME=$(GS_SONAME_BASE).$(GS_SOEXT)
++GS_SONAME_MAJOR=$(GS_SONAME_BASE).$(GS_VERSION_MAJOR).$(GS_SOEXT)
++GS_SONAME_MAJOR_MINOR=$(GS_SONAME_BASE).$(GS_VERSION_MAJOR).$(GS_VERSION_MINOR).$(GS_SOEXT)
+ #LDFLAGS_SO=-dynamiclib -flat-namespace
+ #LDFLAGS_SO=-dynamiclib -install-name $(GS_SONAME_MAJOR_MINOR)
+ #LDFLAGS_SO=-dynamiclib
+@@ -63,6 +63,7 @@
+ GS_SO=$(BINDIR)/$(GS_SONAME)
+ GS_SO_MAJOR=$(BINDIR)/$(GS_SONAME_MAJOR) 
+ GS_SO_MAJOR_MINOR=$(BINDIR)/$(GS_SONAME_MAJOR_MINOR)
++LDFLAGS_SO=-dynamiclib -install_name $(libdir)/$(GS_SONAME_MAJOR_MINOR) -compatibility_version $(GS_VERSION_MAJOR).$(GS_VERSION_MINOR) -L$(libdir) -Wl,-exported_symbols_list,psi/iapi.expsym
+ 
+ # Shared object is built by redefining GS_XE in a recursive make.
+ 
+@@ -116,8 +117,8 @@
+ 	-mkdir -p $(DESTDIR)$(bindir)
+ 	-mkdir -p $(DESTDIR)$(libdir)
+ 	-mkdir -p $(DESTDIR)$(gsincludedir)
+-	$(INSTALL_PROGRAM) $(GSSOC) $(DESTDIR)$(bindir)/$(GSSOC_XENAME)
+-	$(INSTALL_PROGRAM) $(GSSOX) $(DESTDIR)$(bindir)/$(GSSOX_XENAME)
++#	$(INSTALL_PROGRAM) $(GSSOC) $(DESTDIR)$(bindir)/$(GSSOC_XENAME)
++#	$(INSTALL_PROGRAM) $(GSSOX) $(DESTDIR)$(bindir)/$(GSSOX_XENAME)
+ 	$(INSTALL_PROGRAM) $(BINDIR)/$(SOBINRELDIR)/$(GS_SONAME_MAJOR_MINOR) $(DESTDIR)$(libdir)/$(GS_SONAME_MAJOR_MINOR)
+ 	$(RM_) $(DESTDIR)$(libdir)/$(GS_SONAME)
+ 	ln -s $(GS_SONAME_MAJOR_MINOR) $(DESTDIR)$(libdir)/$(GS_SONAME)
+@@ -127,7 +128,7 @@
+ 	$(INSTALL_DATA) $(PSSRC)ierrors.h $(DESTDIR)$(gsincludedir)ierrors.h
+ 	$(INSTALL_DATA) $(GLSRC)gdevdsp.h $(DESTDIR)$(gsincludedir)gdevdsp.h
+ 
+-soinstall: install-so install-scripts install-data $(INSTALL_SHARED) $(INSTALL_CONTRIB)
++soinstall: install-so install-data $(INSTALL_SHARED) $(INSTALL_CONTRIB)
+ 
+ # Make the build directories
+ SODIRS: STDDIRS
+diff -Nurd -x'*~' ghostscript-8.64.orig/base/unix-gcc.mak ghostscript-8.64/base/unix-gcc.mak
+--- ghostscript-8.64.orig/base/unix-gcc.mak	2008-10-02 15:33:22.000000000 -0400
++++ ghostscript-8.64/base/unix-gcc.mak	2009-03-16 01:26:48.000000000 -0400
+@@ -214,7 +214,7 @@
+ CFLAGS_STANDARD=-O2
+ CFLAGS_DEBUG=-g -O0
+ CFLAGS_PROFILE=-pg -O2
+-CFLAGS_SO=-fPIC -shared
++CFLAGS_SO=-fPIC
+ 
+ # Define the other compilation flags.  Add at most one of the following:
+ #	-DBSD4_2 for 4.2bsd systems.
+@@ -249,7 +249,7 @@
+ # Solaris may need -lnsl -lsocket -lposix4.
+ # (Libraries required by individual drivers are handled automatically.)
+ 
+-EXTRALIBS=-rdynamic -ldl
++EXTRALIBS=
+ 
+ # Define the standard libraries to search at the end of linking.
+ # Most platforms require -lpthread for the POSIX threads library;
+@@ -389,8 +389,9 @@
+ DEVICE_DEVS21=$(DD)spotcmyk.dev $(DD)devicen.dev $(DD)xcf.dev $(DD)bmpsep1.dev $(DD)bmpsep8.dev $(DD)bmp16m.dev $(DD)bmp32b.dev $(DD)psdcmyk.dev $(DD)psdrgb.dev $(DD)pamcmyk32.dev
+ 
+ # Shared library target to build.
+-GS_SHARED_OBJS=$(GLOBJDIR)/X11.so $(GLOBJDIR)/lvga256.so $(GLOBJDIR)/vgalib.so
+-#GS_SHARED_OBJS=$(GLOBJDIR)/X11.so
++#GS_SHARED_OBJS=$(GLOBJDIR)/X11.so $(GLOBJDIR)/lvga256.so $(GLOBJDIR)/vgalib.so
++#GS_SHARED_OBJS=
++GS_SHARED_OBJS=$(GLOBJDIR)/X11.so
+ 
+ # ---------------------------- End of options --------------------------- #
+ 
+diff -Nurd -x'*~' ghostscript-8.64.orig/configure ghostscript-8.64/configure
+--- ghostscript-8.64.orig/configure	2009-02-03 12:29:53.000000000 -0500
++++ ghostscript-8.64/configure	2009-09-13 03:53:51.000000000 -0400
+@@ -7749,7 +7749,7 @@
+ 
+ fi
+ if test x$with_libpaper != xno; then
+-    LIBS="$LIBS -lpaper"
++    LIBS="$LIBS -lpaper $LDFLAGS"
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define USE_LIBPAPER 1
+@@ -10950,6 +10950,7 @@
+ 		;;
+ 		Darwin*)
+ 		INSTALL_SHARED="install-shared"
++		DYNAMIC_DEVS="\$(GLOBJDIR)/X11.so"
+ 		DYNAMIC_FLAGS="-DGS_DEVS_SHARED -DGS_DEVS_SHARED_DIR=\\\"\$(gssharedir)\\\""
+ 		DYNAMIC_LDFLAGS="-dynamiclib"
+ 		DYNAMIC_LIBS=""
