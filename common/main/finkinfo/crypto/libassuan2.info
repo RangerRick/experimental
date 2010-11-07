@@ -1,11 +1,11 @@
 Package: libassuan2
-Version: 2.0.1
+Version: 2.0.0
 Revision: 1
 Maintainer: Benjamin Reed <libassuan2@fink.raccoonfink.com>
 BuildDependsOnly: true
 BuildDepends: pth2-dev, libgpg-error (>= 1.4-1)
 Source: ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-%v.tar.bz2
-Source-MD5: 53a7d4c22af909d7236d17d454ef935b
+Source-MD5: 59bc0ae7194c412d7a522029005684b2
 ConfigureParams: --mandir=%p/share/man --infodir=%p/share/info --disable-dependency-tracking --enable-static --disable-shared
 Conflicts: libassuan
 Replaces: libassuan
