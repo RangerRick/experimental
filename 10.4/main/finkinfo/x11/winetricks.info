@@ -1,5 +1,5 @@
 Package: winetricks
-Version: 20100921
+Version: 20101106
 Revision: 1
 Architecture: i386
 Description: Install redistributable runtime tools in Wine
@@ -19,7 +19,7 @@ CustomMirror: <<
 <<
 NoSourceDirectory: true
 Source: mirror:custom:%n/%n-%v
-Source-MD5: f5823c765572a90df2b52b476915cd59
+Source-MD5: 912b829ec55c0e3634f1577a67ce3277
 PatchScript: patch -p0 %n-%v %{PatchFile}
 PatchFile: %n.patch
 PatchFile-MD5: 8c56e7d0f9877e83940ee2eac3a16f52
