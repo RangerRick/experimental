@@ -1,6 +1,6 @@
-diff -Nurd kdebase-workspace-4.5.1/ConfigureChecks.cmake kdebase-workspace-4.5.1-new/ConfigureChecks.cmake
---- kdebase-workspace-4.5.1/ConfigureChecks.cmake	2010-08-27 04:10:26.000000000 -0400
-+++ kdebase-workspace-4.5.1-new/ConfigureChecks.cmake	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/ConfigureChecks.cmake kdebase-workspace-4.5.3-new/ConfigureChecks.cmake
+--- kdebase-workspace-4.5.3/ConfigureChecks.cmake	2010-08-27 04:10:26.000000000 -0400
++++ kdebase-workspace-4.5.3-new/ConfigureChecks.cmake	2010-11-08 18:13:46.000000000 -0500
 @@ -3,6 +3,7 @@
  include(FindPkgConfig)
  
@@ -9,9 +9,9 @@ diff -Nurd kdebase-workspace-4.5.1/ConfigureChecks.cmake kdebase-workspace-4.5.1
  
  if (PAM_FOUND)
      set(KDE4_COMMON_PAM_SERVICE "kde" CACHE STRING "The PAM service to use unless overridden for a particular app.")
-diff -Nurd kdebase-workspace-4.5.1/kcontrol/CMakeLists.txt kdebase-workspace-4.5.1-new/kcontrol/CMakeLists.txt
---- kdebase-workspace-4.5.1/kcontrol/CMakeLists.txt	2010-05-16 06:04:23.000000000 -0400
-+++ kdebase-workspace-4.5.1-new/kcontrol/CMakeLists.txt	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/kcontrol/CMakeLists.txt kdebase-workspace-4.5.3-new/kcontrol/CMakeLists.txt
+--- kdebase-workspace-4.5.3/kcontrol/CMakeLists.txt	2010-05-16 06:04:23.000000000 -0400
++++ kdebase-workspace-4.5.3-new/kcontrol/CMakeLists.txt	2010-11-08 18:13:46.000000000 -0500
 @@ -6,9 +6,9 @@
  set(libkxftconfig_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/fonts/kxftconfig.cpp )
  
@@ -24,9 +24,9 @@ diff -Nurd kdebase-workspace-4.5.1/kcontrol/CMakeLists.txt kdebase-workspace-4.5
  
  if(X11_Xkb_FOUND)
      add_subdirectory( keyboard )
-diff -Nurd kdebase-workspace-4.5.1/kcontrol/input/xcursor/thememodel.cpp kdebase-workspace-4.5.1-new/kcontrol/input/xcursor/thememodel.cpp
---- kdebase-workspace-4.5.1/kcontrol/input/xcursor/thememodel.cpp	2008-08-07 11:21:08.000000000 -0400
-+++ kdebase-workspace-4.5.1-new/kcontrol/input/xcursor/thememodel.cpp	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/kcontrol/input/xcursor/thememodel.cpp kdebase-workspace-4.5.3-new/kcontrol/input/xcursor/thememodel.cpp
+--- kdebase-workspace-4.5.3/kcontrol/input/xcursor/thememodel.cpp	2008-08-07 11:21:08.000000000 -0400
++++ kdebase-workspace-4.5.3-new/kcontrol/input/xcursor/thememodel.cpp	2010-11-08 18:13:46.000000000 -0500
 @@ -165,7 +165,7 @@
      QString path("~/.icons:/usr/share/icons:/usr/share/pixmaps:/usr/X11R6/lib/X11/icons");
  
@@ -36,9 +36,9 @@ diff -Nurd kdebase-workspace-4.5.1/kcontrol/input/xcursor/thememodel.cpp kdebase
      if (xcursorPath)
          path = xcursorPath;
  #else
-diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/CMakeLists.txt kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/CMakeLists.txt
---- kdebase-workspace-4.5.1/ksysguard/ksysguardd/CMakeLists.txt	2009-10-02 10:54:05.000000000 -0400
-+++ kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/CMakeLists.txt	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/ksysguard/ksysguardd/CMakeLists.txt kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/CMakeLists.txt
+--- kdebase-workspace-4.5.3/ksysguard/ksysguardd/CMakeLists.txt	2009-10-02 10:54:05.000000000 -0400
++++ kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/CMakeLists.txt	2010-11-08 18:13:46.000000000 -0500
 @@ -30,8 +30,13 @@
          add_subdirectory( "Solaris" )
          include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/Solaris )
@@ -55,9 +55,9 @@ diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/CMakeLists.txt kdebase-w
      endif( ${CMAKE_SYSTEM_NAME} MATCHES "SunOS" )
  endif( ${CMAKE_SYSTEM_NAME} MATCHES "DragonFly" )
  endif( ${CMAKE_SYSTEM_NAME} MATCHES "kFreeBSD" )
-diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/CMakeLists.txt kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/CMakeLists.txt
---- kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/CMakeLists.txt	1969-12-31 19:00:00.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/CMakeLists.txt	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/CMakeLists.txt kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/CMakeLists.txt
+--- kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/CMakeLists.txt	1969-12-31 19:00:00.000000000 -0500
++++ kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/CMakeLists.txt	2010-11-08 18:13:46.000000000 -0500
 @@ -0,0 +1,13 @@
 +INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_SOURCE_DIR}/../../CContLib ${CMAKE_CURRENT_SOURCE_DIR}/../ )
 +
@@ -72,9 +72,9 @@ diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/CMakeLists.txt kdeb
 +            ProcessList.c)
 +
 +
-diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/CPU.c kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/CPU.c
---- kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/CPU.c	1969-12-31 19:00:00.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/CPU.c	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/CPU.c kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/CPU.c
+--- kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/CPU.c	1969-12-31 19:00:00.000000000 -0500
++++ kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/CPU.c	2010-11-08 18:13:46.000000000 -0500
 @@ -0,0 +1,80 @@
 +/*
 +    KSysGuard, the KDE System Guard
@@ -156,9 +156,9 @@ diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/CPU.c kdebase-works
 +printCPUIdleInfo(const char* cmd)
 +{
 +}
-diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/CPU.h kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/CPU.h
---- kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/CPU.h	1969-12-31 19:00:00.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/CPU.h	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/CPU.h kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/CPU.h
+--- kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/CPU.h	1969-12-31 19:00:00.000000000 -0500
++++ kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/CPU.h	2010-11-08 18:13:46.000000000 -0500
 @@ -0,0 +1,49 @@
 +/*
 +    KSysGuard, the KDE System Guard
@@ -209,9 +209,9 @@ diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/CPU.h kdebase-works
 +void printCPUxIdleInfo(const char* cmd);
 +
 +#endif
-diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/Memory.c kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/Memory.c
---- kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/Memory.c	1969-12-31 19:00:00.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/Memory.c	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/Memory.c kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/Memory.c
+--- kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/Memory.c	1969-12-31 19:00:00.000000000 -0500
++++ kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/Memory.c	2010-11-08 18:13:46.000000000 -0500
 @@ -0,0 +1,111 @@
 +/*
 +    KSysGuard, the KDE System Guard
@@ -324,9 +324,9 @@ diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/Memory.c kdebase-wo
 +printSwapFreeInfo(const char* cmd)
 +{
 +}
-diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/Memory.h kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/Memory.h
---- kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/Memory.h	1969-12-31 19:00:00.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/Memory.h	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/Memory.h kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/Memory.h
+--- kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/Memory.h	1969-12-31 19:00:00.000000000 -0500
++++ kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/Memory.h	2010-11-08 18:13:46.000000000 -0500
 @@ -0,0 +1,45 @@
 +/*
 +    KSysGuard, the KDE System Guard
@@ -373,9 +373,9 @@ diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/Memory.h kdebase-wo
 +void printSwapFreeInfo(const char* cmd);
 +
 +#endif
-diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/ProcessList.c kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/ProcessList.c
---- kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/ProcessList.c	1969-12-31 19:00:00.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/ProcessList.c	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/ProcessList.c kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/ProcessList.c
+--- kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/ProcessList.c	1969-12-31 19:00:00.000000000 -0500
++++ kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/ProcessList.c	2010-11-08 18:13:46.000000000 -0500
 @@ -0,0 +1,73 @@
 +/*
 +    KSysGuard, the KDE System Guard
@@ -450,9 +450,9 @@ diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/ProcessList.c kdeba
 +setPriority(const char* cmd)
 +{
 +}
-diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/ProcessList.h kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/ProcessList.h
---- kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/ProcessList.h	1969-12-31 19:00:00.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/ProcessList.h	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/ProcessList.h kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/ProcessList.h
+--- kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/ProcessList.h	1969-12-31 19:00:00.000000000 -0500
++++ kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/ProcessList.h	2010-11-08 18:13:46.000000000 -0500
 @@ -0,0 +1,38 @@
 +/*
 +    KSysGuard, the KDE System Guard
@@ -492,9 +492,9 @@ diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/ProcessList.h kdeba
 +void setPriority(const char* cmd);
 +
 +#endif
-diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/apm.c kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/apm.c
---- kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/apm.c	1969-12-31 19:00:00.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/apm.c	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/apm.c kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/apm.c
+--- kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/apm.c	1969-12-31 19:00:00.000000000 -0500
++++ kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/apm.c	2010-11-08 18:13:46.000000000 -0500
 @@ -0,0 +1,58 @@
 +/*
 +    KSysGuard, the KDE System Guard
@@ -554,9 +554,9 @@ diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/apm.c kdebase-works
 +printApmBatTimeInfo(const char* c)
 +{
 +}
-diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/apm.h kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/apm.h
---- kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/apm.h	1969-12-31 19:00:00.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/apm.h	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/apm.h kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/apm.h
+--- kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/apm.h	1969-12-31 19:00:00.000000000 -0500
++++ kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/apm.h	2010-11-08 18:13:46.000000000 -0500
 @@ -0,0 +1,34 @@
 +/*
 +    KSysGuard, the KDE System Guard
@@ -592,9 +592,9 @@ diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/apm.h kdebase-works
 +void printApmBatTimeInfo(const char*);
 +
 +#endif
-diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/diskstat.c kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/diskstat.c
---- kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/diskstat.c	1969-12-31 19:00:00.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/diskstat.c	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/diskstat.c kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/diskstat.c
+--- kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/diskstat.c	1969-12-31 19:00:00.000000000 -0500
++++ kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/diskstat.c	2010-11-08 18:13:46.000000000 -0500
 @@ -0,0 +1,73 @@
 +/*
 +    KSysGuard, the KDE System Guard
@@ -669,9 +669,9 @@ diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/diskstat.c kdebase-
 +void printDiskStatPercentInfo(const char* cmd)
 +{
 +}
-diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/diskstat.h kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/diskstat.h
---- kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/diskstat.h	1969-12-31 19:00:00.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/diskstat.h	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/diskstat.h kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/diskstat.h
+--- kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/diskstat.h	1969-12-31 19:00:00.000000000 -0500
++++ kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/diskstat.h	2010-11-08 18:13:46.000000000 -0500
 @@ -0,0 +1,40 @@
 +/*
 +    KSysGuard, the KDE System Guard
@@ -713,9 +713,9 @@ diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/diskstat.h kdebase-
 +void printDiskStatPercentInfo(const char* cmd);
 +
 +#endif
-diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/loadavg.c kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/loadavg.c
---- kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/loadavg.c	1969-12-31 19:00:00.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/loadavg.c	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/loadavg.c kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/loadavg.c
+--- kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/loadavg.c	1969-12-31 19:00:00.000000000 -0500
++++ kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/loadavg.c	2010-11-08 18:13:46.000000000 -0500
 @@ -0,0 +1,69 @@
 +/*
 +    KSysGuard, the KDE System Guard
@@ -786,9 +786,9 @@ diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/loadavg.c kdebase-w
 +printLoadAvg15Info(const char* c)
 +{
 +}
-diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/loadavg.h kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/loadavg.h
---- kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/loadavg.h	1969-12-31 19:00:00.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/loadavg.h	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/loadavg.h kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/loadavg.h
+--- kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/loadavg.h	1969-12-31 19:00:00.000000000 -0500
++++ kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/loadavg.h	2010-11-08 18:13:46.000000000 -0500
 @@ -0,0 +1,36 @@
 +/*
 +    KSysGuard, the KDE System Guard
@@ -826,9 +826,9 @@ diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/loadavg.h kdebase-w
 +void printLoadAvg15Info(const char*);
 +
 +#endif
-diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/logfile.c kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/logfile.c
---- kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/logfile.c	1969-12-31 19:00:00.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/logfile.c	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/logfile.c kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/logfile.c
+--- kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/logfile.c	1969-12-31 19:00:00.000000000 -0500
++++ kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/logfile.c	2010-11-08 18:13:46.000000000 -0500
 @@ -0,0 +1,53 @@
 +/*
 +    KSysGuard, the KDE System Guard
@@ -883,9 +883,9 @@ diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/logfile.c kdebase-w
 +void printRegistered(const char* cmd)
 +{
 +}
-diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/logfile.h kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/logfile.h
---- kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/logfile.h	1969-12-31 19:00:00.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/logfile.h	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/logfile.h kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/logfile.h
+--- kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/logfile.h	1969-12-31 19:00:00.000000000 -0500
++++ kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/logfile.h	2010-11-08 18:13:46.000000000 -0500
 @@ -0,0 +1,36 @@
 +/*
 +    KSysGuard, the KDE System Guard
@@ -923,9 +923,9 @@ diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/logfile.h kdebase-w
 +void printRegistered(const char* cmd);
 +
 +#endif
-diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/netdev.c kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/netdev.c
---- kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/netdev.c	1969-12-31 19:00:00.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/netdev.c	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/netdev.c kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/netdev.c
+--- kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/netdev.c	1969-12-31 19:00:00.000000000 -0500
++++ kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/netdev.c	2010-11-08 18:13:46.000000000 -0500
 @@ -0,0 +1,56 @@
 +/*
 +    KSysGuard, the KDE System Guard
@@ -983,9 +983,9 @@ diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/netdev.c kdebase-wo
 +void printNetDevSentBytesInfo(const char *cmd)
 +{
 +}
-diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/netdev.h kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/netdev.h
---- kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/netdev.h	1969-12-31 19:00:00.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/ksysguard/ksysguardd/Stub/netdev.h	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/netdev.h kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/netdev.h
+--- kdebase-workspace-4.5.3/ksysguard/ksysguardd/Stub/netdev.h	1969-12-31 19:00:00.000000000 -0500
++++ kdebase-workspace-4.5.3-new/ksysguard/ksysguardd/Stub/netdev.h	2010-11-08 18:13:46.000000000 -0500
 @@ -0,0 +1,35 @@
 +/*
 +    KSysGuard, the KDE System Guard
@@ -1022,9 +1022,39 @@ diff -Nurd kdebase-workspace-4.5.1/ksysguard/ksysguardd/Stub/netdev.h kdebase-wo
 +void printNetDevSentBytesInfo(const char* cmd);
 +
 +#endif
-diff -Nurd kdebase-workspace-4.5.1/libs/ksysguard/processcore/processes_local_p.cpp kdebase-workspace-4.5.1-new/libs/ksysguard/processcore/processes_local_p.cpp
---- kdebase-workspace-4.5.1/libs/ksysguard/processcore/processes_local_p.cpp	2009-12-14 05:43:38.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/libs/ksysguard/processcore/processes_local_p.cpp	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/kwin/lib/kwinglutils.cpp kdebase-workspace-4.5.3-new/kwin/lib/kwinglutils.cpp
+--- kdebase-workspace-4.5.3/kwin/lib/kwinglutils.cpp	2010-08-27 04:10:24.000000000 -0400
++++ kdebase-workspace-4.5.3-new/kwin/lib/kwinglutils.cpp	2010-11-08 18:23:24.000000000 -0500
+@@ -1044,9 +1044,11 @@
+         case GL_FRAMEBUFFER_INCOMPLETE_FORMATS_EXT:
+             // The color attachments don't have the same format
+             return "GL_FRAMEBUFFER_INCOMPLETE_FORMATS_EXT";
++#ifdef GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_EXT
+         case GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_EXT:
+             // The attachments don't have the same number of samples
+             return "GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE";
++#endif
+         case GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER_EXT:
+             // The draw buffer is missing
+             return "GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER";
+diff -Nurd kdebase-workspace-4.5.3/libs/ksysguard/processcore/processes_atop_p.cpp kdebase-workspace-4.5.3-new/libs/ksysguard/processcore/processes_atop_p.cpp
+--- kdebase-workspace-4.5.3/libs/ksysguard/processcore/processes_atop_p.cpp	2010-06-24 12:28:14.000000000 -0400
++++ kdebase-workspace-4.5.3-new/libs/ksysguard/processcore/processes_atop_p.cpp	2010-11-08 18:20:12.000000000 -0500
+@@ -81,6 +81,11 @@
+     return d->loadHistoryFile(filename);
+ }
+ 
++long KSysGuard::ProcessesATop::numberProcessorCores()
++{
++    return 0;
++}
++
+ bool ProcessesATop::Private::loadHistoryFile(const QString &filename) {
+     atopLog.setFileName(filename);
+     ready = false;
+diff -Nurd kdebase-workspace-4.5.3/libs/ksysguard/processcore/processes_local_p.cpp kdebase-workspace-4.5.3-new/libs/ksysguard/processcore/processes_local_p.cpp
+--- kdebase-workspace-4.5.3/libs/ksysguard/processcore/processes_local_p.cpp	2009-12-14 05:43:38.000000000 -0500
++++ kdebase-workspace-4.5.3-new/libs/ksysguard/processcore/processes_local_p.cpp	2010-11-08 18:20:12.000000000 -0500
 @@ -34,6 +34,8 @@
  #include <qglobal.h>
  #ifdef Q_OS_SOLARIS
@@ -1034,9 +1064,20 @@ diff -Nurd kdebase-workspace-4.5.1/libs/ksysguard/processcore/processes_local_p.
  #endif
  #endif
  
-diff -Nurd kdebase-workspace-4.5.1/libs/ksysguard/processcore/processes_stub_p.cpp kdebase-workspace-4.5.1-new/libs/ksysguard/processcore/processes_stub_p.cpp
---- kdebase-workspace-4.5.1/libs/ksysguard/processcore/processes_stub_p.cpp	1969-12-31 19:00:00.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/libs/ksysguard/processcore/processes_stub_p.cpp	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/libs/ksysguard/processcore/processes_local_p.h kdebase-workspace-4.5.3-new/libs/ksysguard/processcore/processes_local_p.h
+--- kdebase-workspace-4.5.3/libs/ksysguard/processcore/processes_local_p.h	2010-02-20 06:31:44.000000000 -0500
++++ kdebase-workspace-4.5.3-new/libs/ksysguard/processcore/processes_local_p.h	2010-11-08 18:20:12.000000000 -0500
+@@ -25,7 +25,6 @@
+ #include "processes_base_p.h"
+ #include <unistd.h>  //For sysconf
+ 
+-
+ #include <QSet>
+ 
+ namespace KSysGuard
+diff -Nurd kdebase-workspace-4.5.3/libs/ksysguard/processcore/processes_stub_p.cpp kdebase-workspace-4.5.3-new/libs/ksysguard/processcore/processes_stub_p.cpp
+--- kdebase-workspace-4.5.3/libs/ksysguard/processcore/processes_stub_p.cpp	1969-12-31 19:00:00.000000000 -0500
++++ kdebase-workspace-4.5.3-new/libs/ksysguard/processcore/processes_stub_p.cpp	2010-11-08 18:20:12.000000000 -0500
 @@ -0,0 +1,163 @@
 +/*  This file is part of the KDE project
 +    Copyright (C) 2007 Manolo Valdes <nolis71cu@gmail.com>
@@ -1201,9 +1242,9 @@ diff -Nurd kdebase-workspace-4.5.1/libs/ksysguard/processcore/processes_stub_p.c
 +}
 +
 +}
-diff -Nurd kdebase-workspace-4.5.1/libs/solid/control/CMakeLists.txt kdebase-workspace-4.5.1-new/libs/solid/control/CMakeLists.txt
---- kdebase-workspace-4.5.1/libs/solid/control/CMakeLists.txt	2010-07-07 13:10:11.000000000 -0400
-+++ kdebase-workspace-4.5.1-new/libs/solid/control/CMakeLists.txt	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/libs/solid/control/CMakeLists.txt kdebase-workspace-4.5.3-new/libs/solid/control/CMakeLists.txt
+--- kdebase-workspace-4.5.3/libs/solid/control/CMakeLists.txt	2010-07-07 13:10:11.000000000 -0400
++++ kdebase-workspace-4.5.3-new/libs/solid/control/CMakeLists.txt	2010-11-08 18:13:46.000000000 -0500
 @@ -33,9 +33,9 @@
  )
  
@@ -1216,9 +1257,9 @@ diff -Nurd kdebase-workspace-4.5.1/libs/solid/control/CMakeLists.txt kdebase-wor
  
  qt4_add_dbus_interface(solidcontrol_LIB_SRCS org.kde.Solid.Networking.xml org_kde_solid_networking)
  
-diff -Nurd kdebase-workspace-4.5.1/libs/solid/control/powermanager.cpp kdebase-workspace-4.5.1-new/libs/solid/control/powermanager.cpp
---- kdebase-workspace-4.5.1/libs/solid/control/powermanager.cpp	2010-05-16 06:04:26.000000000 -0400
-+++ kdebase-workspace-4.5.1-new/libs/solid/control/powermanager.cpp	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/libs/solid/control/powermanager.cpp kdebase-workspace-4.5.3-new/libs/solid/control/powermanager.cpp
+--- kdebase-workspace-4.5.3/libs/solid/control/powermanager.cpp	2010-05-16 06:04:26.000000000 -0400
++++ kdebase-workspace-4.5.3-new/libs/solid/control/powermanager.cpp	2010-11-08 18:13:46.000000000 -0500
 @@ -138,7 +138,7 @@
          Solid::Control::PowerManager::BrightnessControlsList controls = brightnessControlsAvailable();
          if(controls.keys(Solid::Control::PowerManager::Screen).isEmpty())
@@ -1237,9 +1278,9 @@ diff -Nurd kdebase-workspace-4.5.1/libs/solid/control/powermanager.cpp kdebase-w
              return false;
  #else
              return xrandr_brightlight( QX11Info::display() );
-diff -Nurd kdebase-workspace-4.5.1/plasma/desktop/shell/panelview.cpp kdebase-workspace-4.5.1-new/plasma/desktop/shell/panelview.cpp
---- kdebase-workspace-4.5.1/plasma/desktop/shell/panelview.cpp	2010-07-23 17:12:26.000000000 -0400
-+++ kdebase-workspace-4.5.1-new/plasma/desktop/shell/panelview.cpp	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/plasma/desktop/shell/panelview.cpp kdebase-workspace-4.5.3-new/plasma/desktop/shell/panelview.cpp
+--- kdebase-workspace-4.5.3/plasma/desktop/shell/panelview.cpp	2010-09-30 17:20:34.000000000 -0400
++++ kdebase-workspace-4.5.3-new/plasma/desktop/shell/panelview.cpp	2010-11-08 18:13:46.000000000 -0500
 @@ -46,6 +46,12 @@
  
  #include <kephal/screens.h>
@@ -1253,9 +1294,9 @@ diff -Nurd kdebase-workspace-4.5.1/plasma/desktop/shell/panelview.cpp kdebase-wo
  class GlowBar : public QWidget
  {
  public:
-diff -Nurd kdebase-workspace-4.5.1/plasma/desktop/shell/plasmaapp.cpp kdebase-workspace-4.5.1-new/plasma/desktop/shell/plasmaapp.cpp
---- kdebase-workspace-4.5.1/plasma/desktop/shell/plasmaapp.cpp	2010-08-04 15:13:52.000000000 -0400
-+++ kdebase-workspace-4.5.1-new/plasma/desktop/shell/plasmaapp.cpp	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/plasma/desktop/shell/plasmaapp.cpp kdebase-workspace-4.5.3-new/plasma/desktop/shell/plasmaapp.cpp
+--- kdebase-workspace-4.5.3/plasma/desktop/shell/plasmaapp.cpp	2010-09-30 17:20:34.000000000 -0400
++++ kdebase-workspace-4.5.3-new/plasma/desktop/shell/plasmaapp.cpp	2010-11-08 18:13:46.000000000 -0500
 @@ -36,7 +36,7 @@
      #include <sys/sysctl.h>
      #endif
@@ -1274,9 +1315,9 @@ diff -Nurd kdebase-workspace-4.5.1/plasma/desktop/shell/plasmaapp.cpp kdebase-wo
      size_t memorySize;
      size_t len;
      static int mib[] = { CTL_HW, HW_PHYSMEM };
-diff -Nurd kdebase-workspace-4.5.1/plasma/generic/applets/CMakeLists.txt kdebase-workspace-4.5.1-new/plasma/generic/applets/CMakeLists.txt
---- kdebase-workspace-4.5.1/plasma/generic/applets/CMakeLists.txt	2010-02-20 06:31:50.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/plasma/generic/applets/CMakeLists.txt	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/plasma/generic/applets/CMakeLists.txt kdebase-workspace-4.5.3-new/plasma/generic/applets/CMakeLists.txt
+--- kdebase-workspace-4.5.3/plasma/generic/applets/CMakeLists.txt	2010-02-20 06:31:50.000000000 -0500
++++ kdebase-workspace-4.5.3-new/plasma/generic/applets/CMakeLists.txt	2010-11-08 18:13:46.000000000 -0500
 @@ -13,9 +13,9 @@
     add_subdirectory(webbrowser)
  endif(QT_QTWEBKIT_FOUND)
@@ -1289,9 +1330,9 @@ diff -Nurd kdebase-workspace-4.5.1/plasma/generic/applets/CMakeLists.txt kdebase
     add_subdirectory(notifications)
 -endif(NOT WIN32)
 +endif(NOT WIN32 AND NOT APPLE)
-diff -Nurd kdebase-workspace-4.5.1/plasma/generic/dataengines/metadata/CMakeLists.txt kdebase-workspace-4.5.1-new/plasma/generic/dataengines/metadata/CMakeLists.txt
---- kdebase-workspace-4.5.1/plasma/generic/dataengines/metadata/CMakeLists.txt	2009-09-16 07:40:54.000000000 -0400
-+++ kdebase-workspace-4.5.1-new/plasma/generic/dataengines/metadata/CMakeLists.txt	2010-10-02 11:21:53.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/plasma/generic/dataengines/metadata/CMakeLists.txt kdebase-workspace-4.5.3-new/plasma/generic/dataengines/metadata/CMakeLists.txt
+--- kdebase-workspace-4.5.3/plasma/generic/dataengines/metadata/CMakeLists.txt	2009-09-16 07:40:54.000000000 -0400
++++ kdebase-workspace-4.5.3-new/plasma/generic/dataengines/metadata/CMakeLists.txt	2010-11-08 18:13:46.000000000 -0500
 @@ -4,6 +4,7 @@
   
  kde4_add_plugin(plasma_engine_metadata ${metadata_engine_SRCS})
@@ -1300,18 +1341,18 @@ diff -Nurd kdebase-workspace-4.5.1/plasma/generic/dataengines/metadata/CMakeList
  target_link_libraries(plasma_engine_metadata
  		      ${KDE4_KIO_LIBS}
                        ${KDE4_KDECORE_LIBS}
-diff -Nurd kdebase-workspace-4.5.1/plasma/netbook/shell/CMakeLists.txt kdebase-workspace-4.5.1-new/plasma/netbook/shell/CMakeLists.txt
---- kdebase-workspace-4.5.1/plasma/netbook/shell/CMakeLists.txt	2010-07-07 13:10:15.000000000 -0400
-+++ kdebase-workspace-4.5.1-new/plasma/netbook/shell/CMakeLists.txt	2010-10-02 14:33:10.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/plasma/netbook/shell/CMakeLists.txt kdebase-workspace-4.5.3-new/plasma/netbook/shell/CMakeLists.txt
+--- kdebase-workspace-4.5.3/plasma/netbook/shell/CMakeLists.txt	2010-07-07 13:10:15.000000000 -0400
++++ kdebase-workspace-4.5.3-new/plasma/netbook/shell/CMakeLists.txt	2010-11-08 18:13:46.000000000 -0500
 @@ -1,4 +1,4 @@
 -include_directories(${KDEBASE_WORKSPACE_SOURCE_DIR}/libs ${KDEBASE_WORKSPACE_SOURCE_DIR}/libs/plasmagenericshell ${KDEBASE_WORKSPACE_SOURCE_DIR}/plasma/netbook/shell/scripting/ ${KDEBASE_WORKSPACE_SOURCE_DIR}/libs/kephal ${KDEBASE_WORKSPACE_SOURCE_DIR}/libs/kworkspace)
 +include_directories(${KDEBASE_WORKSPACE_SOURCE_DIR}/libs ${KDEBASE_WORKSPACE_SOURCE_DIR}/libs/plasmagenericshell ${KDEBASE_WORKSPACE_SOURCE_DIR}/plasma/netbook/shell/scripting/ ${KDEBASE_WORKSPACE_SOURCE_DIR}/libs/kephal ${KDEBASE_WORKSPACE_SOURCE_DIR}/libs/kworkspace ${OPENGL_INCLUDE_DIR})
  
  
  set(plasma-netbook_SRCS
-diff -Nurd kdebase-workspace-4.5.1/plasma/netbook/shell/plasmaapp.cpp kdebase-workspace-4.5.1-new/plasma/netbook/shell/plasmaapp.cpp
---- kdebase-workspace-4.5.1/plasma/netbook/shell/plasmaapp.cpp	2010-07-06 02:54:32.000000000 -0400
-+++ kdebase-workspace-4.5.1-new/plasma/netbook/shell/plasmaapp.cpp	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/plasma/netbook/shell/plasmaapp.cpp kdebase-workspace-4.5.3-new/plasma/netbook/shell/plasmaapp.cpp
+--- kdebase-workspace-4.5.3/plasma/netbook/shell/plasmaapp.cpp	2010-07-06 02:54:32.000000000 -0400
++++ kdebase-workspace-4.5.3-new/plasma/netbook/shell/plasmaapp.cpp	2010-11-08 18:13:46.000000000 -0500
 @@ -57,6 +57,12 @@
  #include <X11/extensions/shape.h>
  #endif
@@ -1325,9 +1366,9 @@ diff -Nurd kdebase-workspace-4.5.1/plasma/netbook/shell/plasmaapp.cpp kdebase-wo
  PlasmaApp* PlasmaApp::self()
  {
      if (!kapp) {
-diff -Nurd kdebase-workspace-4.5.1/plasma/screensaver/shell/plasmaapp.cpp kdebase-workspace-4.5.1-new/plasma/screensaver/shell/plasmaapp.cpp
---- kdebase-workspace-4.5.1/plasma/screensaver/shell/plasmaapp.cpp	2010-05-27 13:23:39.000000000 -0400
-+++ kdebase-workspace-4.5.1-new/plasma/screensaver/shell/plasmaapp.cpp	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/plasma/screensaver/shell/plasmaapp.cpp kdebase-workspace-4.5.3-new/plasma/screensaver/shell/plasmaapp.cpp
+--- kdebase-workspace-4.5.3/plasma/screensaver/shell/plasmaapp.cpp	2010-09-30 17:20:21.000000000 -0400
++++ kdebase-workspace-4.5.3-new/plasma/screensaver/shell/plasmaapp.cpp	2010-11-08 18:13:46.000000000 -0500
 @@ -33,7 +33,7 @@
      #include <sys/sysctl.h>
      #endif
@@ -1346,9 +1387,9 @@ diff -Nurd kdebase-workspace-4.5.1/plasma/screensaver/shell/plasmaapp.cpp kdebas
      size_t memorySize;
      size_t len;
      static int mib[] = { CTL_HW, HW_PHYSMEM };
-diff -Nurd kdebase-workspace-4.5.1/qguiplatformplugin_kde/CMakeLists.txt kdebase-workspace-4.5.1-new/qguiplatformplugin_kde/CMakeLists.txt
---- kdebase-workspace-4.5.1/qguiplatformplugin_kde/CMakeLists.txt	2009-12-04 18:09:28.000000000 -0500
-+++ kdebase-workspace-4.5.1-new/qguiplatformplugin_kde/CMakeLists.txt	2010-10-02 18:52:47.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/qguiplatformplugin_kde/CMakeLists.txt kdebase-workspace-4.5.3-new/qguiplatformplugin_kde/CMakeLists.txt
+--- kdebase-workspace-4.5.3/qguiplatformplugin_kde/CMakeLists.txt	2009-12-04 18:09:28.000000000 -0500
++++ kdebase-workspace-4.5.3-new/qguiplatformplugin_kde/CMakeLists.txt	2010-11-08 18:13:46.000000000 -0500
 @@ -4,7 +4,7 @@
  qt4_generate_moc(qguiplatformplugin_kde.cpp ${CMAKE_CURRENT_BINARY_DIR}/qguiplatformplugin_kde.moc)
  
@@ -1358,9 +1399,9 @@ diff -Nurd kdebase-workspace-4.5.1/qguiplatformplugin_kde/CMakeLists.txt kdebase
  
  target_link_libraries(kde ${KDE4_KIO_LIBS} ${QT_QTGUI_LIBRARY})
  
-diff -Nurd kdebase-workspace-4.5.1/startkde.cmake kdebase-workspace-4.5.1-new/startkde.cmake
---- kdebase-workspace-4.5.1/startkde.cmake	2010-08-27 04:10:26.000000000 -0400
-+++ kdebase-workspace-4.5.1-new/startkde.cmake	2010-10-02 11:21:26.000000000 -0400
+diff -Nurd kdebase-workspace-4.5.3/startkde.cmake kdebase-workspace-4.5.3-new/startkde.cmake
+--- kdebase-workspace-4.5.3/startkde.cmake	2010-08-27 04:10:26.000000000 -0400
++++ kdebase-workspace-4.5.3-new/startkde.cmake	2010-11-08 18:13:46.000000000 -0500
 @@ -13,6 +13,26 @@
  # because we still need to do some cleanup.
  trap 'echo GOT SIGHUP' HUP
