@@ -1,6 +1,6 @@
 Info4: <<
 Package: rrdtool
-Version: 1.4.2
+Version: 1.4.4
 Revision: 1
 Description: Fixed-size "round-robin" database storage
 License: GPL
@@ -31,7 +31,8 @@ Conflicts: %N-bin
 Replaces: %N-bin
 
 Source: http://oss.oetiker.ch/%n/pub/%n-%v.tar.gz
-Source-MD5: 9318d3b4016dd9dd9897f1eac7548032
+Source-MD5: 93ad2fc2e9ddcd7d99c611fe30284a54
+PatchScript: perl -pi -e 's/((librrd|librrd_th)_la_LIBADD\s*=.*)/\1 -lpng/' src/Makefile.in
 
 SetCPPFLAGS: -fno-common -I%p/lib/freetype219/include -I%p/lib/freetype219/include/freetype2
 UseMaxBuildJobs: true
