@@ -1,14 +1,14 @@
 Info4: <<
 Package: qt4-x11
-Version: 4.6.3
+Version: 4.7.1
 Revision: 1
 GCC: 4.0
 CustomMirror: RangerMirror
-Source: mirror:custom:qt/qt-%v-mac-4979d9cf083278279bf9df7f92d76616353f022a.tar.gz
-Source-MD5: 85273fa2b6c776672a73e65012cc6231
+Source: mirror:custom:qt/qt-%v-mac-b06e542.tar.gz
+Source-MD5: 2c625b68b8b76f797162cb831e2d5d20
 SourceDirectory: qt-kde-qt-mac
 PatchFile: %n.patch
-PatchFile-MD5: e8cffaea5896586e31b680f8b1ae6492
+PatchFile-MD5: 933d56648d423ac72ea315129ff684e7
 PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 --fuzz=4
 	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp
@@ -53,7 +53,7 @@ SetLDFLAGS: -lglib-2.0
 CompileScript: <<
 #!/bin/sh -ev
 
-	EXTRA_ARGS="-confirm-license -no-pch -verbose -no-separate-debug-info"
+	EXTRA_ARGS="-confirm-license -verbose -no-separate-debug-info"
 	if [ "%m" = "x86_64" ]; then
 		EXTRA_ARGS="$EXTRA_ARGS -arch x86_64"
 	fi
@@ -191,7 +191,6 @@ SplitOff: <<
 	<<
 	Files: <<
 		lib/%N/lib/libQt3Support.4*.dylib
-		lib/%N/lib/libQtAssistantClient.4*.dylib
 		lib/%N/lib/libQtGui.4*.dylib
 		lib/%N/lib/libQtHelp.4*.dylib
 		lib/%N/lib/libQtMultimedia.4*.dylib
@@ -208,16 +207,15 @@ SplitOff: <<
 		lib/%N/plugins/script
 	<<
 	Shlibs: <<
-		%p/lib/%N/lib/libQt3Support.4.dylib        4.6.0 %n (>= 4.6.0-1)
-		%p/lib/%N/lib/libQtAssistantClient.4.dylib 4.6.0 %n (>= 4.6.0-1)
-		%p/lib/%N/lib/libQtGui.4.dylib             4.6.0 %n (>= 4.6.0-1)
-		%p/lib/%N/lib/libQtHelp.4.dylib            4.6.0 %n (>= 4.6.0-1)
-		%p/lib/%N/lib/libQtMultimedia.4.dylib      4.6.0 %n (>= 4.6.0-1)
-		%p/lib/%N/lib/libQtOpenGL.4.dylib          4.6.0 %n (>= 4.6.0-1)
-		%p/lib/%N/lib/libQtScriptTools.4.dylib     4.6.0 %n (>= 4.6.0-1)
-		%p/lib/%N/lib/libQtSvg.4.dylib             4.6.0 %n (>= 4.6.0-1)
-		%p/lib/%N/lib/libQtWebKit.4.dylib          4.6.0 %n (>= 4.6.0-1)
-		%p/lib/%N/lib/libphonon.4.dylib            4.3.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/libQt3Support.4.dylib        4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/libQtGui.4.dylib             4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/libQtHelp.4.dylib            4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/libQtMultimedia.4.dylib      4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/libQtOpenGL.4.dylib          4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/libQtScriptTools.4.dylib     4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/libQtSvg.4.dylib             4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/libQtWebKit.4.dylib          4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/libphonon.4.dylib            4.4.0 %n (>= 4.7.0-1)
 	<<
 	PostInstScript: <<
 		(/%p/lib/fontconfig2/bin/fc-cache -f || :) >/tmp/fc-cache.log 2>&1 || :
@@ -252,15 +250,15 @@ SplitOff2: <<
 		lib/%N/plugins/sqldrivers
 	<<
 	Shlibs: <<
-		%p/lib/%N/lib/libQtCore.4.dylib        4.6.0 %n (>= 4.6.0-1)
-		%p/lib/%N/lib/libQtCLucene.4.dylib     4.6.0 %n (>= 4.6.0-1)
-		%p/lib/%N/lib/libQtDBus.4.dylib        4.6.0 %n (>= 4.6.0-1)
-		%p/lib/%N/lib/libQtNetwork.4.dylib     4.6.0 %n (>= 4.6.0-1)
-		%p/lib/%N/lib/libQtScript.4.dylib      4.6.0 %n (>= 4.6.0-1)
-		%p/lib/%N/lib/libQtSql.4.dylib         4.6.0 %n (>= 4.6.0-1)
-		%p/lib/%N/lib/libQtTest.4.dylib        4.6.0 %n (>= 4.6.0-1)
-		%p/lib/%N/lib/libQtXml.4.dylib         4.6.0 %n (>= 4.6.0-1)
-		%p/lib/%N/lib/libQtXmlPatterns.4.dylib 4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/libQtCore.4.dylib        4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/libQtCLucene.4.dylib     4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/libQtDBus.4.dylib        4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/libQtNetwork.4.dylib     4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/libQtScript.4.dylib      4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/libQtSql.4.dylib         4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/libQtTest.4.dylib        4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/libQtXml.4.dylib         4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/libQtXmlPatterns.4.dylib 4.7.0 %n (>= 4.7.0-1)
 	<<
 <<
 
@@ -284,8 +282,8 @@ SplitOff4: <<
 		lib/%N/plugins/designer
 	<<
 	Shlibs: <<
-		%p/lib/%N/lib/libQtDesigner.4.dylib           4.6.0 %n (>= 4.6.0-1)
-		%p/lib/%N/lib/libQtDesignerComponents.4.dylib 4.6.0 %n (>= 4.6.0-1)
+		%p/lib/%N/lib/libQtDesigner.4.dylib           4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/libQtDesignerComponents.4.dylib 4.7.0 %n (>= 4.7.0-1)
 	<<
 <<
 SplitOff5: <<

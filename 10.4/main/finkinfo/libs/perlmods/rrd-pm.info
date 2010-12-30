@@ -12,14 +12,14 @@ Maintainer: Benjamin Reed <rrd-pm@fink.raccoonfink.com>
 Depends: <<
 	libpng14-shlibs,
 	perl%type_pkg[perl]-core,
-	rrdtool (>= %v-1)
+	rrdtool (>= 1.4.4-1)
 <<
 BuildDepends: <<
 	fink (>= 0.29.7-1),
 	libpng14,
 	perl%type_pkg[perl]-core,
-	rrdtool (>= %v-1),
-	rrdtool-dev (>= %v-1)
+	rrdtool (>= 1.4.4-1),
+	rrdtool-dev (>= 1.4.4-1)
 <<
 Provides: rrd-pm, rrdtool-perl-pm%type_pkg[perl]
 Conflicts: rrdtool-perl-pm%type_pkg[perl] (<< %v-%r)

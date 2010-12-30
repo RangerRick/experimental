@@ -13,7 +13,7 @@ Depends: <<
 	opennms-pgsql,
 	passwd (>= 20030202-1),
 	postgresql-server,
-	rrdtool (>= 1.2.0-1),
+	rrdtool (>= 1.4.4-1),
 	rrdtool-java
 <<
 BuildDepends: <<

@@ -27,7 +27,7 @@ Depends: <<
 	ktimetracker4-%type_pkg[kde] (>= %v-%r)
 <<
 BuildDepends: <<
-	akonadi-%type_pkg[kde]-dev (>= 1.4.0-1),
+	akonadi-%type_pkg[kde]-dev (>= 1.4.90-1),
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
 	boost1.41.cmake,
 	cmake (>= 2.8.2-1),
@@ -53,8 +53,8 @@ BuildDepends: <<
 	python25,
 	qca2-%type_pkg[kde] (>= 2.0.2-1),
 	qgpgme1-%type_pkg[kde] (>= 4.5.3-1),
-	qt4-%type_pkg[kde] (>= 4.6.3-1),
-	soprano-%type_pkg[kde]-dev (>= 2.5.2-1),
+	qt4-%type_pkg[kde] (>= 4.7.1-1),
+	soprano-%type_pkg[kde]-dev (>= 2.5.3-1),
 	speex3,
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
@@ -172,7 +172,7 @@ SplitOff: <<
 	Description: KDE4 - PIM libraries
 	Depends: <<
 		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.5.3-1),
-		qt4-%type_pkg[kde]-designer-shlibs (>= 4.6.3-1)
+		qt4-%type_pkg[kde]-designer-shlibs (>= 4.7.1-1)
 	<<
 	Files: opt/kde4/%type_pkg[kde]/lib/libkdepim.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkdepim.4.dylib 4.0.0 %n (>= 4.2.4-1)

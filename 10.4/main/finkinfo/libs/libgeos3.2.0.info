@@ -1,7 +1,7 @@
 Info4: <<
 Package: libgeos3.2.0
 Version: 3.2.0
-Revision: 4
+Revision: 6
 Description: Geometry Engine - Open Source
 License: LGPL
 Maintainer: Benjamin Reed <libgeos@fink.raccoonfink.com>
