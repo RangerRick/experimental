@@ -209,6 +209,7 @@ SplitOff: <<
 		lib/%N/lib/phonon.framework/Versions/4/phonon
 		lib/%N/lib/phonon.framework/Versions/4/phonon_debug
 		lib/%N/lib/phonon.framework/Versions/Current
+		lib/%N/imports
 		lib/%N/plugins/accessible
 		lib/%N/plugins/graphicssystems
 		lib/%N/plugins/iconengines
@@ -295,6 +296,7 @@ SplitOff2: <<
 		lib/%N/lib/QtXmlPatterns.framework/Versions/4/QtXmlPatterns
 		lib/%N/lib/QtXmlPatterns.framework/Versions/4/QtXmlPatterns_debug
 		lib/%N/lib/QtXmlPatterns.framework/Versions/Current
+		lib/%N/plugins/bearer
 		lib/%N/plugins/codecs
 		lib/%N/plugins/sqldrivers
 	<<

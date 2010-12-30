@@ -63,7 +63,7 @@ UseMaxBuildJobs: true
 CompileScript: <<
 	#!/bin/sh -ev
 	
-	EXTRA_ARGS="-confirm-license -verbose -no-separate-debug-info"
+	EXTRA_ARGS="-confirm-license -verbose -no-separate-debug-info -glib -gstreamer"
 	if [ "%m" = "x86_64" ]; then
 	EXTRA_ARGS="$EXTRA_ARGS -arch x86_64"
 	fi
@@ -200,6 +200,7 @@ SplitOff: <<
 		lib/%N/lib/libQtSvg.4*.dylib
 		lib/%N/lib/libQtWebKit.4*.dylib
 		lib/%N/lib/libphonon.4*.dylib
+		lib/%N/imports
 		lib/%N/plugins/accessible
 		lib/%N/plugins/graphicssystems
 		lib/%N/plugins/iconengines
@@ -245,6 +246,7 @@ SplitOff2: <<
 		lib/%N/lib/libQtTest.4*.dylib
 		lib/%N/lib/libQtXml.4*.dylib
 		lib/%N/lib/libQtXmlPatterns.4*.dylib
+		lib/%N/plugins/bearer
 		lib/%N/plugins/codecs
 		lib/%N/plugins/sqldrivers
 	<<
