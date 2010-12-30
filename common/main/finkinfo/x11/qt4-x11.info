@@ -4,8 +4,8 @@ Version: 4.7.1
 Revision: 1
 GCC: 4.0
 CustomMirror: RangerMirror
-Source: mirror:custom:qt/qt-%v-mac-b06e542.tar.gz
-Source-MD5: 2c625b68b8b76f797162cb831e2d5d20
+Source: mirror:custom:qt/qt-%v-mac-8799f96.tar.gz
+Source-MD5: 5ae3b7603b2e6df25914c193cb06f20f
 SourceDirectory: qt-kde-qt-mac
 PatchFile: %n.patch
 PatchFile-MD5: 933d56648d423ac72ea315129ff684e7

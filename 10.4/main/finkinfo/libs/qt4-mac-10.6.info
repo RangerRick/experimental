@@ -46,8 +46,8 @@ CustomMirror: <<
 	eur-NL: http://www.finkproject.org/~ranger/distfiles
 	nam-US: http://ranger.befunk.com/fink
 <<
-Source: mirror:custom:qt/qt-%v-mac-b06e542.tar.gz
-Source-MD5: 2c625b68b8b76f797162cb831e2d5d20
+Source: mirror:custom:qt/qt-%v-mac-8799f96.tar.gz
+Source-MD5: 5ae3b7603b2e6df25914c193cb06f20f
 SourceDirectory: qt-kde-qt-mac
 PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 --fuzz=4
