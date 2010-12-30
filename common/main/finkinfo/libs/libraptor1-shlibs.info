@@ -23,9 +23,7 @@ Depends: <<
 	libxslt-shlibs
 <<
 
-PatchScript: <<
-	perl -pi -e 's,(\@CPPFLAGS\@),-I%p/lib/system-openssl/include \1,' `find . -name Makefile.in`
-<<
+PatchScript: perl -pi -e 's,(\@CPPFLAGS\@),-I%p/lib/system-openssl/include \1,' `find . -name Makefile.in`
 
 UseMaxBuildJobs: false
 SetCPPFLAGS: -I%p/lib/system-openssl/include
