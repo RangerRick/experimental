@@ -4,8 +4,8 @@ Version: 4.7.1
 Revision: 1
 GCC: 4.0
 CustomMirror: RangerMirror
-Source: mirror:custom:qt/qt-%v-mac-8799f96.tar.gz
-Source-MD5: 5ae3b7603b2e6df25914c193cb06f20f
+Source: mirror:custom:qt/qt-%v-mac-5cd43b1.tar.gz
+Source-MD5: d3852798c41f074ce9783d04ac9ae466
 SourceDirectory: qt-kde-qt-mac
 PatchFile: %n.patch
 PatchFile-MD5: 933d56648d423ac72ea315129ff684e7
@@ -14,7 +14,6 @@ PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 --fuzz=4
 	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp
 	perl -pi -e 's,CFG_MAC_XARCH=auto,CFG_MAC_XARCH=no,g' configure
-	perl -pi -e 's,sqldrivers script bearer,sqldrivers script bearer phonon,g' src/plugins/plugins.pro
 <<
 Description: Cross-Platform framework (Mac version)
 Depends: <<
