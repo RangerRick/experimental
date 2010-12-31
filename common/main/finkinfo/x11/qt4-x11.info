@@ -13,6 +13,7 @@ PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 --fuzz=4
 	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp
 	perl -pi -e 's,CFG_MAC_XARCH=auto,CFG_MAC_XARCH=no,g' configure
+	perl -pi -e 's,sqldrivers script bearer,sqldrivers script bearer phonon,g' src/plugins/plugins.pro
 <<
 Description: Cross-Platform framework (X11 version)
 Depends: <<

@@ -53,6 +53,7 @@ PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 --fuzz=4
 	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp
 	perl -pi -e 's,CFG_MAC_XARCH=auto,CFG_MAC_XARCH=no,g' configure
+	perl -pi -e 's,sqldrivers script bearer,sqldrivers script bearer phonon,g' src/plugins/plugins.pro
 <<
 PatchFile: %n.patch
 PatchFile-MD5: 933d56648d423ac72ea315129ff684e7
@@ -69,13 +70,6 @@ CompileScript: <<
 	find . -name ._\* -exec rm -rf {} \;
 	sh ./configure-for-fink.sh "%p" "%N" $EXTRA_ARGS -make "libs tools docs"
 	find . -name Makefile\* -print0 | xargs -0 perl -pi -e 's,-I%p/include,-isystem %p/include,g'
-	case `sw_vers -productVersion` in
-	10.6*)
-	perl -pi -e 's,-pipe,-pipe -isysroot /Developer/SDKs/MacOSX10.5.sdk,g'            src/plugins/phonon/qt7/Makefile.*
-	perl -pi -e 's,^(LIBS .*),$1 -isysroot /Developer/SDKs/MacOSX10.5.sdk,g'          src/plugins/phonon/qt7/Makefile.*
-	perl -pi -e 's,MACOSX_DEPLOYMENT_TARGET = 10.4,MACOSX_DEPLOYMENT_TARGET = 10.5,g' src/plugins/phonon/qt7/Makefile.*
-	;;
-	esac
 	touch src/3rdparty/phonon/gstreamer/phonon-config-gstreamer.h
 	make
 <<
