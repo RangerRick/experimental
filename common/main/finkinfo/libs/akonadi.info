@@ -72,7 +72,7 @@ PostRmScript: <<
 	fi
 <<
 
-DocFiles: AUTHORS ChangeLog INSTALL NEWS README lgpl-license
+DocFiles: AUTHORS INSTALL NEWS README lgpl-license
 
 SplitOff: <<
 	Package: %N-shlibs
@@ -86,11 +86,9 @@ SplitOff: <<
 	DocFiles: lgpl-license
 	Recommends: %N (>= %v-%r)
 	Files: <<
-		opt/akonadi/%type_pkg[akonadi]/lib/libakonadiprivate.1*.dylib
 		opt/akonadi/%type_pkg[akonadi]/lib/libakonadiprotocolinternals.1*.dylib
 	<<
 	Shlibs: <<
-		%p/opt/akonadi/%type_pkg[akonadi]/lib/libakonadiprivate.1.dylib           1.0.0 %n (>= 1.1.2-2)
 		%p/opt/akonadi/%type_pkg[akonadi]/lib/libakonadiprotocolinternals.1.dylib 1.0.0 %n (>= 1.1.2-2)
 	<<
 <<

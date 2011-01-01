@@ -53,7 +53,7 @@ InstallScript: <<
 		make -j1 install/fast DESTDIR="%d"
 	popd
 <<
-DocFiles: AUTHORS ChangeLog INSTALL NEWS README lgpl-license
+DocFiles: AUTHORS INSTALL NEWS README lgpl-license
 SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for Akonadi
@@ -65,14 +65,8 @@ SplitOff: <<
 	<<
 	Recommends: %N (>= %v-%r)
 	DocFiles: lgpl-license
-	Files: <<
-		opt/akonadi/%type_pkg[akonadi]/lib/libakonadiprivate.1*.dylib
-		opt/akonadi/%type_pkg[akonadi]/lib/libakonadiprotocolinternals.1*.dylib
-	<<
-	Shlibs: <<
-		%p/opt/akonadi/%type_pkg[akonadi]/lib/libakonadiprivate.1.dylib           1.0.0 %n (>= 1.1.2-2)
-		%p/opt/akonadi/%type_pkg[akonadi]/lib/libakonadiprotocolinternals.1.dylib 1.0.0 %n (>= 1.1.2-2)
-	<<
+	Files: opt/akonadi/%type_pkg[akonadi]/lib/libakonadiprotocolinternals.1*.dylib
+	Shlibs: %p/opt/akonadi/%type_pkg[akonadi]/lib/libakonadiprotocolinternals.1.dylib 1.0.0 %n (>= 1.1.2-2)
 <<
 SplitOff2: <<
 	Package: %N-dev
