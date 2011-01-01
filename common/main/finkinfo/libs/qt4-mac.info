@@ -155,7 +155,7 @@ SplitOff: <<
 	Package: %N-gui-shlibs
 	DocFiles: LGPL* LICENSE*
 	Suggests: %N-designer, %N-linguist, %N-doc
-	Replaces: %N-core-shlibs (<< 4.6.0-1), %N (<< 4.6.3-2)
+	Replaces: %N-core-shlibs (<< 4.6.0-1), %N (<< 4.7.1-1)
 	Depends: <<
 		%N-core-shlibs (= %v-%r),
 		libmng2-shlibs,
@@ -167,6 +167,12 @@ SplitOff: <<
 		(%m != x86_64) lib/%N/lib/Qt3Support.framework/Versions/4/Qt3Support
 		(%m != x86_64) lib/%N/lib/Qt3Support.framework/Versions/4/Qt3Support_debug
 		(%m != x86_64) lib/%N/lib/Qt3Support.framework/Versions/Current
+		lib/%N/lib/QtDeclarative.framework/QtDeclarative
+		lib/%N/lib/QtDeclarative.framework/QtDeclarative_debug
+		lib/%N/lib/QtDeclarative.framework/Versions/4/QtDeclarative
+		lib/%N/lib/QtDeclarative.framework/Versions/4/QtDeclarative_debug
+		lib/%N/lib/QtDeclarative.framework/Versions/4/Resources/qt_menu.nib
+		lib/%N/lib/QtDeclarative.framework/Versions/Current
 		lib/%N/lib/QtGui.framework/QtGui
 		lib/%N/lib/QtGui.framework/QtGui_debug
 		lib/%N/lib/QtGui.framework/Versions/4/QtGui
@@ -178,6 +184,11 @@ SplitOff: <<
 		lib/%N/lib/QtHelp.framework/Versions/4/QtHelp
 		lib/%N/lib/QtHelp.framework/Versions/4/QtHelp_debug
 		lib/%N/lib/QtHelp.framework/Versions/Current
+		lib/%N/lib/QtMultimedia.framework/QtMultimedia
+		lib/%N/lib/QtMultimedia.framework/QtMultimedia_debug
+		lib/%N/lib/QtMultimedia.framework/Versions/4/QtMultimedia
+		lib/%N/lib/QtMultimedia.framework/Versions/4/QtMultimedia_debug
+		lib/%N/lib/QtMultimedia.framework/Versions/Current
 		lib/%N/lib/QtOpenGL.framework/QtOpenGL
 		lib/%N/lib/QtOpenGL.framework/QtOpenGL_debug
 		lib/%N/lib/QtOpenGL.framework/Versions/4/QtOpenGL
@@ -214,10 +225,14 @@ SplitOff: <<
 	Shlibs: <<
 		(%m != x86_64) %p/lib/%N/lib/Qt3Support.framework/Versions/4/Qt3Support       4.7.0 %n (>= 4.7.0-1)
 		(%m != x86_64) %p/lib/%N/lib/Qt3Support.framework/Versions/4/Qt3Support_debug 4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/QtDeclarative.framework/Versions/4/QtDeclarative       4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/QtDeclarative.framework/Versions/4/QtDeclarative_debug 4.7.0 %n (>= 4.7.0-1)
 		%p/lib/%N/lib/QtGui.framework/Versions/4/QtGui                       4.7.0 %n (>= 4.7.0-1)
 		%p/lib/%N/lib/QtGui.framework/Versions/4/QtGui_debug                 4.7.0 %n (>= 4.7.0-1)
 		%p/lib/%N/lib/QtHelp.framework/Versions/4/QtHelp                     4.7.0 %n (>= 4.7.0-1)
 		%p/lib/%N/lib/QtHelp.framework/Versions/4/QtHelp_debug               4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/QtMultimedia.framework/Versions/4/QtMultimedia         4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/QtMultimedia.framework/Versions/4/QtMultimedia_debug   4.7.0 %n (>= 4.7.0-1)
 		%p/lib/%N/lib/QtOpenGL.framework/Versions/4/QtOpenGL                 4.7.0 %n (>= 4.7.0-1)
 		%p/lib/%N/lib/QtOpenGL.framework/Versions/4/QtOpenGL_debug           4.7.0 %n (>= 4.7.0-1)
 		%p/lib/%N/lib/QtScriptTools.framework/Versions/4/QtScriptTools       4.7.0 %n (>= 4.7.0-1)
