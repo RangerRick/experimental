@@ -26,6 +26,7 @@ BuildDepends: <<
 	qt4-%type_pkg[akonadi] (>= 4.4.0-1)
 <<
 GCC: 4.0
+UseMaxBuildJobs: false
 
 Source: http://download.akonadi-project.org/akonadi-%v.tar.bz2
 Source-MD5: 238e8aaf9d9a179058e05c9e136602ad

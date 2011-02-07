@@ -31,7 +31,7 @@ Source: http://download.akonadi-project.org/akonadi-%v.tar.bz2
 Source-MD5: 238e8aaf9d9a179058e05c9e136602ad
 PatchScript: perl -pi -e 's,SHARED,MODULE,g' qsqlite/*.txt
 
-UseMaxBuildJobs: true
+UseMaxBuildJobs: false
 CompileScript: <<
 	#!/bin/sh -ev
 	
