@@ -48,6 +48,8 @@ CompileScript: <<
 
 	if [ "%type_pkg[postgresql]" -ge 84 ]; then
 		EXTRA_ARGS="--with-pgsql=%p/opt/postgresql-%type_raw[postgresql]/bin/pg_config"
+	else
+		EXTRA_ARGS="--with-pgsql=%p/bin/pg_config-%type_raw[postgresql]"
 	fi
 	./configure %c $EXTRA_ARGS
 	make
