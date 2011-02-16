@@ -183,7 +183,10 @@ SplitOff: <<
 		libjpeg8-shlibs,
 		x11-shlibs
 	<<
-	Replaces: %N-core-shlibs (<< 4.6.0-5)
+	Replaces: <<
+		%N-core-shlibs (<< 4.6.0-5),
+		%N (<< 4.7.1-1)
+	<<
 	Suggests: <<
 		%N-designer,
 		%N-linguist,
@@ -192,6 +195,7 @@ SplitOff: <<
 	DocFiles: LGPL* LICENSE*
 	Files: <<
 		lib/%N/lib/libQt3Support.4*.dylib
+		lib/%N/lib/libQtDeclarative.4*.dylib
 		lib/%N/lib/libQtGui.4*.dylib
 		lib/%N/lib/libQtHelp.4*.dylib
 		lib/%N/lib/libQtMultimedia.4*.dylib
@@ -210,6 +214,7 @@ SplitOff: <<
 	<<
 	Shlibs: <<
 		%p/lib/%N/lib/libQt3Support.4.dylib        4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/libQtDeclarative.4.dylib     4.7.0 %n (>= 4.7.0-1)
 		%p/lib/%N/lib/libQtGui.4.dylib             4.7.0 %n (>= 4.7.0-1)
 		%p/lib/%N/lib/libQtHelp.4.dylib            4.7.0 %n (>= 4.7.0-1)
 		%p/lib/%N/lib/libQtMultimedia.4.dylib      4.7.0 %n (>= 4.7.0-1)

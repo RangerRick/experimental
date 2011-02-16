@@ -26,6 +26,7 @@ BuildDepends: <<
 	qt4-%type_pkg[akonadi] (>= 4.4.0-1)
 <<
 GCC: 4.0
+UseMaxBuildJobs: false
 
 Source: http://download.akonadi-project.org/akonadi-%v.tar.bz2
 Source-MD5: 238e8aaf9d9a179058e05c9e136602ad
@@ -72,7 +73,7 @@ PostRmScript: <<
 	fi
 <<
 
-DocFiles: AUTHORS ChangeLog INSTALL NEWS README lgpl-license
+DocFiles: AUTHORS INSTALL NEWS README lgpl-license
 
 SplitOff: <<
 	Package: %N-shlibs
@@ -86,11 +87,9 @@ SplitOff: <<
 	DocFiles: lgpl-license
 	Recommends: %N (>= %v-%r)
 	Files: <<
-		opt/akonadi/%type_pkg[akonadi]/lib/libakonadiprivate.1*.dylib
 		opt/akonadi/%type_pkg[akonadi]/lib/libakonadiprotocolinternals.1*.dylib
 	<<
 	Shlibs: <<
-		%p/opt/akonadi/%type_pkg[akonadi]/lib/libakonadiprivate.1.dylib           1.0.0 %n (>= 1.1.2-2)
 		%p/opt/akonadi/%type_pkg[akonadi]/lib/libakonadiprotocolinternals.1.dylib 1.0.0 %n (>= 1.1.2-2)
 	<<
 <<

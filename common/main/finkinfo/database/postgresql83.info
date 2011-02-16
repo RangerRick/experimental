@@ -1,5 +1,5 @@
 Package: postgresql83
-Version: 8.3.13
+Version: 8.3.14
 Revision: 1
 Description: PostgreSQL open-source database
 License: BSD
@@ -46,7 +46,7 @@ Replaces: <<
 GCC: 4.0
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: 56e8796510afb6a268d512f0ca262ddf
+Source-MD5: e17223585fca1aff9ac97b4f01646cc8
 PatchFile: %n.patch
 PatchFile-MD5: 13c7e9ba3d4f396395a45e6aa649e48b
 PatchScript: <<

@@ -27,7 +27,7 @@ GCC: 4.0
 Source: http://launchpad.net/libdbusmenu-qt/trunk/%v/+download/libdbusmenu-qt-%v.tar.bz2
 Source-MD5: 0d019fa3532ba3d30debb0f3f5065c10
 PatchFile: libdbusmenu-qt.patch
-PatchFile-MD5: 85cde11d4eec83b69f4726dc8bb0848c
+PatchFile-MD5: 511b4daf35b725cfabf2753a1de8fd81
 
 CompileScript: <<
 #!/bin/sh -ev
