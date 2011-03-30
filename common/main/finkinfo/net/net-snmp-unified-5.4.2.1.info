@@ -1,18 +1,17 @@
-Info4: <<
 Package: net-snmp-unified
-Version: 5.6.1
-Revision: 1
+Version: 5.4.2.1
+Revision: 6
 Description: SNMP tools and libraries
 License: BSD
 Maintainer: Benjamin Reed <net-snmp@fink.raccoonfink.com>
 
 Depends: <<
 	daemonic,
-	%N25-shlibs (>= %v-%r)
+	%N15-shlibs (>= %v-%r)
 <<
 BuildDepends: <<
 	autoconf (>= 2.63-1),
-	automake1.11,
+	automake1.10,
 	expat1,
 	fink (>= 0.26.0-1),
 	gawk,
@@ -33,10 +32,11 @@ Replaces: <<
 <<
 
 Source: mirror:sourceforge:net-snmp/net-snmp-%v.tar.gz
-Source-MD5: b4e30ead5783b0bb1d280172c6095ea4
-PatchFile: %n.patch
-PatchFile-MD5: dd74cb8804fff24d2464cc7ec6b05dda
+Source-MD5: 984932520143f0c8bf7b7ce1fc9e1da1
+PatchFile: %n-%v-%r.patch
+PatchFile-MD5: 162a91a53fbd2bfa6ea82433862e382a
 PatchScript: <<
+	perl -pi -e 's/#include <kvm.h>/$&\nkvm_t *kd;/' agent/mibgroup/host/hr_swrun.c
 	patch -p1 --fuzz=4 < %{PatchFile}
 	autoreconf -fvi
 <<
@@ -45,10 +45,10 @@ SetCPPFLAGS: -I%p/lib/system-openssl/include
 SetLDFLAGS: -L%p/lib/system-openssl/lib
 SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true
-#	--with-out-mib-modules=mibII/ipv6 \
 ConfigureParams: <<
 	--with-install-prefix='%d' \
 	--enable-ipv6 \
+	--with-out-mib-modules=mibII/ipv6 \
 	--mandir='${prefix}/share/man' \
 	--with-ldflags='-Wl,-flat_namespace' \
 	--with-logfile=%p/var/log/snmpd.log \
@@ -70,8 +70,6 @@ CompileScript: <<
 	export PERLMAKEARGS="PREFIX=%p INSTALLPRIVLIB=%p/lib/perl5/$version INSTALLARCHLIB=%p/lib/perl5/$version/$archname INSTALLSITELIB=%p/lib/perl5/$version INSTALLSITEARCH=%p/lib/perl5/$version/$archname INSTALLMAN1DIR=%p/lib/perl5/$version INSTALLMAN3DIR=%p/lib/perl5/$version INSTALLSITEMAN1DIR=%p/lib/perl5/$version INSTALLSITEMAN3DIR=%p/lib/perl5/$version INSTALLBIN=%p/bin INSTALLSITEBIN=%p/bin INSTALLSCRIPT=%p/bin"
 
 	PERLPROG=/usr/bin/perl ./configure %c --with-perl-modules="$PERLMAKEARGS"
-	make perlmakefiles
-	find . -name Makefile | xargs perl -pi -e 's,-arch [^ ]*,,g'
 	make
 <<
 
@@ -89,25 +87,25 @@ InstallScript: <<
 <<
 DocFiles: AGENT.txt CHANGES COPYING ChangeLog CodingStyle EXAMPLE.conf.def FAQ NEWS PORTING README* TODO
 SplitOff: <<
-	Package: %N25-shlibs
+	Package: %N15-shlibs
 	DocFiles: COPYING
-	Files: lib/libnetsnmp*.25*.dylib
+	Files: lib/libnetsnmp*.15*.dylib
 	Shlibs: <<
-		%p/lib/libnetsnmp.25.dylib        26.0.0 net-snmp-unified25-shlibs (>= 5.6.1-1)
-		%p/lib/libnetsnmpagent.25.dylib   26.0.0 net-snmp-unified25-shlibs (>= 5.6.1-1)
-		%p/lib/libnetsnmphelpers.25.dylib 26.0.0 net-snmp-unified25-shlibs (>= 5.6.1-1)
-		%p/lib/libnetsnmpmibs.25.dylib    26.0.0 net-snmp-unified25-shlibs (>= 5.6.1-1)
-		%p/lib/libnetsnmptrapd.25.dylib   26.0.0 net-snmp-unified25-shlibs (>= 5.6.1-1)
+		%p/lib/libnetsnmp.15.dylib        17.0.0 net-snmp-unified15-shlibs (>= 5.4.1-1)
+		%p/lib/libnetsnmpagent.15.dylib   17.0.0 net-snmp-unified15-shlibs (>= 5.4.1-1)
+		%p/lib/libnetsnmphelpers.15.dylib 17.0.0 net-snmp-unified15-shlibs (>= 5.4.1-1)
+		%p/lib/libnetsnmpmibs.15.dylib    17.0.0 net-snmp-unified15-shlibs (>= 5.4.1-1)
+		%p/lib/libnetsnmptrapd.15.dylib   17.0.0 net-snmp-unified15-shlibs (>= 5.4.1-1)
 	<<
 <<
 SplitOff2: <<
-	Package: %N25-dev
-	Depends: %N25-shlibs (= %v-%r)
+	Package: %N15-dev
+	Depends: %N15-shlibs (= %v-%r)
 	BuildDependsOnly: true
 	Conflicts: <<
 		net-snmp-dev (<< 5.4-1),
 		net-snmp-ssl-dev (<< 5.4-1),
-		net-snmp-unified15-dev,
+		net-snmp-unified25-dev,
 		net-snmp-unified-dev
 	<<
 	Replaces: <<
@@ -115,7 +113,7 @@ SplitOff2: <<
 		net-snmp (<< 5.4-1),
 		net-snmp-ssl-dev (<< 5.4-1),
 		net-snmp-ssl (<< 5.4-1),
-		net-snmp-unified15-dev,
+		net-snmp-unified25-dev,
 		net-snmp-unified-dev
 	<<
 	DocFiles: COPYING
@@ -201,4 +199,4 @@ configure detection) so it's not a problem there, but backporting that
 solution to 10.3 fails to build for deeper reasons. So we'll just
 declare kd and hope for the best.
 <<
-<<
+
