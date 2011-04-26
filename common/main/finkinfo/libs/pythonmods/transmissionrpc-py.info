@@ -1,0 +1,33 @@
+Info4: <<
+Package: transmissionrpc-py%type_pkg[python]
+Version: 0.7
+Revision: 1
+Type: python (2.5 2.6 2.7)
+Description: Transmission RPC client
+DescDetail: <<
+This module helps using Python to connect to a Transmission
+JSON-RPC service.  transmissionrpc is compatible with
+Transmission 1.3 and later.
+<<
+Maintainer: Benjamin Reed <transmissionrpc-py@fink.raccoonfink.com>
+License: BSD
+Homepage: http://packages.python.org/transmissionrpc/
+
+Source: mirror:debian:pool/main/t/transmissionrpc/transmissionrpc_%v.orig.tar.gz
+SourceDirectory: blueluna-transmissionrpc-5ac8ac343b8f
+Source-MD5: 7ff8109d905d11736b3521c397fa3509
+
+Depends: <<
+	python%type_pkg[python],
+	simplejson-py%type_pkg[python],
+<<
+BuildDepends: <<
+	fink (>= 0.24.12),
+	setuptools-py%type_pkg[python]
+<<
+
+CompileScript: %p/bin/python%type_raw[python] setup.py build
+InstallScript: %p/bin/python%type_raw[python] setup.py install --root=%d
+
+DocFiles: LICENSE README
+<<
