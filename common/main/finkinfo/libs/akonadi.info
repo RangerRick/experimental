@@ -1,6 +1,6 @@
 Info3: <<
 Package: akonadi-%type_pkg[akonadi]
-Version: 1.4.90
+Version: 1.5.1
 Revision: 1
 Type: akonadi (x11 mac)
 Description: PIM Storage Service
@@ -29,7 +29,7 @@ GCC: 4.0
 UseMaxBuildJobs: false
 
 Source: http://download.akonadi-project.org/akonadi-%v.tar.bz2
-Source-MD5: 238e8aaf9d9a179058e05c9e136602ad
+Source-MD5: 4225b064cac6553c22cbeca9a8f93c25
 PatchScript: perl -pi -e 's,SHARED,MODULE,g' qsqlite/*.txt
 
 CompileScript: <<

@@ -25,7 +25,7 @@ InfoTest: TestScript: make check || exit 2
 
 Source: http://download.librdf.org/source/raptor-%v.tar.gz
 Source-MD5: 992061488af7a9e2d933df6b694bb876
-PatchScript: perl -pi -e 's,(\@CPPFLAGS\@),-I%p/lib/system-openssl/include -I%p/include/libxml2 \1,' `find . -name Makefile.in`
+PatchScript: perl -pi -e 's,(\@CPPFLAGS\@),-I%p/lib/system-openssl/include \1,' `find . -name Makefile.in`
 
 SetCPPFLAGS: -I%p/lib/system-openssl/include
 SetLDFLAGS: -L%p/lib/system-openssl/lib

@@ -1,6 +1,6 @@
 Package: net-snmp-unified
 Version: 5.4.2.1
-Revision: 5
+Revision: 6
 Description: SNMP tools and libraries
 License: BSD
 Maintainer: Benjamin Reed <net-snmp@fink.raccoonfink.com>
@@ -105,6 +105,7 @@ SplitOff2: <<
 	Conflicts: <<
 		net-snmp-dev (<< 5.4-1),
 		net-snmp-ssl-dev (<< 5.4-1),
+		net-snmp-unified25-dev,
 		net-snmp-unified-dev
 	<<
 	Replaces: <<
@@ -112,6 +113,7 @@ SplitOff2: <<
 		net-snmp (<< 5.4-1),
 		net-snmp-ssl-dev (<< 5.4-1),
 		net-snmp-ssl (<< 5.4-1),
+		net-snmp-unified25-dev,
 		net-snmp-unified-dev
 	<<
 	BuildDependsOnly: true

@@ -31,10 +31,10 @@ BuildDepends: <<
 	gmm,
 	graphicsmagick-dev (>= 1.1-1),
 	gsl (>= 1.7-1),
-	kde4-buildenv (>= 4.5.3-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.5.3-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.3-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.3-1),
+	kde4-buildenv (>= 4.6.0-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.6.1-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
 	lcms,
 	libexiv2-0.19,
 	libgettext8-dev,
@@ -50,9 +50,9 @@ BuildDepends: <<
 	poppler2-qt4-%type_pkg[kde] (>= 0.6.4-4),
 	pstoedit-bin,
 	python25,
-	qca2-%type_pkg[kde] (>= 2.0.2-1),
+	qca2-%type_pkg[kde] (>= 2.0.3-1),
 	qt4-%type_pkg[kde] (>= 4.7.1-1),
-	soprano-%type_pkg[kde]-dev (>= 2.5.3-1),
+	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev,
@@ -135,14 +135,14 @@ SplitOff10: <<
 	Description: KDE4 - koffice base shared libraries
 	Depends: <<
 		karbon2-%type_pkg[kde]-shlibs (>= %v-%r),
-		kdebase4-%type_pkg[kde]-shlibs (>= 4.5.3-1),
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.5.3-1),
+		kdebase4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
 		kdepimlibs4-%type_pkg[kde]-shlibs,
 		lcms-shlibs,
 		libwpd-0.8-shlibs (>= 0.8.14-1),
 		libxml2-shlibs (>= 2.6.32-1),
 		libxslt-shlibs (>= 1.1.0-1),
-		qca2-%type_pkg[kde]-shlibs (>= 2.0.2-1),
+		qca2-%type_pkg[kde]-shlibs (>= 2.0.3-1),
 		wv2.4-shlibs
 	<<
 	Files: <<
@@ -207,7 +207,7 @@ SplitOff12: <<
 	Description: KDE4 - koffice base package
 	Depends: <<
 		create-resources (>= 0.1-1),
-		kdebase4-runtime-%type_pkg[kde] (>= 4.5.3-1),
+		kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1),
 		%N-base-shlibs (>= %v-%r)
 	<<
 	Files: <<

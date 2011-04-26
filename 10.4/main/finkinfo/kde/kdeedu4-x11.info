@@ -42,10 +42,10 @@ BuildDepends: <<
 	gmm,
 	gpsd (>= 2.35-1),
 	gsl,
-	kde4-buildenv (>= 4.5.3-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.5.3-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.3-1),
-	libattica-%type_pkg[kde]-dev (>= 0.1.91-1),
+	kde4-buildenv (>= 4.6.0-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.6.1-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
+	libattica-%type_pkg[kde]-dev (>= 0.2.0-1),
 	libgettext8-dev,
 	libopenbabel3-dev,
 	libspectre1,
@@ -56,7 +56,7 @@ BuildDepends: <<
 	qt4-%type_pkg[kde] (>= 4.7.1-1),
 	r-base,
 	readline5,
-	soprano-%type_pkg[kde]-dev (>= 2.5.3-1),
+	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev,
@@ -300,7 +300,7 @@ SplitOff17: <<
 	Package: parley4-%type_pkg[kde]
 	Description: KDE4 - memorization program
 	Depends: <<
-		libattica-%type_pkg[kde]-shlibs (>= 0.1.91-1),
+		libattica-%type_pkg[kde]-shlibs (>= 0.2.0-1),
 		libxml2-shlibs (>= 2.6.32-1),
 		libxslt-shlibs (>= 1.1.0-1),
 		%N-base (>= %v-%r)
@@ -330,7 +330,7 @@ SplitOff18: <<
 	Package: cantor4-%type_pkg[kde]
 	Description: KDE4 - math application
 	Depends: <<
-		libattica-%type_pkg[kde]-shlibs (>= 0.1.91-1),
+		libattica-%type_pkg[kde]-shlibs (>= 0.2.0-1),
 		libspectre1-shlibs,
 		r-base,
 		%N-base (>= %v-%r)
@@ -471,7 +471,7 @@ SplitOff3: <<
 SplitOff30: <<
 	Package: %N-base-shlibs
 	Description: KDE4 - base kdeedu shared libraries
-	Depends: kdebase4-%type_pkg[kde]-shlibs (>= 4.5.3-1)
+	Depends: kdebase4-%type_pkg[kde]-shlibs (>= 4.6.1-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/libkdeeduui.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkeduvocdocument.4*.dylib
@@ -499,7 +499,7 @@ SplitOff32: <<
 	Description: KDE4 - kdeedu base package
 	Depends: <<
 		%N-base-shlibs (>= %v-%r),
-		kdebase4-runtime-%type_pkg[kde] (>= 4.5.3-1)
+		kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1)
 	<<
 	Files: opt
 <<

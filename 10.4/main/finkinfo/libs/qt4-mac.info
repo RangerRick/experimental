@@ -24,7 +24,7 @@ BuildDepends: <<
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),
-	kde4-buildenv (>= 4.5.3-1),
+	kde4-buildenv (>= 4.6.0-1),
 	libgettext8-dev,
 	libiconv-dev,
 	libjpeg8,
@@ -88,13 +88,11 @@ InstallScript: <<
 	done
 
 	# for some reason, phonon install misses some headers
-	for header in \
-		audiodataoutput.h \
-		audiodataoutputinterface.h \
-		globalconfig.h \
-	; do
-		install -m 644 -c src/3rdparty/phonon/phonon/$header %i/lib/%N/include/phonon/
-	done
+	pushd src/3rdparty/phonon/phonon
+		find * -name \*.h | grep -v -E '_p.h$' | grep -v ./tests/ | while read FILE; do
+			install -d -m -644 -c $FILE %i/lib/%N/include/phonon/$FILE
+		done
+	popd
 
 	#### FIX LA, PRL and PC FILES ####
 

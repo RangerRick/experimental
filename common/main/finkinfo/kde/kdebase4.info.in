@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdebase4-mac
 Type: kde (mac)
 #endif
-Version: 4.5.3
+Version: 4.6.1
 Revision: 1
 Description: KDE4 - base runtime
 License: GPL/LGPL
@@ -62,7 +62,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdebase-%v.tar.bz2
-Source-MD5: 1efd11492bada8063ad5b3bd9b728e5c
+Source-MD5: d032fb52e5fdf2eb0b3ab37a7a06eacf
 SourceDirectory: kdebase-%v
 
 PatchScript: <<
@@ -88,6 +88,9 @@ InstallScript: <<
 	pushd build
 		make -j1 install/fast DESTDIR="%d"
 	popd
+	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libdolphinprivate.dylib
+	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libkbookmarkmodel_private.dylib
+	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libkonquerorprivate.dylib
 <<
 
 SplitOff: <<
@@ -107,14 +110,14 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libkbookmarkmodel_private.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkonq.5*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkonqsidebarplugin.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkonquerorprivate.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkonsoleprivate.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkonquerorprivate.4*.dylib
 	<<
 	Shlibs: <<
 		!%p/opt/kde4/%type_pkg[kde]/lib/libdolphinprivate.4.dylib
 		!%p/opt/kde4/%type_pkg[kde]/lib/libkbookmarkmodel_private.4.dylib
-		!%p/opt/kde4/%type_pkg[kde]/lib/libkonquerorprivate.4.dylib
 		!%p/opt/kde4/%type_pkg[kde]/lib/libkonsoleprivate.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/libkonquerorprivate.4.dylib
 		%p/opt/kde4/%type_pkg[kde]/lib/libkonq.5.dylib               5.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkonqsidebarplugin.4.dylib  4.0.0 %n (>= 4.2.4-1)
 	<<
@@ -126,10 +129,8 @@ SplitOff2: <<
 	BuildDependsOnly: true
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
-		opt/kde4/%type_pkg[kde]/lib/libdolphinprivate.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkonq.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkonqsidebarplugin.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkonquerorprivate.dylib
 	<<
 <<
 

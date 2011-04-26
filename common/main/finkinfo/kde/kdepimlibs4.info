@@ -1,6 +1,6 @@
 Info3: <<
 Package: kdepimlibs4-%type_pkg[kde]
-Version: 4.5.3
+Version: 4.6.1
 Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - PIM support libraries
@@ -55,7 +55,7 @@ Replaces: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdepimlibs-%v.tar.bz2
-Source-MD5: 6c8906b12635dd4c8fff89118cc3fffd
+Source-MD5: 250d3d448c0e2a585b38e2c75c46d07f
 SourceDirectory: kdepimlibs-%v
 PatchFile: kdepimlibs4.patch
 PatchFile-MD5: 227cdbbe6457a69a42e0cca4fbceb074
@@ -100,6 +100,7 @@ SplitOff: <<
 	Recommends: %N (>= %v-%r)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/kde4
+		opt/kde4/%type_pkg[kde]/lib/libakonadi-calendar.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libakonadi-contact.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libakonadi-kabc.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libakonadi-kcal.4*.dylib
@@ -109,8 +110,11 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libkabc_file_core.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkblog.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkcal.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkcalcore.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkcalutils.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkimap.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkldap.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkmbox.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkmime.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkontactinterface.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkpimidentities.4*.dylib
@@ -124,6 +128,7 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libsyndication.4*.dylib
 	<<
 	Shlibs: <<
+		%p/opt/kde4/%type_pkg[kde]/lib/libakonadi-calendar.4.dylib 4.0.0 %n (>= 4.6.1-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libakonadi-contact.4.dylib  4.0.0 %n (>= 4.3.90-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libakonadi-kabc.4.dylib     4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libakonadi-kcal.4.dylib     4.0.0 %n (>= 4.3.90-1)
@@ -133,8 +138,11 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libkabc_file_core.4.dylib   4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkblog.4.dylib            4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkcal.4.dylib             4.0.0 %n (>= 4.2.4-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkcalcore.4.dylib         4.0.0 %n (>= 4.6.1-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkcalutils.4.dylib        4.0.0 %n (>= 4.6.1-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkimap.4.dylib            4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkldap.4.dylib            4.0.0 %n (>= 4.2.4-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkmbox.4.dylib            4.0.0 %n (>= 4.6.1-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkmime.4.dylib            4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkontactinterface.4.dylib 4.0.0 %n (>= 4.3.90-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libkpimidentities.4.dylib   4.0.0 %n (>= 4.2.4-1)

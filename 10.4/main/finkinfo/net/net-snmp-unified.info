@@ -57,6 +57,8 @@ ConfigureParams: <<
 --enable-shared \
 --with-openssl=%p/lib/system-openssl \
 --with-mibdirs='$HOME/.snmp/mibs:%p/share/snmp/mibs:/usr/share/snmp/mibs' \
+--with-mib-modules='ip-mib/ipv4InterfaceTable ip-mib/ipv6InterfaceTable if-mib tcp-mib udp-mib mibII/ipv6' \
+--enable-mfd-rewrites \
 --with-sys-contact='finkuser@example.com' \
 --with-sys-location=Unknown \
 --without-kmem-usage \
@@ -106,6 +108,7 @@ SplitOff2: <<
 	Conflicts: <<
 		net-snmp-dev (<< 5.4-1),
 		net-snmp-ssl-dev (<< 5.4-1),
+		net-snmp-unified15-dev,
 		net-snmp-unified-dev
 	<<
 	Replaces: <<
@@ -113,6 +116,7 @@ SplitOff2: <<
 		net-snmp (<< 5.4-1),
 		net-snmp-ssl-dev (<< 5.4-1),
 		net-snmp-ssl (<< 5.4-1),
+		net-snmp-unified15-dev,
 		net-snmp-unified-dev
 	<<
 	BuildDependsOnly: true

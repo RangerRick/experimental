@@ -1,37 +1,32 @@
 Package: bash-completion
-Version: 20060301
-Revision: 3
+Version: 1.3
+Revision: 1
+Epoch: 1
 Description: Command-line completions for bash
 License: GPL
-Maintainer: Benjamin Reed <bash-completion@fink.raccoonfink.com>
+Maintainer: Benjamin Reed <bash-completion@fink.racoonfink.com>
 
 BuildDepends: fink (>= 0.29.7-1)
 
-Source: http://www.caliban.org/files/bash/%n-%v.tar.gz
-Source-MD5: 9bca1cf97e8f8c73e3ef560cc9dead21
-SourceDirectory: bash_completion
-PatchScript: sed 's|@PREFIX@|%p|g' <%{PatchFile} | patch -p1
+Source: http://bash-completion.alioth.debian.org/files/%n-%v.tar.bz2
+Source-MD5: a1262659b4bbf44dc9e59d034de505ec
+PatchScript: sed 's|@FINKPREFIX@|%p|g' <%{PatchFile} | patch -p1
 PatchFile: %n.patch
-PatchFile-MD5: 08ce8dbd03eef5b3db89f0a6cc718c21
+PatchFile-MD5: 690338fab5685f81ef762249188d0c0f
 
 UseMaxBuildJobs: true
-CompileScript: echo "none needed"
 
-InstallScript: <<
-	install -d -m 755 %i/etc
-	install -d -m 755 %i/etc/bash_completion.d
-	install -d -m 755 %i/etc/profile.d
-	install -m 755 bash_completion %i/etc/
-	install -m 755 bash-completion.sh %i/etc/profile.d/
-	install -m 755 fink.sh open.sh contrib/* %i/etc/bash_completion.d/
-	rm -rf %i/etc/bash_completion.d/hg
-<<
-DocFiles: BUGS COPYING Changelog README
+InstallScript: make -j1 install DESTDIR=%d
+DocFiles: AUTHORS CHANGES COPYING README TODO
 
-Homepage: http://www.caliban.org/bash/index.shtml
+Homepage: http://bash-completion.alioth.debian.org/
 DescDetail: <<
 This is a set of addons for doing command-line completion for
 common tasks, using the bash shell.
 <<
-DescPort: Added var prefix to use fink's apt-get/dpkg and rpm dbs
+DescPort: <<
+Added var prefix to use fink's apt-get/dpkg and rpm dbs
+
+TODO: Various other changes were done and should be documented
+<<
 

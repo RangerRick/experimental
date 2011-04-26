@@ -9,8 +9,8 @@ Maintainer: Benjamin Reed <qgpgme1@fink.raccoonfink.com>
 
 Depends: %N-shlibs (= %v-%r)
 BuildDepends: <<
-	akonadi-%type_pkg[kde] (>= 1.4.90-1),
-	akonadi-%type_pkg[kde]-dev (>= 1.4.90-1),
+	akonadi-%type_pkg[kde] (>= 1.5.1-1),
+	akonadi-%type_pkg[kde]-dev (>= 1.5.1-1),
 	aspell-dev,
 	automoc-%type_pkg[kde] (>= 0.9.89-0),
 	boost1.41.cmake,
@@ -25,8 +25,8 @@ BuildDepends: <<
 	gettext-tools,
 	giflib,
 	gpgme11,
-	kde4-buildenv (>= 4.5.3-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.3-1),
+	kde4-buildenv (>= 4.6.0-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
 	libgettext8-dev,
 	libgpg-error,
 	libical,

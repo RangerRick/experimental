@@ -87,13 +87,11 @@ END
 	/bin/mv %i/lib/%N/include/QtCore/qglobal.h.new %i/lib/%N/include/QtCore/qglobal.h
 
 	# for some reason, phonon install misses some headers
-	for header in \
-		audiodataoutput.h \
-		audiodataoutputinterface.h \
-		globalconfig.h \
-	; do
-		install -m 644 -c src/3rdparty/phonon/phonon/$header %i/lib/%N/include/phonon/
-	done
+	pushd src/3rdparty/phonon/phonon
+		find * -name \*.h | grep -v -E '_p.h$' | grep -v ./tests/ | while read FILE; do
+			install -d -m -644 -c $FILE %i/lib/%N/include/phonon/$FILE
+		done
+	popd
 
 	#### FIX LA, PRL and PC FILES ####
 

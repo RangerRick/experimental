@@ -24,7 +24,7 @@ BuildDepends: <<
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),
-	kde4-buildenv (>= 4.5.3-1),
+	kde4-buildenv (>= 4.6.0-1),
 	libgettext8-dev,
 	libiconv-dev,
 	libjpeg8,
@@ -34,8 +34,7 @@ BuildDepends: <<
 	macosx (>= 10.4.3-1),
 	pkgconfig (>= 0.23-1),
 	sqlite3-dev,
-	system-openssl-dev,
-	system-sdk-10.5
+	system-openssl-dev
 <<
 BuildConflicts: kdelibs3-dev, kdelibs3-ssl-dev, kdelibs3-unified-dev, libevent1, pcre, clucene-core
 BuildDependsOnly: true
@@ -62,20 +61,13 @@ UseMaxBuildJobs: true
 CompileScript: <<
 	#!/bin/sh -ev
 	
-	EXTRA_ARGS="-confirm-license -verbose -no-separate-debug-info"
+	EXTRA_ARGS="-confirm-license -verbose -no-separate-debug-info -no-phonon-backend"
 	if [ "%m" = "x86_64" ]; then
 	EXTRA_ARGS="$EXTRA_ARGS -arch x86_64 -cocoa"
 	fi
 	find . -name ._\* -exec rm -rf {} \;
 	sh ./configure-for-fink.sh "%p" "%N" $EXTRA_ARGS -make "libs tools docs"
 	find . -name Makefile\* -print0 | xargs -0 perl -pi -e 's,-I%p/include,-isystem %p/include,g'
-	case `sw_vers -productVersion` in
-	10.6*)
-	perl -pi -e 's,-pipe,-pipe -isysroot /Developer/SDKs/MacOSX10.5.sdk,g'            src/plugins/phonon/qt7/Makefile.*
-	perl -pi -e 's,^(LIBS .*),$1 -isysroot /Developer/SDKs/MacOSX10.5.sdk,g'          src/plugins/phonon/qt7/Makefile.*
-	perl -pi -e 's,MACOSX_DEPLOYMENT_TARGET = 10.4,MACOSX_DEPLOYMENT_TARGET = 10.5,g' src/plugins/phonon/qt7/Makefile.*
-	;;
-	esac
 	touch src/3rdparty/phonon/gstreamer/phonon-config-gstreamer.h
 	make
 <<
@@ -95,13 +87,11 @@ InstallScript: <<
 	done
 
 	# for some reason, phonon install misses some headers
-	for header in \
-		audiodataoutput.h \
-		audiodataoutputinterface.h \
-		globalconfig.h \
-	; do
-		install -m 644 -c src/3rdparty/phonon/phonon/$header %i/lib/%N/include/phonon/
-	done
+	pushd src/3rdparty/phonon/phonon
+		find * -name \*.h | grep -v -E '_p.h$' | grep -v ./tests/ | while read FILE; do
+			install -d -m -644 -c $FILE %i/lib/%N/include/phonon/$FILE
+		done
+	popd
 
 	#### FIX LA, PRL and PC FILES ####
 

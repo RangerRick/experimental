@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdelibs4-%type_pkg[kde]
-Version: 4.5.3
+Version: 4.6.1
 Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - essential libraries
@@ -24,15 +24,20 @@ BuildDepends: <<
 	cmake (>= 2.6.1-2),
 	cups-dev,
 	dbus1.3-dev (>= 1.0-1),
+	docbook-dtd (>= 4.5.0-1),
+	docbook-xsl (>= 1.76.1-1),
 	enchant1-dev,
 	expat1,
 	fink (>= 0.28.0-1),
+	flex-devel (>= 2.5.35-1),
 	freetype219 (>= 2.3.7-7),
 	gettext-tools,
 	giflib,
+	grantlee-%type_pkg[kde]-dev (>= 0.1.8-1),
 	hspell,
 	kde4-buildenv (>= 4.2-3),
 	libattica-%type_pkg[kde]-dev (>= 0.1.4-1),
+	libdbusmenu-qt-%type_pkg[kde] (>= 0.8-1),
 	libgettext3-dev,
 	libidn,
 	libjasper.1,
@@ -59,10 +64,10 @@ BuildConflicts: gamin-dev
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdelibs-%v.tar.bz2
-Source-MD5: f412739c8e9bdb7b92487ee79ba3b5bd
+Source-MD5: 0cdc56a73009c65b5ad9ba3167ebb227
 SourceDirectory: kdelibs-%v
 PatchFile: kdelibs4.patch
-PatchFile-MD5: b01a1f09ac188f8793600d1cd36217af
+PatchFile-MD5: 27f64f0c8c7565fa4d8a889ac93ae52d
 PatchScript: sed -e 's,@KDEPREFIX@,%p,g' -e 's,@KDETYPE@,%type_pkg[kde],g' %{PatchFile} | patch -p1
 
 CompileScript: <<
@@ -70,10 +75,12 @@ CompileScript: <<
 
 	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[kde]" SKIP_VISIBILITY_OVERRIDE=1
 	. %p/sbin/kde4-buildenv.sh
+	export PATH="%p/lib/flex/bin:$PATH"
 
 	mkdir -p build
 	pushd build
 		cmake $KDE4_CMAKE_ARGS \
+			-DMAC_USE_OSXKEYCHAIN=true \
 			-DDOCBOOKXML_CURRENTDTD_DIR:PATH=%p/share/xml/dtd/docbookx/4.2.0 \
 			-DDOCBOOKXSL_DIR:PATH=%p/share/xml/xsl/docbook-xsl \
 			..
@@ -98,7 +105,7 @@ InstallScript: <<
 	install -d -m 755 %i/opt/kde4/%type_pkg[kde]/etc
 	cat <<END >%i/opt/kde4/%type_pkg[kde]/etc/kde4rc
 [Directories]
-prefixes=%p/opt/kde4/%type_pkg[kde],%p/opt/akonadi/%type_pkg[kde],%p/opt/soprano/%type_pkg[kde],%p/opt/strigi/%type_pkg[kde],%p/lib/qt4-%type_pkg[kde]
+prefixes=%p/opt/kde4/%type_pkg[kde],%p/opt/akonadi/%type_pkg[kde],%p/opt/soprano/%type_pkg[kde],%p/opt/strigi/%type_pkg[kde],%p/lib/qt4-%type_pkg[kde],%p
 END
 <<
 
@@ -117,7 +124,9 @@ SplitOff: <<
 		dbus1.3-shlibs (>= 1.2.12-1),
 		enchant1-shlibs,
 		giflib-shlibs,
+		grantlee-%type_pkg[kde]-shlibs (>= 0.1.8-1),
 		libattica-%type_pkg[kde]-shlibs (>= 0.1.4-1),
+		libdbusmenu-qt-%type_pkg[kde]-shlibs (>= 0.8-1),
 		libavahi-client3-shlibs,
 		libgettext3-shlibs,
 		libidn-shlibs (>= 0.5.1-1),
@@ -183,6 +192,7 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libkutils.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libnepomuk.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libnepomukquery.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libnepomukutils.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libplasma.3*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libsolid.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libthreadweaver.4*.dylib
@@ -223,6 +233,7 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libkutils.4.dylib              4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libnepomuk.4.dylib             4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libnepomukquery.4.dylib        4.0.0 %n (>= 4.3.90-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libnepomukutils.4.dylib        4.0.0 %n (>= 4.6.0-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libplasma.3.dylib              3.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libsolid.4.dylib               4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libthreadweaver.4.dylib        4.0.0 %n (>= 4.2.4-1)
@@ -240,6 +251,7 @@ SplitOff2: <<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
 		opt/kde4/%type_pkg[kde]/lib/libkatepartinterfaces.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkcmutils.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkde3support.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdecore.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdefakes.dylib
@@ -273,6 +285,7 @@ SplitOff2: <<
 		opt/kde4/%type_pkg[kde]/lib/libkutils.dylib
 		opt/kde4/%type_pkg[kde]/lib/libnepomuk.dylib
 		opt/kde4/%type_pkg[kde]/lib/libnepomukquery.dylib
+		opt/kde4/%type_pkg[kde]/lib/libnepomukutils.dylib
 		opt/kde4/%type_pkg[kde]/lib/libplasma.dylib
 		opt/kde4/%type_pkg[kde]/lib/libsolid.dylib
 		opt/kde4/%type_pkg[kde]/lib/libthreadweaver.dylib

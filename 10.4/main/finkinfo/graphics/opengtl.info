@@ -11,7 +11,7 @@ BuildDepends: <<
 	cmake (>= 2.8.2-1),
 	fink (>= 0.29.7-1),
 	imagemagick,
-	kde4-buildenv (>= 4.5.3-1),
+	kde4-buildenv (>= 4.6.0-1),
 	latex2html,
 	libpng14 (>= 1.4.1-2),
 	llvm27

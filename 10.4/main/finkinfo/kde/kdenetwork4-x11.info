@@ -25,10 +25,10 @@ BuildDepends: <<
 	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),
 	gmp,
-	kde4-buildenv (>= 4.5.3-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.5.3-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.3-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.3-1),
+	kde4-buildenv (>= 4.6.0-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.6.1-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
 	libgcrypt,
 	libgettext8-dev,
 	libidn,
@@ -41,9 +41,9 @@ BuildDepends: <<
 	libxml2,
 	libxslt,
 	pkgconfig (>= 0.23-1),
-	qca2-%type_pkg[kde] (>= 2.0.2-1),
+	qca2-%type_pkg[kde] (>= 2.0.3-1),
 	qt4-%type_pkg[kde] (>= 4.7.1-1),
-	soprano-%type_pkg[kde]-dev (>= 2.5.3-1),
+	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	speex3,
 	sqlite3-dev,
 	strigi-dev (>= 0.6.3-1),
@@ -116,7 +116,7 @@ SplitOff3: <<
 	Package: kget4-%type_pkg[kde]
 	Description: KDE4 - download manager
 	Depends: <<
-		qca2-%type_pkg[kde]-shlibs (>= 2.0.2-1),
+		qca2-%type_pkg[kde]-shlibs (>= 2.0.3-1),
 		%N-base (>= %v-%r)
 	<<
 	Files: <<
@@ -157,7 +157,7 @@ SplitOff4: <<
 		libmeanwhile-shlibs,
 		libmsn-0.3-shlibs,
 		libotr-shlibs,
-		qca2-%type_pkg[kde]-shlibs (>= 2.0.2-1),
+		qca2-%type_pkg[kde]-shlibs (>= 2.0.3-1),
 		xmms-shlibs,
 		%N-base (>= %v-%r)
 	<<
@@ -271,7 +271,7 @@ SplitOff6: <<
 SplitOff7: <<
 	Package: %N-base
 	Description: KDE4 - kdenetwork base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.5.3-1)
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1)
 	Files: opt
 <<
 

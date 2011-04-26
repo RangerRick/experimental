@@ -1,6 +1,6 @@
 Info3: <<
 Package: kdebase4-runtime-%type_pkg[kde]
-Version: 4.5.3
+Version: 4.6.1
 Revision: 1
 Description: KDE4 - base applications and tools (runtime)
 Type: kde (x11 mac)
@@ -9,9 +9,11 @@ Maintainer: Benjamin Reed <kdebase4-runtime@fink.raccoonfink.com>
 
 Depends: <<
 	dbus (>= 1.2.24-1),
-	kdepimlibs4-%type_pkg[kde] (>= 4.5.3-1),
+	kdepimlibs4-%type_pkg[kde] (>= 4.6.1-1),
+	libcanberra0-shlibs,
+	libknotifyplugin4-%type_pkg[kde]-shlibs (>= %v-%r),
 	libxine1-shlibs,
-	oxygen-icons-%type_pkg[kde] (>= 4.5.3-1),
+	oxygen-icons-%type_pkg[kde] (>= 4.6.1-1),
 	strigi-gui-%type_pkg[kde] (>= 0.7.2-1)
 <<
 BuildDepends: <<
@@ -30,9 +32,10 @@ BuildDepends: <<
 	gettext-tools,
 	giflib,
 	glib2-dev (>= 2.22.0-1),
-	kde4-buildenv (>= 4.5.3-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.3-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.5.3-1),
+	kde4-buildenv (>= 4.6.0-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
+	libcanberra0,
 	libgettext8-dev,
 	libidn,
 	libjasper.1,
@@ -62,10 +65,10 @@ Replaces: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdebase-runtime-%v.tar.bz2
-Source-MD5: 4b5d4e1a56280490e6f7559cd953ceec
+Source-MD5: 26ad7899eb589a8bc260749fd22186a8
 SourceDirectory: kdebase-runtime-%v
 PatchFile: kdebase4-runtime.patch
-PatchFile-MD5: 8399ddc01690f2150e311b7d6e51e9cb
+PatchFile-MD5: 5b1ee42a03b08d1a3bc053410720d6a6
 
 UseMaxBuildJobs: true
 CompileScript: <<
@@ -88,10 +91,29 @@ InstallScript: <<
 		make -j1 install/fast DESTDIR="%d"
 	popd
 	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libmolletnetwork.dylib
+	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libnepomuksync.dylib
 	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libkwalletbackend.dylib
+<<
+SplitOff: <<
+	Package: libknotifyplugin4-%type_pkg[kde]-dev
+	Description: KDE4 - Headers and libs for libknotifyplugin
+	Depends: libknotifyplugin4-%type_pkg[kde]-shlibs (>= %v-1)
+	BuildDependsOnly: true
+	Files: <<
+		opt/kde4/%type_pkg[kde]/include/knotify*
+		opt/kde4/%type_pkg[kde]/lib/libknotifyplugin.dylib
+	<<
+<<
+SplitOff2: <<
+	Package: libknotifyplugin4-%type_pkg[kde]-shlibs
+	Description: KDE4 - Plugin library for notifications
+	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1)
+	Files: opt/kde4/%type_pkg[kde]/lib/libknotifyplugin.4*.dylib
+	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libknotifyplugin.4.dylib  4.0.0 %n (>= 4.6.1-1)
 <<
 Shlibs: <<
 	%p/opt/kde4/%type_pkg[kde]/lib/libmolletnetwork.4.dylib  4.0.0 %N (>= 4.3.0-1)
+	%p/opt/kde4/%type_pkg[kde]/lib/libnepomuksync.4.dylib    4.0.0 %N (>= 4.6.1-1)
 	%p/opt/kde4/%type_pkg[kde]/lib/libkwalletbackend.4.dylib 4.0.0 %N (>= 4.2.4-1)
 	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kcmshell4.dylib
 	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_khelpcenter.dylib
@@ -99,6 +121,7 @@ Shlibs: <<
 	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kuiserver.dylib
 	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kwalletd.dylib
 	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_nepomukserver.dylib
+	!%p/opt/kde4/%type_pkg[kde]/lib/libnepomukcommon.dylib
 <<
 
 PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :

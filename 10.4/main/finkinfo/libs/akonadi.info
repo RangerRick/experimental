@@ -1,6 +1,6 @@
 Info3: <<
 Package: akonadi-%type_pkg[akonadi]
-Version: 1.4.90
+Version: 1.5.1
 Revision: 1
 Description: PIM Storage Service
 Type: akonadi (x11 mac)
@@ -16,19 +16,19 @@ BuildDepends: <<
 	automoc-%type_pkg[akonadi],
 	boost1.41.cmake,
 	cmake (>= 2.8.2-1),
-	kde4-buildenv (>= 4.5.3-1),
+	kde4-buildenv (>= 4.6.0-1),
 	mysql-unified (>= 5.0-1),
 	mysql-unified-dev (>= 5.0-1),
 	python25,
 	shared-mime-info (>= 0.51-1),
-	soprano-%type_pkg[akonadi]-dev (>= 2.5.3-1),
+	soprano-%type_pkg[akonadi]-dev (>= 2.6.0-1),
 	system-openssl-dev,
 	qt4-%type_pkg[akonadi] (>= 4.7.1-1)
 <<
 GCC: 4.0
 
 Source: http://download.akonadi-project.org/akonadi-%v.tar.bz2
-Source-MD5: 238e8aaf9d9a179058e05c9e136602ad
+Source-MD5: 4225b064cac6553c22cbeca9a8f93c25
 PatchScript: perl -pi -e 's,SHARED,MODULE,g' qsqlite/*.txt
 
 UseMaxBuildJobs: false
@@ -61,7 +61,7 @@ SplitOff: <<
 		boost1.41.cmake-shlibs,
 		mysql-unified-shlibs (>= 5.0-1),
 		qt4-%type_pkg[akonadi]-gui-shlibs (>= 4.7.1-1),
-		soprano-%type_pkg[akonadi]-shlibs (>= 2.5.3-1)
+		soprano-%type_pkg[akonadi]-shlibs (>= 2.6.0-1)
 	<<
 	Recommends: %N (>= %v-%r)
 	DocFiles: lgpl-license

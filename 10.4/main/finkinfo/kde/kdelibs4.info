@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdelibs4-%type_pkg[kde]
-Version: 4.5.3
+Version: 4.6.1
 Revision: 1
 Description: KDE4 - essential libraries
 Type: kde (x11 mac)
@@ -13,7 +13,7 @@ Depends: <<
 	dbus (>= 1.2.24-1),
 	default-icon-theme (>= 0.5-2),
 	hspell,
-	shared-desktop-ontologies (>= 0.5-1),
+	shared-desktop-ontologies (>= 0.6.0-1),
 	shared-mime-info (>= 0.51-1)
 <<
 BuildDepends: <<
@@ -24,15 +24,20 @@ BuildDepends: <<
 	cmake (>= 2.8.2-1),
 	cups-dev,
 	dbus1.3-dev (>= 1.2.24-1),
+	docbook-dtd (>= 4.5.0-1),
+	docbook-xsl (>= 1.76.1-1),
 	enchant1-dev,
 	expat1,
 	fink (>= 0.29.7-1),
+	flex-devel (>= 2.5.35-1),
 	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	giflib,
+	grantlee-%type_pkg[kde]-dev (>= 0.1.8-1),
 	hspell,
-	kde4-buildenv (>= 4.5.3-1),
-	libattica-%type_pkg[kde]-dev (>= 0.1.91-1),
+	kde4-buildenv (>= 4.6.0-1),
+	libattica-%type_pkg[kde]-dev (>= 0.2.0-1),
+	libdbusmenu-qt-%type_pkg[kde] (>= 0.8.0-1),
 	libgettext8-dev,
 	libidn,
 	libjasper.1,
@@ -45,11 +50,11 @@ BuildDepends: <<
 	openexr-dev,
 	pcre (>= 7.6-1),
 	pkgconfig (>= 0.23-1),
-	qca2-%type_pkg[kde] (>= 2.0.2-1),
+	qca2-%type_pkg[kde] (>= 2.0.3-1),
 	qt4-%type_pkg[kde] (>= 4.7.1-1),
-	shared-desktop-ontologies (>= 0.5-1),
+	shared-desktop-ontologies (>= 0.6.0-1),
 	shared-mime-info (>= 0.51-1),
-	soprano-%type_pkg[kde]-dev (>= 2.5.3-1),
+	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev,
@@ -59,11 +64,11 @@ BuildConflicts: gamin-dev
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdelibs-%v.tar.bz2
-Source-MD5: f412739c8e9bdb7b92487ee79ba3b5bd
+Source-MD5: 0cdc56a73009c65b5ad9ba3167ebb227
 SourceDirectory: kdelibs-%v
 PatchScript: sed -e 's,@KDEPREFIX@,%p,g' -e 's,@KDETYPE@,%type_pkg[kde],g' %{PatchFile} | patch -p1
 PatchFile: kdelibs4.patch
-PatchFile-MD5: b01a1f09ac188f8793600d1cd36217af
+PatchFile-MD5: 27f64f0c8c7565fa4d8a889ac93ae52d
 
 UseMaxBuildJobs: true
 CompileScript: <<
@@ -71,10 +76,12 @@ CompileScript: <<
 	
 	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[kde]" SKIP_VISIBILITY_OVERRIDE=1
 	. %p/sbin/kde4-buildenv.sh
+	export PATH="%p/lib/flex/bin:$PATH"
 	
 	mkdir -p build
 	pushd build
 	cmake $KDE4_CMAKE_ARGS \
+	-DMAC_USE_OSXKEYCHAIN=true \
 	-DDOCBOOKXML_CURRENTDTD_DIR:PATH=%p/share/xml/dtd/docbookx/4.2.0 \
 	-DDOCBOOKXSL_DIR:PATH=%p/share/xml/xsl/docbook-xsl \
 	..
@@ -112,7 +119,9 @@ SplitOff: <<
 		dbus1.3-shlibs (>= 1.2.24-1),
 		enchant1-shlibs,
 		giflib-shlibs,
-		libattica-%type_pkg[kde]-shlibs (>= 0.1.91-1),
+		grantlee-%type_pkg[kde]-shlibs (>= 0.1.8-1),
+		libattica-%type_pkg[kde]-shlibs (>= 0.2.0-1),
+		libdbusmenu-qt-%type_pkg[kde]-shlibs (>= 0.8.0-1),
 		libavahi-client3-shlibs,
 		libgettext8-shlibs,
 		libidn-shlibs (>= 0.5.1-1),
@@ -125,10 +134,10 @@ SplitOff: <<
 		libxslt-shlibs (>= 1.0.27-1),
 		macosx (>= 10.4.3-1),
 		pcre-shlibs (>= 7.6-1),
-		qca2-%type_pkg[kde]-shlibs (>= 2.0.2-1),
+		qca2-%type_pkg[kde]-shlibs (>= 2.0.3-1),
 		qt4-%type_pkg[kde]-designer-shlibs (>= 4.7.1-1),
 		qt4-%type_pkg[kde]-gui-shlibs (>= 4.7.1-1),
-		soprano-%type_pkg[kde]-shlibs (>= 2.5.3-1),
+		soprano-%type_pkg[kde]-shlibs (>= 2.6.0-1),
 		strigi-shlibs (>= 0.6.3-1),
 		xdg-base
 	<<
@@ -177,6 +186,7 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/lib/libkutils.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libnepomuk.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libnepomukquery.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libnepomukutils.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libplasma.3*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libsolid.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libthreadweaver.4*.dylib
@@ -217,6 +227,7 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libkutils.4.dylib              4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libnepomuk.4.dylib             4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libnepomukquery.4.dylib        4.0.0 %n (>= 4.3.90-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libnepomukutils.4.dylib        4.0.0 %n (>= 4.6.0-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libplasma.3.dylib              3.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libsolid.4.dylib               4.0.0 %n (>= 4.2.4-1)
 		%p/opt/kde4/%type_pkg[kde]/lib/libthreadweaver.4.dylib        4.0.0 %n (>= 4.2.4-1)
@@ -238,6 +249,7 @@ SplitOff2: <<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/include
 		opt/kde4/%type_pkg[kde]/lib/libkatepartinterfaces.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkcmutils.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkde3support.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdecore.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkdefakes.dylib
@@ -271,6 +283,7 @@ SplitOff2: <<
 		opt/kde4/%type_pkg[kde]/lib/libkutils.dylib
 		opt/kde4/%type_pkg[kde]/lib/libnepomuk.dylib
 		opt/kde4/%type_pkg[kde]/lib/libnepomukquery.dylib
+		opt/kde4/%type_pkg[kde]/lib/libnepomukutils.dylib
 		opt/kde4/%type_pkg[kde]/lib/libplasma.dylib
 		opt/kde4/%type_pkg[kde]/lib/libsolid.dylib
 		opt/kde4/%type_pkg[kde]/lib/libthreadweaver.dylib

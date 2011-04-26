@@ -1,6 +1,6 @@
 Info4: <<
 Package: libdbusmenu-qt-%type_pkg[qt]
-Version: 0.6.6
+Version: 0.8.0
 Revision: 1
 Type: qt (x11 mac)
 Description: DBus protocol for menus
@@ -25,9 +25,9 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: http://launchpad.net/libdbusmenu-qt/trunk/%v/+download/libdbusmenu-qt-%v.tar.bz2
-Source-MD5: 0d019fa3532ba3d30debb0f3f5065c10
+Source-MD5: 576a0cdaa15959e65fc07815051c2160
 PatchFile: libdbusmenu-qt.patch
-PatchFile-MD5: 511b4daf35b725cfabf2753a1de8fd81
+PatchFile-MD5: 85b59b536ecb2eca921c4d7d0f3cc1ae
 
 CompileScript: <<
 #!/bin/sh -ev

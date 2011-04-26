@@ -23,13 +23,13 @@ BuildDepends: <<
 	freetts,
 	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),
-	kde4-buildenv (>= 4.5.3-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.5.3-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.5.3-1),
+	kde4-buildenv (>= 4.6.0-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.6.1-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
 	libgettext8-dev,
 	pkgconfig (>= 0.23-1),
 	qt4-%type_pkg[kde] (>= 4.7.1-1),
-	soprano-%type_pkg[kde]-dev (>= 2.5.3-1),
+	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev
@@ -130,7 +130,7 @@ SplitOff6: <<
 SplitOff7: <<
 	Package: %N-base
 	Description: KDE4 - kdeaccessibility base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.5.3-1)
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1)
 	Files: opt share/doc/installed-packages/%N-base
 <<
 
