@@ -6,9 +6,12 @@ Source: http://bash-completion.alioth.debian.org/files/%n-%v.tar.bz2
 Source-MD5: a1262659b4bbf44dc9e59d034de505ec
 BuildDepends: fink (>= 0.24.12)
 PatchFile: %n.patch
-PatchFile-MD5: 690338fab5685f81ef762249188d0c0f
-PatchScript: sed 's|@FINKPREFIX@|%p|g' <%{PatchFile} | patch -p1
-InstallScript: make -j1 install DESTDIR=%d
+PatchFile-MD5: 28eff6c58a744ee0283f933582b08b12
+PatchScript: sed 's|@PREFIX@|%p|g' <%{PatchFile} | patch -p1
+InstallScript: <<
+	make -j1 install DESTDIR=%d
+	chmod 755 %i/etc/profile.d/*
+<<
 DocFiles: AUTHORS CHANGES COPYING README TODO
 Description: Command-line completions for bash
 DescDetail: <<
@@ -16,9 +19,9 @@ This is a set of addons for doing command-line completion for
 common tasks, using the bash shell.
 <<
 DescPort: <<
-Added var prefix to use fink's apt-get/dpkg and rpm dbs
-
-TODO: Various other changes were done and should be documented
+Added var prefix to use fink's apt-get/dpkg and rpm dbs.
+Various changes to make things work better on Mac OS X.
+Added completions for 'fink' and 'open' tools.
 <<
 License: GPL
 Maintainer: Benjamin Reed <bash-completion@fink.racoonfink.com>

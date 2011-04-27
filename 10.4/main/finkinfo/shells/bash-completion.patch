@@ -1,25 +1,6 @@
-diff -ruN bash-completion-1.2/Makefile.in bash-completion-1.2-patched//Makefile.in
---- bash-completion-1.2/Makefile.in	2010-06-16 17:45:23.000000000 +0200
-+++ bash-completion-1.2-patched//Makefile.in	2011-01-31 23:16:09.000000000 +0100
-@@ -238,6 +238,7 @@
- 		contrib/dselect \
- 		contrib/dsniff \
- 		contrib/findutils \
-+		contrib/fink \
- 		contrib/freeciv \
- 		contrib/fuse \
- 		contrib/gcc \
-@@ -297,6 +298,7 @@
- 		contrib/net-tools \
- 		contrib/nmap \
- 		contrib/ntpdate \
-+		contrib/open \
- 		contrib/openldap \
- 		contrib/openssl \
- 		contrib/p4 \
-diff -ruN bash-completion-1.2/bash_completion bash-completion-1.2-patched//bash_completion
---- bash-completion-1.2/bash_completion	2010-06-16 17:44:20.000000000 +0200
-+++ bash-completion-1.2-patched//bash_completion	2011-01-31 23:28:49.000000000 +0100
+diff -ruN bash-completion-1.3/bash_completion bash-completion-1.3-patched/bash_completion
+--- bash-completion-1.3/bash_completion	2011-02-06 20:16:00.000000000 +0100
++++ bash-completion-1.3-patched/bash_completion	2011-04-27 12:50:57.000000000 +0200
 @@ -39,9 +39,9 @@
  
  # Alter the following to reflect the location of this file.
@@ -27,13 +8,13 @@ diff -ruN bash-completion-1.2/bash_completion bash-completion-1.2-patched//bash_
 -[ -n "$BASH_COMPLETION" ] || BASH_COMPLETION=/etc/bash_completion
 -[ -n "$BASH_COMPLETION_DIR" ] || BASH_COMPLETION_DIR=/etc/bash_completion.d
 -[ -n "$BASH_COMPLETION_COMPAT_DIR" ] || BASH_COMPLETION_COMPAT_DIR=/etc/bash_completion.d
-+[ -n "$BASH_COMPLETION" ] || BASH_COMPLETION=@FINKPREFIX@/etc/bash_completion
-+[ -n "$BASH_COMPLETION_DIR" ] || BASH_COMPLETION_DIR=@FINKPREFIX@/etc/bash_completion.d
-+[ -n "$BASH_COMPLETION_COMPAT_DIR" ] || BASH_COMPLETION_COMPAT_DIR=@FINKPREFIX@/etc/bash_completion.d
++[ -n "$BASH_COMPLETION" ] || BASH_COMPLETION=@PREFIX@/etc/bash_completion
++[ -n "$BASH_COMPLETION_DIR" ] || BASH_COMPLETION_DIR=@PREFIX@/etc/bash_completion.d
++[ -n "$BASH_COMPLETION_COMPAT_DIR" ] || BASH_COMPLETION_COMPAT_DIR=@PREFIX@/etc/bash_completion.d
  readonly BASH_COMPLETION BASH_COMPLETION_DIR BASH_COMPLETION_COMPAT_DIR
  
  # Set a couple of useful vars
-@@ -754,7 +754,11 @@
+@@ -735,7 +735,11 @@
  #
  _configured_interfaces()
  {
@@ -46,75 +27,90 @@ diff -ruN bash-completion-1.2/bash_completion bash-completion-1.2-patched//bash_
          # Debian system
          COMPREPLY=( $( compgen -W "$( sed -ne 's|^iface \([^ ]\{1,\}\).*$|\1|p'\
              /etc/network/interfaces )" -- "$cur" ) )
-@@ -1201,6 +1205,8 @@
+@@ -1245,8 +1249,8 @@
          [ -r "$configfile" ] &&
          config=( "${config[@]}" "$configfile" )
      else
-+        [ -r @FINKPREFIX@/etc/ssh/ssh_config ] &&
-+        config=( "${config[@]}" "@FINKPREFIX@/etc/ssh/ssh_config" )
-         [ -r /etc/ssh/ssh_config ] &&
-         config=( "${config[@]}" "/etc/ssh/ssh_config" )
-         [ -r "${HOME}/.ssh/config" ] &&
-@@ -1230,12 +1236,20 @@
+-        for i in /etc/ssh/ssh_config "${HOME}/.ssh/config" \
+-            "${HOME}/.ssh2/config"; do
++        for i in @PREFIX@/etc/ssh/ssh_config /etc/ssh_config \
++            "${HOME}/.ssh/config" "${HOME}/.ssh2/config"; do
+             [ -r $i ] && config=( "${config[@]}" "$i" )
+         done
+     fi
+@@ -1272,9 +1276,11 @@
  
-     # Global known_hosts files
      if [ -z "$configfile" ]; then
-+        [ -r @FINKPREFIX@/etc/ssh/ssh_known_hosts ] &&
-+        kh=( "${kh[@]}" @FINKPREFIX@/etc/ssh/ssh_known_hosts )
-         [ -r /etc/ssh/ssh_known_hosts ] &&
-         kh=( "${kh[@]}" /etc/ssh/ssh_known_hosts )
-+        [ -r @FINKPREFIX@/etc/ssh/ssh_known_hosts2 ] &&
-+        kh=( "${kh[@]}" @FINKPREFIX@/etc/ssh/ssh_known_hosts2 )
-         [ -r /etc/ssh/ssh_known_hosts2 ] &&
-         kh=( "${kh[@]}" /etc/ssh/ssh_known_hosts2 )
-+        [ -r @FINKPREFIX@/etc/known_hosts ] &&
-+        kh=( "${kh[@]}" @FINKPREFIX@/etc/known_hosts )
-         [ -r /etc/known_hosts ] &&
-         kh=( "${kh[@]}" /etc/known_hosts )
-+        [ -r @FINKPREFIX@/etc/known_hosts2 ] &&
-+        kh=( "${kh[@]}" @FINKPREFIX@/etc/known_hosts2 )
-         [ -r /etc/known_hosts2 ] &&
-         kh=( "${kh[@]}" /etc/known_hosts2 )
-         [ -d /etc/ssh2/knownhosts ] &&
-diff -ruN bash-completion-1.2/contrib/apt bash-completion-1.2-patched//contrib/apt
---- bash-completion-1.2/contrib/apt	2010-06-13 12:21:19.000000000 +0200
-+++ bash-completion-1.2-patched//contrib/apt	2011-01-31 23:34:40.000000000 +0100
+         # Global and user known_hosts files
+-        for i in /etc/ssh/ssh_known_hosts /etc/ssh/ssh_known_hosts2 \
+-            /etc/known_hosts /etc/known_hosts2 ~/.ssh/known_hosts \
+-            ~/.ssh/known_hosts2; do
++        for i in @PREFIX@/etc/ssh/ssh_known_hosts @PREFIX@/etc/ssh/ssh_known_hosts2 \
++            /etc/ssh/ssh_known_hosts /etc/ssh/ssh_known_hosts2 \
++            @PREFIX@/etc/known_hosts @PREFIX@/etc/known_hosts2 \
++            /etc/known_hosts /etc/known_hosts2 \
++            ~/.ssh/known_hosts ~/.ssh/known_hosts2; do
+             [ -r $i ] && kh=( "${kh[@]}" $i )
+         done
+         for i in /etc/ssh2/knownhosts ~/.ssh2/hostkeys; do
+diff -ruN bash-completion-1.3/completions/Makefile.in bash-completion-1.3-patched/completions/Makefile.in
+--- bash-completion-1.3/completions/Makefile.in	2011-02-06 20:16:21.000000000 +0100
++++ bash-completion-1.3-patched/completions/Makefile.in	2011-04-27 11:17:18.000000000 +0200
+@@ -224,6 +224,7 @@
+ 		dvd+rw-tools \
+ 		e2fsprogs \
+ 		findutils \
++		fink \
+ 		freeciv \
+ 		freerdp \
+ 		fuse \
+@@ -288,6 +289,7 @@
+ 		net-tools \
+ 		nmap \
+ 		ntpdate \
++		open \
+ 		openldap \
+ 		openssl \
+ 		open-iscsi \
+diff -ruN bash-completion-1.3/completions/apt bash-completion-1.3-patched/completions/apt
+--- bash-completion-1.3/completions/apt	2011-01-21 10:36:11.000000000 +0100
++++ bash-completion-1.3-patched/completions/apt	2011-04-27 11:16:22.000000000 +0200
 @@ -17,7 +17,7 @@
      if [ -n "$special" ]; then
          case $special in
              remove|autoremove|purge)
 -                if [ -f /etc/debian_version ]; then
-+                if [ -f /etc/debian_version ] || [ -x "@FINKPREFIX@/bin/fink" ]; then
++                if [ -f /etc/debian_version ] || [ -x "@PREFIX@/bin/fink" ]; then
                      # Debian system
                      COMPREPLY=( $( _comp_dpkg_installed_packages $cur ) )
                  else
-diff -ruN bash-completion-1.2/contrib/aptitude bash-completion-1.2-patched//contrib/aptitude
---- bash-completion-1.2/contrib/aptitude	2010-06-13 12:21:19.000000000 +0200
-+++ bash-completion-1.2-patched//contrib/aptitude	2011-01-31 23:26:31.000000000 +0100
+diff -ruN bash-completion-1.3/completions/aptitude bash-completion-1.3-patched/completions/aptitude
+--- bash-completion-1.3/completions/aptitude	2011-01-21 10:36:11.000000000 +0100
++++ bash-completion-1.3-patched/completions/aptitude	2011-04-27 11:16:22.000000000 +0200
 @@ -9,7 +9,7 @@
  } || {
  _comp_dpkg_hold_packages()
  {
 -    command grep -B 2 'hold' /var/lib/dpkg/status | \
-+    command grep -B 2 'hold' @FINKPREFIX@/var/lib/dpkg/status | \
++    command grep -B 2 'hold' @PREFIX@/var/lib/dpkg/status | \
          command grep "Package: $1" | cut -d\  -f2
  }
  }
-diff -ruN bash-completion-1.2/contrib/dpkg bash-completion-1.2-patched//contrib/dpkg
---- bash-completion-1.2/contrib/dpkg	2010-06-13 12:21:19.000000000 +0200
-+++ bash-completion-1.2-patched//contrib/dpkg	2011-01-31 23:30:53.000000000 +0100
+diff -ruN bash-completion-1.3/completions/dpkg bash-completion-1.3-patched/completions/dpkg
+--- bash-completion-1.3/completions/dpkg	2011-01-21 10:36:11.000000000 +0100
++++ bash-completion-1.3-patched/completions/dpkg	2011-04-27 11:16:22.000000000 +0200
 @@ -8,7 +8,7 @@
  } || {
  _comp_dpkg_installed_packages()
  {
 -    command grep -A 1 "Package: $1" /var/lib/dpkg/status | \
-+    command grep -A 1 "Package: $1" @FINKPREFIX@/var/lib/dpkg/status | \
++    command grep -A 1 "Package: $1" @PREFIX@/var/lib/dpkg/status | \
          command grep -B 1 -Ee "ok installed|half-installed|unpacked| \
              half-configured|config-files" \
              -Ee "^Essential: yes" | \
-diff -ruN bash-completion-1.2/contrib/fink bash-completion-1.2-patched//contrib/fink
---- bash-completion-1.2/contrib/fink	1970-01-01 01:00:00.000000000 +0100
-+++ bash-completion-1.2-patched//contrib/fink	2011-01-31 23:35:43.000000000 +0100
+diff -ruN bash-completion-1.3/completions/fink bash-completion-1.3-patched/completions/fink
+--- bash-completion-1.3/completions/fink	1970-01-01 01:00:00.000000000 +0100
++++ bash-completion-1.3-patched/completions/fink	2011-04-27 11:16:22.000000000 +0200
 @@ -0,0 +1,128 @@
 +#!/bin/bash
 +
@@ -171,7 +167,7 @@ diff -ruN bash-completion-1.2/contrib/fink bash-completion-1.2-patched//contrib/
 +}
 +
 +_fink_trees() {
-+    cat @FINKPREFIX@/etc/fink.conf | sed -e '/^Trees/!d; s/^Trees://' 2>/dev/null
++    cat @PREFIX@/etc/fink.conf | sed -e '/^Trees/!d; s/^Trees://' 2>/dev/null
 +}
 +
 +_fink()
@@ -217,7 +213,7 @@ diff -ruN bash-completion-1.2/contrib/fink bash-completion-1.2-patched//contrib/
 +                                #pfx=$( echo $cur | sed -e 's/^\([^=]*\)=.*$/\1/' )
 +				#las=$( echo "$cur" | sed -e 's/^[^=]*=//' )
 +				#[[ $las == $cur ]] && las=()
-+				#res=$( cat @FINKPREFIX@/etc/fink.conf | sed -e '/^Trees/!d; s/^Trees://' 2>/dev/null )
++				#res=$( cat @PREFIX@/etc/fink.conf | sed -e '/^Trees/!d; s/^Trees://' 2>/dev/null )
 +                                #COMPREPLY=( $( compgen -W '$( _fink_trees )' -- "${las}" ) )
 +			    #else
 +				COMPREPLY=( $( compgen -W '-h --help -t --tab -i --installed -o --outdated -u --uptodate -n --notinstalled \
@@ -244,9 +240,9 @@ diff -ruN bash-completion-1.2/contrib/fink bash-completion-1.2-patched//contrib/
 +}
 +complete $filenames -F _fink fink
 +}
-diff -ruN bash-completion-1.2/contrib/open bash-completion-1.2-patched//contrib/open
---- bash-completion-1.2/contrib/open	1970-01-01 01:00:00.000000000 +0100
-+++ bash-completion-1.2-patched//contrib/open	2011-01-31 23:35:47.000000000 +0100
+diff -ruN bash-completion-1.3/completions/open bash-completion-1.3-patched/completions/open
+--- bash-completion-1.3/completions/open	1970-01-01 01:00:00.000000000 +0100
++++ bash-completion-1.3-patched/completions/open	2011-04-27 11:16:22.000000000 +0200
 @@ -0,0 +1,106 @@
 +#!/bin/bash
 +
@@ -354,22 +350,23 @@ diff -ruN bash-completion-1.2/contrib/open bash-completion-1.2-patched//contrib/
 +}
 +complete $filenames -F _open open
 +}
-diff -ruN bash-completion-1.2/contrib/openssl bash-completion-1.2-patched//contrib/openssl
---- bash-completion-1.2/contrib/openssl	2010-06-13 12:21:19.000000000 +0200
-+++ bash-completion-1.2-patched//contrib/openssl	2011-01-31 23:30:15.000000000 +0100
-@@ -15,6 +15,9 @@
+diff -ruN bash-completion-1.3/completions/openssl bash-completion-1.3-patched/completions/openssl
+--- bash-completion-1.3/completions/openssl	2011-01-21 10:36:11.000000000 +0100
++++ bash-completion-1.3-patched/completions/openssl	2011-04-27 11:16:22.000000000 +0200
+@@ -15,8 +15,8 @@
  
      # if no config given, check some usual default locations
      if [ -z "$config" ]; then
-+        # TODO: Hook up
-+        # * @FINKPREFIX@/etc/ssl/openssl.cnf
-+        # * /System/Library/OpenSSL/openssl.cnf
-         for f in /etc/ssl/openssl.cnf /etc/pki/tls/openssl.cnf \
-             /usr/share/ssl/openssl.cnf; do
+-        for f in /etc/ssl/openssl.cnf /etc/pki/tls/openssl.cnf \
+-            /usr/share/ssl/openssl.cnf; do
++        for f in @PREFIX@/etc/ssl/openssl.cnf \
++            /System/Library/OpenSSL/openssl.cnf; do
              [ -f $f ] && config=$f && break
-diff -ruN bash-completion-1.2/contrib/procps bash-completion-1.2-patched//contrib/procps
---- bash-completion-1.2/contrib/procps	2010-06-13 12:21:19.000000000 +0200
-+++ bash-completion-1.2-patched//contrib/procps	2011-01-31 23:24:49.000000000 +0100
+         done
+     fi
+diff -ruN bash-completion-1.3/completions/procps bash-completion-1.3-patched/completions/procps
+--- bash-completion-1.3/completions/procps	2011-01-21 10:36:11.000000000 +0100
++++ bash-completion-1.3-patched/completions/procps	2011-04-27 11:16:22.000000000 +0200
 @@ -2,7 +2,7 @@
  
  # killall(1) (Linux and FreeBSD) and pkill(1) completion.
@@ -388,14 +385,14 @@ diff -ruN bash-completion-1.2/contrib/procps bash-completion-1.2-patched//contri
  have pkill && complete -F _killall pkill
  
  # pgrep(1) completion.
-diff -ruN bash-completion-1.2/contrib/update-alternatives bash-completion-1.2-patched//contrib/update-alternatives
---- bash-completion-1.2/contrib/update-alternatives	2010-06-13 12:21:19.000000000 +0200
-+++ bash-completion-1.2-patched//contrib/update-alternatives	2011-01-31 23:32:25.000000000 +0100
+diff -ruN bash-completion-1.3/completions/update-alternatives bash-completion-1.3-patched/completions/update-alternatives
+--- bash-completion-1.3/completions/update-alternatives	2011-01-21 10:36:11.000000000 +0100
++++ bash-completion-1.3-patched/completions/update-alternatives	2011-04-27 11:16:22.000000000 +0200
 @@ -7,6 +7,7 @@
      # find the admin dir
      for i in alternatives dpkg/alternatives rpm/alternatives; do
          [ -d /var/lib/$i ] && admindir=/var/lib/$i && break
-+        [ -d "@FINKPREFIX@/etc/$i" ] && admindir="@FINKPREFIX@/etc/$i" && break
++        [ -d "@PREFIX@/etc/$i" ] && admindir="@PREFIX@/etc/$i" && break
      done
      for (( i=1; i < COMP_CWORD; i++ )); do
          if [[ "${COMP_WORDS[i]}" == --admindir ]]; then

@@ -1,7 +1,7 @@
 Info4: <<
 Package: bash
-Version: 4.0
-Revision: 33.1
+Version: 4.2
+Revision: 1
 Depends: libgettext3-shlibs, libiconv
 Recommends: bash-completion, bash-doc
 BuildDepends: <<
@@ -12,14 +12,14 @@ BuildDepends: <<
 	libiconv-dev,
 <<
 Source: gnu
-Source-MD5: a90a1b5a6db4838483f05438e05e8eb9
-Source2: http://ranger.befunk.com/fink/%n/%n40-001-033.tar.bz2
-Source2-MD5: 1a7c188ac40896f2b10c992d2c39ac6e
+Source-MD5: 3fb927c7c33022f1c327f14a81c0d4b0
+Source2: http://ranger.befunk.com/fink/%n/%n42-001-008.tar.bz2
+Source2-MD5: b7f0365923c85118fd84db17247b09a2
 PatchFile: %n.patch
-PatchFile-MD5: 2f15f12360b09e14b55e44af990bd272
+PatchFile-MD5: 1b2b42638dcecd138cf0442dd644d186
 PatchScript: <<
 #!/bin/sh -ev
-	for file in ../bash40-*; do
+	for file in ../bash42-*; do
 		patch -p0 < $file
 	done
 	sed -e 's:@PREFIX@:%p:g' %{PatchFile} | patch -p1
