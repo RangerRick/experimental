@@ -106,7 +106,7 @@ InstallScript: <<
 	install -d -m 755 %i/opt/kde4/%type_pkg[kde]/etc
 	cat <<END >%i/opt/kde4/%type_pkg[kde]/etc/kde4rc
 [Directories]
-prefixes=%p/opt/kde4/%type_pkg[kde],%p/opt/akonadi/%type_pkg[kde],%p/opt/soprano/%type_pkg[kde],%p/opt/strigi/%type_pkg[kde],%p/lib/qt4-%type_pkg[kde]
+prefixes=%p/opt/kde4/%type_pkg[kde],%p/opt/akonadi/%type_pkg[kde],%p/opt/soprano/%type_pkg[kde],%p/opt/strigi/%type_pkg[kde],%p/lib/qt4-%type_pkg[kde],%p
 END
 <<
 DocFiles: COPYING COPYING.LIB INSTALL
