@@ -195,7 +195,7 @@ my @KEYS = (
 		'PatchScript', 'PatchFile', 'PatchFile-MD5', 'PatchFile<N>', 'PatchFile<N>-MD5', '<CR>',
 	'Set<S>', 'NoSet<S>', 'UseMaxBuildJobs', 'ConfigureParams', 'CompileScript', '<CR>',
 	'UpdatePOD', 'InstallScript', 'NoPerlTests', 'AppBundles', 'JarFiles', 'DocFiles',
-		'RuntimeVars', 'SplitOff', 'SplitOff<N>', 'Files', 'Shlibs', '<CR>',
+		'RuntimeVars', 'SplitOff', 'SplitOff<N>', 'SplitOff<S>', 'Files', 'Shlibs', '<CR>',
 	'PreInstScript', 'PostInstScript', 'PreRmScript', 'PostRmScript', 'ConfFiles',
 		'InfoDocs', 'DaemonicFile', 'DaemonicName', '<CR>',
 	'Homepage', 'DescDetail', 'DescUsage', 'DescPackaging', 'DescPort',
@@ -308,8 +308,18 @@ sub handle_file {
 
 	my $contents;
 	if (open (FILEIN, $file)) {
-		local $/ = undef;
-		$contents = <FILEIN>;
+		my $splitoff_count = "";
+		while (my $line = <FILEIN>) {
+			if ($line =~ /^\s*SplitOff([^\d]+)$/) {
+				$line =~ s/SplitOff([^\d]+):/SplitOff${splitoff_count}:/i;
+				if ($splitoff_count eq "") {
+					$splitoff_count = 2;
+				} else {
+					$splitoff_count++;
+				}
+			}
+			$contents .= $line;
+		}
 		close (FILEIN);
 	} else {
 		warn "unable to read from $file: $!\n";
@@ -368,16 +378,31 @@ sub handle_file {
 
 }
 
+sub stringwithnumber {
+	my ($a_prefix, $a_number) = $a =~ /^(.+?)(\d*)$/;
+	my ($b_prefix, $b_number) = $b =~ /^(.+?)(\d*)$/;
+	if ($a_prefix eq $b_prefix) {
+		return $a_number <=> $b_number;
+	}
+	return $a cmp $b;
+}
+
 sub transform_fields {
 	my $packagehash = shift;
 	my $properties  = shift;
 	my $toplevel    = shift || 0;
 
+	my $current_splitoff = 1;
 	for my $field (keys %$properties) {
 		my $lcfield = lc($field);
 		no strict qw(refs);
 		if ($field =~ /^splitoff/i) {
-			$properties->{$field} = transform_fields($packagehash, $properties->{$field});
+			my $contents = $properties->{$field};
+			if ($field =~ /^splitoff([^\d]+)$/i) {
+				delete $properties->{$field};
+				$field = "SplitOff" . ++$current_splitoff;
+			}
+			$properties->{$field} = transform_fields($packagehash, $contents);
 		} elsif (defined &{"transform_$lcfield"}) {
 			$properties->{$field} = &{"transform_$lcfield"}($packagehash, $properties->{$field});
 		} else {
@@ -471,7 +496,7 @@ sub serialize_to_info {
 		} elsif ($key =~ /<N>/) {
 			my $regex = $key;
 			$regex =~ s/<N>/\\d\+/gs;
-			for my $field (sort keys %$package) {
+			for my $field (sort stringwithnumber keys %$package) {
 				if ($field =~ /^\s*${regex}\s*$/gsi) {
 					if (ref $package->{$field}) {
 						$output .= print_indent($field, serialize_to_info($package->{$field}, $indent + 1), $indent);
@@ -487,7 +512,7 @@ sub serialize_to_info {
 		} elsif ($key =~ /<S>/) {
 			my $regex = $key;
 			$regex =~ s/<S>/\.\+/gs;
-			for my $field (sort keys %$package) {
+			for my $field (sort stringwithnumber keys %$package) {
 				if ($field =~ /^\s*${regex}\s*$/gsi) {
 					if (ref $package->{$field}) {
 						$output .= print_indent($field, serialize_to_info($package->{$field}, $indent + 1), $indent);
@@ -514,7 +539,7 @@ sub serialize_to_info {
 		}
 	}
 
-	for my $key (sort keys %$package) {
+	for my $key (sort stringwithnumber keys %$package) {
 		die "ERROR: '$key' is missing from \@KEYS!\n";
 	}
 
