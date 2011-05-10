@@ -1,6 +1,6 @@
 Info2: <<
 Package: rose-db-pm%type_pkg[perl]
-Version: 0.762
+Version: 0.763
 Revision: 1
 Description: DBI wrapper and abstraction layer
 Depends: <<
@@ -12,7 +12,7 @@ Depends: <<
 	dbd-pg-unified-pm%type_pkg[perl] | dbd-mysql-pm%type_pkg[perl] | dbd-sqlite-pm%type_pkg[perl],
 	dbi-pm%type_pkg[perl],
 	perl%type_pkg[perl]-core,
-	rose-object-pm%type_pkg[perl] (>= 0.858-1),
+	rose-object-pm%type_pkg[perl] (>= 0.854-1),
 	rose-datetime-pm%type_pkg[perl] (>= 0.532-1),
 	scalar-list-utils-pm%type_pkg[perl],
 	sql-reservedwords-pm%type_pkg[perl],
@@ -30,7 +30,7 @@ License: Artistic
 Maintainer: Benjamin Reed <rose-db-pm@fink.raccoonfink.com>
 
 Source: mirror:cpan:modules/by-module/Rose/Rose-DB-%v.tar.gz
-Source-MD5: 17502bfceecbfbcbbef23ffe413078a8
+Source-MD5: 24e627174aa948cd7dbe8475a9e31690
 
 UpdatePOD: true
 DocFiles: Changes MANIFEST
