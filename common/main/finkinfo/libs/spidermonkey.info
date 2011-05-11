@@ -1,6 +1,7 @@
+Info4: <<
 Package: spidermonkey
 Version: 1.7.0
-Revision: 1
+Revision: 2
 Epoch: 1
 CustomMirror: <<
 	Primary: http://ftp.mozilla.org/pub/mozilla.org/js
@@ -8,12 +9,15 @@ CustomMirror: <<
 <<
 Depends: %N-shlibs (= %e:%v-%r)
 BuildDepends: <<
-	nspr,
-	readline5
+	fink (>= 0.24.12),
+	nspr.0d,
+	readline5,
 <<
 Source: mirror:custom:js-%v.tar.gz
 Source-MD5: 5571134c3863686b623ebe4e6b1f6fe6
-PatchScript: sed -e 's,@FINKPREFIX@,%p,g' %a/%n.patch | patch -p2
+PatchFile: %n.patch
+PatchFile-MD5: 1e2756f65f46ed9929d129daefee98cd
+PatchScript: sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p2
 SourceDirectory: js/src
 CompileScript: <<
 #!/bin/sh -ev
@@ -32,6 +36,7 @@ InstallScript: <<
 <<
 SplitOff: <<
 	Package: %N-shlibs
+	Depends: nspr.0d-shlibs, readline5-shlibs
 	Files: lib/libjs.*.dylib
 	Shlibs: %p/lib/libjs.1.dylib 1.0.0 %n (>= 1.0-1)
 <<
@@ -47,5 +52,6 @@ DescPackaging: <<
 Thanks to the MacPorts package for patches.  :)
 <<
 License: OSI-Approved
-Maintainer: Benjamin Reed <spidermonkey@fink.raccoonfink.com>
+Maintainer: Benjamin Reed <spidermonkey@fink.racoonfink.com>
 Homepage: http://www.mozilla.org/js/spidermonkey/
+<<
