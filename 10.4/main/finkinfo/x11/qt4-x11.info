@@ -1,17 +1,20 @@
 Info4: <<
 Package: qt4-x11
-Version: 4.7.1
+Version: 4.7.3
 Revision: 1
 Description: Cross-Platform framework (X11 version)
 License: LGPL
 Maintainer: Benjamin Reed <qt4-x11@fink.raccoonfink.com>
 
 Depends: <<
-	%N-core-shlibs (= %v-%r),
-	%N-gui-shlibs (= %v-%r),
-	%N-designer (= %v-%r),
-	%N-linguist (= %v-%r),
-	%N-doc (= %v-%r),
+	%N-core-shlibs (>= %v-%r),
+	%N-gui-shlibs (>= %v-%r),
+	%N-designer (>= %v-%r),
+	%N-linguist (>= %v-%r),
+	%N-assistant (>= %v-%r),
+	%N-webkit (>= %v-%r),
+	phonon-x11 (>= %v-%r),
+	%N-doc (>= %v-%r),
 	pkgconfig (>= 0.23-1),
 	macosx (>= 10.4.3-1)
 <<
@@ -23,14 +26,12 @@ BuildDepends: <<
 	fontconfig2-dev (>= 2.3.2-13),
 	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),
-	gstreamer-0.10-dev,
-	gst-plugins-base-0.10-dev,
 	kde4-buildenv (>= 4.6.0-1),
 	libgettext8-dev,
 	libiconv-dev (>= 1.12-3),
 	libjpeg8,
 	libmng2,
-	libpng14 (>= 1.4.1-2),
+	libpng15 (>= 1.5.2-1),
 	libtiff,
 	macosx (>= 10.4.3-1),
 	pkgconfig (>= 0.23-1),
@@ -46,8 +47,8 @@ CustomMirror: <<
 	eur-NL: http://www.finkproject.org/~ranger/distfiles
 	nam-US: http://ranger.befunk.com/fink
 <<
-Source: mirror:custom:qt/qt-%v-mac-5cd43b1.tar.gz
-Source-MD5: d3852798c41f074ce9783d04ac9ae466
+Source: mirror:custom:qt/qt-%v-mac-ddabc52.tar.gz
+Source-MD5: 21c301c99de777b2dc2aa71d85976722
 SourceDirectory: qt-kde-qt-mac
 PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 --fuzz=4
@@ -63,14 +64,13 @@ UseMaxBuildJobs: true
 CompileScript: <<
 	#!/bin/sh -ev
 	
-	EXTRA_ARGS="-confirm-license -verbose -no-separate-debug-info -glib -gstreamer"
+	EXTRA_ARGS="-confirm-license -verbose -no-separate-debug-info -glib -no-gstreamer -no-phonon-backend"
 	if [ "%m" = "x86_64" ]; then
 	EXTRA_ARGS="$EXTRA_ARGS -arch x86_64"
 	fi
 	find . -name ._\* -exec rm -rf {} \;
 	sh ./configure-for-fink.sh "%p" "%N" $EXTRA_ARGS -make "libs tools docs"
 	find . -name Makefile\* -print0 | xargs -0 perl -pi -e 's,-I%p/include,-isystem %p/include,g'
-	touch src/3rdparty/phonon/gstreamer/phonon-config-gstreamer.h
 	make
 <<
 
@@ -97,12 +97,12 @@ END
 	cat %i/lib/%N/include/QtCore/qglobal.h >>%i/lib/%N/include/QtCore/qglobal.h.new
 	/bin/mv %i/lib/%N/include/QtCore/qglobal.h.new %i/lib/%N/include/QtCore/qglobal.h
 
-	# for some reason, phonon install misses some headers
-	pushd src/3rdparty/phonon/phonon
-		find * -name \*.h | grep -v -E '_p.h$' | grep -v ./tests/ | while read FILE; do
-			install -d -m -644 -c $FILE %i/lib/%N/include/phonon/$FILE
-		done
-	popd
+#	# for some reason, phonon install misses some headers
+#	pushd src/3rdparty/phonon/phonon
+#		find * -name \*.h | grep -v -E '_p.h$' | grep -v ./tests/ | while read FILE; do
+#			install -d -m -644 -c $FILE %i/lib/%N/include/phonon/$FILE
+#		done
+#	popd
 
 	#### FIX LA, PRL and PC FILES ####
 
@@ -173,10 +173,75 @@ EOF
 <<
 DocFiles: LGPL* LICENSE* README*
 SplitOff: <<
+	Package: phonon-x11-shlibs
+	Depends: %N-gui-shlibs (>= %v-%r)
+	Replaces: %N-gui-shlibs (<< 4.7.3-1)
+	Files: <<
+		lib/%N/lib/libphonon.4*.dylib
+		lib/%N/plugins/designer/*phonon*
+	<<
+	Shlibs: %p/lib/%N/lib/libphonon.4.dylib 4.4.0 %n (>= 4.7.0-1)
+<<
+SplitOff2: <<
+	Package: phonon-x11
+	Depends: %n-shlibs (>= %v-%r)
+	Replaces: %N (<< 4.7.3-1)
+	Files: <<
+		lib/%N/include/phonon
+		lib/%N/lib/phonon.framework
+		lib/%N/lib/pkgconfig/phonon*
+	<<
+	PostInstScript: <<
+if [ "$1" = "configure" ] && [ ! -f "%p/lib/%N/include/phonon/Phonon/MediaNode" ]; then
+	# case-sensitive filesystem, make various build-system stuff happy
+	/bin/ln -sf . "%p/lib/%N/include/phonon/Phonon"
+fi
+	<<
+	PreRmScript: <<
+# remove the symlinks we created earlier
+if [ -h "%p/lib/%N/include/Phonon" ]; then
+	/bin/rm "%p/lib/%N/include/Phonon"
+fi
+if [ -h "%p/lib/%N/include/phonon/Phonon" ]; then
+	/bin/rm "%p/lib/%N/include/phonon/Phonon"
+fi
+	<<
+<<
+SplitOff3: <<
+	Package: %N-webkit-shlibs
+	Depends: <<
+		phonon-mac-shlibs (>= 4.7.0-1),
+		%N-gui-shlibs (>= %v-%r)
+	<<
+	Replaces: %N-gui-shlibs (<< 4.7.3-1)
+	Files: <<
+		lib/%N/imports/QtWebKit
+		lib/%N/lib/QtWebKit.framework/QtWebKit
+		lib/%N/lib/QtWebKit.framework/QtWebKit_debug
+		lib/%N/lib/QtWebKit.framework/Versions/4/QtWebKit
+		lib/%N/lib/QtWebKit.framework/Versions/4/QtWebKit_debug
+		lib/%N/lib/QtWebKit.framework/Versions/Current
+	<<
+	Shlibs: <<
+		%p/lib/%N/lib/QtWebKit.framework/Versions/4/QtWebKit       4.7.0 %n (>= 4.7.0-1)
+		%p/lib/%N/lib/QtWebKit.framework/Versions/4/QtWebKit_debug 4.7.0 %n (>= 4.7.0-1)
+	<<
+<<
+SplitOff4: <<
+	Package: %N-webkit
+	Depends: %n-shlibs (>= %v-%r)
+	Replaces: %N (<< 4.7.3-1)
+	Files: <<
+		lib/%N/include/Qt/QtWebKit
+		lib/%N/include/QtWebKit
+		lib/%N/lib/QtWebKit.framework
+		lib/%N/lib/pkgconfig/QtWebKit*
+	<<
+<<
+SplitOff5: <<
 	Package: %N-gui-shlibs
 	Depends: <<
-		%N-core-shlibs (= %v-%r),
-		gst-plugins-base-0.10-shlibs,
+		%N-core-shlibs (>= %v-%r),
 		libmng2-shlibs,
 		libjpeg8-shlibs,
 		x11-shlibs
@@ -200,8 +265,6 @@ SplitOff: <<
 		lib/%N/lib/libQtOpenGL.4*.dylib
 		lib/%N/lib/libQtScriptTools.4*.dylib
 		lib/%N/lib/libQtSvg.4*.dylib
-		lib/%N/lib/libQtWebKit.4*.dylib
-		lib/%N/lib/libphonon.4*.dylib
 		lib/%N/imports
 		lib/%N/plugins/accessible
 		lib/%N/plugins/graphicssystems
@@ -219,12 +282,10 @@ SplitOff: <<
 		%p/lib/%N/lib/libQtOpenGL.4.dylib          4.7.0 %n (>= 4.7.0-1)
 		%p/lib/%N/lib/libQtScriptTools.4.dylib     4.7.0 %n (>= 4.7.0-1)
 		%p/lib/%N/lib/libQtSvg.4.dylib             4.7.0 %n (>= 4.7.0-1)
-		%p/lib/%N/lib/libQtWebKit.4.dylib          4.7.0 %n (>= 4.7.0-1)
-		%p/lib/%N/lib/libphonon.4.dylib            4.4.0 %n (>= 4.7.0-1)
 	<<
 	PostInstScript: (/%p/lib/fontconfig2/bin/fc-cache -f || :) >/tmp/fc-cache.log 2>&1 || :
 <<
-SplitOff2: <<
+SplitOff6: <<
 	Package: %N-core-shlibs
 	Depends: <<
 		dbus1.3-shlibs (>= 1.2.24-1),
@@ -233,7 +294,7 @@ SplitOff2: <<
 		freetype219-shlibs (>= 2.3.12-1),
 		glib2-shlibs (>= 2.22.0-1),
 		libjpeg8-shlibs,
-		libpng14-shlibs (>= 1.4.1-2),
+		libpng15-shlibs (>= 1.5.2-1),
 		libtiff-shlibs,
 		sqlite3-shlibs,
 		x11-shlibs
@@ -265,10 +326,19 @@ SplitOff2: <<
 		%p/lib/%N/lib/libQtXmlPatterns.4.dylib 4.7.0 %n (>= 4.7.0-1)
 	<<
 <<
-SplitOff3: <<
+SplitOff7: <<
+	Package: %N-assistant
+	Depends: <<
+		%N-webkit-shlibs (>= %v-%r),
+		%N-gui-shlibs (>= %v-%r)
+	<<
+	Replaces: %N (<< %v-1)
+	Files: lib/%N/bin/assistant*
+<<
+SplitOff8: <<
 	Package: %N-designer
 	Depends: <<
-		%N-designer-shlibs (= %v-%r),
+		%N-designer-shlibs (>= %v-%r),
 		x11
 	<<
 	Replaces: %N (<< %v-1)
@@ -278,10 +348,12 @@ SplitOff3: <<
 		lib/%N/bin/designer
 	<<
 <<
-SplitOff4: <<
+SplitOff9: <<
 	Package: %N-designer-shlibs
 	Depends: <<
-		%N-gui-shlibs (= %v-%r),
+		phonon-x11-shlibs (>= %v-%r),
+		%N-gui-shlibs (>= %v-%r),
+		%N-webkit-shlibs (>= %v-%r),
 		x11-shlibs
 	<<
 	DocFiles: LGPL* LICENSE*
@@ -295,10 +367,10 @@ SplitOff4: <<
 		%p/lib/%N/lib/libQtDesignerComponents.4.dylib 4.7.0 %n (>= 4.7.0-1)
 	<<
 <<
-SplitOff5: <<
+SplitOff10: <<
 	Package: %N-linguist
 	Depends: <<
-		%N-gui-shlibs (= %v-%r),
+		%N-gui-shlibs (>= %v-%r),
 		x11
 	<<
 	Replaces: %N (<< %v-1)
@@ -309,7 +381,7 @@ SplitOff5: <<
 		lib/%N/phrasebooks
 	<<
 <<
-SplitOff6: <<
+SplitOff11: <<
 	Package: %N-doc
 	Files: share/doc/%N
 <<

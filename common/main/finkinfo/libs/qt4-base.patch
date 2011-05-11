@@ -1,0 +1,83 @@
+diff --git a/configure-for-fink.sh b/configure-for-fink.sh
+index df6dfad..4db66ba 100755
+--- a/configure-for-fink.sh
++++ b/configure-for-fink.sh
+@@ -16,9 +16,9 @@ PATH="$QTDIR/bin:$FINKPREFIX/lib/freetype219/bin:$PATH"
+ 
+ EXTRA_ARGS=""
+ 
+-CC=gcc-4.0
+-CXX=g++-4.0
+-export PLATFORM_POSTFIX="40"
++[ -z "$CC" ]  && export CC=gcc
++[ -z "$CXX" ] && export CXX=g++
++export PLATFORM_POSTFIX=""
+ 
+ if [ -x /usr/bin/gcc-4.2 ]; then
+ 	export CC=gcc-4.2
+@@ -52,15 +52,15 @@ echo "yes" | sh $TOPDIR/configure \
+ 	"-I$FINKPREFIX/lib/system-openssl/include" "-L$FINKPREFIX/lib/system-openssl/lib" \
+ 	"-I$FINKPREFIX/lib/freetype219/include" "-I$FINKPREFIX/lib/freetype219/include/freetype2" "-L$FINKPREFIX/lib/freetype219/lib" \
+ 	"-I$FINKPREFIX/lib/fontconfig2/include" "-I$FINKPREFIX/lib/fontconfig2/include" "-L$FINKPREFIX/lib/fontconfig2/lib" \
+-	"-I$FINKPREFIX/include" -isystem /usr/X11R6/include "-L$FINKPREFIX/lib" "-L/usr/X11R6/lib" \
+-	-prefix "$FINKPREFIX/lib/$PKGNAME" -docdir "$FINKPREFIX/share/doc/$PKGNAME" \
++	"-I$FINKPREFIX/include" -isystem /usr/X11/include -isystem /usr/X11R6/include "-L$FINKPREFIX/lib" "-L/usr/X11R6/lib" \
++	-prefix "$FINKPREFIX/lib/$PKGNAME" -docdir "$FINKPREFIX/share/doc/$PKGNAME" \
+ 	-no-ssse3 -no-fast -webkit -openssl-linked -reduce-exports \
+-	-exceptions -qt-gif -system-freetype -phonon -phonon-backend \
++	-exceptions -qt-gif -system-freetype -no-phonon -no-phonon-backend \
+ 	-no-sql-ibase -no-sql-mysql -no-sql-odbc -no-sql-psql -no-pch \
+-	-plugin-sql-sqlite -dbus-linked -phonon -phonon-backend $EXTRA_ARGS "$@"
++	-plugin-sql-sqlite -dbus-linked $EXTRA_ARGS "$@"
+ 
+ # don't link against older versions of self
+-/usr/bin/find . -name Makefile -print0 | xargs -0 perl -pi -e "s,-L$FINKPREFIX/lib/$PKGNAME/lib,,g"
++/usr/bin/find . -name Makefile -print0 | xargs -0 perl -pi -e "s,-L$FINKPREFIX/lib/$PKGNAME/lib,,g"
+ 
+ # attempt to counterfix qmake's warped fileFixify logic that makes install break
+ # when $FINKPREFIX is a symlink and something exists already at -libdir or -datadir etc
+diff --git a/mkspecs/common/mac-g++.conf b/mkspecs/common/mac-g++.conf
+index a10035a..e31c726 100644
+--- a/mkspecs/common/mac-g++.conf
++++ b/mkspecs/common/mac-g++.conf
+@@ -5,7 +5,7 @@
+ include(mac.conf)
+ 
+ QMAKE_COMPILER_DEFINES  += __APPLE__ __GNUC__
+-QMAKE_CFLAGS		+= -pipe
++QMAKE_CFLAGS		+= -pipe -I@FINKPREFIX@/lib/system-openssl/include
+ QMAKE_CFLAGS_DEPS	+= -M
+ QMAKE_CFLAGS_WARN_ON	+= -Wall -W
+ QMAKE_CFLAGS_WARN_OFF	+= -w
+@@ -52,7 +52,7 @@ QMAKE_LINK		 = $$QMAKE_CXX
+ QMAKE_LINK_SHLIB	 = $$QMAKE_CXX
+ QMAKE_LINK_C		 = $$QMAKE_CC
+ QMAKE_LINK_C_SHLIB	 = $$QMAKE_CC
+-QMAKE_LFLAGS		+= -headerpad_max_install_names
++QMAKE_LFLAGS		+= -headerpad_max_install_names -L@FINKPREFIX@/lib/system-openssl/lib
+ QMAKE_LFLAGS_RELEASE	+=
+ QMAKE_LFLAGS_RELEASE_WITH_DEBUGINFO += -g -gdwarf-2
+ QMAKE_LFLAGS_DEBUG	+=
+diff --git a/mkspecs/darwin-g++/qmake.conf b/mkspecs/darwin-g++/qmake.conf
+index ad1f163..cb8334f 100644
+--- a/mkspecs/darwin-g++/qmake.conf
++++ b/mkspecs/darwin-g++/qmake.conf
+@@ -15,7 +15,7 @@ QMAKE_LEX		= flex
+ QMAKE_LEXFLAGS		=
+ QMAKE_YACC		= yacc
+ QMAKE_YACCFLAGS		= -d
+-QMAKE_CFLAGS		= -pipe
++QMAKE_CFLAGS		= -pipe -I@FINKPREFIX@/lib/system-openssl/include
+ QMAKE_CFLAGS_DEPS	= -M
+ QMAKE_CFLAGS_WARN_ON	= -Wall -W
+ QMAKE_CFLAGS_WARN_OFF	= -w
+@@ -55,8 +55,7 @@ QMAKE_LIBDIR_OPENGL	= /usr/X11R6/lib
+ 
+ QMAKE_LINK		= c++
+ QMAKE_LINK_SHLIB	= c++
+-QMAKE_LFLAGS		+= -headerpad_max_install_names
+-QMAKE_LFLAGS		=
++QMAKE_LFLAGS		+= -headerpad_max_install_names -L@FINKPREFIX@/lib/system-openssl/lib
+ QMAKE_LFLAGS_RELEASE	=
+ QMAKE_LFLAGS_DEBUG	=
+ QMAKE_LFLAGS_APP        = -prebind
