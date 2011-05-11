@@ -22,7 +22,7 @@ index df6dfad..4db66ba 100755
 -	"-I$FINKPREFIX/include" -isystem /usr/X11R6/include "-L$FINKPREFIX/lib" "-L/usr/X11R6/lib" \
 -	-prefix "$FINKPREFIX/lib/$PKGNAME" -docdir "$FINKPREFIX/share/doc/$PKGNAME" \
 +	"-I$FINKPREFIX/include" -isystem /usr/X11/include -isystem /usr/X11R6/include "-L$FINKPREFIX/lib" "-L/usr/X11R6/lib" \
-+	-prefix "$FINKPREFIX/lib/$PKGNAME" -docdir "$FINKPREFIX/share/doc/$PKGNAME" \
++	-prefix "$FINKPREFIX/opt/$PKGNAME" -docdir "$FINKPREFIX/share/doc/$PKGNAME" \
  	-no-ssse3 -no-fast -webkit -openssl-linked -reduce-exports \
 -	-exceptions -qt-gif -system-freetype -phonon -phonon-backend \
 +	-exceptions -qt-gif -system-freetype -no-phonon -no-phonon-backend \
@@ -32,7 +32,7 @@ index df6dfad..4db66ba 100755
  
  # don't link against older versions of self
 -/usr/bin/find . -name Makefile -print0 | xargs -0 perl -pi -e "s,-L$FINKPREFIX/lib/$PKGNAME/lib,,g"
-+/usr/bin/find . -name Makefile -print0 | xargs -0 perl -pi -e "s,-L$FINKPREFIX/lib/$PKGNAME/lib,,g"
++/usr/bin/find . -name Makefile -print0 | xargs -0 perl -pi -e "s,-L$FINKPREFIX/opt/$PKGNAME/lib,,g"
  
  # attempt to counterfix qmake's warped fileFixify logic that makes install break
  # when $FINKPREFIX is a symlink and something exists already at -libdir or -datadir etc
@@ -59,7 +59,7 @@ index a10035a..e31c726 100644
  QMAKE_LFLAGS_RELEASE_WITH_DEBUGINFO += -g -gdwarf-2
  QMAKE_LFLAGS_DEBUG	+=
 diff --git a/mkspecs/darwin-g++/qmake.conf b/mkspecs/darwin-g++/qmake.conf
-index ad1f163..cb8334f 100644
+index ad1f163..ab1de5c 100644
 --- a/mkspecs/darwin-g++/qmake.conf
 +++ b/mkspecs/darwin-g++/qmake.conf
 @@ -15,7 +15,7 @@ QMAKE_LEX		= flex
@@ -81,3 +81,11 @@ index ad1f163..cb8334f 100644
  QMAKE_LFLAGS_RELEASE	=
  QMAKE_LFLAGS_DEBUG	=
  QMAKE_LFLAGS_APP        = -prebind
+@@ -69,7 +68,6 @@ QMAKE_LFLAGS_VERSION    = -current_version$${LITERAL_WHITESPACE}
+ QMAKE_LFLAGS_COMPAT_VERSION = -compatibility_version$${LITERAL_WHITESPACE}
+ 
+ QMAKE_LFLAGS_RPATH	=
+-QMAKE_RPATH		=
+ QMAKE_FIX_RPATH		= install_name_tool -id 
+ 
+ QMAKE_LIBS_DYNLOAD	=

@@ -14,7 +14,7 @@ Source: mirror:custom:qt/qt-%v-mac-ddabc52.tar.gz
 Source-MD5: 21c301c99de777b2dc2aa71d85976722
 SourceDirectory: qt-kde-qt-mac
 PatchFile: qt4-base.patch
-PatchFile-MD5: e48d0e9ae2f8bdaf527bb86427454d3b
+PatchFile-MD5: 61016b26ac55c85abeb65ffc8b596114
 PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 --fuzz=4
 	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp
