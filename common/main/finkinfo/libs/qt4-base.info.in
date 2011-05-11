@@ -14,7 +14,7 @@ Source: mirror:custom:qt/qt-%v-mac-ddabc52.tar.gz
 Source-MD5: 21c301c99de777b2dc2aa71d85976722
 SourceDirectory: qt-kde-qt-mac
 PatchFile: qt4-base.patch
-PatchFile-MD5: 61016b26ac55c85abeb65ffc8b596114
+PatchFile-MD5: 8168c9dbdb81c744256d270547009a81
 PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 --fuzz=4
 	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp
@@ -72,7 +72,7 @@ NoSetLDFLAGS: true
 CompileScript: <<
 #!/bin/sh -ev
 
-	EXTRA_ARGS="-confirm-license -verbose -no-separate-debug-info -no-phonon -no-phonon-backend -no-webkit -system-sqlite"
+	EXTRA_ARGS="-confirm-license -verbose -no-separate-debug-info"
 	if [ "%m" = "x86_64" ]; then
 		EXTRA_ARGS="$EXTRA_ARGS -arch x86_64 -cocoa"
 	fi
@@ -360,6 +360,7 @@ SplitOffQtGuiShlibs: <<
 		lib/qt4-%type_pkg[qt]/lib/QtGui.framework/Versions/4/QtGui_debug
 		lib/qt4-%type_pkg[qt]/lib/QtGui.framework/Versions/4/Resources/qt_menu.nib
 		lib/qt4-%type_pkg[qt]/lib/QtGui.framework/Versions/Current
+		lib/qt4-%type_pkg[qt]/plugins/inputmethods
 #endif
 		lib/qt4-%type_pkg[qt]/plugins/accessible/libqtaccessiblewidgets*
 		lib/qt4-%type_pkg[qt]/plugins/graphicssystems/libqtrace*
@@ -416,7 +417,9 @@ SplitOffQtCLuceneShlibs: <<
 	Depends: %N-qtcore-shlibs (>= %v-%r)
 	Files: <<
 		lib/qt4-%type_pkg[qt]/lib/libQtCLucene.4*.dylib
+#ifdef TYPE_MAC
 		lib/qt4-%type_pkg[qt]/lib/libQtCLucene_debug.4*.dylib
+#endif
 	<<
 	Replaces: <<
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
@@ -424,7 +427,9 @@ SplitOffQtCLuceneShlibs: <<
 	<<
 	Shlibs: <<
 		%p/lib/qt4-%type_pkg[qt]/lib/libQtCLucene.4.dylib       4.7.0 %n (>= 4.7.0-1)
+#ifdef TYPE_MAC
 		%p/lib/qt4-%type_pkg[qt]/lib/libQtCLucene_debug.4.dylib 4.7.0 %n (>= 4.7.0-1)
+#endif
 	<<
 <<
 SplitOffQtMultimediaShlibs: <<
@@ -757,6 +762,7 @@ SplitOffDesigner: <<
 #else
 		lib/qt4-%type_pkg[qt]/bin/Designer*
 #endif
+		bin/designer4-%type_pkg[qt]
 	<<
 	Replaces: <<
 		qt4-%type_pkg[qt] (<< 4.7.3-1),
@@ -778,6 +784,7 @@ SplitOffLinguist: <<
 		lib/qt4-%type_pkg[qt]/bin/Linguist*
 #endif
 		lib/qt4-%type_pkg[qt]/phrasebooks
+		bin/linguist4-%type_pkg[qt]
 	<<
 	Replaces: <<
 		qt4-%type_pkg[qt] (<< 4.7.3-1),

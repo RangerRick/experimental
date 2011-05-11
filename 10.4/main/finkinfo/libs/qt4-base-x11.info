@@ -70,14 +70,14 @@ PatchScript: <<
 	perl -pi -e 's,CFG_MAC_XARCH=auto,CFG_MAC_XARCH=no,g' configure
 <<
 PatchFile: qt4-base.patch
-PatchFile-MD5: 61016b26ac55c85abeb65ffc8b596114
+PatchFile-MD5: 8168c9dbdb81c744256d270547009a81
 
 NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 CompileScript: <<
 	#!/bin/sh -ev
 	
-	EXTRA_ARGS="-confirm-license -verbose -no-separate-debug-info -no-phonon -no-phonon-backend -no-webkit -system-sqlite"
+	EXTRA_ARGS="-confirm-license -verbose -no-separate-debug-info"
 	if [ "%m" = "x86_64" ]; then
 	EXTRA_ARGS="$EXTRA_ARGS -arch x86_64 -cocoa"
 	fi
@@ -299,14 +299,8 @@ SplitOff9: <<
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
-	Files: <<
-		lib/qt4-%type_pkg[qt]/lib/libQtCLucene.4*.dylib
-		lib/qt4-%type_pkg[qt]/lib/libQtCLucene_debug.4*.dylib
-	<<
-	Shlibs: <<
-		%p/lib/qt4-%type_pkg[qt]/lib/libQtCLucene.4.dylib       4.7.0 %n (>= 4.7.0-1)
-		%p/lib/qt4-%type_pkg[qt]/lib/libQtCLucene_debug.4.dylib 4.7.0 %n (>= 4.7.0-1)
-	<<
+	Files: lib/qt4-%type_pkg[qt]/lib/libQtCLucene.4*.dylib
+	Shlibs: %p/lib/qt4-%type_pkg[qt]/lib/libQtCLucene.4.dylib       4.7.0 %n (>= 4.7.0-1)
 <<
 SplitOff10: <<
 	Package: %N-qtmultimedia-shlibs
@@ -468,7 +462,10 @@ SplitOff21: <<
 		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-designer (<< 4.7.3-1)
 	<<
-	Files: lib/qt4-%type_pkg[qt]/bin/designer*
+	Files: <<
+		lib/qt4-%type_pkg[qt]/bin/designer*
+		bin/designer4-%type_pkg[qt]
+	<<
 <<
 SplitOff22: <<
 	Package: %N-linguist
@@ -484,6 +481,7 @@ SplitOff22: <<
 	Files: <<
 		lib/qt4-%type_pkg[qt]/bin/l*
 		lib/qt4-%type_pkg[qt]/phrasebooks
+		bin/linguist4-%type_pkg[qt]
 	<<
 <<
 SplitOff23: <<
