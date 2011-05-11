@@ -37,8 +37,10 @@ my $package_lookup = {
 		'^libgettext3-shlibs$'            => 'libgettext8-shlibs',
 		'^libjpeg$'                       => 'libjpeg8',
 		'^libjpeg-shlibs$'                => 'libjpeg8-shlibs',
-		'^libpng3$'                       => 'libpng14',
-		'^libpng3-shlibs$'                => 'libpng14-shlibs',
+		'^libpng3$'                       => 'libpng15',
+		'^libpng3-shlibs$'                => 'libpng15-shlibs',
+		'^libpng14$'                      => 'libpng15',
+		'^libpng14-shlibs$'               => 'libpng15-shlibs',
 		'^libtool14$',                    => 'libtool2',
 		'^pango1-xft2-shlibs$'            => 'pango1-xft2-ft219-shlibs',
 		'^pango1-xft2-dev$'               => 'pango1-xft2-ft219-dev',
@@ -136,6 +138,7 @@ my $version_lookup = {
 		'^liboil-0.3(-dev|-shlibs)?$'         => [ '0.3.17',       '2'    ],
 		'^libpng3(-shlibs)?$'                 => [ '1.2.8',        '1'    ],
 		'^libpng14(-shlibs)?$'                => [ '1.4.1',        '2'    ],
+		'^libpng15(-shlibs)?$'                => [ '1.5.2',        '1'    ],
 		'^libpqxx2(-dev|-shlibs)?$'           => [ '1:2.6.8',      '1'    ],
 		'^libraptor1(-dev|-shlibs)?$'         => [ '1.4.21',       '1'    ],
 		'^librasqal(-dev|-shlibs)?$'          => [ '0.9.16',       '4'    ],
@@ -161,7 +164,7 @@ my $version_lookup = {
 		'^qimageblitz.*$'                     => [ '0.0.6',        '1'    ],
 		'^qgpgme1.*$'                         => [ '4.6.1',        '1'    ],
 		'^qt3.*$'                             => [ '3.3.8',        '2000' ],
-		'^qt4-.*$'                            => [ '4.7.1',        '1'    ],
+		'^qt4-.*$'                            => [ '4.7.3',        '1'    ],
 		'^qtscriptgenerator.*'                => [ '0.1.0',        '3'    ],
 		'^redland(-dev|-shlibs)?$'            => [ '1.0.11',       '1'    ],
 		'^rrdtool(-dev|-tcl)?$'               => [ '1.4.4',        '1'    ],
@@ -310,8 +313,8 @@ sub handle_file {
 	if (open (FILEIN, $file)) {
 		my $splitoff_count = "";
 		while (my $line = <FILEIN>) {
-			if ($line =~ /^\s*SplitOff([^\d]+)$/) {
-				$line =~ s/SplitOff([^\d]+):/SplitOff${splitoff_count}:/i;
+			if ($line =~ /^\s*SplitOff([^\d].*)$/) {
+				$line =~ s/SplitOff([^\d].*):/SplitOff${splitoff_count}:/i;
 				if ($splitoff_count eq "") {
 					$splitoff_count = 2;
 				} else {
