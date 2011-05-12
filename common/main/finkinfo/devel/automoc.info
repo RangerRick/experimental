@@ -1,7 +1,7 @@
 Info3: <<
 Package: automoc-%type_pkg[automoc]
 Version: 0.9.89
-Revision: 0.977962.3
+Revision: 0.999999.1
 Type: automoc (x11 mac)
 Description: Automatic moc for Qt4
 License: LGPL
@@ -12,8 +12,9 @@ BuildDepends: <<
 	fink (>= 0.28.0-1),
 	kde4-buildenv (>= 4.3.1-2),
 	system-openssl-dev,
-	qt4-%type_pkg[automoc] (>= 4.4.0-1)
+	qt4-base-%type_pkg[automoc] (>= 4.7.3-1)
 <<
+Depends: qt4-base-%type_pkg[automoc]-qtcore-shlibs (>= 4.7.3-1)
 GCC: 4.0
 
 CustomMirror: <<
@@ -23,9 +24,8 @@ CustomMirror: <<
 	nam-US: http://astrange.ithinksw.net/~astrange/ranger-fink
 	nam-CA: http://www.southofheaven.net/befunk
 <<
-#Source: mirror:kde:stable/automoc4/%v/automoc4-%v.tar.bz2
-Source: mirror:custom:automoc/automoc-977962.tar.bz2
-Source-MD5: 59992bc321959f72b582a4d8df8c4695
+Source: mirror:custom:automoc/automoc-0fc7d22.tar.bz2
+Source-MD5: b444ace116241d4135305b687496620c
 SourceDirectory: automoc
 
 CompileScript: <<

@@ -1,36 +1,3 @@
-diff --git a/configure-for-fink.sh b/configure-for-fink.sh
-index df6dfad..7f50aa3 100755
---- a/configure-for-fink.sh
-+++ b/configure-for-fink.sh
-@@ -16,9 +16,9 @@ PATH="$QTDIR/bin:$FINKPREFIX/lib/freetype219/bin:$PATH"
- 
- EXTRA_ARGS=""
- 
--CC=gcc-4.0
--CXX=g++-4.0
--export PLATFORM_POSTFIX="40"
-+[ -z "$CC" ]  && export CC=gcc
-+[ -z "$CXX" ] && export CXX=g++
-+export PLATFORM_POSTFIX=""
- 
- if [ -x /usr/bin/gcc-4.2 ]; then
- 	export CC=gcc-4.2
-@@ -52,12 +52,12 @@ echo "yes" | sh $TOPDIR/configure \
- 	"-I$FINKPREFIX/lib/system-openssl/include" "-L$FINKPREFIX/lib/system-openssl/lib" \
- 	"-I$FINKPREFIX/lib/freetype219/include" "-I$FINKPREFIX/lib/freetype219/include/freetype2" "-L$FINKPREFIX/lib/freetype219/lib" \
- 	"-I$FINKPREFIX/lib/fontconfig2/include" "-I$FINKPREFIX/lib/fontconfig2/include" "-L$FINKPREFIX/lib/fontconfig2/lib" \
--	"-I$FINKPREFIX/include" -isystem /usr/X11R6/include "-L$FINKPREFIX/lib" "-L/usr/X11R6/lib" \
-+	"-I$FINKPREFIX/include" -isystem /usr/X11/include -isystem /usr/X11R6/include "-L$FINKPREFIX/lib" "-L/usr/X11R6/lib" \
- 	-prefix "$FINKPREFIX/lib/$PKGNAME" -docdir "$FINKPREFIX/share/doc/$PKGNAME" \
- 	-no-ssse3 -no-fast -webkit -openssl-linked -reduce-exports \
--	-exceptions -qt-gif -system-freetype -phonon -phonon-backend \
-+	-exceptions -qt-gif -system-freetype -no-phonon -no-phonon-backend \
- 	-no-sql-ibase -no-sql-mysql -no-sql-odbc -no-sql-psql -no-pch \
--	-plugin-sql-sqlite -dbus-linked -phonon -phonon-backend $EXTRA_ARGS "$@"
-+	-no-webkit -system-sqlite -plugin-sql-sqlite -dbus-linked $EXTRA_ARGS "$@"
- 
- # don't link against older versions of self
- /usr/bin/find . -name Makefile -print0 | xargs -0 perl -pi -e "s,-L$FINKPREFIX/lib/$PKGNAME/lib,,g"
 diff --git a/mkspecs/common/mac-g++.conf b/mkspecs/common/mac-g++.conf
 index a10035a..e31c726 100644
 --- a/mkspecs/common/mac-g++.conf
@@ -84,16 +51,36 @@ index ad1f163..ab1de5c 100644
  QMAKE_FIX_RPATH		= install_name_tool -id 
  
  QMAKE_LIBS_DYNLOAD	=
-diff --git a/src/multimedia/audio/audio.pri b/src/multimedia/audio/audio.pri
-index 7b2f9ad..e29009e 100644
---- a/src/multimedia/audio/audio.pri
-+++ b/src/multimedia/audio/audio.pri
-@@ -66,6 +66,8 @@ mac {
-                    $$PWD/qaudioinput_alsa_p.cpp
-             LIBS_PRIVATE += -lasound
-         }
-+    } else {
-+        DEFINES += QT_NO_AUDIO_BACKEND
-     }
- }
- } else {
+diff --git a/configure-for-fink.sh b/configure-for-fink.sh
+index 3005bd6..002f715 100755
+--- a/configure-for-fink.sh
++++ b/configure-for-fink.sh
+@@ -16,26 +16,10 @@ PATH="$QTDIR/bin:$FINKPREFIX/lib/freetype219/bin:$PATH"
+ 
+ EXTRA_ARGS=""
+ 
+-[ -z "$CC" ]  && export CC=gcc
+-[ -z "$CXX" ] && export CXX=g++
+-export PLATFORM_POSTFIX=""
+-
+-if [ -x /usr/bin/gcc-4.2 ]; then
+-	export CC=gcc-4.2
+-	export CXX=g++-4.2
+-	export PLATFORM_POSTFIX="42"
+-fi 
+-
+-if [ -x "$FINKPREFIX/bin/ccache" ]; then
+-	export CC="$FINKPREFIX/bin/ccache $CC"
+-	export CXX="$FINKPREFIX/bin/ccache $CXX"
+-	export CCACHE_DIR="/tmp/ccache-qt4"
+-fi
+-
+ if [ "$PKGNAME" = "qt4-x11" ]; then
+-	EXTRA_ARGS="-x11 -platform darwin-g++$PLATFORM_POSTFIX -xplatform darwin-g++$PLATFORM_POSTFIX"
++	EXTRA_ARGS="-x11 -platform darwin-g++ -xplatform darwin-g++"
+ else
+-	EXTRA_ARGS="-platform macx-g++$PLATFORM_POSTFIX -xplatform macx-g++$PLATFORM_POSTFIX"
++	EXTRA_ARGS="-platform macx-g++ -xplatform macx-g++"
+ fi
+ 
+ case `sw_vers -productVersion` in

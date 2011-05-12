@@ -1,10 +1,10 @@
 Info3: <<
-Package: phonon-mac
+Package: phonon-x11
 Version: 4.5.0
 Revision: 1
 Epoch: 1
 Description: Qt-based multimedia framework
-Type: phonon (mac)
+Type: phonon (x11)
 License: LGPL
 Maintainer: Benjamin Reed <phonon@fink.raccoonfink.com>
 
@@ -15,8 +15,9 @@ BuildDepends: <<
 	fink (>= 0.29.7-1),
 	kde4-buildenv (>= 4.6.0-1),
 	system-openssl-dev,
-	qt4-%type_pkg[phonon] (>= 4.7.3-1)
+	qt4-base-%type_pkg[phonon] (>= 4.7.3-1)
 <<
+Replaces: qt4-%type_pkg[phonon] (<< 4.7.3-1)
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/phonon-%v.tar.bz2
@@ -34,7 +35,7 @@ CompileScript: <<
 	
 	mkdir -p build
 	pushd build
-	cmake $KDE4_CMAKE_ARGS -DPHONON_USE_FRAMEWORKS=true ..
+	cmake $KDE4_CMAKE_ARGS ..
 	make VERBOSE=1
 	popd
 <<
@@ -49,42 +50,37 @@ InstallScript: <<
 SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for Phonon
-	Depends: <<
-		qt4-%type_pkg[phonon]-designer-shlibs (>= 4.7.3-1),
-		qt4-%type_pkg[phonon]-gui-shlibs (>= 4.7.3-1)
+	Depends: 
+	Replaces: <<
+		qt4-%type_pkg[phonon]-designer-shlibs (<< 4.7.3-1),
+		qt4-%type_pkg[phonon]-gui-shlibs (<< 4.7.3-1),
+		qt4-%type_pkg[phonon] (<< 4.7.3-1)
 	<<
 	Files: <<
-		lib/qt4-%type_pkg[phonon]/lib/phonon.framework/Resources
-		lib/qt4-%type_pkg[phonon]/lib/phonon.framework/Versions/4/phonon
-		lib/qt4-%type_pkg[phonon]/lib/phonon.framework/Versions/Current
-		lib/qt4-%type_pkg[phonon]/lib/phonon.framework/phonon
-		lib/qt4-%type_pkg[phonon]/lib/phononexperimental.framework/Resources
-		lib/qt4-%type_pkg[phonon]/lib/phononexperimental.framework/Versions/4/Resources/Info.plist
-		lib/qt4-%type_pkg[phonon]/lib/phononexperimental.framework/Versions/4/phononexperimental
-		lib/qt4-%type_pkg[phonon]/lib/phononexperimental.framework/Versions/Current
-		lib/qt4-%type_pkg[phonon]/lib/phononexperimental.framework/phononexperimental
+		lib/qt4-%type_pkg[phonon]/lib/libphonon.4*.dylib
+		lib/qt4-%type_pkg[phonon]/lib/libphononexperimental.4*.dylib
 		lib/qt4-%type_pkg[phonon]/plugins/designer/*phonon*
 		lib/qt4-%type_pkg[phonon]/share/dbus-1/interfaces
 	<<
 	Shlibs: <<
-		%p/lib/qt4-%type_pkg[phonon]/lib/phonon.framework/Versions/4/phonon                         4.5.0 %n (>= 4.5.0-1)
-		%p/lib/qt4-%type_pkg[phonon]/lib/phononexperimental.framework/Versions/4/phononexperimental 4.5.0 %n (>= 4.5.0-1)
+		%p/lib/qt4-%type_pkg[phonon]/lib/libphonon.4.dylib             4.0.0 %n (>= 4.5.0-1)
+		%p/lib/qt4-%type_pkg[phonon]/lib/libphononexperimental.4.dylib 4.0.0 %n (>= 4.5.0-1)
 	<<
 <<
 
 PostInstScript: <<
-if [ "$1" = "configure" ] && [ ! -f "%p/lib/%N/include/phonon/Phonon/MediaNode" ]; then
+if [ "$1" = "configure" ] && [ ! -f "%p/lib/qt4-%type_pkg[phonon]/include/phonon/Phonon/MediaNode" ]; then
 	# case-sensitive filesystem, make various build-system stuff happy
-	/bin/ln -sf . "%p/lib/%N/include/phonon/Phonon"
+	/bin/ln -sf . "%p/lib/qt4-%type_pkg[phonon]/include/phonon/Phonon"
 fi
 <<
 PreRmScript: <<
 # remove the symlinks we created earlier
-if [ -h "%p/lib/%N/include/Phonon" ]; then
-	/bin/rm "%p/lib/%N/include/Phonon"
+if [ -h "%p/lib/qt4-%type_pkg[phonon]/include/Phonon" ]; then
+	/bin/rm "%p/lib/qt4-%type_pkg[phonon]/include/Phonon"
 fi
-if [ -h "%p/lib/%N/include/phonon/Phonon" ]; then
-	/bin/rm "%p/lib/%N/include/phonon/Phonon"
+if [ -h "%p/lib/qt4-%type_pkg[phonon]/include/phonon/Phonon" ]; then
+	/bin/rm "%p/lib/qt4-%type_pkg[phonon]/include/phonon/Phonon"
 fi
 <<
 

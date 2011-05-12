@@ -10,11 +10,11 @@ Version: 4.7.3
 Revision: 1
 GCC: 4.0
 CustomMirror: RangerMirror
-Source: mirror:custom:qt/qt-%v-mac-ddabc52.tar.gz
-Source-MD5: 21c301c99de777b2dc2aa71d85976722
+Source: mirror:custom:qt/qt-%v-mac-1c3b651.tar.gz
+Source-MD5: d1164c0d75d0f4e86c2e61eb4fd50045
 SourceDirectory: qt-kde-qt-mac
 PatchFile: qt4-base.patch
-PatchFile-MD5: 8168c9dbdb81c744256d270547009a81
+PatchFile-MD5: d17c9da8c060e0093fa7e865c2d617d3
 PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 --fuzz=4
 	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp
@@ -79,7 +79,22 @@ CompileScript: <<
 	find . -name ._\* -exec rm -rf {} \;
 	sh ./configure-for-fink.sh "%p" "qt4-%type_pkg[qt]" $EXTRA_ARGS -make "libs tools docs"
 	find . -name Makefile\* -print0 | xargs -0 perl -pi -e 's,-I%p/include,-isystem %p/include,g'
-	make
+
+	export QTCC=gcc
+	export QTCXX=g++
+	
+	if [ -x /usr/bin/gcc-4.2 ]; then
+		export QTCC=gcc-4.2
+		export QTCXX=g++-4.2
+	fi
+	
+	if [ -x "$FINKPREFIX/bin/ccache" ]; then
+		export QTCC="$FINKPREFIX/bin/ccache $QTCC"
+		export QTCXX="$FINKPREFIX/bin/ccache $QTCXX"
+		export CCACHE_DIR="/tmp/ccache-qt4"
+	fi
+
+	make CC="$QTCC" CXX="$QTCXX"
 <<
 InstallScript: <<
 #!/bin/sh -ev
@@ -89,6 +104,16 @@ InstallScript: <<
 	make -j1 install INSTALL_ROOT="%d"
 
 	install -d -m 755 %i/bin
+
+	# add the WS_X11 stuff
+	cat <<END >%i/lib/qt4-%type_pkg[qt]/include/QtCore/qglobal.h.new
+#ifndef __USE_WS_X11__
+#define __USE_WS_X11__ 1
+#endif
+
+END
+	cat %i/lib/qt4-%type_pkg[qt]/include/QtCore/qglobal.h >>%i/lib/qt4-%type_pkg[qt]/include/QtCore/qglobal.h.new
+	/bin/mv %i/lib/qt4-%type_pkg[qt]/include/QtCore/qglobal.h.new %i/lib/qt4-%type_pkg[qt]/include/QtCore/qglobal.h
 
 	for bin in linguist designer qtconfig; do
 		if [ -f "%p/lib/qt4-%type_pkg[qt]/bin/$bin" ]; then
