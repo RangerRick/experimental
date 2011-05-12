@@ -70,7 +70,7 @@ PatchScript: <<
 	perl -pi -e 's,CFG_MAC_XARCH=auto,CFG_MAC_XARCH=no,g' configure
 <<
 PatchFile: qt4-base.patch
-PatchFile-MD5: d17c9da8c060e0093fa7e865c2d617d3
+PatchFile-MD5: 620cb32aa29bd2e7993f0eec83d4344a
 
 NoSetLDFLAGS: true
 UseMaxBuildJobs: true
