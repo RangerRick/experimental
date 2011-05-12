@@ -378,6 +378,7 @@ SplitOffQtGuiShlibs: <<
 	Files: <<
 #ifdef TYPE_X11
 		lib/qt4-%type_pkg[qt]/lib/libQtGui.4*.dylib
+		lib/qt4-%type_pkg[qt]/plugins/inputmethods
 #else
 		lib/qt4-%type_pkg[qt]/lib/QtGui.framework/QtGui
 		lib/qt4-%type_pkg[qt]/lib/QtGui.framework/QtGui_debug
@@ -385,7 +386,6 @@ SplitOffQtGuiShlibs: <<
 		lib/qt4-%type_pkg[qt]/lib/QtGui.framework/Versions/4/QtGui_debug
 		lib/qt4-%type_pkg[qt]/lib/QtGui.framework/Versions/4/Resources/qt_menu.nib
 		lib/qt4-%type_pkg[qt]/lib/QtGui.framework/Versions/Current
-		lib/qt4-%type_pkg[qt]/plugins/inputmethods
 #endif
 		lib/qt4-%type_pkg[qt]/plugins/accessible/libqtaccessiblewidgets*
 		lib/qt4-%type_pkg[qt]/plugins/graphicssystems/libqtrace*

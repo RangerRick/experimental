@@ -295,6 +295,7 @@ SplitOff7: <<
 	<<
 	Files: <<
 		lib/qt4-%type_pkg[qt]/lib/libQtGui.4*.dylib
+		lib/qt4-%type_pkg[qt]/plugins/inputmethods
 		lib/qt4-%type_pkg[qt]/plugins/accessible/libqtaccessiblewidgets*
 		lib/qt4-%type_pkg[qt]/plugins/graphicssystems/libqtrace*
 		lib/qt4-%type_pkg[qt]/plugins/imageformats
