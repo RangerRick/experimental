@@ -25,7 +25,7 @@ BuildDepends: <<
 	glitz (>= 0.4.4-1),
 	libgettext8-dev,
 	libiconv-dev,
-	libpng14,
+	libpng15,
 	pixman (>= 0.16.0-1),
 	pkgconfig (>= 0.23-1),
 	system-java15-dev,
@@ -139,23 +139,6 @@ SplitOff: <<
 		%p/lib/libmono.0.dylib              1.0.0 %n (>= 1.2.5-1)
 	<<
 <<
-SplitOff10: <<
-	Package: %N-dev
-	Depends: %N (>= %v-%r)
-	Replaces: <<
-		%N (<< %v-%r),
-		monodoc (<< 2.4-1)
-	<<
-	BuildDependsOnly: true
-	Files: <<
-		include
-		lib/*.a
-		lib/*.la
-		lib/libmono-profiler*.dylib
-		lib/libmono.dylib
-		lib/pkgconfig
-	<<
-<<
 SplitOff2: <<
 	Package: monodoc
 	Depends: %N (>= %v-%r)
@@ -173,6 +156,23 @@ SplitOff2: <<
 		share/man/man1/mdoc*.1
 		share/man/man1/monodoc*.1
 		share/man/man5/mdoc.5
+	<<
+<<
+SplitOff10: <<
+	Package: %N-dev
+	Depends: %N (>= %v-%r)
+	Replaces: <<
+		%N (<< %v-%r),
+		monodoc (<< 2.4-1)
+	<<
+	BuildDependsOnly: true
+	Files: <<
+		include
+		lib/*.a
+		lib/*.la
+		lib/libmono-profiler*.dylib
+		lib/libmono.dylib
+		lib/pkgconfig
 	<<
 <<
 Shlibs: <<

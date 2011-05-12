@@ -11,7 +11,10 @@ Maintainer: Benjamin Reed <qtwebkit@fink.raccoonfink.com>
 Depends: %N-shlibs (>= %v-%r)
 BuildDepends: <<
 	fink (>= 0.29.7-1),
+	libiconv-dev,
+	libpng15 (>= 1.5.2-1),
 	phonon-%type_pkg[qtwebkit],
+	sqlite3-dev,
 	system-openssl-dev,
 	qt4-base-%type_pkg[qtwebkit] (>= 4.7.3-1)
 <<
@@ -71,7 +74,19 @@ InstallScript: <<
 SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for QtWebKit
-	Depends: 
+	Depends: <<
+		libpng15-shlibs (>= 1.5.2-1),
+		phonon-mac-shlibs (>= 4.5.0-1),
+		qt4-base-mac-qtcore-shlibs (>= 4.7.3-1),
+		qt4-base-mac-qtdeclarative-shlibs (>= 4.7.3-1),
+		qt4-base-mac-qtgui-shlibs (>= 4.7.3-1),
+		qt4-base-mac-qtnetwork-shlibs (>= 4.7.3-1),
+		qt4-base-mac-qtscript-shlibs (>= 4.7.3-1),
+		qt4-base-mac-qtsql-shlibs (>= 4.7.3-1),
+		qt4-base-mac-qtsvg-shlibs (>= 4.7.3-1),
+		qt4-base-mac-qtxmlpatterns-shlibs (>= 4.7.3-1),
+		sqlite3-shlibs
+	<<
 	Replaces: <<
 		qt4-%type_pkg[qtwebkit]-gui-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qtwebkit] (<< 4.7.3-1)

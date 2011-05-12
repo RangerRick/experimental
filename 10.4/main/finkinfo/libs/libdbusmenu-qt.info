@@ -19,7 +19,7 @@ BuildDepends: <<
 	kde4-buildenv (>= 4.6.0-1),
 	system-openssl-dev,
 	qjson-%type_pkg[qt] (>= 0.5-1),
-	qt4-%type_pkg[qt] (>= 4.7.1-1)
+	qt4-%type_pkg[qt] (>= 4.7.3-1)
 <<
 BuildDependsOnly: true
 GCC: 4.0
@@ -53,7 +53,7 @@ InstallScript: <<
 SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for libdbusmenu
-	Depends: qt4-%type_pkg[qt]-gui-shlibs (>= 4.7.1-1)
+	Depends: qt4-%type_pkg[qt]-gui-shlibs (>= 4.7.3-1)
 	Files: opt/kde4/%type_pkg[qt]/lib/libdbusmenu-qt.2*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[qt]/lib/libdbusmenu-qt.2.dylib 2.0.0 %n (>= 0.3.0-1)
 <<

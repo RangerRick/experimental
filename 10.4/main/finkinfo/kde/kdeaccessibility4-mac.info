@@ -13,7 +13,7 @@ Depends: <<
 	%N-icon-themes (>= %v-%r)
 <<
 BuildDepends: <<
-	automoc-%type_pkg[kde] (>= 0.9.89-0),
+	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
 	cmake (>= 2.8.2-1),
 	dbus1.3-dev (>= 1.2.24-1),
 	fink (>= 0.29.7-1),
@@ -26,7 +26,7 @@ BuildDepends: <<
 	kdelibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
 	libgettext8-dev,
 	pkgconfig (>= 0.23-1),
-	qt4-%type_pkg[kde] (>= 4.7.1-1),
+	qt4-%type_pkg[kde] (>= 4.7.3-1),
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,

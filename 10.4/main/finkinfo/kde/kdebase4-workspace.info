@@ -16,7 +16,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	aspell-dev,
-	automoc-%type_pkg[kde] (>= 0.9.89-0),
+	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
 	qimageblitz-unified-%type_pkg[kde] (>= 0.0.6-1),
 	bzip2-dev,
 	cmake (>= 2.8.2-1),
@@ -40,7 +40,7 @@ BuildDepends: <<
 	libjasper.1,
 	libjpeg8,
 	libknotificationitem1-%type_pkg[kde]-dev (>= 4.3.4-1),
-	libpng14,
+	libpng15,
 	libtiff,
 	libusb,
 	(%type_pkg[kde] = x11) libxklavier12,
@@ -54,7 +54,7 @@ BuildDepends: <<
 	#	python26,
 	#	pyqt4-py26,
 	qca2-%type_pkg[kde] (>= 2.0.3-1),
-	qt4-%type_pkg[kde] (>= 4.7.1-1),
+	qt4-%type_pkg[kde] (>= 4.7.3-1),
 	strigi-dev (>= 0.6.3-1),
 	strigi-gui-%type_pkg[kde]-dev (>= 0.7.2-1),
 	(-%type_pkg[kde] = x11) x11-dev,

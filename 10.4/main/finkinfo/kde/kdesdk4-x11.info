@@ -26,7 +26,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	antlr,
-	automoc-%type_pkg[kde] (>= 0.9.89-0),
+	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
 	boost1.41.cmake,
 	cmake (>= 2.8.2-1),
 	dbus1.3-dev (>= 1.2.24-1),
@@ -45,7 +45,7 @@ BuildDepends: <<
 	libxml2,
 	pkgconfig (>= 0.23-1),
 	python25,
-	qt4-%type_pkg[kde] (>= 4.7.1-1),
+	qt4-%type_pkg[kde] (>= 4.7.3-1),
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
@@ -124,110 +124,6 @@ SplitOff: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff10: <<
-	Package: umbrello4-%type_pkg[kde]
-	Description: KDE4 - UML modelling tool
-	Depends: %N-base (>= %v-%r)
-	Replaces: %N-base (<< 4.4.1-1)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/umbrello*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/umbrello*
-		opt/kde4/%type_pkg[kde]/share/apps/umbrello
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/umbrello
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/umbrello*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/umbrello*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/umbrello*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/umbrello*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/umbrello*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/umbrello*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/umbrello*
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff11: <<
-	Package: %N-svn-provider
-	Description: KDE4 - Subversion support
-	Depends: %N-svn-ioslave (>= %v-%r) | kde4-%type_pkg[kde]-svn-ioslave
-	Files: share/doc/installed-packages/%n
-<<
-SplitOff12: <<
-	Package: %N-svn-ioslave
-	Description: KDE4 - Subversion support
-	Depends: <<
-		%N-base (>= %v-%r),
-		svn15-shlibs
-	<<
-	Provides: kde4-%type_pkg[kde]-svn-ioslave
-	Conflicts: kdesvn-kde4-%type_pkg[kde]
-	Replaces: <<
-		kdesvn-kde4-%type_pkg[kde],
-		%N-ioslaves (<< 4.2.2-3)
-	<<
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/kio_svn_helper*
-		opt/kde4/%type_pkg[kde]/lib/kde4/kded_ksvnd*
-		opt/kde4/%type_pkg[kde]/lib/kde4/kio_perldoc*
-		opt/kde4/%type_pkg[kde]/lib/kde4/kio_svn*
-		opt/kde4/%type_pkg[kde]/share/apps/kio_perldoc
-		opt/kde4/%type_pkg[kde]/share/dbus-1/interfaces/org.kde.ksvnd*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/ServiceMenus/subversion*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/kded/ksvnd*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/perldoc*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/svn*
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff13: <<
-	Package: %N-ioslaves
-	Description: KDE4 - upgrade package
-	Depends: %N-svn-ioslave (>= %v-%r)
-	Files: share/doc/installed-packages/%n
-<<
-SplitOff14: <<
-	Package: kpartloader4-%type_pkg[kde]
-	Description: KDE4 - test loading a KPart
-	Depends: %N-base (>= %v-%r)
-	Replaces: <<
-		%N-scripts (<< 4.2.4-1),
-		%N-base (<< 4.2.4-1)
-	<<
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/kpartloader*
-		opt/kde4/%type_pkg[kde]/share/apps/kpartloader
-	<<
-<<
-SplitOff15: <<
-	Package: %N-scripts
-	Description: KDE4 - scripts for KDE development
-	Depends: %N-base (>= %v-%r)
-	Replaces: %N-base (<< 4.2.4-1)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kdesrc-build.desktop
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kdesrc-build
-		opt/kde4/%type_pkg[kde]/share/man/man1
-	<<
-<<
-SplitOff16: <<
-	Package: %N-accounts-plugin
-	Description: KDE4 - add KDE developer emails to the address book
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/lib/kde4/*kdeaccounts*
-		opt/kde4/%type_pkg[kde]/share/apps/kabc/formats/*kdeaccounts*
-	<<
-<<
-SplitOff17: <<
-	Package: %N-dolphin-plugins
-	Description: KDE4 - plugins for the Dolphin file manager
-	Depends: %N-base (>= %v-%r)
-	Replaces: %N-base (<< %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/lib/kde4/fileview*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/fileview*
-		opt/kde4/%type_pkg[kde]/share/config.kcfg/fileview*
-	<<
-<<
 SplitOff2: <<
 	Package: kapptemplate4-%type_pkg[kde]
 	Description: KDE4 - application template generator
@@ -246,23 +142,6 @@ SplitOff2: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kapptemplate*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff20: <<
-	Package: %N-dev
-	Description: KDE4 - kdesdk dev headers and libs
-	Depends: %N (>= %v-%r)
-	BuildDependsOnly: true
-	Files: <<
-		opt/kde4/%type_pkg[kde]/include
-		opt/kde4/%type_pkg[kde]/lib/libkateinterfaces.dylib
-		opt/kde4/%type_pkg[kde]/lib/libktexteditor_codesnippets_core.dylib
-	<<
-<<
-SplitOff21: <<
-	Package: %N-base
-	Description: KDE4 - kdesdk base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1)
-	Files: opt
 <<
 SplitOff3: <<
 	Package: kate4-%type_pkg[kde]
@@ -375,7 +254,7 @@ SplitOff7: <<
 	Package: kuiviewer4-%type_pkg[kde]
 	Description: KDE4 - Qt Designer interface viewer
 	Depends: <<
-		qt4-%type_pkg[kde]-designer-shlibs (>= 4.7.1-1),
+		qt4-%type_pkg[kde]-designer-shlibs (>= 4.7.3-1),
 		%N-base (>= %v-%r)
 	<<
 	Files: <<
@@ -423,6 +302,127 @@ SplitOff9: <<
 		opt/kde4/%type_pkg[kde]/bin/xml2pot*
 	<<
 	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libantlr.4.dylib
+<<
+SplitOff10: <<
+	Package: umbrello4-%type_pkg[kde]
+	Description: KDE4 - UML modelling tool
+	Depends: %N-base (>= %v-%r)
+	Replaces: %N-base (<< 4.4.1-1)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/umbrello*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/umbrello*
+		opt/kde4/%type_pkg[kde]/share/apps/umbrello
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/umbrello
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/umbrello*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/umbrello*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/umbrello*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/umbrello*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/umbrello*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/umbrello*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/umbrello*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff11: <<
+	Package: %N-svn-provider
+	Description: KDE4 - Subversion support
+	Depends: %N-svn-ioslave (>= %v-%r) | kde4-%type_pkg[kde]-svn-ioslave
+	Files: share/doc/installed-packages/%n
+<<
+SplitOff12: <<
+	Package: %N-svn-ioslave
+	Description: KDE4 - Subversion support
+	Depends: <<
+		%N-base (>= %v-%r),
+		svn15-shlibs
+	<<
+	Provides: kde4-%type_pkg[kde]-svn-ioslave
+	Conflicts: kdesvn-kde4-%type_pkg[kde]
+	Replaces: <<
+		kdesvn-kde4-%type_pkg[kde],
+		%N-ioslaves (<< 4.2.2-3)
+	<<
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/kio_svn_helper*
+		opt/kde4/%type_pkg[kde]/lib/kde4/kded_ksvnd*
+		opt/kde4/%type_pkg[kde]/lib/kde4/kio_perldoc*
+		opt/kde4/%type_pkg[kde]/lib/kde4/kio_svn*
+		opt/kde4/%type_pkg[kde]/share/apps/kio_perldoc
+		opt/kde4/%type_pkg[kde]/share/dbus-1/interfaces/org.kde.ksvnd*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/ServiceMenus/subversion*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/kded/ksvnd*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/perldoc*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/svn*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff13: <<
+	Package: %N-ioslaves
+	Description: KDE4 - upgrade package
+	Depends: %N-svn-ioslave (>= %v-%r)
+	Files: share/doc/installed-packages/%n
+<<
+SplitOff14: <<
+	Package: kpartloader4-%type_pkg[kde]
+	Description: KDE4 - test loading a KPart
+	Depends: %N-base (>= %v-%r)
+	Replaces: <<
+		%N-scripts (<< 4.2.4-1),
+		%N-base (<< 4.2.4-1)
+	<<
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/kpartloader*
+		opt/kde4/%type_pkg[kde]/share/apps/kpartloader
+	<<
+<<
+SplitOff15: <<
+	Package: %N-scripts
+	Description: KDE4 - scripts for KDE development
+	Depends: %N-base (>= %v-%r)
+	Replaces: %N-base (<< 4.2.4-1)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/kdesrc-build.desktop
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kdesrc-build
+		opt/kde4/%type_pkg[kde]/share/man/man1
+	<<
+<<
+SplitOff16: <<
+	Package: %N-accounts-plugin
+	Description: KDE4 - add KDE developer emails to the address book
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/lib/kde4/*kdeaccounts*
+		opt/kde4/%type_pkg[kde]/share/apps/kabc/formats/*kdeaccounts*
+	<<
+<<
+SplitOff17: <<
+	Package: %N-dolphin-plugins
+	Description: KDE4 - plugins for the Dolphin file manager
+	Depends: %N-base (>= %v-%r)
+	Replaces: %N-base (<< %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/lib/kde4/fileview*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/fileview*
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/fileview*
+	<<
+<<
+SplitOff20: <<
+	Package: %N-dev
+	Description: KDE4 - kdesdk dev headers and libs
+	Depends: %N (>= %v-%r)
+	BuildDependsOnly: true
+	Files: <<
+		opt/kde4/%type_pkg[kde]/include
+		opt/kde4/%type_pkg[kde]/lib/libkateinterfaces.dylib
+		opt/kde4/%type_pkg[kde]/lib/libktexteditor_codesnippets_core.dylib
+	<<
+<<
+SplitOff21: <<
+	Package: %N-base
+	Description: KDE4 - kdesdk base package
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1)
+	Files: opt
 <<
 
 DescDetail: 

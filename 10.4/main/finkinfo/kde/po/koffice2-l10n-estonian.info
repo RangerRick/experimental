@@ -9,7 +9,7 @@ Maintainer: Benjamin Reed <koffice2-l10n-estonian@fink.raccoonfink.com>
 
 Depends: koffice2-%type_pkg[kde]-base (>= %v-1)
 BuildDepends: <<
-	automoc-%type_pkg[kde] (>= 0.9.89-0),
+	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
 	cmake (>= 2.8.2-1),
 	fink (>= 0.29.7-1),
 	gettext-tools (>= 0.17-1),

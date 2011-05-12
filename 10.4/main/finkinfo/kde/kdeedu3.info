@@ -47,7 +47,7 @@ BuildDepends: <<
 	libjpeg8,
 	libmad,
 	libogg,
-	libpng14 (>= 1.4.1-2),
+	libpng15 (>= 1.5.2-1),
 	libvorbis0,
 	pcre,
 	pkgconfig (>= 0.23-1),
@@ -161,6 +161,794 @@ SplitOff: <<
 	DescDetail: <<
 Kalzium is an application which will show you some information about
 the periodic system of the elements.
+	<<
+	DescUsage: <<
+---[ Installation ]---------------------------------------------------
+
+To install all of the official KDE packages, install "bundle-kde" or
+"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
+downloading strong cryptography).  Unless you have a specific reason
+not to, "bundle-kde-ssl" is suggested.
+
+---[ Configuration ]--------------------------------------------------
+
+To use KDE as your windowing system in XDarwin, create a file called
+".xinitrc" in your home directory, containing the following line:
+
+  /sw/bin/startkde >/tmp/kde.log 2>&1
+
+See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
+for more information on the xinitrc files and how they work.
+
+If you want to use Apple's X11 instead of the KDE window manager,
+put the following line before the startkde line in .xinitrc:
+
+  export KDEWM=quartz-wm
+
+If you want to disable quartz-wm even for clipboard synchronization
+(proxying), put the following line before the startkde line in
+.xinitrc:
+
+  export DISABLE_PROXY=1
+
+---[ Startup ]--------------------------------------------------------
+
+Once you have created an ~/.xinitrc file, you should be able to start
+KDE by clicking on the "XDarwin" icon in your Applications folder.  
+
+NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
+If you run KDE in rootless mode, it will take over your desktop with
+a window that covers everything up.  You can remove this by disabling
+desktop icons in the KDE control center.  Open the control center
+(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
+then expand the "Desktop" list, click "Behavior", and uncheck the
+"Show icons on desktop" checkbox.
+   
+---[ Removal ]--------------------------------------------------------
+   
+To remove all of the official KDE packages, you can remove the KDE
+libraries and anything that depends on them by running, in a terminal:
+   
+  sudo apt-get remove kdelibs3-unified-shlibs
+
+To remove an individual KDE package collection (like kdenetwork3 or
+kdesdk3) you can generally remove [package]-base.  For example, to
+remove all of the kdenetwork3 packages, run:
+
+  sudo apt-get remove kdenetwork3-base
+	<<
+<<
+SplitOff2: <<
+	Package: kbruch
+	Description: KDE - generate tasks with fractions
+	Depends: %N-base (>= %v-%r)
+	Replaces: <<
+		%N (<< %v-%r),
+		%N-dev (<< %v-%r),
+		%N-shlibs (<< %v-%r)
+	<<
+	Recommends: %N (>= %v-%r)
+	Files: <<
+		bin/kbruch
+		lib/kde3/kbruch.*
+		lib/libkdeinit_kbruch*
+		share/applications/kde/kbruch.desktop
+		share/apps/kbruch
+		share/config.kcfg/kbruch.kcfg
+		share/doc/kde/en/kbruch
+		share/icons/crystalsvg/32x32/actions/kbruch_*
+		share/icons/crystalsvg/64x64/actions/kbruch_*
+		share/icons/hicolor/128x128/apps/kbruch*
+		share/icons/hicolor/16x16/apps/kbruch*
+		share/icons/hicolor/22x22/apps/kbruch*
+		share/icons/hicolor/32x32/apps/kbruch*
+		share/icons/hicolor/48x48/apps/kbruch*
+		share/icons/hicolor/64x64/apps/kbruch*
+		share/icons/hicolor/scalable/apps/kbruch*
+	<<
+	Shlibs: !%p/lib/libkdeinit_kbruch.dylib
+	Homepage: http://edu.kde.org/kbruch/
+	DescDetail: <<
+KBruch is a small program to practice calculating with fractions.
+4 different exercises are offered.
+
+	* Exercise Fraction Task: in this exercise you have to solve a given
+		fraction task.  You have to enter numerator and denominator.  This
+		is the main exercise.  The difficulty of this task can be
+		influenced by the user.  The user can decide if he wants to solve
+		tasks with addition/substraction and/or multiplication/division.
+		Also he can set the number of fractions and the maximum size of the
+		main denominator.
+	* Exercise Comparison: in this exercise you have to compare the size
+		of 2 given fractions.
+	* Exercise Conversion: in this exercise you have to convert a given
+		number into a fraction.
+	* Exercise Factorization: in this exercise you have to factorize a
+		given number into its prime factors.  Factorization is important
+		while finding the main denominator of 2 fractions.
+	<<
+	DescUsage: <<
+---[ Installation ]---------------------------------------------------
+
+To install all of the official KDE packages, install "bundle-kde" or
+"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
+downloading strong cryptography).  Unless you have a specific reason
+not to, "bundle-kde-ssl" is suggested.
+
+---[ Configuration ]--------------------------------------------------
+
+To use KDE as your windowing system in XDarwin, create a file called
+".xinitrc" in your home directory, containing the following line:
+
+  /sw/bin/startkde >/tmp/kde.log 2>&1
+
+See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
+for more information on the xinitrc files and how they work.
+
+If you want to use Apple's X11 instead of the KDE window manager,
+put the following line before the startkde line in .xinitrc:
+
+  export KDEWM=quartz-wm
+
+If you want to disable quartz-wm even for clipboard synchronization
+(proxying), put the following line before the startkde line in
+.xinitrc:
+
+  export DISABLE_PROXY=1
+
+---[ Startup ]--------------------------------------------------------
+
+Once you have created an ~/.xinitrc file, you should be able to start
+KDE by clicking on the "XDarwin" icon in your Applications folder.  
+
+NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
+If you run KDE in rootless mode, it will take over your desktop with
+a window that covers everything up.  You can remove this by disabling
+desktop icons in the KDE control center.  Open the control center
+(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
+then expand the "Desktop" list, click "Behavior", and uncheck the
+"Show icons on desktop" checkbox.
+   
+---[ Removal ]--------------------------------------------------------
+   
+To remove all of the official KDE packages, you can remove the KDE
+libraries and anything that depends on them by running, in a terminal:
+   
+  sudo apt-get remove kdelibs3-unified-shlibs
+
+To remove an individual KDE package collection (like kdenetwork3 or
+kdesdk3) you can generally remove [package]-base.  For example, to
+remove all of the kdenetwork3 packages, run:
+
+  sudo apt-get remove kdenetwork3-base
+	<<
+<<
+SplitOff3: <<
+	Package: keduca
+	Description: KDE - create and revise form-based exams
+	Depends: %N-base (>= %v-%r)
+	Replaces: <<
+		%N (<< %v-%r),
+		%N-dev (<< %v-%r),
+		%N-shlibs (<< %v-%r)
+	<<
+	Recommends: %N (>= %v-%r)
+	Files: <<
+		bin/keduca*
+		lib/kde3/*keduca*
+		lib/libkdeinit_*keduca*
+		share/applications/kde/keduca*
+		share/apps/keduca
+		share/config.kcfg/keduca*
+		share/doc/kde/en/keduca
+		share/icons/hicolor/128x128/apps/keduca*
+		share/icons/hicolor/16x16/apps/keduca*
+		share/icons/hicolor/22x22/apps/keduca*
+		share/icons/hicolor/32x32/apps/keduca*
+		share/icons/hicolor/48x48/apps/keduca*
+		share/icons/hicolor/64x64/apps/keduca*
+		share/mimelnk/application/x-edu*
+		share/services/keduca_part*
+	<<
+	Shlibs: <<
+		!%p/lib/libkdeinit_keduca.dylib
+		!%p/lib/libkdeinit_keducabuilder.dylib
+	<<
+	Homepage: http://edu.kde.org/keduca/
+	DescDetail: <<
+KEduca allows the creation and revision of form-based tests and exams.
+It supports the idea of multiple databases with public questions and
+answers that can be shared among users via the Internet.
+	<<
+	DescUsage: <<
+---[ Installation ]---------------------------------------------------
+
+To install all of the official KDE packages, install "bundle-kde" or
+"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
+downloading strong cryptography).  Unless you have a specific reason
+not to, "bundle-kde-ssl" is suggested.
+
+---[ Configuration ]--------------------------------------------------
+
+To use KDE as your windowing system in XDarwin, create a file called
+".xinitrc" in your home directory, containing the following line:
+
+  /sw/bin/startkde >/tmp/kde.log 2>&1
+
+See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
+for more information on the xinitrc files and how they work.
+
+If you want to use Apple's X11 instead of the KDE window manager,
+put the following line before the startkde line in .xinitrc:
+
+  export KDEWM=quartz-wm
+
+If you want to disable quartz-wm even for clipboard synchronization
+(proxying), put the following line before the startkde line in
+.xinitrc:
+
+  export DISABLE_PROXY=1
+
+---[ Startup ]--------------------------------------------------------
+
+Once you have created an ~/.xinitrc file, you should be able to start
+KDE by clicking on the "XDarwin" icon in your Applications folder.  
+
+NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
+If you run KDE in rootless mode, it will take over your desktop with
+a window that covers everything up.  You can remove this by disabling
+desktop icons in the KDE control center.  Open the control center
+(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
+then expand the "Desktop" list, click "Behavior", and uncheck the
+"Show icons on desktop" checkbox.
+   
+---[ Removal ]--------------------------------------------------------
+   
+To remove all of the official KDE packages, you can remove the KDE
+libraries and anything that depends on them by running, in a terminal:
+   
+  sudo apt-get remove kdelibs3-unified-shlibs
+
+To remove an individual KDE package collection (like kdenetwork3 or
+kdesdk3) you can generally remove [package]-base.  For example, to
+remove all of the kdenetwork3 packages, run:
+
+  sudo apt-get remove kdenetwork3-base
+	<<
+<<
+SplitOff4: <<
+	Package: khangman
+	Description: KDE - hangman word game
+	Depends: <<
+		%N-base (>= %v-%r),
+		%N-common (>= %v-%r)
+	<<
+	Replaces: <<
+		%N (<< %v-%r),
+		%N-dev (<< %v-%r),
+		%N-shlibs (<< %v-%r)
+	<<
+	Recommends: %N (>= %v-%r)
+	Files: <<
+		bin/khangman
+		lib/kde3/khangman.*
+		lib/libkdeinit_khangman*
+		share/applications/kde/khangman.desktop
+		share/apps/khangman
+		share/config.kcfg/khangman.kcfg
+		share/config/khangmanrc
+		share/doc/kde/en/khangman
+		share/icons/hicolor/128x128/apps/khangman*
+		share/icons/hicolor/16x16/apps/khangman*
+		share/icons/hicolor/22x22/apps/khangman*
+		share/icons/hicolor/32x32/apps/khangman*
+		share/icons/hicolor/48x48/apps/khangman*
+		share/icons/hicolor/64x64/apps/khangman*
+		share/icons/hicolor/scalable/apps/khangman*
+	<<
+	Shlibs: !%p/lib/libkdeinit_khangman.dylib
+	Homepage: http://edu.kde.org/khangman/
+	DescDetail: <<
+KHangman is the classical hangman game.  The child should guess a
+word letter by letter.  At each miss, the picture of a hangman
+appears.  After 10 tries, if the word is not guessed, the game is
+over and the answer is displayed.
+	<<
+	DescUsage: <<
+---[ Installation ]---------------------------------------------------
+
+To install all of the official KDE packages, install "bundle-kde" or
+"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
+downloading strong cryptography).  Unless you have a specific reason
+not to, "bundle-kde-ssl" is suggested.
+
+---[ Configuration ]--------------------------------------------------
+
+To use KDE as your windowing system in XDarwin, create a file called
+".xinitrc" in your home directory, containing the following line:
+
+  /sw/bin/startkde >/tmp/kde.log 2>&1
+
+See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
+for more information on the xinitrc files and how they work.
+
+If you want to use Apple's X11 instead of the KDE window manager,
+put the following line before the startkde line in .xinitrc:
+
+  export KDEWM=quartz-wm
+
+If you want to disable quartz-wm even for clipboard synchronization
+(proxying), put the following line before the startkde line in
+.xinitrc:
+
+  export DISABLE_PROXY=1
+
+---[ Startup ]--------------------------------------------------------
+
+Once you have created an ~/.xinitrc file, you should be able to start
+KDE by clicking on the "XDarwin" icon in your Applications folder.  
+
+NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
+If you run KDE in rootless mode, it will take over your desktop with
+a window that covers everything up.  You can remove this by disabling
+desktop icons in the KDE control center.  Open the control center
+(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
+then expand the "Desktop" list, click "Behavior", and uncheck the
+"Show icons on desktop" checkbox.
+   
+---[ Removal ]--------------------------------------------------------
+   
+To remove all of the official KDE packages, you can remove the KDE
+libraries and anything that depends on them by running, in a terminal:
+   
+  sudo apt-get remove kdelibs3-unified-shlibs
+
+To remove an individual KDE package collection (like kdenetwork3 or
+kdesdk3) you can generally remove [package]-base.  For example, to
+remove all of the kdenetwork3 packages, run:
+
+  sudo apt-get remove kdenetwork3-base
+	<<
+<<
+SplitOff5: <<
+	Package: kig
+	Description: KDE - explore geometric constructions
+	Depends: %N-base (>= %v-%r)
+	Replaces: <<
+		%N (<< %v-%r),
+		%N-dev (<< %v-%r),
+		%N-shlibs (<< %v-%r)
+	<<
+	Recommends: %N (>= %v-%r)
+	Files: <<
+		bin/kig
+		bin/pykig.py
+		lib/kde3/kfile_drgeo*
+		lib/kde3/kfile_kig*
+		lib/kde3/libkig*
+		lib/kde3/kig.*
+		lib/libkdeinit_kig*
+		share/applications/kde/kig.desktop
+		share/apps/kig
+		share/config/magic/cabri.magic
+		share/config/magic/drgeo.magic
+		share/doc/kde/en/kig
+		share/icons/crystalsvg/128x128/mimetypes/kig_doc*
+		share/icons/crystalsvg/16x16/mimetypes/kig_doc*
+		share/icons/crystalsvg/22x22/mimetypes/kig_doc*
+		share/icons/crystalsvg/32x32/mimetypes/kig_doc*
+		share/icons/crystalsvg/48x48/mimetypes/kig_doc*
+		share/icons/crystalsvg/64x64/mimetypes/kig_doc*
+		share/icons/crystalsvg/scalable/mimetypes/kig_doc*
+		share/icons/hicolor/128x128/apps/kig*
+		share/icons/hicolor/16x16/apps/kig*
+		share/icons/hicolor/22x22/apps/kig*
+		share/icons/hicolor/32x32/apps/kig*
+		share/icons/hicolor/48x48/apps/kig*
+		share/icons/hicolor/64x64/apps/kig*
+		share/icons/hicolor/scalable/apps/kig*
+		share/mimelnk/application/x-cabri.*
+		share/mimelnk/application/x-drgeo.*
+		share/mimelnk/application/x-kgeo.*
+		share/mimelnk/application/x-kig.*
+		share/mimelnk/application/x-kseg.*
+		share/services/kfile_drgeo.*
+		share/services/kfile_kig.*
+		share/services/kig*
+	<<
+	Shlibs: !%p/lib/libkdeinit_kig.dylib
+	Homepage: http://edu.kde.org/kig/
+	DescDetail: <<
+Kig is a program for exploring geometric constructions.  It is meant as a
+better replacement for such free programs as KGeo, KSeg and Dr. Geo and
+commercial programs like Cabri.
+	<<
+	DescUsage: <<
+---[ Installation ]---------------------------------------------------
+
+To install all of the official KDE packages, install "bundle-kde" or
+"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
+downloading strong cryptography).  Unless you have a specific reason
+not to, "bundle-kde-ssl" is suggested.
+
+---[ Configuration ]--------------------------------------------------
+
+To use KDE as your windowing system in XDarwin, create a file called
+".xinitrc" in your home directory, containing the following line:
+
+  /sw/bin/startkde >/tmp/kde.log 2>&1
+
+See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
+for more information on the xinitrc files and how they work.
+
+If you want to use Apple's X11 instead of the KDE window manager,
+put the following line before the startkde line in .xinitrc:
+
+  export KDEWM=quartz-wm
+
+If you want to disable quartz-wm even for clipboard synchronization
+(proxying), put the following line before the startkde line in
+.xinitrc:
+
+  export DISABLE_PROXY=1
+
+---[ Startup ]--------------------------------------------------------
+
+Once you have created an ~/.xinitrc file, you should be able to start
+KDE by clicking on the "XDarwin" icon in your Applications folder.  
+
+NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
+If you run KDE in rootless mode, it will take over your desktop with
+a window that covers everything up.  You can remove this by disabling
+desktop icons in the KDE control center.  Open the control center
+(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
+then expand the "Desktop" list, click "Behavior", and uncheck the
+"Show icons on desktop" checkbox.
+   
+---[ Removal ]--------------------------------------------------------
+   
+To remove all of the official KDE packages, you can remove the KDE
+libraries and anything that depends on them by running, in a terminal:
+   
+  sudo apt-get remove kdelibs3-unified-shlibs
+
+To remove an individual KDE package collection (like kdenetwork3 or
+kdesdk3) you can generally remove [package]-base.  For example, to
+remove all of the kdenetwork3 packages, run:
+
+  sudo apt-get remove kdenetwork3-base
+	<<
+<<
+SplitOff6: <<
+	Package: kiten
+	Description: KDE - Japanese reference and learning tool
+	Depends: %N-base (>= %v-%r)
+	Replaces: <<
+		%N (<< %v-%r),
+		%N-dev (<< %v-%r),
+		%N-shlibs (<< %v-%r)
+	<<
+	Recommends: %N (>= %v-%r)
+	Files: <<
+		bin/kiten
+		bin/kitengen
+		lib/kde3/*kiten*
+		lib/libkdeinit_kiten*
+		lib/libkiten.*.dylib
+		share/applications/kde/kiten.desktop
+		share/apps/kiten
+		share/config.kcfg/kiten.kcfg
+		share/doc/kde/en/kiten
+		share/icons/locolor/16x16/actions/edit_*
+		share/icons/hicolor/128x128/apps/kiten*
+		share/icons/crystalsvg/16x16/actions/kanjidic*
+		share/icons/crystalsvg/22x22/actions/edit_*
+		share/icons/crystalsvg/22x22/actions/kanjidic*
+		share/icons/hicolor/16x16/apps/kiten*
+		share/icons/hicolor/32x32/apps/kiten*
+		share/icons/hicolor/48x48/apps/kiten*
+		share/icons/hicolor/scalable/apps/kiten*
+	<<
+	Shlibs: <<
+		%p/lib/libkiten.1.dylib 2.0.0 kiten (>= 3.5.0-1)
+		!%p/lib/libkdeinit_kiten.dylib
+	<<
+	Homepage: http://edu.kde.org/kiten/
+	DescDetail: <<
+Kiten is a Japanese reference/learning tool.
+Kiten features:
+
+	* Search with english keyword, Japanese reading, or a Kanji string on a
+		list of EDICT files.
+	* Search with english keyword, Japanese reading, number of strokes,
+		grade number, or a Kanji on a list of KANJIDIC files.
+	* Comes with all necessary files.
+	* Very fast.
+	* Limit searches to only common entries.
+	* Nested searches of results possible.
+	* Compact, small, fast interface.
+	* Global KDE keybindings for searching highlighted strings.
+	* Learning dialog. (One can even open up multiple ones and have them sync
+		between each other.)
+	* Browse Kanji by grade.
+	* Add Kanji to a list for later learning.
+	* Browse list, and get quizzed on them.
+	<<
+	DescUsage: <<
+---[ Installation ]---------------------------------------------------
+
+To install all of the official KDE packages, install "bundle-kde" or
+"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
+downloading strong cryptography).  Unless you have a specific reason
+not to, "bundle-kde-ssl" is suggested.
+
+---[ Configuration ]--------------------------------------------------
+
+To use KDE as your windowing system in XDarwin, create a file called
+".xinitrc" in your home directory, containing the following line:
+
+  /sw/bin/startkde >/tmp/kde.log 2>&1
+
+See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
+for more information on the xinitrc files and how they work.
+
+If you want to use Apple's X11 instead of the KDE window manager,
+put the following line before the startkde line in .xinitrc:
+
+  export KDEWM=quartz-wm
+
+If you want to disable quartz-wm even for clipboard synchronization
+(proxying), put the following line before the startkde line in
+.xinitrc:
+
+  export DISABLE_PROXY=1
+
+---[ Startup ]--------------------------------------------------------
+
+Once you have created an ~/.xinitrc file, you should be able to start
+KDE by clicking on the "XDarwin" icon in your Applications folder.  
+
+NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
+If you run KDE in rootless mode, it will take over your desktop with
+a window that covers everything up.  You can remove this by disabling
+desktop icons in the KDE control center.  Open the control center
+(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
+then expand the "Desktop" list, click "Behavior", and uncheck the
+"Show icons on desktop" checkbox.
+   
+---[ Removal ]--------------------------------------------------------
+   
+To remove all of the official KDE packages, you can remove the KDE
+libraries and anything that depends on them by running, in a terminal:
+   
+  sudo apt-get remove kdelibs3-unified-shlibs
+
+To remove an individual KDE package collection (like kdenetwork3 or
+kdesdk3) you can generally remove [package]-base.  For example, to
+remove all of the kdenetwork3 packages, run:
+
+  sudo apt-get remove kdenetwork3-base
+	<<
+<<
+SplitOff7: <<
+	Package: klettres
+	Description: KDE - multi-language alphabet learning aid
+	Depends: %N-base (>= %v-%r)
+	Replaces: <<
+		%N (<< %v-%r),
+		%N-dev (<< %v-%r),
+		%N-shlibs (<< %v-%r)
+	<<
+	Recommends: %N (>= %v-%r)
+	Files: <<
+		bin/klettres
+		lib/kde3/klettres.*
+		lib/libkdeinit_klettres*
+		share/applications/kde/klettres.desktop
+		share/apps/klettres
+		share/config.kcfg/klettres*
+		share/config/klettresrc
+		share/doc/kde/en/klettres
+		share/icons/hicolor/128x128/apps/klettres*
+		share/icons/hicolor/16x16/apps/klettres*
+		share/icons/hicolor/22x22/apps/klettres*
+		share/icons/hicolor/32x32/apps/klettres*
+		share/icons/hicolor/48x48/apps/klettres*
+		share/icons/hicolor/scalable/apps/klettres*
+	<<
+	Shlibs: !%p/lib/libkdeinit_klettres.dylib
+	Homepage: http://edu.kde.org/klettres/
+	DescDetail: <<
+KLettres aims to help to learn the alphabet and then to read some
+syllables in different languages.  It is meant to help learning the
+very first sounds of a new language, for children or for adults.
+
+Currently available are: Czech, Danish, Dutch, English, French,
+Italian and Slovak, you can choose using the Languages menu.  A
+toolbar with the special characters per language is now provided if
+you don't have the correct country keyboard or the keyboard layout
+to be able to display correctly the accented letters.
+	<<
+	DescUsage: <<
+---[ Installation ]---------------------------------------------------
+
+To install all of the official KDE packages, install "bundle-kde" or
+"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
+downloading strong cryptography).  Unless you have a specific reason
+not to, "bundle-kde-ssl" is suggested.
+
+---[ Configuration ]--------------------------------------------------
+
+To use KDE as your windowing system in XDarwin, create a file called
+".xinitrc" in your home directory, containing the following line:
+
+  /sw/bin/startkde >/tmp/kde.log 2>&1
+
+See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
+for more information on the xinitrc files and how they work.
+
+If you want to use Apple's X11 instead of the KDE window manager,
+put the following line before the startkde line in .xinitrc:
+
+  export KDEWM=quartz-wm
+
+If you want to disable quartz-wm even for clipboard synchronization
+(proxying), put the following line before the startkde line in
+.xinitrc:
+
+  export DISABLE_PROXY=1
+
+---[ Startup ]--------------------------------------------------------
+
+Once you have created an ~/.xinitrc file, you should be able to start
+KDE by clicking on the "XDarwin" icon in your Applications folder.  
+
+NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
+If you run KDE in rootless mode, it will take over your desktop with
+a window that covers everything up.  You can remove this by disabling
+desktop icons in the KDE control center.  Open the control center
+(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
+then expand the "Desktop" list, click "Behavior", and uncheck the
+"Show icons on desktop" checkbox.
+   
+---[ Removal ]--------------------------------------------------------
+   
+To remove all of the official KDE packages, you can remove the KDE
+libraries and anything that depends on them by running, in a terminal:
+   
+  sudo apt-get remove kdelibs3-unified-shlibs
+
+To remove an individual KDE package collection (like kdenetwork3 or
+kdesdk3) you can generally remove [package]-base.  For example, to
+remove all of the kdenetwork3 packages, run:
+
+  sudo apt-get remove kdenetwork3-base
+	<<
+<<
+SplitOff8: <<
+	Package: kmplot
+	Description: KDE - mathematical function plotter
+	Depends: %N-base (>= %v-%r)
+	Replaces: <<
+		%N (<< %v-%r),
+		%N-dev (<< %v-%r),
+		%N-shlibs (<< %v-%r)
+	<<
+	Recommends: %N (>= %v-%r)
+	Files: <<
+		bin/kmplot
+		lib/kde3/*kmplot*
+		lib/libkdeinit_kmplot*
+		share/applications/kde/kmplot*
+		share/apps/kmplot
+		share/config.kcfg/kmplot*
+		share/doc/kde/en/kmplot
+		share/icons/hicolor/128x128/apps/kmplot*
+		share/icons/hicolor/16x16/apps/kmplot*
+		share/icons/hicolor/22x22/apps/kmplot*
+		share/icons/hicolor/32x32/apps/kmplot*
+		share/icons/hicolor/48x48/apps/kmplot*
+		share/icons/hicolor/64x64/apps/kmplot*
+		share/icons/hicolor/scalable/apps/kmplot*
+		share/mimelnk/application/x-kmplot*
+		share/services/kmplot*
+	<<
+	Shlibs: !%p/lib/libkdeinit_kmplot.dylib
+	Homepage: http://edu.kde.org/kmplot/
+	DescDetail: <<
+KmPlot is a mathematical function plotter for the KDE-Desktop.
+
+It has built in a powerfull parser.  You can plot different functions
+simultaneously and combine their function terms to build new
+functions.  KmPLot supports functions with parameters and functions in
+polar coordinates.  Several grid modes are possible.  Plots may be
+printed with high precision in correct scale.
+	<<
+	DescUsage: <<
+---[ Installation ]---------------------------------------------------
+
+To install all of the official KDE packages, install "bundle-kde" or
+"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
+downloading strong cryptography).  Unless you have a specific reason
+not to, "bundle-kde-ssl" is suggested.
+
+---[ Configuration ]--------------------------------------------------
+
+To use KDE as your windowing system in XDarwin, create a file called
+".xinitrc" in your home directory, containing the following line:
+
+  /sw/bin/startkde >/tmp/kde.log 2>&1
+
+See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
+for more information on the xinitrc files and how they work.
+
+If you want to use Apple's X11 instead of the KDE window manager,
+put the following line before the startkde line in .xinitrc:
+
+  export KDEWM=quartz-wm
+
+If you want to disable quartz-wm even for clipboard synchronization
+(proxying), put the following line before the startkde line in
+.xinitrc:
+
+  export DISABLE_PROXY=1
+
+---[ Startup ]--------------------------------------------------------
+
+Once you have created an ~/.xinitrc file, you should be able to start
+KDE by clicking on the "XDarwin" icon in your Applications folder.  
+
+NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
+If you run KDE in rootless mode, it will take over your desktop with
+a window that covers everything up.  You can remove this by disabling
+desktop icons in the KDE control center.  Open the control center
+(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
+then expand the "Desktop" list, click "Behavior", and uncheck the
+"Show icons on desktop" checkbox.
+   
+---[ Removal ]--------------------------------------------------------
+   
+To remove all of the official KDE packages, you can remove the KDE
+libraries and anything that depends on them by running, in a terminal:
+   
+  sudo apt-get remove kdelibs3-unified-shlibs
+
+To remove an individual KDE package collection (like kdenetwork3 or
+kdesdk3) you can generally remove [package]-base.  For example, to
+remove all of the kdenetwork3 packages, run:
+
+  sudo apt-get remove kdenetwork3-base
+	<<
+<<
+SplitOff9: <<
+	Package: kpercentage
+	Description: KDE - practice calculating percentages
+	Depends: %N-base (>= %v-%r)
+	Replaces: <<
+		%N (<< %v-%r),
+		%N-dev (<< %v-%r),
+		%N-shlibs (<< %v-%r)
+	<<
+	Recommends: %N (>= %v-%r)
+	Files: <<
+		bin/kpercentage
+		lib/kde3/kpercentage.*
+		lib/libkdeinit_kpercentage*
+		share/applications/kde/kpercentage.desktop
+		share/apps/kpercentage
+		share/doc/kde/en/kpercentage
+		share/icons/hicolor/128x128/apps/kpercentage*
+		share/icons/hicolor/16x16/apps/kpercentage*
+		share/icons/hicolor/22x22/apps/kpercentage*
+		share/icons/hicolor/32x32/apps/kpercentage*
+		share/icons/hicolor/48x48/apps/kpercentage*
+		share/icons/hicolor/scalable/apps/kpercentage*
+	<<
+	Shlibs: !%p/lib/libkdeinit_kpercentage.dylib
+	Homepage: http://edu.kde.org/kpercentage/
+	DescDetail: <<
+KPercentage is a small math application that will help pupils to
+improve their skills in calculating percentages.
 	<<
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
@@ -1160,111 +1948,6 @@ remove all of the kdenetwork3 packages, run:
   sudo apt-get remove kdenetwork3-base
 	<<
 <<
-SplitOff2: <<
-	Package: kbruch
-	Description: KDE - generate tasks with fractions
-	Depends: %N-base (>= %v-%r)
-	Replaces: <<
-		%N (<< %v-%r),
-		%N-dev (<< %v-%r),
-		%N-shlibs (<< %v-%r)
-	<<
-	Recommends: %N (>= %v-%r)
-	Files: <<
-		bin/kbruch
-		lib/kde3/kbruch.*
-		lib/libkdeinit_kbruch*
-		share/applications/kde/kbruch.desktop
-		share/apps/kbruch
-		share/config.kcfg/kbruch.kcfg
-		share/doc/kde/en/kbruch
-		share/icons/crystalsvg/32x32/actions/kbruch_*
-		share/icons/crystalsvg/64x64/actions/kbruch_*
-		share/icons/hicolor/128x128/apps/kbruch*
-		share/icons/hicolor/16x16/apps/kbruch*
-		share/icons/hicolor/22x22/apps/kbruch*
-		share/icons/hicolor/32x32/apps/kbruch*
-		share/icons/hicolor/48x48/apps/kbruch*
-		share/icons/hicolor/64x64/apps/kbruch*
-		share/icons/hicolor/scalable/apps/kbruch*
-	<<
-	Shlibs: !%p/lib/libkdeinit_kbruch.dylib
-	Homepage: http://edu.kde.org/kbruch/
-	DescDetail: <<
-KBruch is a small program to practice calculating with fractions.
-4 different exercises are offered.
-
-	* Exercise Fraction Task: in this exercise you have to solve a given
-		fraction task.  You have to enter numerator and denominator.  This
-		is the main exercise.  The difficulty of this task can be
-		influenced by the user.  The user can decide if he wants to solve
-		tasks with addition/substraction and/or multiplication/division.
-		Also he can set the number of fractions and the maximum size of the
-		main denominator.
-	* Exercise Comparison: in this exercise you have to compare the size
-		of 2 given fractions.
-	* Exercise Conversion: in this exercise you have to convert a given
-		number into a fraction.
-	* Exercise Factorization: in this exercise you have to factorize a
-		given number into its prime factors.  Factorization is important
-		while finding the main denominator of 2 fractions.
-	<<
-	DescUsage: <<
----[ Installation ]---------------------------------------------------
-
-To install all of the official KDE packages, install "bundle-kde" or
-"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
-downloading strong cryptography).  Unless you have a specific reason
-not to, "bundle-kde-ssl" is suggested.
-
----[ Configuration ]--------------------------------------------------
-
-To use KDE as your windowing system in XDarwin, create a file called
-".xinitrc" in your home directory, containing the following line:
-
-  /sw/bin/startkde >/tmp/kde.log 2>&1
-
-See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
-for more information on the xinitrc files and how they work.
-
-If you want to use Apple's X11 instead of the KDE window manager,
-put the following line before the startkde line in .xinitrc:
-
-  export KDEWM=quartz-wm
-
-If you want to disable quartz-wm even for clipboard synchronization
-(proxying), put the following line before the startkde line in
-.xinitrc:
-
-  export DISABLE_PROXY=1
-
----[ Startup ]--------------------------------------------------------
-
-Once you have created an ~/.xinitrc file, you should be able to start
-KDE by clicking on the "XDarwin" icon in your Applications folder.  
-
-NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
-If you run KDE in rootless mode, it will take over your desktop with
-a window that covers everything up.  You can remove this by disabling
-desktop icons in the KDE control center.  Open the control center
-(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
-then expand the "Desktop" list, click "Behavior", and uncheck the
-"Show icons on desktop" checkbox.
-   
----[ Removal ]--------------------------------------------------------
-   
-To remove all of the official KDE packages, you can remove the KDE
-libraries and anything that depends on them by running, in a terminal:
-   
-  sudo apt-get remove kdelibs3-unified-shlibs
-
-To remove an individual KDE package collection (like kdenetwork3 or
-kdesdk3) you can generally remove [package]-base.  For example, to
-remove all of the kdenetwork3 packages, run:
-
-  sudo apt-get remove kdenetwork3-base
-	<<
-<<
 SplitOff20: <<
 	Package: %N-common
 	Description: KDE - kdeedu common shared libraries
@@ -1362,7 +2045,7 @@ SplitOff21: <<
 		arts-dev (>= 1.5.10-10),
 		kdelibs3-unified-dev (>= 3.5.10-10),
 		libart2,
-		libpng14 (>= 1.4.1-2),
+		libpng15 (>= 1.5.2-1),
 		qt3 (>= 3.3.8-2000)
 	<<
 	BuildDependsOnly: true
@@ -1441,689 +2124,6 @@ SplitOff22: <<
 		kdebase3-unified (>= 3.5.10-10)
 	<<
 	Files: share/doc/installed-packages/%N-base
-	DescUsage: <<
----[ Installation ]---------------------------------------------------
-
-To install all of the official KDE packages, install "bundle-kde" or
-"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
-downloading strong cryptography).  Unless you have a specific reason
-not to, "bundle-kde-ssl" is suggested.
-
----[ Configuration ]--------------------------------------------------
-
-To use KDE as your windowing system in XDarwin, create a file called
-".xinitrc" in your home directory, containing the following line:
-
-  /sw/bin/startkde >/tmp/kde.log 2>&1
-
-See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
-for more information on the xinitrc files and how they work.
-
-If you want to use Apple's X11 instead of the KDE window manager,
-put the following line before the startkde line in .xinitrc:
-
-  export KDEWM=quartz-wm
-
-If you want to disable quartz-wm even for clipboard synchronization
-(proxying), put the following line before the startkde line in
-.xinitrc:
-
-  export DISABLE_PROXY=1
-
----[ Startup ]--------------------------------------------------------
-
-Once you have created an ~/.xinitrc file, you should be able to start
-KDE by clicking on the "XDarwin" icon in your Applications folder.  
-
-NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
-If you run KDE in rootless mode, it will take over your desktop with
-a window that covers everything up.  You can remove this by disabling
-desktop icons in the KDE control center.  Open the control center
-(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
-then expand the "Desktop" list, click "Behavior", and uncheck the
-"Show icons on desktop" checkbox.
-   
----[ Removal ]--------------------------------------------------------
-   
-To remove all of the official KDE packages, you can remove the KDE
-libraries and anything that depends on them by running, in a terminal:
-   
-  sudo apt-get remove kdelibs3-unified-shlibs
-
-To remove an individual KDE package collection (like kdenetwork3 or
-kdesdk3) you can generally remove [package]-base.  For example, to
-remove all of the kdenetwork3 packages, run:
-
-  sudo apt-get remove kdenetwork3-base
-	<<
-<<
-SplitOff3: <<
-	Package: keduca
-	Description: KDE - create and revise form-based exams
-	Depends: %N-base (>= %v-%r)
-	Replaces: <<
-		%N (<< %v-%r),
-		%N-dev (<< %v-%r),
-		%N-shlibs (<< %v-%r)
-	<<
-	Recommends: %N (>= %v-%r)
-	Files: <<
-		bin/keduca*
-		lib/kde3/*keduca*
-		lib/libkdeinit_*keduca*
-		share/applications/kde/keduca*
-		share/apps/keduca
-		share/config.kcfg/keduca*
-		share/doc/kde/en/keduca
-		share/icons/hicolor/128x128/apps/keduca*
-		share/icons/hicolor/16x16/apps/keduca*
-		share/icons/hicolor/22x22/apps/keduca*
-		share/icons/hicolor/32x32/apps/keduca*
-		share/icons/hicolor/48x48/apps/keduca*
-		share/icons/hicolor/64x64/apps/keduca*
-		share/mimelnk/application/x-edu*
-		share/services/keduca_part*
-	<<
-	Shlibs: <<
-		!%p/lib/libkdeinit_keduca.dylib
-		!%p/lib/libkdeinit_keducabuilder.dylib
-	<<
-	Homepage: http://edu.kde.org/keduca/
-	DescDetail: <<
-KEduca allows the creation and revision of form-based tests and exams.
-It supports the idea of multiple databases with public questions and
-answers that can be shared among users via the Internet.
-	<<
-	DescUsage: <<
----[ Installation ]---------------------------------------------------
-
-To install all of the official KDE packages, install "bundle-kde" or
-"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
-downloading strong cryptography).  Unless you have a specific reason
-not to, "bundle-kde-ssl" is suggested.
-
----[ Configuration ]--------------------------------------------------
-
-To use KDE as your windowing system in XDarwin, create a file called
-".xinitrc" in your home directory, containing the following line:
-
-  /sw/bin/startkde >/tmp/kde.log 2>&1
-
-See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
-for more information on the xinitrc files and how they work.
-
-If you want to use Apple's X11 instead of the KDE window manager,
-put the following line before the startkde line in .xinitrc:
-
-  export KDEWM=quartz-wm
-
-If you want to disable quartz-wm even for clipboard synchronization
-(proxying), put the following line before the startkde line in
-.xinitrc:
-
-  export DISABLE_PROXY=1
-
----[ Startup ]--------------------------------------------------------
-
-Once you have created an ~/.xinitrc file, you should be able to start
-KDE by clicking on the "XDarwin" icon in your Applications folder.  
-
-NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
-If you run KDE in rootless mode, it will take over your desktop with
-a window that covers everything up.  You can remove this by disabling
-desktop icons in the KDE control center.  Open the control center
-(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
-then expand the "Desktop" list, click "Behavior", and uncheck the
-"Show icons on desktop" checkbox.
-   
----[ Removal ]--------------------------------------------------------
-   
-To remove all of the official KDE packages, you can remove the KDE
-libraries and anything that depends on them by running, in a terminal:
-   
-  sudo apt-get remove kdelibs3-unified-shlibs
-
-To remove an individual KDE package collection (like kdenetwork3 or
-kdesdk3) you can generally remove [package]-base.  For example, to
-remove all of the kdenetwork3 packages, run:
-
-  sudo apt-get remove kdenetwork3-base
-	<<
-<<
-SplitOff4: <<
-	Package: khangman
-	Description: KDE - hangman word game
-	Depends: <<
-		%N-base (>= %v-%r),
-		%N-common (>= %v-%r)
-	<<
-	Replaces: <<
-		%N (<< %v-%r),
-		%N-dev (<< %v-%r),
-		%N-shlibs (<< %v-%r)
-	<<
-	Recommends: %N (>= %v-%r)
-	Files: <<
-		bin/khangman
-		lib/kde3/khangman.*
-		lib/libkdeinit_khangman*
-		share/applications/kde/khangman.desktop
-		share/apps/khangman
-		share/config.kcfg/khangman.kcfg
-		share/config/khangmanrc
-		share/doc/kde/en/khangman
-		share/icons/hicolor/128x128/apps/khangman*
-		share/icons/hicolor/16x16/apps/khangman*
-		share/icons/hicolor/22x22/apps/khangman*
-		share/icons/hicolor/32x32/apps/khangman*
-		share/icons/hicolor/48x48/apps/khangman*
-		share/icons/hicolor/64x64/apps/khangman*
-		share/icons/hicolor/scalable/apps/khangman*
-	<<
-	Shlibs: !%p/lib/libkdeinit_khangman.dylib
-	Homepage: http://edu.kde.org/khangman/
-	DescDetail: <<
-KHangman is the classical hangman game.  The child should guess a
-word letter by letter.  At each miss, the picture of a hangman
-appears.  After 10 tries, if the word is not guessed, the game is
-over and the answer is displayed.
-	<<
-	DescUsage: <<
----[ Installation ]---------------------------------------------------
-
-To install all of the official KDE packages, install "bundle-kde" or
-"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
-downloading strong cryptography).  Unless you have a specific reason
-not to, "bundle-kde-ssl" is suggested.
-
----[ Configuration ]--------------------------------------------------
-
-To use KDE as your windowing system in XDarwin, create a file called
-".xinitrc" in your home directory, containing the following line:
-
-  /sw/bin/startkde >/tmp/kde.log 2>&1
-
-See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
-for more information on the xinitrc files and how they work.
-
-If you want to use Apple's X11 instead of the KDE window manager,
-put the following line before the startkde line in .xinitrc:
-
-  export KDEWM=quartz-wm
-
-If you want to disable quartz-wm even for clipboard synchronization
-(proxying), put the following line before the startkde line in
-.xinitrc:
-
-  export DISABLE_PROXY=1
-
----[ Startup ]--------------------------------------------------------
-
-Once you have created an ~/.xinitrc file, you should be able to start
-KDE by clicking on the "XDarwin" icon in your Applications folder.  
-
-NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
-If you run KDE in rootless mode, it will take over your desktop with
-a window that covers everything up.  You can remove this by disabling
-desktop icons in the KDE control center.  Open the control center
-(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
-then expand the "Desktop" list, click "Behavior", and uncheck the
-"Show icons on desktop" checkbox.
-   
----[ Removal ]--------------------------------------------------------
-   
-To remove all of the official KDE packages, you can remove the KDE
-libraries and anything that depends on them by running, in a terminal:
-   
-  sudo apt-get remove kdelibs3-unified-shlibs
-
-To remove an individual KDE package collection (like kdenetwork3 or
-kdesdk3) you can generally remove [package]-base.  For example, to
-remove all of the kdenetwork3 packages, run:
-
-  sudo apt-get remove kdenetwork3-base
-	<<
-<<
-SplitOff5: <<
-	Package: kig
-	Description: KDE - explore geometric constructions
-	Depends: %N-base (>= %v-%r)
-	Replaces: <<
-		%N (<< %v-%r),
-		%N-dev (<< %v-%r),
-		%N-shlibs (<< %v-%r)
-	<<
-	Recommends: %N (>= %v-%r)
-	Files: <<
-		bin/kig
-		bin/pykig.py
-		lib/kde3/kfile_drgeo*
-		lib/kde3/kfile_kig*
-		lib/kde3/libkig*
-		lib/kde3/kig.*
-		lib/libkdeinit_kig*
-		share/applications/kde/kig.desktop
-		share/apps/kig
-		share/config/magic/cabri.magic
-		share/config/magic/drgeo.magic
-		share/doc/kde/en/kig
-		share/icons/crystalsvg/128x128/mimetypes/kig_doc*
-		share/icons/crystalsvg/16x16/mimetypes/kig_doc*
-		share/icons/crystalsvg/22x22/mimetypes/kig_doc*
-		share/icons/crystalsvg/32x32/mimetypes/kig_doc*
-		share/icons/crystalsvg/48x48/mimetypes/kig_doc*
-		share/icons/crystalsvg/64x64/mimetypes/kig_doc*
-		share/icons/crystalsvg/scalable/mimetypes/kig_doc*
-		share/icons/hicolor/128x128/apps/kig*
-		share/icons/hicolor/16x16/apps/kig*
-		share/icons/hicolor/22x22/apps/kig*
-		share/icons/hicolor/32x32/apps/kig*
-		share/icons/hicolor/48x48/apps/kig*
-		share/icons/hicolor/64x64/apps/kig*
-		share/icons/hicolor/scalable/apps/kig*
-		share/mimelnk/application/x-cabri.*
-		share/mimelnk/application/x-drgeo.*
-		share/mimelnk/application/x-kgeo.*
-		share/mimelnk/application/x-kig.*
-		share/mimelnk/application/x-kseg.*
-		share/services/kfile_drgeo.*
-		share/services/kfile_kig.*
-		share/services/kig*
-	<<
-	Shlibs: !%p/lib/libkdeinit_kig.dylib
-	Homepage: http://edu.kde.org/kig/
-	DescDetail: <<
-Kig is a program for exploring geometric constructions.  It is meant as a
-better replacement for such free programs as KGeo, KSeg and Dr. Geo and
-commercial programs like Cabri.
-	<<
-	DescUsage: <<
----[ Installation ]---------------------------------------------------
-
-To install all of the official KDE packages, install "bundle-kde" or
-"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
-downloading strong cryptography).  Unless you have a specific reason
-not to, "bundle-kde-ssl" is suggested.
-
----[ Configuration ]--------------------------------------------------
-
-To use KDE as your windowing system in XDarwin, create a file called
-".xinitrc" in your home directory, containing the following line:
-
-  /sw/bin/startkde >/tmp/kde.log 2>&1
-
-See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
-for more information on the xinitrc files and how they work.
-
-If you want to use Apple's X11 instead of the KDE window manager,
-put the following line before the startkde line in .xinitrc:
-
-  export KDEWM=quartz-wm
-
-If you want to disable quartz-wm even for clipboard synchronization
-(proxying), put the following line before the startkde line in
-.xinitrc:
-
-  export DISABLE_PROXY=1
-
----[ Startup ]--------------------------------------------------------
-
-Once you have created an ~/.xinitrc file, you should be able to start
-KDE by clicking on the "XDarwin" icon in your Applications folder.  
-
-NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
-If you run KDE in rootless mode, it will take over your desktop with
-a window that covers everything up.  You can remove this by disabling
-desktop icons in the KDE control center.  Open the control center
-(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
-then expand the "Desktop" list, click "Behavior", and uncheck the
-"Show icons on desktop" checkbox.
-   
----[ Removal ]--------------------------------------------------------
-   
-To remove all of the official KDE packages, you can remove the KDE
-libraries and anything that depends on them by running, in a terminal:
-   
-  sudo apt-get remove kdelibs3-unified-shlibs
-
-To remove an individual KDE package collection (like kdenetwork3 or
-kdesdk3) you can generally remove [package]-base.  For example, to
-remove all of the kdenetwork3 packages, run:
-
-  sudo apt-get remove kdenetwork3-base
-	<<
-<<
-SplitOff6: <<
-	Package: kiten
-	Description: KDE - Japanese reference and learning tool
-	Depends: %N-base (>= %v-%r)
-	Replaces: <<
-		%N (<< %v-%r),
-		%N-dev (<< %v-%r),
-		%N-shlibs (<< %v-%r)
-	<<
-	Recommends: %N (>= %v-%r)
-	Files: <<
-		bin/kiten
-		bin/kitengen
-		lib/kde3/*kiten*
-		lib/libkdeinit_kiten*
-		lib/libkiten.*.dylib
-		share/applications/kde/kiten.desktop
-		share/apps/kiten
-		share/config.kcfg/kiten.kcfg
-		share/doc/kde/en/kiten
-		share/icons/locolor/16x16/actions/edit_*
-		share/icons/hicolor/128x128/apps/kiten*
-		share/icons/crystalsvg/16x16/actions/kanjidic*
-		share/icons/crystalsvg/22x22/actions/edit_*
-		share/icons/crystalsvg/22x22/actions/kanjidic*
-		share/icons/hicolor/16x16/apps/kiten*
-		share/icons/hicolor/32x32/apps/kiten*
-		share/icons/hicolor/48x48/apps/kiten*
-		share/icons/hicolor/scalable/apps/kiten*
-	<<
-	Shlibs: <<
-		%p/lib/libkiten.1.dylib 2.0.0 kiten (>= 3.5.0-1)
-		!%p/lib/libkdeinit_kiten.dylib
-	<<
-	Homepage: http://edu.kde.org/kiten/
-	DescDetail: <<
-Kiten is a Japanese reference/learning tool.
-Kiten features:
-
-	* Search with english keyword, Japanese reading, or a Kanji string on a
-		list of EDICT files.
-	* Search with english keyword, Japanese reading, number of strokes,
-		grade number, or a Kanji on a list of KANJIDIC files.
-	* Comes with all necessary files.
-	* Very fast.
-	* Limit searches to only common entries.
-	* Nested searches of results possible.
-	* Compact, small, fast interface.
-	* Global KDE keybindings for searching highlighted strings.
-	* Learning dialog. (One can even open up multiple ones and have them sync
-		between each other.)
-	* Browse Kanji by grade.
-	* Add Kanji to a list for later learning.
-	* Browse list, and get quizzed on them.
-	<<
-	DescUsage: <<
----[ Installation ]---------------------------------------------------
-
-To install all of the official KDE packages, install "bundle-kde" or
-"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
-downloading strong cryptography).  Unless you have a specific reason
-not to, "bundle-kde-ssl" is suggested.
-
----[ Configuration ]--------------------------------------------------
-
-To use KDE as your windowing system in XDarwin, create a file called
-".xinitrc" in your home directory, containing the following line:
-
-  /sw/bin/startkde >/tmp/kde.log 2>&1
-
-See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
-for more information on the xinitrc files and how they work.
-
-If you want to use Apple's X11 instead of the KDE window manager,
-put the following line before the startkde line in .xinitrc:
-
-  export KDEWM=quartz-wm
-
-If you want to disable quartz-wm even for clipboard synchronization
-(proxying), put the following line before the startkde line in
-.xinitrc:
-
-  export DISABLE_PROXY=1
-
----[ Startup ]--------------------------------------------------------
-
-Once you have created an ~/.xinitrc file, you should be able to start
-KDE by clicking on the "XDarwin" icon in your Applications folder.  
-
-NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
-If you run KDE in rootless mode, it will take over your desktop with
-a window that covers everything up.  You can remove this by disabling
-desktop icons in the KDE control center.  Open the control center
-(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
-then expand the "Desktop" list, click "Behavior", and uncheck the
-"Show icons on desktop" checkbox.
-   
----[ Removal ]--------------------------------------------------------
-   
-To remove all of the official KDE packages, you can remove the KDE
-libraries and anything that depends on them by running, in a terminal:
-   
-  sudo apt-get remove kdelibs3-unified-shlibs
-
-To remove an individual KDE package collection (like kdenetwork3 or
-kdesdk3) you can generally remove [package]-base.  For example, to
-remove all of the kdenetwork3 packages, run:
-
-  sudo apt-get remove kdenetwork3-base
-	<<
-<<
-SplitOff7: <<
-	Package: klettres
-	Description: KDE - multi-language alphabet learning aid
-	Depends: %N-base (>= %v-%r)
-	Replaces: <<
-		%N (<< %v-%r),
-		%N-dev (<< %v-%r),
-		%N-shlibs (<< %v-%r)
-	<<
-	Recommends: %N (>= %v-%r)
-	Files: <<
-		bin/klettres
-		lib/kde3/klettres.*
-		lib/libkdeinit_klettres*
-		share/applications/kde/klettres.desktop
-		share/apps/klettres
-		share/config.kcfg/klettres*
-		share/config/klettresrc
-		share/doc/kde/en/klettres
-		share/icons/hicolor/128x128/apps/klettres*
-		share/icons/hicolor/16x16/apps/klettres*
-		share/icons/hicolor/22x22/apps/klettres*
-		share/icons/hicolor/32x32/apps/klettres*
-		share/icons/hicolor/48x48/apps/klettres*
-		share/icons/hicolor/scalable/apps/klettres*
-	<<
-	Shlibs: !%p/lib/libkdeinit_klettres.dylib
-	Homepage: http://edu.kde.org/klettres/
-	DescDetail: <<
-KLettres aims to help to learn the alphabet and then to read some
-syllables in different languages.  It is meant to help learning the
-very first sounds of a new language, for children or for adults.
-
-Currently available are: Czech, Danish, Dutch, English, French,
-Italian and Slovak, you can choose using the Languages menu.  A
-toolbar with the special characters per language is now provided if
-you don't have the correct country keyboard or the keyboard layout
-to be able to display correctly the accented letters.
-	<<
-	DescUsage: <<
----[ Installation ]---------------------------------------------------
-
-To install all of the official KDE packages, install "bundle-kde" or
-"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
-downloading strong cryptography).  Unless you have a specific reason
-not to, "bundle-kde-ssl" is suggested.
-
----[ Configuration ]--------------------------------------------------
-
-To use KDE as your windowing system in XDarwin, create a file called
-".xinitrc" in your home directory, containing the following line:
-
-  /sw/bin/startkde >/tmp/kde.log 2>&1
-
-See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
-for more information on the xinitrc files and how they work.
-
-If you want to use Apple's X11 instead of the KDE window manager,
-put the following line before the startkde line in .xinitrc:
-
-  export KDEWM=quartz-wm
-
-If you want to disable quartz-wm even for clipboard synchronization
-(proxying), put the following line before the startkde line in
-.xinitrc:
-
-  export DISABLE_PROXY=1
-
----[ Startup ]--------------------------------------------------------
-
-Once you have created an ~/.xinitrc file, you should be able to start
-KDE by clicking on the "XDarwin" icon in your Applications folder.  
-
-NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
-If you run KDE in rootless mode, it will take over your desktop with
-a window that covers everything up.  You can remove this by disabling
-desktop icons in the KDE control center.  Open the control center
-(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
-then expand the "Desktop" list, click "Behavior", and uncheck the
-"Show icons on desktop" checkbox.
-   
----[ Removal ]--------------------------------------------------------
-   
-To remove all of the official KDE packages, you can remove the KDE
-libraries and anything that depends on them by running, in a terminal:
-   
-  sudo apt-get remove kdelibs3-unified-shlibs
-
-To remove an individual KDE package collection (like kdenetwork3 or
-kdesdk3) you can generally remove [package]-base.  For example, to
-remove all of the kdenetwork3 packages, run:
-
-  sudo apt-get remove kdenetwork3-base
-	<<
-<<
-SplitOff8: <<
-	Package: kmplot
-	Description: KDE - mathematical function plotter
-	Depends: %N-base (>= %v-%r)
-	Replaces: <<
-		%N (<< %v-%r),
-		%N-dev (<< %v-%r),
-		%N-shlibs (<< %v-%r)
-	<<
-	Recommends: %N (>= %v-%r)
-	Files: <<
-		bin/kmplot
-		lib/kde3/*kmplot*
-		lib/libkdeinit_kmplot*
-		share/applications/kde/kmplot*
-		share/apps/kmplot
-		share/config.kcfg/kmplot*
-		share/doc/kde/en/kmplot
-		share/icons/hicolor/128x128/apps/kmplot*
-		share/icons/hicolor/16x16/apps/kmplot*
-		share/icons/hicolor/22x22/apps/kmplot*
-		share/icons/hicolor/32x32/apps/kmplot*
-		share/icons/hicolor/48x48/apps/kmplot*
-		share/icons/hicolor/64x64/apps/kmplot*
-		share/icons/hicolor/scalable/apps/kmplot*
-		share/mimelnk/application/x-kmplot*
-		share/services/kmplot*
-	<<
-	Shlibs: !%p/lib/libkdeinit_kmplot.dylib
-	Homepage: http://edu.kde.org/kmplot/
-	DescDetail: <<
-KmPlot is a mathematical function plotter for the KDE-Desktop.
-
-It has built in a powerfull parser.  You can plot different functions
-simultaneously and combine their function terms to build new
-functions.  KmPLot supports functions with parameters and functions in
-polar coordinates.  Several grid modes are possible.  Plots may be
-printed with high precision in correct scale.
-	<<
-	DescUsage: <<
----[ Installation ]---------------------------------------------------
-
-To install all of the official KDE packages, install "bundle-kde" or
-"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
-downloading strong cryptography).  Unless you have a specific reason
-not to, "bundle-kde-ssl" is suggested.
-
----[ Configuration ]--------------------------------------------------
-
-To use KDE as your windowing system in XDarwin, create a file called
-".xinitrc" in your home directory, containing the following line:
-
-  /sw/bin/startkde >/tmp/kde.log 2>&1
-
-See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
-for more information on the xinitrc files and how they work.
-
-If you want to use Apple's X11 instead of the KDE window manager,
-put the following line before the startkde line in .xinitrc:
-
-  export KDEWM=quartz-wm
-
-If you want to disable quartz-wm even for clipboard synchronization
-(proxying), put the following line before the startkde line in
-.xinitrc:
-
-  export DISABLE_PROXY=1
-
----[ Startup ]--------------------------------------------------------
-
-Once you have created an ~/.xinitrc file, you should be able to start
-KDE by clicking on the "XDarwin" icon in your Applications folder.  
-
-NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
-If you run KDE in rootless mode, it will take over your desktop with
-a window that covers everything up.  You can remove this by disabling
-desktop icons in the KDE control center.  Open the control center
-(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
-then expand the "Desktop" list, click "Behavior", and uncheck the
-"Show icons on desktop" checkbox.
-   
----[ Removal ]--------------------------------------------------------
-   
-To remove all of the official KDE packages, you can remove the KDE
-libraries and anything that depends on them by running, in a terminal:
-   
-  sudo apt-get remove kdelibs3-unified-shlibs
-
-To remove an individual KDE package collection (like kdenetwork3 or
-kdesdk3) you can generally remove [package]-base.  For example, to
-remove all of the kdenetwork3 packages, run:
-
-  sudo apt-get remove kdenetwork3-base
-	<<
-<<
-SplitOff9: <<
-	Package: kpercentage
-	Description: KDE - practice calculating percentages
-	Depends: %N-base (>= %v-%r)
-	Replaces: <<
-		%N (<< %v-%r),
-		%N-dev (<< %v-%r),
-		%N-shlibs (<< %v-%r)
-	<<
-	Recommends: %N (>= %v-%r)
-	Files: <<
-		bin/kpercentage
-		lib/kde3/kpercentage.*
-		lib/libkdeinit_kpercentage*
-		share/applications/kde/kpercentage.desktop
-		share/apps/kpercentage
-		share/doc/kde/en/kpercentage
-		share/icons/hicolor/128x128/apps/kpercentage*
-		share/icons/hicolor/16x16/apps/kpercentage*
-		share/icons/hicolor/22x22/apps/kpercentage*
-		share/icons/hicolor/32x32/apps/kpercentage*
-		share/icons/hicolor/48x48/apps/kpercentage*
-		share/icons/hicolor/scalable/apps/kpercentage*
-	<<
-	Shlibs: !%p/lib/libkdeinit_kpercentage.dylib
-	Homepage: http://edu.kde.org/kpercentage/
-	DescDetail: <<
-KPercentage is a small math application that will help pupils to
-improve their skills in calculating percentages.
-	<<
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
 

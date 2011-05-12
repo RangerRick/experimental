@@ -18,7 +18,7 @@ Depends: <<
 	okteta4-%type_pkg[kde] (>= %v-%r)
 <<
 BuildDepends: <<
-	automoc-%type_pkg[kde] (>= 0.9.89-0),
+	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
 	qimageblitz-unified-%type_pkg[kde],
 	cmake (>= 2.8.2-1),
 	dbus1.3-dev (>= 1.2.24-1),
@@ -34,7 +34,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	libzip1,
 	pkgconfig (>= 0.23-1),
-	qt4-%type_pkg[kde] (>= 4.7.1-1),
+	qt4-%type_pkg[kde] (>= 4.7.3-1),
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
@@ -111,61 +111,6 @@ SplitOff: <<
 	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libkerfuffle.4.dylib
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff10: <<
-	Package: okteta4-%type_pkg[kde]
-	Description: KDE4 - hex editor
-	Depends: %N-base (>= %v-%r)
-	Replaces: %N-base (<< 4.4.1-1)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/okteta*
-		opt/kde4/%type_pkg[kde]/lib/kde4/libkbytearray*
-		opt/kde4/%type_pkg[kde]/lib/kde4/oktetapart*
-		opt/kde4/%type_pkg[kde]/lib/kde4/plugins/designer/okteta*
-		opt/kde4/%type_pkg[kde]/lib/libkastencontrollers.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkastencore.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkastengui.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/liboktetakastencontrollers.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/liboktetakastencore.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/liboktetakastengui.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/liboktetacore.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/liboktetagui.4*.dylib
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/okteta*
-		opt/kde4/%type_pkg[kde]/share/apps/okteta*
-		opt/kde4/%type_pkg[kde]/share/config.kcfg/structview*
-		opt/kde4/%type_pkg[kde]/share/config/okteta*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/okteta
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/okteta*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/okteta*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/okteta*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/kbytearray*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/okteta*
-		opt/kde4/%type_pkg[kde]/share/mime/packages/okteta*
-	<<
-	Shlibs: <<
-		!%p/opt/kde4/%type_pkg[kde]/lib/libkastencontrollers.4.dylib
-		!%p/opt/kde4/%type_pkg[kde]/lib/libkastencore.4.dylib
-		!%p/opt/kde4/%type_pkg[kde]/lib/libkastengui.4.dylib
-		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetakastencontrollers.4.dylib
-		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetakastencore.4.dylib
-		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetakastengui.4.dylib
-		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetacore.4.dylib
-		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetagui.4.dylib
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff12: <<
-	Package: sweeper4-%type_pkg[kde]
-	Description: KDE4 - history and temp file cleaner
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/sweeper*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/sweeper*
-		opt/kde4/%type_pkg[kde]/share/apps/sweeper
-		opt/kde4/%type_pkg[kde]/share/dbus-1/interfaces/org.kde.sweeper*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/sweeper
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
 SplitOff2: <<
 	Package: kcalc4-%type_pkg[kde]
 	Description: KDE4 - calculator
@@ -184,12 +129,6 @@ SplitOff2: <<
 	<<
 	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kcalc.dylib
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff20: <<
-	Package: %N-base
-	Description: KDE4 - kdeutils base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1)
-	Files: opt share/doc/installed-packages/%n
 <<
 SplitOff3: <<
 	Package: kcharselect4-%type_pkg[kde]
@@ -304,6 +243,67 @@ SplitOff9: <<
 		opt/kde4/%type_pkg[kde]/lib/liboktetacore.dylib
 		opt/kde4/%type_pkg[kde]/lib/liboktetagui.dylib
 	<<
+<<
+SplitOff10: <<
+	Package: okteta4-%type_pkg[kde]
+	Description: KDE4 - hex editor
+	Depends: %N-base (>= %v-%r)
+	Replaces: %N-base (<< 4.4.1-1)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/okteta*
+		opt/kde4/%type_pkg[kde]/lib/kde4/libkbytearray*
+		opt/kde4/%type_pkg[kde]/lib/kde4/oktetapart*
+		opt/kde4/%type_pkg[kde]/lib/kde4/plugins/designer/okteta*
+		opt/kde4/%type_pkg[kde]/lib/libkastencontrollers.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkastencore.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkastengui.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/liboktetakastencontrollers.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/liboktetakastencore.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/liboktetakastengui.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/liboktetacore.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/liboktetagui.4*.dylib
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/okteta*
+		opt/kde4/%type_pkg[kde]/share/apps/okteta*
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/structview*
+		opt/kde4/%type_pkg[kde]/share/config/okteta*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/okteta
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/okteta*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/okteta*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/okteta*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/kbytearray*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/okteta*
+		opt/kde4/%type_pkg[kde]/share/mime/packages/okteta*
+	<<
+	Shlibs: <<
+		!%p/opt/kde4/%type_pkg[kde]/lib/libkastencontrollers.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/libkastencore.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/libkastengui.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetakastencontrollers.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetakastencore.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetakastengui.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetacore.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/liboktetagui.4.dylib
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff12: <<
+	Package: sweeper4-%type_pkg[kde]
+	Description: KDE4 - history and temp file cleaner
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/sweeper*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/sweeper*
+		opt/kde4/%type_pkg[kde]/share/apps/sweeper
+		opt/kde4/%type_pkg[kde]/share/dbus-1/interfaces/org.kde.sweeper*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/sweeper
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff20: <<
+	Package: %N-base
+	Description: KDE4 - kdeutils base package
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1)
+	Files: opt share/doc/installed-packages/%n
 <<
 
 DescDetail: 

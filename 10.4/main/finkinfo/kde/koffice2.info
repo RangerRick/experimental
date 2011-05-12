@@ -16,7 +16,7 @@ Depends: <<
 	kword2-%type_pkg[kde] (>= %v-%r)
 <<
 BuildDepends: <<
-	automoc-%type_pkg[kde] (>= 0.9.89-0),
+	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
 	qimageblitz-unified-%type_pkg[kde],
 	boost1.41.cmake,
 	cmake (>= 2.8.2-1),
@@ -51,7 +51,7 @@ BuildDepends: <<
 	pstoedit-bin,
 	python25,
 	qca2-%type_pkg[kde] (>= 2.0.3-1),
-	qt4-%type_pkg[kde] (>= 4.7.1-1),
+	qt4-%type_pkg[kde] (>= 4.7.3-1),
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
@@ -129,112 +129,6 @@ SplitOff: <<
 	<<
 	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_karbon.dylib
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff10: <<
-	Package: %N-base-shlibs
-	Description: KDE4 - koffice base shared libraries
-	Depends: <<
-		karbon2-%type_pkg[kde]-shlibs (>= %v-%r),
-		kdebase4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
-		kdepimlibs4-%type_pkg[kde]-shlibs,
-		lcms-shlibs,
-		libwpd-0.8-shlibs (>= 0.8.14-1),
-		libxml2-shlibs (>= 2.6.32-1),
-		libxslt-shlibs (>= 1.1.0-1),
-		qca2-%type_pkg[kde]-shlibs (>= 2.0.3-1),
-		wv2.4-shlibs
-	<<
-	Files: <<
-		opt/kde4/%type_pkg[kde]/lib/kde4
-		opt/kde4/%type_pkg[kde]/lib/libchartshapelib.5*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libflake.5*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkchartcommon.5*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkdchart.5*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkochart.5*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkoffice*.5*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkoguiutils.5*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkokross.5*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkomain.5*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkoodf.5*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkopageapp.5*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkoresources.5*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkostore.5*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkotext.5*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkowmf.5*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkwmf.5*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkwordexportfilters.5*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libpigmentcms.5*.dylib
-	<<
-	Shlibs: <<
-		%p/opt/kde4/%type_pkg[kde]/lib/libchartshapelib.5.dylib            5.0.0 %n (>= 1.9.98.7-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libflake.5.dylib                    5.0.0 %n (>= 1.9.98.7-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkchartcommon.5.dylib             5.0.0 %n (>= 1.9.98.7-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkdchart.5.dylib                  5.0.0 %n (>= 1.9.98.7-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkochart.5.dylib                  5.0.0 %n (>= 1.9.98.7-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkoffice_graya_u16.5.dylib        5.0.0 %n (>= 1.9.99.0-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkofficegrayau8colorspace.5.dylib 5.0.0 %n (>= 1.9.99.0-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkoguiutils.5.dylib               5.0.0 %n (>= 1.9.98.7-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkokross.5.dylib                  5.0.0 %n (>= 1.9.98.7-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkomain.5.dylib                   5.0.0 %n (>= 1.9.98.7-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkoodf.5.dylib                    5.0.0 %n (>= 1.9.98.7-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkopageapp.5.dylib                5.0.0 %n (>= 1.9.98.7-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkoresources.5.dylib              5.0.0 %n (>= 1.9.98.7-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkostore.5.dylib                  5.0.0 %n (>= 1.9.98.7-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkotext.5.dylib                   5.0.0 %n (>= 1.9.98.7-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkowmf.5.dylib                    5.0.0 %n (>= 1.9.98.7-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkwmf.5.dylib                     5.0.0 %n (>= 1.9.98.7-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkwordexportfilters.5.dylib       5.0.0 %n (>= 1.9.98.7-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libpigmentcms.5.dylib               5.0.0 %n (>= 1.9.98.7-1)
-	<<
-<<
-SplitOff11: <<
-	Package: karbon2-%type_pkg[kde]-shlibs
-	Description: KDE4 - karbon shared libraries
-	Depends: %N-base (>= %v-%r)
-	Replaces: karbon2-%type_pkg[kde] (<< 1.9.99.0-2)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/lib/libkarboncommon.5*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkarbonui.5*.dylib
-	<<
-	Shlibs: <<
-		%p/opt/kde4/%type_pkg[kde]/lib/libkarboncommon.5.dylib 5.0.0 %n (>= 1.9.98.7-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkarbonui.5.dylib     5.0.0 %n (>= 1.9.98.7-1)
-	<<
-<<
-SplitOff12: <<
-	Package: %N-base
-	Description: KDE4 - koffice base package
-	Depends: <<
-		create-resources (>= 0.1-1),
-		kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1),
-		%N-base-shlibs (>= %v-%r)
-	<<
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin
-		opt/kde4/%type_pkg[kde]/lib/libkdeinit4_*.dylib
-		opt/kde4/%type_pkg[kde]/share/applications/kde4
-		opt/kde4/%type_pkg[kde]/share/apps/kchart
-		opt/kde4/%type_pkg[kde]/share/apps/koffice
-		opt/kde4/%type_pkg[kde]/share/apps/musicshape
-		opt/kde4/%type_pkg[kde]/share/apps/xsltfilter
-		opt/kde4/%type_pkg[kde]/share/color
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kchart
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/koffice
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/thesaurus
-		opt/kde4/%type_pkg[kde]/share/icons
-		opt/kde4/%type_pkg[kde]/share/kde4/services
-		opt/kde4/%type_pkg[kde]/share/kde4/servicetypes
-	<<
-	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kthesaurus.dylib
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff13: <<
-	Package: %N-dev
-	Description: KDE4 - koffice development headers and libs
-	Depends: %N (>= %v-%r)
-	BuildDependsOnly: true
-	Files: opt
 <<
 SplitOff2: <<
 	Package: kplato2-%type_pkg[kde]
@@ -430,6 +324,112 @@ SplitOff6: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libkwordprivate.5.dylib  5.0.0 %n (>= 1.9.98.7-1)
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff10: <<
+	Package: %N-base-shlibs
+	Description: KDE4 - koffice base shared libraries
+	Depends: <<
+		karbon2-%type_pkg[kde]-shlibs (>= %v-%r),
+		kdebase4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
+		kdepimlibs4-%type_pkg[kde]-shlibs,
+		lcms-shlibs,
+		libwpd-0.8-shlibs (>= 0.8.14-1),
+		libxml2-shlibs (>= 2.6.32-1),
+		libxslt-shlibs (>= 1.1.0-1),
+		qca2-%type_pkg[kde]-shlibs (>= 2.0.3-1),
+		wv2.4-shlibs
+	<<
+	Files: <<
+		opt/kde4/%type_pkg[kde]/lib/kde4
+		opt/kde4/%type_pkg[kde]/lib/libchartshapelib.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libflake.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkchartcommon.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkdchart.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkochart.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkoffice*.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkoguiutils.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkokross.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkomain.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkoodf.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkopageapp.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkoresources.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkostore.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkotext.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkowmf.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkwmf.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkwordexportfilters.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libpigmentcms.5*.dylib
+	<<
+	Shlibs: <<
+		%p/opt/kde4/%type_pkg[kde]/lib/libchartshapelib.5.dylib            5.0.0 %n (>= 1.9.98.7-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libflake.5.dylib                    5.0.0 %n (>= 1.9.98.7-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkchartcommon.5.dylib             5.0.0 %n (>= 1.9.98.7-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkdchart.5.dylib                  5.0.0 %n (>= 1.9.98.7-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkochart.5.dylib                  5.0.0 %n (>= 1.9.98.7-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkoffice_graya_u16.5.dylib        5.0.0 %n (>= 1.9.99.0-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkofficegrayau8colorspace.5.dylib 5.0.0 %n (>= 1.9.99.0-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkoguiutils.5.dylib               5.0.0 %n (>= 1.9.98.7-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkokross.5.dylib                  5.0.0 %n (>= 1.9.98.7-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkomain.5.dylib                   5.0.0 %n (>= 1.9.98.7-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkoodf.5.dylib                    5.0.0 %n (>= 1.9.98.7-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkopageapp.5.dylib                5.0.0 %n (>= 1.9.98.7-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkoresources.5.dylib              5.0.0 %n (>= 1.9.98.7-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkostore.5.dylib                  5.0.0 %n (>= 1.9.98.7-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkotext.5.dylib                   5.0.0 %n (>= 1.9.98.7-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkowmf.5.dylib                    5.0.0 %n (>= 1.9.98.7-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkwmf.5.dylib                     5.0.0 %n (>= 1.9.98.7-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkwordexportfilters.5.dylib       5.0.0 %n (>= 1.9.98.7-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libpigmentcms.5.dylib               5.0.0 %n (>= 1.9.98.7-1)
+	<<
+<<
+SplitOff11: <<
+	Package: karbon2-%type_pkg[kde]-shlibs
+	Description: KDE4 - karbon shared libraries
+	Depends: %N-base (>= %v-%r)
+	Replaces: karbon2-%type_pkg[kde] (<< 1.9.99.0-2)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/lib/libkarboncommon.5*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkarbonui.5*.dylib
+	<<
+	Shlibs: <<
+		%p/opt/kde4/%type_pkg[kde]/lib/libkarboncommon.5.dylib 5.0.0 %n (>= 1.9.98.7-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkarbonui.5.dylib     5.0.0 %n (>= 1.9.98.7-1)
+	<<
+<<
+SplitOff12: <<
+	Package: %N-base
+	Description: KDE4 - koffice base package
+	Depends: <<
+		create-resources (>= 0.1-1),
+		kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1),
+		%N-base-shlibs (>= %v-%r)
+	<<
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin
+		opt/kde4/%type_pkg[kde]/lib/libkdeinit4_*.dylib
+		opt/kde4/%type_pkg[kde]/share/applications/kde4
+		opt/kde4/%type_pkg[kde]/share/apps/kchart
+		opt/kde4/%type_pkg[kde]/share/apps/koffice
+		opt/kde4/%type_pkg[kde]/share/apps/musicshape
+		opt/kde4/%type_pkg[kde]/share/apps/xsltfilter
+		opt/kde4/%type_pkg[kde]/share/color
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kchart
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/koffice
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/thesaurus
+		opt/kde4/%type_pkg[kde]/share/icons
+		opt/kde4/%type_pkg[kde]/share/kde4/services
+		opt/kde4/%type_pkg[kde]/share/kde4/servicetypes
+	<<
+	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kthesaurus.dylib
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff13: <<
+	Package: %N-dev
+	Description: KDE4 - koffice development headers and libs
+	Depends: %N (>= %v-%r)
+	BuildDependsOnly: true
+	Files: opt
 <<
 
 DescDetail: KOffice is a free, integrated office suite for KDE, the K Desktop Environment.

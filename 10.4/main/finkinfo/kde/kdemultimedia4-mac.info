@@ -14,7 +14,7 @@ Depends: <<
 	mplayerthumbs4-%type_pkg[kde] (>= %v-%r)
 <<
 BuildDepends: <<
-	automoc-%type_pkg[kde] (>= 0.9.89-0),
+	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
 	cmake (>= 2.8.2-1),
 	dbus1.3-dev (>= 1.2.24-1),
 	fink (>= 0.29.7-1),
@@ -34,7 +34,7 @@ BuildDepends: <<
 	libvorbis0,
 	libxine1,
 	pkgconfig (>= 0.23-1),
-	qt4-%type_pkg[kde] (>= 4.7.1-1),
+	qt4-%type_pkg[kde] (>= 4.7.3-1),
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	strigi-dev (>= 0.6.3-1),
 	taglib (>= 1.6.3-1),
@@ -128,42 +128,6 @@ SplitOff2: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff20: <<
-	Package: %N-dev
-	Description: KDE4 - kdemultimedia dev headers and libs
-	Depends: %N (>= %v-%r)
-	BuildDependsOnly: true
-	Files: <<
-		opt/kde4/%type_pkg[kde]/include
-		opt/kde4/%type_pkg[kde]/lib/libkcddb.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkcompactdisc.dylib
-	<<
-<<
-SplitOff21: <<
-	Package: %N-base-shlibs
-	Description: KDE4 - kdemultimedia base shared libraries
-	Depends: <<
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
-		libmusicbrainz4-shlibs
-	<<
-	Files: <<
-		opt/kde4/%type_pkg[kde]/lib/libkcddb.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libkcompactdisc.4*.dylib
-	<<
-	Shlibs: <<
-		%p/opt/kde4/%type_pkg[kde]/lib/libkcddb.4.dylib        4.0.0 %n (>= 4.2.4-1)
-		%p/opt/kde4/%type_pkg[kde]/lib/libkcompactdisc.4.dylib 4.0.0 %n (>= 4.2.4-1)
-	<<
-<<
-SplitOff22: <<
-	Package: %N-base
-	Description: KDE4 - kdemultimedia base package
-	Depends: <<
-		%N-base-shlibs (>= %v-%r),
-		kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1)
-	<<
-	Files: opt
-<<
 SplitOff4: <<
 	Package: kmix4-%type_pkg[kde]
 	Description: KDE4 - volume control and mixer
@@ -208,6 +172,42 @@ SplitOff5: <<
 		!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kmixctrl.dylib
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff20: <<
+	Package: %N-dev
+	Description: KDE4 - kdemultimedia dev headers and libs
+	Depends: %N (>= %v-%r)
+	BuildDependsOnly: true
+	Files: <<
+		opt/kde4/%type_pkg[kde]/include
+		opt/kde4/%type_pkg[kde]/lib/libkcddb.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkcompactdisc.dylib
+	<<
+<<
+SplitOff21: <<
+	Package: %N-base-shlibs
+	Description: KDE4 - kdemultimedia base shared libraries
+	Depends: <<
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
+		libmusicbrainz4-shlibs
+	<<
+	Files: <<
+		opt/kde4/%type_pkg[kde]/lib/libkcddb.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libkcompactdisc.4*.dylib
+	<<
+	Shlibs: <<
+		%p/opt/kde4/%type_pkg[kde]/lib/libkcddb.4.dylib        4.0.0 %n (>= 4.2.4-1)
+		%p/opt/kde4/%type_pkg[kde]/lib/libkcompactdisc.4.dylib 4.0.0 %n (>= 4.2.4-1)
+	<<
+<<
+SplitOff22: <<
+	Package: %N-base
+	Description: KDE4 - kdemultimedia base package
+	Depends: <<
+		%N-base-shlibs (>= %v-%r),
+		kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1)
+	<<
+	Files: opt
 <<
 
 DescDetail: 

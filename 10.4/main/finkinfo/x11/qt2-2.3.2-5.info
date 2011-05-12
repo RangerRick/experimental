@@ -7,13 +7,13 @@ Maintainer: Benjamin Reed <qt2@fink.raccoonfink.com>
 
 Depends: <<
 	x11,
-	libpng14-shlibs,
+	libpng15-shlibs,
 	libjpeg8-shlibs,
 	%N-shlibs (= %v-%r)
 <<
 BuildDepends: <<
 	libjpeg8,
-	libpng14,
+	libpng15,
 	fink (>= 0.29.7-1)
 <<
 Conflicts: <<

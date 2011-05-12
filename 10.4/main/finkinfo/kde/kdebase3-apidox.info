@@ -34,7 +34,7 @@ BuildDepends: <<
 	libiconv-dev,
 	libidn,
 	libogg,
-	libpng14 (>= 1.4.1-2),
+	libpng15 (>= 1.5.2-1),
 	libusb,
 	libvorbis0,
 	libmad,

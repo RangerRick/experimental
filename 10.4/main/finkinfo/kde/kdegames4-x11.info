@@ -46,7 +46,7 @@ Depends: <<
 	lskat4-%type_pkg[kde] (>= %v-%r)
 <<
 BuildDepends: <<
-	automoc-%type_pkg[kde] (>= 0.9.89-0),
+	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
 	cmake (>= 2.8.2-1),
 	dbus1.3-dev (>= 1.2.24-1),
 	fink (>= 0.29.7-1),
@@ -61,7 +61,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	pkgconfig (>= 0.23-1),
 	qca2-%type_pkg[kde] (>= 2.0.3-1),
-	qt4-%type_pkg[kde] (>= 4.7.1-1),
+	qt4-%type_pkg[kde] (>= 4.7.3-1),
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
@@ -138,6 +138,160 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/bomber*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/bomber*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/bomber*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff2: <<
+	Package: bovo4-%type_pkg[kde]
+	Description: KDE4 - gomoku board game
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/bovo*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/bovo*
+		opt/kde4/%type_pkg[kde]/share/apps/bovo
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/bovo
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/bovo*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/bovo*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/bovo*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/bovo*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/bovo*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/bovo*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/bovo*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff3: <<
+	Package: kapman4-%type_pkg[kde]
+	Description: KDE4 - Pac-Man clone
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/kapman*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/kapman*
+		opt/kde4/%type_pkg[kde]/share/apps/kapman
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kapman
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kapman*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kapman*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kapman*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kapman*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kapman*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kapman*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/kapman*
+		opt/kde4/%type_pkg[kde]/share/sounds/kapman
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff4: <<
+	Package: katomic4-%type_pkg[kde]
+	Description: KDE4 - atomix puzzle game
+	Depends: %N-base (>= %v-%r)
+	Replaces: %N-base (<< 4.3.98-1)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/katomic*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/katomic*
+		opt/kde4/%type_pkg[kde]/share/apps/katomic
+		opt/kde4/%type_pkg[kde]/share/apps/kconf_update/katomic*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/katomic
+		opt/kde4/%type_pkg[kde]/share/config/katomic*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/katomic*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/katomic*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/katomic*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/katomic*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/katomic*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/katomic*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff5: <<
+	Package: kbattleship4-%type_pkg[kde]
+	Description: KDE4 - battleship board game
+	Depends: %N-base (>= %v-%r)
+	Replaces: %N-base (<< 4.3.98-1)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/kbattleship*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/kbattleship*
+		opt/kde4/%type_pkg[kde]/share/apps/kbattleship
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kbattleship
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kbattleship*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kbattleship*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kbattleship*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kbattleship*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kbattleship*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kbattleship*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/kbattleship*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff6: <<
+	Package: kblackbox4-%type_pkg[kde]
+	Description: KDE4 - Black Box puzzle game
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/kblackbox*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/kblackbox*
+		opt/kde4/%type_pkg[kde]/share/apps/kblackbox
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kblackbox
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kblackbox*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kblackbox*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kblackbox*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kblackbox*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kblackbox*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kblackbox*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff7: <<
+	Package: kblocks4-%type_pkg[kde]
+	Description: KDE4 - falling blocks game
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/kblocks*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/kblocks*
+		opt/kde4/%type_pkg[kde]/share/apps/kblocks
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/kblocks*
+		opt/kde4/%type_pkg[kde]/share/config/kblocks*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kblocks
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kblocks*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kblocks*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kblocks*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kblocks*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kblocks*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kblocks*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff8: <<
+	Package: kbounce4-%type_pkg[kde]
+	Description: KDE4 - Jezzball arcade game
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/kbounce*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/kbounce*
+		opt/kde4/%type_pkg[kde]/share/apps/kbounce
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kbounce
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kbounce*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kbounce*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kbounce*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kbounce*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kbounce*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kbounce*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff9: <<
+	Package: kbreakout4-%type_pkg[kde]
+	Description: KDE4 - Breakout arcade game
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/kbreakout*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/kbreakout*
+		opt/kde4/%type_pkg[kde]/share/apps/kbreakout
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kbreakout
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kbreakout*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kbreakout*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kbreakout*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kbreakout*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kbreakout*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kbreakout*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
@@ -333,25 +487,6 @@ SplitOff19: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/knetwalk*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/knetwalk*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/knetwalk*
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff2: <<
-	Package: bovo4-%type_pkg[kde]
-	Description: KDE4 - gomoku board game
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/bovo*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/bovo*
-		opt/kde4/%type_pkg[kde]/share/apps/bovo
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/bovo
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/bovo*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/bovo*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/bovo*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/bovo*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/bovo*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/bovo*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/bovo*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
@@ -570,26 +705,6 @@ SplitOff29: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff3: <<
-	Package: kapman4-%type_pkg[kde]
-	Description: KDE4 - Pac-Man clone
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/kapman*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kapman*
-		opt/kde4/%type_pkg[kde]/share/apps/kapman
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kapman
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kapman*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kapman*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kapman*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kapman*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kapman*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kapman*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/kapman*
-		opt/kde4/%type_pkg[kde]/share/sounds/kapman
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
 SplitOff30: <<
 	Package: ksudoku4-%type_pkg[kde]
 	Description: KDE4 - Sudoku puzzle game and solver
@@ -768,27 +883,6 @@ SplitOff37: <<
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libpala.0.dylib 0.0.0 %n (>= 4.3.98-1)
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff4: <<
-	Package: katomic4-%type_pkg[kde]
-	Description: KDE4 - atomix puzzle game
-	Depends: %N-base (>= %v-%r)
-	Replaces: %N-base (<< 4.3.98-1)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/katomic*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/katomic*
-		opt/kde4/%type_pkg[kde]/share/apps/katomic
-		opt/kde4/%type_pkg[kde]/share/apps/kconf_update/katomic*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/katomic
-		opt/kde4/%type_pkg[kde]/share/config/katomic*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/katomic*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/katomic*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/katomic*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/katomic*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/katomic*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/katomic*
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
 SplitOff40: <<
 	Package: %N-dev
 	Description: KDE4 - kdegames developer headers and libs
@@ -833,100 +927,6 @@ SplitOff42: <<
 		qca2-%type_pkg[kde]-shlibs (>= 2.0.3-1)
 	<<
 	Files: opt
-<<
-SplitOff5: <<
-	Package: kbattleship4-%type_pkg[kde]
-	Description: KDE4 - battleship board game
-	Depends: %N-base (>= %v-%r)
-	Replaces: %N-base (<< 4.3.98-1)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/kbattleship*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kbattleship*
-		opt/kde4/%type_pkg[kde]/share/apps/kbattleship
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kbattleship
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kbattleship*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kbattleship*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kbattleship*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kbattleship*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kbattleship*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kbattleship*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/kbattleship*
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff6: <<
-	Package: kblackbox4-%type_pkg[kde]
-	Description: KDE4 - Black Box puzzle game
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/kblackbox*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kblackbox*
-		opt/kde4/%type_pkg[kde]/share/apps/kblackbox
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kblackbox
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kblackbox*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kblackbox*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kblackbox*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kblackbox*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kblackbox*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kblackbox*
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff7: <<
-	Package: kblocks4-%type_pkg[kde]
-	Description: KDE4 - falling blocks game
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/kblocks*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kblocks*
-		opt/kde4/%type_pkg[kde]/share/apps/kblocks
-		opt/kde4/%type_pkg[kde]/share/config.kcfg/kblocks*
-		opt/kde4/%type_pkg[kde]/share/config/kblocks*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kblocks
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kblocks*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kblocks*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kblocks*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kblocks*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kblocks*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kblocks*
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff8: <<
-	Package: kbounce4-%type_pkg[kde]
-	Description: KDE4 - Jezzball arcade game
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/kbounce*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kbounce*
-		opt/kde4/%type_pkg[kde]/share/apps/kbounce
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kbounce
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kbounce*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kbounce*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kbounce*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kbounce*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kbounce*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kbounce*
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff9: <<
-	Package: kbreakout4-%type_pkg[kde]
-	Description: KDE4 - Breakout arcade game
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/kbreakout*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kbreakout*
-		opt/kde4/%type_pkg[kde]/share/apps/kbreakout
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kbreakout
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kbreakout*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kbreakout*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kbreakout*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kbreakout*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kbreakout*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kbreakout*
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
 
 DescDetail: 

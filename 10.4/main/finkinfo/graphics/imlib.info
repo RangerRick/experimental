@@ -12,7 +12,7 @@ BuildDepends: <<
 	freetype219,
 	libjpeg8,
 	libtiff,
-	libpng14,
+	libpng15,
 	netpbm,
 	giflib,
 	glib,
@@ -55,7 +55,7 @@ SplitOff: <<
 		libjpeg-bin,
 		libtiff-bin,
 		giflib-bin,
-		libpng14-shlibs,
+		libpng15-shlibs,
 		netpbm-bin,
 		x11-shlibs
 	<<

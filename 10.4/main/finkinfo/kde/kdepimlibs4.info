@@ -16,7 +16,7 @@ BuildDepends: <<
 	akonadi-%type_pkg[kde] (>= 1.5.1-1),
 	akonadi-%type_pkg[kde]-dev (>= 1.5.1-1),
 	aspell-dev,
-	automoc-%type_pkg[kde] (>= 0.9.89-0),
+	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
 	boost1.41.cmake,
 	bzip2-dev,
 	cmake (>= 2.8.2-1),
@@ -35,7 +35,7 @@ BuildDepends: <<
 	libidn,
 	libjasper.1,
 	libjpeg8,
-	libpng14,
+	libpng15,
 	libtiff,
 	libxml2,
 	libxslt,
@@ -45,7 +45,7 @@ BuildDepends: <<
 	pkgconfig (>= 0.23-1),
 	pth2-dev,
 	python25,
-	qt4-%type_pkg[kde] (>= 4.7.1-1),
+	qt4-%type_pkg[kde] (>= 4.7.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev
 <<
@@ -154,18 +154,6 @@ SplitOff: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libsyndication.4.dylib      4.0.0 %n (>= 4.2.4-1)
 	<<
 <<
-SplitOff10: <<
-	Package: %N-dev
-	Description: KDE4 - PIM support development libraries and headers
-	Depends: %N (= %v-%r)
-	Replaces: kdepim4-%type_pkg[kde]-dev (<< 4.3.0-1)
-	BuildDependsOnly: true
-	Files: <<
-		opt/kde4/%type_pkg[kde]/include
-		opt/kde4/%type_pkg[kde]/lib
-		opt/kde4/%type_pkg[kde]/share/apps/cmake
-	<<
-<<
 SplitOff2: <<
 	Package: libkholidays4-%type_pkg[kde]-shlibs
 	Description: KDE4 - holiday calendar shared libraries
@@ -178,6 +166,18 @@ SplitOff3: <<
 	Description: KDE4 - holiday calendar support
 	Depends: %n-shlibs (>= %v-%r)
 	Files: opt/kde4/%type_pkg[kde]/share/apps/libkholidays
+<<
+SplitOff10: <<
+	Package: %N-dev
+	Description: KDE4 - PIM support development libraries and headers
+	Depends: %N (= %v-%r)
+	Replaces: kdepim4-%type_pkg[kde]-dev (<< 4.3.0-1)
+	BuildDependsOnly: true
+	Files: <<
+		opt/kde4/%type_pkg[kde]/include
+		opt/kde4/%type_pkg[kde]/lib
+		opt/kde4/%type_pkg[kde]/share/apps/cmake
+	<<
 <<
 
 PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :

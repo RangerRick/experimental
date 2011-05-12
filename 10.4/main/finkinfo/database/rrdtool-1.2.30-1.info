@@ -10,7 +10,7 @@ BuildDepends: <<
 	freetype219,
 	intltool40,
 	libart2,
-	libpng14,
+	libpng15,
 	tcltk,
 	tcltk-dev,
 	perl580-core | perl581-core | perl584-core | perl586-core | perl588-core | perl5100-core
@@ -61,7 +61,7 @@ SplitOff: <<
 	Depends: <<
 		freetype219-shlibs,
 		libart2-shlibs,
-		libpng14-shlibs,
+		libpng15-shlibs,
 		rrdtool-fonts
 	<<
 	Suggests: %N

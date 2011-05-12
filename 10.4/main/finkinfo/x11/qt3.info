@@ -21,7 +21,7 @@ BuildDepends: <<
 	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.12-1),
 	libgl-dev,
-	libpng14,
+	libpng15,
 	libjpeg8,
 	macosx (>= 10.4.3-1),
 	pkgconfig (>= 0.23-1),
@@ -327,7 +327,7 @@ SplitOff: <<
 		fontconfig2-shlibs (>= 2.4.1-1),
 		freetype219-shlibs (>= 2.3.12-1),
 		libgl-shlibs,
-		libpng14-shlibs,
+		libpng15-shlibs,
 		libjpeg8-shlibs,
 		x11-shlibs,
 		xft2-shlibs (>= 2.1.14-3)

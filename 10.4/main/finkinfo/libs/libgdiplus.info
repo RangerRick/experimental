@@ -25,7 +25,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	libexif12,
 	libjpeg8,
-	libpng14,
+	libpng15,
 	libtiff,
 	mono-dev (>= 2.6.2-1),
 	pixman (>= 0.16.0-1),

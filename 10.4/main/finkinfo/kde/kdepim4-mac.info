@@ -27,7 +27,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	akonadi-%type_pkg[kde]-dev (>= 1.5.1-1),
-	automoc-%type_pkg[kde] (>= 0.9.89-0),
+	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
 	boost1.41.cmake,
 	cmake (>= 2.8.2-1),
 	dbus1.3-dev (>= 1.2.24-1),
@@ -52,7 +52,7 @@ BuildDepends: <<
 	python25,
 	qca2-%type_pkg[kde] (>= 2.0.3-1),
 	qgpgme1-%type_pkg[kde] (>= 4.6.1-1),
-	qt4-%type_pkg[kde] (>= 4.7.1-1),
+	qt4-%type_pkg[kde] (>= 4.7.3-1),
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	speex3,
 	strigi-dev (>= 0.6.3-1),
@@ -171,10 +171,96 @@ SplitOff: <<
 	Description: KDE4 - PIM libraries
 	Depends: <<
 		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
-		qt4-%type_pkg[kde]-designer-shlibs (>= 4.7.1-1)
+		qt4-%type_pkg[kde]-designer-shlibs (>= 4.7.3-1)
 	<<
 	Files: opt/kde4/%type_pkg[kde]/lib/libkdepim.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkdepim.4.dylib 4.0.0 %n (>= 4.2.4-1)
+<<
+SplitOff2: <<
+	Package: libkdepim4-%type_pkg[kde]
+	Description: KDE4 - PIM library support
+	Depends: %n-shlibs (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/lib/kde4/kpartsdesignerplugin*
+		opt/kde4/%type_pkg[kde]/lib/kde4/plugins/designer/kdepimwidgets*
+		opt/kde4/%type_pkg[kde]/share/apps/kdepimwidgets
+		opt/kde4/%type_pkg[kde]/share/apps/libkdepim
+		opt/kde4/%type_pkg[kde]/share/dbus-1/interfaces/org.kde.addressbook.service*
+		opt/kde4/%type_pkg[kde]/share/dbus-1/interfaces/org.kde.mailtransport.service*
+		opt/kde4/%type_pkg[kde]/share/icons/oxygen/22x22/actions/button_fewer*
+		opt/kde4/%type_pkg[kde]/share/icons/oxygen/22x22/actions/button_more*
+	<<
+<<
+SplitOff3: <<
+	Package: %N-plugins
+	Description: KDE4 - PIM plugins
+	Depends: <<
+		libkdepim4-%type_pkg[kde]-shlibs (>= %v-%r),
+		libkleo4-%type_pkg[kde]-shlibs (>= %v-%r),
+		%N-base (>= %v-%r)
+	<<
+	Files: <<
+		opt/kde4/%type_pkg[kde]/lib/kde4/kmail_bodypartformatter*
+		opt/kde4/%type_pkg[kde]/lib/kde4/ktexteditorkabcbridge*
+		opt/kde4/%type_pkg[kde]/lib/akonadi/contact/editorpageplugins*
+		opt/kde4/%type_pkg[kde]/share/apps/kmail/plugins/bodypartformatter*
+	<<
+<<
+SplitOff4: <<
+	Package: %N-wizards
+	Description: KDE4 - PIM wizards
+	Depends: 
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/*wizard*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/*wizard*
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/groupwise.kcfg
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/kolab.kcfg
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/slox.kcfg
+	<<
+<<
+SplitOff5: <<
+	Package: libkleo4-%type_pkg[kde]-shlibs
+	Description: KDE4 - certificate manager library
+	Depends: <<
+		gpgme11-shlibs,
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
+		qgpgme1-%type_pkg[kde]-shlibs
+	<<
+	Files: opt/kde4/%type_pkg[kde]/lib/libkleo.4*.dylib
+	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkleo.4.dylib 4.0.0 %n (>= 4.2.4-1)
+<<
+SplitOff6: <<
+	Package: libkleo4-%type_pkg[kde]
+	Description: KDE4 - certificate manager support
+	Depends: %n-shlibs (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/share/apps/libkleopatra
+		opt/kde4/%type_pkg[kde]/share/config/libkleopatrarc
+	<<
+<<
+SplitOff7: <<
+	Package: libkpgp4-%type_pkg[kde]-shlibs
+	Description: KDE4 - PGP shared libraries
+	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1)
+	Files: opt/kde4/%type_pkg[kde]/lib/libkpgp.4*.dylib
+	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkpgp.4.dylib 4.0.0 %n (>= 4.2.4-1)
+<<
+SplitOff8: <<
+	Package: libkpgp4-%type_pkg[kde]
+	Description: KDE4 - PGP support
+	Depends: %n-shlibs (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/share/apps/kconf_update/kpgp*
+		opt/kde4/%type_pkg[kde]/share/apps/kmail/pics/key*
+		opt/kde4/%type_pkg[kde]/share/apps/knode/pics/key*
+	<<
+<<
+SplitOff9: <<
+	Package: libksieve4-%type_pkg[kde]-shlibs
+	Description: KDE4 - sieve mail filter shared libraries
+	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1)
+	Files: opt/kde4/%type_pkg[kde]/lib/libksieve.4*.dylib
+	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libksieve.4.dylib 4.0.0 %n (>= 4.2.4-1)
 <<
 SplitOff11: <<
 	Package: libmimelib4-%type_pkg[kde]-shlibs
@@ -219,21 +305,6 @@ SplitOff14: <<
 	<<
 	Files: opt/kde4/%type_pkg[kde]/lib/libmessageviewer.0*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libmessageviewer.0.dylib 0.0.0 %n (>= 4.3.98-1)
-<<
-SplitOff2: <<
-	Package: libkdepim4-%type_pkg[kde]
-	Description: KDE4 - PIM library support
-	Depends: %n-shlibs (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/lib/kde4/kpartsdesignerplugin*
-		opt/kde4/%type_pkg[kde]/lib/kde4/plugins/designer/kdepimwidgets*
-		opt/kde4/%type_pkg[kde]/share/apps/kdepimwidgets
-		opt/kde4/%type_pkg[kde]/share/apps/libkdepim
-		opt/kde4/%type_pkg[kde]/share/dbus-1/interfaces/org.kde.addressbook.service*
-		opt/kde4/%type_pkg[kde]/share/dbus-1/interfaces/org.kde.mailtransport.service*
-		opt/kde4/%type_pkg[kde]/share/icons/oxygen/22x22/actions/button_fewer*
-		opt/kde4/%type_pkg[kde]/share/icons/oxygen/22x22/actions/button_more*
-	<<
 <<
 SplitOff20: <<
 	Package: kontact4-%type_pkg[kde]
@@ -595,21 +666,6 @@ SplitOff29: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff3: <<
-	Package: %N-plugins
-	Description: KDE4 - PIM plugins
-	Depends: <<
-		libkdepim4-%type_pkg[kde]-shlibs (>= %v-%r),
-		libkleo4-%type_pkg[kde]-shlibs (>= %v-%r),
-		%N-base (>= %v-%r)
-	<<
-	Files: <<
-		opt/kde4/%type_pkg[kde]/lib/kde4/kmail_bodypartformatter*
-		opt/kde4/%type_pkg[kde]/lib/kde4/ktexteditorkabcbridge*
-		opt/kde4/%type_pkg[kde]/lib/akonadi/contact/editorpageplugins*
-		opt/kde4/%type_pkg[kde]/share/apps/kmail/plugins/bodypartformatter*
-	<<
-<<
 SplitOff30: <<
 	Package: korganizer4-%type_pkg[kde]
 	Description: KDE4 - personal organizer
@@ -735,18 +791,6 @@ SplitOff35: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff4: <<
-	Package: %N-wizards
-	Description: KDE4 - PIM wizards
-	Depends: 
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/*wizard*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/*wizard*
-		opt/kde4/%type_pkg[kde]/share/config.kcfg/groupwise.kcfg
-		opt/kde4/%type_pkg[kde]/share/config.kcfg/kolab.kcfg
-		opt/kde4/%type_pkg[kde]/share/config.kcfg/slox.kcfg
-	<<
-<<
 SplitOff40: <<
 	Package: %N-base
 	Description: KDE4 - kdepim base package
@@ -757,50 +801,6 @@ SplitOff40: <<
 	<<
 	Files: opt
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff5: <<
-	Package: libkleo4-%type_pkg[kde]-shlibs
-	Description: KDE4 - certificate manager library
-	Depends: <<
-		gpgme11-shlibs,
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
-		qgpgme1-%type_pkg[kde]-shlibs
-	<<
-	Files: opt/kde4/%type_pkg[kde]/lib/libkleo.4*.dylib
-	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkleo.4.dylib 4.0.0 %n (>= 4.2.4-1)
-<<
-SplitOff6: <<
-	Package: libkleo4-%type_pkg[kde]
-	Description: KDE4 - certificate manager support
-	Depends: %n-shlibs (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/share/apps/libkleopatra
-		opt/kde4/%type_pkg[kde]/share/config/libkleopatrarc
-	<<
-<<
-SplitOff7: <<
-	Package: libkpgp4-%type_pkg[kde]-shlibs
-	Description: KDE4 - PGP shared libraries
-	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1)
-	Files: opt/kde4/%type_pkg[kde]/lib/libkpgp.4*.dylib
-	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkpgp.4.dylib 4.0.0 %n (>= 4.2.4-1)
-<<
-SplitOff8: <<
-	Package: libkpgp4-%type_pkg[kde]
-	Description: KDE4 - PGP support
-	Depends: %n-shlibs (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/share/apps/kconf_update/kpgp*
-		opt/kde4/%type_pkg[kde]/share/apps/kmail/pics/key*
-		opt/kde4/%type_pkg[kde]/share/apps/knode/pics/key*
-	<<
-<<
-SplitOff9: <<
-	Package: libksieve4-%type_pkg[kde]-shlibs
-	Description: KDE4 - sieve mail filter shared libraries
-	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1)
-	Files: opt/kde4/%type_pkg[kde]/lib/libksieve.4*.dylib
-	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libksieve.4.dylib 4.0.0 %n (>= 4.2.4-1)
 <<
 
 DescDetail: 

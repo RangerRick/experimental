@@ -14,7 +14,7 @@ Depends: <<
 	kopete4-%type_pkg[kde] (>= %v-%r)
 <<
 BuildDepends: <<
-	automoc-%type_pkg[kde] (>= 0.9.89-0),
+	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
 	cmake (>= 2.8.2-1),
 	qimageblitz-unified-%type_pkg[kde],
 	dbus1.3-dev (>= 1.2.24-1),
@@ -41,7 +41,7 @@ BuildDepends: <<
 	libxslt,
 	pkgconfig (>= 0.23-1),
 	qca2-%type_pkg[kde] (>= 2.0.3-1),
-	qt4-%type_pkg[kde] (>= 4.7.1-1),
+	qt4-%type_pkg[kde] (>= 4.7.3-1),
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	speex3,
 	sqlite3-dev,

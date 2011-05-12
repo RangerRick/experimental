@@ -14,7 +14,7 @@ Depends: <<
 	fontconfig2-shlibs (>= 2.4.1-1),
 	freetype219-shlibs,
 	glitz-shlibs (>= 0.5.6-1),
-	libpng14-shlibs,
+	libpng15-shlibs,
 	numpy-py%type_pkg[python],
 	python%type_pkg[python]
 <<
@@ -27,7 +27,7 @@ BuildDepends: <<
 	numpy-py%type_pkg[python],
 	pkgconfig (>= 0.23-1),
 	libgl-dev,
-	libpng14,
+	libpng15,
 	pixman (>= 0.16.0-1),
 	x11-dev,
 	xft2-dev

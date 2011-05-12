@@ -7,14 +7,14 @@ Maintainer: Benjamin Reed <doxygen1.3@fink.raccoonfink.com>
 
 Depends: <<
 	fink-package-precedence (>= 0.7-1),
-	libpng14-shlibs,
+	libpng15-shlibs,
 	graphviz,
 	tetex-base,
 	tetex-texmf
 <<
 BuildDepends: <<
 	fink (>= 0.29.7-1),
-	libpng14,
+	libpng15,
 	ghostscript | ghostscript-nox,
 	tetex-base
 <<

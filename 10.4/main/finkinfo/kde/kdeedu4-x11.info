@@ -30,7 +30,7 @@ Depends: <<
 	step4-%type_pkg[kde] (>= %v-%r)
 <<
 BuildDepends: <<
-	automoc-%type_pkg[kde] (>= 0.9.89-0),
+	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
 	cfitsio,
 	cmake (>= 2.8.2-1),
 	dbus1.3-dev (>= 1.2.24-1),
@@ -53,7 +53,7 @@ BuildDepends: <<
 	libxslt,
 	ocaml,
 	pkgconfig (>= 0.23-1),
-	qt4-%type_pkg[kde] (>= 4.7.1-1),
+	qt4-%type_pkg[kde] (>= 4.7.3-1),
 	r-base,
 	readline5,
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
@@ -138,6 +138,203 @@ SplitOff: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/blinken*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/blinken*
 	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff2: <<
+	Package: kalgebra4-%type_pkg[kde]
+	Description: KDE4 - MathML-based algebraic calculator
+	Depends: <<
+		readline5-shlibs,
+		%N-base (>= %v-%r)
+	<<
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/calgebra*
+		opt/kde4/%type_pkg[kde]/bin/kalgebra*
+		opt/kde4/%type_pkg[kde]/lib/kde4/*algebra*
+		opt/kde4/%type_pkg[kde]/lib/libanalitza.4*.dylib
+		opt/kde4/%type_pkg[kde]/lib/libanalitzagui.4*.dylib
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/kalgebra*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kalgebra
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kalgebra*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kalgebra*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kalgebra*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kalgebra*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kalgebra*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/kalgebra*
+	<<
+	Shlibs: <<
+		!%p/opt/kde4/%type_pkg[kde]/lib/libanalitza.4.dylib
+		!%p/opt/kde4/%type_pkg[kde]/lib/libanalitzagui.4.dylib
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff3: <<
+	Package: kalzium4-%type_pkg[kde]
+	Description: periodic system of the elements
+	Depends: <<
+		libopenbabel3-shlibs,
+		ocaml,
+		%N-base (>= %v-%r)
+	<<
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/kalzium*
+		opt/kde4/%type_pkg[kde]/lib/kde4/*didyouknow*
+		opt/kde4/%type_pkg[kde]/lib/kde4/*kalzium*
+		opt/kde4/%type_pkg[kde]/lib/kde4/*Calculator*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/kalzium*
+		opt/kde4/%type_pkg[kde]/share/apps/desktoptheme/default/widgets/chalkboard*
+		opt/kde4/%type_pkg[kde]/share/apps/kalzium
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/kalzium*
+		opt/kde4/%type_pkg[kde]/share/config/kalzium*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kalzium
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kalzium*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kalzium*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kalzium*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kalzium*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kalzium*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kalzium*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/kalzium*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/*didyouknow*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/*kalzium*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/*Calculator*
+		opt/kde4/%type_pkg[kde]/share/man/man1/kalzium*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff4: <<
+	Package: kanagram4-%type_pkg[kde]
+	Description: KDE4 - anagram word game
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/kanagram*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/kanagram*
+		opt/kde4/%type_pkg[kde]/share/apps/kanagram
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/kanagram*
+		opt/kde4/%type_pkg[kde]/share/config/kanagram*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kanagram*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kanagram*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kanagram*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kanagram*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kanagram*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kanagram*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/kanagram*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kanagram
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff5: <<
+	Package: kbruch4-%type_pkg[kde]
+	Description: practice calculating with fractions
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/kbruch*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/kbruch*
+		opt/kde4/%type_pkg[kde]/share/apps/kbruch
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/kbruch*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kbruch
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kbruch*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kbruch*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kbruch*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kbruch*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kbruch*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kbruch*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/kbruch*
+		opt/kde4/%type_pkg[kde]/share/man/man1/kbruch*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff6: <<
+	Package: kgeography4-%type_pkg[kde]
+	Description: KDE4 - geography learning trainer
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/kgeography*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/kgeography*
+		opt/kde4/%type_pkg[kde]/share/apps/kgeography
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/kgeography*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kgeography
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kgeography*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kgeography*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kgeography*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kgeography*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kgeography*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kgeography*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/kgeography*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff7: <<
+	Package: khangman4-%type_pkg[kde]
+	Description: KDE4 - hangman word guessing game
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/khangman*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/khangman*
+		opt/kde4/%type_pkg[kde]/share/apps/khangman
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/khangman*
+		opt/kde4/%type_pkg[kde]/share/config/khangman*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/khangman
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/khangman*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/khangman*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/khangman*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/khangman*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/khangman*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/khangman*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/khangman*
+		opt/kde4/%type_pkg[kde]/share/man/man6/khangman*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff8: <<
+	Package: kig4-%type_pkg[kde]
+	Description: KDE4 - explore geometric constructions
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/*kig*
+		opt/kde4/%type_pkg[kde]/lib/kde4/kigpart*
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/kig*
+		opt/kde4/%type_pkg[kde]/share/apps/kig
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kig
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kig*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/mimetypes/*kig*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kig*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/mimetypes/*kig*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kig*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/mimetypes/*kig*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kig*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/mimetypes/*kig*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kig*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/mimetypes/*kig*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kig*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/mimetypes/*kig*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/kig*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/mimetypes/*kig*
+		opt/kde4/%type_pkg[kde]/share/man/man1/kig*
+		opt/kde4/%type_pkg[kde]/share/kde4/services/kig*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff9: <<
+	Package: kiten4-%type_pkg[kde]
+	Description: KDE4 - Japanese learning tool
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/bin/kiten*
+		opt/kde4/%type_pkg[kde]/lib/libkiten.4*.dylib
+		opt/kde4/%type_pkg[kde]/share/applications/kde4/kiten*
+		opt/kde4/%type_pkg[kde]/share/apps/kiten
+		opt/kde4/%type_pkg[kde]/share/apps/kitenradselect
+		opt/kde4/%type_pkg[kde]/share/config.kcfg/kiten*
+		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kiten
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kiten*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kiten*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kiten*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kiten*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kiten*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kiten*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/kiten*
+	<<
+	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkiten.4.dylib 4.0.0 %n (>= 4.2.4-1)
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
 SplitOff10: <<
@@ -387,34 +584,6 @@ SplitOff19: <<
 	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/librocslib.4.dylib
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff2: <<
-	Package: kalgebra4-%type_pkg[kde]
-	Description: KDE4 - MathML-based algebraic calculator
-	Depends: <<
-		readline5-shlibs,
-		%N-base (>= %v-%r)
-	<<
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/calgebra*
-		opt/kde4/%type_pkg[kde]/bin/kalgebra*
-		opt/kde4/%type_pkg[kde]/lib/kde4/*algebra*
-		opt/kde4/%type_pkg[kde]/lib/libanalitza.4*.dylib
-		opt/kde4/%type_pkg[kde]/lib/libanalitzagui.4*.dylib
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kalgebra*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kalgebra
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kalgebra*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kalgebra*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kalgebra*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kalgebra*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kalgebra*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/kalgebra*
-	<<
-	Shlibs: <<
-		!%p/opt/kde4/%type_pkg[kde]/lib/libanalitza.4.dylib
-		!%p/opt/kde4/%type_pkg[kde]/lib/libanalitzagui.4.dylib
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
 SplitOff20: <<
 	Package: step4-%type_pkg[kde]
 	Description: KDE4 - Interactive physics simulator
@@ -432,39 +601,6 @@ SplitOff20: <<
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/step*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/step*
 		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/step*
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff3: <<
-	Package: kalzium4-%type_pkg[kde]
-	Description: periodic system of the elements
-	Depends: <<
-		libopenbabel3-shlibs,
-		ocaml,
-		%N-base (>= %v-%r)
-	<<
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/kalzium*
-		opt/kde4/%type_pkg[kde]/lib/kde4/*didyouknow*
-		opt/kde4/%type_pkg[kde]/lib/kde4/*kalzium*
-		opt/kde4/%type_pkg[kde]/lib/kde4/*Calculator*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kalzium*
-		opt/kde4/%type_pkg[kde]/share/apps/desktoptheme/default/widgets/chalkboard*
-		opt/kde4/%type_pkg[kde]/share/apps/kalzium
-		opt/kde4/%type_pkg[kde]/share/config.kcfg/kalzium*
-		opt/kde4/%type_pkg[kde]/share/config/kalzium*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kalzium
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kalzium*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kalzium*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kalzium*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kalzium*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kalzium*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kalzium*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/kalzium*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/*didyouknow*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/*kalzium*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/*Calculator*
-		opt/kde4/%type_pkg[kde]/share/man/man1/kalzium*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
@@ -502,142 +638,6 @@ SplitOff32: <<
 		kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1)
 	<<
 	Files: opt
-<<
-SplitOff4: <<
-	Package: kanagram4-%type_pkg[kde]
-	Description: KDE4 - anagram word game
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/kanagram*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kanagram*
-		opt/kde4/%type_pkg[kde]/share/apps/kanagram
-		opt/kde4/%type_pkg[kde]/share/config.kcfg/kanagram*
-		opt/kde4/%type_pkg[kde]/share/config/kanagram*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kanagram*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kanagram*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kanagram*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kanagram*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kanagram*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kanagram*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/kanagram*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kanagram
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff5: <<
-	Package: kbruch4-%type_pkg[kde]
-	Description: practice calculating with fractions
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/kbruch*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kbruch*
-		opt/kde4/%type_pkg[kde]/share/apps/kbruch
-		opt/kde4/%type_pkg[kde]/share/config.kcfg/kbruch*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kbruch
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kbruch*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kbruch*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kbruch*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kbruch*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kbruch*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kbruch*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/kbruch*
-		opt/kde4/%type_pkg[kde]/share/man/man1/kbruch*
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff6: <<
-	Package: kgeography4-%type_pkg[kde]
-	Description: KDE4 - geography learning trainer
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/kgeography*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kgeography*
-		opt/kde4/%type_pkg[kde]/share/apps/kgeography
-		opt/kde4/%type_pkg[kde]/share/config.kcfg/kgeography*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kgeography
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kgeography*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kgeography*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kgeography*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kgeography*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kgeography*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kgeography*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/kgeography*
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff7: <<
-	Package: khangman4-%type_pkg[kde]
-	Description: KDE4 - hangman word guessing game
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/khangman*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/khangman*
-		opt/kde4/%type_pkg[kde]/share/apps/khangman
-		opt/kde4/%type_pkg[kde]/share/config.kcfg/khangman*
-		opt/kde4/%type_pkg[kde]/share/config/khangman*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/khangman
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/khangman*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/khangman*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/khangman*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/khangman*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/khangman*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/khangman*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/khangman*
-		opt/kde4/%type_pkg[kde]/share/man/man6/khangman*
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff8: <<
-	Package: kig4-%type_pkg[kde]
-	Description: KDE4 - explore geometric constructions
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/*kig*
-		opt/kde4/%type_pkg[kde]/lib/kde4/kigpart*
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kig*
-		opt/kde4/%type_pkg[kde]/share/apps/kig
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kig
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kig*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/mimetypes/*kig*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kig*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/mimetypes/*kig*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kig*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/mimetypes/*kig*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kig*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/mimetypes/*kig*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kig*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/mimetypes/*kig*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kig*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/mimetypes/*kig*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/kig*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/mimetypes/*kig*
-		opt/kde4/%type_pkg[kde]/share/man/man1/kig*
-		opt/kde4/%type_pkg[kde]/share/kde4/services/kig*
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff9: <<
-	Package: kiten4-%type_pkg[kde]
-	Description: KDE4 - Japanese learning tool
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/bin/kiten*
-		opt/kde4/%type_pkg[kde]/lib/libkiten.4*.dylib
-		opt/kde4/%type_pkg[kde]/share/applications/kde4/kiten*
-		opt/kde4/%type_pkg[kde]/share/apps/kiten
-		opt/kde4/%type_pkg[kde]/share/apps/kitenradselect
-		opt/kde4/%type_pkg[kde]/share/config.kcfg/kiten*
-		opt/kde4/%type_pkg[kde]/share/doc/HTML/en/kiten
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kiten*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kiten*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kiten*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kiten*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kiten*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kiten*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/scalable/apps/kiten*
-	<<
-	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkiten.4.dylib 4.0.0 %n (>= 4.2.4-1)
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
 
 DescDetail: A collection of fun and educational apps for KDE.

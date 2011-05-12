@@ -21,7 +21,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	libiconv-dev,
 	libjpeg8,
-	libpng14,
+	libpng15,
 	libtiff,
 	libxml2 (>= 2.6.32-1),
 	pango1-xft2-ft219-dev (>= 1.24.0-1),

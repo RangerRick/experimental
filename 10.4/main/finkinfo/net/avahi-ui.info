@@ -28,7 +28,7 @@ BuildDepends: <<
 	libiconv-dev,
 	libjasper.1,
 	libjpeg8,
-	libpng14 (>= 1.4.1-2),
+	libpng15 (>= 1.5.2-1),
 	libtiff,
 	pango1-xft2-ft219-dev (>= 1.24.0-1),
 	pixman (>= 0.16.0-1),

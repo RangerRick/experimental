@@ -21,11 +21,11 @@ BuildDepends: <<
 	libiconv-dev,
 	libjpeg8,
 	libopenjpeg,
-	(%type_pkg[qt] = x11) libpng14,
+	(%type_pkg[qt] = x11) libpng15,
 	libxml2,
 	pkgconfig (>= 0.23-1),
 	poppler4 (>= %v-1),
-	qt4-%type_pkg[qt] (>= 4.7.1-1),
+	qt4-%type_pkg[qt] (>= 4.7.3-1),
 	(%type_pkg[qt] = x11) x11-dev
 <<
 Conflicts: <<
@@ -96,10 +96,10 @@ SplitOff: <<
 		libiconv,
 		libjpeg8-shlibs,
 		libopenjpeg-shlibs,
-		(%type_pkg[qt] = x11) libpng14-shlibs,
+		(%type_pkg[qt] = x11) libpng15-shlibs,
 		libxml2-shlibs,
 		poppler4-shlibs (>= %v-1),
-		qt4-%type_pkg[qt]-gui-shlibs (>= 4.7.1-1),
+		qt4-%type_pkg[qt]-gui-shlibs (>= 4.7.3-1),
 		(%type_pkg[qt] = x11) x11
 	<<
 	Files: opt/kde4/%type_pkg[qt]/lib/libpoppler-qt4.3*.dylib

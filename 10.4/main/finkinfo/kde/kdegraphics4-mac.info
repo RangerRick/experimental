@@ -20,7 +20,7 @@ Depends: <<
 	%N-strigi-analyzers-%type_pkg[kde] (>= %v-%r)
 <<
 BuildDepends: <<
-	automoc-%type_pkg[kde] (>= 0.9.89-0),
+	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
 	qimageblitz-unified-%type_pkg[kde],
 	cairo (>= 1.8.10-3),
 	cmake (>= 2.8.2-1),
@@ -47,7 +47,7 @@ BuildDepends: <<
 	poppler2,
 	poppler2-qt4-%type_pkg[kde] (>= 0.6.4-4),
 	qca2-%type_pkg[kde] (>= 2.0.3-1),
-	qt4-%type_pkg[kde] (>= 4.7.1-1),
+	qt4-%type_pkg[kde] (>= 4.7.3-1),
 	sane-backends-dev,
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	strigi-dev (>= 0.6.3-1),
@@ -101,120 +101,6 @@ SplitOff: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff10: <<
-	Package: libkdcraw-data-%type_pkg[kde]
-	Description: KDE4 - data for libkdcraw
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/share/apps/libkdcraw
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kdcraw*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kdcraw*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kdcraw*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kdcraw*
-	<<
-<<
-SplitOff11: <<
-	Package: libkdcraw-8-%type_pkg[kde]-shlibs
-	Description: KDE4 - decode RAW images
-	Depends: <<
-		lcms-shlibs,
-		libkdcraw-data-%type_pkg[kde] (>= %v-%r),
-		%N-base (>= %v-%r)
-	<<
-	Files: opt/kde4/%type_pkg[kde]/lib/libkdcraw.8*.dylib
-	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkdcraw.8.dylib 8.0.0 %n (>= 4.3.98-1)
-<<
-SplitOff12: <<
-	Package: libkdcraw-8-%type_pkg[kde]-dev
-	Description: KDE4 - libkdcraw development headers and libs
-	Depends: libkdcraw-8-%type_pkg[kde]-shlibs (>= %v-%r)
-	Conflicts: libkdcraw-7-%type_pkg[kde]-dev
-	Replaces: libkdcraw-7-%type_pkg[kde]-dev
-	BuildDependsOnly: true
-	Files: <<
-		opt/kde4/%type_pkg[kde]/include/libkdcraw
-		opt/kde4/%type_pkg[kde]/lib/libkdcraw.dylib
-		opt/kde4/%type_pkg[kde]/lib/pkgconfig/libkdcraw.pc
-	<<
-<<
-SplitOff13: <<
-	Package: libkexiv2-data-%type_pkg[kde]
-	Description: KDE4 - data for libkexiv2
-	Depends: %N-base (>= %v-%r)
-	Replaces: %N-base (<< 4.4.1-1)
-	Files: opt/kde4/%type_pkg[kde]/share/apps/libkexiv2
-<<
-SplitOff14: <<
-	Package: libkexiv2-8-%type_pkg[kde]-shlibs
-	Description: KDE4 - image metadata library
-	Depends: <<
-		libexiv2-0.19-shlibs,
-		libkexiv2-data-%type_pkg[kde],
-		%N-base (>= %v-%r)
-	<<
-	Files: opt/kde4/%type_pkg[kde]/lib/libkexiv2.8*.dylib
-	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkexiv2.8.dylib 8.0.0 %n (>= 4.3.98-1)
-<<
-SplitOff15: <<
-	Package: libkexiv2-8-%type_pkg[kde]-dev
-	Description: KDE4 - libkexiv2 development headers and libs
-	Depends: libkexiv2-8-%type_pkg[kde]-shlibs (>= %v-%r)
-	Conflicts: libkexiv2-7-%type_pkg[kde]-dev
-	Replaces: libkexiv2-7-%type_pkg[kde]-dev
-	BuildDependsOnly: true
-	Files: <<
-		opt/kde4/%type_pkg[kde]/include/libkexiv2
-		opt/kde4/%type_pkg[kde]/lib/libkexiv2.dylib
-		opt/kde4/%type_pkg[kde]/lib/pkgconfig/libkexiv2.pc
-	<<
-<<
-SplitOff16: <<
-	Package: libkipi-data-%type_pkg[kde]
-	Description: KDE4 - data for libkipi
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/share/apps/kipi
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kipi*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kipi*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kipi*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kipi*
-		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kipi*
-		opt/kde4/%type_pkg[kde]/share/kde4/servicetypes/kipi*
-	<<
-<<
-SplitOff17: <<
-	Package: libkipi-7-%type_pkg[kde]-shlibs
-	Description: KDE4 - image plugin library
-	Depends: <<
-		%N-base (>= %v-%r),
-		libkipi-data-%type_pkg[kde] (>= %v-%r)
-	<<
-	Files: opt/kde4/%type_pkg[kde]/lib/libkipi.7*.dylib
-	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkipi.7.dylib 7.0.0 %n (>= 4.3.98-1)
-<<
-SplitOff18: <<
-	Package: libkipi-7-%type_pkg[kde]-dev
-	Description: KDE4 - libkipi development headers and libs
-	Depends: libkipi-7-%type_pkg[kde]-shlibs (>= %v-%r)
-	Conflicts: libkipi-6-%type_pkg[kde]-dev
-	Replaces: libkipi-6-%type_pkg[kde]-dev
-	BuildDependsOnly: true
-	Files: <<
-		opt/kde4/%type_pkg[kde]/include/libkipi
-		opt/kde4/%type_pkg[kde]/lib/libkipi.dylib
-		opt/kde4/%type_pkg[kde]/lib/pkgconfig/libkipi.pc
-	<<
-<<
-SplitOff19: <<
-	Package: libksane-0-%type_pkg[kde]-shlibs
-	Description: KDE4 - scanner libraries
-	Depends: <<
-		sane-backends-shlibs,
-		%N-base (>= %v-%r)
-	<<
-	Files: opt/kde4/%type_pkg[kde]/lib/libksane.0*.dylib
-	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libksane.0.dylib 0.0.0 %n (>= 4.2.4-1)
-<<
 SplitOff2: <<
 	Package: gwenview4-%type_pkg[kde]
 	Description: KDE4 - image viewer
@@ -246,29 +132,6 @@ SplitOff2: <<
 	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libgwenviewlib.4.dylib
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff20: <<
-	Package: libksane-0-%type_pkg[kde]-dev
-	Description: KDE4 - libksane development headers and libs
-	Depends: libksane-0-%type_pkg[kde]-shlibs (>= %v-%r)
-	BuildDependsOnly: true
-	Files: <<
-		opt/kde4/%type_pkg[kde]/include/libksane
-		opt/kde4/%type_pkg[kde]/lib/libksane.dylib
-		opt/kde4/%type_pkg[kde]/lib/pkgconfig/libksane.pc
-		opt/kde4/%type_pkg[kde]/share/apps/cmake/modules/FindKSane*
-	<<
-<<
-SplitOff21: <<
-	Package: svgpart4-%type_pkg[kde]
-	Description: KDE4 - SVG support
-	Depends: %N-base (>= %v-%r)
-	Files: <<
-		opt/kde4/%type_pkg[kde]/lib/kde4/svgpart*
-		opt/kde4/%type_pkg[kde]/share/apps/svgpart
-		opt/kde4/%type_pkg[kde]/share/kde4/services/svgpart*
-	<<
-	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
 SplitOff3: <<
 	Package: kamera4-%type_pkg[kde]
 	Description: KDE4 - digital camera support
@@ -285,22 +148,6 @@ SplitOff3: <<
 		opt/kde4/%type_pkg[kde]/share/kde4/services/kamera*
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-<<
-SplitOff30: <<
-	Package: %N-strigi-analyzers-%type_pkg[kde]
-	Description: KDE4 - kdegraphics strigi analyzers
-	Depends: <<
-		libtiff-shlibs,
-		%N-base (>= %v-%r)
-	<<
-	Files: opt/kde4/%type_pkg[kde]/lib/strigi
-<<
-SplitOff31: <<
-	Package: %N-base
-	Description: KDE4 - kdegraphics base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1)
-	Replaces: gsthumbnail4-%type_pkg[kde]
-	Files: opt
 <<
 SplitOff4: <<
 	Package: kcolorchooser4-%type_pkg[kde]
@@ -418,6 +265,159 @@ SplitOff9: <<
 		opt/kde4/%type_pkg[kde]/lib/libokularcore.dylib
 		opt/kde4/%type_pkg[kde]/share/apps/cmake/modules/FindOkular*
 	<<
+<<
+SplitOff10: <<
+	Package: libkdcraw-data-%type_pkg[kde]
+	Description: KDE4 - data for libkdcraw
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/share/apps/libkdcraw
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kdcraw*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kdcraw*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kdcraw*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/64x64/apps/kdcraw*
+	<<
+<<
+SplitOff11: <<
+	Package: libkdcraw-8-%type_pkg[kde]-shlibs
+	Description: KDE4 - decode RAW images
+	Depends: <<
+		lcms-shlibs,
+		libkdcraw-data-%type_pkg[kde] (>= %v-%r),
+		%N-base (>= %v-%r)
+	<<
+	Files: opt/kde4/%type_pkg[kde]/lib/libkdcraw.8*.dylib
+	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkdcraw.8.dylib 8.0.0 %n (>= 4.3.98-1)
+<<
+SplitOff12: <<
+	Package: libkdcraw-8-%type_pkg[kde]-dev
+	Description: KDE4 - libkdcraw development headers and libs
+	Depends: libkdcraw-8-%type_pkg[kde]-shlibs (>= %v-%r)
+	Conflicts: libkdcraw-7-%type_pkg[kde]-dev
+	Replaces: libkdcraw-7-%type_pkg[kde]-dev
+	BuildDependsOnly: true
+	Files: <<
+		opt/kde4/%type_pkg[kde]/include/libkdcraw
+		opt/kde4/%type_pkg[kde]/lib/libkdcraw.dylib
+		opt/kde4/%type_pkg[kde]/lib/pkgconfig/libkdcraw.pc
+	<<
+<<
+SplitOff13: <<
+	Package: libkexiv2-data-%type_pkg[kde]
+	Description: KDE4 - data for libkexiv2
+	Depends: %N-base (>= %v-%r)
+	Replaces: %N-base (<< 4.4.1-1)
+	Files: opt/kde4/%type_pkg[kde]/share/apps/libkexiv2
+<<
+SplitOff14: <<
+	Package: libkexiv2-8-%type_pkg[kde]-shlibs
+	Description: KDE4 - image metadata library
+	Depends: <<
+		libexiv2-0.19-shlibs,
+		libkexiv2-data-%type_pkg[kde],
+		%N-base (>= %v-%r)
+	<<
+	Files: opt/kde4/%type_pkg[kde]/lib/libkexiv2.8*.dylib
+	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkexiv2.8.dylib 8.0.0 %n (>= 4.3.98-1)
+<<
+SplitOff15: <<
+	Package: libkexiv2-8-%type_pkg[kde]-dev
+	Description: KDE4 - libkexiv2 development headers and libs
+	Depends: libkexiv2-8-%type_pkg[kde]-shlibs (>= %v-%r)
+	Conflicts: libkexiv2-7-%type_pkg[kde]-dev
+	Replaces: libkexiv2-7-%type_pkg[kde]-dev
+	BuildDependsOnly: true
+	Files: <<
+		opt/kde4/%type_pkg[kde]/include/libkexiv2
+		opt/kde4/%type_pkg[kde]/lib/libkexiv2.dylib
+		opt/kde4/%type_pkg[kde]/lib/pkgconfig/libkexiv2.pc
+	<<
+<<
+SplitOff16: <<
+	Package: libkipi-data-%type_pkg[kde]
+	Description: KDE4 - data for libkipi
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/share/apps/kipi
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/128x128/apps/kipi*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/16x16/apps/kipi*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/22x22/apps/kipi*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/32x32/apps/kipi*
+		opt/kde4/%type_pkg[kde]/share/icons/hicolor/48x48/apps/kipi*
+		opt/kde4/%type_pkg[kde]/share/kde4/servicetypes/kipi*
+	<<
+<<
+SplitOff17: <<
+	Package: libkipi-7-%type_pkg[kde]-shlibs
+	Description: KDE4 - image plugin library
+	Depends: <<
+		%N-base (>= %v-%r),
+		libkipi-data-%type_pkg[kde] (>= %v-%r)
+	<<
+	Files: opt/kde4/%type_pkg[kde]/lib/libkipi.7*.dylib
+	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkipi.7.dylib 7.0.0 %n (>= 4.3.98-1)
+<<
+SplitOff18: <<
+	Package: libkipi-7-%type_pkg[kde]-dev
+	Description: KDE4 - libkipi development headers and libs
+	Depends: libkipi-7-%type_pkg[kde]-shlibs (>= %v-%r)
+	Conflicts: libkipi-6-%type_pkg[kde]-dev
+	Replaces: libkipi-6-%type_pkg[kde]-dev
+	BuildDependsOnly: true
+	Files: <<
+		opt/kde4/%type_pkg[kde]/include/libkipi
+		opt/kde4/%type_pkg[kde]/lib/libkipi.dylib
+		opt/kde4/%type_pkg[kde]/lib/pkgconfig/libkipi.pc
+	<<
+<<
+SplitOff19: <<
+	Package: libksane-0-%type_pkg[kde]-shlibs
+	Description: KDE4 - scanner libraries
+	Depends: <<
+		sane-backends-shlibs,
+		%N-base (>= %v-%r)
+	<<
+	Files: opt/kde4/%type_pkg[kde]/lib/libksane.0*.dylib
+	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libksane.0.dylib 0.0.0 %n (>= 4.2.4-1)
+<<
+SplitOff20: <<
+	Package: libksane-0-%type_pkg[kde]-dev
+	Description: KDE4 - libksane development headers and libs
+	Depends: libksane-0-%type_pkg[kde]-shlibs (>= %v-%r)
+	BuildDependsOnly: true
+	Files: <<
+		opt/kde4/%type_pkg[kde]/include/libksane
+		opt/kde4/%type_pkg[kde]/lib/libksane.dylib
+		opt/kde4/%type_pkg[kde]/lib/pkgconfig/libksane.pc
+		opt/kde4/%type_pkg[kde]/share/apps/cmake/modules/FindKSane*
+	<<
+<<
+SplitOff21: <<
+	Package: svgpart4-%type_pkg[kde]
+	Description: KDE4 - SVG support
+	Depends: %N-base (>= %v-%r)
+	Files: <<
+		opt/kde4/%type_pkg[kde]/lib/kde4/svgpart*
+		opt/kde4/%type_pkg[kde]/share/apps/svgpart
+		opt/kde4/%type_pkg[kde]/share/kde4/services/svgpart*
+	<<
+	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff30: <<
+	Package: %N-strigi-analyzers-%type_pkg[kde]
+	Description: KDE4 - kdegraphics strigi analyzers
+	Depends: <<
+		libtiff-shlibs,
+		%N-base (>= %v-%r)
+	<<
+	Files: opt/kde4/%type_pkg[kde]/lib/strigi
+<<
+SplitOff31: <<
+	Package: %N-base
+	Description: KDE4 - kdegraphics base package
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1)
+	Replaces: gsthumbnail4-%type_pkg[kde]
+	Files: opt
 <<
 
 <<

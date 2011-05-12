@@ -12,7 +12,7 @@ BuildDepends: <<
 	akonadi-%type_pkg[kde] (>= 1.5.1-1),
 	akonadi-%type_pkg[kde]-dev (>= 1.5.1-1),
 	aspell-dev,
-	automoc-%type_pkg[kde] (>= 0.9.89-0),
+	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
 	boost1.41.cmake,
 	bzip2-dev,
 	cmake (>= 2.8.2-1),
@@ -33,7 +33,7 @@ BuildDepends: <<
 	libidn,
 	libjasper.1,
 	libjpeg8,
-	libpng14,
+	libpng15,
 	libtiff,
 	libxml2,
 	libxslt,
@@ -43,7 +43,7 @@ BuildDepends: <<
 	pkgconfig (>= 0.23-1),
 	pth2-dev,
 	python25,
-	qt4-%type_pkg[kde] (>= 4.7.1-1),
+	qt4-%type_pkg[kde] (>= 4.7.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev
 <<
@@ -82,7 +82,7 @@ SplitOff: <<
 	Description: KDE4 - GPG Shared Libraries
 	Depends: <<
 		gpgme11-shlibs,
-		qt4-%type_pkg[kde]-core-shlibs (>= 4.7.1-1),
+		qt4-%type_pkg[kde]-core-shlibs (>= 4.7.3-1),
 		libgpg-error-shlibs
 	<<
 	Replaces: kdepimlibs4-%type_pkg[kde]-shlibs (<< 4.2.1-2)

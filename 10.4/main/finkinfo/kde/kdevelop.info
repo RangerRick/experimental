@@ -38,7 +38,7 @@ BuildDepends: <<
 	libidn,
 	libiconv-dev,
 	libjpeg8,
-	libpng14 (>= 1.4.1-2),
+	libpng15 (>= 1.5.2-1),
 	libusb,
 	pcre,
 	pkgconfig (>= 0.23-1),

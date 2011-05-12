@@ -15,7 +15,7 @@ BuildDepends: <<
 	intltool40,
 	libart2 (>= 2.3.20-1),
 	libtool2,
-	libpng14,
+	libpng15,
 	rrdtool-dev (>= 1.4.4-1),
 	system-java (>= 1.5-1)
 <<

@@ -36,7 +36,7 @@ BuildDepends: <<
 	libmp4v21-dev,
 	libmusicbrainz4,
 	libogg,
-	libpng14,
+	libpng15,
 	libtunepimp3,
 	libvorbis0,
 	libxine1,

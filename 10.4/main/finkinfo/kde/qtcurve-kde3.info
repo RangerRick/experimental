@@ -16,7 +16,7 @@ BuildDepends: <<
 	libart2 (>= 2.3.20-1),
 	libiconv-dev,
 	libidn,
-	libpng14 (>= 1.4.1-2),
+	libpng15 (>= 1.5.2-1),
 	pcre,
 	pkgconfig (>= 0.23-1),
 	qt3 (>= 3.3.8-2000),

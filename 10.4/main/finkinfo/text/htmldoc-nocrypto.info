@@ -7,13 +7,13 @@ License: GPL
 Maintainer: Benjamin Reed <htmldoc-nocrypto@fink.raccoonfink.com>
 
 Depends: <<
-	libpng14-shlibs,
+	libpng15-shlibs,
 	libjpeg8-shlibs
 <<
 BuildDepends: <<
 	fink (>= 0.29.7-1),
 	fink-package-precedence (>= 0.7-1),
-	libpng14,
+	libpng15,
 	libjpeg8,
 	system-openssl-dev
 <<

@@ -5,8 +5,8 @@ Description: Utility for making windows icons
 License: GPL
 Maintainer: Benjamin Reed <png2ico@fink.raccoonfink.com>
 
-Depends: libpng14-shlibs
-BuildDepends: libpng14
+Depends: libpng15-shlibs
+BuildDepends: libpng15
 
 Source: http://www.winterdrache.de/freeware/%n/data/%n-src-2002-12-08.tar.gz
 Source-MD5: 9b663df81c826cd564638cba2e6bc75b

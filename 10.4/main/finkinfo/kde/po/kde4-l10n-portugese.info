@@ -12,7 +12,7 @@ Depends: <<
 	(%type_pkg[kde] = x11) xfonts-intl
 <<
 BuildDepends: <<
-	automoc-%type_pkg[kde] (>= 0.9.89-0),
+	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
 	cmake (>= 2.8.2-1),
 	fink (>= 0.29.7-1),
 	gettext-tools (>= 0.17-1),

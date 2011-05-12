@@ -18,7 +18,7 @@ Depends: <<
 	%N-wallpapers (>= %v-%r)
 <<
 BuildDepends: <<
-	automoc-%type_pkg[kde] (>= 0.9.89-0),
+	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
 	cmake (>= 2.8.2-1),
 	dbus1.3-dev (>= 1.2.24-1),
 	eigen2,
@@ -32,7 +32,7 @@ BuildDepends: <<
 	kdelibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
 	libgettext8-dev,
 	pkgconfig (>= 0.23-1),
-	qt4-%type_pkg[kde] (>= 4.7.1-1),
+	qt4-%type_pkg[kde] (>= 4.7.3-1),
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
@@ -86,12 +86,6 @@ SplitOff2: <<
 	Depends: %N-base (>= %v-%r)
 	Files: opt/kde4/%type_pkg[kde]/share/apps/desktoptheme
 <<
-SplitOff20: <<
-	Package: %N-base
-	Description: KDE4 - kdeartwork base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1)
-	Files: opt share/doc/installed-packages/%N-base
-<<
 SplitOff3: <<
 	Package: %N-emoticons
 	Description: KDE4 - extra emoticons
@@ -143,6 +137,12 @@ SplitOff8: <<
 		opt/kde4/%type_pkg[kde]/share/kde4/services/ScreenSavers
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+<<
+SplitOff20: <<
+	Package: %N-base
+	Description: KDE4 - kdeartwork base package
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1)
+	Files: opt share/doc/installed-packages/%N-base
 <<
 
 DescDetail: <<

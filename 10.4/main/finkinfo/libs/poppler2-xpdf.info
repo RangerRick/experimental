@@ -19,7 +19,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	libiconv-dev,
 	libjpeg8,
-	libpng14,
+	libpng15,
 	libxml2,
 	pixman (>= 0.16.0-1),
 	poppler2 (>= %v-%r),

@@ -19,7 +19,7 @@ BuildDepends: <<
 	intltool40,
 	libgettext8-dev,
 	libiconv-dev,
-	libpng14,
+	libpng15,
 	libxml2,
 	pango1-xft2-ft219-dev (>= 1.24.0-1),
 	pixman (>= 0.16.0-1),
@@ -90,7 +90,7 @@ SplitOff: <<
 	Depends: <<
 		cairo-shlibs (>= 1.8.10-3),
 		glib2-shlibs (>= 2.22.0-1),
-		libpng14-shlibs (>= 1.4.1-2),
+		libpng15-shlibs (>= 1.5.2-1),
 		libxml2-shlibs (>= 2.6.32-1),
 		pango1-xft2-ft219-shlibs (>= 1.24.0-1)
 	<<

@@ -10,7 +10,7 @@ Maintainer: Benjamin Reed <kdepim4@fink.raccoonfink.com>
 Depends: 
 BuildDepends: <<
 	akonadi-%type_pkg[kde]-dev (>= 1.5.1-1),
-	automoc-%type_pkg[kde] (>= 0.9.89-0),
+	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
 	boost1.41.cmake,
 	cmake (>= 2.8.2-1),
 	dbus1.3-dev (>= 1.2.24-1),
@@ -35,7 +35,7 @@ BuildDepends: <<
 	python25,
 	qca2-%type_pkg[kde] (>= 2.0.3-1),
 	qgpgme1-%type_pkg[kde] (>= 4.6.1-1),
-	qt4-%type_pkg[kde] (>= 4.7.1-1),
+	qt4-%type_pkg[kde] (>= 4.7.3-1),
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	speex3,
 	strigi-dev (>= 0.6.3-1),

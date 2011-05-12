@@ -20,7 +20,7 @@ BuildDepends: <<
 	libiconv-dev,
 	libjpeg8,
 	libopenjpeg,
-	libpng14,
+	libpng15,
 	libxml2,
 	pixman (>= 0.16.0-1),
 	pkgconfig (>= 0.23-1),

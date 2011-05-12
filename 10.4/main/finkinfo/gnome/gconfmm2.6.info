@@ -22,7 +22,7 @@ BuildDepends: <<
 	gtkmm2.4-dev (>= 2.12.0-1),
 	libgettext8-dev,
 	libiconv-dev,
-	libpng14,
+	libpng15,
 	libsigc++2 (>= 2.0.11-1003),
 	orbit2-dev (>= 2.14.9-1),
 	pango1-xft2-ft219-dev (>= 1.24.0-1),

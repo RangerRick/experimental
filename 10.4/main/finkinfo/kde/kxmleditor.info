@@ -18,7 +18,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	libiconv-dev,
 	libidn,
-	libpng14 (>= 1.4.1-2),
+	libpng15 (>= 1.5.2-1),
 	pkgconfig (>= 0.23-1),
 	qt3 (>= 3.3.8-2000),
 	unsermake (>= 0.4-0.20060316.1),

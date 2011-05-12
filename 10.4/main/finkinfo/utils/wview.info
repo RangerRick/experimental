@@ -8,14 +8,14 @@ Maintainer: Benjamin Reed <wview@fink.raccoonfink.com>
 Depends: <<
 	gd2-nox-shlibs | gd2-shlibs,
 	libcurl4-shlibs,
-	libpng14-shlibs,
+	libpng15-shlibs,
 	radlib-shlibs
 <<
 RuntimeDepends: daemonic
 BuildDepends: <<
 	gd2-nox | gd2,
 	libcurl4,
-	libpng14,
+	libpng15,
 	radlib-dev,
 	system-openssl-dev
 <<

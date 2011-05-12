@@ -229,6 +229,15 @@ SplitOff: <<
 	<<
 	Files: share/doc/installed-packages/%n
 <<
+SplitOff2: <<
+	Package: mysql-ssl
+	Description: Dummy Upgrade Package for MySQL
+	Depends: <<
+		%N (>= 5.0.45-1),
+		fink-obsolete-packages
+	<<
+	Files: share/doc/installed-packages/%n
+<<
 SplitOff10: <<
 	Package: mysql15-dev
 	Description: Dummy Upgrade Package for MySQL
@@ -281,15 +290,6 @@ SplitOff12: <<
 		lib/libmysqlclient.*
 		share/man/man1/mysql_config.1
 	<<
-<<
-SplitOff2: <<
-	Package: mysql-ssl
-	Description: Dummy Upgrade Package for MySQL
-	Depends: <<
-		%N (>= 5.0.45-1),
-		fink-obsolete-packages
-	<<
-	Files: share/doc/installed-packages/%n
 <<
 SplitOff20: <<
 	Package: mysql15-shlibs

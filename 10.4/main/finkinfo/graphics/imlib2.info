@@ -16,7 +16,7 @@ BuildDepends: <<
 	libid3tag,
 	libiconv-dev,
 	libjpeg8,
-	libpng14,
+	libpng15,
 	libtiff,
 	giflib,
 	x11-dev,
@@ -58,7 +58,7 @@ SplitOff: <<
 		libiconv,
 		libid3tag-shlibs,
 		libjpeg8-shlibs,
-		libpng14-shlibs (>= 1.4.1-2),
+		libpng15-shlibs (>= 1.5.2-1),
 		libtiff-shlibs,
 		giflib-shlibs,
 		x11

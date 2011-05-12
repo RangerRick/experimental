@@ -11,7 +11,7 @@ BuildDepends: <<
 	glew,
 	libgl-dev,
 	libjpeg8,
-	libpng14,
+	libpng15,
 	qt3,
 	x11-dev
 <<
@@ -52,7 +52,7 @@ SplitOff: <<
 	Depends: <<
 		glew-shlibs,
 		libjpeg8-shlibs,
-		libpng14-shlibs,
+		libpng15-shlibs,
 		x11-shlibs
 	<<
 	DocFiles: LICENSE*

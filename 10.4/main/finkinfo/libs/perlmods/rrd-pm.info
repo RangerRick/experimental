@@ -10,13 +10,13 @@ License: GPL
 Maintainer: Benjamin Reed <rrd-pm@fink.raccoonfink.com>
 
 Depends: <<
-	libpng14-shlibs,
+	libpng15-shlibs,
 	perl%type_pkg[perl]-core,
 	rrdtool (>= 1.4.4-1)
 <<
 BuildDepends: <<
 	fink (>= 0.29.7-1),
-	libpng14,
+	libpng15,
 	perl%type_pkg[perl]-core,
 	rrdtool (>= 1.4.4-1),
 	rrdtool-dev (>= 1.4.4-1)

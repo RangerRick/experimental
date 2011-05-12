@@ -60,7 +60,7 @@ BuildDepends: <<
 	libjpeg8,
 	libmath++-dev (>= 0.0.4-1001),
 	libogg,
-	libpng14 (>= 1.4.1-2),
+	libpng15 (>= 1.5.2-1),
 	libvorbis0,
 	pkgconfig (>= 0.23-1),
 	qt3 (>= 3.3.8-2000),
@@ -138,6 +138,699 @@ SplitOff: <<
 		share/icons/crystalsvg/32x32/actions/roll*
 	<<
 	Shlibs: %p/lib/libkdegames.1.dylib 4.0.0 kdegames3-common (>= 3.4.0-1)
+	DescUsage: <<
+---[ Installation ]---------------------------------------------------
+
+To install all of the official KDE packages, install "bundle-kde" or
+"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
+downloading strong cryptography).  Unless you have a specific reason
+not to, "bundle-kde-ssl" is suggested.
+
+---[ Configuration ]--------------------------------------------------
+
+To use KDE as your windowing system in XDarwin, create a file called
+".xinitrc" in your home directory, containing the following line:
+
+  /sw/bin/startkde >/tmp/kde.log 2>&1
+
+See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
+for more information on the xinitrc files and how they work.
+
+If you want to use Apple's X11 instead of the KDE window manager,
+put the following line before the startkde line in .xinitrc:
+
+  export KDEWM=quartz-wm
+
+If you want to disable quartz-wm even for clipboard synchronization
+(proxying), put the following line before the startkde line in
+.xinitrc:
+
+  export DISABLE_PROXY=1
+
+---[ Startup ]--------------------------------------------------------
+
+Once you have created an ~/.xinitrc file, you should be able to start
+KDE by clicking on the "XDarwin" icon in your Applications folder.  
+
+NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
+If you run KDE in rootless mode, it will take over your desktop with
+a window that covers everything up.  You can remove this by disabling
+desktop icons in the KDE control center.  Open the control center
+(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
+then expand the "Desktop" list, click "Behavior", and uncheck the
+"Show icons on desktop" checkbox.
+   
+---[ Removal ]--------------------------------------------------------
+   
+To remove all of the official KDE packages, you can remove the KDE
+libraries and anything that depends on them by running, in a terminal:
+   
+  sudo apt-get remove kdelibs3-unified-shlibs
+
+To remove an individual KDE package collection (like kdenetwork3 or
+kdesdk3) you can generally remove [package]-base.  For example, to
+remove all of the kdenetwork3 packages, run:
+
+  sudo apt-get remove kdenetwork3-base
+	<<
+<<
+SplitOff2: <<
+	Package: %N-dev
+	Description: KDE - kdegames development headers and libraries
+	Depends: <<
+		%N (>= %v-%r),
+		%N-common (>= %v-%r)
+	<<
+	Replaces: <<
+		%N (<< %v-%r),
+		%N-common (<< %v-%r),
+		%N-dev (<< %v-%r),
+		atlantik (<< %v-%r)
+	<<
+	Recommends: <<
+		arts-dev (>= 1.5.10-10),
+		audiofile,
+		esound,
+		fink (>= 0.29.7-1),
+		kdelibs3-unified-dev (>= 3.5.10-10),
+		libart2,
+		libcapsinetwork-dev,
+		libmath++-dev (>= 0.0.4-1001),
+		libogg,
+		libpng15 (>= 1.5.2-1),
+		libvorbis0,
+		qt3 (>= 3.3.8-2000)
+	<<
+	BuildDependsOnly: true
+	Files: <<
+		include
+		lib/libkdegames.la
+		lib/libkdegames.dylib
+		lib/libatlantic.la
+		lib/libatlantic.dylib
+		lib/libatlantikclient.la
+		lib/libatlantikclient.dylib
+		lib/libatlantikui.la
+		lib/libatlantikui.dylib
+		lib/libkolf.la
+		lib/libkolf.dylib
+	<<
+	DescUsage: <<
+---[ Installation ]---------------------------------------------------
+
+To install all of the official KDE packages, install "bundle-kde" or
+"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
+downloading strong cryptography).  Unless you have a specific reason
+not to, "bundle-kde-ssl" is suggested.
+
+---[ Configuration ]--------------------------------------------------
+
+To use KDE as your windowing system in XDarwin, create a file called
+".xinitrc" in your home directory, containing the following line:
+
+  /sw/bin/startkde >/tmp/kde.log 2>&1
+
+See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
+for more information on the xinitrc files and how they work.
+
+If you want to use Apple's X11 instead of the KDE window manager,
+put the following line before the startkde line in .xinitrc:
+
+  export KDEWM=quartz-wm
+
+If you want to disable quartz-wm even for clipboard synchronization
+(proxying), put the following line before the startkde line in
+.xinitrc:
+
+  export DISABLE_PROXY=1
+
+---[ Startup ]--------------------------------------------------------
+
+Once you have created an ~/.xinitrc file, you should be able to start
+KDE by clicking on the "XDarwin" icon in your Applications folder.  
+
+NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
+If you run KDE in rootless mode, it will take over your desktop with
+a window that covers everything up.  You can remove this by disabling
+desktop icons in the KDE control center.  Open the control center
+(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
+then expand the "Desktop" list, click "Behavior", and uncheck the
+"Show icons on desktop" checkbox.
+   
+---[ Removal ]--------------------------------------------------------
+   
+To remove all of the official KDE packages, you can remove the KDE
+libraries and anything that depends on them by running, in a terminal:
+   
+  sudo apt-get remove kdelibs3-unified-shlibs
+
+To remove an individual KDE package collection (like kdenetwork3 or
+kdesdk3) you can generally remove [package]-base.  For example, to
+remove all of the kdenetwork3 packages, run:
+
+  sudo apt-get remove kdenetwork3-base
+	<<
+<<
+SplitOff3: <<
+	Package: atlantik
+	Description: KDE - Monopoly-like game
+	Depends: %N-common (>= %v-%r)
+	Replaces: <<
+		%N (<< %v-%r),
+		%N-common (<< %v-%r),
+		%N-dev (<< %v-%r)
+	<<
+	Recommends: %N (>= %v-%r)
+	Suggests: monopd (>= 0.7.0-1)
+	Files: <<
+		bin/atlantik
+		lib/kde3/*kio_atlantik*
+		lib/*libatlanti*
+		share/applications/kde/atlantik.desktop
+		share/apps/atlantik
+		share/doc/kde/en/atlantik
+		share/icons/hicolor/16x16/apps/atlantik*
+		share/icons/hicolor/32x32/apps/atlantik*
+		share/icons/hicolor/48x48/apps/atlantik*
+		share/services/atlantik.protocol
+		share/man/man6/atlantik*
+	<<
+	Shlibs: <<
+		%p/lib/libatlantic.1.dylib 4.0.0 atlantik (>= 3.4.0-1)
+		%p/lib/libatlantikclient.1.dylib 4.0.0 atlantik (>= 3.4.0-1)
+		%p/lib/libatlantikui.1.dylib 4.0.0 atlantik (>= 3.4.0-1)
+	<<
+	Homepage: http://kde-apps.org/content/show.php?content=10019
+	DescDetail: <<
+Atlantik is the leading open-source game client for Monopoly-like board games
+to be played on the monopd network.
+	<<
+	DescUsage: <<
+---[ Installation ]---------------------------------------------------
+
+To install all of the official KDE packages, install "bundle-kde" or
+"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
+downloading strong cryptography).  Unless you have a specific reason
+not to, "bundle-kde-ssl" is suggested.
+
+---[ Configuration ]--------------------------------------------------
+
+To use KDE as your windowing system in XDarwin, create a file called
+".xinitrc" in your home directory, containing the following line:
+
+  /sw/bin/startkde >/tmp/kde.log 2>&1
+
+See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
+for more information on the xinitrc files and how they work.
+
+If you want to use Apple's X11 instead of the KDE window manager,
+put the following line before the startkde line in .xinitrc:
+
+  export KDEWM=quartz-wm
+
+If you want to disable quartz-wm even for clipboard synchronization
+(proxying), put the following line before the startkde line in
+.xinitrc:
+
+  export DISABLE_PROXY=1
+
+---[ Startup ]--------------------------------------------------------
+
+Once you have created an ~/.xinitrc file, you should be able to start
+KDE by clicking on the "XDarwin" icon in your Applications folder.  
+
+NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
+If you run KDE in rootless mode, it will take over your desktop with
+a window that covers everything up.  You can remove this by disabling
+desktop icons in the KDE control center.  Open the control center
+(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
+then expand the "Desktop" list, click "Behavior", and uncheck the
+"Show icons on desktop" checkbox.
+   
+---[ Removal ]--------------------------------------------------------
+   
+To remove all of the official KDE packages, you can remove the KDE
+libraries and anything that depends on them by running, in a terminal:
+   
+  sudo apt-get remove kdelibs3-unified-shlibs
+
+To remove an individual KDE package collection (like kdenetwork3 or
+kdesdk3) you can generally remove [package]-base.  For example, to
+remove all of the kdenetwork3 packages, run:
+
+  sudo apt-get remove kdenetwork3-base
+	<<
+<<
+SplitOff4: <<
+	Package: kasteroids
+	Description: KDE - asteroids clone
+	Depends: %N-common (>= %v-%r)
+	Replaces: <<
+		%N (<< %v-%r),
+		%N-common (<< %v-%r),
+		%N-dev (<< %v-%r)
+	<<
+	Recommends: %N (>= %v-%r)
+	Files: <<
+		bin/kasteroids
+		share/applications/kde/kasteroids.desktop
+		share/apps/kasteroids
+		share/config.kcfg/kasteroids.kcfg
+		share/doc/kde/en/kasteroids
+		share/icons/hicolor/128x128/apps/kasteroids*
+		share/icons/hicolor/16x16/apps/kasteroids*
+		share/icons/hicolor/22x22/apps/kasteroids*
+		share/icons/hicolor/32x32/apps/kasteroids*
+		share/icons/hicolor/48x48/apps/kasteroids*
+		share/icons/hicolor/64x64/apps/kasteroids*
+	<<
+	Homepage: http://games.kde.org/kde_arcade.php
+	DescDetail: <<
+KAsteroids is a fast arcade shooting game where the player has to command a
+spaceship and survive the passage of an asteroid field.  This is done by
+shooting at the asteroids which then split into smaller parts until nothing is
+left.  The game has fast and smooth graphics and is easy to learn and play.
+	<<
+	DescUsage: <<
+---[ Installation ]---------------------------------------------------
+
+To install all of the official KDE packages, install "bundle-kde" or
+"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
+downloading strong cryptography).  Unless you have a specific reason
+not to, "bundle-kde-ssl" is suggested.
+
+---[ Configuration ]--------------------------------------------------
+
+To use KDE as your windowing system in XDarwin, create a file called
+".xinitrc" in your home directory, containing the following line:
+
+  /sw/bin/startkde >/tmp/kde.log 2>&1
+
+See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
+for more information on the xinitrc files and how they work.
+
+If you want to use Apple's X11 instead of the KDE window manager,
+put the following line before the startkde line in .xinitrc:
+
+  export KDEWM=quartz-wm
+
+If you want to disable quartz-wm even for clipboard synchronization
+(proxying), put the following line before the startkde line in
+.xinitrc:
+
+  export DISABLE_PROXY=1
+
+---[ Startup ]--------------------------------------------------------
+
+Once you have created an ~/.xinitrc file, you should be able to start
+KDE by clicking on the "XDarwin" icon in your Applications folder.  
+
+NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
+If you run KDE in rootless mode, it will take over your desktop with
+a window that covers everything up.  You can remove this by disabling
+desktop icons in the KDE control center.  Open the control center
+(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
+then expand the "Desktop" list, click "Behavior", and uncheck the
+"Show icons on desktop" checkbox.
+   
+---[ Removal ]--------------------------------------------------------
+   
+To remove all of the official KDE packages, you can remove the KDE
+libraries and anything that depends on them by running, in a terminal:
+   
+  sudo apt-get remove kdelibs3-unified-shlibs
+
+To remove an individual KDE package collection (like kdenetwork3 or
+kdesdk3) you can generally remove [package]-base.  For example, to
+remove all of the kdenetwork3 packages, run:
+
+  sudo apt-get remove kdenetwork3-base
+	<<
+<<
+SplitOff5: <<
+	Package: katomic
+	Description: KDE - sokoban-like game
+	Depends: %N-common (>= %v-%r)
+	Replaces: <<
+		%N (<< %v-%r),
+		%N-common (<< %v-%r),
+		%N-dev (<< %v-%r)
+	<<
+	Recommends: %N (>= %v-%r)
+	Files: <<
+		bin/katomic
+		share/applications/kde/katomic.desktop
+		share/apps/katomic
+		share/doc/kde/en/katomic
+		share/icons/hicolor/128x128/apps/katomic*
+		share/icons/hicolor/16x16/apps/katomic*
+		share/icons/hicolor/22x22/apps/katomic*
+		share/icons/hicolor/32x32/apps/katomic*
+		share/icons/hicolor/48x48/apps/katomic*
+		share/icons/hicolor/64x64/apps/katomic*
+	<<
+	Homepage: http://games.kde.org/kde_tactics.php
+	DescDetail: <<
+This is a puzzle game, in which the object is to assemble a molecule from its
+atoms on a Sokoban-like board.  On each move, an atom goes as far as it can in a
+specified direction before being stopped by a wall or another atom.
+	<<
+	DescUsage: <<
+---[ Installation ]---------------------------------------------------
+
+To install all of the official KDE packages, install "bundle-kde" or
+"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
+downloading strong cryptography).  Unless you have a specific reason
+not to, "bundle-kde-ssl" is suggested.
+
+---[ Configuration ]--------------------------------------------------
+
+To use KDE as your windowing system in XDarwin, create a file called
+".xinitrc" in your home directory, containing the following line:
+
+  /sw/bin/startkde >/tmp/kde.log 2>&1
+
+See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
+for more information on the xinitrc files and how they work.
+
+If you want to use Apple's X11 instead of the KDE window manager,
+put the following line before the startkde line in .xinitrc:
+
+  export KDEWM=quartz-wm
+
+If you want to disable quartz-wm even for clipboard synchronization
+(proxying), put the following line before the startkde line in
+.xinitrc:
+
+  export DISABLE_PROXY=1
+
+---[ Startup ]--------------------------------------------------------
+
+Once you have created an ~/.xinitrc file, you should be able to start
+KDE by clicking on the "XDarwin" icon in your Applications folder.  
+
+NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
+If you run KDE in rootless mode, it will take over your desktop with
+a window that covers everything up.  You can remove this by disabling
+desktop icons in the KDE control center.  Open the control center
+(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
+then expand the "Desktop" list, click "Behavior", and uncheck the
+"Show icons on desktop" checkbox.
+   
+---[ Removal ]--------------------------------------------------------
+   
+To remove all of the official KDE packages, you can remove the KDE
+libraries and anything that depends on them by running, in a terminal:
+   
+  sudo apt-get remove kdelibs3-unified-shlibs
+
+To remove an individual KDE package collection (like kdenetwork3 or
+kdesdk3) you can generally remove [package]-base.  For example, to
+remove all of the kdenetwork3 packages, run:
+
+  sudo apt-get remove kdenetwork3-base
+	<<
+<<
+SplitOff6: <<
+	Package: kbackgammon
+	Description: KDE - backgammon board game
+	Depends: %N-common (>= %v-%r)
+	Replaces: <<
+		%N (<< %v-%r),
+		%N-common (<< %v-%r),
+		%N-dev (<< %v-%r)
+	<<
+	Recommends: %N (>= %v-%r)
+	Files: <<
+		bin/kbackgammon
+		share/applications/kde/kbackgammon.desktop
+		share/apps/kbackgammon
+		share/doc/kde/en/kbackgammon
+		share/icons/hicolor/128x128/apps/kbackgammon*
+		share/icons/hicolor/16x16/apps/kbackgammon*
+		share/icons/hicolor/22x22/apps/kbackgammon*
+		share/icons/hicolor/32x32/apps/kbackgammon*
+		share/icons/hicolor/48x48/apps/kbackgammon*
+		share/icons/hicolor/64x64/apps/kbackgammon*
+	<<
+	Homepage: http://games.kde.org/kde_boardgames.php
+	DescDetail: <<
+This is a graphical backgammon program following the rules of the boardgame
+Backgammon.  The KDE version supports backgammon games with other players, games
+against computer engines like GNU bg and even online games.
+	<<
+	DescUsage: <<
+---[ Installation ]---------------------------------------------------
+
+To install all of the official KDE packages, install "bundle-kde" or
+"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
+downloading strong cryptography).  Unless you have a specific reason
+not to, "bundle-kde-ssl" is suggested.
+
+---[ Configuration ]--------------------------------------------------
+
+To use KDE as your windowing system in XDarwin, create a file called
+".xinitrc" in your home directory, containing the following line:
+
+  /sw/bin/startkde >/tmp/kde.log 2>&1
+
+See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
+for more information on the xinitrc files and how they work.
+
+If you want to use Apple's X11 instead of the KDE window manager,
+put the following line before the startkde line in .xinitrc:
+
+  export KDEWM=quartz-wm
+
+If you want to disable quartz-wm even for clipboard synchronization
+(proxying), put the following line before the startkde line in
+.xinitrc:
+
+  export DISABLE_PROXY=1
+
+---[ Startup ]--------------------------------------------------------
+
+Once you have created an ~/.xinitrc file, you should be able to start
+KDE by clicking on the "XDarwin" icon in your Applications folder.  
+
+NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
+If you run KDE in rootless mode, it will take over your desktop with
+a window that covers everything up.  You can remove this by disabling
+desktop icons in the KDE control center.  Open the control center
+(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
+then expand the "Desktop" list, click "Behavior", and uncheck the
+"Show icons on desktop" checkbox.
+   
+---[ Removal ]--------------------------------------------------------
+   
+To remove all of the official KDE packages, you can remove the KDE
+libraries and anything that depends on them by running, in a terminal:
+   
+  sudo apt-get remove kdelibs3-unified-shlibs
+
+To remove an individual KDE package collection (like kdenetwork3 or
+kdesdk3) you can generally remove [package]-base.  For example, to
+remove all of the kdenetwork3 packages, run:
+
+  sudo apt-get remove kdenetwork3-base
+	<<
+<<
+SplitOff7: <<
+	Package: kbattleship
+	Description: KDE - Battleship clone
+	Depends: %N-base (>= %v-%r)
+	Replaces: <<
+		%N (<< %v-%r),
+		%N-common (<< %v-%r),
+		%N-dev (<< %v-%r)
+	<<
+	Recommends: %N (>= %v-%r)
+	Files: <<
+		bin/kbattleship
+		share/applications/kde/kbattleship.desktop
+		share/apps/kbattleship
+		share/apps/zeroconf/*kbattleship*
+		share/doc/kde/en/kbattleship
+		share/icons/hicolor/128x128/apps/kbattleship*
+		share/icons/hicolor/16x16/apps/kbattleship*
+		share/icons/hicolor/22x22/apps/kbattleship*
+		share/icons/hicolor/32x32/apps/kbattleship*
+		share/icons/hicolor/48x48/apps/kbattleship*
+		share/icons/hicolor/64x64/apps/kbattleship*
+	<<
+	Homepage: http://games.kde.org/kde_boardgames.php
+	DescDetail: <<
+KBatteship is a KDE implentation of the popular game "Battleship" where you have to
+try to sink the opponents ships.  The game can also be played with friends online
+via the internet.
+	<<
+	DescUsage: <<
+---[ Installation ]---------------------------------------------------
+
+To install all of the official KDE packages, install "bundle-kde" or
+"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
+downloading strong cryptography).  Unless you have a specific reason
+not to, "bundle-kde-ssl" is suggested.
+
+---[ Configuration ]--------------------------------------------------
+
+To use KDE as your windowing system in XDarwin, create a file called
+".xinitrc" in your home directory, containing the following line:
+
+  /sw/bin/startkde >/tmp/kde.log 2>&1
+
+See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
+for more information on the xinitrc files and how they work.
+
+If you want to use Apple's X11 instead of the KDE window manager,
+put the following line before the startkde line in .xinitrc:
+
+  export KDEWM=quartz-wm
+
+If you want to disable quartz-wm even for clipboard synchronization
+(proxying), put the following line before the startkde line in
+.xinitrc:
+
+  export DISABLE_PROXY=1
+
+---[ Startup ]--------------------------------------------------------
+
+Once you have created an ~/.xinitrc file, you should be able to start
+KDE by clicking on the "XDarwin" icon in your Applications folder.  
+
+NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
+If you run KDE in rootless mode, it will take over your desktop with
+a window that covers everything up.  You can remove this by disabling
+desktop icons in the KDE control center.  Open the control center
+(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
+then expand the "Desktop" list, click "Behavior", and uncheck the
+"Show icons on desktop" checkbox.
+   
+---[ Removal ]--------------------------------------------------------
+   
+To remove all of the official KDE packages, you can remove the KDE
+libraries and anything that depends on them by running, in a terminal:
+   
+  sudo apt-get remove kdelibs3-unified-shlibs
+
+To remove an individual KDE package collection (like kdenetwork3 or
+kdesdk3) you can generally remove [package]-base.  For example, to
+remove all of the kdenetwork3 packages, run:
+
+  sudo apt-get remove kdenetwork3-base
+	<<
+<<
+SplitOff8: <<
+	Package: kblackbox
+	Description: KDE - Blackbox clone
+	Depends: %N-common (>= %v-%r)
+	Replaces: <<
+		%N (<< %v-%r),
+		%N-common (<< %v-%r),
+		%N-dev (<< %v-%r)
+	<<
+	Recommends: %N (>= %v-%r)
+	Files: <<
+		bin/kblackbox
+		share/applications/kde/kblackbox.desktop
+		share/apps/kblackbox
+		share/doc/kde/en/kblackbox
+		share/icons/hicolor/128x128/apps/kblackbox*
+		share/icons/hicolor/16x16/apps/kblackbox*
+		share/icons/hicolor/22x22/apps/kblackbox*
+		share/icons/hicolor/32x32/apps/kblackbox*
+		share/icons/hicolor/48x48/apps/kblackbox*
+		share/icons/hicolor/64x64/apps/kblackbox*
+	<<
+	Homepage: http://games.kde.org/kde_boardgames.php
+	DescDetail: <<
+KBlackbox is a graphical logical game, inspired by emacs' blackbox.  It is a game of
+hide and seek played on an grid of boxes.
+	<<
+	DescUsage: <<
+---[ Installation ]---------------------------------------------------
+
+To install all of the official KDE packages, install "bundle-kde" or
+"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
+downloading strong cryptography).  Unless you have a specific reason
+not to, "bundle-kde-ssl" is suggested.
+
+---[ Configuration ]--------------------------------------------------
+
+To use KDE as your windowing system in XDarwin, create a file called
+".xinitrc" in your home directory, containing the following line:
+
+  /sw/bin/startkde >/tmp/kde.log 2>&1
+
+See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
+for more information on the xinitrc files and how they work.
+
+If you want to use Apple's X11 instead of the KDE window manager,
+put the following line before the startkde line in .xinitrc:
+
+  export KDEWM=quartz-wm
+
+If you want to disable quartz-wm even for clipboard synchronization
+(proxying), put the following line before the startkde line in
+.xinitrc:
+
+  export DISABLE_PROXY=1
+
+---[ Startup ]--------------------------------------------------------
+
+Once you have created an ~/.xinitrc file, you should be able to start
+KDE by clicking on the "XDarwin" icon in your Applications folder.  
+
+NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
+If you run KDE in rootless mode, it will take over your desktop with
+a window that covers everything up.  You can remove this by disabling
+desktop icons in the KDE control center.  Open the control center
+(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
+then expand the "Desktop" list, click "Behavior", and uncheck the
+"Show icons on desktop" checkbox.
+   
+---[ Removal ]--------------------------------------------------------
+   
+To remove all of the official KDE packages, you can remove the KDE
+libraries and anything that depends on them by running, in a terminal:
+   
+  sudo apt-get remove kdelibs3-unified-shlibs
+
+To remove an individual KDE package collection (like kdenetwork3 or
+kdesdk3) you can generally remove [package]-base.  For example, to
+remove all of the kdenetwork3 packages, run:
+
+  sudo apt-get remove kdenetwork3-base
+	<<
+<<
+SplitOff9: <<
+	Package: kbounce
+	Description: KDE - catch moving balls
+	Depends: %N-common (>= %v-%r)
+	Replaces: <<
+		%N (<< %v-%r),
+		%N-common (<< %v-%r),
+		%N-dev (<< %v-%r)
+	<<
+	Recommends: %N (>= %v-%r)
+	Files: <<
+		bin/kbounce
+		share/applications/kde/kbounce.desktop
+		share/apps/kbounce
+		share/doc/kde/en/kbounce
+		share/icons/hicolor/128x128/apps/kbounce*
+		share/icons/hicolor/16x16/apps/kbounce*
+		share/icons/hicolor/22x22/apps/kbounce*
+		share/icons/hicolor/32x32/apps/kbounce*
+		share/icons/hicolor/48x48/apps/kbounce*
+		share/icons/hicolor/64x64/apps/kbounce*
+	<<
+	Homepage: http://games.kde.org/kde_arcade.php
+	DescDetail: <<
+Your task in KBounce (Jezz Ball) is to catch several moving balls in a rectangular
+game field by building walls.  The motivation consists of finding new and advanced
+strategies to catch as many balls as possible.
+	<<
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
 
@@ -1051,103 +1744,6 @@ remove all of the kdenetwork3 packages, run:
   sudo apt-get remove kdenetwork3-base
 	<<
 <<
-SplitOff2: <<
-	Package: %N-dev
-	Description: KDE - kdegames development headers and libraries
-	Depends: <<
-		%N (>= %v-%r),
-		%N-common (>= %v-%r)
-	<<
-	Replaces: <<
-		%N (<< %v-%r),
-		%N-common (<< %v-%r),
-		%N-dev (<< %v-%r),
-		atlantik (<< %v-%r)
-	<<
-	Recommends: <<
-		arts-dev (>= 1.5.10-10),
-		audiofile,
-		esound,
-		fink (>= 0.29.7-1),
-		kdelibs3-unified-dev (>= 3.5.10-10),
-		libart2,
-		libcapsinetwork-dev,
-		libmath++-dev (>= 0.0.4-1001),
-		libogg,
-		libpng14 (>= 1.4.1-2),
-		libvorbis0,
-		qt3 (>= 3.3.8-2000)
-	<<
-	BuildDependsOnly: true
-	Files: <<
-		include
-		lib/libkdegames.la
-		lib/libkdegames.dylib
-		lib/libatlantic.la
-		lib/libatlantic.dylib
-		lib/libatlantikclient.la
-		lib/libatlantikclient.dylib
-		lib/libatlantikui.la
-		lib/libatlantikui.dylib
-		lib/libkolf.la
-		lib/libkolf.dylib
-	<<
-	DescUsage: <<
----[ Installation ]---------------------------------------------------
-
-To install all of the official KDE packages, install "bundle-kde" or
-"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
-downloading strong cryptography).  Unless you have a specific reason
-not to, "bundle-kde-ssl" is suggested.
-
----[ Configuration ]--------------------------------------------------
-
-To use KDE as your windowing system in XDarwin, create a file called
-".xinitrc" in your home directory, containing the following line:
-
-  /sw/bin/startkde >/tmp/kde.log 2>&1
-
-See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
-for more information on the xinitrc files and how they work.
-
-If you want to use Apple's X11 instead of the KDE window manager,
-put the following line before the startkde line in .xinitrc:
-
-  export KDEWM=quartz-wm
-
-If you want to disable quartz-wm even for clipboard synchronization
-(proxying), put the following line before the startkde line in
-.xinitrc:
-
-  export DISABLE_PROXY=1
-
----[ Startup ]--------------------------------------------------------
-
-Once you have created an ~/.xinitrc file, you should be able to start
-KDE by clicking on the "XDarwin" icon in your Applications folder.  
-
-NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
-If you run KDE in rootless mode, it will take over your desktop with
-a window that covers everything up.  You can remove this by disabling
-desktop icons in the KDE control center.  Open the control center
-(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
-then expand the "Desktop" list, click "Behavior", and uncheck the
-"Show icons on desktop" checkbox.
-   
----[ Removal ]--------------------------------------------------------
-   
-To remove all of the official KDE packages, you can remove the KDE
-libraries and anything that depends on them by running, in a terminal:
-   
-  sudo apt-get remove kdelibs3-unified-shlibs
-
-To remove an individual KDE package collection (like kdenetwork3 or
-kdesdk3) you can generally remove [package]-base.  For example, to
-remove all of the kdenetwork3 packages, run:
-
-  sudo apt-get remove kdenetwork3-base
-	<<
-<<
 SplitOff20: <<
 	Package: kpatience
 	Description: KDE - collection of solitaire-like card games
@@ -1995,96 +2591,6 @@ remove all of the kdenetwork3 packages, run:
   sudo apt-get remove kdenetwork3-base
 	<<
 <<
-SplitOff3: <<
-	Package: atlantik
-	Description: KDE - Monopoly-like game
-	Depends: %N-common (>= %v-%r)
-	Replaces: <<
-		%N (<< %v-%r),
-		%N-common (<< %v-%r),
-		%N-dev (<< %v-%r)
-	<<
-	Recommends: %N (>= %v-%r)
-	Suggests: monopd (>= 0.7.0-1)
-	Files: <<
-		bin/atlantik
-		lib/kde3/*kio_atlantik*
-		lib/*libatlanti*
-		share/applications/kde/atlantik.desktop
-		share/apps/atlantik
-		share/doc/kde/en/atlantik
-		share/icons/hicolor/16x16/apps/atlantik*
-		share/icons/hicolor/32x32/apps/atlantik*
-		share/icons/hicolor/48x48/apps/atlantik*
-		share/services/atlantik.protocol
-		share/man/man6/atlantik*
-	<<
-	Shlibs: <<
-		%p/lib/libatlantic.1.dylib 4.0.0 atlantik (>= 3.4.0-1)
-		%p/lib/libatlantikclient.1.dylib 4.0.0 atlantik (>= 3.4.0-1)
-		%p/lib/libatlantikui.1.dylib 4.0.0 atlantik (>= 3.4.0-1)
-	<<
-	Homepage: http://kde-apps.org/content/show.php?content=10019
-	DescDetail: <<
-Atlantik is the leading open-source game client for Monopoly-like board games
-to be played on the monopd network.
-	<<
-	DescUsage: <<
----[ Installation ]---------------------------------------------------
-
-To install all of the official KDE packages, install "bundle-kde" or
-"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
-downloading strong cryptography).  Unless you have a specific reason
-not to, "bundle-kde-ssl" is suggested.
-
----[ Configuration ]--------------------------------------------------
-
-To use KDE as your windowing system in XDarwin, create a file called
-".xinitrc" in your home directory, containing the following line:
-
-  /sw/bin/startkde >/tmp/kde.log 2>&1
-
-See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
-for more information on the xinitrc files and how they work.
-
-If you want to use Apple's X11 instead of the KDE window manager,
-put the following line before the startkde line in .xinitrc:
-
-  export KDEWM=quartz-wm
-
-If you want to disable quartz-wm even for clipboard synchronization
-(proxying), put the following line before the startkde line in
-.xinitrc:
-
-  export DISABLE_PROXY=1
-
----[ Startup ]--------------------------------------------------------
-
-Once you have created an ~/.xinitrc file, you should be able to start
-KDE by clicking on the "XDarwin" icon in your Applications folder.  
-
-NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
-If you run KDE in rootless mode, it will take over your desktop with
-a window that covers everything up.  You can remove this by disabling
-desktop icons in the KDE control center.  Open the control center
-(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
-then expand the "Desktop" list, click "Behavior", and uncheck the
-"Show icons on desktop" checkbox.
-   
----[ Removal ]--------------------------------------------------------
-   
-To remove all of the official KDE packages, you can remove the KDE
-libraries and anything that depends on them by running, in a terminal:
-   
-  sudo apt-get remove kdelibs3-unified-shlibs
-
-To remove an individual KDE package collection (like kdenetwork3 or
-kdesdk3) you can generally remove [package]-base.  For example, to
-remove all of the kdenetwork3 packages, run:
-
-  sudo apt-get remove kdenetwork3-base
-	<<
-<<
 SplitOff30: <<
 	Package: ktron
 	Description: KDE - simple Tron clone
@@ -2517,512 +3023,6 @@ SplitOff35: <<
 		kdebase3-unified (>= 3.5.10-10)
 	<<
 	Files: share/doc/installed-packages/%N-base
-	DescUsage: <<
----[ Installation ]---------------------------------------------------
-
-To install all of the official KDE packages, install "bundle-kde" or
-"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
-downloading strong cryptography).  Unless you have a specific reason
-not to, "bundle-kde-ssl" is suggested.
-
----[ Configuration ]--------------------------------------------------
-
-To use KDE as your windowing system in XDarwin, create a file called
-".xinitrc" in your home directory, containing the following line:
-
-  /sw/bin/startkde >/tmp/kde.log 2>&1
-
-See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
-for more information on the xinitrc files and how they work.
-
-If you want to use Apple's X11 instead of the KDE window manager,
-put the following line before the startkde line in .xinitrc:
-
-  export KDEWM=quartz-wm
-
-If you want to disable quartz-wm even for clipboard synchronization
-(proxying), put the following line before the startkde line in
-.xinitrc:
-
-  export DISABLE_PROXY=1
-
----[ Startup ]--------------------------------------------------------
-
-Once you have created an ~/.xinitrc file, you should be able to start
-KDE by clicking on the "XDarwin" icon in your Applications folder.  
-
-NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
-If you run KDE in rootless mode, it will take over your desktop with
-a window that covers everything up.  You can remove this by disabling
-desktop icons in the KDE control center.  Open the control center
-(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
-then expand the "Desktop" list, click "Behavior", and uncheck the
-"Show icons on desktop" checkbox.
-   
----[ Removal ]--------------------------------------------------------
-   
-To remove all of the official KDE packages, you can remove the KDE
-libraries and anything that depends on them by running, in a terminal:
-   
-  sudo apt-get remove kdelibs3-unified-shlibs
-
-To remove an individual KDE package collection (like kdenetwork3 or
-kdesdk3) you can generally remove [package]-base.  For example, to
-remove all of the kdenetwork3 packages, run:
-
-  sudo apt-get remove kdenetwork3-base
-	<<
-<<
-SplitOff4: <<
-	Package: kasteroids
-	Description: KDE - asteroids clone
-	Depends: %N-common (>= %v-%r)
-	Replaces: <<
-		%N (<< %v-%r),
-		%N-common (<< %v-%r),
-		%N-dev (<< %v-%r)
-	<<
-	Recommends: %N (>= %v-%r)
-	Files: <<
-		bin/kasteroids
-		share/applications/kde/kasteroids.desktop
-		share/apps/kasteroids
-		share/config.kcfg/kasteroids.kcfg
-		share/doc/kde/en/kasteroids
-		share/icons/hicolor/128x128/apps/kasteroids*
-		share/icons/hicolor/16x16/apps/kasteroids*
-		share/icons/hicolor/22x22/apps/kasteroids*
-		share/icons/hicolor/32x32/apps/kasteroids*
-		share/icons/hicolor/48x48/apps/kasteroids*
-		share/icons/hicolor/64x64/apps/kasteroids*
-	<<
-	Homepage: http://games.kde.org/kde_arcade.php
-	DescDetail: <<
-KAsteroids is a fast arcade shooting game where the player has to command a
-spaceship and survive the passage of an asteroid field.  This is done by
-shooting at the asteroids which then split into smaller parts until nothing is
-left.  The game has fast and smooth graphics and is easy to learn and play.
-	<<
-	DescUsage: <<
----[ Installation ]---------------------------------------------------
-
-To install all of the official KDE packages, install "bundle-kde" or
-"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
-downloading strong cryptography).  Unless you have a specific reason
-not to, "bundle-kde-ssl" is suggested.
-
----[ Configuration ]--------------------------------------------------
-
-To use KDE as your windowing system in XDarwin, create a file called
-".xinitrc" in your home directory, containing the following line:
-
-  /sw/bin/startkde >/tmp/kde.log 2>&1
-
-See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
-for more information on the xinitrc files and how they work.
-
-If you want to use Apple's X11 instead of the KDE window manager,
-put the following line before the startkde line in .xinitrc:
-
-  export KDEWM=quartz-wm
-
-If you want to disable quartz-wm even for clipboard synchronization
-(proxying), put the following line before the startkde line in
-.xinitrc:
-
-  export DISABLE_PROXY=1
-
----[ Startup ]--------------------------------------------------------
-
-Once you have created an ~/.xinitrc file, you should be able to start
-KDE by clicking on the "XDarwin" icon in your Applications folder.  
-
-NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
-If you run KDE in rootless mode, it will take over your desktop with
-a window that covers everything up.  You can remove this by disabling
-desktop icons in the KDE control center.  Open the control center
-(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
-then expand the "Desktop" list, click "Behavior", and uncheck the
-"Show icons on desktop" checkbox.
-   
----[ Removal ]--------------------------------------------------------
-   
-To remove all of the official KDE packages, you can remove the KDE
-libraries and anything that depends on them by running, in a terminal:
-   
-  sudo apt-get remove kdelibs3-unified-shlibs
-
-To remove an individual KDE package collection (like kdenetwork3 or
-kdesdk3) you can generally remove [package]-base.  For example, to
-remove all of the kdenetwork3 packages, run:
-
-  sudo apt-get remove kdenetwork3-base
-	<<
-<<
-SplitOff5: <<
-	Package: katomic
-	Description: KDE - sokoban-like game
-	Depends: %N-common (>= %v-%r)
-	Replaces: <<
-		%N (<< %v-%r),
-		%N-common (<< %v-%r),
-		%N-dev (<< %v-%r)
-	<<
-	Recommends: %N (>= %v-%r)
-	Files: <<
-		bin/katomic
-		share/applications/kde/katomic.desktop
-		share/apps/katomic
-		share/doc/kde/en/katomic
-		share/icons/hicolor/128x128/apps/katomic*
-		share/icons/hicolor/16x16/apps/katomic*
-		share/icons/hicolor/22x22/apps/katomic*
-		share/icons/hicolor/32x32/apps/katomic*
-		share/icons/hicolor/48x48/apps/katomic*
-		share/icons/hicolor/64x64/apps/katomic*
-	<<
-	Homepage: http://games.kde.org/kde_tactics.php
-	DescDetail: <<
-This is a puzzle game, in which the object is to assemble a molecule from its
-atoms on a Sokoban-like board.  On each move, an atom goes as far as it can in a
-specified direction before being stopped by a wall or another atom.
-	<<
-	DescUsage: <<
----[ Installation ]---------------------------------------------------
-
-To install all of the official KDE packages, install "bundle-kde" or
-"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
-downloading strong cryptography).  Unless you have a specific reason
-not to, "bundle-kde-ssl" is suggested.
-
----[ Configuration ]--------------------------------------------------
-
-To use KDE as your windowing system in XDarwin, create a file called
-".xinitrc" in your home directory, containing the following line:
-
-  /sw/bin/startkde >/tmp/kde.log 2>&1
-
-See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
-for more information on the xinitrc files and how they work.
-
-If you want to use Apple's X11 instead of the KDE window manager,
-put the following line before the startkde line in .xinitrc:
-
-  export KDEWM=quartz-wm
-
-If you want to disable quartz-wm even for clipboard synchronization
-(proxying), put the following line before the startkde line in
-.xinitrc:
-
-  export DISABLE_PROXY=1
-
----[ Startup ]--------------------------------------------------------
-
-Once you have created an ~/.xinitrc file, you should be able to start
-KDE by clicking on the "XDarwin" icon in your Applications folder.  
-
-NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
-If you run KDE in rootless mode, it will take over your desktop with
-a window that covers everything up.  You can remove this by disabling
-desktop icons in the KDE control center.  Open the control center
-(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
-then expand the "Desktop" list, click "Behavior", and uncheck the
-"Show icons on desktop" checkbox.
-   
----[ Removal ]--------------------------------------------------------
-   
-To remove all of the official KDE packages, you can remove the KDE
-libraries and anything that depends on them by running, in a terminal:
-   
-  sudo apt-get remove kdelibs3-unified-shlibs
-
-To remove an individual KDE package collection (like kdenetwork3 or
-kdesdk3) you can generally remove [package]-base.  For example, to
-remove all of the kdenetwork3 packages, run:
-
-  sudo apt-get remove kdenetwork3-base
-	<<
-<<
-SplitOff6: <<
-	Package: kbackgammon
-	Description: KDE - backgammon board game
-	Depends: %N-common (>= %v-%r)
-	Replaces: <<
-		%N (<< %v-%r),
-		%N-common (<< %v-%r),
-		%N-dev (<< %v-%r)
-	<<
-	Recommends: %N (>= %v-%r)
-	Files: <<
-		bin/kbackgammon
-		share/applications/kde/kbackgammon.desktop
-		share/apps/kbackgammon
-		share/doc/kde/en/kbackgammon
-		share/icons/hicolor/128x128/apps/kbackgammon*
-		share/icons/hicolor/16x16/apps/kbackgammon*
-		share/icons/hicolor/22x22/apps/kbackgammon*
-		share/icons/hicolor/32x32/apps/kbackgammon*
-		share/icons/hicolor/48x48/apps/kbackgammon*
-		share/icons/hicolor/64x64/apps/kbackgammon*
-	<<
-	Homepage: http://games.kde.org/kde_boardgames.php
-	DescDetail: <<
-This is a graphical backgammon program following the rules of the boardgame
-Backgammon.  The KDE version supports backgammon games with other players, games
-against computer engines like GNU bg and even online games.
-	<<
-	DescUsage: <<
----[ Installation ]---------------------------------------------------
-
-To install all of the official KDE packages, install "bundle-kde" or
-"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
-downloading strong cryptography).  Unless you have a specific reason
-not to, "bundle-kde-ssl" is suggested.
-
----[ Configuration ]--------------------------------------------------
-
-To use KDE as your windowing system in XDarwin, create a file called
-".xinitrc" in your home directory, containing the following line:
-
-  /sw/bin/startkde >/tmp/kde.log 2>&1
-
-See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
-for more information on the xinitrc files and how they work.
-
-If you want to use Apple's X11 instead of the KDE window manager,
-put the following line before the startkde line in .xinitrc:
-
-  export KDEWM=quartz-wm
-
-If you want to disable quartz-wm even for clipboard synchronization
-(proxying), put the following line before the startkde line in
-.xinitrc:
-
-  export DISABLE_PROXY=1
-
----[ Startup ]--------------------------------------------------------
-
-Once you have created an ~/.xinitrc file, you should be able to start
-KDE by clicking on the "XDarwin" icon in your Applications folder.  
-
-NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
-If you run KDE in rootless mode, it will take over your desktop with
-a window that covers everything up.  You can remove this by disabling
-desktop icons in the KDE control center.  Open the control center
-(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
-then expand the "Desktop" list, click "Behavior", and uncheck the
-"Show icons on desktop" checkbox.
-   
----[ Removal ]--------------------------------------------------------
-   
-To remove all of the official KDE packages, you can remove the KDE
-libraries and anything that depends on them by running, in a terminal:
-   
-  sudo apt-get remove kdelibs3-unified-shlibs
-
-To remove an individual KDE package collection (like kdenetwork3 or
-kdesdk3) you can generally remove [package]-base.  For example, to
-remove all of the kdenetwork3 packages, run:
-
-  sudo apt-get remove kdenetwork3-base
-	<<
-<<
-SplitOff7: <<
-	Package: kbattleship
-	Description: KDE - Battleship clone
-	Depends: %N-base (>= %v-%r)
-	Replaces: <<
-		%N (<< %v-%r),
-		%N-common (<< %v-%r),
-		%N-dev (<< %v-%r)
-	<<
-	Recommends: %N (>= %v-%r)
-	Files: <<
-		bin/kbattleship
-		share/applications/kde/kbattleship.desktop
-		share/apps/kbattleship
-		share/apps/zeroconf/*kbattleship*
-		share/doc/kde/en/kbattleship
-		share/icons/hicolor/128x128/apps/kbattleship*
-		share/icons/hicolor/16x16/apps/kbattleship*
-		share/icons/hicolor/22x22/apps/kbattleship*
-		share/icons/hicolor/32x32/apps/kbattleship*
-		share/icons/hicolor/48x48/apps/kbattleship*
-		share/icons/hicolor/64x64/apps/kbattleship*
-	<<
-	Homepage: http://games.kde.org/kde_boardgames.php
-	DescDetail: <<
-KBatteship is a KDE implentation of the popular game "Battleship" where you have to
-try to sink the opponents ships.  The game can also be played with friends online
-via the internet.
-	<<
-	DescUsage: <<
----[ Installation ]---------------------------------------------------
-
-To install all of the official KDE packages, install "bundle-kde" or
-"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
-downloading strong cryptography).  Unless you have a specific reason
-not to, "bundle-kde-ssl" is suggested.
-
----[ Configuration ]--------------------------------------------------
-
-To use KDE as your windowing system in XDarwin, create a file called
-".xinitrc" in your home directory, containing the following line:
-
-  /sw/bin/startkde >/tmp/kde.log 2>&1
-
-See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
-for more information on the xinitrc files and how they work.
-
-If you want to use Apple's X11 instead of the KDE window manager,
-put the following line before the startkde line in .xinitrc:
-
-  export KDEWM=quartz-wm
-
-If you want to disable quartz-wm even for clipboard synchronization
-(proxying), put the following line before the startkde line in
-.xinitrc:
-
-  export DISABLE_PROXY=1
-
----[ Startup ]--------------------------------------------------------
-
-Once you have created an ~/.xinitrc file, you should be able to start
-KDE by clicking on the "XDarwin" icon in your Applications folder.  
-
-NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
-If you run KDE in rootless mode, it will take over your desktop with
-a window that covers everything up.  You can remove this by disabling
-desktop icons in the KDE control center.  Open the control center
-(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
-then expand the "Desktop" list, click "Behavior", and uncheck the
-"Show icons on desktop" checkbox.
-   
----[ Removal ]--------------------------------------------------------
-   
-To remove all of the official KDE packages, you can remove the KDE
-libraries and anything that depends on them by running, in a terminal:
-   
-  sudo apt-get remove kdelibs3-unified-shlibs
-
-To remove an individual KDE package collection (like kdenetwork3 or
-kdesdk3) you can generally remove [package]-base.  For example, to
-remove all of the kdenetwork3 packages, run:
-
-  sudo apt-get remove kdenetwork3-base
-	<<
-<<
-SplitOff8: <<
-	Package: kblackbox
-	Description: KDE - Blackbox clone
-	Depends: %N-common (>= %v-%r)
-	Replaces: <<
-		%N (<< %v-%r),
-		%N-common (<< %v-%r),
-		%N-dev (<< %v-%r)
-	<<
-	Recommends: %N (>= %v-%r)
-	Files: <<
-		bin/kblackbox
-		share/applications/kde/kblackbox.desktop
-		share/apps/kblackbox
-		share/doc/kde/en/kblackbox
-		share/icons/hicolor/128x128/apps/kblackbox*
-		share/icons/hicolor/16x16/apps/kblackbox*
-		share/icons/hicolor/22x22/apps/kblackbox*
-		share/icons/hicolor/32x32/apps/kblackbox*
-		share/icons/hicolor/48x48/apps/kblackbox*
-		share/icons/hicolor/64x64/apps/kblackbox*
-	<<
-	Homepage: http://games.kde.org/kde_boardgames.php
-	DescDetail: <<
-KBlackbox is a graphical logical game, inspired by emacs' blackbox.  It is a game of
-hide and seek played on an grid of boxes.
-	<<
-	DescUsage: <<
----[ Installation ]---------------------------------------------------
-
-To install all of the official KDE packages, install "bundle-kde" or
-"bundle-kde-ssl" (depending on whether crypotgraphic laws permit
-downloading strong cryptography).  Unless you have a specific reason
-not to, "bundle-kde-ssl" is suggested.
-
----[ Configuration ]--------------------------------------------------
-
-To use KDE as your windowing system in XDarwin, create a file called
-".xinitrc" in your home directory, containing the following line:
-
-  /sw/bin/startkde >/tmp/kde.log 2>&1
-
-See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
-for more information on the xinitrc files and how they work.
-
-If you want to use Apple's X11 instead of the KDE window manager,
-put the following line before the startkde line in .xinitrc:
-
-  export KDEWM=quartz-wm
-
-If you want to disable quartz-wm even for clipboard synchronization
-(proxying), put the following line before the startkde line in
-.xinitrc:
-
-  export DISABLE_PROXY=1
-
----[ Startup ]--------------------------------------------------------
-
-Once you have created an ~/.xinitrc file, you should be able to start
-KDE by clicking on the "XDarwin" icon in your Applications folder.  
-
-NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
-If you run KDE in rootless mode, it will take over your desktop with
-a window that covers everything up.  You can remove this by disabling
-desktop icons in the KDE control center.  Open the control center
-(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
-then expand the "Desktop" list, click "Behavior", and uncheck the
-"Show icons on desktop" checkbox.
-   
----[ Removal ]--------------------------------------------------------
-   
-To remove all of the official KDE packages, you can remove the KDE
-libraries and anything that depends on them by running, in a terminal:
-   
-  sudo apt-get remove kdelibs3-unified-shlibs
-
-To remove an individual KDE package collection (like kdenetwork3 or
-kdesdk3) you can generally remove [package]-base.  For example, to
-remove all of the kdenetwork3 packages, run:
-
-  sudo apt-get remove kdenetwork3-base
-	<<
-<<
-SplitOff9: <<
-	Package: kbounce
-	Description: KDE - catch moving balls
-	Depends: %N-common (>= %v-%r)
-	Replaces: <<
-		%N (<< %v-%r),
-		%N-common (<< %v-%r),
-		%N-dev (<< %v-%r)
-	<<
-	Recommends: %N (>= %v-%r)
-	Files: <<
-		bin/kbounce
-		share/applications/kde/kbounce.desktop
-		share/apps/kbounce
-		share/doc/kde/en/kbounce
-		share/icons/hicolor/128x128/apps/kbounce*
-		share/icons/hicolor/16x16/apps/kbounce*
-		share/icons/hicolor/22x22/apps/kbounce*
-		share/icons/hicolor/32x32/apps/kbounce*
-		share/icons/hicolor/48x48/apps/kbounce*
-		share/icons/hicolor/64x64/apps/kbounce*
-	<<
-	Homepage: http://games.kde.org/kde_arcade.php
-	DescDetail: <<
-Your task in KBounce (Jezz Ball) is to catch several moving balls in a rectangular
-game field by building walls.  The motivation consists of finding new and advanced
-strategies to catch as many balls as possible.
-	<<
 	DescUsage: <<
 ---[ Installation ]---------------------------------------------------
 

@@ -8,7 +8,6 @@ Type: phonon (mac)
 #endif
 Version: 4.5.0
 Revision: 1
-Epoch: 1
 Description: Qt-based multimedia framework
 License: LGPL
 Maintainer: Benjamin Reed <phonon@fink.raccoonfink.com>

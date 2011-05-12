@@ -30,7 +30,7 @@ BuildDepends: <<
 	libgettext8-dev,
 	libiconv-dev,
 	libogg,
-	libpng14,
+	libpng15,
 	libsigc++2 (>= 2.0.11-1003),
 	libvorbis0,
 	libxml++2 (>= 2.20.0-1),

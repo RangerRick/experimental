@@ -7,12 +7,12 @@ Maintainer: Sylvain Cuaz <zauc@users.sourceforge.net>
 
 Depends: <<
 	libjpeg8-shlibs,
-	libpng14-shlibs,
+	libpng15-shlibs,
 	macosx
 <<
 BuildDepends: <<
 	libjpeg8,
-	libpng14
+	libpng15
 <<
 GCC: 4.0
 

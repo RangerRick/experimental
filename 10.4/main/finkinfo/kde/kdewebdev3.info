@@ -28,7 +28,7 @@ BuildDepends: <<
 	libiconv-dev,
 	libidn,
 	libjpeg8,
-	libpng14 (>= 1.4.1-2),
+	libpng15 (>= 1.5.2-1),
 	libxml2,
 	libxslt,
 	pcre,

@@ -29,7 +29,7 @@ BuildDepends: <<
 	libidn (>= 0.5.1-1),
 	libjpeg8,
 	libogg,
-	libpng14 (>= 1.4.1-2),
+	libpng15 (>= 1.5.2-1),
 	libtiff,
 	libvorbis0,
 	libxml2,
