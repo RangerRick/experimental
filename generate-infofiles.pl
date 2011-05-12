@@ -234,20 +234,28 @@ FILELOOP: for my $file (@files) {
 			$noext =~ s/\.info\.in$//;
 			my $x11 = IO::Handle->new();
 			my $mac = IO::Handle->new();
-			my $in_x11 = 0;
-			my $in_mac = 0;
-			my $in_0   = 0;
+			my $in_x11   = 0;
+			my $in_mac   = 0;
+			my $in_0     = 0;
+			my $in_ifdef = 0;
 			my $line;
 			if (open($x11, '>' . $dir . '/.' . $noext . '-x11.info')) {
 				if (open($mac, '>' . $dir . '/.' . $noext . '-mac.info')) {
 					while ($line = <FILEIN>) {
+						#print "$in_x11 $in_mac $in_0 $in_ifdef $line";
 						if ($in_x11) {
 							if ($line =~ /^\s*\#else\s*$/) {
 								$in_x11 = 0;
 								$in_mac = 1;
-							} elsif ($line =~ /^\s*\#endif\s*$/) {
+							} elsif ($in_ifdef == 0 and $line =~ /^\s*\#endif\s*$/) {
 								$in_x11 = 0;
 								$in_mac = 0;
+							} elsif ($line =~ /^\s*\#ifn?def\s.*$/) {
+								$in_ifdef++;
+								print $x11 $line;
+							} elsif ($line =~ /^\s*\#endif\s*$/) {
+								$in_ifdef--;
+								print $x11 $line;
 							} else {
 								print $x11 $line;
 							}
@@ -255,18 +263,34 @@ FILELOOP: for my $file (@files) {
 							if ($line =~ /^\s*\#else\s*$/) {
 								$in_mac = 0;
 								$in_x11 = 1;
-							} elsif ($line =~ /^\s*\#endif\s*$/) {
+							} elsif ($in_ifdef == 0 and $line =~ /^\s*\#endif\s*$/) {
 								$in_x11 = 0;
 								$in_mac = 0;
+							} elsif ($line =~ /^\s*\#ifn?def\s.*$/) {
+								$in_ifdef++;
+								print $mac $line;
+							} elsif ($line =~ /^\s*\#endif\s*$/) {
+								$in_ifdef--;
+								print $mac $line;
 							} else {
 								print $mac $line;
 							}
 						} elsif ($in_0) {
 							if ($line =~ /^\s*\#else\s*$/) {
 								$in_0 = 0;
-							} elsif ($line =~ /^\s*\#endif\s*/) {
+							} elsif ($in_ifdef == 0 and $line =~ /^\s*\#endif\s*/) {
 								$in_0 = 0;
+							} elsif ($line =~ /^\s*\#ifn?def\s.*$/) {
+								$in_ifdef++;
+							} elsif ($line =~ /^\s*\#endif\s*$/) {
+								$in_ifdef--;
 							}
+						} elsif ($in_ifdef > 0) {
+							if ($line =~ /^\s*\#endif\s*/) {
+								$in_ifdef--;
+							}
+							print $x11 $line;
+							print $mac $line;
 						} else {
 							if ($line =~ /^\s*\#ifdef TYPE_X11\s*$/) {
 								$in_x11 = 1;
@@ -274,6 +298,14 @@ FILELOOP: for my $file (@files) {
 								$in_mac = 1;
 							} elsif ($line =~ /^\s*\#if 0\s*$/) {
 								$in_0 = 1;
+							} elsif ($line =~ /^\s*\#ifn?def\s.*$/) {
+								$in_ifdef++;
+								print $x11 $line;
+								print $mac $line;
+							} elsif ($line =~ /^\s*\#endif\s*$/) {
+								$in_ifdef--;
+								print $x11 $line;
+								print $mac $line;
 							} else {
 								print $x11 $line;
 								print $mac $line;
