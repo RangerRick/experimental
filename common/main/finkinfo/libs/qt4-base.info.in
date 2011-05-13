@@ -10,11 +10,11 @@ Version: 4.7.3
 Revision: 1
 GCC: 4.0
 CustomMirror: RangerMirror
-Source: mirror:custom:qt/qt-%v-mac-1c3b651.tar.gz
-Source-MD5: d1164c0d75d0f4e86c2e61eb4fd50045
+Source: mirror:custom:qt/qt-%v-mac-0cc7b7e.tar.gz
+Source-MD5: 26281f4bab98f2600cbf71e10aad1e0c
 SourceDirectory: qt-kde-qt-mac
 PatchFile: qt4-base.patch
-PatchFile-MD5: 620cb32aa29bd2e7993f0eec83d4344a
+PatchFile-MD5: d17c9da8c060e0093fa7e865c2d617d3
 PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 --fuzz=4
 	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp
@@ -66,7 +66,7 @@ BuildDepends: <<
 	system-openssl-dev,
 <<
 Replaces: qt4-%type_pkg[qt] (<< 4.7.3-1)
-BuildConflicts: kdelibs3-dev, kdelibs3-ssl-dev, kdelibs3-unified-dev, libevent1, pcre, clucene-core
+BuildConflicts: kdelibs3-dev, kdelibs3-ssl-dev, kdelibs3-unified-dev, libevent1, clucene-core
 BuildDependsOnly: true
 NoSetLDFLAGS: true
 CompileScript: <<
@@ -80,21 +80,7 @@ CompileScript: <<
 	sh ./configure-for-fink.sh "%p" "qt4-%type_pkg[qt]" $EXTRA_ARGS -make "libs tools docs"
 	find . -name Makefile\* -print0 | xargs -0 perl -pi -e 's,-I%p/include,-isystem %p/include,g'
 
-	export QTCC=gcc
-	export QTCXX=g++
-	
-	if [ -x /usr/bin/gcc-4.2 ]; then
-		export QTCC=gcc-4.2
-		export QTCXX=g++-4.2
-	fi
-	
-	if [ -x "$FINKPREFIX/bin/ccache" ]; then
-		export QTCC="$FINKPREFIX/bin/ccache $QTCC"
-		export QTCXX="$FINKPREFIX/bin/ccache $QTCXX"
-		export CCACHE_DIR="/tmp/ccache-qt4"
-	fi
-
-	make CC="$QTCC" CXX="$QTCXX"
+	make
 <<
 InstallScript: <<
 #!/bin/sh -ev
@@ -105,6 +91,7 @@ InstallScript: <<
 
 	install -d -m 755 %i/bin
 
+#ifdef TYPE_X11
 	# add the WS_X11 stuff
 	cat <<END >%i/lib/qt4-%type_pkg[qt]/include/QtCore/qglobal.h.new
 #ifndef __USE_WS_X11__
@@ -120,6 +107,7 @@ END
 			ln -sf %p/lib/qt4-%type_pkg[qt]/bin/$bin %i/bin/${bin}4-%type_pkg[qt]
 		fi
 	done
+#endif
 
 	#### FIX LA, PRL and PC FILES ####
 
@@ -784,10 +772,10 @@ SplitOffDesigner: <<
 	Files: <<
 #ifdef TYPE_X11
 		lib/qt4-%type_pkg[qt]/bin/designer*
+		bin/designer4-%type_pkg[qt]
 #else
 		lib/qt4-%type_pkg[qt]/bin/Designer*
 #endif
-		bin/designer4-%type_pkg[qt]
 	<<
 	Replaces: <<
 		qt4-%type_pkg[qt] (<< 4.7.3-1),
@@ -804,12 +792,12 @@ SplitOffLinguist: <<
 	Files: <<
 #ifdef TYPE_X11
 		lib/qt4-%type_pkg[qt]/bin/l*
+		bin/linguist4-%type_pkg[qt]
 #else
 		lib/qt4-%type_pkg[qt]/bin/l*
 		lib/qt4-%type_pkg[qt]/bin/Linguist*
 #endif
 		lib/qt4-%type_pkg[qt]/phrasebooks
-		bin/linguist4-%type_pkg[qt]
 	<<
 	Replaces: <<
 		qt4-%type_pkg[qt] (<< 4.7.3-1),

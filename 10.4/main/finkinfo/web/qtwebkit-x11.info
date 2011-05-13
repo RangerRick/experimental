@@ -26,11 +26,9 @@ CustomMirror: <<
 	eur-NL: http://www.finkproject.org/~ranger/distfiles
 	nam-US: http://ranger.befunk.com/fink
 <<
-Source: mirror:custom:qt/qt-4.7.3-mac-1c3b651.tar.gz
-Source-MD5: d1164c0d75d0f4e86c2e61eb4fd50045
+Source: mirror:custom:qt/qt-4.7.3-mac-0cc7b7e.tar.gz
+Source-MD5: 26281f4bab98f2600cbf71e10aad1e0c
 SourceDirectory: qt-kde-qt-mac
-PatchFile: qtwebkit.patch
-PatchFile-MD5: 1f256c5df19107c011d9e8995a8c9721
 
 UseMaxBuildJobs: true
 CompileScript: <<

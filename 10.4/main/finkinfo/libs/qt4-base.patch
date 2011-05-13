@@ -51,36 +51,3 @@ index ad1f163..ab1de5c 100644
  QMAKE_FIX_RPATH		= install_name_tool -id 
  
  QMAKE_LIBS_DYNLOAD	=
-diff --git a/configure-for-fink.sh b/configure-for-fink.sh
-index 3005bd6..002f715 100755
---- a/configure-for-fink.sh
-+++ b/configure-for-fink.sh
-@@ -16,26 +16,10 @@ PATH="$QTDIR/bin:$FINKPREFIX/lib/freetype219/bin:$PATH"
- 
- EXTRA_ARGS=""
- 
--[ -z "$CC" ]  && export CC=gcc
--[ -z "$CXX" ] && export CXX=g++
--export PLATFORM_POSTFIX=""
--
--if [ -x /usr/bin/gcc-4.2 ]; then
--	export CC=gcc-4.2
--	export CXX=g++-4.2
--	export PLATFORM_POSTFIX="42"
--fi 
--
--if [ -x "$FINKPREFIX/bin/ccache" ]; then
--	export CC="$FINKPREFIX/bin/ccache $CC"
--	export CXX="$FINKPREFIX/bin/ccache $CXX"
--	export CCACHE_DIR="/tmp/ccache-qt4"
--fi
--
- if [ "$PKGNAME" = "qt4-x11" ]; then
--	EXTRA_ARGS="-x11 -platform darwin-g++$PLATFORM_POSTFIX -xplatform darwin-g++$PLATFORM_POSTFIX"
-+	EXTRA_ARGS="-x11 -platform darwin-g++ -xplatform darwin-g++"
- else
--	EXTRA_ARGS="-platform macx-g++$PLATFORM_POSTFIX -xplatform macx-g++$PLATFORM_POSTFIX"
-+	EXTRA_ARGS="-platform macx-g++ -xplatform macx-g++"
- fi
- 
- case `sw_vers -productVersion` in

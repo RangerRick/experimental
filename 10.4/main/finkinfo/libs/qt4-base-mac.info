@@ -51,7 +51,7 @@ BuildDepends: <<
 	sqlite3-dev,
 	system-openssl-dev
 <<
-BuildConflicts: kdelibs3-dev, kdelibs3-ssl-dev, kdelibs3-unified-dev, libevent1, pcre, clucene-core
+BuildConflicts: kdelibs3-dev, kdelibs3-ssl-dev, kdelibs3-unified-dev, libevent1, clucene-core
 Replaces: qt4-%type_pkg[qt] (<< 4.7.3-1)
 BuildDependsOnly: true
 GCC: 4.0
@@ -61,8 +61,8 @@ CustomMirror: <<
 	eur-NL: http://www.finkproject.org/~ranger/distfiles
 	nam-US: http://ranger.befunk.com/fink
 <<
-Source: mirror:custom:qt/qt-%v-mac-1c3b651.tar.gz
-Source-MD5: d1164c0d75d0f4e86c2e61eb4fd50045
+Source: mirror:custom:qt/qt-%v-mac-0cc7b7e.tar.gz
+Source-MD5: 26281f4bab98f2600cbf71e10aad1e0c
 SourceDirectory: qt-kde-qt-mac
 PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 --fuzz=4
@@ -70,7 +70,7 @@ PatchScript: <<
 	perl -pi -e 's,CFG_MAC_XARCH=auto,CFG_MAC_XARCH=no,g' configure
 <<
 PatchFile: qt4-base.patch
-PatchFile-MD5: 620cb32aa29bd2e7993f0eec83d4344a
+PatchFile-MD5: d17c9da8c060e0093fa7e865c2d617d3
 
 NoSetLDFLAGS: true
 UseMaxBuildJobs: true
@@ -85,21 +85,7 @@ CompileScript: <<
 	sh ./configure-for-fink.sh "%p" "qt4-%type_pkg[qt]" $EXTRA_ARGS -make "libs tools docs"
 	find . -name Makefile\* -print0 | xargs -0 perl -pi -e 's,-I%p/include,-isystem %p/include,g'
 	
-	export QTCC=gcc
-	export QTCXX=g++
-	
-	if [ -x /usr/bin/gcc-4.2 ]; then
-	export QTCC=gcc-4.2
-	export QTCXX=g++-4.2
-	fi
-	
-	if [ -x "$FINKPREFIX/bin/ccache" ]; then
-	export QTCC="$FINKPREFIX/bin/ccache $QTCC"
-	export QTCXX="$FINKPREFIX/bin/ccache $QTCXX"
-	export CCACHE_DIR="/tmp/ccache-qt4"
-	fi
-	
-	make CC="$QTCC" CXX="$QTCXX"
+	make
 <<
 
 InstallScript: <<
@@ -110,22 +96,6 @@ InstallScript: <<
 	make -j1 install INSTALL_ROOT="%d"
 
 	install -d -m 755 %i/bin
-
-	# add the WS_X11 stuff
-	cat <<END >%i/lib/qt4-%type_pkg[qt]/include/QtCore/qglobal.h.new
-#ifndef __USE_WS_X11__
-#define __USE_WS_X11__ 1
-#endif
-
-END
-	cat %i/lib/qt4-%type_pkg[qt]/include/QtCore/qglobal.h >>%i/lib/qt4-%type_pkg[qt]/include/QtCore/qglobal.h.new
-	/bin/mv %i/lib/qt4-%type_pkg[qt]/include/QtCore/qglobal.h.new %i/lib/qt4-%type_pkg[qt]/include/QtCore/qglobal.h
-
-	for bin in linguist designer qtconfig; do
-		if [ -f "%p/lib/qt4-%type_pkg[qt]/bin/$bin" ]; then
-			ln -sf %p/lib/qt4-%type_pkg[qt]/bin/$bin %i/bin/${bin}4-%type_pkg[qt]
-		fi
-	done
 
 	#### FIX LA, PRL and PC FILES ####
 
@@ -636,10 +606,7 @@ SplitOff21: <<
 		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-designer (<< 4.7.3-1)
 	<<
-	Files: <<
-		lib/qt4-%type_pkg[qt]/bin/Designer*
-		bin/designer4-%type_pkg[qt]
-	<<
+	Files: lib/qt4-%type_pkg[qt]/bin/Designer*
 <<
 SplitOff22: <<
 	Package: %N-linguist
@@ -656,7 +623,6 @@ SplitOff22: <<
 		lib/qt4-%type_pkg[qt]/bin/l*
 		lib/qt4-%type_pkg[qt]/bin/Linguist*
 		lib/qt4-%type_pkg[qt]/phrasebooks
-		bin/linguist4-%type_pkg[qt]
 	<<
 <<
 SplitOff23: <<
