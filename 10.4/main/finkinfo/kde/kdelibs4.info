@@ -53,7 +53,7 @@ BuildDepends: <<
 	pkgconfig (>= 0.23-1),
 	qca2-%type_pkg[kde] (>= 2.0.3-1),
 	qt4-base-%type_pkg[kde] (>= 4.7.3-1),
-	qtwebkit-%type_pkg[kde] (>= 2.0.0-2),
+	qtwebkit-%type_pkg[kde] (>= 2.0.0-4),
 	shared-desktop-ontologies (>= 0.6.0-1),
 	shared-mime-info (>= 0.51-1),
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),

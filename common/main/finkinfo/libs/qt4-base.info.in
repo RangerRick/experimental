@@ -180,7 +180,10 @@ SplitOffQtCoreShlibs: <<
 #endif
 		lib/qt4-%type_pkg[qt]/plugins/codecs
 	<<
-	Replaces: qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1)
+	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1)
+		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1)
+	<<
 	Shlibs: <<
 #ifdef TYPE_X11
 		%p/lib/qt4-%type_pkg[qt]/lib/libQtCore.4.dylib 4.7.0 %n (>= 4.7.0-1)
@@ -246,6 +249,7 @@ SplitOffQtDBusShlibs: <<
 		lib/qt4-%type_pkg[qt]/plugins/script/*dbus*
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -314,6 +318,7 @@ SplitOffQtDesignerShlibs: <<
 		lib/qt4-%type_pkg[qt]/plugins/designer
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-designer-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
@@ -347,6 +352,7 @@ SplitOffQtDesignerComponentsShlibs: <<
 #endif
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-designer-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
@@ -386,6 +392,7 @@ SplitOffQtGuiShlibs: <<
 		lib/qt4-%type_pkg[qt]/plugins/imageformats
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -419,6 +426,7 @@ SplitOffQtHelpShlibs: <<
 #endif
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -441,6 +449,7 @@ SplitOffQtCLuceneShlibs: <<
 #endif
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -527,6 +536,7 @@ SplitOffQtOpenGLShlibs: <<
 		lib/qt4-%type_pkg[qt]/plugins/graphicssystems/libqgl*
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -554,6 +564,7 @@ SplitOffQtScriptShlibs: <<
 #endif
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -574,6 +585,7 @@ SplitOffQtScriptToolsShlibs: <<
 		%N-qtscript-shlibs (>= %v-%r),
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -616,6 +628,7 @@ SplitOffQtSqlShlibs: <<
 		lib/qt4-%type_pkg[qt]/plugins/sqldrivers
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -647,6 +660,7 @@ SplitOffQtSvgShlibs: <<
 		lib/qt4-%type_pkg[qt]/plugins/iconengines/libqsvg*
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -674,6 +688,7 @@ SplitOffQtTestShlibs: <<
 #endif
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -701,6 +716,7 @@ SplitOffQtXmlShlibs: <<
 #endif
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -732,6 +748,7 @@ SplitOffQtXmlPatternsShlibs: <<
 #endif
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<

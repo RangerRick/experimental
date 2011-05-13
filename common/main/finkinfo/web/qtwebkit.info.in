@@ -7,7 +7,7 @@ Package: qtwebkit-mac
 Type: qtwebkit (mac)
 #endif
 Version: 2.0.0
-Revision: 3
+Revision: 4
 Description: Qt browser framework
 License: LGPL
 Maintainer: Benjamin Reed <qtwebkit@fink.raccoonfink.com>
@@ -61,7 +61,7 @@ InstallScript: <<
 			fi
 		popd
 	popd
-	rsync -avr include/QtWebKit/ %i/lib/qt4-%type_pkg[qtwebkit]/include/QtWebKit/
+	rsync -avr --exclude='*.h' include/QtWebKit/ %i/lib/qt4-%type_pkg[qtwebkit]/include/QtWebKit/
 
 	find %i -name \*.prl -o -name \*.pc -o -name \*.la | xargs perl -pi -e 's,%b/lib,%p/lib/qt4-%type_pkg[qtwebkit]/lib,g; s/-framework /-Wl,-framework,/g;'
 #ifdef TYPE_X11

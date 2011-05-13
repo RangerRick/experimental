@@ -170,7 +170,10 @@ END
 DocFiles: LGPL* LICENSE* README*
 SplitOff: <<
 	Package: %N-qtcore-shlibs
-	Replaces: qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1)
+	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1)
+		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1)
+	<<
 	Files: <<
 		lib/qt4-%type_pkg[qt]/lib/libQtCore.4*.dylib
 		lib/qt4-%type_pkg[qt]/plugins/codecs
@@ -206,6 +209,7 @@ SplitOff3: <<
 		dbus1.3-shlibs (>= 1.2.24-1)
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -244,6 +248,7 @@ SplitOff5: <<
 		%N-qtxml-shlibs (>= %v-%r)
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-designer-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
@@ -263,6 +268,7 @@ SplitOff6: <<
 		%N-qtxml-shlibs (>= %v-%r)
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-designer-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
@@ -280,6 +286,7 @@ SplitOff7: <<
 		libtiff-shlibs (>= 1.0-1)
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -302,6 +309,7 @@ SplitOff8: <<
 		%N-qtsql-shlibs (>= %v-%r)
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -312,6 +320,7 @@ SplitOff9: <<
 	Package: %N-qtclucene-shlibs
 	Depends: %N-qtcore-shlibs (>= %v-%r)
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -350,6 +359,7 @@ SplitOff12: <<
 	Package: %N-qtopengl-shlibs
 	Depends: %N-qtcore-shlibs (>= %v-%r)
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -363,6 +373,7 @@ SplitOff13: <<
 	Package: %N-qtscript-shlibs
 	Depends: %N-qtcore-shlibs (>= %v-%r)
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -377,6 +388,7 @@ SplitOff14: <<
 		%N-qtscript-shlibs (>= %v-%r)
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -390,6 +402,7 @@ SplitOff15: <<
 		sqlite3-shlibs (>= 1.0-1)
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -406,6 +419,7 @@ SplitOff16: <<
 		%N-qtgui-shlibs (>= %v-%r)
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -419,6 +433,7 @@ SplitOff17: <<
 	Package: %N-qttest-shlibs
 	Depends: %N-qtcore-shlibs (>= %v-%r)
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -429,6 +444,7 @@ SplitOff18: <<
 	Package: %N-qtxml-shlibs
 	Depends: %N-qtcore-shlibs (>= %v-%r)
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<
@@ -443,6 +459,7 @@ SplitOff19: <<
 		%N-qtxml-shlibs (>= %v-%r)
 	<<
 	Replaces: <<
+		qt4-%type_pkg[qt] (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
 		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1)
 	<<

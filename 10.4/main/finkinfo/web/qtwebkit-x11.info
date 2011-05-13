@@ -1,7 +1,7 @@
 Info4: <<
 Package: qtwebkit-x11
 Version: 2.0.0
-Revision: 3
+Revision: 4
 Description: Qt browser framework
 Type: qtwebkit (x11)
 License: LGPL
@@ -62,7 +62,7 @@ InstallScript: <<
 			fi
 		popd
 	popd
-	rsync -avr include/QtWebKit/ %i/lib/qt4-%type_pkg[qtwebkit]/include/QtWebKit/
+	rsync -avr --exclude='*.h' include/QtWebKit/ %i/lib/qt4-%type_pkg[qtwebkit]/include/QtWebKit/
 
 	find %i -name \*.prl -o -name \*.pc -o -name \*.la | xargs perl -pi -e 's,%b/lib,%p/lib/qt4-%type_pkg[qtwebkit]/lib,g; s/-framework /-Wl,-framework,/g;'
 	install_name_tool -id "%p/lib/qt4-%type_pkg[qtwebkit]/lib/libQtWebKit.4.dylib" "%i/lib/qt4-%type_pkg[qtwebkit]/lib/libQtWebKit.4.dylib"
