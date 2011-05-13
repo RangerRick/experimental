@@ -157,6 +157,7 @@ my $version_lookup = {
 		'^oxygen-icons.*$'                    => [ '4.6.1',        '1'    ],
 		'^pango1-xft2-ft219(-dev|-shlibs)?$'  => [ '1.24.0',       '1'    ],
 		'^pcre(-bin|-shlibs)?$'               => [ '7.6',          '1'    ],
+		'^phonon(-shlibs)?$'                  => [ '4.5.0',        '1'    ],
 		'^pixman(-shlibs)?$'                  => [ '0.16.0',       '1'    ],
 		'^pkgconfig$'                         => [ '0.23',         '1'    ],
 		'^poppler[24]-qt4$'                   => [ '0.6.4',        '4'    ],
