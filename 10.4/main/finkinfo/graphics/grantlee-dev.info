@@ -50,7 +50,11 @@ DocFiles: AUTHORS CHANGELOG COPYING* GOALS README
 SplitOff: <<
 	Package: grantlee-%type_pkg[grantlee]-shlibs
 	Description: Templating library (%type_raw[grantlee])
-	Depends: 
+	Depends: <<
+		qt4-base-%type_pkg[grantlee]-qtcore-shlibs (>= 4.7.3-1),
+		qt4-base-%type_pkg[grantlee]-qtgui-shlibs (>= 4.7.3-1),
+		qt4-base-%type_pkg[grantlee]-qtscript-shlibs (>= 4.7.3-1)
+	<<
 	DocFiles: COPYING*
 	Files: <<
 		opt/grantlee/%type_pkg[grantlee]/lib/libgrantlee_core.0*.dylib
