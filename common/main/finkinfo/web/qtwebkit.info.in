@@ -8,7 +8,6 @@ Type: qtwebkit (mac)
 #endif
 Version: 2.0.0
 Revision: 1
-Epoch: 1
 Description: Qt browser framework
 License: LGPL
 Maintainer: Benjamin Reed <qtwebkit@fink.raccoonfink.com>
@@ -34,6 +33,7 @@ SourceDirectory: qt-kde-qt-mac
 CompileScript: <<
 #!/bin/sh -ev
 
+	QTDIR=`pwd` bin/syncqt -check-includes
 	pushd src/3rdparty/webkit
 		%p/lib/qt4-%type_pkg[qtwebkit]/bin/qmake WebKit.pro
 		make
