@@ -1,7 +1,7 @@
 Info3: <<
 Package: qca2-%type_pkg[qca]
 Version: 2.0.3
-Revision: 1
+Revision: 2
 Type: qca (x11 mac)
 Description: Cross-platform Crypto API
 License: LGPL
@@ -16,8 +16,9 @@ BuildDepends: <<
 	(%type_pkg[qca] = x11) x11-dev,
 	libgettext3-dev,
 	libiconv-dev (>= 1.12-3),
+	libpng15 (>= 1.5-1),
 	system-openssl-dev,
-	qt4-%type_pkg[qca] (>= 4.4.0-1)
+	qt4-base-%type_pkg[qca] (>= 4.4.0-1),
 <<
 GCC: 4.0
 
@@ -54,7 +55,9 @@ SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libraries for QCA
 	Depends: <<
-		qt4-%type_pkg[qca]-gui-shlibs (>= 4.4.0-1)
+		libiconv,
+		libpng15-shlibs (>= 1.5-1),
+		qt4-base-%type_pkg[qca]-qtcore-shlibs (>= 4.4.0-1),
 	<<
 	DocFiles: COPYING
 	Recommends: %N (>= %v-%r)

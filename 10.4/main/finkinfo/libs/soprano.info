@@ -1,7 +1,7 @@
 Info4: <<
 Package: soprano-%type_pkg[soprano]
 Version: 2.6.0
-Revision: 1
+Revision: 2
 Description: C++ RDF framework
 Type: soprano (x11 mac)
 License: GPL/LGPL
@@ -31,7 +31,7 @@ BuildDepends: <<
 	sqlite3-dev,
 	system-java-dev (>= 1.5.0-1),
 	system-openssl-dev,
-	qt4-%type_pkg[soprano] (>= 4.7.3-1),
+	qt4-base-%type_pkg[soprano] (>= 4.7.3-1),
 	virtuoso (>= 6.1.2-1)
 <<
 GCC: 4.0
@@ -87,7 +87,7 @@ SplitOff: <<
 		dbus1.3-shlibs (>= 1.2.24-1),
 		librasqal2-shlibs (>= 0.9.20-1),
 		redland-shlibs (>= 1.0.11-1),
-		qt4-%type_pkg[soprano]-core-shlibs (>= 4.7.3-1),
+		qt4-base-%type_pkg[soprano]-qtcore-shlibs (>= 4.7.3-1),
 		system-java (>= 1.5.0-1),
 		virtuoso (>= 6.1.2-1)
 	<<

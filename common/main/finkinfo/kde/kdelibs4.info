@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdelibs4-%type_pkg[kde]
-Version: 4.6.1
+Version: 4.6.3
 Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - essential libraries
@@ -51,7 +51,7 @@ BuildDepends: <<
 	pcre (>= 7.6-1),
 	pkgconfig (>= 0.22-3),
 	qca2-%type_pkg[kde] (>= 2.0.0-1),
-	qt4-%type_pkg[kde] (>= 4.5.0-1),
+	qt4-base-%type_pkg[kde] (>= 4.5.0-1),
 	shared-desktop-ontologies (>= 0.5-1),
 	shared-mime-info (>= 0.51-1),
 	soprano-%type_pkg[kde]-dev (>= 2.2.1-1),
@@ -64,7 +64,7 @@ BuildConflicts: gamin-dev
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdelibs-%v.tar.bz2
-Source-MD5: 0cdc56a73009c65b5ad9ba3167ebb227
+Source-MD5: 923a7e8f89aa504647e14472b24b8c0a
 SourceDirectory: kdelibs-%v
 PatchFile: kdelibs4.patch
 PatchFile-MD5: 27f64f0c8c7565fa4d8a889ac93ae52d
@@ -140,8 +140,8 @@ SplitOff: <<
 		macosx (>= 10.4.3-1),
 		pcre-shlibs (>= 7.6-1),
 		qca2-%type_pkg[kde]-shlibs (>= 2.0.0-1),
-		qt4-%type_pkg[kde]-designer-shlibs (>= 4.5.0-1),
-		qt4-%type_pkg[kde]-gui-shlibs (>= 4.5.0-1),
+		qt4-base-%type_pkg[kde]-qtdesigner-shlibs (>= 4.5.0-1),
+		qt4-base-%type_pkg[kde]-qtgui-shlibs (>= 4.5.0-1),
 		soprano-%type_pkg[kde]-shlibs (>= 2.2.1-1),
 		strigi-shlibs (>= 0.6.3-1),
 		xdg-base

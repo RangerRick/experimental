@@ -13,7 +13,7 @@ BuildDepends: <<
 	cmake (>= 2.6.1-2),
 	fink (>= 0.28-1),
 	kde4-buildenv (>= 4.2-3),
-	qt4-%type_pkg[qt] (>= 4.5.0-1),
+	qt4-base-%type_pkg[qt] (>= 4.5.0-1),
 	(%type_pkg[qt] = x11) x11-dev,
 	system-openssl-dev
 <<
@@ -51,7 +51,7 @@ InstallScript: <<
 SplitOff: <<
 	Package: %N-shlibs
 	Description: Shared libs for QJSON
-	Depends: qt4-%type_pkg[qt]-core-shlibs (>= 4.5.0-1)
+	Depends: qt4-base-%type_pkg[qt]-qtcore-shlibs (>= 4.5.0-1)
 	DocFiles: COPYING README
 	Files: opt/kde4/%type_pkg[qt]/lib/libqjson.0*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[qt]/lib/libqjson.0.dylib 0.0.0 %n (>= 0.7.1-1)

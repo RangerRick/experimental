@@ -127,6 +127,7 @@ my $version_lookup = {
 		'^libgnomeprint2.2(-dev|-shlibs)?$'   => [ '2.18.6',       '1'    ],
 		'^libgnomeprintui2.2(-dev|-shlibs)?$' => [ '2.18.4',       '1'    ],
 		'^libgnomeui2(-dev|-shlibs)?$'        => [ '2.24.0',       '1'    ],
+		'^libidn(-bin|-java|-shlibs)?$'       => [ '1.22',         '1'    ],
 		'^libkdcraw-7.*$'                     => [ '4.6.1',        '1'    ],
 		'^libkexiv2-7.*$'                     => [ '4.6.1',        '1'    ],
 		'^libkholiday.*$'                     => [ '4.6.1',        '1'    ],

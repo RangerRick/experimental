@@ -17,7 +17,7 @@ BuildDepends: <<
 	fink (>= 0.28.0-1),
 	fink-package-precedence (>= 0.7-1),
 	kde4-buildenv (>= 4.2-3),
-	qt4-%type_pkg[grantlee] (>= 4.4.0-1),
+	qt4-base-%type_pkg[grantlee] (>= 4.4.0-1),
 <<
 GCC: 4.0
 
@@ -54,8 +54,9 @@ SplitOff: <<
 	Package: grantlee-%type_pkg[grantlee]-shlibs
 	Description: Templating library (%type_raw[grantlee])
 	Depends: <<
-		qt4-%type_pkg[grantlee]-gui-shlibs (>= 4.4.0-1),
-		qt4-%type_pkg[grantlee]-core-shlibs (>= 4.4.0-1),
+		qt4-base-%type_pkg[grantlee]-qtcore-shlibs (>= 4.5.0-1),
+		qt4-base-%type_pkg[grantlee]-qtgui-shlibs (>= 4.5.0-1),
+		qt4-base-%type_pkg[grantlee]-qtscript-shlibs (>= 4.5.0-1),
 	<<
 	DocFiles: COPYING*
 	Files: <<
