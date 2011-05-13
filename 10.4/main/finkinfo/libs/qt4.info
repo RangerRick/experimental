@@ -1,7 +1,7 @@
 Info4: <<
 Package: qt4-%type_pkg[qt]
 Version: 4.7.3
-Revision: 1
+Revision: 2
 Description: OBSOLETE: use qt4-base-%type_pkg[qt]
 Type: qt (x11 mac)
 License: LGPL
@@ -10,7 +10,9 @@ Maintainer: Benjamin Reed <qt4-mac@fink.raccoonfink.com>
 Depends: <<
 	fink (>= 0.29.7-1),
 	fink-obsolete-packages,
-	qt4-base-%type_pkg[qt] (>= 4.7.3-1)
+	phonon-%type_pkg[qt] (>= 4.5.0-1),
+	qt4-base-%type_pkg[qt] (>= 4.7.3-1),
+	qtwebkit-%type_pkg[qt] (>= 2.0.0-1)
 <<
 GCC: 4.0
 
