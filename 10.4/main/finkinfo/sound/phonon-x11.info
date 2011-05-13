@@ -19,7 +19,7 @@ BuildDepends: <<
 Replaces: qt4-%type_pkg[phonon] (<< 4.7.3-1)
 GCC: 4.0
 
-Source: mirror:kde:stable/%v/src/phonon-%v.tar.bz2
+Source: mirror:kde:stable/phonon/%v/src/phonon-%v.tar.bz2
 Source-MD5: 32f8d388c18fde2e23dea7bb103f9713
 PatchFile: phonon.patch
 PatchFile-MD5: 98b93bb7af46c8eac9340a7b64f5f40e
