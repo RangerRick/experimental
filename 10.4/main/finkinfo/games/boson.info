@@ -11,7 +11,7 @@ BuildDepends: <<
 	cmake (>= 2.8.2-1),
 	expat1,
 	fink (>= 0.29.7-1),
-	freetype219 (>= 2.3.12-1),
+	freetype219 (>= 2.4.4-2),
 	gettext-tools,
 	kdelibs3-unified-dev (>= 3.5.10-10),
 	lib3ds,

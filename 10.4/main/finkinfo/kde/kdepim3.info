@@ -36,7 +36,7 @@ BuildDepends: <<
 	esound,
 	expat1,
 	fink (>= 0.29.7-1),
-	freetype219 (>= 2.3.12-1),
+	freetype219 (>= 2.4.4-2),
 	gtk+ (>= 1.2.10-12),
 	glib (>= 1.2.10-8),
 	glib2-dev (>= 2.22.0-1),

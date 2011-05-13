@@ -14,8 +14,8 @@ BuildDepends: <<
 	cairo (>= 1.8.10-3),
 	fink (>= 0.29.7-1),
 	fink-package-precedence (>= 0.7-1),
-	fontconfig2-dev (>= 2.8.0-4),
-	freetype219 (>= 2.3.12-1),
+	fontconfig2-dev (>= 2.8.0-6),
+	freetype219 (>= 2.4.4-2),
 	glib2-dev (>= 2.22.0-1),
 	glitz,
 	gtk+2-dev (>= 2.14.7-1),
@@ -77,8 +77,8 @@ SplitOff: <<
 	Package: %N-shlibs
 	Depends: <<
 		cairo-shlibs (>= 1.8.10-3),
-		fontconfig2-shlibs (>= 2.8.0-4),
-		freetype219-shlibs (>= 2.3.12-1),
+		fontconfig2-shlibs (>= 2.8.0-6),
+		freetype219-shlibs (>= 2.4.4-2),
 		gtk+2-shlibs (>= 2.14.7-1),
 		pango1-xft2-ft219-shlibs (>= 1.24.0-1),
 		poppler2-shlibs (>= %v-1)

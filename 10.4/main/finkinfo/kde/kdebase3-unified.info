@@ -27,7 +27,7 @@ BuildDepends: <<
 	fink (>= 0.29.7-1),
 	fink-package-precedence (>= 0.7-1),
 	#	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.12-1),
+	freetype219 (>= 2.4.4-2),
 	libgettext8-dev,
 	gettext-tools,
 	glib2-dev (>= 2.22.0-1),
@@ -49,7 +49,7 @@ BuildDepends: <<
 	system-openssl-dev,
 	xfontpath,
 	x11-dev,
-	xft2-dev (>= 2.1.14-3),
+	xft2-dev (>= 2.2.0-1),
 	xmkmf
 <<
 BuildConflicts: unsermake

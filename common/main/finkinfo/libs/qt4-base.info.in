@@ -64,6 +64,12 @@ BuildDepends: <<
 	pkgconfig (>= 0.22-1),
 	sqlite3-dev,
 	system-openssl-dev,
+#ifdef TYPE_X11
+	fontconfig2-dev (>= 2.3.2-13),
+	freetype219 (>= 2.3.12-1),
+	xft2-dev (>= 1.0-1),
+	x11-dev,
+#endif
 <<
 Replaces: qt4-%type_pkg[qt] (<< 4.7.3-1)
 BuildConflicts: kdelibs3-dev, kdelibs3-ssl-dev, kdelibs3-unified-dev, libevent1, clucene-core

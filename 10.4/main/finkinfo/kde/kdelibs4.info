@@ -30,7 +30,7 @@ BuildDepends: <<
 	expat1,
 	fink (>= 0.29.7-1),
 	flex-devel (>= 2.5.35-1),
-	freetype219 (>= 2.3.12-1),
+	freetype219 (>= 2.4.4-2),
 	gettext-tools,
 	giflib,
 	grantlee-%type_pkg[kde]-dev (>= 0.1.8-1),

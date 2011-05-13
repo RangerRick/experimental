@@ -80,7 +80,8 @@ my $version_lookup = {
 		'^docbook-xsl$'                       => [ '1.76.1',       '1'    ],
 		'^fink$'                              => [ '0.29.7',       '1'    ],
 		'^fink-package-precedence$'           => [ '0.7',          '1'    ],
-		'^freetype219(-shlibs)?$'             => [ '2.3.12',       '1'    ],
+		'^freetype219(-shlibs)?$'             => [ '2.4.4',        '2'    ],
+		'^fontconfig2(-dev|-shlibs)?$'        => [ '2.8.0',        '6'    ],
 		'^gecko-sharp(-firefox.|-seamonkey)?$'=> [ '2.0',          '1044' ],
 		'^gecko-sharp1(-firefox.|-seamonkey)?$'=> [ '0.6',         '1033' ],
 		'^gettext-tools$'                     => [ '0.17',         '1'    ],
@@ -180,7 +181,7 @@ my $version_lookup = {
 		'^webkit-sharp$'                      => [ '0.3',          '1'    ],
 		'^xalan-j.*$'                         => [ '2.7.1',        '1'    ],
 		'^xerces-j.*$'                        => [ '2.10.0',       '1'    ],
-		'^xft2(-dev|-shlibs)?$'               => [ '2.1.14',       '3'    ],
+		'^xft2(-dev|-shlibs)?$'               => [ '2.2.0',        '1'    ],
 	},
 };
 

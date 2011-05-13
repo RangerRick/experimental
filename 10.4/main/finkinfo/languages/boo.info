@@ -14,8 +14,8 @@ Depends: <<
 BuildDepends: <<
 	atk1 (>= 1.26.0-1),
 	fink (>= 0.29.7-1),
-	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.12-1),
+	fontconfig2-dev (>= 2.8.0-6),
+	freetype219 (>= 2.4.4-2),
 	glib2-dev (>= 2.22.0-1),
 	gtk+2-dev (>= 2.14.7-1),
 	gtksourceview-dev (>= 1.8.5-1),

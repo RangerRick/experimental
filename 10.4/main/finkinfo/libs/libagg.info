@@ -10,7 +10,7 @@ BuildDepends: <<
 	autoconf2.6,
 	automake1.11,
 	fink (>= 0.29.7-1),
-	freetype219 (>= 2.3.12-1),
+	freetype219 (>= 2.4.4-2),
 	libtool2,
 	pkgconfig (>= 0.23-1),
 	sdl (>= 1.2.13-1),
@@ -52,7 +52,7 @@ SplitOff: <<
 	Package: %N-shlibs
 	Description: shared libraries for the AGG rendering engine
 	Depends: <<
-		freetype219-shlibs (>= 2.3.12-1),
+		freetype219-shlibs (>= 2.4.4-2),
 		sdl-shlibs (>= 1.2.13-1),
 		x11-shlibs
 	<<

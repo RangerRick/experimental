@@ -14,7 +14,7 @@ BuildDepends: <<
 	(%type_raw[qt4] = -mac) qt4-mac,
 	fink (>= 0.29.7-1),
 	fink-package-precedence (>= 0.7-1),
-	freetype219 (>= 2.3.12-1),
+	freetype219 (>= 2.4.4-2),
 	libjpeg8,
 	pkgconfig (>= 0.23-1),
 	poppler1 (>= %v-1)

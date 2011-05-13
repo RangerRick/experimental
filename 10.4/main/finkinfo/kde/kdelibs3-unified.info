@@ -32,8 +32,8 @@ BuildDepends: <<
 	fink (>= 0.29.7-1),
 	fink-package-precedence (>= 0.7-1),
 	flex-devel,
-	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.3.12-1),
+	fontconfig2-dev (>= 2.8.0-6),
+	freetype219 (>= 2.4.4-2),
 	libgettext8-dev,
 	gettext-tools,
 	glib2-dev (>= 2.22.0-1),
@@ -61,7 +61,7 @@ BuildDepends: <<
 	system-openssl-dev,
 	xdg-base,
 	x11-dev,
-	xft2-dev (>= 2.1.14-3),
+	xft2-dev (>= 2.2.0-1),
 	xmkmf
 <<
 BuildConflicts: unsermake
@@ -196,7 +196,7 @@ SplitOff: <<
 		dbus-qt3-shlibs (>= 0.70-1023),
 		esound-shlibs,
 		expat1-shlibs,
-		freetype219-shlibs (>= 2.3.12-1),
+		freetype219-shlibs (>= 2.4.4-2),
 		glib2-shlibs (>= 2.22.0-1),
 		libart2-shlibs (>= 2.3.20-1),
 		libgettext8-shlibs,
@@ -218,7 +218,7 @@ SplitOff: <<
 		qt3-shlibs (>= 3.3.8-2000),
 		xdg-base,
 		x11-shlibs,
-		xft2-shlibs (>= 2.1.14-3)
+		xft2-shlibs (>= 2.2.0-1)
 	<<
 	Replaces: <<
 		kdelibs3-dev,
