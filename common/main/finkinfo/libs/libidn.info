@@ -1,6 +1,6 @@
 Package: libidn
 Version: 1.22
-Revision: 2
+Revision: 3
 Source: mirror:gnu:%n/%n-%v.tar.gz
 Source-MD5: 893a1df0cf3b28b72d248382eaeaca71
 PatchFile: %n.patch
@@ -32,6 +32,7 @@ Type: java(1.5)
 CompileScript: <<
 #!/bin/sh -ex
 
+	rm -f java/*.jar
 	export lt_cv_sys_max_cmd_len=65536
 	export ac_cv_prog_JAVAC=javac
 	./configure %c
