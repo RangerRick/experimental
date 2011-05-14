@@ -1,6 +1,6 @@
 Info3: <<
 Package: kdebase4-runtime-%type_pkg[kde]
-Version: 4.6.1
+Version: 4.6.3
 Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - base applications and tools (runtime)
@@ -42,7 +42,6 @@ BuildDepends: <<
 	kdepimlibs4-%type_pkg[kde]-dev (>= %v-1),
 	libcanberra0,
 	libgettext3-dev,
-	libidn,
 	libjasper.1,
 	libjpeg,
 	libknotificationitem1-%type_pkg[kde]-dev (>= 4.3.0-1),
@@ -56,7 +55,7 @@ BuildDepends: <<
 	openldap24-dev,
 	pcre,
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.4.1-1),
+	qt4-base-%type_pkg[kde] (>= 4.4.1-1),
 	strigi-dev (>= 0.6.3-1),
 	strigi-gui-%type_pkg[kde]-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
@@ -65,10 +64,10 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdebase-runtime-%v.tar.bz2
-Source-MD5: 26ad7899eb589a8bc260749fd22186a8
+Source-MD5: a6f294900d73d92cd68ea93aea297ff0
 SourceDirectory: kdebase-runtime-%v
 PatchFile: kdebase4-runtime.patch
-PatchFile-MD5: 5b1ee42a03b08d1a3bc053410720d6a6
+PatchFile-MD5: b1ed2e79f20331caaaf984babea27c03
 
 CompileScript: <<
 #!/bin/sh -ev

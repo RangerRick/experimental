@@ -1,0 +1,29 @@
+diff --git a/src/3rdparty/webkit/WebCore/platform/sql/SQLiteDatabase.cpp b/src/3rdparty/webkit/WebCore/platform/sql/SQLiteDatabase.cpp
+index b0de725..239cba1 100644
+--- a/src/3rdparty/webkit/WebCore/platform/sql/SQLiteDatabase.cpp
++++ b/src/3rdparty/webkit/WebCore/platform/sql/SQLiteDatabase.cpp
+@@ -374,9 +374,9 @@ void SQLiteDatabase::unlock()
+     m_lockingMutex.unlock();
+ }
+ 
+-bool SQLiteDatabase::isAutoCommitOn() const
++bool SQLiteDatabase::isAutoCommitOn()
+ {
+-    return sqlite3_get_autocommit(m_db);
++    return (sqlite3_get_autocommit(m_db) != 0);
+ }
+ 
+ } // namespace WebCore
+diff --git a/src/3rdparty/webkit/WebCore/platform/sql/SQLiteDatabase.h b/src/3rdparty/webkit/WebCore/platform/sql/SQLiteDatabase.h
+index 97fa7d0..434930f 100644
+--- a/src/3rdparty/webkit/WebCore/platform/sql/SQLiteDatabase.h
++++ b/src/3rdparty/webkit/WebCore/platform/sql/SQLiteDatabase.h
+@@ -106,7 +106,7 @@ public:
+     // (un)locks the database like a mutex
+     void lock();
+     void unlock();
+-    bool isAutoCommitOn() const;
++    bool isAutoCommitOn();
+ 
+     // Set this flag to allow access from multiple threads.  Not all multi-threaded accesses are safe!
+     // See http://www.sqlite.org/cvstrac/wiki?p=MultiThreading for more info.

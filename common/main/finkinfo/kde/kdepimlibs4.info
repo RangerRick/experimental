@@ -1,6 +1,6 @@
 Info3: <<
 Package: kdepimlibs4-%type_pkg[kde]
-Version: 4.6.1
+Version: 4.6.3
 Revision: 1
 Type: kde (x11 mac)
 Description: KDE4 - PIM support libraries
@@ -17,7 +17,7 @@ BuildDepends: <<
 	akonadi-%type_pkg[kde]-dev (>= 1.2.0-1),
 	aspell-dev,
 	automoc-%type_pkg[kde] (>= 0.9.88-1),
-	boost1.35.systempython,
+	boost1.41.cmake,
 	bzip2-dev,
 	cmake (>= 2.6.1-2),
 	cups-dev,
@@ -32,7 +32,6 @@ BuildDepends: <<
 	kdelibs4-%type_pkg[kde]-dev (>= %v-1),
 	libgettext3-dev,
 	libical,
-	libidn,
 	libjasper.1,
 	libjpeg,
 	libpng3,
@@ -45,7 +44,7 @@ BuildDepends: <<
 	pkgconfig (>= 0.22-3),
 	pth2-dev,
 	python25,
-	qt4-%type_pkg[kde] (>= 4.4.1-1),
+	qt4-base-%type_pkg[kde] (>= 4.4.1-1),
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev
 <<
@@ -55,7 +54,7 @@ Replaces: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdepimlibs-%v.tar.bz2
-Source-MD5: 250d3d448c0e2a585b38e2c75c46d07f
+Source-MD5: 0b0fc8d9fea0a6f26e705460a2865e18
 SourceDirectory: kdepimlibs-%v
 PatchFile: kdepimlibs4.patch
 PatchFile-MD5: 227cdbbe6457a69a42e0cca4fbceb074
@@ -86,10 +85,11 @@ SplitOff: <<
 	Description: KDE4 - PIM support shared libraries
 	Depends: <<
 		akonadi-%type_pkg[kde]-shlibs (>= 1.2.0-1),
-		boost1.35.systempython-shlibs,
+		boost1.41.cmake-shlibs,
 		cyrus-sasl2-shlibs,
 		kdelibs4-%type_pkg[kde]-shlibs (>= %v-1),
 		libical-shlibs,
+		libkholidays4-%type_pkg[kde]-shlibs (>= %v-%r),
 		openldap24-shlibs,
 	<<
 	Replaces: <<

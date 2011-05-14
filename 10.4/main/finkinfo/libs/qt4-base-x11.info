@@ -403,7 +403,7 @@ SplitOff15: <<
 	Package: %N-qtsql-shlibs
 	Depends: <<
 		%N-qtcore-shlibs (>= %v-%r),
-		sqlite3-shlibs (>= 1.0-1)
+		sqlite3-shlibs (>= 3.7.6.2-1)
 	<<
 	Replaces: <<
 		qt4-%type_pkg[qt] (<< 4.7.3-1),

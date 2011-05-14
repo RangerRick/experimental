@@ -1,6 +1,6 @@
 Info3: <<
 Package: kdebase4-workspace-%type_pkg[kde]
-Version: 4.6.1
+Version: 4.6.3
 Revision: 1
 Description: KDE4 - base applications and tools
 Type: kde (x11)
@@ -36,7 +36,6 @@ BuildDepends: <<
 	kdepimlibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
 	libdbusmenu-qt-%type_pkg[kde] (>= 0.8.0-1),
 	libgettext8-dev,
-	libidn,
 	libjasper.1,
 	libjpeg8,
 	libknotificationitem1-%type_pkg[kde]-dev (>= 4.3.4-1),
@@ -54,7 +53,7 @@ BuildDepends: <<
 	#	python26,
 	#	pyqt4-py26,
 	qca2-%type_pkg[kde] (>= 2.0.3-1),
-	qt4-%type_pkg[kde] (>= 4.7.3-1),
+	qt4-base-%type_pkg[kde] (>= 4.7.3-1),
 	strigi-dev (>= 0.6.3-1),
 	strigi-gui-%type_pkg[kde]-dev (>= 0.7.2-1),
 	(-%type_pkg[kde] = x11) x11-dev,
@@ -64,7 +63,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdebase-workspace-%v.tar.bz2
-Source-MD5: b56385957880f08b664b055ae978d8db
+Source-MD5: 1e481727c3a5c2e4b751b9c56bd56583
 SourceDirectory: kdebase-workspace-%v
 PatchScript: sed -e 's,@FINKPREFIX@,%p,g; s,@FINKTYPE@,%type_pkg[kde],g' %{PatchFile} | patch -p1
 PatchFile: kdebase4-workspace.patch

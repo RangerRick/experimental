@@ -13,7 +13,7 @@ BuildDepends: <<
 	libiconv-dev,
 	libpng15 (>= 1.5.2-1),
 	phonon-%type_pkg[qtwebkit],
-	sqlite3-dev,
+	sqlite3-dev (>= 3.7.6.2-1),
 	system-openssl-dev,
 	qt4-base-%type_pkg[qtwebkit] (>= 4.7.3-1)
 <<
@@ -28,6 +28,8 @@ CustomMirror: <<
 Source: mirror:custom:qt/qt-4.7.3-mac-0cc7b7e.tar.gz
 Source-MD5: 26281f4bab98f2600cbf71e10aad1e0c
 SourceDirectory: qt-kde-qt-mac
+PatchFile: qtwebkit.patch
+PatchFile-MD5: f723ecc7ced8990568e27ffc2fec89b1
 
 UseMaxBuildJobs: true
 CompileScript: <<
@@ -84,7 +86,7 @@ SplitOff: <<
 		qt4-base-mac-qtsql-shlibs (>= 4.7.3-1),
 		qt4-base-mac-qtsvg-shlibs (>= 4.7.3-1),
 		qt4-base-mac-qtxmlpatterns-shlibs (>= 4.7.3-1),
-		sqlite3-shlibs
+		sqlite3-shlibs (>= 3.7.6.2-1)
 	<<
 	Replaces: <<
 		qt4-%type_pkg[qtwebkit]-gui-shlibs (<< 4.7.3-1),

@@ -19,7 +19,6 @@ Depends: <<
 BuildDepends: <<
 	aspell-dev,
 	automoc-%type_pkg[kde] (>= 0.9.88-1),
-	avahi-dev,
 	bzip2-dev,
 	cmake (>= 2.6.1-2),
 	cups-dev,
@@ -39,11 +38,10 @@ BuildDepends: <<
 	libattica-%type_pkg[kde]-dev (>= 0.1.4-1),
 	libdbusmenu-qt-%type_pkg[kde] (>= 0.8-1),
 	libgettext3-dev,
-	libidn,
 	libjasper.1,
-	libjpeg,
+	libjpeg8,
 	liblzma,
-	libpng3,
+	libpng15,
 	libtiff,
 	libxml2,
 	libxslt,
@@ -71,6 +69,7 @@ SourceDirectory: kdelibs-%v
 PatchFile: kdelibs4.patch
 PatchFile-MD5: 27f64f0c8c7565fa4d8a889ac93ae52d
 PatchScript: sed -e 's,@KDEPREFIX@,%p,g' -e 's,@KDETYPE@,%type_pkg[kde],g' %{PatchFile} | patch -p1
+Replaces: %N-shlibs (<< %v-%r)
 
 CompileScript: <<
 #!/bin/sh -ev
@@ -83,6 +82,7 @@ CompileScript: <<
 	pushd build
 		cmake $KDE4_CMAKE_ARGS \
 			-DMAC_USE_OSXKEYCHAIN=true \
+			-DHAVE_AVAHI=false \
 			-DDOCBOOKXML_CURRENTDTD_DIR:PATH=%p/share/xml/dtd/docbookx/4.2.0 \
 			-DDOCBOOKXSL_DIR:PATH=%p/share/xml/xsl/docbook-xsl \
 			..
@@ -129,21 +129,28 @@ SplitOff: <<
 		grantlee-%type_pkg[kde]-shlibs (>= 0.1.8-1),
 		libattica-%type_pkg[kde]-shlibs (>= 0.1.4-1),
 		libdbusmenu-qt-%type_pkg[kde]-shlibs (>= 0.8-1),
-		libavahi-client3-shlibs,
 		libgettext3-shlibs,
-		libidn-shlibs (>= 0.5.1-1),
 		libjasper.1-shlibs,
-		libjpeg-shlibs,
+		libjpeg8-shlibs,
 		liblzma-shlibs,
-		libpng3-shlibs (>= 1.2.5-4),
-		libtiff-shlibs,
+		libpng15-shlibs (>= 1.2.5-4),
 		libxml2-shlibs (>= 2.5.2-1),
 		libxslt-shlibs (>= 1.0.27-1),
 		macosx (>= 10.4.3-1),
 		pcre-shlibs (>= 7.6-1),
+		phonon-%type_pkg[kde]-shlibs (>= 4.5.0-1),
 		qca2-%type_pkg[kde]-shlibs (>= 2.0.0-1),
-		qt4-base-%type_pkg[kde]-qtdesigner-shlibs (>= 4.5.0-1),
+		qt4-base-%type_pkg[kde]-qt3support-shlibs (>= 4.5.0-1),
+		qt4-base-%type_pkg[kde]-qtdbus-shlibs (>= 4.5.0-1),
+		qt4-base-%type_pkg[kde]-qtdeclarative-shlibs (>= 4.5.0-1),
 		qt4-base-%type_pkg[kde]-qtgui-shlibs (>= 4.5.0-1),
+		qt4-base-%type_pkg[kde]-qtnetwork-shlibs (>= 4.5.0-1),
+		qt4-base-%type_pkg[kde]-qtopengl-shlibs (>= 4.5.0-1),
+		qt4-base-%type_pkg[kde]-qtscript-shlibs (>= 4.5.0-1),
+		qt4-base-%type_pkg[kde]-qtsql-shlibs (>= 4.5.0-1),
+		qt4-base-%type_pkg[kde]-qtsvg-shlibs (>= 4.5.0-1),
+		qt4-base-%type_pkg[kde]-qtxml-shlibs (>= 4.5.0-1),
+		qtwebkit-%type_pkg[kde]-shlibs (>= 2.0.0-1),
 		soprano-%type_pkg[kde]-shlibs (>= 2.2.1-1),
 		strigi-shlibs (>= 0.6.3-1),
 		xdg-base
@@ -157,7 +164,6 @@ SplitOff: <<
 	Files: <<
 		opt/kde4/%type_pkg[kde]/etc/kde4rc
 		opt/kde4/%type_pkg[kde]/lib/kde4/*.so
-		opt/kde4/%type_pkg[kde]/lib/kde4/libexec
 		opt/kde4/%type_pkg[kde]/lib/kde4/plugins
 		opt/kde4/%type_pkg[kde]/lib/libkatepartinterfaces.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkcmutils.4*.dylib

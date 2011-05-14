@@ -1,6 +1,46 @@
-diff -Nurd kdebase-runtime-4.6.1/activitymanager/CMakeLists.txt kdebase-runtime-4.6.1-new/activitymanager/CMakeLists.txt
---- kdebase-runtime-4.6.1/activitymanager/CMakeLists.txt	2011-02-25 16:54:12.000000000 -0500
-+++ kdebase-runtime-4.6.1-new/activitymanager/CMakeLists.txt	2011-03-31 19:38:05.000000000 -0400
+diff -Nurd kdebase-runtime-4.6.3/Info.plist.template kdebase-runtime-4.6.3-new/Info.plist.template
+--- kdebase-runtime-4.6.3/Info.plist.template	1969-12-31 19:00:00.000000000 -0500
++++ kdebase-runtime-4.6.3-new/Info.plist.template	2011-02-25 17:07:08.000000000 -0500
+@@ -0,0 +1,36 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
++<plist version="1.0">
++<dict>
++    <key>CFBundleDevelopmentRegion</key>
++    <string>English</string>
++    <key>CFBundleExecutable</key>
++    <string>${MACOSX_BUNDLE_EXECUTABLE_NAME}</string>
++    <key>CFBundleGetInfoString</key>
++    <string>${MACOSX_BUNDLE_INFO_STRING}</string>
++    <key>CFBundleIconFile</key>
++    <string>${MACOSX_BUNDLE_ICON_FILE}</string>
++    <key>CFBundleIdentifier</key>
++    <string>${MACOSX_BUNDLE_GUI_IDENTIFIER}</string>
++    <key>CFBundleInfoDictionaryVersion</key>
++    <string>6.0</string>
++    <key>CFBundleLongVersionString</key>
++    <string>${MACOSX_BUNDLE_LONG_VERSION_STRING}</string>
++    <key>CFBundleName</key>
++    <string>${MACOSX_BUNDLE_BUNDLE_NAME}</string>
++    <key>CFBundlePackageType</key>
++    <string>APPL</string>
++    <key>CFBundleShortVersionString</key>
++    <string>${MACOSX_BUNDLE_SHORT_VERSION_STRING}</string>
++    <key>CFBundleVersion</key>
++    <string>${MACOSX_BUNDLE_BUNDLE_VERSION}</string>
++    <key>CSResourcesFileMapped</key>
++    <true/>
++    <key>LSRequiresCarbon</key>
++    <true/>
++    <key>LSUIElement</key>
++    <string>1</string>
++    <key>NSHumanReadableCopyright</key>
++    <string>${MACOSX_BUNDLE_COPYRIGHT}</string>
++</dict>
++</plist>
+diff -Nurd kdebase-runtime-4.6.3/activitymanager/CMakeLists.txt kdebase-runtime-4.6.3-new/activitymanager/CMakeLists.txt
+--- kdebase-runtime-4.6.3/activitymanager/CMakeLists.txt	2011-02-25 16:54:12.000000000 -0500
++++ kdebase-runtime-4.6.3-new/activitymanager/CMakeLists.txt	2011-05-13 20:17:41.000000000 -0400
 @@ -30,6 +30,7 @@
      ${CMAKE_CURRENT_SOURCE_DIR}
      ${CMAKE_CURRENT_BINARY_DIR}
@@ -9,9 +49,9 @@ diff -Nurd kdebase-runtime-4.6.1/activitymanager/CMakeLists.txt kdebase-runtime-
      )
  
  set(activity_manager_SRCS
-diff -Nurd kdebase-runtime-4.6.1/kglobalaccel/CMakeLists.txt kdebase-runtime-4.6.1-new/kglobalaccel/CMakeLists.txt
---- kdebase-runtime-4.6.1/kglobalaccel/CMakeLists.txt	2011-02-25 16:54:12.000000000 -0500
-+++ kdebase-runtime-4.6.1-new/kglobalaccel/CMakeLists.txt	2011-03-30 09:04:23.000000000 -0400
+diff -Nurd kdebase-runtime-4.6.3/kglobalaccel/CMakeLists.txt kdebase-runtime-4.6.3-new/kglobalaccel/CMakeLists.txt
+--- kdebase-runtime-4.6.3/kglobalaccel/CMakeLists.txt	2011-02-25 16:54:12.000000000 -0500
++++ kdebase-runtime-4.6.3-new/kglobalaccel/CMakeLists.txt	2011-05-13 20:17:41.000000000 -0400
 @@ -29,7 +29,7 @@
  kde4_add_kdeinit_executable( kglobalaccel NOGUI ${kglobalaccel_SRCS} )
  target_link_libraries(kdeinit_kglobalaccel ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} ${X11_LIBRARIES})
@@ -21,9 +61,9 @@ diff -Nurd kdebase-runtime-4.6.1/kglobalaccel/CMakeLists.txt kdebase-runtime-4.6
  endif(Q_WS_MAC)
  target_link_libraries(kglobalaccel kdeinit_kglobalaccel)
  
-diff -Nurd kdebase-runtime-4.6.1/kioslave/thumbnail/CMakeLists.txt kdebase-runtime-4.6.1-new/kioslave/thumbnail/CMakeLists.txt
---- kdebase-runtime-4.6.1/kioslave/thumbnail/CMakeLists.txt	2011-02-25 17:07:08.000000000 -0500
-+++ kdebase-runtime-4.6.1-new/kioslave/thumbnail/CMakeLists.txt	2011-03-30 08:49:51.000000000 -0400
+diff -Nurd kdebase-runtime-4.6.3/kioslave/thumbnail/CMakeLists.txt kdebase-runtime-4.6.3-new/kioslave/thumbnail/CMakeLists.txt
+--- kdebase-runtime-4.6.3/kioslave/thumbnail/CMakeLists.txt	2011-02-25 17:07:08.000000000 -0500
++++ kdebase-runtime-4.6.3-new/kioslave/thumbnail/CMakeLists.txt	2011-05-13 20:17:41.000000000 -0400
 @@ -116,7 +116,7 @@
  
     kde4_add_plugin(exrthumbnail ${exrthumbnail_PART_SRCS})
@@ -33,10 +73,10 @@ diff -Nurd kdebase-runtime-4.6.1/kioslave/thumbnail/CMakeLists.txt kdebase-runti
  
     install(TARGETS exrthumbnail DESTINATION ${PLUGIN_INSTALL_DIR})
     install( FILES exrthumbnail.desktop DESTINATION ${SERVICES_INSTALL_DIR})
-diff -Nurd kdebase-runtime-4.6.1/knotify/CMakeLists.txt kdebase-runtime-4.6.1-new/knotify/CMakeLists.txt
---- kdebase-runtime-4.6.1/knotify/CMakeLists.txt	2011-02-25 17:07:08.000000000 -0500
-+++ kdebase-runtime-4.6.1-new/knotify/CMakeLists.txt	2011-03-31 20:03:49.000000000 -0400
-@@ -35,6 +35,8 @@
+diff -Nurd kdebase-runtime-4.6.3/knotify/CMakeLists.txt kdebase-runtime-4.6.3-new/knotify/CMakeLists.txt
+--- kdebase-runtime-4.6.3/knotify/CMakeLists.txt	2011-02-25 17:07:08.000000000 -0500
++++ kdebase-runtime-4.6.3-new/knotify/CMakeLists.txt	2011-05-13 20:18:20.000000000 -0400
+@@ -35,9 +35,11 @@
  
  kde4_add_library( knotifyplugin SHARED ${knotifyplugin_SRCS})
  
@@ -44,10 +84,54 @@ diff -Nurd kdebase-runtime-4.6.1/knotify/CMakeLists.txt kdebase-runtime-4.6.1-ne
 +
  
  if (Q_WS_MAC)
-     set_target_properties(knotify PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/Info.plist.template)
-diff -Nurd kdebase-runtime-4.6.1/phonon/CMakeLists.txt kdebase-runtime-4.6.1-new/phonon/CMakeLists.txt
---- kdebase-runtime-4.6.1/phonon/CMakeLists.txt	2011-02-25 17:07:08.000000000 -0500
-+++ kdebase-runtime-4.6.1-new/phonon/CMakeLists.txt	2011-03-30 08:49:51.000000000 -0400
+-    set_target_properties(knotify PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/Info.plist.template)
++    set_target_properties(knotify PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_SOURCE_DIR}/Info.plist.template)
+     set_target_properties(knotify PROPERTIES MACOSX_BUNDLE_GUI_IDENTIFIER "org.kde.knotify4")
+     set_target_properties(knotify PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME "KDE Notify")
+ endif (Q_WS_MAC)
+diff -Nurd kdebase-runtime-4.6.3/knotify/Info.plist.template kdebase-runtime-4.6.3-new/knotify/Info.plist.template
+--- kdebase-runtime-4.6.3/knotify/Info.plist.template	2011-02-25 17:07:08.000000000 -0500
++++ kdebase-runtime-4.6.3-new/knotify/Info.plist.template	1969-12-31 19:00:00.000000000 -0500
+@@ -1,36 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+-<plist version="1.0">
+-<dict>
+-    <key>CFBundleDevelopmentRegion</key>
+-    <string>English</string>
+-    <key>CFBundleExecutable</key>
+-    <string>${MACOSX_BUNDLE_EXECUTABLE_NAME}</string>
+-    <key>CFBundleGetInfoString</key>
+-    <string>${MACOSX_BUNDLE_INFO_STRING}</string>
+-    <key>CFBundleIconFile</key>
+-    <string>${MACOSX_BUNDLE_ICON_FILE}</string>
+-    <key>CFBundleIdentifier</key>
+-    <string>${MACOSX_BUNDLE_GUI_IDENTIFIER}</string>
+-    <key>CFBundleInfoDictionaryVersion</key>
+-    <string>6.0</string>
+-    <key>CFBundleLongVersionString</key>
+-    <string>${MACOSX_BUNDLE_LONG_VERSION_STRING}</string>
+-    <key>CFBundleName</key>
+-    <string>${MACOSX_BUNDLE_BUNDLE_NAME}</string>
+-    <key>CFBundlePackageType</key>
+-    <string>APPL</string>
+-    <key>CFBundleShortVersionString</key>
+-    <string>${MACOSX_BUNDLE_SHORT_VERSION_STRING}</string>
+-    <key>CFBundleVersion</key>
+-    <string>${MACOSX_BUNDLE_BUNDLE_VERSION}</string>
+-    <key>CSResourcesFileMapped</key>
+-    <true/>
+-    <key>LSRequiresCarbon</key>
+-    <true/>
+-    <key>LSUIElement</key>
+-    <string>1</string>
+-    <key>NSHumanReadableCopyright</key>
+-    <string>${MACOSX_BUNDLE_COPYRIGHT}</string>
+-</dict>
+-</plist>
+diff -Nurd kdebase-runtime-4.6.3/phonon/CMakeLists.txt kdebase-runtime-4.6.3-new/phonon/CMakeLists.txt
+--- kdebase-runtime-4.6.3/phonon/CMakeLists.txt	2011-02-25 17:07:08.000000000 -0500
++++ kdebase-runtime-4.6.3-new/phonon/CMakeLists.txt	2011-05-13 20:17:41.000000000 -0400
 @@ -14,7 +14,7 @@
  if(KDEBASE_DISABLE_MULTIMEDIA)
     message(STATUS "NOTICE: Multimedia support DISABLED (KDEBASE_DISABLE_MULTIMEDIA == ON)")
@@ -57,9 +141,9 @@ diff -Nurd kdebase-runtime-4.6.1/phonon/CMakeLists.txt kdebase-runtime-4.6.1-new
     macro_ensure_version("${PHONON_MIN_VERSION}" "${PHONON_VERSION}" _phonon_version_ok)
     macro_log_feature(_phonon_version_ok "Phonon" "Phonon library" "git://anongit.kde.org/phonon" TRUE "${PHONON_MIN_VERSION}" "STRONGLY RECOMMENDED: Required for playing audio and video throughout KDE")
  
-diff -Nurd kdebase-runtime-4.6.1/plasma/declarativeimports/core/CMakeLists.txt kdebase-runtime-4.6.1-new/plasma/declarativeimports/core/CMakeLists.txt
---- kdebase-runtime-4.6.1/plasma/declarativeimports/core/CMakeLists.txt	2011-02-25 17:07:08.000000000 -0500
-+++ kdebase-runtime-4.6.1-new/plasma/declarativeimports/core/CMakeLists.txt	2011-03-31 20:36:42.000000000 -0400
+diff -Nurd kdebase-runtime-4.6.3/plasma/declarativeimports/core/CMakeLists.txt kdebase-runtime-4.6.3-new/plasma/declarativeimports/core/CMakeLists.txt
+--- kdebase-runtime-4.6.3/plasma/declarativeimports/core/CMakeLists.txt	2011-02-25 17:07:08.000000000 -0500
++++ kdebase-runtime-4.6.3-new/plasma/declarativeimports/core/CMakeLists.txt	2011-05-13 20:17:41.000000000 -0400
 @@ -19,7 +19,7 @@
  qt4_automoc(${corebindings_SRCS})
  
@@ -69,9 +153,9 @@ diff -Nurd kdebase-runtime-4.6.1/plasma/declarativeimports/core/CMakeLists.txt k
  target_link_libraries(corebindingsplugin ${KDE4_PLASMA_LIBS} ${QT_QTSCRIPT_LIBRARY} ${QT_QTDECLARATIVE_LIBRARY})
  
  install(TARGETS corebindingsplugin DESTINATION ${IMPORTS_INSTALL_DIR}/org/kde/plasma/core)
-diff -Nurd kdebase-runtime-4.6.1/plasma/declarativeimports/graphicslayouts/CMakeLists.txt kdebase-runtime-4.6.1-new/plasma/declarativeimports/graphicslayouts/CMakeLists.txt
---- kdebase-runtime-4.6.1/plasma/declarativeimports/graphicslayouts/CMakeLists.txt	2011-02-25 16:54:12.000000000 -0500
-+++ kdebase-runtime-4.6.1-new/plasma/declarativeimports/graphicslayouts/CMakeLists.txt	2011-03-31 20:36:53.000000000 -0400
+diff -Nurd kdebase-runtime-4.6.3/plasma/declarativeimports/graphicslayouts/CMakeLists.txt kdebase-runtime-4.6.3-new/plasma/declarativeimports/graphicslayouts/CMakeLists.txt
+--- kdebase-runtime-4.6.3/plasma/declarativeimports/graphicslayouts/CMakeLists.txt	2011-02-25 16:54:12.000000000 -0500
++++ kdebase-runtime-4.6.3-new/plasma/declarativeimports/graphicslayouts/CMakeLists.txt	2011-05-13 20:17:41.000000000 -0400
 @@ -15,7 +15,7 @@
  qt4_automoc(${graphicslayoutsbindings_SRCS})
  
@@ -81,9 +165,9 @@ diff -Nurd kdebase-runtime-4.6.1/plasma/declarativeimports/graphicslayouts/CMake
  target_link_libraries(graphicslayoutsbindingsplugin ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QTSCRIPT_LIBRARY} ${QT_QTDECLARATIVE_LIBRARY})
  
  install(TARGETS graphicslayoutsbindingsplugin DESTINATION ${IMPORTS_INSTALL_DIR}/org/kde/plasma/graphicslayouts)
-diff -Nurd kdebase-runtime-4.6.1/plasma/declarativeimports/graphicswidgets/CMakeLists.txt kdebase-runtime-4.6.1-new/plasma/declarativeimports/graphicswidgets/CMakeLists.txt
---- kdebase-runtime-4.6.1/plasma/declarativeimports/graphicswidgets/CMakeLists.txt	2011-02-25 16:54:12.000000000 -0500
-+++ kdebase-runtime-4.6.1-new/plasma/declarativeimports/graphicswidgets/CMakeLists.txt	2011-03-31 20:37:00.000000000 -0400
+diff -Nurd kdebase-runtime-4.6.3/plasma/declarativeimports/graphicswidgets/CMakeLists.txt kdebase-runtime-4.6.3-new/plasma/declarativeimports/graphicswidgets/CMakeLists.txt
+--- kdebase-runtime-4.6.3/plasma/declarativeimports/graphicswidgets/CMakeLists.txt	2011-02-25 16:54:12.000000000 -0500
++++ kdebase-runtime-4.6.3-new/plasma/declarativeimports/graphicswidgets/CMakeLists.txt	2011-05-13 20:17:41.000000000 -0400
 @@ -14,7 +14,7 @@
  qt4_automoc(${graphicswidgetsbindings_SRCS})
  

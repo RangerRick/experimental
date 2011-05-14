@@ -1,6 +1,6 @@
 Info3: <<
 Package: kdepimlibs4-%type_pkg[kde]
-Version: 4.6.1
+Version: 4.6.3
 Revision: 1
 Description: KDE4 - PIM support libraries
 Type: kde (x11 mac)
@@ -32,7 +32,6 @@ BuildDepends: <<
 	kdelibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
 	libgettext8-dev,
 	libical,
-	libidn,
 	libjasper.1,
 	libjpeg8,
 	libpng15,
@@ -45,7 +44,7 @@ BuildDepends: <<
 	pkgconfig (>= 0.23-1),
 	pth2-dev,
 	python25,
-	qt4-%type_pkg[kde] (>= 4.7.3-1),
+	qt4-base-%type_pkg[kde] (>= 4.7.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev
 <<
@@ -53,7 +52,7 @@ Replaces: kontact4-%type_pkg[kde] (<< 4.4.1-1)
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdepimlibs-%v.tar.bz2
-Source-MD5: 250d3d448c0e2a585b38e2c75c46d07f
+Source-MD5: 0b0fc8d9fea0a6f26e705460a2865e18
 SourceDirectory: kdepimlibs-%v
 PatchFile: kdepimlibs4.patch
 PatchFile-MD5: 227cdbbe6457a69a42e0cca4fbceb074
@@ -88,6 +87,7 @@ SplitOff: <<
 		cyrus-sasl2-shlibs,
 		kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
 		libical-shlibs,
+		libkholidays4-%type_pkg[kde]-shlibs (>= %v-%r),
 		openldap24-shlibs
 	<<
 	Replaces: <<
