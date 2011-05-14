@@ -1,6 +1,6 @@
 Package: libidn
 Version: 1.22
-Revision: 3
+Revision: 2
 Description: Internationalized domain names
 Type: java(1.5)
 License: LGPL

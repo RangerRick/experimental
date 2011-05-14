@@ -1,6 +1,6 @@
 Package: libidn
 Version: 1.22
-Revision: 3
+Revision: 2
 Source: mirror:gnu:%n/%n-%v.tar.gz
 Source-MD5: 893a1df0cf3b28b72d248382eaeaca71
 PatchFile: %n.patch
