@@ -83,7 +83,7 @@ CompileScript: <<
 	
 	EXTRA_ARGS="-confirm-license -verbose -no-separate-debug-info"
 	for DBPLUGIN in db2 ibase mysql oci odbc psql sqlite2 sqlite_symbian tds; do
-	EXTRA_ARGS="$EXTRA_ARGS -no-plugin-sql-$DBPLUGIN"
+	rm -rf src/plugins/sqldrivers/$DBPLUGIN
 	done
 	
 	if [ "%m" = "x86_64" ]; then
