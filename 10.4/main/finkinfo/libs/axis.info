@@ -23,7 +23,7 @@ BuildDepends: <<
 	commons-httpclient (>= 2.0-1),
 	commons-logging (>= 1.1.1-1),
 	commons-net (>= 1.1-1),
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	fink-mirrors (>= 0.21.1.1-1),
 	jaf,
 	jakarta-oro,

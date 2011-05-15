@@ -10,12 +10,12 @@ License: Artistic
 Maintainer: Benjamin Reed <mailtools-pm@fink.raccoonfink.com>
 
 Depends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	libnet-pm%type_pkg[perl],
 	perl%type_pkg[perl]-core
 <<
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	libnet-pm%type_pkg[perl],
 	perl%type_pkg[perl]-core
 <<

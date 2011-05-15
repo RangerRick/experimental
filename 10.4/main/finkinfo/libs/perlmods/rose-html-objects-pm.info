@@ -24,7 +24,7 @@ Depends: <<
 	scalar-list-utils-pm%type_pkg[perl],
 	uri-pm%type_pkg[perl]
 <<
-BuildDepends: fink (>= 0.29.7-1)
+BuildDepends: fink (>= 0.30.0-1)
 
 Source: mirror:cpan:modules/by-module/Rose/Rose-HTML-Objects-%v.tar.gz
 Source-MD5: 37df3f44def68fcf09e59fc69d1e5886

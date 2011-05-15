@@ -14,7 +14,7 @@ Depends: <<
 	mac-glue-pm%type_pkg[perl] (>= 0.24-1),
 	mac-glue-pm%type_pkg[perl]-bin (>= 0.24-1)
 <<
-BuildDepends: fink (>= 0.29.7-1)
+BuildDepends: fink (>= 0.30.0-1)
 Suggests: mac-glue-pm%type_pkg[perl]
 
 Source: mirror:sourceforge:fink/Mac-Growl-%v.tar.bz2

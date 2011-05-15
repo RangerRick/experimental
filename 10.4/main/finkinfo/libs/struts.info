@@ -42,7 +42,7 @@ BuildDepends: <<
 	commons-pool (>= 1.5.5-1),
 	commons-resources,
 	commons-validator (>= 1.1-1),
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	fink-mirrors (>= 0.22.1.1-1),
 	system-java-dev (>= 1.4-1)
 <<

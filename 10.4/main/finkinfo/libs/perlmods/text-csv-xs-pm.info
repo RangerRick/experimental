@@ -11,7 +11,7 @@ Maintainer: Benjamin Reed <text-csv-xs-pm@lists.sourceforge.net>
 
 Depends: perl%type_pkg[perl]-core
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	test-simple-pm%type_pkg[perl]
 <<
 

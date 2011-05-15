@@ -12,7 +12,7 @@ Depends: <<
 	xinitrc
 <<
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	gettext-tools,
 	libgettext8-dev,
 	passwd (>= 20060201-1),

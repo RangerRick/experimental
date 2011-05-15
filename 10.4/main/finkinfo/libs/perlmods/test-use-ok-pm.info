@@ -13,7 +13,7 @@ Depends: <<
 	perl%type_pkg[perl]-core,
 	test-simple-pm%type_pkg[perl]
 <<
-BuildDepends: fink (>= 0.29.7-1)
+BuildDepends: fink (>= 0.30.0-1)
 
 Source: mirror:cpan:modules/by-module/Test/Test-use-ok-%v.tar.gz
 Source-MD5: c49b0bbb37a6764b8b96d9fcef954ba2

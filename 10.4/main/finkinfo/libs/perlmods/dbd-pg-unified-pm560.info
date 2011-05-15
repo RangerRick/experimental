@@ -18,7 +18,7 @@ BuildDepends: <<
 	postgresql81-dev,
 	perl560-core,
 	test-simple-pm560,
-	fink (>= 0.29.7-1)
+	fink (>= 0.30.0-1)
 <<
 Conflicts: dbd-pg-pm
 Replaces: dbd-pg-pm

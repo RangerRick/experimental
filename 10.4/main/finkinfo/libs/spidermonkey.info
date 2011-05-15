@@ -9,7 +9,7 @@ Maintainer: Benjamin Reed <spidermonkey@fink.racoonfink.com>
 
 Depends: %N-shlibs (= %e:%v-%r)
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	nspr.0d,
 	readline5
 <<

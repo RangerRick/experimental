@@ -15,7 +15,7 @@ Depends: <<
 BuildDepends: <<
 	apache2-ssl-dev | apache2-dev,
 	apr-ssl | apr,
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	mono-dev (>= 2.6.2-1),
 	mono-xsp (>= 2.0-1)
 <<

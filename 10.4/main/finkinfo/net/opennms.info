@@ -8,7 +8,7 @@ Maintainer: Benjamin Reed <opennms@fink.raccoonfink.com>
 
 Depends: <<
 	daemonic,
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	jicmp,
 	opennms-pgsql,
 	passwd (>= 20030202-1),
@@ -17,7 +17,7 @@ Depends: <<
 	rrdtool-java
 <<
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	passwd (>= 20030202-1)
 <<
 Recommends: mib2opennms

@@ -14,7 +14,7 @@ BuildDepends: <<
 	autoconf (>= 2.63-1),
 	automake1.11,
 	expat1,
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	gawk,
 	libtool2,
 	system-openssl-dev,
@@ -128,7 +128,7 @@ SplitOff3: <<
 	Description: upgrade package for net-snmp-unified
 	Depends: <<
 		%N (>= %v-%r),
-		fink (>= 0.29.7-1),
+		fink (>= 0.30.0-1),
 		fink-obsolete-packages
 	<<
 	Files: share/doc/installed-packages/%n
@@ -138,7 +138,7 @@ SplitOff4: <<
 	Description: upgrade package for net-snmp-unified
 	Depends: <<
 		%N (>= %v-%r),
-		fink (>= 0.29.7-1),
+		fink (>= 0.30.0-1),
 		fink-obsolete-packages
 	<<
 	Files: share/doc/installed-packages/%n

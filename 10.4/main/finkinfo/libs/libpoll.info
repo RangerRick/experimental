@@ -6,7 +6,7 @@ License: BSD
 Maintainer: Benjamin Reed <libpoll@fink.raccoonfink.com>
 
 Depends: %n-shlibs (>= %v-%r)
-BuildDepends: fink (>= 0.29.7-1)
+BuildDepends: fink (>= 0.30.0-1)
 Replaces: %n (<< 1.1-4)
 BuildDependsOnly: true
 

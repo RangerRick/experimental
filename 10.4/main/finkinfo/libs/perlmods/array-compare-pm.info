@@ -10,12 +10,12 @@ License: Artistic
 Maintainer: Benjamin Reed <array-compare-pm@fink.raccoonfink.com>
 
 Depends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	perl%type_pkg[perl]-core
 <<
 BuildDepends: <<
 	perl%type_pkg[perl]-core,
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	module-build-pm%type_pkg[perl]
 <<
 InfoTest: 	TestScript: ./Build test || exit 2

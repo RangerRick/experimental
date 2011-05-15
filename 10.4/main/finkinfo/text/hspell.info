@@ -5,7 +5,7 @@ Description: Hebrew spell checker and analyzer
 License: GPL
 Maintainer: Benjamin Reed <hspell@fink.raccoonfink.com>
 
-BuildDepends: fink (>= 0.29.7-1)
+BuildDepends: fink (>= 0.30.0-1)
 
 Source: http://www.sourcefiles.org/Utilities/Dictionary/%n-%v.tar.gz
 Source-MD5: 3e12fa383c2cfd430918d115f33f9841

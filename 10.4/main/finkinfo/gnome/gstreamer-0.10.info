@@ -10,7 +10,7 @@ BuildDepends: <<
 	autoconf2.6,
 	automake1.11,
 	bison (>= 1.35-1),
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	flex-devel (>= 2.5.31-1),
 	glib2-dev (>= 2.22.0-1),
 	libtool2,

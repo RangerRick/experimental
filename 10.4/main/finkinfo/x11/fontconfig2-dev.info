@@ -14,7 +14,7 @@ BuildDepends: <<
 	expat1,
 	x11-dev,
 	freetype219,
-	fink (>= 0.29.7-1)
+	fink (>= 0.30.0-1)
 <<
 BuildDependsOnly: true
 

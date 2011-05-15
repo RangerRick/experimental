@@ -15,7 +15,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	bison,
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	fink-mirrors (>= 0.28.7.1-2),
 	libxml2,
 	libxslt,
@@ -352,7 +352,7 @@ SplitOff3: <<
 	Description: Upgrade package for PostgreSQL 8.0
 	Depends: <<
 		%N (>= %v-%r),
-		fink (>= 0.29.7-1),
+		fink (>= 0.30.0-1),
 		fink-obsolete-packages
 	<<
 	DocFiles: COPYRIGHT HISTORY INSTALL README
@@ -379,7 +379,7 @@ SplitOff4: <<
 	Description: Upgrade package for PostgreSQL 8.0 development
 	Depends: <<
 		%N-dev (>= %v-%r),
-		fink (>= 0.29.7-1),
+		fink (>= 0.30.0-1),
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
@@ -390,7 +390,7 @@ SplitOff5: <<
 	Description: Upgrade package for PostgreSQL 8.0 libraries
 	Depends: <<
 		%N-shlibs (>= %v-%r),
-		fink (>= 0.29.7-1),
+		fink (>= 0.30.0-1),
 		fink-obsolete-packages
 	<<
 	DocFiles: COPYRIGHT HISTORY INSTALL README
@@ -400,7 +400,7 @@ SplitOff6: <<
 	Description: Upgrade package for PostgreSQL 8.0 (SSL)
 	Depends: <<
 		%N (>= %v-%r),
-		fink (>= 0.29.7-1),
+		fink (>= 0.30.0-1),
 		fink-obsolete-packages
 	<<
 	DocFiles: COPYRIGHT HISTORY INSTALL README
@@ -427,7 +427,7 @@ SplitOff7: <<
 	Description: Upgrade package for PostgreSQL 8.0 development (SSL)
 	Depends: <<
 		%N-dev (>= %v-%r),
-		fink (>= 0.29.7-1),
+		fink (>= 0.30.0-1),
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
@@ -438,7 +438,7 @@ SplitOff8: <<
 	Description: Upgrade package for PostgreSQL 8.0 libraries (SSL)
 	Depends: <<
 		%N-shlibs (>= %v-%r),
-		fink (>= 0.29.7-1),
+		fink (>= 0.30.0-1),
 		fink-obsolete-packages
 	<<
 	DocFiles: COPYRIGHT HISTORY INSTALL README

@@ -15,7 +15,7 @@ Depends: <<
 	sub-exporter-pm%type_pkg[perl],
 	test-tester-pm
 <<
-BuildDepends: fink (>= 0.29.7-1)
+BuildDepends: fink (>= 0.30.0-1)
 
 Source: mirror:cpan:modules/by-module/Test/Test-Output-%v.tar.gz
 Source-MD5: d7a4bd06f682089bd0b432e6df94cfef

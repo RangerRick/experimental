@@ -15,7 +15,7 @@ Depends: <<
 	freeglut-shlibs (>= 2.4.0-1)
 <<
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	perl%type_pkg[perl]-core,
 	x11-dev,
 	freeglut (>= 2.4.0-1)

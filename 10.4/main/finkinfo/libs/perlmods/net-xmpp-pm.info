@@ -13,7 +13,7 @@ Depends: <<
 	digest-sha1-pm%type_pkg[perl],
 	xml-stream-pm%type_pkg[perl]
 <<
-BuildDepends: fink (>= 0.29.7-1)
+BuildDepends: fink (>= 0.30.0-1)
 Replaces: <<
 	net-xmpp-pm560,
 	net-xmpp-pm561,

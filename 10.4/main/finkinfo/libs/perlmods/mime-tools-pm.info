@@ -11,7 +11,7 @@ License: Artistic
 Maintainer: Benjamin Reed <mime-tools-pm@fink.raccoonfink.com>
 
 Depends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	file-temp-pm%type_pkg[perl] (>= 0.18-1),
 	io-pm%type_pkg[perl] (>= 1.13-1),
 	io-stringy-pm (>= 2.110-1),

@@ -11,13 +11,13 @@ Maintainer: Benjamin Reed <rose-datetime-pm@fink.raccoonfink.com>
 
 Depends: <<
 	datetime-pm%type_pkg[perl],
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	perl%type_pkg[perl]-core,
 	rose-object-pm%type_pkg[perl] (>= 0.82-1)
 <<
 BuildDepends: <<
 	datetime-pm%type_pkg[perl],
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	perl%type_pkg[perl]-core,
 	rose-object-pm%type_pkg[perl] (>= 0.82-1)
 <<

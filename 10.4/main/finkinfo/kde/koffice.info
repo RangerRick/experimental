@@ -27,7 +27,7 @@ BuildDepends: <<
 	cctools-single-module,
 	esound (>= 0.2.38-1),
 	expat1,
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	flex-devel,
 	fontconfig2-dev,
 	freetype219,

@@ -19,7 +19,7 @@ Depends: <<
 	test-exception-pm,
 	tree-dag-node-pm
 <<
-BuildDepends: fink (>= 0.29.7-1)
+BuildDepends: fink (>= 0.30.0-1)
 
 Source: mirror:cpan:modules/by-module/Test/Test-Warn-%v.zip
 Source-MD5: d33c38d18d2bedac52bfdbaf94c8744d

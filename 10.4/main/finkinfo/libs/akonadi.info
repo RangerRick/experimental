@@ -21,7 +21,7 @@ Depends: <<
 	sqlite3-shlibs (>= 3.7.6.2-1)
 <<
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	automoc-%type_pkg[akonadi],
 	boost1.41.cmake,
 	cmake (>= 2.8.2-1),

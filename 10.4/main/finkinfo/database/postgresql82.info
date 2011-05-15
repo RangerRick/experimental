@@ -15,7 +15,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	bison,
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	fink-mirrors (>= 0.28.7.1-2),
 	libxml2,
 	libxslt,

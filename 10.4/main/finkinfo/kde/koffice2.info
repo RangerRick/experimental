@@ -23,7 +23,7 @@ BuildDepends: <<
 	create-resources (>= 0.1-1),
 	dbus1.3-dev (>= 1.2.24-1),
 	eigen2,
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	fontconfig2-dev (>= 2.8.0-6),
 	freetype219 (>= 2.4.4-2),
 	glew (>= 1.5.1-1),

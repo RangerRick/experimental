@@ -12,7 +12,7 @@ Depends: <<
 	libx264-57-shlibs
 <<
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	ffmpeg-dev (>= 0.4.20071217-5),
 	libavcodec-dev (>= 0.4.20071217-5),
 	libavformat-dev (>= 0.4.20071217-5),

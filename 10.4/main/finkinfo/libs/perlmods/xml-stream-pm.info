@@ -16,7 +16,7 @@ Depends: <<
 BuildDepends: <<
 	authen-sasl-pm%type_pkg[perl],
 	mime-base64-pm%type_pkg[perl],
-	fink (>= 0.29.7-1)
+	fink (>= 0.30.0-1)
 <<
 Replaces: <<
 	xml-stream-pm560,

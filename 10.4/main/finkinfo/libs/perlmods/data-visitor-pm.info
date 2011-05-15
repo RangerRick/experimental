@@ -12,7 +12,7 @@ Maintainer: Benjamin Reed <data-visitor-pm@fink.raccoonfink.com>
 Depends: <<
 	class-accessor-pm,
 	data-alias-pm%type_pkg[perl],
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	mouse-pm%type_pkg[perl] (>= 0.06-1),
 	namespace-clean-pm%type_pkg[perl] (>= 0.08-1),
 	perl%type_pkg[perl]-core,
@@ -22,7 +22,7 @@ Depends: <<
 BuildDepends: <<
 	class-accessor-pm,
 	data-alias-pm%type_pkg[perl],
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	module-build-pm%type_pkg[perl],
 	mouse-pm%type_pkg[perl] (>= 0.06-1),
 	namespace-clean-pm%type_pkg[perl] (>= 0.08-1),

@@ -10,12 +10,12 @@ License: Artistic
 Maintainer: Benjamin Reed <mouse-pm@fink.raccoonfink.com>
 
 Depends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	perl%type_pkg[perl]-core
 <<
 BuildDepends: <<
 	devel-ppport-pm%type_pkg[perl] (>= 3.19-1),
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	perl%type_pkg[perl]-core
 <<
 InfoTest: <<

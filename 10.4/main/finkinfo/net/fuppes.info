@@ -33,7 +33,7 @@ Depends: <<
 	uuid-shlibs (>= 1.6.2-1)
 <<
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	imagemagick1-dev,
 	lame-dev (>= 3.98.2-1),
 	libavcodec1-dev,

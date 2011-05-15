@@ -7,7 +7,7 @@ Type: perl
 License: Artistic
 Maintainer: Benjamin Reed <configreader-simple-pm@fink.raccoonfink.com>
 
-BuildDepends: fink (>= 0.29.7-1)
+BuildDepends: fink (>= 0.30.0-1)
 
 Source: mirror:cpan:modules/by-module/ConfigReader/ConfigReader-Simple-%v.tar.gz
 Source-MD5: 2b6b97fdc4c2082c15d9c4c0300747cb

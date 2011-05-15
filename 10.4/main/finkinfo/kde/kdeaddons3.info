@@ -24,7 +24,7 @@ BuildDepends: <<
 	doxygen (>= 1.5.6-1),
 	esound,
 	expat1,
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	freetype219 (>= 2.4.4-2),
 	gettext-tools,
 	glib,

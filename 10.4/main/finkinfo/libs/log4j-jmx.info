@@ -13,7 +13,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	ant-base,
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	mx4j,
 	system-java-dev (>= 1.4-1)
 <<

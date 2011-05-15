@@ -18,7 +18,7 @@ Depends: <<
 BuildDepends: <<
 	class-dbi-pm%type_pkg[perl] (>= 0.89-1),
 	dbd-pg-unified-pm%type_pkg[perl] (>= 1.13-1),
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	perl%type_pkg[perl]-core,
 	test-simple-pm%type_pkg[perl] (>= 0.32-1)
 <<

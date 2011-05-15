@@ -16,7 +16,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	perl%type_pkg[perl]-core,
-	fink (>= 0.29.7-1)
+	fink (>= 0.30.0-1)
 <<
 Provides: convert-tnef-pm
 Replaces: <<

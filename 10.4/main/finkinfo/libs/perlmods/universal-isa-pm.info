@@ -14,7 +14,7 @@ Depends: <<
 	scalar-list-utils-pm%type_pkg[perl]
 <<
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	module-build-pm%type_pkg[perl]
 <<
 InfoTest: TestScript: ./Build test || exit 2

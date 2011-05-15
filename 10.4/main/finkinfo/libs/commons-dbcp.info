@@ -12,7 +12,7 @@ Depends: <<
 	jdbc-optional,
 	system-java (>= 1.5-1)
 <<
-BuildDepends: fink (>= 0.29.7-1)
+BuildDepends: fink (>= 0.30.0-1)
 
 Source: mirror:apache:jakarta/commons/dbcp/binaries/%n-%v-bin.tar.gz
 Source-MD5: bd272e9611b0d880fd02493377d4691b

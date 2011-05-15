@@ -22,7 +22,7 @@ BuildDepends: <<
 	esound (>= 0.2.38-1),
 	expat1,
 	faac-dev,
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	fontconfig2-dev (>= 2.8.0-6),
 	freetype219 (>= 2.4.4-2),
 	gconf2-dev (>= 2.20.0-1),

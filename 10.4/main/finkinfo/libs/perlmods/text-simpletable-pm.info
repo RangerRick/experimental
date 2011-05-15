@@ -11,7 +11,7 @@ Maintainer: Benjamin Reed <text-simpletable-pm@fink.raccoonfink.com>
 
 Depends: perl%type_pkg[perl]-core
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	module-build-pm%type_pkg[perl]
 <<
 

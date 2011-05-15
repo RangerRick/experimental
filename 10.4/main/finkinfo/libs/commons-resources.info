@@ -26,7 +26,7 @@ BuildDepends: <<
 	commons-digester (>= 2.1-1),
 	commons-discovery (>= 0.2-2),
 	commons-logging (>= 1.1.1-1),
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	fink-mirrors (>= 0.22.1.1-1),
 	hsqldb (>= 1.8.1.1-1),
 	jakarta-servletapi,

@@ -10,7 +10,7 @@ Depends: <<
 	pkgconfig (>= 0.23-1)
 <<
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	fink-package-precedence (>= 0.7-1),
 	fontconfig2-dev (>= 2.8.0-6),
 	freetype219 (>= 2.4.4-2),

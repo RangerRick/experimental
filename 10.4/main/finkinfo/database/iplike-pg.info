@@ -14,7 +14,7 @@ Depends: <<
 BuildDepends: <<
 	autoconf2.6,
 	automake1.11,
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	libtool2,
 	(%type_raw[postgresql] <= 8.0) postgresql%type_pkg[postgresql]-unified-dev,
 	(%type_raw[postgresql] >= 8.1) postgresql%type_pkg[postgresql]-dev

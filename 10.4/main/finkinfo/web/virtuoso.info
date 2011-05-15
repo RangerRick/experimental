@@ -19,7 +19,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	bison,
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	flex-devel,
 	gawk,
 	htmldoc-nox,

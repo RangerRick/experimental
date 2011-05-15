@@ -14,7 +14,7 @@ Depends: <<
 BuildDepends: <<
 	libjpeg8,
 	libpng15,
-	fink (>= 0.29.7-1)
+	fink (>= 0.30.0-1)
 <<
 Conflicts: <<
 	qt3,

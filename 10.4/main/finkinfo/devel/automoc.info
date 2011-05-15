@@ -10,7 +10,7 @@ Maintainer: Benjamin Reed <automoc@fink.raccoonfink.com>
 Depends: qt4-base-%type_pkg[automoc]-qtcore-shlibs (>= 4.7.3-1)
 BuildDepends: <<
 	cmake (>= 2.8.2-1),
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	kde4-buildenv (>= 4.6.0-1),
 	system-openssl-dev,
 	qt4-base-%type_pkg[automoc] (>= 4.7.3-1)

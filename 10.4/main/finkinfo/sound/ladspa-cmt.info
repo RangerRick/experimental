@@ -8,7 +8,7 @@ Maintainer: Benjamin Reed <ladspa-cmt@fink.raccoonfink.com>
 Depends: ladspa (>= 1.13-1)
 BuildDepends: <<
 	ladspa-dev (>= 1.13-0),
-	fink (>= 0.29.7-1)
+	fink (>= 0.30.0-1)
 <<
 GCC: 4.0
 

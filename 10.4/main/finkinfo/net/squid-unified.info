@@ -9,7 +9,7 @@ Maintainer: Benjamin Reed <squid@fink.raccoonfink.com>
 
 Depends: daemonic
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	system-openssl-dev
 <<
 Replaces: <<

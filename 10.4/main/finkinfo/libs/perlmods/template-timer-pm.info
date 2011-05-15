@@ -15,7 +15,7 @@ Depends: <<
 	time-hires-pm%type_pkg[perl]
 <<
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	test-simple-pm%type_pkg[perl]
 <<
 

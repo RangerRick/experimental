@@ -10,12 +10,12 @@ License: Artistic
 Maintainer: Benjamin Reed <geo-ip-pm@fink.raccoonfink.com>
 
 Depends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	geoip-shlibs (>= 1.4.5-1),
 	perl%type_pkg[perl]-core
 <<
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	geoip-dev (>= 1.4.5-1),
 	perl%type_pkg[perl]-core
 <<

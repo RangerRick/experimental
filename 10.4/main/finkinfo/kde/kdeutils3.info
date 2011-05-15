@@ -29,7 +29,7 @@ BuildDepends: <<
 	autoconf (>= 2.63-1),
 	cctools-single-module,
 	expat1,
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	freetype219 (>= 2.4.4-2),
 	gettext-tools,
 	gmp,
@@ -1491,7 +1491,7 @@ SplitOff18: <<
 	<<
 	Recommends: <<
 		arts-dev (>= 1.5.10-10),
-		fink (>= 0.29.7-1),
+		fink (>= 0.30.0-1),
 		kdebase3-unified-dev (>= 3.5.10-10),
 		kdelibs3-unified-dev (>= 3.5.10-10),
 		libart2,

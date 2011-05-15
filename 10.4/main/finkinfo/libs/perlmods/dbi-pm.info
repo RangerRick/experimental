@@ -11,13 +11,13 @@ License: Artistic
 Maintainer: Benjamin Reed <dbi-pm@fink.raccoonfink.com>
 
 Depends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	perl%type_pkg[perl]-core,
 	plrpc-pm,
 	scalar-list-utils-pm%type_pkg[perl]
 <<
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	perl%type_pkg[perl]-core,
 	plrpc-pm,
 	scalar-list-utils-pm%type_pkg[perl],

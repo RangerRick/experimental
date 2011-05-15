@@ -16,7 +16,7 @@ Depends: <<
 	text-glob-pm
 <<
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	module-build-pm%type_pkg[perl]
 <<
 Replaces: <<

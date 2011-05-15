@@ -23,7 +23,7 @@ Depends: <<
 	perl%type_pkg[perl]-core,
 	yaml-tiny-pm (>= 1.38-1)
 <<
-BuildDepends: fink (>= 0.29.7-1)
+BuildDepends: fink (>= 0.30.0-1)
 InfoTest: <<
 TestDepends: <<
 	extutils-makemaker-pm%type_pkg[perl] (>= 6.42-1),

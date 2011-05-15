@@ -10,13 +10,13 @@ License: Artistic
 Maintainer: Benjamin Reed <datetime-locale-pm@fink.raccoonfink.com>
 
 Depends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	list-moreutils-pm%type_pkg[perl],
 	params-validate-pm%type_pkg[perl] (>= 0.91-1),
 	perl%type_pkg[perl]-core
 <<
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	module-build-pm%type_pkg[perl],
 	list-moreutils-pm%type_pkg[perl],
 	params-validate-pm%type_pkg[perl] (>= 0.91-1),

@@ -15,7 +15,7 @@ Depends: <<
 	rrdtool (>= 1.4.4-1)
 <<
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	libpng15,
 	perl%type_pkg[perl]-core,
 	rrdtool (>= 1.4.4-1),

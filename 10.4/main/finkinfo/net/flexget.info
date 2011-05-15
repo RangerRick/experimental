@@ -22,7 +22,7 @@ Depends: <<
 	yaml-py%type_pkg[python]
 <<
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	setuptools-py%type_pkg[python]
 <<
 

@@ -19,7 +19,7 @@ BuildDepends: <<
 	dbus1.3-dev (>= 1.2.24-1),
 	enchant1-dev,
 	expat1,
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	freetype219 (>= 2.4.4-2),
 	gettext-tools,
 	giflib,

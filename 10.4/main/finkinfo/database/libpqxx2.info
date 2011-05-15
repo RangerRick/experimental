@@ -8,7 +8,7 @@ Maintainer: Benjamin Reed <libpqxx2@fink.raccoonfink.com>
 
 Depends: %N-shlibs (= %e:%v-%r)
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	postgresql84-dev,
 	system-openssl-dev
 <<

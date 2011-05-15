@@ -15,7 +15,7 @@ Depends: <<
 	perl%type_pkg[perl]-core
 <<
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	test-pod-pm
 <<
 Conflicts: %N-man

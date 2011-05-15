@@ -34,7 +34,7 @@ BuildDepends: <<
 	libcurl4,
 	libssh2.1,
 	system-openssl-dev,
-	fink (>= 0.29.7-1)
+	fink (>= 0.30.0-1)
 <<
 Conflicts: gpg-agent (<= 1.9.20-1)
 Replaces: gpg-agent (<= 1.9.20-1)

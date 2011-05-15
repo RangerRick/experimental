@@ -17,7 +17,7 @@ BuildDepends: <<
 	ant-base (>= 1.8.1-1),
 	commons-logging,
 	commons-collections,
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	log4j (>= 1.2-1),
 	readline5,
 	system-java-dev (>= 1.4-1)

@@ -15,7 +15,7 @@ Depends: <<
 	proj-shlibs
 <<
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	jts,
 	libgeos3.2.0 (>= 3.2.0-4),
 	libiconv-dev,

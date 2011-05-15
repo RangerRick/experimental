@@ -9,7 +9,7 @@ Maintainer: Benjamin Reed <libgems-rb@fink.raccoonfink.com>
 
 Depends: ruby%type_pkg[ruby]
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	ruby%type_pkg[ruby]-dev
 <<
 

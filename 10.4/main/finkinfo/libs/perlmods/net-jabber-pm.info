@@ -14,7 +14,7 @@ Depends: <<
 	net-xmpp-pm%type_pkg[perl],
 	xml-stream-pm%type_pkg[perl]
 <<
-BuildDepends: fink (>= 0.29.7-1)
+BuildDepends: fink (>= 0.30.0-1)
 Replaces: <<
 	net-jabber-pm560,
 	net-jabber-pm561,

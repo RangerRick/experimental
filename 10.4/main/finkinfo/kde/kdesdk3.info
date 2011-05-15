@@ -28,7 +28,7 @@ BuildDepends: <<
 	cctools-single-module,
 	db47-aes | db47,
 	expat1,
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	flex-devel (>= 2.5.31-1),
 	freetype219 (>= 2.4.4-2),
 	libgettext8-dev,
@@ -119,7 +119,7 @@ SplitOff: <<
 	<<
 	Recommends: <<
 		arts-dev (>= 1.5.10-10),
-		fink (>= 0.29.7-1),
+		fink (>= 0.30.0-1),
 		kdelibs3-unified-dev (>= 3.5.10-10),
 		libart2,
 		libjpeg8,

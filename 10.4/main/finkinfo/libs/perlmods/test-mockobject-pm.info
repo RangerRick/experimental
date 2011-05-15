@@ -18,7 +18,7 @@ Depends: <<
 	universal-can-pm%type_pkg[perl] (>= 1.11-1)
 <<
 BuildDepends: <<
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.0-1),
 	module-build-pm%type_pkg[perl]
 <<
 InfoTest: 	TestScript: ./Build test || exit 2

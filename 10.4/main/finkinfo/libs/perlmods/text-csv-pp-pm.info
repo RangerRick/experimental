@@ -13,7 +13,7 @@ Depends: perl%type_pkg[perl]-core
 BuildDepends: <<
 	test-harness-pm%type_pkg[perl],
 	test-simple-pm%type_pkg[perl],
-	fink (>= 0.29.7-1)
+	fink (>= 0.30.0-1)
 <<
 
 Source: mirror:cpan:modules/by-module/Text/Text-CSV-%v.tar.gz
