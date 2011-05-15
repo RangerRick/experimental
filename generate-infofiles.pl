@@ -80,6 +80,7 @@ my $version_lookup = {
 		'^docbook-xsl$'                       => [ '1.76.1',       '1'    ],
 		'^fink$'                              => [ '0.30.0',       '1'    ],
 		'^fink-package-precedence$'           => [ '0.7',          '1'    ],
+		'^flag-dedup$'                        => [ '0.2',          '1'    ],
 		'^freetype219(-shlibs)?$'             => [ '2.4.4',        '2'    ],
 		'^fontconfig2(-dev|-shlibs)?$'        => [ '2.8.0',        '6'    ],
 		'^gecko-sharp(-firefox.|-seamonkey)?$'=> [ '2.0',          '1044' ],
