@@ -7,6 +7,7 @@ GCC: 4.0
 CustomMirror: RangerMirror
 Source: mirror:custom:qt/README
 Source-MD5: e39453c974609d19aa5cb625386faf3b
+SourceRename: README.qt4-%type_pkg[qt]
 NoSourceDirectory: true
 Description: OBSOLETE: use qt4-base-%type_pkg[qt]
 Depends: <<

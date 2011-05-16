@@ -24,6 +24,7 @@ CustomMirror: <<
 NoSourceDirectory: true
 Source: mirror:custom:qt/README
 Source-MD5: e39453c974609d19aa5cb625386faf3b
+SourceRename: README.qt4-%type_pkg[qt]
 
 UseMaxBuildJobs: true
 CompileScript: echo "none needed"
