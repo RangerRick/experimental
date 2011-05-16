@@ -1,15 +1,20 @@
 Package: flag-sort
 Version: 0.4
 Revision: 1
+Description: Wrapper that sorts compiler flags
+License: GPL
+Maintainer: Daniel Macks <dmacks@netspace.org>
 
-BuildDepends: fink (>= 0.24.12-1)
+BuildDepends: fink (>= 0.30.0-1)
 
 Source: none
+PatchScript: sed 's,@PREFIX@,%p,' < %{PatchFile} | patch -p1
 PatchFile: %n.patch
 PatchFile-MD5: 699fe8e73de7c4b7c2a3c4c27c348182
-PatchScript: sed 's,@PREFIX@,%p,' < %{PatchFile} | patch -p1
 
+UseMaxBuildJobs: true
 CompileScript: #
+
 InstallScript: <<
 	mkdir -p %i/bin
 	install -m755 flag-sort %i/bin
@@ -51,7 +56,4 @@ the following command:
 The -v flag causes flag-sort to print the command that will be
 launched and all the flags in order on STDOUT.
 <<
-Description: Wrapper that sorts compiler flags
-#Homepage: 
-License: GPL
-Maintainer: Daniel Macks <dmacks@netspace.org>
+
