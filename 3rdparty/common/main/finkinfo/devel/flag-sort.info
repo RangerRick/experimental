@@ -6,7 +6,7 @@ BuildDepends: fink (>= 0.24.12-1)
 
 Source: none
 PatchFile: %n.patch
-PatchFile-MD5: 699fe8e73de7c4b7c2a3c4c27c348182
+PatchFile-MD5: c19f51d7f84fb9c08453912d92b229c4
 PatchScript: sed 's,@PREFIX@,%p,' < %{PatchFile} | patch -p1
 
 CompileScript: #
