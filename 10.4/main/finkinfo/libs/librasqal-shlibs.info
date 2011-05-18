@@ -6,8 +6,8 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <librasqal@fink.raccoonfink.com>
 
 Depends: <<
-	gmp-shlibs (>= 4.3.2-5),
-	libmpfr1-shlibs (>= 2.4.2-2),
+	gmp-shlibs (>= 4.3.2-8),
+	libmpfr1-shlibs (>= 2.4.2-3),
 	libraptor1-shlibs (>= 1.4.21-1),
 	libssh2.1-shlibs,
 	pcre-shlibs
@@ -15,11 +15,11 @@ Depends: <<
 BuildDepends: <<
 	fink-package-precedence (>= 0.7-1),
 	flex-devel (>= 2.5-1),
-	gmp (>= 4.3.2-5),
+	gmp (>= 4.3.2-8),
 	gtk-doc (>= 1.13-5),
 	libcurl4,
 	libiconv,
-	libmpfr1 (>= 2.4.2-2),
+	libmpfr1 (>= 2.4.2-3),
 	libraptor1-dev (>= 1.4.21-1),
 	libssh2.1,
 	libxml2,
