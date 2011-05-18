@@ -10,7 +10,7 @@ Maintainer: Benjamin Reed <soprano@fink.raccoonfink.com>
 Depends: <<
 	%N-shlibs (>= %v-%r),
 	libraptor1-shlibs (>= 1.4.21-1),
-	librasqal2-shlibs (>= 0.9.25-1),
+	librasqal2-shlibs (>= 0.9.21-1),
 	redland-shlibs (>= 1.0.13-1)
 <<
 BuildDepends: <<
@@ -27,7 +27,7 @@ BuildDepends: <<
 	libiconv,
 	libmpfr1,
 	libraptor1-dev (>= 1.4.21-1),
-	librasqal2-dev (>= 0.9.25-1),
+	librasqal2-dev (>= 0.9.21-1),
 	libssh2.1,
 	libxml2,
 	libxslt,

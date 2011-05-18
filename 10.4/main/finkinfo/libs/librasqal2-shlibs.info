@@ -1,5 +1,5 @@
 Package: librasqal2-shlibs
-Version: 0.9.25
+Version: 0.9.21
 Revision: 1
 Description: RDF query library
 License: GPL/LGPL
@@ -43,7 +43,7 @@ InfoTest: <<
 <<
 
 Source: http://download.librdf.org/source/rasqal-%v.tar.gz
-Source-MD5: ee12d7ad59c581eb65db89c851672c0a
+Source-MD5: 55b67ec92a059ef8979d46486b00a032
 PatchScript: 	perl -pi -e 's,(\@CPPFLAGS\@),-I%p/lib/system-openssl/include \1,' `find . -name Makefile.in`
 
 SetCPPFLAGS: -I%p/lib/system-openssl/include -I%p/lib/flex/include
