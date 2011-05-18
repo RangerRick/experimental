@@ -1,7 +1,7 @@
 Info4: <<
 Package: qtwebkit-x11
 Version: 2.0.0
-Revision: 6
+Revision: 7
 Description: Qt browser framework
 Type: qtwebkit (x11)
 License: LGPL

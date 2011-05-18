@@ -7,7 +7,7 @@ Package: phonon-mac
 Type: phonon (mac)
 #endif
 Version: 4.5.0
-Revision: 1
+Revision: 2
 Description: Qt-based multimedia framework
 License: LGPL
 Maintainer: Benjamin Reed <phonon@fink.raccoonfink.com>
@@ -52,6 +52,12 @@ InstallScript: <<
 	pushd build
 		make -j1 install/fast DESTDIR="%d"
 	popd
+
+#ifdef TYPE_MAC
+	pushd %i/lib/qt4-%type_pkg[phonon]/lib/phonon.framework
+		ln -sf Versions/4/Headers Headers
+	popd
+#endif
 <<
 
 SplitOff: <<
