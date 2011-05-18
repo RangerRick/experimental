@@ -15,6 +15,7 @@ Depends: %N-shlibs (>= %v-%r)
 PatchFile: phonon.patch
 PatchFile-MD5: 98b93bb7af46c8eac9340a7b64f5f40e
 
+BuildDependsOnly: true
 BuildDepends: <<
 	automoc-%type_pkg[phonon] (>= 0.9.89-0),
 	cmake (>= 2.6.1-2),

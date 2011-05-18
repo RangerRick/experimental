@@ -151,6 +151,7 @@ my $version_lookup = {
 		'^librsvg2(-bin|-dev|-shlibs)?$'      => [ '2.24.0',       '1'    ],
 		'^libwnck1.22(-dev|-shlibs)?$'        => [ '2.26.2',       '1'    ],
 		'^libwpd-0.8.*$'                      => [ '0.8.14',       '1'    ],
+		'^libxine1(-shlibs)?$'                => [ '1.1.19',       '1'    ],
 		'^libxml2(-shlibs)?$'                 => [ '2.6.32',       '1'    ],
 		'^marble4.*$'                         => [ '4.6.1',        '1'    ],
 		'^mockobjects$',                      => [ '0.09',         '1'    ],
