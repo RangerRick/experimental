@@ -2,7 +2,7 @@ Info4: <<
 Package: qt4-%type_pkg[qt]
 Type: qt (x11 mac)
 Version: 4.7.3
-Revision: 2
+Revision: 3
 GCC: 4.0
 CustomMirror: RangerMirror
 Source: mirror:custom:qt/README
@@ -14,6 +14,7 @@ Depends: <<
 	fink (>= 0.30.0-1),
 	fink-obsolete-packages,
 	phonon-%type_pkg[qt] (>= 4.5.0-1),
+	phonon-%type_pkg[qt]-backend (>= 4.5.0-1),
 	qt4-base-%type_pkg[qt] (>= %v-1),
 	qtwebkit-%type_pkg[qt] (>= 2.0.0-1),
 <<

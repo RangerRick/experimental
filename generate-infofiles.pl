@@ -57,7 +57,7 @@ my $version_lookup = {
 		'^ant-jdbc$'                          => [ '1.8.1',        '1'    ],
 		'^ant-optional$'                      => [ '1.8.1',        '1'    ],
 		'^arts(-dev|-shlibs)?$'               => [ '1.5.10',       '10'   ],
-		'^atk1(-dev|-shlibs)?$'               => [ '1.26.0',       '1'    ],
+		'^atk1(-dev|-shlibs)?$'               => [ '1.28.0',       '1'    ],
 		'^autoconf$'                          => [ '2.63',         '1'    ],
 		'^automoc-.*$'                        => [ '0.9.89',       '0.999999.1' ],
 		'^blitz-(mac|x11)(-dev|-shlibs)?$'    => [ '0.0.4',        '3'    ],
@@ -94,16 +94,16 @@ my $version_lookup = {
 		'^gnome-desktop-sharp2$'              => [ '2.24.0',       '1'    ],
 		'^gnome-panel(-shlibs|-dev)?$'        => [ '2.24.0',       '1'    ],
 		'^gnome-sharp2$'                      => [ '2.24.0',       '1'    ],
-		'^gnome-vfs2-unified(-dev|-shlibs)?$' => [ '1:2.24.0',     '1'    ],
+		'^gnome-vfs2-unified(-dev|-shlibs)?$' => [ '1:2.24.2',     '1'    ],
 		'^grantlee(-dev|-shlibs)?$'           => [ '0.1.8',        '1'    ],
-		'^gst-plugins-bad-0.10.*$'            => [ '0.10.20',      '1'    ],
-		'^gst-plugins-base-0.10.*$'           => [ '0.10.30',      '1'    ],
-		'^gst-plugins-good-0.10.*$'           => [ '0.10.25',      '1'    ],
-		'^gst-plugins-ugly-0.10.*$'           => [ '0.10.16',      '1'    ],
-		'^gst-python-0.10.*$'                 => [ '0.10.19',      '1'    ],
-		'^gstreamer-0.10.*$'                  => [ '0.10.30',      '1'    ],
-		'^gtk.2(-dev|-shlibs)?$'              => [ '2.14.7',       '1'    ],
-		'^gtk-doc$'                           => [ '1.13',         '5'    ],
+		'^gst-plugins-bad-0.10.*$'            => [ '0.10.22',      '1'    ],
+		'^gst-plugins-base-0.10.*$'           => [ '0.10.34',      '1'    ],
+		'^gst-plugins-good-0.10.*$'           => [ '0.10.29',      '1'    ],
+		'^gst-plugins-ugly-0.10.*$'           => [ '0.10.18',      '1'    ],
+		'^gst-python-0.10.*$'                 => [ '0.10.21',      '1'    ],
+		'^gstreamer-0.10.*$'                  => [ '0.10.34',      '1'    ],
+		'^gtk.2(-dev|-shlibs)?$'              => [ '2.18.0',       '1'    ],
+		'^gtk-doc$'                           => [ '1.17',         '2'    ],
 		'^gtk-sharp(2|-monodoc)$'             => [ '2.12.9',       '1'    ],
 		'^gtkhtml3.14(-dev|-shlibs)?$'        => [ '3.26.2',       '1'    ],
 		'^gtksourceview2(-dev|-shlibs)?$'     => [ '2.6.2',        '2'    ],
@@ -163,7 +163,7 @@ my $version_lookup = {
 		'^monodevelop.*$'                     => [ '2.2',          '1'    ],
 		'^nant$'                              => [ '0.86',         '0'    ],
 		'^oxygen-icons.*$'                    => [ '4.6.1',        '1'    ],
-		'^pango1-xft2-ft219(-dev|-shlibs)?$'  => [ '1.24.0',       '1'    ],
+		'^pango1-xft2-ft219(-dev|-shlibs)?$'  => [ '1.24.5',       '4'    ],
 		'^pcre(-bin|-shlibs)?$'               => [ '7.6',          '1'    ],
 		'^phonon(-shlibs)?$'                  => [ '4.5.0',        '1'    ],
 		'^pixman(-shlibs)?$'                  => [ '0.16.0',       '1'    ],
@@ -350,6 +350,7 @@ sub handle_file {
 	my $dir      = shift;
 	my $filename = shift;
 	my $file     = $dir . '/' . $filename;
+	my $parse    = 1;
 
 	print $file, "\n";
 
@@ -365,7 +366,11 @@ sub handle_file {
 					$splitoff_count++;
 				}
 			}
-			$contents .= $line;
+			if ($line =~ /^\s*#define\s+NOPARSE/) {
+				$parse = 0;
+			} else {
+				$contents .= $line;
+			}
 		}
 		close (FILEIN);
 	} else {
@@ -373,7 +378,19 @@ sub handle_file {
 		return;
 	}
 
-	if ($file =~ /\.info$/) {
+	if (not $parse) {
+		for my $tree (@TREES) {
+			my $todir = $dir;
+			$todir =~ s#/common/#/${tree}/#;
+			$todir =~ s#/3rdparty/common/#/3rdparty/${tree}/#;
+			mkdir_p($todir) unless (-d $todir);
+
+			if (open (FILEOUT, '>' . $todir . '/' . $filename)) {
+				print FILEOUT $contents;
+				close (FILEOUT);
+			}
+		}
+	} elsif ($file =~ /\.info$/) {
 		my $properties = info_hash_from_var(
 			$file,
 			$contents,

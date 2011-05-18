@@ -1,0 +1,24 @@
+Info4: <<
+Package: phonon-%type_pkg[phonon]-backend
+Type: phonon (x11 mac)
+Version: 4.5.0
+Revision: 1
+GCC: 4.0
+CustomMirror: RangerMirror
+Source: mirror:custom:qt/README
+Source-MD5: e39453c974609d19aa5cb625386faf3b
+SourceRename: README.phonon-%type_pkg[phonon]-backend
+NoSourceDirectory: true
+Description: Wrapper package to choose a Phonon backend
+Depends: phonon-%type_pkg[phonon]-backend-gstreamer (>= 4.5.1-1) | phonon-%type_pkg[phonon]-backend-xine (>= 4.4.4-1)
+CompileScript: echo "none needed"
+InstallScript: <<
+#!/bin/sh -ev
+
+	install -d -m 755 %i/share/doc/installed-packages
+	touch %i/share/doc/installed-packages/%N
+<<
+
+License: BSD
+Maintainer: Benjamin Reed <phonon-backend@fink.raccoonfink.com>
+<<

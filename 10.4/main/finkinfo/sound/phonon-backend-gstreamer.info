@@ -9,8 +9,8 @@ Maintainer: Benjamin Reed <phonon@fink.raccoonfink.com>
 
 Depends: <<
 	glib2-shlibs (>= 2.22.0-1),
-	gst-plugins-base-0.10-shlibs (>= 0.10.30-1),
-	gstreamer-0.10-shlibs (>= 0.10.30-1),
+	gst-plugins-base-0.10-shlibs (>= 0.10.34-1),
+	gstreamer-0.10-shlibs (>= 0.10.34-1),
 	phonon-mac-shlibs (>= 4.5.0-1),
 	qt4-base-mac-qtcore-shlibs (>= 4.7.3-1),
 	qt4-base-mac-qtgui-shlibs (>= 4.7.3-1),
@@ -21,8 +21,8 @@ BuildDepends: <<
 	cmake (>= 2.8.2-1),
 	fink (>= 0.30.0-1),
 	glib2-dev (>= 2.22.0-1),
-	gstreamer-0.10-dev (>= 0.10.30-1),
-	gst-plugins-base-0.10-dev (>= 0.10.30-1),
+	gstreamer-0.10-dev (>= 0.10.34-1),
+	gst-plugins-base-0.10-dev (>= 0.10.34-1),
 	kde4-buildenv (>= 4.6.0-1),
 	libxml2 (>= 2.6.32-1),
 	system-openssl-dev,

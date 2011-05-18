@@ -1,9 +1,10 @@
+Info4: <<
 Package: gst-plugins
 Version: 0.8.12
 Revision: 1036
 Description: Streaming-media framework plugins
 License: Restrictive
-Maintainer: Benjamin Reed <gst-plugins@fink.raccoonfink.com>
+Maintainer: Benjamin Reed <gst-plugins@fink.racoonfink.com>
 
 Depends: <<
 	%N-shlibs (= %v-%r),
@@ -17,7 +18,7 @@ BuildDepends: <<
 	audiofile,
 	avahi-dev,
 	cairo (>= 1.6-1),
-	dbus1.3-dev (>= 1.0-1),
+	dbus-dev (>= 1.0-1),
 	docbook-utils,
 	esound (>= 0.2.38-1),
 	expat1,
@@ -142,7 +143,7 @@ SplitOff: <<
 		arts-shlibs,
 		audiofile-shlibs (>= 0.2.6-11),
 		cairo-shlibs (>= 1.6-1),
-		dbus1.3-shlibs,
+		dbus-shlibs,
 		esound-shlibs (>= 0.2.38-1),
 		expat1-shlibs,
 		faac-shlibs,
@@ -274,4 +275,4 @@ DescPackaging: <<
 Although this software is distributed under the GPL, it must be labeled
 as Restrictive since it depends on the restrictive package "lame".
 <<
-
+<<
