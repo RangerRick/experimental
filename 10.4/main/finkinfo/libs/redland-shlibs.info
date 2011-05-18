@@ -18,11 +18,11 @@ Depends: <<
 BuildDepends: <<
 	db48-aes | db48,
 	fink-package-precedence (>= 0.7-1),
-	gmp,
+	gmp5 (>= 5.0.1-8),
 	gtk-doc (>= 1.13-5),
 	libcurl4,
 	libiconv,
-	libmpfr1,
+	libmpfr4 (>= 3.0.1-1),
 	libraptor1-dev (>= 1.4.21-1),
 	librasqal2-dev (>= 0.9.21-1),
 	libssh2.1,

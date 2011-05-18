@@ -9,11 +9,11 @@ Source-MD5: 96c15f36f842ad7e1c9d225e4ca97b68
 BuildDepends: <<
 	db48-aes | db48,
 	fink-package-precedence (>= 0.7-1),
-	gmp,
+	gmp5 (>= 1.0-1),
 	gtk-doc (>= 1.8-1),
 	libcurl4,
 	libiconv,
-	libmpfr1,
+	libmpfr4 (>= 1.0-1),
 	libraptor1-dev (>= 1.4.17-1),
 	librasqal2-dev (>= 0.9.19-1),
 	libssh2.1,
