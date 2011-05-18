@@ -18,7 +18,6 @@ BuildDepends: <<
 	cmake (>= 2.8.2-1),
 	db48-aes | db48,
 	dbus1.3-dev (>= 1.2.24-1),
-	doxygen (>= 1.5-1),
 	fink (>= 0.30.0-1),
 	fink-package-precedence (>= 0.7-1),
 	gmp,
@@ -49,7 +48,7 @@ PatchScript: <<
 	find . -name CMakeLists.txt | xargs perl -pi -e 's,include/Soprano,include/soprano,g'
 <<
 PatchFile: soprano.patch
-PatchFile-MD5: 77eea13cc35cdd79d391eebe5b039ff7
+PatchFile-MD5: 4972789249167ab5433f1267f7dc3d2a
 
 UseMaxBuildJobs: true
 CompileScript: <<
