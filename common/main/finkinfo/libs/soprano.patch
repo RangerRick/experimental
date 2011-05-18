@@ -45,13 +45,13 @@ diff -Nurd soprano-2.6.0/index/CMakeLists.txt soprano-2.6.0-new/index/CMakeLists
    clucenedocumentwrapper.cpp
 diff -Nurd soprano-2.6.0/soprano/qhashqurlcompat.cpp soprano-2.6.0-new/soprano/qhashqurlcompat.cpp
 --- soprano-2.6.0/soprano/qhashqurlcompat.cpp	2011-02-01 09:51:41.000000000 -0500
-+++ soprano-2.6.0-new/soprano/qhashqurlcompat.cpp	2011-05-18 11:58:08.000000000 -0400
++++ soprano-2.6.0-new/soprano/qhashqurlcompat.cpp	2011-05-18 12:56:43.000000000 -0400
 @@ -46,7 +46,7 @@
      uint soprano_qHash_QUrl(const QUrl &);
  }
  
 -#if !((defined(Q_OS_MACX) || defined(_WIN32) ) && QT_VERSION >= 0x040700)
-+#if !(( defined(Q_OS_DARWIN) || defined(Q_OS_MAC) || defined(_WIN32) ) && QT_VERSION >= 0x040700)
++#if !(defined(_WIN32) && QT_VERSION >= 0x040700)
  uint qHash(const QUrl &url)
  {
      return Soprano::soprano_qHash_QUrl(url);

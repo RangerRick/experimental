@@ -44,7 +44,7 @@ GCC: 4.0
 Source: mirror:sourceforge:soprano/soprano-%v.tar.bz2
 Source-MD5: 03ae49e87c6ec99e57d0433c2650846f
 PatchFile: soprano.patch
-PatchFile-MD5: 4972789249167ab5433f1267f7dc3d2a
+PatchFile-MD5: 0b01849c69204763951053a68224178d
 PatchScript: <<
 	%{default_script}
 	find . -name CMakeLists.txt | xargs perl -pi -e 's,include/Soprano,include/soprano,g'
