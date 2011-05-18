@@ -20,7 +20,16 @@ PatchScript: <<
 	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp
 	perl -pi -e 's,CFG_MAC_XARCH=auto,CFG_MAC_XARCH=no,g' configure
 <<
-Description: Cross-Platform framework (Mac version)
+Description: Cross-Platform framework (%type_pkg[qt])
+DescDetail: <<
+	Qt is a cross-platform application and UI framework with APIs for
+	C++ programming and Qt Quick for rapid UI creation.
+
+	* Intuitive class libraries
+	* Easy to use and learn
+	* Produce highly readable, easily maintainable and reusable code
+	* High runtime performance and small footprint
+<<
 Depends: <<
 	%N-qt3support-shlibs (>= %v-%r),
 	%N-qtcore-shlibs (>= %v-%r),
@@ -170,6 +179,17 @@ END
 <<
 SplitOffQtCoreShlibs: <<
 	Package: %N-qtcore-shlibs
+	Description: Qt Core library (%type_pkg[qt])
+	DescDetail: <<
+		The Qt Core module forms the foundation of all Qt-based applications
+		with core non-graphical classes used by other modules.
+		
+		Key Functions
+		* File IO, event and object handling
+		* Multi-threading and concurrency
+		* Plugins, setting management
+		* Signals and Slots inter-object communications mechanism
+	<<
 	Files: <<
 #ifdef TYPE_X11
 		lib/qt4-%type_pkg[qt]/lib/libQtCore.4*.dylib
@@ -197,6 +217,11 @@ SplitOffQtCoreShlibs: <<
 <<
 SplitOffQt3SupportShlibs: <<
 	Package: %N-qt3support-shlibs
+	Description: Qt3 backwards compat library (%type_pkg[qt])
+	DescDetail: <<
+		The Qt3Support module provides classes that ease porting
+		from Qt 3 to Qt 4.
+	<<
 	Depends: <<
 		%N-qtcore-shlibs (>= %v-%r),
 		%N-qtgui-shlibs (>= %v-%r),
@@ -232,6 +257,20 @@ SplitOffQt3SupportShlibs: <<
 <<
 SplitOffQtDBusShlibs: <<
 	Package: %N-qtdbus-shlibs
+	Description: Qt D-Bus library (%type_pkg[qt])
+	DescDetail: <<
+		The QtDBus module is a Unix-only library that you can use to make
+		Inter-Process Communication using the D-BUS protocol.
+		
+		Applications using the QtDBus module can provide services to other,
+		remote applications by exporting objects, as well as use services
+		exported by those applications by placing calls and accessing
+		properties.
+		
+		The QtDBus module provides an interface that extends the Qt Signals
+		and Slots mechanism, allowing one to connect to a signal emitted
+		remotely as well as to connect a local signal to remote slot.
+	<<
 	Depends: <<
 		%N-qtcore-shlibs (>= %v-%r),
 		%N-qtscript-shlibs (>= %v-%r),
@@ -266,6 +305,11 @@ SplitOffQtDBusShlibs: <<
 <<
 SplitOffQtDeclarativeShlibs: <<
 	Package: %N-qtdeclarative-shlibs
+	Description: Qt dynamic UI library (%type_pkg[qt])
+	DescDetail: <<
+		The Qt Declarative module provides a declarative framework
+		for building highly dynamic, custom user interfaces.
+	<<
 	Depends: <<
 		%N-qtcore-shlibs (>= %v-%r),
 		%N-qtgui-shlibs (>= %v-%r),
@@ -299,6 +343,12 @@ SplitOffQtDeclarativeShlibs: <<
 <<
 SplitOffQtDesignerShlibs: <<
 	Package: %N-qtdesigner-shlibs
+	Description: Qt designer library (%type_pkg[qt])
+	DescDetail: <<
+		The QtDesigner module provides classes that allow you to
+		create your own custom widget plugins for Qt Designer, and
+		classes that enable you to access Qt Designer's components.
+	<<
 	Depends: <<
 		%N-qt3support-shlibs (>= %v-%r),
 		%N-qtcore-shlibs (>= %v-%r),
@@ -336,6 +386,12 @@ SplitOffQtDesignerShlibs: <<
 <<
 SplitOffQtDesignerComponentsShlibs: <<
 	Package: %N-qtdesignercomponents-shlibs
+	Description: Qt designer component library (%type_pkg[qt])
+	DescDetail: <<
+		The QtDesigner module provides classes that allow you to
+		create your own custom widget plugins for Qt Designer, and
+		classes that enable you to access Qt Designer's components.
+	<<
 	Depends: <<
 		%N-qtcore-shlibs (>= %v-%r),
 		%N-qtdesigner-shlibs (>= %v-%r),
@@ -370,6 +426,10 @@ SplitOffQtDesignerComponentsShlibs: <<
 <<
 SplitOffQtGuiShlibs: <<
 	Package: %N-qtgui-shlibs
+	Description: Qt GUI library (%type_pkg[qt])
+	DescDetail: <<
+		The QtGui module extends QtCore with GUI functionality.
+	<<
 	Depends: <<
 		%N-qtcore-shlibs (>= %v-%r),
 		libjpeg8-shlibs (>= 8-1),
@@ -409,6 +469,11 @@ SplitOffQtGuiShlibs: <<
 <<
 SplitOffQtHelpShlibs: <<
 	Package: %N-qthelp-shlibs
+	Description: Qt help library (%type_pkg[qt])
+	DescDetail: <<
+		The QtHelp module provides classes for integrating online
+		documentation in applications.
+	<<
 	Depends: <<
 		%N-qtcore-shlibs (>= %v-%r),
 		%N-qtgui-shlibs (>= %v-%r),
@@ -443,6 +508,10 @@ SplitOffQtHelpShlibs: <<
 <<
 SplitOffQtCLuceneShlibs: <<
 	Package: %N-qtclucene-shlibs
+	Description: Qt Lucene library (%type_pkg[qt])
+	DescDetail: <<
+		The QtClucene module provides support for full text search.
+	<<
 	Depends: %N-qtcore-shlibs (>= %v-%r)
 	Files: <<
 		lib/qt4-%type_pkg[qt]/lib/libQtCLucene.4*.dylib
@@ -464,6 +533,10 @@ SplitOffQtCLuceneShlibs: <<
 <<
 SplitOffQtMultimediaShlibs: <<
 	Package: %N-qtmultimedia-shlibs
+	Description: Qt multimedia library (%type_pkg[qt])
+	DescDetail: <<
+		The QtMultimedia module provides low-level multimedia functionality.
+	<<
 	Depends: <<
 		%N-qtcore-shlibs (>= %v-%r),
 		%N-qtgui-shlibs (>= %v-%r),
@@ -495,6 +568,11 @@ SplitOffQtMultimediaShlibs: <<
 <<
 SplitOffQtNetworkShlibs: <<
 	Package: %N-qtnetwork-shlibs
+	Description: Qt networking library (%type_pkg[qt])
+	DescDetail: <<
+		The QtNetwork module provides classes to make network
+		programming easier and portable. 
+	<<
 	Depends: %N-qtcore-shlibs (>= %v-%r)
 	Files: <<
 #ifdef TYPE_X11
@@ -524,6 +602,13 @@ SplitOffQtNetworkShlibs: <<
 <<
 SplitOffQtOpenGLShlibs: <<
 	Package: %N-qtopengl-shlibs
+	Description: Qt OpenGL library (%type_pkg[qt])
+	DescDetail: <<
+		The Qt OpenGL module makes it easy to use OpenGL in Qt applications.
+		It provides an OpenGL widget class that can be used just like any
+		other Qt widget, except that it opens an OpenGL display buffer where
+		you can use the OpenGL API to render the contents.
+	<<
 	Depends: %N-qtcore-shlibs (>= %v-%r)
 	Files: <<
 #ifdef TYPE_X11
@@ -553,6 +638,11 @@ SplitOffQtOpenGLShlibs: <<
 <<
 SplitOffQtScriptShlibs: <<
 	Package: %N-qtscript-shlibs
+	Description: Qt scripting library (%type_pkg[qt])
+	DescDetail: <<
+		The QtScript module provides classes for making Qt
+		applications scriptable.
+	<<
 	Depends: %N-qtcore-shlibs (>= %v-%r)
 	Files: <<
 #ifdef TYPE_X11
@@ -581,6 +671,11 @@ SplitOffQtScriptShlibs: <<
 <<
 SplitOffQtScriptToolsShlibs: <<
 	Package: %N-qtscripttools-shlibs
+	Description: Qt script component library (%type_pkg[qt])
+	DescDetail: <<
+		The QtScriptTools module provides additional components
+		for applications that use Qt Script.
+	<<
 	Depends: <<
 		%N-qtcore-shlibs (>= %v-%r),
 		%N-qtgui-shlibs (>= %v-%r),
@@ -613,6 +708,11 @@ SplitOffQtScriptToolsShlibs: <<
 <<
 SplitOffQtSqlShlibs: <<
 	Package: %N-qtsql-shlibs
+	Description: Qt SQL library (%type_pkg[qt])
+	DescDetail: <<
+		The QtSQL module provides support for accessing SQL
+		databases in Qt.
+	<<
 	Depends: <<
 		%N-qtcore-shlibs (>= %v-%r),
 		sqlite3-shlibs (>= 1.0-1),
@@ -645,6 +745,11 @@ SplitOffQtSqlShlibs: <<
 <<
 SplitOffQtSvgShlibs: <<
 	Package: %N-qtsvg-shlibs
+	Description: Qt SVG library (%type_pkg[qt])
+	DescDetail: <<
+		The QtSvg module provides classes for displaying
+		and creating SVG files.
+	<<
 	Depends: <<
 		%N-qtcore-shlibs (>= %v-%r),
 		%N-qtgui-shlibs (>= %v-%r),
@@ -677,6 +782,11 @@ SplitOffQtSvgShlibs: <<
 <<
 SplitOffQtTestShlibs: <<
 	Package: %N-qttest-shlibs
+	Description: Qt test library (%type_pkg[qt])
+	DescDetail: <<
+		The QtTest module provides classes for unit testing
+		Qt applications and libraries.
+	<<
 	Depends: %N-qtcore-shlibs (>= %v-%r)
 	Files: <<
 #ifdef TYPE_X11
@@ -705,6 +815,11 @@ SplitOffQtTestShlibs: <<
 <<
 SplitOffQtXmlShlibs: <<
 	Package: %N-qtxml-shlibs
+	Description: Qt XML library (%type_pkg[qt])
+	DescDetail: <<
+		The QtXml module provides a stream reader and writer
+		for XML documents, and C++ implementations of SAX and DOM.
+	<<
 	Depends: %N-qtcore-shlibs (>= %v-%r)
 	Files: <<
 #ifdef TYPE_X11
@@ -733,6 +848,11 @@ SplitOffQtXmlShlibs: <<
 <<
 SplitOffQtXmlPatternsShlibs: <<
 	Package: %N-qtxmlpatterns-shlibs
+	Description: Qt XPath/XQuery/XSLT/XSD library (%type_pkg[qt])
+	DescDetail: <<
+		The QtXmlPatterns module provides support for XPath, XQuery,
+		XSLT and XML Schema validation. 
+	<<
 	Depends: <<
 		%N-qtcore-shlibs (>= %v-%r),
 		%N-qtnetwork-shlibs (>= %v-%r),
@@ -765,6 +885,10 @@ SplitOffQtXmlPatternsShlibs: <<
 <<
 SplitOffAssistant: <<
 	Package: %N-assistant
+	Description: Qt documentation tool (%type_pkg[qt])
+	DescDetail: <<
+		Qt Assistant is a tool for presenting on-line documentation.
+	<<
 	Depends: <<
 		%N-qtcore-shlibs (>= %v-%r),
 		%N-qthelp-shlibs (>= %v-%r),
@@ -786,6 +910,20 @@ SplitOffAssistant: <<
 <<
 SplitOffDesigner: <<
 	Package: %N-designer
+	Description: Qt GUI design tool (%type_pkg[qt])
+	DescDetail: <<
+		Qt Designer is Qt's tool for designing and building graphical user
+		interfaces (GUIs) from Qt components.  You can compose and customize
+		your widgets or dialogs in a what-you-see-is-what-you-get (WYSIWYG)
+		manner, and test them using different styles and resolutions.
+
+		Widgets and forms created with Qt Designer integrated seamlessly with
+		programmed code, using Qt's signals and slots mechanism, that lets you
+		easily assign behavior to graphical elements.  All properties set in Qt
+		Designer can be changed dynamically within the code.  Furthermore,
+		features like widget promotion and custom plugins allow you to use
+		your own components with Qt Designer.
+	<<
 	Depends: <<
 		%N-qtcore-shlibs (>= %v-%r),
 		%N-qtdesigner-shlibs (>= %v-%r),
@@ -809,6 +947,12 @@ SplitOffDesigner: <<
 <<
 SplitOffLinguist: <<
 	Package: %N-linguist
+	Description: Qt translation tool (%type_pkg[qt])
+	DescDetail: <<
+		Qt provides excellent support for translating applications
+		into local languages.  You can use Qt linguist to translate
+		your application.
+	<<
 	Depends: <<
 		%N-qtcore-shlibs (>= %v-%r),
 		%N-qtxml-shlibs (>= %v-%r),
@@ -832,6 +976,8 @@ SplitOffLinguist: <<
 
 SplitOffDoc: <<
 	Package: %N-doc
+	Description: Qt documentation (%type_pkg[qt])
+	DescDetail: Documentation for Qt.
 	Files: share/doc/qt4-%type_pkg[qt]
 	Replaces: qt4-%type_pkg[qt]-doc
 <<
