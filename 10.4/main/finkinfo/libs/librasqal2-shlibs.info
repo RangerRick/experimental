@@ -49,7 +49,7 @@ PatchScript: 	perl -pi -e 's,(\@CPPFLAGS\@),-I%p/lib/system-openssl/include \1,'
 SetCPPFLAGS: -I%p/lib/system-openssl/include -I%p/lib/flex/include
 SetLDFLAGS: -L%p/lib/system-openssl/lib -I%p/lib/flex/lib
 UseMaxBuildJobs: true
-ConfigureParams: --enable-dependency-tracking --without-redland --enable-gtk-doc
+ConfigureParams: --enable-dependency-tracking --without-redland --enable-gtk-doc --enable-maintainer-mode
 CompileScript: <<
 	#!/bin/sh -ev
 	

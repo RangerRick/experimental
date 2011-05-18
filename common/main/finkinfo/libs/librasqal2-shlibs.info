@@ -36,7 +36,7 @@ PatchScript: <<
 
 SetCPPFLAGS: -I%p/lib/system-openssl/include -I%p/lib/flex/include
 SetLDFLAGS: -L%p/lib/system-openssl/lib -I%p/lib/flex/lib
-ConfigureParams: --enable-dependency-tracking --without-redland --enable-gtk-doc
+ConfigureParams: --enable-dependency-tracking --without-redland --enable-gtk-doc --enable-maintainer-mode
 
 InfoTest: <<
 	TestDepends: <<
