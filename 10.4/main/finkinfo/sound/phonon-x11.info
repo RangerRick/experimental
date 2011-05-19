@@ -1,7 +1,7 @@
 Info3: <<
 Package: phonon-x11
 Version: 4.5.0
-Revision: 3
+Revision: 4
 Description: Qt-based multimedia framework
 Type: phonon (x11)
 License: LGPL
