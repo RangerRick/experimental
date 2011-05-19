@@ -14,7 +14,6 @@ Depends: <<
 	fink (>= 0.30.0-1),
 	fink-obsolete-packages,
 	phonon-%type_pkg[qt] (>= 4.5.0-1),
-	phonon-%type_pkg[qt]-backend (>= 4.5.0-1),
 	qt4-base-%type_pkg[qt] (>= %v-1),
 	qtwebkit-%type_pkg[qt] (>= 2.0.0-1),
 <<
@@ -47,6 +46,7 @@ SplitOffGuiShlibs: <<
 		qt4-base-%type_pkg[qt]-qtscripttools-shlibs (>= %v-1),
 		qt4-base-%type_pkg[qt]-qtsvg-shlibs (>= %v-1),
 		phonon-%type_pkg[qt]-shlibs (>= 4.5.0-1),
+		phonon-%type_pkg[qt]-backend (>= 4.5.0-1),
 		qtwebkit-%type_pkg[qt]-shlibs (>= 2.0.0-1),
 	<<
 <<
