@@ -20,15 +20,21 @@ Source-MD5: 6b3ff209e9763ebe40e152538884bd71
 PatchFile: %n.patch
 PatchFile-MD5: a9b5e11153fd11c22484327719695869
 
-SetCFLAGS: -O
-SetCPPFLAGS: -O
 UseMaxBuildJobs: true
 ConfigureParams: --build=%m-apple-darwin`uname -r|cut -f1 -d.` --enable-gtk-doc --mandir=%p/share/man --infodir=%p/share/info --disable-dependency-tracking
 CompileScript: <<
 	#!/bin/sh -ex
 	
-	if [ "%m" = "powerpc" ]; then
+	if [ "%m" = "i386" ]; then
+	export CFLAGS="$CFLAGS -O"
+	export CXXFLAGS="$CXXFLAGS -O"
+	elif [ "%m" = "powerpc" ]; then
 	export CPPFLAGS="$CPPFLAGS -force_cpusubtype_ALL"
+	export CFLAGS="$CFLAGS -Os"
+	export CXXFLAGS="$CFLAGS -Os"
+	else
+	export CFLAGS="$CFLAGS -Os"
+	export CXXFLAGS="$CFLAGS -Os"
 	fi
 	
 	export CCACHE_DISABLE=1

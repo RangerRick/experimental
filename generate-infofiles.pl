@@ -162,6 +162,7 @@ my $version_lookup = {
 		'^mono(-dev|-shlibs|-tools)?$'        => [ '2.6.2',        '1'    ],
 		'^monodevelop.*$'                     => [ '2.2',          '1'    ],
 		'^nant$'                              => [ '0.86',         '0'    ],
+		'^orc(-shlibs)?$'                     => [ '0.4.14',       '1'    ],
 		'^oxygen-icons.*$'                    => [ '4.6.1',        '1'    ],
 		'^pango1-xft2-ft219(-dev|-shlibs)?$'  => [ '1.24.5',       '4'    ],
 		'^pcre(-bin|-shlibs)?$'               => [ '7.6',          '1'    ],
