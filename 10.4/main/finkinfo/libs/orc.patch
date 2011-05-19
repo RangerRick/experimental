@@ -1,0 +1,57 @@
+diff -Nurd orc-0.4.14/config.h.in orc-0.4.14-patched/config.h.in
+--- orc-0.4.14/config.h.in	2011-04-29 21:36:56.000000000 -0400
++++ orc-0.4.14-patched/config.h.in	2011-05-19 11:05:00.000000000 -0400
+@@ -114,6 +114,9 @@
+ /* Define to 1 if you have the <unistd.h> header file. */
+ #undef HAVE_UNISTD_H
+ 
++/* Define to 1 if you have the `valloc' function. */ 
++#undef HAVE_VALLOC 
++
+ /* Define to 1 if you have the <valgrind/valgrind.h> header file. */
+ #undef HAVE_VALGRIND_VALGRIND_H
+ 
+diff -Nurd orc-0.4.14/configure orc-0.4.14-patched/configure
+--- orc-0.4.14/configure	2011-04-29 21:36:55.000000000 -0400
++++ orc-0.4.14-patched/configure	2011-05-19 11:05:32.000000000 -0400
+@@ -12041,6 +12041,27 @@
+ fi
+ done
+ 
++for ac_func in posix_memalign
++do :
++  ac_fn_c_check_func "$LINENO" "posix_memalign" "ac_cv_func_posix_memalign"
++if test "x$ac_cv_func_posix_memalign" = x""yes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_POSIX_MEMALIGN 1
++_ACEOF
++
++fi
++done
++
++for ac_func in valloc
++do :
++  ac_fn_c_check_func "$LINENO" "valloc" "ac_cv_func_valloc"
++if test "x$ac_cv_func_valloc" = x""yes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_VALLOC 1
++_ACEOF
++
++fi
++done
+ 
+ LIBM=
+ case $host in
+diff -Nurd orc-0.4.14/orc-test/orcarray.c orc-0.4.14-patched/orc-test/orcarray.c
+--- orc-0.4.14/orc-test/orcarray.c	2011-04-12 12:22:03.000000000 -0400
++++ orc-0.4.14-patched/orc-test/orcarray.c	2011-05-19 11:06:01.000000000 -0400
+@@ -43,6 +43,9 @@
+ 
+ #ifdef HAVE_POSIX_MEMALIGN
+   ret = posix_memalign (&data, ALIGNMENT, ar->alloc_len);
++#elif defined (HAVE_VALLOC)
++  /* wasteful alignment to PAGESIZE instead of 64, but it should work */
++  ar->alloc_data = valloc (ar->alloc_len);
+ #else
+   data = malloc (ar->alloc_len);
+ #endif
