@@ -6,9 +6,9 @@ Description: Unified widget style (GTK+ 2.x version)
 License: GPL
 Maintainer: Benjamin Reed <qtcurve-gtk2@fink.raccoonfink.com>
 
-Depends: gtk+2-shlibs (>= 2.14.7-1)
+Depends: gtk+2-shlibs (>= 2.18.0-1)
 BuildDepends: <<
-	atk1 (>= 1.26.0-1),
+	atk1 (>= 1.28.0-1),
 	cairo (>= 1.8.10-3),
 	cmake (>= 2.8.2-1),
 	expat1,
@@ -17,14 +17,14 @@ BuildDepends: <<
 	freetype219 (>= 2.4.4-2),
 	glib2-dev (>= 2.22.0-1),
 	glitz,
-	gtk+2-dev (>= 2.14.7-1),
+	gtk+2-dev (>= 2.18.0-1),
 	libgettext8-dev,
 	libiconv-dev,
 	libjpeg8,
 	libpng15,
 	libtiff,
 	libxml2 (>= 2.6.32-1),
-	pango1-xft2-ft219-dev (>= 1.24.0-1),
+	pango1-xft2-ft219-dev (>= 1.24.5-4),
 	pixman (>= 0.16.0-1),
 	pkgconfig (>= 0.23-1),
 	x11-dev,

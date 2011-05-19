@@ -21,7 +21,7 @@ BuildDepends: <<
 	libiconv-dev,
 	libpng15,
 	libxml2,
-	pango1-xft2-ft219-dev (>= 1.24.0-1),
+	pango1-xft2-ft219-dev (>= 1.24.5-4),
 	pixman (>= 0.16.0-1),
 	pkgconfig (>= 0.23-1),
 	tcltk,
@@ -92,7 +92,7 @@ SplitOff: <<
 		glib2-shlibs (>= 2.22.0-1),
 		libpng15-shlibs (>= 1.5.2-1),
 		libxml2-shlibs (>= 2.6.32-1),
-		pango1-xft2-ft219-shlibs (>= 1.24.0-1)
+		pango1-xft2-ft219-shlibs (>= 1.24.5-4)
 	<<
 	Suggests: %N
 	Files: lib/librrd*.*.dylib

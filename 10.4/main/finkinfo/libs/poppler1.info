@@ -11,7 +11,7 @@ Depends: <<
 	pkgconfig (>= 0.23-1)
 <<
 BuildDepends: <<
-	atk1 (>= 1.26.0-1),
+	atk1 (>= 1.28.0-1),
 	cairo (>= 1.8.10-3),
 	expat1,
 	fink (>= 0.30.0-1),
@@ -22,12 +22,12 @@ BuildDepends: <<
 	glitz,
 	gettext-bin,
 	gettext-tools,
-	gtk+2-dev (>= 2.14.7-1),
+	gtk+2-dev (>= 2.18.0-1),
 	libgettext8-dev,
 	libiconv-dev,
 	libjpeg8,
 	libpng15,
-	pango1-xft2-ft219-dev (>= 1.24.0-1),
+	pango1-xft2-ft219-dev (>= 1.24.5-4),
 	pixman (>= 0.16.0-1),
 	pkgconfig (>= 0.23-1),
 	x11-dev,
@@ -101,8 +101,8 @@ SplitOff: <<
 	Package: %N-shlibs
 	Depends: <<
 		poppler-data (>= 1:0.1-1),
-		gtk+2-shlibs (>= 2.14.7-1),
-		pango1-xft2-ft219-shlibs (>= 1.24.0-1)
+		gtk+2-shlibs (>= 2.18.0-1),
+		pango1-xft2-ft219-shlibs (>= 1.24.5-4)
 	<<
 	Replaces: <<
 		poppler (<< %v-%r),

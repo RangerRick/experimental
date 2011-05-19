@@ -7,7 +7,7 @@ Maintainer: Daniel Macks <dmacks@netspace.org>
 
 Depends: %n-shlibs (= %v-%r)
 BuildDepends: <<
-	atk1 (>= 1.26.0-1),
+	atk1 (>= 1.28.0-1),
 	cairo (>= 1.8.10-3),
 	fink (>= 0.30.0-1),
 	flag-sort,
@@ -15,12 +15,12 @@ BuildDepends: <<
 	freetype219 (>= 2.4.4-2),
 	glib2-dev (>= 2.22.0-1),
 	glitz,
-	gtk+2-dev (>= 2.14.7-1),
+	gtk+2-dev (>= 2.18.0-1),
 	libgettext8-dev,
 	libiconv-dev,
 	libpaper1-dev (>= 1.1.14-1),
 	libpng15 (>= 1.5.2-1),
-	pango1-xft2-ft219-dev (>= 1.24.0-1),
+	pango1-xft2-ft219-dev (>= 1.24.5-4),
 	pkgconfig (>= 0.23-1),
 	x11-dev
 <<

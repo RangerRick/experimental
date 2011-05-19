@@ -12,7 +12,7 @@ BuildDepends: <<
 	automake1.11,
 	fink (>= 0.30.0-1),
 	glib2-dev (>= 2.22.0-1),
-	gtk-doc (>= 1.13-5),
+	gtk-doc (>= 1.17-2),
 	libgettext8-dev,
 	libiconv-dev,
 	libtool2,

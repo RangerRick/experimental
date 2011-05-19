@@ -20,7 +20,7 @@ BuildDepends: <<
 	fontconfig2-dev (>= 2.8.0-6),
 	freetype219 (>= 2.4.4-2),
 	glib2-dev (>= 2.22.0-1),
-	gtk+2-dev (>= 2.14.7-1),
+	gtk+2-dev (>= 2.18.0-1),
 	kde4-buildenv (>= 4.6.0-1),
 	kdebase4-%type_pkg[kde]-dev (>= 4.6.1-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.6.1-1),

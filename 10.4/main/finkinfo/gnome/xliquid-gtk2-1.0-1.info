@@ -5,7 +5,7 @@ Description: "Liquid" lookalike pixmap theme for GTK+2
 License: GPL
 Maintainer: Benjamin Reed <xliquid-gtk2@fink.raccoonfink.com>
 
-Depends: gtk+2-shlibs (>= 2.14.7-1)
+Depends: gtk+2-shlibs (>= 2.18.0-1)
 
 CustomMirror: <<
 	Primary: http://www.finkproject.org/~ranger/distfiles

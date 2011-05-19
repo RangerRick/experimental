@@ -17,7 +17,7 @@ Depends: <<
 <<
 RuntimeDepends: <<
 	desktop-file-utils (>= 0.14-1),
-	gtk+2 (>= 2.14.7-1),
+	gtk+2 (>= 2.18.0-1),
 	shared-mime-info (>= 0.51-1)
 <<
 BuildDepends: <<

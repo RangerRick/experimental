@@ -22,7 +22,7 @@ Depends: <<
 	vte (>= 0.20.5-1)
 <<
 BuildDepends: <<
-	atk1 (>= 1.26.0-1),
+	atk1 (>= 1.28.0-1),
 	audiofile (>= 0.2.6-11),
 	cairo (>= 1.8.10-3),
 	dbus1.3-dev (>= 1.2.24-1),
@@ -34,8 +34,8 @@ BuildDepends: <<
 	gnome-keyring-dev (>= 0.8.1-1),
 	gnome-panel-dev (>= 2.24.0-1),
 	gnome-sharp2 (>= 2.24.0-1),
-	gnome-vfs2-unified-dev (>= 1:2.24.0-1),
-	gtk+2-dev (>= 2.14.7-1),
+	gnome-vfs2-unified-dev (>= 1:2.24.2-1),
+	gtk+2-dev (>= 2.18.0-1),
 	gtk-sharp2 (>= 2.12.9-1),
 	gtkhtml3.14-dev,
 	gtksourceview2-dev (>= 2.6.2-2),
@@ -53,7 +53,7 @@ BuildDepends: <<
 	libwnck1.22 (>= 2.26.2-1),
 	mono-dev (>= 2.6.2-1),
 	orbit2-dev (>= 2.14.10-1),
-	pango1-xft2-ft219-dev (>= 1.24.0-1),
+	pango1-xft2-ft219-dev (>= 1.24.5-4),
 	pixman (>= 0.16.0-1),
 	pkgconfig (>= 0.23-1),
 	startup-notification-dev (>= 0.9-1),

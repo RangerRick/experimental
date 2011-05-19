@@ -8,7 +8,7 @@ Maintainer: Benjamin Reed <avahi-gtk@fink.raccoonfink.com>
 
 Depends: libavahi-ui0-shlibs (>= %v-1)
 BuildDepends: <<
-	atk1 (>= 1.26.0-1),
+	atk1 (>= 1.28.0-1),
 	avahi-dev (>= %v-1),
 	cairo (>= 1.8.10-3),
 	dbus1.3-dev (>= 1.2.24-1),
@@ -20,7 +20,7 @@ BuildDepends: <<
 	gettext-tools,
 	glib2-dev (>= 2.22.0-1),
 	glitz,
-	gtk+2-dev (>= 2.14.7-1),
+	gtk+2-dev (>= 2.18.0-1),
 	intltool40,
 	libavahi-glib1-dev (>= %v-1),
 	libdaemon (>= 0.11-1),
@@ -30,7 +30,7 @@ BuildDepends: <<
 	libjpeg8,
 	libpng15 (>= 1.5.2-1),
 	libtiff,
-	pango1-xft2-ft219-dev (>= 1.24.0-1),
+	pango1-xft2-ft219-dev (>= 1.24.5-4),
 	pixman (>= 0.16.0-1),
 	pkgconfig (>= 0.23-1),
 	x11-dev,
@@ -78,7 +78,7 @@ SplitOff: <<
 	Package: libavahi-ui0-shlibs
 	Depends: <<
 		libavahi-glib1-shlibs (>= %v-1),
-		gtk+2-shlibs (>= 2.14.7-1)
+		gtk+2-shlibs (>= 2.18.0-1)
 	<<
 	DocFiles: LICENSE
 	Files: lib/libavahi-ui.0*.dylib

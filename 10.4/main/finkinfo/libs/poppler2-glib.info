@@ -10,7 +10,7 @@ Depends: <<
 	pkgconfig (>= 0.23-1)
 <<
 BuildDepends: <<
-	atk1 (>= 1.26.0-1),
+	atk1 (>= 1.28.0-1),
 	cairo (>= 1.8.10-3),
 	fink (>= 0.30.0-1),
 	fink-package-precedence (>= 0.7-1),
@@ -18,11 +18,11 @@ BuildDepends: <<
 	freetype219 (>= 2.4.4-2),
 	glib2-dev (>= 2.22.0-1),
 	glitz,
-	gtk+2-dev (>= 2.14.7-1),
-	gtk-doc (>= 1.13-5),
+	gtk+2-dev (>= 2.18.0-1),
+	gtk-doc (>= 1.17-2),
 	libjpeg8,
 	libxml2,
-	pango1-xft2-ft219-dev (>= 1.24.0-1),
+	pango1-xft2-ft219-dev (>= 1.24.5-4),
 	pixman (>= 0.16.0-1),
 	pkgconfig (>= 0.23-1),
 	poppler2 (>= %v-1),
@@ -79,8 +79,8 @@ SplitOff: <<
 		cairo-shlibs (>= 1.8.10-3),
 		fontconfig2-shlibs (>= 2.8.0-6),
 		freetype219-shlibs (>= 2.4.4-2),
-		gtk+2-shlibs (>= 2.14.7-1),
-		pango1-xft2-ft219-shlibs (>= 1.24.0-1),
+		gtk+2-shlibs (>= 2.18.0-1),
+		pango1-xft2-ft219-shlibs (>= 1.24.5-4),
 		poppler2-shlibs (>= %v-1)
 	<<
 	DocFiles: AUTHORS COPYING ChangeLog NEWS README README-XPDF TODO

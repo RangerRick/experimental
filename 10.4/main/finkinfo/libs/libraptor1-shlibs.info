@@ -13,7 +13,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	fink-package-precedence (>= 0.7-1),
-	gtk-doc (>= 1.13-5),
+	gtk-doc (>= 1.17-2),
 	libcurl4 (>= 7.19.4-2),
 	libiconv-dev,
 	libxml2 (>= 2.6.32-1),

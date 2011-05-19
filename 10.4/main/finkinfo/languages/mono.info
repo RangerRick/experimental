@@ -14,7 +14,7 @@ Depends: <<
 	system-java15
 <<
 BuildDepends: <<
-	atk1 (>= 1.26.0-1),
+	atk1 (>= 1.28.0-1),
 	cairo (>= 1.8.10-3),
 	expat1,
 	fink (>= 0.30.0-1),
