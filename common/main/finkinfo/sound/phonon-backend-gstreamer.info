@@ -35,7 +35,7 @@ GCC: 4.0
 Source: mirror:kde:stable/phonon/phonon-backend-gstreamer/%v/src/phonon-backend-gstreamer-%v.tar.bz2
 Source-MD5: 021cf7740208e7212b7ce91adb6a349b
 PatchFile: phonon-backend-gstreamer.patch
-PatchFile-MD5: c03951d093f789a0ced88ef84f4278a6
+PatchFile-MD5: e5c0a53161b8c9a236a743d63f0a2077
 
 CompileScript: <<
 #!/bin/sh -ev
