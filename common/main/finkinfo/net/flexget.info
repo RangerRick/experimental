@@ -20,7 +20,7 @@ Depends: <<
 	nzb-py%type_pkg[python],
 	progressbar-py%type_pkg[python],
 	rss2gen-py%type_pkg[python],
-	sqlalchemy-py%type_pkg[python],
+	sqlalchemy-py%type_pkg[python] (>= 0.6.7-1),
 	transmissionrpc-py%type_pkg[python],
 	yaml-py%type_pkg[python],
 <<
