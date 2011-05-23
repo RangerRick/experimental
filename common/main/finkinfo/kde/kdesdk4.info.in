@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdesdk4-mac
 Type: kde (mac)
 #endif
-Version: 4.5.3
+Version: 4.6.3
 Revision: 1
 Description: KDE4 - Developer Utilities
 License: GPL/LGPL
@@ -16,7 +16,7 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:stable/%v/src/kdesdk-%v.tar.bz2
-Source-MD5: d523900d164e60edf952a767827e2bee
+Source-MD5: c4a223067a228688c6b62a6bdd67a022
 PatchFile: kdesdk4.patch
 PatchFile-MD5: 055a2ba43d7e3fb1b884efedabccfbe4
 
@@ -59,7 +59,7 @@ BuildDepends: <<
 	libxml2,
 	pkgconfig (>= 0.22-3),
 	python25,
-	qt4-%type_pkg[kde] (>= 4.4.1-1),
+	qt4-base-%type_pkg[kde] (>= 4.4.1-1),
 	soprano-%type_pkg[kde]-dev (>= 2.2.1-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
@@ -263,7 +263,7 @@ SplitOff7: <<
 	Package: kuiviewer4-%type_pkg[kde]
 	Description: KDE4 - Qt Designer interface viewer
 	Depends: <<
-		qt4-%type_pkg[kde]-designer-shlibs (>= 4.5.0-1),
+		qt4-base-%type_pkg[kde]-qtdesigner-shlibs (>= 4.5.0-1),
 		%N-base (>= %v-%r)
 	<<
 	Files: <<

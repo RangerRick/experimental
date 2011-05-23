@@ -1,8 +1,8 @@
 Info4: <<
 Package: bundle-kde4-ssl-mac
-Version: 4.5.1
+Version: 4.6.3
 Revision: 1
-Description: KDE4 - convenience package: KDE 4.5 (Native)
+Description: KDE4 - convenience package: KDE 4.6 (Native)
 Type: bundle
 Maintainer: Benjamin Reed <bundle-kde4@fink.raccoonfink.com>
 
@@ -14,7 +14,7 @@ UseMaxBuildJobs: true
 Homepage: http://www.kde.org/
 DescDetail: <<
 This package doesn't install any files of itself, but makes sure that
-you have a fully-functional KDE 4.5.x system through dependencies.
+you have a fully-functional KDE 4.6.x system through dependencies.
 <<
 <<
 

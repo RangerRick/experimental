@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdetoys4-mac
-Version: 4.5.3
+Version: 4.6.3
 Revision: 1
 Description: KDE4 - Toys
 Type: kde (mac)
@@ -17,11 +17,11 @@ BuildDepends: <<
 	freetype219 (>= 2.4.4-2),
 	glib2-dev (>= 2.22.0-1),
 	kde4-buildenv (>= 4.6.0-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.6.1-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.6.3-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.6.3-1),
 	libgettext8-dev,
 	pkgconfig (>= 0.23-1),
-	qt4-%type_pkg[kde] (>= 4.7.3-1),
+	qt4-base-%type_pkg[kde] (>= 4.7.3-1),
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
@@ -30,7 +30,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdetoys-%v.tar.bz2
-Source-MD5: 675d4aee3d18a0a696742704ab45ee02
+Source-MD5: 900e1d92cf35ef45eeae9a7796e5fe66
 
 UseMaxBuildJobs: true
 CompileScript: <<
@@ -79,7 +79,7 @@ SplitOff2: <<
 SplitOff10: <<
 	Package: %N-base
 	Description: KDE4 - kdetoys base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1)
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.6.3-1)
 	Files: opt share/doc/installed-packages/%n
 <<
 

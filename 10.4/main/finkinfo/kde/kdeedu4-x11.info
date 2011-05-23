@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdeedu4-x11
-Version: 4.5.3
+Version: 4.6.3
 Revision: 1
 Description: KDE4 - Edutainment software
 Type: kde (x11)
@@ -43,8 +43,8 @@ BuildDepends: <<
 	gpsd (>= 2.35-1),
 	gsl,
 	kde4-buildenv (>= 4.6.0-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.6.1-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.6.3-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.6.3-1),
 	libattica-%type_pkg[kde]-dev (>= 0.2.0-1),
 	libgettext8-dev,
 	libopenbabel3-dev,
@@ -53,7 +53,7 @@ BuildDepends: <<
 	libxslt,
 	ocaml,
 	pkgconfig (>= 0.23-1),
-	qt4-%type_pkg[kde] (>= 4.7.3-1),
+	qt4-base-%type_pkg[kde] (>= 4.7.3-1),
 	r-base,
 	readline5,
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
@@ -65,7 +65,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdeedu-%v.tar.bz2
-Source-MD5: d2787a8872c74b2b447408f588c57da0
+Source-MD5: 259ba3e733fecd145c4389f10bee5ad1
 PatchFile: kdeedu4.patch
 PatchFile-MD5: 9a48449956d52b96e10b535719d44f42
 
@@ -607,7 +607,7 @@ SplitOff20: <<
 SplitOff30: <<
 	Package: %N-base-shlibs
 	Description: KDE4 - base kdeedu shared libraries
-	Depends: kdebase4-%type_pkg[kde]-shlibs (>= 4.6.1-1)
+	Depends: kdebase4-%type_pkg[kde]-shlibs (>= 4.6.3-1)
 	Files: <<
 		opt/kde4/%type_pkg[kde]/lib/libkdeeduui.4*.dylib
 		opt/kde4/%type_pkg[kde]/lib/libkeduvocdocument.4*.dylib
@@ -635,7 +635,7 @@ SplitOff32: <<
 	Description: KDE4 - kdeedu base package
 	Depends: <<
 		%N-base-shlibs (>= %v-%r),
-		kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1)
+		kdebase4-runtime-%type_pkg[kde] (>= 4.6.3-1)
 	<<
 	Files: opt
 <<

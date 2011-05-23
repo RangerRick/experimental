@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdeutils4-mac
 Type: kde (mac)
 #endif
-Version: 4.5.3
+Version: 4.6.3
 Revision: 1
 Description: KDE4 - Utilities
 License: GPL/LGPL
@@ -16,7 +16,7 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:stable/%v/src/kdeutils-%v.tar.bz2
-Source-MD5: a90c2914752c517cfb4a5549943cdcb6
+Source-MD5: 0d2911c29300d84db10948d7c196aaac
 PatchFile: kdeutils4.patch
 PatchFile-MD5: e430ed80c7335792e1f51109a83ed46d
 
@@ -56,7 +56,7 @@ BuildDepends: <<
 	libgettext3-dev,
 	libzip1,
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.4.1-1),
+	qt4-base-%type_pkg[kde] (>= 4.4.1-1),
 	soprano-%type_pkg[kde]-dev (>= 2.2.1-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,

@@ -44,7 +44,6 @@ BuildDepends: <<
 	libgettext3-dev,
 	libjasper.1,
 	libjpeg,
-	libknotificationitem1-%type_pkg[kde]-dev (>= 4.3.0-1),
 	libpng3,
 	libtiff,
 	libxine1,

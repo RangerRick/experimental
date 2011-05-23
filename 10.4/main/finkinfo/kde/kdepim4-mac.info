@@ -38,9 +38,9 @@ BuildDepends: <<
 	gpgme11,
 	gnokii3-dev,
 	kde4-buildenv (>= 4.6.0-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.6.1-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.6.3-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.6.3-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.6.3-1),
 	libassuan2,
 	libgettext8-dev,
 	libgpg-error,
@@ -51,8 +51,8 @@ BuildDepends: <<
 	pkgconfig (>= 0.23-1),
 	python25,
 	qca2-%type_pkg[kde] (>= 2.0.3-1),
-	qgpgme1-%type_pkg[kde] (>= 4.6.1-1),
-	qt4-%type_pkg[kde] (>= 4.7.3-1),
+	qgpgme1-%type_pkg[kde] (>= 4.6.3-1),
+	qt4-base-%type_pkg[kde] (>= 4.7.3-1),
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	speex3,
 	strigi-dev (>= 0.6.3-1),
@@ -170,8 +170,8 @@ SplitOff: <<
 	Package: libkdepim4-%type_pkg[kde]-shlibs
 	Description: KDE4 - PIM libraries
 	Depends: <<
-		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
-		qt4-%type_pkg[kde]-designer-shlibs (>= 4.7.3-1)
+		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.6.3-1),
+		qt4-base-%type_pkg[kde]-qtdesigner-shlibs (>= 4.7.3-1)
 	<<
 	Files: opt/kde4/%type_pkg[kde]/lib/libkdepim.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkdepim.4.dylib 4.0.0 %n (>= 4.2.4-1)
@@ -223,7 +223,7 @@ SplitOff5: <<
 	Description: KDE4 - certificate manager library
 	Depends: <<
 		gpgme11-shlibs,
-		kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
+		kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.3-1),
 		qgpgme1-%type_pkg[kde]-shlibs
 	<<
 	Files: opt/kde4/%type_pkg[kde]/lib/libkleo.4*.dylib
@@ -241,7 +241,7 @@ SplitOff6: <<
 SplitOff7: <<
 	Package: libkpgp4-%type_pkg[kde]-shlibs
 	Description: KDE4 - PGP shared libraries
-	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1)
+	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.3-1)
 	Files: opt/kde4/%type_pkg[kde]/lib/libkpgp.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkpgp.4.dylib 4.0.0 %n (>= 4.2.4-1)
 <<
@@ -258,28 +258,28 @@ SplitOff8: <<
 SplitOff9: <<
 	Package: libksieve4-%type_pkg[kde]-shlibs
 	Description: KDE4 - sieve mail filter shared libraries
-	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1)
+	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.3-1)
 	Files: opt/kde4/%type_pkg[kde]/lib/libksieve.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libksieve.4.dylib 4.0.0 %n (>= 4.2.4-1)
 <<
-SplitOff11: <<
+SplitOff10: <<
 	Package: libmimelib4-%type_pkg[kde]-shlibs
 	Description: KDE4 - MIME shared libraries
-	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1)
+	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.3-1)
 	Files: opt/kde4/%type_pkg[kde]/lib/libmimelib.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libmimelib.4.dylib 4.0.0 %n (>= 4.2.4-1)
 <<
-SplitOff12: <<
+SplitOff11: <<
 	Package: libmessagecore4-%type_pkg[kde]-shlibs
 	Description: KDE4 - messaging shared libraries
 	Depends: <<
-		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
+		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.6.3-1),
 		libmimelib4-%type_pkg[kde]-shlibs (>= %v-%r)
 	<<
 	Files: opt/kde4/%type_pkg[kde]/lib/libmessagecore.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libmessagecore.4.dylib 4.0.0 %n (>= 4.3.98-1)
 <<
-SplitOff13: <<
+SplitOff12: <<
 	Package: libmessagelist4-%type_pkg[kde]-shlibs
 	Description: KDE4 - message list shared libraries
 	Depends: <<
@@ -290,7 +290,7 @@ SplitOff13: <<
 	Files: opt/kde4/%type_pkg[kde]/lib/libmessagelist.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libmessagelist.4.dylib 4.0.0 %n (>= 4.3.98-1)
 <<
-SplitOff14: <<
+SplitOff13: <<
 	Package: libmessageviewer0-%type_pkg[kde]-shlibs
 	Description: KDE4 - message viewer shared libraries
 	Depends: <<
@@ -301,18 +301,18 @@ SplitOff14: <<
 		libmessagecore4-%type_pkg[kde]-shlibs (>= %v-%r),
 		libmessagelist4-%type_pkg[kde]-shlibs (>= %v-%r),
 		libmimelib4-%type_pkg[kde]-shlibs (>= %v-%r),
-		qgpgme1-%type_pkg[kde]-shlibs (>= 4.6.1-1)
+		qgpgme1-%type_pkg[kde]-shlibs (>= 4.6.3-1)
 	<<
 	Files: opt/kde4/%type_pkg[kde]/lib/libmessageviewer.0*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libmessageviewer.0.dylib 0.0.0 %n (>= 4.3.98-1)
 <<
-SplitOff20: <<
+SplitOff14: <<
 	Package: kontact4-%type_pkg[kde]
 	Description: KDE4 - contact-management
 	Depends: <<
 		korganizer4-%type_pkg[kde] (>= %v-%r),
 		libkdepim4-%type_pkg[kde]-shlibs (>= %v-%r),
-		libkholidays4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
+		libkholidays4-%type_pkg[kde]-shlibs (>= 4.6.3-1),
 		%N-base (>= %v-%r)
 	<<
 	Files: <<
@@ -344,7 +344,7 @@ SplitOff20: <<
 	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libkontactprivate.4.dylib
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff21: <<
+SplitOff15: <<
 	Package: %N-resources
 	Description: KDE4 - PIM resources
 	Depends: <<
@@ -396,7 +396,7 @@ SplitOff21: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff22: <<
+SplitOff16: <<
 	Package: akregator4-%type_pkg[kde]
 	Description: KDE4 - RSS feed reader
 	Depends: <<
@@ -430,7 +430,7 @@ SplitOff22: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff23: <<
+SplitOff17: <<
 	Package: kaddressbook4-%type_pkg[kde]
 	Description: KDE4 - address book
 	Depends: <<
@@ -460,12 +460,12 @@ SplitOff23: <<
 	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libkaddressbookprivate.4.dylib
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff24: <<
+SplitOff18: <<
 	Package: kalarm4-%type_pkg[kde]
 	Description: KDE4 - alarm and scheduler
 	Depends: <<
 		libkdepim4-%type_pkg[kde]-shlibs (>= %v-%r),
-		libkholidays4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
+		libkholidays4-%type_pkg[kde]-shlibs (>= 4.6.3-1),
 		%N-base (>= %v-%r),
 		%N-resources (>= %v-%r)
 	<<
@@ -498,7 +498,7 @@ SplitOff24: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff25: <<
+SplitOff19: <<
 	Package: kjots4-%type_pkg[kde]
 	Description: KDE4 - note-taking utility
 	Depends: <<
@@ -528,7 +528,7 @@ SplitOff25: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff26: <<
+SplitOff20: <<
 	Package: kleopatra4-%type_pkg[kde]
 	Description: KDE4 - certificate manager
 	Depends: <<
@@ -561,7 +561,7 @@ SplitOff26: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff27: <<
+SplitOff21: <<
 	Package: kmail4-%type_pkg[kde]
 	Description: KDE4 - e-mail client
 	Depends: <<
@@ -612,7 +612,7 @@ SplitOff27: <<
 	Shlibs: !%p/opt/kde4/%type_pkg[kde]/lib/libkmailprivate.4.dylib
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff28: <<
+SplitOff22: <<
 	Package: knode4-%type_pkg[kde]
 	Description: KDE4 - NNTP news reader
 	Depends: <<
@@ -640,7 +640,7 @@ SplitOff28: <<
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libknodecommon.4.dylib 4.0.0 %n (>= 4.2.4-1)
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff29: <<
+SplitOff23: <<
 	Package: knotes4-%type_pkg[kde]
 	Description: KDE4 - sticky notes
 	Depends: <<
@@ -666,12 +666,12 @@ SplitOff29: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff30: <<
+SplitOff24: <<
 	Package: korganizer4-%type_pkg[kde]
 	Description: KDE4 - personal organizer
 	Depends: <<
 		libkdepim4-%type_pkg[kde]-shlibs (>= %v-%r),
-		libkholidays4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
+		libkholidays4-%type_pkg[kde]-shlibs (>= 4.6.3-1),
 		%N-base (>= %v-%r)
 	<<
 	Files: <<
@@ -724,11 +724,11 @@ SplitOff30: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff33: <<
+SplitOff25: <<
 	Package: %N-akonadi
 	Description: KDE4 - akonadi tools for kdepim
 	Depends: <<
-		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
+		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.6.3-1),
 		libkdepim4-%type_pkg[kde]-shlibs (>= %v-%r),
 		%N-base (>= %v-%r)
 	<<
@@ -744,7 +744,7 @@ SplitOff33: <<
 		%p/opt/kde4/%type_pkg[kde]/lib/libakonadi_next.4.dylib      4.0.0 %n (>= 4.3.98-1)
 	<<
 <<
-SplitOff34: <<
+SplitOff26: <<
 	Package: blogilo4-%type_pkg[kde]
 	Description: KDE4 - blogging utility
 	Depends: %N-base (>= %v-%r)
@@ -775,7 +775,7 @@ SplitOff34: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff35: <<
+SplitOff27: <<
 	Package: %N-console-tools
 	Description: KDE4 - console tools for kdepim
 	Depends: %N-base (>= %v-%r)
@@ -791,12 +791,12 @@ SplitOff35: <<
 	<<
 	PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
 <<
-SplitOff40: <<
+SplitOff28: <<
 	Package: %N-base
 	Description: KDE4 - kdepim base package
 	Depends: <<
-		kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1),
-		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
+		kdebase4-runtime-%type_pkg[kde] (>= 4.6.3-1),
+		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.6.3-1),
 		strigi-gui-%type_pkg[kde]-shlibs
 	<<
 	Files: opt

@@ -9,11 +9,11 @@ Maintainer: Benjamin Reed <kdebase4-runtime@fink.raccoonfink.com>
 
 Depends: <<
 	dbus (>= 1.2.24-1),
-	kdepimlibs4-%type_pkg[kde] (>= 4.6.1-1),
+	kdepimlibs4-%type_pkg[kde] (>= 4.6.3-1),
 	libcanberra0-shlibs,
 	libknotifyplugin4-%type_pkg[kde]-shlibs (>= %v-%r),
 	libxine1-shlibs,
-	oxygen-icons-%type_pkg[kde] (>= 4.6.1-1),
+	oxygen-icons-%type_pkg[kde] (>= 4.6.3-1),
 	strigi-gui-%type_pkg[kde] (>= 0.7.2-1)
 <<
 BuildDepends: <<
@@ -33,13 +33,12 @@ BuildDepends: <<
 	giflib,
 	glib2-dev (>= 2.22.0-1),
 	kde4-buildenv (>= 4.6.0-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.6.3-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.6.3-1),
 	libcanberra0,
 	libgettext8-dev,
 	libjasper.1,
 	libjpeg8,
-	libknotificationitem1-%type_pkg[kde]-dev (>= 4.3.4-1),
 	libpng15,
 	libtiff,
 	libxine1,
@@ -106,7 +105,7 @@ SplitOff: <<
 SplitOff2: <<
 	Package: libknotifyplugin4-%type_pkg[kde]-shlibs
 	Description: KDE4 - Plugin library for notifications
-	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1)
+	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.3-1)
 	Files: opt/kde4/%type_pkg[kde]/lib/libknotifyplugin.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libknotifyplugin.4.dylib  4.0.0 %n (>= 4.6.1-1)
 <<

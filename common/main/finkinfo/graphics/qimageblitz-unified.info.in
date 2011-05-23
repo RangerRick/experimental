@@ -5,7 +5,7 @@ Package: qimageblitz-unified-x11
 Package: qimageblitz-unified-mac
 #endif
 Version: 0.0.6
-Revision: 1
+Revision: 2
 #ifdef TYPE_X11
 Type: blitz (x11)
 #else
@@ -17,7 +17,7 @@ BuildDepends: <<
 	fink (>= 0.28.0-1),
 	kde4-buildenv (>= 4.2.1-4),
 	kdelibs4-%type_pkg[blitz] (>= 4.1.0-1),
-	qt4-%type_pkg[blitz] (>= 4.4.0-1),
+	qt4-base-%type_pkg[blitz] (>= 4.4.0-1),
 <<
 Replaces: <<
 	blitz-%type_pkg[blitz]-dev (<< 0.0.4-2000),

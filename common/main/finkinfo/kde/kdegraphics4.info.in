@@ -6,14 +6,14 @@ Type: kde (x11)
 Package: kdegraphics4-mac
 Type: kde (mac)
 #endif
-Version: 4.5.3
+Version: 4.6.3
 Revision: 1
 Description: KDE4 - Graphics applications
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdegraphics4@fink.raccoonfink.com>
 
 Source: mirror:kde:stable/%v/src/kdegraphics-%v.tar.bz2
-Source-MD5: b5542bfaf9fb43775c48e2950ae05a9c
+Source-MD5: 26c2eca2d707f9fc69db87c0467e5849
 PatchFile: kdegraphics4.patch
 PatchFile-MD5: 970e1af405b484c701b89a40a08ce504
 
@@ -62,7 +62,7 @@ BuildDepends: <<
 	poppler2,
 	poppler2-qt4-%type_pkg[kde] (>= 0.6.4-4),
 	qca2-%type_pkg[kde] (>= 2.0.2-1),
-	qt4-%type_pkg[kde] (>= 4.4.1-1),
+	qt4-base-%type_pkg[kde] (>= 4.4.1-1),
 	sane-backends-dev,
 	soprano-%type_pkg[kde]-dev (>= 2.2.1-1),
 	strigi-dev (>= 0.6.3-1),

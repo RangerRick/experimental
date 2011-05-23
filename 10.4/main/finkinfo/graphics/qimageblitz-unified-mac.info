@@ -1,7 +1,7 @@
 Info4: <<
 Package: qimageblitz-unified-mac
 Version: 0.0.6
-Revision: 1
+Revision: 2
 Description: Image Effect Library
 Type: blitz (mac)
 License: BSD
@@ -11,8 +11,8 @@ Depends: qimageblitz-unified-%type_pkg[blitz]-shlibs (= %v-%r)
 BuildDepends: <<
 	fink (>= 0.30.0-1),
 	kde4-buildenv (>= 4.6.0-1),
-	kdelibs4-%type_pkg[blitz] (>= 4.6.1-1),
-	qt4-%type_pkg[blitz] (>= 4.7.3-1)
+	kdelibs4-%type_pkg[blitz] (>= 4.6.3-1),
+	qt4-base-%type_pkg[blitz] (>= 4.7.3-1)
 <<
 Replaces: <<
 	blitz-%type_pkg[blitz]-dev (<< 0.0.4-2000),
@@ -70,7 +70,7 @@ DocFiles: Changelog README*
 SplitOff: <<
 	Package: qimageblitz-unified-%type_pkg[blitz]-shlibs
 	Description: Shared libraries for Blitz++
-	Depends: kdelibs4-%type_pkg[blitz]-shlibs (>= 4.6.1-1)
+	Depends: kdelibs4-%type_pkg[blitz]-shlibs (>= 4.6.3-1)
 	Replaces: <<
 		blitz-%type_pkg[blitz]-shlibs (<< 0.0.4-2000),
 		qimageblitz-mac-shlibs (<< 0.0.4-2000),

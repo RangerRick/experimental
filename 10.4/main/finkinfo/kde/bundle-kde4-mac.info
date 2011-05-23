@@ -1,8 +1,8 @@
 Info4: <<
 Package: bundle-kde4-mac
-Version: 4.5.1
+Version: 4.6.3
 Revision: 1
-Description: KDE4 - convenience package: KDE 4.5 (Native)
+Description: KDE4 - convenience package: KDE 4.6 (Native)
 Type: bundle
 Maintainer: Benjamin Reed <bundle-kde4@fink.raccoonfink.com>
 
@@ -10,11 +10,11 @@ Depends: <<
 	kdeaccessibility4-mac (>= %v-1),
 	kdeartwork4-mac (>= %v-1),
 	kdeadmin4-mac (>= %v-1),
-	kdebase4-runtime-mac (>= 4.6.1-1),
-	kdeedu4-mac (>= 4.6.1-1),
+	kdebase4-runtime-mac (>= 4.6.3-1),
+	kdeedu4-mac (>= 4.6.3-1),
 	kdegames4-mac (>= %v-1),
-	kdegraphics4-mac (>= 4.6.1-1),
-	kdemultimedia4-mac (>= 4.6.1-1),
+	kdegraphics4-mac (>= 4.6.3-1),
+	kdemultimedia4-mac (>= 4.6.3-1),
 	kdenetwork4-mac (>= %v-1),
 	kdepim4-mac (>= 4.4.7-1),
 	kdepim4-runtime-mac (>= 4.4.7-1),
@@ -30,7 +30,7 @@ UseMaxBuildJobs: true
 Homepage: http://www.kde.org/
 DescDetail: <<
 This package doesn't install any files of itself, but makes sure that
-you have a fully-functional KDE 4.5.x system through dependencies.
+you have a fully-functional KDE 4.6.x system through dependencies.
 <<
 <<
 

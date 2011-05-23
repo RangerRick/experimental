@@ -67,6 +67,7 @@ CompileScript: <<
 	export PERL5LIB="%p/share/gtk-doc/data:$PERL5LIB"
 	autoreconf -fi
 	./configure %c
+	# work around a GCC bug
 	perl -pi -e 's,-Os -funroll-loops,-O,' gst/audioconvert/Makefile
 	make
 	fink-package-precedence --prohibit-bdep=%n-dev .
@@ -160,5 +161,10 @@ installing new plugins.
 
 These are the base plugins and libraries needed for any GStreamer
 plugin development and runtime.
+<<
+DescPort: <<
+	Had to turn optimization down on gst/audioconvert because of a compilation
+	error on i386.  See https://bugzilla.gnome.org/show_bug.cgi?id=609918 for
+	more details.
 <<
 <<

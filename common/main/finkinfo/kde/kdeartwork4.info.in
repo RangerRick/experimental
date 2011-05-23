@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdeartwork4-mac
 Type: kde (mac)
 #endif
-Version: 4.5.3
+Version: 4.6.3
 Revision: 1
 Description: KDE4 - Styles and themes
 License: GPL/LGPL
@@ -19,7 +19,7 @@ provided with the official release of KDE.
 <<
 
 Source: mirror:kde:stable/%v/src/kdeartwork-%v.tar.bz2
-Source-MD5: 8fcfcc1515cd1ee16dc6909cd7e98787
+Source-MD5: f45a8ed91c578275056c86f7022695ee
 PatchFile: kdeartwork4.patch
 PatchFile-MD5: e70341f0bf8658ea0d2289cf7e44cb40
 PatchScript: sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1
@@ -54,7 +54,7 @@ BuildDepends: <<
 	kdelibs4-%type_pkg[kde]-dev (>= 4.2.0-1),
 	libgettext3-dev,
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.4.1-1),
+	qt4-base-%type_pkg[kde] (>= 4.4.1-1),
 	soprano-%type_pkg[kde]-dev (>= 2.2.1-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,

@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdetoys4-mac
 Type: kde (mac)
 #endif
-Version: 4.5.3
+Version: 4.6.3
 Revision: 1
 Description: KDE4 - Toys
 License: GPL/LGPL
@@ -16,7 +16,7 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:stable/%v/src/kdetoys-%v.tar.bz2
-Source-MD5: 675d4aee3d18a0a696742704ab45ee02
+Source-MD5: 900e1d92cf35ef45eeae9a7796e5fe66
 
 Depends: <<
 #ifdef TYPE_X11
@@ -42,7 +42,7 @@ BuildDepends: <<
 	kdelibs4-%type_pkg[kde]-dev (>= 4.2.0-1),
 	libgettext3-dev,
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.4.1-1),
+	qt4-base-%type_pkg[kde] (>= 4.4.1-1),
 	soprano-%type_pkg[kde]-dev (>= 2.2.1-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,

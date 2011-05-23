@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdewebdev4-mac
 Type: kde (mac)
 #endif
-Version: 4.5.3
+Version: 4.6.3
 Revision: 1
 Description: KDE4 - Web Development
 License: GPL/LGPL
@@ -16,7 +16,7 @@ DescDetail: <<
 <<
 
 Source: mirror:kde:stable/%v/src/kdewebdev-%v.tar.bz2
-Source-MD5: a5430df45a1c4b35e2fd3ef2dab12130
+Source-MD5: 1101f7c38b745ba619be6f9665c87ddc
 #PatchFile: kdewebdev4.patch
 #PatchFile-MD5: 07ced1828f9aa79f0ef340034277eab1
 
@@ -46,7 +46,7 @@ BuildDepends: <<
 	libxslt,
 	pkgconfig (>= 0.22-3),
 	python25,
-	qt4-%type_pkg[kde] (>= 4.4.1-1),
+	qt4-base-%type_pkg[kde] (>= 4.4.1-1),
 	soprano-%type_pkg[kde]-dev (>= 2.2.1-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,

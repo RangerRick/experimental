@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdenetwork4-mac
-Version: 4.5.3
+Version: 4.6.3
 Revision: 1
 Description: KDE4 - Network Apps
 Type: kde (mac)
@@ -25,9 +25,9 @@ BuildDepends: <<
 	glib2-dev (>= 2.22.0-1),
 	gmp,
 	kde4-buildenv (>= 4.6.0-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.6.1-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.6.3-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.6.3-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.6.3-1),
 	libgcrypt,
 	libgettext8-dev,
 	libidn,
@@ -41,7 +41,7 @@ BuildDepends: <<
 	libxslt,
 	pkgconfig (>= 0.23-1),
 	qca2-%type_pkg[kde] (>= 2.0.3-1),
-	qt4-%type_pkg[kde] (>= 4.7.3-1),
+	qt4-base-%type_pkg[kde] (>= 4.7.3-1),
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	speex3,
 	sqlite3-dev,
@@ -53,7 +53,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdenetwork-%v.tar.bz2
-Source-MD5: 5170966aad6ab3eb8107d3a00d3f595b
+Source-MD5: 0fd1a35dd3c820d840ca2e11c51b1215
 PatchFile: kdenetwork4.patch
 PatchFile-MD5: 31def4ca4ab7c2f29cd54653d2de459c
 
@@ -249,7 +249,7 @@ SplitOff6: <<
 SplitOff7: <<
 	Package: %N-base
 	Description: KDE4 - kdenetwork base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1)
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.6.3-1)
 	Files: opt
 <<
 

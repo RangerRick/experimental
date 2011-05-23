@@ -6,7 +6,7 @@ Type: kde (x11)
 Package: kdeadmin4-mac
 Type: kde (mac)
 #endif
-Version: 4.5.3
+Version: 4.6.3
 Revision: 1
 Description: KDE4 - UNIX admin tools
 License: GPL/LGPL
@@ -17,7 +17,7 @@ Various administration tools for KDE.
 <<
 
 Source: mirror:kde:stable/%v/src/kdeadmin-%v.tar.bz2
-Source-MD5: 30c77e654c966e8d9e41e74e8d951af2
+Source-MD5: 8ac0a89337a58ddec49be0ca7a4a7534
 PatchFile: kdeadmin4.patch
 PatchFile-MD5: f5f3a82363cb00afc69fa1fcdbaca09f
 
@@ -41,7 +41,7 @@ BuildDepends: <<
 	kdelibs4-%type_pkg[kde]-dev (>= 4.2.0-1),
 	libgettext3-dev,
 	pkgconfig (>= 0.22-3),
-	qt4-%type_pkg[kde] (>= 4.4.1-1),
+	qt4-base-%type_pkg[kde] (>= 4.4.1-1),
 	soprano-%type_pkg[kde]-dev (>= 2.2.1-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,

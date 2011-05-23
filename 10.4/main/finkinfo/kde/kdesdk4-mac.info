@@ -1,6 +1,6 @@
 Info4: <<
 Package: kdesdk4-mac
-Version: 4.5.3
+Version: 4.6.3
 Revision: 1
 Description: KDE4 - Developer Utilities
 Type: kde (mac)
@@ -35,9 +35,9 @@ BuildDepends: <<
 	freetype219 (>= 2.4.4-2),
 	glib2-dev (>= 2.22.0-1),
 	kde4-buildenv (>= 4.6.0-1),
-	kdebase4-%type_pkg[kde]-dev (>= 4.6.1-1),
-	kdepimlibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
-	kdelibs4-%type_pkg[kde]-dev (>= 4.6.1-1),
+	kdebase4-%type_pkg[kde]-dev (>= 4.6.3-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.6.3-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.6.3-1),
 	libantlr3c,
 	libgettext8-dev,
 	libhunspell (>= 1.2.8-1004),
@@ -45,7 +45,7 @@ BuildDepends: <<
 	libxml2,
 	pkgconfig (>= 0.23-1),
 	python25,
-	qt4-%type_pkg[kde] (>= 4.7.3-1),
+	qt4-base-%type_pkg[kde] (>= 4.7.3-1),
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
@@ -55,7 +55,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdesdk-%v.tar.bz2
-Source-MD5: d523900d164e60edf952a767827e2bee
+Source-MD5: c4a223067a228688c6b62a6bdd67a022
 PatchFile: kdesdk4.patch
 PatchFile-MD5: 055a2ba43d7e3fb1b884efedabccfbe4
 
@@ -187,7 +187,7 @@ SplitOff4: <<
 	Package: kbugbuster4-%type_pkg[kde]
 	Description: KDE4 - bugzilla client
 	Depends: <<
-		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.6.1-1),
+		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.6.3-1),
 		%N-base (>= %v-%r)
 	<<
 	Files: <<
@@ -254,7 +254,7 @@ SplitOff7: <<
 	Package: kuiviewer4-%type_pkg[kde]
 	Description: KDE4 - Qt Designer interface viewer
 	Depends: <<
-		qt4-%type_pkg[kde]-designer-shlibs (>= 4.7.3-1),
+		qt4-base-%type_pkg[kde]-qtdesigner-shlibs (>= 4.7.3-1),
 		%N-base (>= %v-%r)
 	<<
 	Files: <<
@@ -421,7 +421,7 @@ SplitOff20: <<
 SplitOff21: <<
 	Package: %N-base
 	Description: KDE4 - kdesdk base package
-	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.6.1-1)
+	Depends: kdebase4-runtime-%type_pkg[kde] (>= 4.6.3-1)
 	Files: opt
 <<
 

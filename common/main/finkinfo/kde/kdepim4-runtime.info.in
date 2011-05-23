@@ -50,7 +50,7 @@ BuildDepends: <<
 	python25,
 	qca2-%type_pkg[kde] (>= 2.0.2-1),
 	qgpgme1-%type_pkg[kde] (>= 4.2.4-2),
-	qt4-%type_pkg[kde] (>= 4.4.1-1),
+	qt4-base-%type_pkg[kde] (>= 4.4.1-1),
 	soprano-%type_pkg[kde]-dev (>= 2.2.1-1),
 	speex3,
 	strigi-dev (>= 0.6.3-1),
