@@ -1,6 +1,6 @@
 Package: net-snmp-unified
 Version: 5.4.2.1
-Revision: 6
+Revision: 7
 Description: SNMP tools and libraries
 License: BSD
 Maintainer: Benjamin Reed <net-snmp@fink.raccoonfink.com>
@@ -38,7 +38,7 @@ PatchScript: <<
 	patch -p1 --fuzz=4 < %{PatchFile}
 	autoreconf -fvi
 <<
-PatchFile: %n-%v-%r.patch
+PatchFile: %n-%v.patch
 PatchFile-MD5: 162a91a53fbd2bfa6ea82433862e382a
 
 SetCPPFLAGS: -I%p/lib/system-openssl/include
@@ -71,6 +71,8 @@ CompileScript: <<
 	export PERLMAKEARGS="PREFIX=%p INSTALLPRIVLIB=%p/lib/perl5/$version INSTALLARCHLIB=%p/lib/perl5/$version/$archname INSTALLSITELIB=%p/lib/perl5/$version INSTALLSITEARCH=%p/lib/perl5/$version/$archname INSTALLMAN1DIR=%p/lib/perl5/$version INSTALLMAN3DIR=%p/lib/perl5/$version INSTALLSITEMAN1DIR=%p/lib/perl5/$version INSTALLSITEMAN3DIR=%p/lib/perl5/$version INSTALLBIN=%p/bin INSTALLSITEBIN=%p/bin INSTALLSCRIPT=%p/bin"
 	
 	PERLPROG=/usr/bin/perl ./configure %c --with-perl-modules="$PERLMAKEARGS"
+	make perlmakefiles
+	find . -name Makefile | xargs perl -pi -e 's,-arch [^ ]*,,g'
 	make
 <<
 
@@ -122,7 +124,7 @@ SplitOff2: <<
 <<
 SplitOff3: <<
 	Package: net-snmp
-	Description: upgrade package for net-snmp-unified
+	Description: OBSOLETE use package 'net-snmp-unified' instead
 	Depends: <<
 		%N (>= %v-%r),
 		fink (>= 0.30.0-1),
@@ -132,7 +134,7 @@ SplitOff3: <<
 <<
 SplitOff4: <<
 	Package: net-snmp-ssl
-	Description: upgrade package for net-snmp-unified
+	Description: OBSOLETE use package 'net-snmp-unified' instead
 	Depends: <<
 		%N (>= %v-%r),
 		fink (>= 0.30.0-1),
