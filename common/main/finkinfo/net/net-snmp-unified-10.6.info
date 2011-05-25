@@ -16,7 +16,7 @@ BuildDepends: <<
 	automake1.11,
 	expat1,
 	fink (>= 0.26.0-1),
-	flag-sort,
+	flag-sort (>= 0.4-1),
 	gawk,
 	libtool2,
 	system-openssl-dev,
@@ -38,8 +38,9 @@ UseMaxBuildJobs: false
 Source: mirror:sourceforge:net-snmp/net-snmp-%v.tar.gz
 Source-MD5: b4e30ead5783b0bb1d280172c6095ea4
 PatchFile: %n.patch
-PatchFile-MD5: b28e5d09505ffc64bde7f2616c022eeb
+PatchFile-MD5: d98d483c7569d02618a23f1cf339ba60
 PatchScript: <<
+	ln -sf darwin9.h include/net-snmp/system/darwin10.h
 	patch -p1 --fuzz=4 < %{PatchFile}
 	autoreconf -fvi
 <<
@@ -50,7 +51,6 @@ ConfigureParams: <<
 	--with-install-prefix='%d' \
 	--enable-ipv6 \
 	--mandir='${prefix}/share/man' \
-	--with-ldflags='-Wl,-flat_namespace' \
 	--with-logfile=%p/var/log/snmpd.log \
 	--with-persistent-directory=%p/var/%N \
 	--with-default-snmp-version="3" \
@@ -67,7 +67,6 @@ ConfigureParams: <<
 CompileScript: <<
 #!/bin/sh -ev
 
-	ln -sf darwin9.h include/net-snmp/system/darwin10.h
 	eval "`/usr/bin/perl -V:archname -V:version`"
 	export PERLMAKEARGS="PREFIX=%p INSTALLPRIVLIB=%p/lib/perl5/$version INSTALLARCHLIB=%p/lib/perl5/$version/$archname INSTALLSITELIB=%p/lib/perl5/$version INSTALLSITEARCH=%p/lib/perl5/$version/$archname INSTALLMAN1DIR=%p/lib/perl5/$version INSTALLMAN3DIR=%p/lib/perl5/$version INSTALLSITEMAN1DIR=%p/lib/perl5/$version INSTALLSITEMAN3DIR=%p/lib/perl5/$version INSTALLBIN=%p/bin INSTALLSITEBIN=%p/bin INSTALLSCRIPT=%p/bin"
 
@@ -75,14 +74,14 @@ CompileScript: <<
 	make perlmakefiles
 	find . -name Makefile | xargs perl -pi -e 's,-arch [^ ]*,,g'
 	[ -z "$CC" ] && CC=gcc
-	[ -z "$CXX" ] && CC=g++
-	make CC="flag-sort $CC" CXX="flag-sort $CXX" LINKCC="flag-sort $CXX" CFLAGS="-fno-strict-aliasing -g -O -Udarwin9 -Ddarwin9=darwin9"
+	[ -z "$CXX" ] && CXX=g++
+	make CC="flag-sort -v -r $CC" CXX="flag-sort -v -r $CXX" LINKCC="flag-sort -v -r $CXX" CFLAGS="-fno-strict-aliasing -g -O -Udarwin9 -Ddarwin9=darwin9"
 <<
 
 InstallScript: <<
 #!/bin/sh -ev
 
-	make -j1 install DESTDIR=%d
+	make -j1 install DESTDIR="%d"
 	install -d -m 755 %i/var/log
 	install -d -m 755 %i/share/doc/installed-packages
 	find %i -name perllocal.pod -exec rm -rf {} \; || :
@@ -190,10 +189,6 @@ Persistent directory set to PREFIX/var/net-snmp
 Default snmp version set to 3, but can be overridden using the '-v' flag for
 the command tools, or alternatively using the 'defVersion' option in the
 snmp.conf file.
-
-Need -flat_namespace because net-snmp apps fail otherwise:
-
-http://lists.apple.com/archives/Unix-porting/2005/Jul/msg00044.html
 <<
 DescPort: <<
 Based on the net-snmp package developed by Justin Hallett and Jeremy Higgs.
