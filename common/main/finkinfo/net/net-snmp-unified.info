@@ -1,7 +1,7 @@
 Info4: <<
 Package: net-snmp-unified
 Version: 5.6.1
-Revision: 1
+Revision: 2
 Description: SNMP tools and libraries
 License: BSD
 Maintainer: Benjamin Reed <net-snmp@fink.raccoonfink.com>
@@ -32,10 +32,11 @@ Replaces: <<
 	ucd-snmp (<< 5.4-1)
 <<
 
+UseMaxBuildJobs: false
 Source: mirror:sourceforge:net-snmp/net-snmp-%v.tar.gz
 Source-MD5: b4e30ead5783b0bb1d280172c6095ea4
 PatchFile: %n.patch
-PatchFile-MD5: dd74cb8804fff24d2464cc7ec6b05dda
+PatchFile-MD5: b28e5d09505ffc64bde7f2616c022eeb
 PatchScript: <<
 	patch -p1 --fuzz=4 < %{PatchFile}
 	autoreconf -fvi
@@ -43,9 +44,6 @@ PatchScript: <<
 
 SetCPPFLAGS: -I%p/lib/system-openssl/include
 SetLDFLAGS: -L%p/lib/system-openssl/lib
-SetMAKEFLAGS: -j1
-NoSetMAKEFLAGS: true
-#	--with-out-mib-modules=mibII/ipv6 \
 ConfigureParams: <<
 	--with-install-prefix='%d' \
 	--enable-ipv6 \
@@ -57,7 +55,8 @@ ConfigureParams: <<
 	--enable-shared \
 	--with-openssl=%p/lib/system-openssl \
 	--with-mibdirs='$HOME/.snmp/mibs:%p/share/snmp/mibs:/usr/share/snmp/mibs' \
-	--with-mib-modules='ip-mib/ipv4InterfaceTable ip-mib/ipv6InterfaceTable if-mib tcp-mib udp-mib mibII/ipv6' \
+	--with-mib-modules='ip-mib/ipv4InterfaceTable if-mib' \
+	--with-out-mib-modules=mibII/ipv6 \
 	--enable-mfd-rewrites \
 	--with-sys-contact='finkuser@example.com' \
 	--with-sys-location=Unknown \
@@ -74,7 +73,9 @@ CompileScript: <<
 	PERLPROG=/usr/bin/perl ./configure %c --with-perl-modules="$PERLMAKEARGS"
 	make perlmakefiles
 	find . -name Makefile | xargs perl -pi -e 's,-arch [^ ]*,,g'
-	make
+	[ -z "$CC" ] && CC=gcc
+	[ -z "$CXX" ] && CC=g++
+	make CC="flag-sort $CC" CXX="flag-sort $CXX" LINKCC="flag-sort $CXX" CFLAGS="-fno-strict-aliasing -g -O -Udarwin9 -Ddarwin9=darwin9"
 <<
 
 InstallScript: <<

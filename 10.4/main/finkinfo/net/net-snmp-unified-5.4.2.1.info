@@ -43,8 +43,6 @@ PatchFile-MD5: 162a91a53fbd2bfa6ea82433862e382a
 
 SetCPPFLAGS: -I%p/lib/system-openssl/include
 SetLDFLAGS: -L%p/lib/system-openssl/lib
-SetMAKEFLAGS: -j1
-NoSetMAKEFLAGS: true
 UseMaxBuildJobs: false
 ConfigureParams: <<
 	--with-install-prefix='%d' \
