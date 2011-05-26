@@ -57,7 +57,6 @@ ConfigureParams: <<
 --enable-shared \
 --with-openssl=%p/lib/system-openssl \
 --with-mibdirs='$HOME/.snmp/mibs:%p/share/snmp/mibs:/usr/share/snmp/mibs' \
---with-mib-modules='ip-mib/ipv4InterfaceTable if-mib' \
 --with-out-mib-modules=mibII/ipv6 \
 --enable-mfd-rewrites \
 --with-sys-contact='finkuser@example.com' \
