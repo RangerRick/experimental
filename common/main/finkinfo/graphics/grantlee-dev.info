@@ -34,7 +34,7 @@ CompileScript: <<
 	export CC="$CC -MD" CXX="$CXX -MD"
 	mkdir -p build
 	pushd build
-		cmake $KDE4_CMAKE_ARGS ..
+		cmake $KDE4_CMAKE_ARGS -DBUILD_TESTS=false ..
 		make VERBOSE=1
 	popd
 	fink-package-precedence --prohibit-bdep %n --depfile-ext=.d .

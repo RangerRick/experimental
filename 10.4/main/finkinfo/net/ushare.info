@@ -1,27 +1,51 @@
 Package: ushare
 Version: 1.1a
-Revision: 3
+Revision: 4
 Description: UPnP A/V and DLNA media server
 License: GPL
 Maintainer: Benjamin Reed <ushare@fink.raccoonfink.com>
 
 Depends: <<
+	a52dec-shlibs,
+	amrnb-shlibs,
+	faac-shlibs,
+	lame-shlibs,
+	libavcodec52-shlibs,
+	libavformat52-shlibs,
+	libavutil50-shlibs,
 	libdlna0-shlibs (>= 0.2.3-2),
+	libfaad2-shlibs,
 	libgettext8-shlibs,
+	libixml2-shlibs,
+	libogg-shlibs,
+	libtheora0-shlibs,
+	libthreadutil2-shlibs,
 	libupnp3-shlibs,
-	libx264-57-shlibs
+	libvorbis0-shlibs,
+	libx264-98-shlibs,
+	xvidcore-shlibs
 <<
 BuildDepends: <<
+	a52dec-dev,
+	amrnb-dev,
+	faac-dev,
 	fink (>= 0.30.0-1),
 	ffmpeg-dev (>= 0.4.20071217-5),
-	libavcodec-dev (>= 0.4.20071217-5),
-	libavformat-dev (>= 0.4.20071217-5),
-	libavutil-dev (>= 0.4.20071217-5),
+	gsm,
+	lame-dev,
+	libavcodec52-dev,
+	libavformat52-dev,
+	libavutil50-dev,
 	libdlna0 (>= 0.2.3-2),
+	libfaad2-dev,
 	libgettext8-dev,
+	libogg,
+	libtheora0,
 	libupnp3,
-	libx264-dev (>= 0.0.20071214-2),
-	pkgconfig
+	libvorbis0,
+	libx264-98-dev,
+	pkgconfig,
+	xvidcore
 <<
 BuildDependsOnly: true
 
@@ -33,6 +57,16 @@ PatchFile-MD5: f530bcf3680254d65ba4a63b5dc41b66
 SetCFLAGS: -I%b -I%b/src -I%p/include
 UseMaxBuildJobs: true
 ConfigureParams: --disable-strip --enable-dlna
+CompileScript: <<
+	#!/bin/sh -ev
+	if [ "%m" = "powerpc" ]; then
+	export altivec=yes
+	else
+	export altivec=no
+	fi
+	./configure %c
+	make
+<<
 
 InstallScript: <<
 #!/bin/sh -ev
