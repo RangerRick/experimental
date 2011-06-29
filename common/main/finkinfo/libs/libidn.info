@@ -1,6 +1,6 @@
 Package: libidn
 Version: 1.22
-Revision: 2
+Revision: 4
 Source: mirror:gnu:%n/%n-%v.tar.gz
 Source-MD5: 893a1df0cf3b28b72d248382eaeaca71
 PatchFile: %n.patch
@@ -8,6 +8,7 @@ PatchFile-MD5: 10a843c4ac4cec6690b63bbc6514efa8
 PatchScript: <<
 	%{default_script}
 	perl -pi -e 's,g_utf8,idn_utf8,g' lib/*.c
+	perl -pi -e 's,for ac_prog in gcj,for ac_prog in false,' configure
 <<
 NoSetCPPFLAGS: true
 NoSetLDFLAGS: true

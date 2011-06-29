@@ -17,10 +17,10 @@ my $name;
 my $myversion;
 my $unstableversion;
 
-#format STDOUT_TOP =
-#Package Name                                     My Version              Unstable Version
-#------------------------------------------------ ----------------------- -----------------------
-#.
+format STDOUT_TOP =
+Package Name                                     My Version              Unstable Version
+------------------------------------------------ ----------------------- -----------------------
+.
 
 format STDOUT =
 @<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< @<<<<<<<<<<<<<<<<<<<<<< @<<<<<<<<<<<<<<<<<<<<<<
