@@ -28,7 +28,7 @@ GCC: 4.0
 CompileScript: <<
 #!/bin/sh -ex
 
-	export POSTGRES_INCLUDE=%p/opt/postgresql-8.4/include POSTGRES_LIB=%p/opt/postgresql-8.4/lib
+	export POSTGRES_INCLUDE=%p/opt/postgresql-9.0/include POSTGRES_LIB=%p/opt/postgresql-9.0/lib
 	%{default_script}
 <<
 InstallScript: <<
