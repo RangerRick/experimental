@@ -141,7 +141,7 @@ PostInstScript: <<
 		done
 	fi
 <<
-PostRmScript: <<
+PreRmScript: <<
 	if [ upgrade != "$1" ]; then
 		rm -rf %p/var/cache/%n
 		for progname in visualise; do

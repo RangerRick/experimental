@@ -1,8 +1,9 @@
 Info4: <<
 Package: postgresql84
 Version: 8.4.8
-Revision: 1
+Revision: 2
 Description: PostgreSQL open-source database
+Distribution: 10.4, 10.5, 10.6
 License: BSD
 Maintainer: Benjamin Reed <postgresql84@fink.raccoonfink.com>
 
@@ -238,8 +239,7 @@ SplitOff: <<
 		fi
 	<<
 	PostInstScript: [ -x %p/var/postgresql-8.4/update-alternatives.sh ] && %p/var/postgresql-8.4/update-alternatives.sh
-	PreRmScript:    [ -x %p/var/postgresql-8.4/remove-alternatives.sh ] && %p/var/postgresql-8.4/remove-alternatives.sh
-	PostRmScript:   [ -x %p/var/postgresql-8.4/update-alternatives.sh ] && %p/var/postgresql-8.4/update-alternatives.sh
+	PreRmScript: if [ "$1" != "upgrade" ]; then [ -x %p/var/postgresql-8.4/remove-alternatives.sh ] && %p/var/postgresql-8.4/remove-alternatives.sh; fi
 <<
 SplitOff2: <<
 	Package: %N-shlibs
@@ -256,7 +256,7 @@ SplitOff2: <<
 		%p/opt/postgresql-8.4/lib/libpq.5.dylib          5.0.0 postgresql84-shlibs (>= 8.4.0-1)
 	<<
 	PostInstScript: [ -x %p/var/postgresql-8.4/update-alternatives.sh ] && %p/var/postgresql-8.4/update-alternatives.sh
-	PreRmScript:    [ -x %p/var/postgresql-8.4/remove-alternatives.sh ] && %p/var/postgresql-8.4/remove-alternatives.sh
+	PreRmScript: if [ "$1" != "upgrade" ]; then [ -x %p/var/postgresql-8.4/remove-alternatives.sh ] && %p/var/postgresql-8.4/remove-alternatives.sh; fi
 <<
 
 PostInstScript: <<
@@ -325,14 +325,12 @@ END
 fi
 <<
 PreRmScript: <<
-[ -x %p/var/postgresql-8.4/remove-alternatives.sh ] && %p/var/postgresql-8.4/remove-alternatives.sh
-
 # clean up
 if [ $1 != "upgrade" ]; then
+	[ -x %p/var/postgresql-8.4/remove-alternatives.sh ] && %p/var/postgresql-8.4/remove-alternatives.sh
 	daemonic remove %N >/dev/null 2>&1 || :
 fi
 <<
-PostRmScript: [ -x %p/var/postgresql-8.4/update-alternatives.sh ] && %p/var/postgresql-8.4/update-alternatives.sh
 DaemonicFile: <<
 	<service>
 	<description>PostgreSQL database server</description>

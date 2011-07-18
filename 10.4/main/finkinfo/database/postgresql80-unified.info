@@ -1,6 +1,7 @@
 Package: postgresql80-unified
 Version: 8.0.26
-Revision: 1
+Revision: 2
+Distribution: 10.4, 10.5, 10.6
 Description: PostgreSQL open-source database
 License: BSD
 Maintainer: Benjamin Reed <postgresql80@fink.raccoonfink.com>
@@ -312,8 +313,7 @@ if [ -z "$PG_ID" ]; then
 fi
 	<<
 	PostInstScript: [ -x %p/var/postgresql-8.0/update-alternatives.sh ] && %p/var/postgresql-8.0/update-alternatives.sh
-	PreRmScript: [ -x %p/var/postgresql-8.0/remove-alternatives.sh ] && %p/var/postgresql-8.0/remove-alternatives.sh
-	PostRmScript: [ -x %p/var/postgresql-8.0/update-alternatives.sh ] && %p/var/postgresql-8.0/update-alternatives.sh
+	PreRmScript: if [ "$1" != "upgrade" ]; then [ -x %p/var/postgresql-8.0/remove-alternatives.sh ] && %p/var/postgresql-8.0/remove-alternatives.sh; fi
 <<
 SplitOff2: <<
 	Package: %N-shlibs
@@ -345,7 +345,7 @@ SplitOff2: <<
 		%p/lib/postgresql-8.0/libpq.4.dylib          4.0.0 postgresql80-unified-shlibs (>= 8.0.21-1)
 	<<
 	PostInstScript: [ -x %p/var/postgresql-8.0/update-alternatives.sh ] && %p/var/postgresql-8.0/update-alternatives.sh
-	PreRmScript: [ -x %p/var/postgresql-8.0/remove-alternatives.sh ] && %p/var/postgresql-8.0/remove-alternatives.sh
+	PreRmScript: if [ "$1" != "upgrade" ]; then [ -x %p/var/postgresql-8.0/remove-alternatives.sh ] && %p/var/postgresql-8.0/remove-alternatives.sh; fi
 <<
 SplitOff3: <<
 	Package: postgresql80
@@ -519,17 +519,15 @@ END
 fi
 <<
 PreRmScript: <<
-[ -x %p/var/postgresql-8.0/remove-alternatives.sh ] && %p/var/postgresql-8.0/remove-alternatives.sh
-
-# clean up
-daemonic remove postgresql       >/dev/null 2>&1 || :
-daemonic remove postgresql80-ssl >/dev/null 2>&1 || :
-daemonic remove postgresql80     >/dev/null 2>&1 || :
-if [ $1 != "upgrade" ]; then
-	daemonic remove %N >/dev/null 2>&1 || :
-fi
+	# clean up
+	daemonic remove postgresql       >/dev/null 2>&1 || :
+	daemonic remove postgresql80-ssl >/dev/null 2>&1 || :
+	daemonic remove postgresql80     >/dev/null 2>&1 || :
+	if [ $1 != "upgrade" ]; then
+		[ -x %p/var/postgresql-8.0/remove-alternatives.sh ] && %p/var/postgresql-8.0/remove-alternatives.sh
+		daemonic remove %N >/dev/null 2>&1 || :
+	fi
 <<
-PostRmScript: [ -x %p/var/postgresql-8.0/update-alternatives.sh ] && %p/var/postgresql-8.0/update-alternatives.sh
 DaemonicFile: <<
 	<service>
 	<description>PostgreSQL database server</description>

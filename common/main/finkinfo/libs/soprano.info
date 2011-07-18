@@ -94,7 +94,7 @@ PostInstScript: <<
 		done
 	fi
 <<
-PostRmScript: <<
+PreRmScript: <<
 	if [ upgrade != "$1" ]; then
 		for bin in onto2vocabularyclass sopranocmd sopranod; do
 			update-alternatives --remove $bin %p/bin/$bin-%type_pkg[soprano]

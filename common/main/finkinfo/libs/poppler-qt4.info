@@ -88,7 +88,7 @@ PostInstScript: <<
 	%p/sbin/update-alternatives --install %p/include/poppler/poppler-page-transition.h poppler-page-transition.h %p/include/poppler/poppler-page-transition.h-qt4 4
 	%p/sbin/update-alternatives --auto poppler-page-transition.h
 <<
-PostRmScript: <<
+PreRmScript: <<
 	if [ update != "$1" ]; then
 		%p/sbin/update-alternatives --remove poppler-page-transition.h %p/include/poppler/poppler-page-transition.h-qt4
 	fi

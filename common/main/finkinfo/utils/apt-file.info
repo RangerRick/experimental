@@ -33,11 +33,13 @@ PostInstScript: <<
 		cp %p/share/%n/apt-file.conf %p/etc/
 	fi
 <<
-PostRmScript: <<
-	update-alternatives --remove apt-file                 %p/bin/apt-file-%type_pkg[perl]
-	update-alternatives --remove apt-file.1               %p/share/man/man1/apt-file.1-%type_pkg[perl]
-	update-alternatives --remove apt-file.fr.1            %p/share/man/fr/man1/apt-file.1-%type_pkg[perl]
-	update-alternatives --remove apt-file.bash_completion %p/share/%n/apt-file.bash_completion
+PreRmScript: <<
+	if [ upgrade != "$1" ]; then
+		update-alternatives --remove apt-file                 %p/bin/apt-file-%type_pkg[perl]
+		update-alternatives --remove apt-file.1               %p/share/man/man1/apt-file.1-%type_pkg[perl]
+		update-alternatives --remove apt-file.fr.1            %p/share/man/fr/man1/apt-file.1-%type_pkg[perl]
+		update-alternatives --remove apt-file.bash_completion %p/share/%n/apt-file.bash_completion
+	fi
 <<
 GCC: 4.0
 Description: APT package searching utility

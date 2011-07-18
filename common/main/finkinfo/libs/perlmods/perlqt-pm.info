@@ -122,13 +122,15 @@ PostInstScript: <<
 		update-alternatives --install %p/share/man/man1/$file $file %p/share/man/man1/$file-%type_raw[perl] %type_pkg[perl]
 	done
 <<
-PostRmScript: <<
-	for file in pqtapi pqtsh puic; do
-		update-alternatives --remove $file %p/bin/$file-%type_raw[perl]
-	done
-	for file in puic; do
-		update-alternatives --remove $file %p/share/man/man1/$file-%type_raw[perl]
-	done
+PreRmScript: <<
+	if [ "upgrade" != "$1" ]; then
+		for file in pqtapi pqtsh puic; do
+			update-alternatives --remove $file %p/bin/$file-%type_raw[perl]
+		done
+		for file in puic; do
+			update-alternatives --remove $file %p/share/man/man1/$file-%type_raw[perl]
+		done
+	fi
 <<
 
 DescDetail: <<

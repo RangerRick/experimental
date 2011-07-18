@@ -141,7 +141,7 @@ PostInstScript: <<
 		done
 	fi
 <<
-PostRmScript: <<
+PreRmScript: <<
 	if [ upgrade != "$1" ]; then
 		rm -rf %p/var/cache/%n-0.8
 		for progname in complete compprep feedback inspect launch md5sum register typefind xmlinspect xmllaunch; do

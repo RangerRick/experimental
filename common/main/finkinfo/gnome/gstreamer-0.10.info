@@ -118,7 +118,7 @@ PostInstScript: <<
 		update-alternatives --remove gst-md5sum %p/bin/gst-md5sum-0.10
 	fi
 <<
-PostRmScript: <<
+PreRmScript: <<
 	if [ upgrade != "$1" ]; then
 		rm -rf %p/var/cache/%n
 		for progname in feedback inspect launch typefind xmlinspect xmllaunch; do

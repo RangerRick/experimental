@@ -247,7 +247,7 @@ PostInstScript: <<
 		done
 	fi
 <<
-PostRmScript: <<
+PreRmScript: <<
 	if [ upgrade != "$1" ]; then
 		echo "" > /tmp/gst-plugins-postrm.log
 		for command in "gst-register-0.8 --gst-mask=0"; do

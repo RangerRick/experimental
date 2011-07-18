@@ -501,18 +501,18 @@ Shlibs: <<
 <<
 
 PostInstScript: <<
-chmod u+s %p/bin/kgrantpty %p/bin/kpac_dhcp_helper %p/bin/fileshareset
-if [ -e "%p/etc/xdg/menus/applications.menu" ] && [ ! -L "%p/etc/xdg/menus/applications.menu" ]; then
-	mv "%p/etc/xdg/menus/applications.menu" "%p/etc/xdg/menus/applications.menu.bak"
-fi
-update-alternatives --install "%p/etc/xdg/menus/applications.menu" "applications.menu" "%p/etc/xdg/menus/kde-applications.menu" 10
-%p/bin/kde-update-caches.sh >/dev/null 2>&1 || :
+	chmod u+s %p/bin/kgrantpty %p/bin/kpac_dhcp_helper %p/bin/fileshareset
+	if [ -e "%p/etc/xdg/menus/applications.menu" ] && [ ! -L "%p/etc/xdg/menus/applications.menu" ]; then
+		mv "%p/etc/xdg/menus/applications.menu" "%p/etc/xdg/menus/applications.menu.bak"
+	fi
+	update-alternatives --install "%p/etc/xdg/menus/applications.menu" "applications.menu" "%p/etc/xdg/menus/kde-applications.menu" 10
+	%p/bin/kde-update-caches.sh >/dev/null 2>&1 || :
 <<
-PostRmScript: <<
-if [ -e "%p/etc/xdg/menus/applications.menu" ] && [ ! -L "%p/etc/xdg/menus/applications.menu" ]; then
-	mv "%p/etc/xdg/menus/applications.menu" "%p/etc/xdg/menus/applications.menu.bak"
-fi
-update-alternatives --remove "applications.menu" "%p/etc/xdg/menus/kde-applications.menu"
+PreRmScript: <<
+	if [ -e "%p/etc/xdg/menus/applications.menu" ] && [ ! -L "%p/etc/xdg/menus/applications.menu" ]; then
+		mv "%p/etc/xdg/menus/applications.menu" "%p/etc/xdg/menus/applications.menu.bak"
+	fi
+	update-alternatives --remove "applications.menu" "%p/etc/xdg/menus/kde-applications.menu"
 <<
 
 <<

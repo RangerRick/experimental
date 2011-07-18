@@ -76,7 +76,7 @@ PostInstScript: <<
 		done
 	fi
 <<
-PostRmScript: <<
+PreRmScript: <<
 	if [ upgrade != "$1" ]; then
 		for bin in akonadi_control akonadictl akonadiserver; do
 			update-alternatives --remove $bin %p/bin/$bin-%type_pkg[akonadi]

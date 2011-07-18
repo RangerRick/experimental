@@ -51,8 +51,8 @@ PostInstScript: <<
 		done
 	fi
 <<
-PostRmScript: <<
-	if [ "$1" = "remove" ]; then
+PreRmScript: <<
+	if [ "upgrade" != "$1" ]; then
 		for bin in dbilogstrip dbiprof dbiproxy; do
 			update-alternatives --remove "$bin" "%p/bin/$bin-%type_raw[perl]"
 		done
