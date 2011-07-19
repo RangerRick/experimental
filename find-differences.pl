@@ -9,35 +9,42 @@ use File::Find;
 use File::Path;
 use Fink;
 use Fink::PkgVersion;
-use Fink::Services qw(&read_properties_var &pkglist2lol &lol2pkglist);
+use Fink::Services qw(&read_properties_var &pkglist2lol &lol2pkglist &version_cmp);
+
+use vars qw($DEBUG);
+
+$DEBUG = 1;
 
 Fink->import;
 
+my $updated;
 my $name;
 my $myversion;
 my $unstableversion;
 
 format STDOUT_TOP =
-Package Name                                     My Version              Unstable Version
------------------------------------------------- ----------------------- -----------------------
+  Package Name                                     My Version              Unstable Version
+- ------------------------------------------------ ----------------------- -----------------------
 .
 
 format STDOUT =
-@<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< @<<<<<<<<<<<<<<<<<<<<<< @<<<<<<<<<<<<<<<<<<<<<<
-$name,                                           $myversion,             $unstableversion
+@ @<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< @<<<<<<<<<<<<<<<<<<<<<< @<<<<<<<<<<<<<<<<<<<<<<
+$updated, $name,                                   $myversion,             $unstableversion
 .
 
 my $path = abs_path(dirname($0));
 my $finkpath = `which fink`;
-$finkpath = dirname(dirname(abs_path($finkpath))) . "/fink";
+$finkpath = dirname(dirname(abs_path($finkpath))) . "/fink/10.4";
 
 my $packages = {};
 
 my @files = @ARGV;
 
 if (not @files) {
-	find(sub {
-		push(@files, $File::Find::name) if ($File::Find::name =~ /\.info$/);
+	find({ 
+		wanted => sub {
+			push(@files, $File::Find::name) if ($File::Find::name =~ /\.info$/);
+		},
 	}, $path, $finkpath);
 }
 
@@ -85,14 +92,23 @@ FILELOOP: for my $file (@files) {
 for my $package (sort keys %$packages) {
 	if ($packages->{$package}->{'has_local'}) {
 		if (keys %{$packages->{$package}->{'versions'}} > 1) {
+			$updated = '';
 			$name = $package;
 			for my $version (keys %{$packages->{$package}->{'versions'}}) {
+				# print "$name " . join(' ', @{$packages->{$package}->{'versions'}->{$version}}) . "\n";
 				if (grep(/\/local\//, @{$packages->{$package}->{'versions'}->{$version}})) {
 					$myversion = $version;
 				} else {
 					$unstableversion = $version;
 				}
 			}
+
+			if (version_cmp($myversion, '<<', $unstableversion)) {
+				$updated = '!';
+			}
+
+			$myversion = '' if (not defined $myversion);
+			$unstableversion = '' if (not defined $unstableversion);
 			write;
 
 			#print "$package has unmatching versions:\n";

@@ -1,0 +1,122 @@
+Info4: <<
+Version: 4.6.3
+Revision: 1
+#ifdef TYPE_X11
+Package: qtassistant-compat-x11
+Type: qt (x11)
+#else
+Package: qtassistant-compat-mac
+Type: qt (mac)
+#endif
+Description: QtAssistant compatibility library
+License: GPL/LGPL
+Maintainer: Benjamin Reed <qtassistant-compat@fink.raccoonfink.com>
+
+Depends: %N-shlibs (= %v-%r)
+BuildDependsOnly: true
+BuildDepends: <<
+	cmake (>= 2.6.1-2),
+	fink (>= 0.28-1),
+	kde4-buildenv (>= 4.2-3),
+	qt4-base-%type_pkg[qt] (>= 4.7.0-1),
+	(%type_pkg[qt] = x11) x11-dev,
+	system-openssl-dev
+<<
+Replaces: qt4-%type_pkg[qt] (<< 4.7.3-1)
+GCC: 4.0
+
+Source: ftp://ftp.qt.nokia.com/qt/source/qt-assistant-qassistantclient-library-compat-src-%v.tar.gz
+Source-MD5: a20148e0488d5c12ab35ccc107dcc64d
+SourceDirectory: qt-assistant-qassistantclient-library-compat-version-%v
+PatchFile: qtassistant-compat.patch
+PatchFile-MD5: 9b58a133395c8803a224233dee92b259
+
+DocFiles: LICENSE* LGPL*
+
+CompileScript: <<
+#!/bin/sh -ev
+
+	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[qt]"
+	. %p/sbin/kde4-buildenv.sh
+
+	pushd lib
+		%p/lib/qt4-%type_pkg[qt]/bin/qmake
+		make
+	popd
+
+	%p/lib/qt4-%type_pkg[qt]/bin/qmake
+	make
+<<
+
+InstallScript: <<
+#!/bin/sh -ev
+
+	install -d -m 755 %i/lib/qt4-%type_pkg[qt]/{bin,include/QtAssistant,lib}
+
+	cp lib/*.h lib/headers/* %i/lib/qt4-%type_pkg[qt]/include/QtAssistant/
+#ifdef TYPE_MAC
+	mv lib/QtAssistant.framework %i/lib/qt4-%type_pkg[qt]/lib/
+	install_name_tool -id %p/lib/qt4-%type_pkg[qt]/lib/QtAssistant.framework/Versions/4/QtAssistant       %i/lib/qt4-%type_pkg[qt]/lib/QtAssistant.framework/Versions/4/QtAssistant
+	install_name_tool -id %p/lib/qt4-%type_pkg[qt]/lib/QtAssistant.framework/Versions/4/QtAssistant_debug %i/lib/qt4-%type_pkg[qt]/lib/QtAssistant.framework/Versions/4/QtAssistant_debug
+
+	install -d -m 755 %i/lib/qt4-%type_pkg[qt]/lib/QtAssistant.framework/Versions/4/Headers
+	rsync -avr %i/lib/qt4-%type_pkg[qt]/include/QtAssistant/ %i/lib/qt4-%type_pkg[qt]/lib/QtAssistant.framework/Versions/4/Headers/
+	ln -sf Versions/4/Headers %i/lib/qt4-%type_pkg[qt]/lib/QtAssistant.framework/
+
+	mv Assistant_adp.app %i/lib/qt4-%type_pkg[qt]/bin/
+#else
+	mv lib/libQtAssistant*.dylib %I/lib/qt4-%type_pkg[qt]/lib/
+	install_name_tool -id %p/lib/qt4-%type_pkg[qt]/lib/libQtAssistantClient.4.dylib %i/lib/qt4-%type_pkg[qt]/lib/libQtAssistantClient.4.dylib
+
+	mv assistant_adp %i/lib/qt4-%type_pkg[qt]/bin/
+#endif
+<<
+
+SplitOffShlibs: <<
+	Package: %N-shlibs
+	Description: Shared libs for QtAssistant
+	Depends: <<
+		qt4-base-%type_pkg[qt]-qtcore-shlibs (>= 4.7.0-1),
+		qt4-base-%type_pkg[qt]-qtdbus-shlibs (>= 4.7.0-1),
+		qt4-base-%type_pkg[qt]-qtgui-shlibs (>= 4.7.0-1),
+		qt4-base-%type_pkg[qt]-qtnetwork-shlibs (>= 4.7.0-1),
+		qt4-base-%type_pkg[qt]-qtxml-shlibs (>= 4.7.0-1),
+	<<
+	Replaces: <<
+		qt4-%type_pkg[qt]-core-shlibs (<< 4.7.3-1),
+		qt4-%type_pkg[qt]-gui-shlibs (<< 4.7.3-1),
+	<<
+	DocFiles: LICENSE* LGPL*
+#ifdef TYPE_X11
+	Files: lib/qt4-%type_pkg[qt]/lib/libQtAssistantClient.4*.dylib
+	Shlibs: %p/lib/qt4-%type_pkg[qt]/lib/libQtAssistantClient.4.dylib 4.7.0 %n (>= 4.6.3-1)
+#else
+	Files: <<
+		lib/qt4-%type_pkg[qt]/lib/QtAssistant.framework/Versions/Current
+		lib/qt4-%type_pkg[qt]/lib/QtAssistant.framework/Versions/4/QtAssistant
+		lib/qt4-%type_pkg[qt]/lib/QtAssistant.framework/Versions/4/QtAssistant_debug
+	<<
+	Shlibs: <<
+		%p/lib/qt4-%type_pkg[qt]/lib/QtAssistant.framework/Versions/4/QtAssistant       4.7.0 %n (>= 4.6.3-1)
+		%p/lib/qt4-%type_pkg[qt]/lib/QtAssistant.framework/Versions/4/QtAssistant_debug 4.7.0 %n (>= 4.6.3-1)
+	<<
+#endif
+<<
+SplitOffBin: <<
+	Package: %N-bin
+	Description: QtAssistant compatibility app
+	Depends: <<
+		qt4-base-%type_pkg[qt]-qtcore-shlibs (>= 4.7.0-1),
+		qt4-base-%type_pkg[qt]-qtgui-shlibs (>= 4.7.0-1),
+		qt4-base-%type_pkg[qt]-qtnetwork-shlibs (>= 4.7.0-1),
+	<<
+	Files: lib/qt4-%type_pkg[qt]/bin
+	DocFiles: LICENSE* LGPL*
+	Replaces: qt4-%type_pkg[qt] (<< 4.7.3-1)
+<<
+
+DescDetail: <<
+This is a version of QtAssistant that is provided for compatibility with Qt3.
+<<
+
+<<
