@@ -1,0 +1,28 @@
+Package: fink-maintainertools
+Version: 0.1
+Revision: 31
+Description: Tools for Fink package maintainers
+License: Artistic
+Maintainer: Fink Core Group <fink-core@lists.sourceforge.net>
+
+Source: mirror:sourceforge:fink/%n-%v.tar.gz
+Source-MD5: a8ea36202a1ee0471ecabf89bde78299
+
+UseMaxBuildJobs: true
+CompileScript: ./setup.sh %p
+
+InstallScript: ./install.sh %i
+
+ConfFiles: <<
+	%p/etc/deplist/alternates.deplist
+	%p/etc/deplist/mapping.deplist
+	%p/etc/deplist/mapping.deplist.10.3
+	%p/etc/deplist/mapping.deplist.10.4
+<<
+
+DescDetail: <<
+This is a set of tools for maintainers of Fink packages.  It's pretty
+bare-bones right now, but the idea is to collect all the useful
+little tools maintainers have hiding in their experimental trees.
+<<
+

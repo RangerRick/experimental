@@ -1,0 +1,31 @@
+Package: libpixman1
+Version: 0.1.6
+Revision: 34
+Description: Pixel manipulation library
+License: BSD
+Maintainer: Benjamin Reed <libpixman1@fink.raccoonfink.com>
+
+Depends: %N-shlibs (>= %v-%r)
+BuildDepends: pkgconfig (>= 0.23-1)
+Conflicts: pixman
+Replaces: pixman
+BuildDependsOnly: true
+
+Source: http://www.cairographics.org/snapshots/libpixman-%v.tar.gz
+Source-MD5: 4af4bbf35840016f40f287a0bb6526b1
+
+NoSetLDFLAGS: true
+UseMaxBuildJobs: true
+ConfigureParams: --disable-dependency-tracking
+
+InstallScript: make install DESTDIR=%d
+DocFiles: AUTHORS COPYING ChangeLog* INSTALL NEWS README
+SplitOff: <<
+	Package: %N-shlibs
+	DocFiles: AUTHORS COPYING ChangeLog* INSTALL NEWS README
+	Files: lib/libpixman.1*.dylib
+	Shlibs: %p/lib/libpixman.1.dylib 2.0.0 %N-shlibs (>= 0.1.1-1)
+<<
+
+Homepage: http://www.cairographics.org/
+

@@ -1,0 +1,38 @@
+Package: radlib
+Version: 2.7.5
+Revision: 31
+Description: Rapid Application Development Library
+License: BSD
+Maintainer: Benjamin Reed <radlib@fink.raccoonfink.com>
+
+Depends: %N-shlibs (= %v-%r)
+BuildDependsOnly: true
+
+Source: mirror:sourceforge:%n/%n-%v.tar.gz
+Source-MD5: 73e01cd9e1f03cb67bc23bc5bd7b412d
+
+UseMaxBuildJobs: true
+
+InstallScript: <<
+	chmod a+x install-sh
+	make -j1 install DESTDIR="%d"
+<<
+DocFiles: AUTHORS COPYING ChangeLog INSTALL MAINTAIN NEWS README
+SplitOff: <<
+	Package: %N-shlibs
+	Description: Shared libraries for radlib
+	DocFiles: COPYING
+	Files: lib/librad.0*.dylib
+	Shlibs: %p/lib/librad.0.dylib 1.0.0 %N-shlibs (>= 2.7.0-1)
+<<
+SplitOff2: <<
+	Package: %N-dev
+	Description: Headers and libraries for radlib development
+	Depends: %N (= %v-%r)
+	BuildDependsOnly: true
+	DocFiles: COPYING
+	Files: include lib
+<<
+
+Homepage: http://www.radlib.teel.ws/
+

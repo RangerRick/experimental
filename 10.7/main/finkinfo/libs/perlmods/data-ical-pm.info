@@ -1,0 +1,46 @@
+Info2: <<
+Package: data-ical-pm%type_pkg[perl]
+Version: 0.16
+Revision: 31
+Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
+Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6, (%type_pkg[perl] = 5123) 10.7
+Description: ICalendar (RFC 2445) interface for Perl
+Type: perl(5.6.0 5.6.1 5.8.0 5.8.1 5.8.4 5.8.5 5.8.6 5.8.8)
+License: Artistic
+Maintainer: Benjamin Reed <data-ical-pm@fink.raccoonfink.com>
+
+Depends: <<
+	class-accessor-pm,
+	class-returnvalue-pm%type_pkg[perl],
+	perl%type_pkg[perl]-core,
+	text-vfile-asdata-pm%type_pkg[perl]
+<<
+BuildDepends: <<
+	fink (>= 0.30.0-1),
+	test-longstring-pm,
+	test-nowarnings-pm%type_pkg[perl],
+	test-simple-pm%type_pkg[perl],
+	test-warn-pm%type_pkg[perl]
+<<
+
+Source: mirror:cpan:modules/by-module/Data/Data-ICal-%v.tar.gz
+Source-MD5: 12430864424a7bfe77e5d62a083f792c
+PatchScript: perl -pi -e 's,^auto_install.*$,,' Makefile.PL
+
+UseMaxBuildJobs: true
+
+UpdatePOD: true
+InstallScript: <<
+	%{default_script}
+	mv %i/share/man %i/lib/perl5/%type_raw[perl]
+<<
+DocFiles: Changes README SIGNATURE doc/*
+
+Homepage: http://search.cpan.org/dist/Data-ICal
+DescDetail: <<
+A Data::ICal object represents a VCALENDAR object as defined in the
+iCalendar protocol (RFC 2445, MIME type "text/calendar"), as implemented
+in many popular calendaring programs such as Apple's iCal.
+<<
+<<
+

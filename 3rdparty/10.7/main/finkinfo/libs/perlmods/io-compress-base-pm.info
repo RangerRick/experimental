@@ -1,0 +1,18 @@
+Package: io-compress-base-pm
+Version: 2.015
+Revision: 31
+Description: Base class for some some compression modules
+Type: perl
+License: Artistic/GPL
+Maintainer: Daniel Macks <dmacks@netspace.org>
+
+Source: mirror:cpan:modules/by-module/IO/IO-Compress-Base-%v.tar.gz
+Source-MD5: 009813067e40c73c28c23fde8d9abfd5
+
+UseMaxBuildJobs: true
+
+UpdatePOD: True
+DocFiles: Changes README
+
+Homepage: http://search.cpan.org/dist/IO-Compress-Base
+

@@ -1,0 +1,28 @@
+Package: coreutils-default
+Version: 9999
+Revision: 31
+Epoch: 99
+Description: Coreutils is a menace.
+Type: nosource
+License: OSI-Approved
+Maintainer: Benjamin Reed <coreutils-default@fink.raccoonfink.com>
+
+GCC: 3.3
+
+UseMaxBuildJobs: true
+CompileScript: echo none
+
+InstallScript: <<
+#!/bin/sh -ev
+
+	install -d -m 755 "%i/bin"
+	for file in "[" "basename" "cat" "chgrp" "chmod" "chown" "chroot" "cksum" "comm" "cp" "csplit" "cut" "date" "dd" "df" "dir" "dircolors" "dirname" "du" "echo" "env" "expand" "expr" "factor" "false" "fmt" "fold" "groups" "head" "hostid" "hostname" "id" "install" "join" "kill" "link" "ln" "logname" "ls" "mkdir" "mkfifo" "mknod" "mv" "nice" "nl" "nohup" "od" "paste" "pathchk" "pinky" "pr" "printenv" "printf" "ptx" "pwd" "rm" "rmdir" "seq" "sha1sum" "sha224sum" "sha256sum" "sha384sum" "sha512sum" "shred" "shuf" "sleep" "sort" "split" "stat" "stty" "sum" "sync" "tac" "tail" "tee" "test" "touch" "tr" "true" "tty" "uname" "unexpand" "uniq" "unlink" "uptime" "vdir" "wc" "whoami" "yes"; do
+		for dir in /bin /sbin /usr/bin /usr/sbin; do
+			if [ -x "$dir/$file" ]; then
+				ln -s "$dir/$file" "%i/bin/$file"
+				break
+			fi
+		done
+	done
+<<
+

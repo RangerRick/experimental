@@ -1,0 +1,123 @@
+Info2: <<
+Package: amarok-engine-gstreamer
+Version: 1.4.10
+Revision: 31
+Description: KDE - music player (GStreamer output engine)
+License: GPL
+Maintainer: Benjamin Reed <amarok@fink.raccoonfink.com>
+
+Depends: <<
+	amarok-core-shlibs (>= %v-1),
+	gst-plugins-base-0.10-shlibs
+<<
+BuildDepends: <<
+	amarok-core (>= %v-1),
+	arts-dev (>= 1.5.10-10),
+	autoconf (>= 2.63-1),
+	cctools-single-module,
+	expat1,
+	freetype219 (>= 2.4.4-2),
+	gettext-bin,
+	gettext-tools,
+	libgettext8-dev,
+	glib,
+	glib2-dev (>= 2.22.0-1),
+	gst-plugins-base-0.10-dev,
+	gstreamer-0.10-dev,
+	gtk+,
+	kdebase3-unified-dev (>= 3.5.10-10),
+	kdelibs3-unified-dev (>= 3.5.10-10),
+	libart2 (>= 2.3.20-1),
+	libflac8-dev,
+	libgpod3,
+	libiconv-dev,
+	libidn,
+	libjpeg8,
+	libmad,
+	libmp4v21-dev,
+	libmusicbrainz4,
+	libogg,
+	libpng15,
+	libtunepimp3,
+	libvorbis0,
+	libxine1,
+	libxml2,
+	pcre,
+	pkgconfig (>= 0.23-1),
+	popt,
+	qt3 (>= 3.3.8-2000),
+	ruby18-dev,
+	taglib (>= 1.6.3-1),
+	unsermake (>= 0.4-0.20060316.1),
+	x11-dev,
+	xmms
+<<
+Replaces: <<
+	amarok-kde-xine,
+	amarok-kde-gstreamer,
+	amarok-kde-gstreamer-xine,
+	amarok (<< %v-%r)
+<<
+Recommends: gst-plugins-0.10
+
+CustomMirror: <<
+	Primary: http://www.finkproject.org/~ranger/distfiles
+	eur-NL: http://www.finkproject.org/~ranger/distfiles
+	nam-US: http://ranger.befunk.com/fink
+<<
+Source: mirror:kde:stable/amarok/%v/src/amarok-%v.tar.bz2
+Source-MD5: 3bdbf26181bf5e5925f48968caba7ac2
+Source2: mirror:custom:kde-admindir/kde-admindir-29cde0f.tar.bz2
+Source2-MD5: 40e5462e2d292c468358f8d001594519
+Source2ExtractDir: amarok-%v
+PatchScript: <<
+	sed -e 's,@FINKPREFIX@,%p,g' %a/amarok-core.patch | patch -p1
+	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g;' admin/*
+<<
+
+NoSetCPPFLAGS: true
+NoSetLDFLAGS: true
+UseMaxBuildJobs: true
+ConfigureParams: --disable-mysql --disable-postgresql --without-nmm --without-mas --without-helix --without-libvisual --with-distribution='Fink/Mac OS X' --with-libgpod --with-mp4v2 --with-mp4v2-dir=%p --without-xine --without-gstreamer --with-gstreamer10
+CompileScript: <<
+	#!/bin/sh -ev
+	
+	export PREFIX="%p" USE_UNSERMAKE=1 CC=gcc-3.3 CXX=g++-3.3 RUBY=%p/bin/ruby1.8
+	. ./environment-helper.sh
+	
+	./build-helper.sh cvs       %{Ni} %v %r make -f admin/Makefile.common cvs
+	./build-helper.sh configure %{Ni} %v %r ./configure %c $CONFIGURE_PARAMS
+	
+	unsermake amarok/src/amarokcore/amarokconfig.h
+	pushd amarok/src/engine/gst10
+	../../../../build-helper.sh make      %{Ni} %v %r unsermake $UNSERMAKEFLAGS
+	popd
+<<
+
+InstallScript: <<
+#!/bin/sh -ev
+
+	export PREFIX="%p" USE_UNSERMAKE=1
+	. ./environment-helper.sh
+
+	pushd amarok/src/engine/gst10
+	../../../../build-helper.sh install %{Ni} %v %r unsermake -p -j1 install DESTDIR=%d
+	popd
+<<
+DocFiles: AUTHORS COPYING ChangeLog INSTALL* README
+
+PostInstScript: <<
+	if [ -x "%p/bin/kde-update-caches.sh" ]; then
+		%p/bin/kde-update-caches.sh >/dev/null 2>&1 || :
+	fi
+<<
+
+DescDetail: <<
+Amarok is a music player for Linux and Unix with an intuitive interface.
+Amarok makes playing the music you love easier than ever before - and looks
+good doing it. 
+
+This package contains the GStreamer output plugin for Amarok.
+<<
+<<
+

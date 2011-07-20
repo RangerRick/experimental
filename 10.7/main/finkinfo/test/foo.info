@@ -1,0 +1,26 @@
+Package: foo
+Version: 1.0
+Revision: 32
+Description: Test package
+Type: nosource
+License: BSD
+Maintainer: Benjamin Reed <foo@fink.raccoonfink.com>
+
+Depends: bzip2-shlibs
+BuildDepends: fink (>= 0.30.0-1)
+Provides: bar
+Conflicts: baz
+Replaces: foo (<< 0.9-1)
+
+PatchFile: %n.patch
+PatchFile-MD5: 9bbd5708d5a281f2cc0cd3dc0d765340
+PatchFile2: %n-add.patch
+PatchFile2-MD5: 4c6f7ab080d10f6d62874f5e04a3f9dd
+
+UseMaxBuildJobs: true
+CompileScript: echo none
+
+InstallScript: install -d -m 755 %i/share/doc/%N; cp foo.txt %i/share/doc/%N/
+
+DescDetail: 	This is some stuff, yo.  %p dude.
+

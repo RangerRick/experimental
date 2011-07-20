@@ -1,0 +1,127 @@
+diff -Nurd kdeutils-4.5.2/CMakeLists.txt kdeutils-4.5.2-new/CMakeLists.txt
+--- kdeutils-4.5.2/CMakeLists.txt	2010-08-27 04:13:22.000000000 -0400
++++ kdeutils-4.5.2-new/CMakeLists.txt	2010-10-20 23:14:50.000000000 -0400
+@@ -18,10 +18,8 @@
+ include_directories( ${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
+ 
+ # --- check for dependencies ---
+-if(X11_FOUND)
+-  macro_optional_find_package( QImageBlitz )
+-  macro_log_feature( QIMAGEBLITZ_FOUND "QImageBlitz" "An image effects library" "kdesupport" FALSE "" "Required for building SuperKaramba.")
+-endif(X11_FOUND)
++macro_optional_find_package( QImageBlitz )
++macro_log_feature( QIMAGEBLITZ_FOUND "QImageBlitz" "An image effects library" "kdesupport" FALSE "" "Required for building SuperKaramba.")
+ macro_optional_find_package( GMP )
+ macro_log_feature( GMP_FOUND "GMP" "The GNU Multiple Precision Arithmetic Library" "http://gmplib.org/" FALSE "" "Required for building KCalc.")
+ macro_optional_find_package( QCA2 )
+@@ -53,7 +51,7 @@
+ macro_optional_add_subdirectory( okteta )
+ macro_optional_add_subdirectory( sweeper )
+ 
+-if( X11_FOUND AND QIMAGEBLITZ_FOUND)
++if( Q_WS_X11 AND QIMAGEBLITZ_FOUND )
+     #find_file( BACKGROUND_INTERFACE_FILE_FOUND org.kde.kdesktop.Background.xml PATHS ${DBUS_INTERFACES_INSTALL_DIR} )
+ 
+     #if( BACKGROUND_INTERFACE_FILE_FOUND )
+@@ -61,7 +59,7 @@
+     #else( BACKGROUND_INTERFACE_FILE_FOUND )
+         #MESSAGE( STATUS "org.kde.kdesktop.Background.xml was not found install kdebase before please" )
+     #endif( BACKGROUND_INTERFACE_FILE_FOUND )
+-endif( X11_FOUND AND QIMAGEBLITZ_FOUND)
++endif( Q_WS_X11 AND QIMAGEBLITZ_FOUND )
+ 
+ # --- docs ---
+ macro_optional_add_subdirectory( doc )
+diff -Nurd kdeutils-4.5.2/kremotecontrol/dataengine/CMakeLists.txt kdeutils-4.5.2-new/kremotecontrol/dataengine/CMakeLists.txt
+--- kdeutils-4.5.2/kremotecontrol/dataengine/CMakeLists.txt	2010-04-15 04:58:23.000000000 -0400
++++ kdeutils-4.5.2-new/kremotecontrol/dataengine/CMakeLists.txt	2010-10-20 23:16:36.000000000 -0400
+@@ -18,7 +18,7 @@
+ 
+ kde4_add_plugin(plasma_engine_kremoteconrol ${kremoteconrol_engine_SRCS})
+ 
+-target_link_libraries(plasma_engine_kremoteconrol ${KDE4_PLASMA_LIBS} ${KDE4_KIO_LIBS} libkremotecontrol)
++target_link_libraries(plasma_engine_kremoteconrol ${KDE4_PLASMA_LIBS} ${KDE4_KIO_LIBS} kremotecontrol)
+ 
+ install(TARGETS plasma_engine_kremoteconrol DESTINATION ${PLUGIN_INSTALL_DIR})
+ install(FILES plasma-engine-kremotecontrol.desktop DESTINATION ${SERVICES_INSTALL_DIR} )
+diff -Nurd kdeutils-4.5.2/kremotecontrol/kcmremotecontrol/CMakeLists.txt kdeutils-4.5.2-new/kremotecontrol/kcmremotecontrol/CMakeLists.txt
+--- kdeutils-4.5.2/kremotecontrol/kcmremotecontrol/CMakeLists.txt	2010-04-07 11:18:35.000000000 -0400
++++ kdeutils-4.5.2-new/kremotecontrol/kcmremotecontrol/CMakeLists.txt	2010-10-20 23:16:42.000000000 -0400
+@@ -26,7 +26,7 @@
+ 
+ kde4_add_plugin(kcm_remotecontrol ${kcm_remotecontrol_PART_SRCS})
+ 
+-target_link_libraries(kcm_remotecontrol ${KDE4_KIO_LIBS} ${KDE4WORKSPACE_SOLIDCONTROL_LIBRARY} libkremotecontrol)
++target_link_libraries(kcm_remotecontrol ${KDE4_KIO_LIBS} ${KDE4WORKSPACE_SOLIDCONTROL_LIBRARY} kremotecontrol)
+ 
+ install(TARGETS kcm_remotecontrol DESTINATION ${PLUGIN_INSTALL_DIR})
+ 
+diff -Nurd kdeutils-4.5.2/kremotecontrol/kded/CMakeLists.txt kdeutils-4.5.2-new/kremotecontrol/kded/CMakeLists.txt
+--- kdeutils-4.5.2/kremotecontrol/kded/CMakeLists.txt	2010-04-15 04:58:24.000000000 -0400
++++ kdeutils-4.5.2-new/kremotecontrol/kded/CMakeLists.txt	2010-10-20 23:16:49.000000000 -0400
+@@ -20,7 +20,7 @@
+    ${KDE4_KDEUI_LIBS}
+    ${KDE4_SOLID_LIBS}
+    ${KDE4WORKSPACE_SOLIDCONTROL_LIBRARY}
+-   libkremotecontrol
++   kremotecontrol
+ )
+ 
+ install(TARGETS kded_kremotecontroldaemon DESTINATION ${PLUGIN_INSTALL_DIR})
+diff -Nurd kdeutils-4.5.2/kremotecontrol/krcdnotifieritem/CMakeLists.txt kdeutils-4.5.2-new/kremotecontrol/krcdnotifieritem/CMakeLists.txt
+--- kdeutils-4.5.2/kremotecontrol/krcdnotifieritem/CMakeLists.txt	2010-04-07 11:18:35.000000000 -0400
++++ kdeutils-4.5.2-new/kremotecontrol/krcdnotifieritem/CMakeLists.txt	2010-10-20 23:16:54.000000000 -0400
+@@ -18,7 +18,7 @@
+ kde4_add_executable( krcdnotifieritem ${krcdnotifieritem_SRCS})
+ 
+ target_link_libraries(krcdnotifieritem  ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} ${KDE4_SOLID_LIBS} 
+-                                      ${KDE4WORKSPACE_SOLIDCONTROL_LIBRARY} libkremotecontrol)
++                                      ${KDE4WORKSPACE_SOLIDCONTROL_LIBRARY} kremotecontrol)
+ 
+ install(TARGETS krcdnotifieritem ${INSTALL_TARGETS_DEFAULT_ARGS})
+ install( FILES krcdnotifieritem.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+diff -Nurd kdeutils-4.5.2/kremotecontrol/libkremotecontrol/CMakeLists.txt kdeutils-4.5.2-new/kremotecontrol/libkremotecontrol/CMakeLists.txt
+--- kdeutils-4.5.2/kremotecontrol/libkremotecontrol/CMakeLists.txt	2010-04-07 11:18:35.000000000 -0400
++++ kdeutils-4.5.2-new/kremotecontrol/libkremotecontrol/CMakeLists.txt	2010-10-20 23:15:29.000000000 -0400
+@@ -7,7 +7,7 @@
+    ${KDE4WORKSPACE_INCLUDE_DIR} )
+ 
+ 
+-set(libkremotecontrol_LIB_SRCS
++set(kremotecontrol_LIB_SRCS
+    remote.cpp
+    remotelist.cpp
+    mode.cpp
+@@ -25,10 +25,10 @@
+    dbusinterface.cpp
+ )
+ 
+-kde4_add_library(libkremotecontrol SHARED ${libkremotecontrol_LIB_SRCS})
+-set_target_properties(libkremotecontrol PROPERTIES VERSION 1.0.0 SOVERSION 1)
++kde4_add_library(kremotecontrol SHARED ${kremotecontrol_LIB_SRCS})
++set_target_properties(kremotecontrol PROPERTIES VERSION 1.0.0 SOVERSION 1)
+ 
+-target_link_libraries(libkremotecontrol ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} ${KDE4WORKSPACE_SOLIDCONTROL_LIBRARY} ${QT_QTXMLPATTERNS_LIBRARY})
++target_link_libraries(kremotecontrol ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} ${KDE4WORKSPACE_SOLIDCONTROL_LIBRARY} ${QT_QTXMLPATTERNS_LIBRARY})
+ 
+ 
+-install(TARGETS libkremotecontrol ${INSTALL_TARGETS_DEFAULT_ARGS})
++install(TARGETS kremotecontrol ${INSTALL_TARGETS_DEFAULT_ARGS})
+diff -Nurd kdeutils-4.5.2/kremotecontrol/tests/CMakeLists.txt kdeutils-4.5.2-new/kremotecontrol/tests/CMakeLists.txt
+--- kdeutils-4.5.2/kremotecontrol/tests/CMakeLists.txt	2010-04-07 11:18:35.000000000 -0400
++++ kdeutils-4.5.2-new/kremotecontrol/tests/CMakeLists.txt	2010-10-20 23:17:06.000000000 -0400
+@@ -21,12 +21,12 @@
+ 
+ target_link_libraries(
+   profileTest
+-  libkremotecontrol    
++  kremotecontrol    
+   ${QT_QTTEST_LIBRARY}  
+ )
+ 
+ target_link_libraries(
+   remoteTest
+-  libkremotecontrol    
++  kremotecontrol    
+   ${QT_QTTEST_LIBRARY}  
+ )

@@ -1,0 +1,82 @@
+Package: amanith
+Version: 0.3
+Revision: 32
+Description: 2d & 3d vector graphics library
+License: OSI-Approved
+Maintainer: Benjamin Reed <amanith@fink.raccoonfink.com>
+
+Depends: %N-shlibs (= %v-%r)
+BuildDepends: <<
+	freetype219 (>= 2.4.4-2),
+	glew,
+	libgl-dev,
+	libjpeg8,
+	libpng15,
+	qt3,
+	x11-dev
+<<
+BuildDependsOnly: true
+GCC: 3.3
+
+Source: http://www.amanith.org/download/files/%n_03.tar.gz
+Source-MD5: 392e79d36cc2d57921c7fefacbc4d4a3
+SourceDirectory: %n
+PatchScript: sed -e 's,@FINKPREFIX@,%p,g' %a/%n.patch | patch -p1
+
+UseMaxBuildJobs: true
+CompileScript: <<
+	#!/bin/sh -ex
+	
+	export AMANITHDIR=`pwd`
+	rm -rf include/GL src/support/glew.c
+	qmake
+	make
+<<
+
+InstallScript: <<
+	install -d -m 755 %i/lib %i/include
+
+	install -c -m 755 lib/libamanith.1.0.0.dylib %i/lib/
+	ln -sf libamanith.1.0.0.dylib %i/lib/libamanith.1.dylib
+	ln -sf libamanith.1.dylib %i/lib/libamanith.dylib
+
+	mv include/amanith %i/include/
+	find %i/include -type f -exec chmod 644 {} \;
+
+	install -d -m 755 %i/share/doc/%N
+	mv examples %i/share/doc/%N/
+<<
+DocFiles: CHANGELOG FAQ INSTALL LICENSE* README*
+SplitOff: <<
+	Package: %N-shlibs
+	Depends: <<
+		glew-shlibs,
+		libjpeg8-shlibs,
+		libpng15-shlibs,
+		x11-shlibs
+	<<
+	DocFiles: LICENSE*
+	Files: lib/libamanith.*.dylib
+	Shlibs: %p/lib/libamanith.1.dylib 1.0.0 %N-shlibs (>= 0.3-1)
+<<
+
+Homepage: http://www.amanith.org/
+DescDetail: <<
+Amanith is an OpenSource C++ CrossPlatform framework designed for 2d & 3d
+vector graphics.
+
+Open source has made Amanith possible, so we wanna Amanith to be open
+source too.  This mean that Amanith source code is fully available for
+everyone.
+
+Same source tree can be compiled without modifications under multiple
+targets.  Linux, Win32, Mac, FreeBSD, NetBSD, OpenBSD, Solaris, IRIX, AIX
+are only few of them.
+
+All the framework is heavily based on a light plug-in system.
+This make fast and easy to include or esclude everything you want.
+
+The Amanith philosophy is to support many open standards as possible.
+Png, Jpeg, Svg, Xml, OpenGl, Ansi c++, and many others.
+<<
+

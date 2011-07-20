@@ -1,0 +1,301 @@
+diff -Nurd poppler-0.5.9/configure poppler-0.5.9-new/configure
+--- poppler-0.5.9/configure	2007-05-30 14:32:24.000000000 -0400
++++ poppler-0.5.9-new/configure	2010-05-02 12:26:32.000000000 -0400
+@@ -24746,7 +24746,7 @@
+ fi
+ 
+ 
+-jpeg_incdirs="`eval echo $includedir` /usr/include /usr/local/include "
++jpeg_incdirs="`eval echo $includedir` /usr/include /usr/local/include @PREFIX@/include"
+ 
+ jpeg_incdir=NO
+ for i in $jpeg_incdirs;
+@@ -25811,7 +25811,7 @@
+ 
+ qt_test_include="qstyle.h"
+ qt_test_la_library="libqt-mt.la"
+-qt_test_library="libqt-mt.so"
++qt_test_library="libqt-mt.dylib"
+ 
+ { echo "$as_me:$LINENO: checking for Qt headers" >&5
+ echo $ECHO_N "checking for Qt headers... $ECHO_C" >&6; }
+@@ -25993,7 +25993,7 @@
+ 
+ qt_test_include="qstyle.h"
+ qt_test_la_library="libqt-mt.la"
+-qt_test_library="libqt-mt.so"
++qt_test_library="libqt-mt.dylib"
+ 
+ { echo "$as_me:$LINENO: checking for Qt headers" >&5
+ echo $ECHO_N "checking for Qt headers... $ECHO_C" >&6; }
+diff -Nurd poppler-0.5.9/glib/Makefile.in poppler-0.5.9-new/glib/Makefile.in
+--- poppler-0.5.9/glib/Makefile.in	2007-05-30 14:32:26.000000000 -0400
++++ poppler-0.5.9-new/glib/Makefile.in	2010-05-02 12:21:52.000000000 -0400
+@@ -288,9 +288,9 @@
+ 	-DG_LOG_DOMAIN=\"Poppler\"		\
+ 	-I$(top_srcdir)				\
+ 	-I$(top_srcdir)/poppler			\
++	$(FREETYPE_CFLAGS)			\
+ 	$(cairo_includes)			\
+ 	$(POPPLER_GLIB_CFLAGS)			\
+-	$(FREETYPE_CFLAGS)			\
+ 	$(FONTCONFIG_CFLAGS)                    \
+ 	$(cairo_includes)			
+ 
+@@ -320,8 +320,8 @@
+ 
+ libpoppler_glib_la_LIBADD = \
+ 	$(top_builddir)/poppler/libpoppler.la		\
+-	$(POPPLER_GLIB_LIBS)				\
+ 	$(FREETYPE_LIBS)				\
++	$(POPPLER_GLIB_LIBS)				\
+ 	$(FONTCONFIG_LIBS)				\
+ 	$(cairo_libs)
+ 
+@@ -332,8 +332,8 @@
+ test_poppler_glib_LDADD = \
+ 	$(top_builddir)/poppler/libpoppler.la	\
+ 	libpoppler-glib.la			\
+-	$(POPPLER_GLIB_LIBS)			\
+ 	$(FREETYPE_LIBS)			\
++	$(POPPLER_GLIB_LIBS)			\
+ 	$(cairo_libs)
+ 
+ BUILT_SOURCES = \
+diff -Nurd poppler-0.5.9/glib/reference/Makefile.in poppler-0.5.9-new/glib/reference/Makefile.in
+--- poppler-0.5.9/glib/reference/Makefile.in	2007-05-30 14:32:26.000000000 -0400
++++ poppler-0.5.9-new/glib/reference/Makefile.in	2010-05-02 12:21:52.000000000 -0400
+@@ -287,14 +287,14 @@
+ # e.g. INCLUDES=-I$(top_srcdir) -I$(top_builddir) $(GTK_DEBUG_FLAGS)
+ # e.g. GTKDOC_LIBS=$(top_builddir)/gtk/$(gtktargetlib)
+ INCLUDES = -I$(top_srcdir)/glib -I$(top_builddir)/glib	\
++	$(FREETYPE_CFLAGS) \
+ 	$(CAIRO_CFLAGS)					\
+-	$(POPPLER_GLIB_CFLAGS)				\
+-	$(FREETYPE_CFLAGS)
++	$(POPPLER_GLIB_CFLAGS)			
+ 
+ GTKDOC_LIBS = $(top_builddir)/poppler/libpoppler.la	\
+ 	$(top_builddir)/glib/libpoppler-glib.la		\
+-	$(POPPLER_GLIB_LIBS)				\
+ 	$(FREETYPE_LIBS)				\
++	$(POPPLER_GLIB_LIBS)				\
+ 	$(cairo_libs)
+ 
+ @GTK_DOC_USE_LIBTOOL_FALSE@GTKDOC_CC = $(CC) $(INCLUDES) $(AM_CFLAGS) $(CFLAGS)
+diff -Nurd poppler-0.5.9/poppler/Makefile.in poppler-0.5.9-new/poppler/Makefile.in
+--- poppler-0.5.9/poppler/Makefile.in	2007-05-30 14:32:26.000000000 -0400
++++ poppler-0.5.9-new/poppler/Makefile.in	2010-05-02 12:21:52.000000000 -0400
+@@ -383,12 +383,12 @@
+ INCLUDES = \
+ 	-I$(top_srcdir)				\
+ 	-I$(top_srcdir)/goo			\
++	$(FREETYPE_CFLAGS)			\
++	$(FONTCONFIG_CFLAGS) \
+ 	$(splash_includes)			\
+ 	$(cairo_includes)			\
+ 	$(arthur_includes)			\
+-	$(abiword_includes)			\
+-	$(FREETYPE_CFLAGS)			\
+-	$(FONTCONFIG_CFLAGS)
++	$(abiword_includes)			
+ 
+ lib_LTLIBRARIES = libpoppler.la
+ noinst_LTLIBRARIES = $(poppler_cairo)		\
+@@ -397,12 +397,12 @@
+ libpoppler_la_LIBADD = \
+ 	$(top_builddir)/goo/libgoo.la		\
+ 	$(top_builddir)/fofi/libfofi.la		\
++	$(FREETYPE_LIBS)			\
++	$(FONTCONFIG_LIBS) \
+ 	$(splash_libs)				\
+ 	$(libjpeg_libs)				\
+ 	$(zlib_libs)				\
+-	$(abiword_libs)				\
+-	$(FREETYPE_LIBS)			\
+-	$(FONTCONFIG_LIBS)
++	$(abiword_libs)				
+ 
+ libpoppler_la_LDFLAGS = -version-info 1:0:0
+ @ENABLE_XPDF_HEADERS_TRUE@poppler_includedir = $(includedir)/poppler
+diff -Nurd poppler-0.5.9/qt/Makefile.in poppler-0.5.9-new/qt/Makefile.in
+--- poppler-0.5.9/qt/Makefile.in	2007-05-30 14:32:26.000000000 -0400
++++ poppler-0.5.9-new/qt/Makefile.in	2010-05-02 12:26:44.000000000 -0400
+@@ -63,7 +63,7 @@
+ libLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+-libpoppler_qt_la_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la \
++libpoppler_qt_la_DEPENDENCIES = \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+ am_libpoppler_qt_la_OBJECTS = poppler-document.lo poppler-fontinfo.lo \
+@@ -72,7 +72,7 @@
+ PROGRAMS = $(noinst_PROGRAMS)
+ am_test_poppler_qt_OBJECTS = test-poppler-qt.$(OBJEXT)
+ test_poppler_qt_OBJECTS = $(am_test_poppler_qt_OBJECTS)
+-test_poppler_qt_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la \
++test_poppler_qt_DEPENDENCIES = \
+ 	libpoppler-qt.la $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir) -I$(top_builddir)/poppler
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+@@ -264,10 +264,10 @@
+ INCLUDES = \
+ 	-I$(top_srcdir)				\
+ 	-I$(top_srcdir)/poppler			\
+-	$(cairo_includes)			\
+-	$(POPPLER_QT_CXXFLAGS)			\
+ 	$(FREETYPE_CFLAGS)			\
+-	$(FONTCONFIG_CFLAGS)
++	$(FONTCONFIG_CFLAGS) \
++	$(cairo_includes)			\
++	$(POPPLER_QT_CXXFLAGS)			
+ 
+ poppler_includedir = $(includedir)/poppler/qt3
+ poppler_include_HEADERS = \
+@@ -286,20 +286,20 @@
+ 	poppler-private.h
+ 
+ libpoppler_qt_la_LIBADD = \
+-	$(top_builddir)/poppler/libpoppler.la	\
+-	$(POPPLER_QT_LIBS)			\
++	-lpoppler \
+ 	$(FREETYPE_LIBS)			\
+-	$(FONTCONFIG_LIBS)
++	$(FONTCONFIG_LIBS) \
++	$(POPPLER_QT_LIBS)			
+ 
+ libpoppler_qt_la_LDFLAGS = -version-info 1:0:0
+ test_poppler_qt_SOURCES = \
+        test-poppler-qt.cpp
+ 
+ test_poppler_qt_LDADD = \
+-	$(top_builddir)/poppler/libpoppler.la	\
++	-lpoppler \
+ 	libpoppler-qt.la			\
+-	$(POPPLER_QT_LIBS)			\
+-	$(FREETYPE_LIBS)
++	$(FREETYPE_LIBS) \
++	$(POPPLER_QT_LIBS)			
+ 
+ all: all-am
+ 
+diff -Nurd poppler-0.5.9/test/Makefile.in poppler-0.5.9-new/test/Makefile.in
+--- poppler-0.5.9/test/Makefile.in	2007-05-30 14:32:27.000000000 -0400
++++ poppler-0.5.9-new/test/Makefile.in	2010-05-02 12:21:52.000000000 -0400
+@@ -261,8 +261,8 @@
+ @BUILD_CAIRO_OUTPUT_TRUE@@BUILD_GTK_TEST_TRUE@	pdf_inspector
+ 
+ @BUILD_CAIRO_OUTPUT_TRUE@@BUILD_GTK_TEST_TRUE@cairo_includes = \
+-@BUILD_CAIRO_OUTPUT_TRUE@@BUILD_GTK_TEST_TRUE@	$(CAIRO_CFLAGS)				\
+-@BUILD_CAIRO_OUTPUT_TRUE@@BUILD_GTK_TEST_TRUE@	$(FREETYPE_CFLAGS)
++@BUILD_CAIRO_OUTPUT_TRUE@@BUILD_GTK_TEST_TRUE@	$(FREETYPE_CFLAGS) \
++@BUILD_CAIRO_OUTPUT_TRUE@@BUILD_GTK_TEST_TRUE@	$(CAIRO_CFLAGS)				
+ 
+ INCLUDES = \
+ 	-I$(top_srcdir)				\
+@@ -296,8 +296,8 @@
+ pdf_inspector_LDADD = \
+ 	$(top_builddir)/poppler/libpoppler.la		\
+ 	$(top_builddir)/poppler/libpoppler-cairo.la	\
+-	$(CAIRO_LIBS)					\
+ 	$(FREETYPE_LIBS)				\
++	$(CAIRO_LIBS)					\
+ 	$(GTK_TEST_LIBS)
+ 
+ EXTRA_DIST = \
+diff -Nurd poppler-0.5.9/xpdfrc.poppler1 poppler-0.5.9-new/xpdfrc.poppler1
+--- poppler-0.5.9/xpdfrc.poppler1	1969-12-31 19:00:00.000000000 -0500
++++ poppler-0.5.9-new/xpdfrc.poppler1	2010-05-02 10:21:42.000000000 -0400
+@@ -0,0 +1,91 @@
++#========================================================================
++#
++# Sample xpdfrc file
++#
++# The Xpdf tools look for a config file in two places:
++# 1. ~/.xpdfrc
++# 2. in a system-wide directory, typically /usr/local/etc/xpdfrc
++#
++# This sample config file demonstrates some of the more common
++# configuration options.  Everything here is commented out.  You
++# should edit things (especially the file/directory paths, since
++# they'll likely be different on your system), and uncomment whichever
++# options you want to use.  For complete details on config file syntax
++# and available options, please see the xpdfrc(5) man page.
++#
++# Also, the Xpdf language support packages each include a set of
++# options to be added to the xpdfrc file.
++#
++# http://www.foolabs.com/xpdf/
++#
++#========================================================================
++
++#----- display fonts
++
++# These map the Base-14 fonts to the Type 1 fonts that ship with
++# ghostscript.  You'll almost certainly want to use something like
++# this, but you'll need to adjust this to point to wherever
++# ghostscript is installed on your system.  (But if the fonts are
++# installed in a "standard" location, xpdf will find them
++# automatically.)
++
++displayFontT1 Times-Roman		@PREFIX@/share/ghostscript/fonts/n021003l.pfb
++displayFontT1 Times-Italic		@PREFIX@/share/ghostscript/fonts/n021023l.pfb
++displayFontT1 Times-Bold		@PREFIX@/share/ghostscript/fonts/n021004l.pfb
++displayFontT1 Times-BoldItalic		@PREFIX@/share/ghostscript/fonts/n021024l.pfb
++displayFontT1 Helvetica		@PREFIX@/share/ghostscript/fonts/n019003l.pfb
++displayFontT1 Helvetica-Oblique	@PREFIX@/share/ghostscript/fonts/n019023l.pfb
++displayFontT1 Helvetica-Bold		@PREFIX@/share/ghostscript/fonts/n019004l.pfb
++displayFontT1 Helvetica-BoldOblique	@PREFIX@/share/ghostscript/fonts/n019024l.pfb
++displayFontT1 Courier			@PREFIX@/share/ghostscript/fonts/n022003l.pfb
++displayFontT1 Courier-Oblique		@PREFIX@/share/ghostscript/fonts/n022023l.pfb
++displayFontT1 Courier-Bold		@PREFIX@/share/ghostscript/fonts/n022004l.pfb
++displayFontT1 Courier-BoldOblique	@PREFIX@/share/ghostscript/fonts/n022024l.pfb
++displayFontT1 Symbol			@PREFIX@/share/ghostscript/fonts/s050000l.pfb
++displayFontT1 ZapfDingbats		@PREFIX@/share/ghostscript/fonts/d050000l.pfb
++
++# If you need to display PDF files that refer to non-embedded fonts,
++# you should add one or more fontDir options to point to the
++# directories containing the font files.  Xpdf will only look at .pfa,
++# .pfb, and .ttf files in those directories (other files will simply
++# be ignored).
++
++fontDir		/usr/local/fonts/bakoma
++
++#----- PostScript output control
++
++# Set the default PostScript file or command.
++
++psFile			"|lpr -Pmyprinter"
++
++# Set the default PostScript paper size -- this can be letter, legal,
++# A4, or A3.  You can also specify a paper size as width and height
++# (in points).
++
++psPaperSize		letter
++
++#----- text output control
++
++# Choose a text encoding for copy-and-paste and for pdftotext output.
++# The Latin1, ASCII7, and UTF-8 encodings are built into Xpdf.  Other
++# encodings are available in the language support packages.
++
++textEncoding		UTF-8
++
++# Choose the end-of-line convention for multi-line copy-and-past and
++# for pdftotext output.  The available options are unix, mac, and dos.
++
++textEOL		unix
++
++#----- misc settings
++
++# Enable t1lib, FreeType, and anti-aliased text.
++
++enableT1lib		yes
++enableFreeType		yes
++antialias		yes
++
++# Set the command used to run a web browser when a URL hyperlink is
++# clicked.
++
++urlCommand	"open 'openURL(%s)'"

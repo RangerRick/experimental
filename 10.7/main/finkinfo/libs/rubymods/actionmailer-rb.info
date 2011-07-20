@@ -1,0 +1,41 @@
+Info2: <<
+Package: actionmailer-rb%type_pkg[ruby]
+Version: 2.1.0
+Revision: 31
+Description: Mail service classes
+Type: ruby (1.8)
+License: BSD
+Maintainer: Benjamin Reed <actionmailer-rb@fink.raccoonfink.com>
+
+Depends: <<
+	actionpack-rb%type_pkg[ruby] (>= 2.1.0-1),
+	libgems-rb%type_pkg[ruby] (>= 0.9.5-2),
+	ruby%type_pkg[ruby]
+<<
+BuildDepends: <<
+	actionpack-rb%type_pkg[ruby] (>= 2.1.0-1),
+	rubygems-rb%type_pkg[ruby] (>= 0.9.5-2),
+	ruby%type_pkg[ruby]-dev
+<<
+
+NoSourceDirectory: true
+Source: http://rubyforge.org/frs/download.php/37762/actionmailer-%v.gem
+Source-MD5: fe6c2b87a58aae93c8a182980141c5ea
+
+UseMaxBuildJobs: true
+CompileScript: echo ""
+
+InstallScript: <<
+	install -d -m 755 %i/var/lib/gems/%type_raw[ruby]
+	%p/bin/gem install --local --install-dir %i/var/lib/gems/%type_raw[ruby] --rdoc actionmailer-%v.gem
+	rm -rf %i/var/lib/gems/%type_raw[ruby]/cache
+<<
+
+Homepage: http://rubyforge.org/projects/actionmailer/
+DescDetail: <<
+	Simplifies the creation of mail service classes
+	that uses Action View (from Action Pack) to render
+	the body templates.
+<<
+<<
+

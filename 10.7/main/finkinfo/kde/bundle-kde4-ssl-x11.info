@@ -1,0 +1,20 @@
+Info4: <<
+Package: bundle-kde4-ssl-x11
+Version: 4.6.3
+Revision: 31
+Description: KDE4 - convenience package: KDE 4.6 (X11)
+Type: bundle
+Maintainer: Benjamin Reed <bundle-kde4@fink.raccoonfink.com>
+
+Depends: bundle-kde4-x11 (>= %v-1)
+BuildDepends: fink
+
+UseMaxBuildJobs: true
+
+Homepage: http://www.kde.org/
+DescDetail: <<
+This package doesn't install any files of itself, but makes sure that
+you have a fully-functional KDE 4.6.x system through dependencies.
+<<
+<<
+

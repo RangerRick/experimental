@@ -1,0 +1,30 @@
+Info3: <<
+Package: libassuan
+Version: 1.0.5
+Revision: 31
+Description: IPC library
+License: LGPL
+Maintainer: Benjamin Reed <libassuan@fink.raccoonfink.com>
+
+BuildDepends: pth2-dev
+BuildDependsOnly: true
+
+Source: ftp://ftp.gnupg.org/gcrypt/%n/%n-%v.tar.bz2
+Source-MD5: c2db0974fcce4401f48f3fa41c4edc5a
+
+UseMaxBuildJobs: true
+
+InstallScript: make -j1 install DESTDIR="%d"
+DocFiles: AUTHORS COPYING* ChangeLog INSTALL NEWS README* THANKS TODO VERSION
+
+InfoDocs: assuan.info
+
+Homepage: http://www.gnupg.org/
+DescDetail: <<
+This is the IPC library used by GnuPG 2, GPGME and a few other
+packages.  It used to be included with the latter packages but
+we decided to make your life not too easy and separated it out
+to a stand alone library.
+<<
+<<
+

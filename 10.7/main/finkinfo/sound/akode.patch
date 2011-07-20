@@ -1,0 +1,24 @@
+diff -uNr akode-2.0.2/akode/lib/Makefile.in akode-2.0.2-new/akode/lib/Makefile.in
+--- akode-2.0.2/akode/lib/Makefile.in	2007-04-06 06:23:30.000000000 -0700
++++ akode-2.0.2-new/akode/lib/Makefile.in	2007-06-15 11:30:59.000000000 -0700
+@@ -299,7 +299,7 @@
+                       converter.cpp buffered_decoder.cpp \
+                       player.cpp magic.cpp
+ 
+-AM_CPPFLAGS = -DAKODE_SEARCHDIR=\"$(libdir)\"
++AM_CPPFLAGS = -DAKODE_SEARCHDIR=\"$(libdir)/akode\"
+ #>- libakode_la_LDFLAGS = -no-undefined -version-info 2:0:0 $(all_libraries)
+ #>+ 1
+ libakode_la_LDFLAGS = -no-undefined $(KDE_NO_UNDEFINED) -version-info 2:0:0 $(all_libraries)
+diff -uNr akode-2.0.2/akode/plugins/mpeg_decoder/Makefile.in akode-2.0.2-new/akode/plugins/mpeg_decoder/Makefile.in
+--- akode-2.0.2/akode/plugins/mpeg_decoder/Makefile.in	2007-04-06 06:23:30.000000000 -0700
++++ akode-2.0.2-new/akode/plugins/mpeg_decoder/Makefile.in	2007-06-15 11:29:01.000000000 -0700
+@@ -277,7 +277,7 @@
+ libakode_mpeg_decoder_la_SOURCES = mpeg_decoder.cpp
+ #>- libakode_mpeg_decoder_la_LDFLAGS = -avoid-version -no-undefined  $(USER_LDFLAGS)
+ #>+ 1
+-libakode_mpeg_decoder_la_LDFLAGS = -avoid-version -no-undefined $(KDE_NO_UNDEFINED)  $(USER_LDFLAGS)
++libakode_mpeg_decoder_la_LDFLAGS = -module -avoid-version -no-undefined $(KDE_NO_UNDEFINED)  $(USER_LDFLAGS)
+ libakode_mpeg_decoder_la_LIBADD = ../../lib/libakode.la $(MADLIBS)
+ #>- all: all-am
+ #>+ 1

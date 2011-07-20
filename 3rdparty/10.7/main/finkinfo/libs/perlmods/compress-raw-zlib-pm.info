@@ -1,0 +1,32 @@
+Info2: <<
+Package: compress-raw-zlib-pm%type_pkg[perl]
+Version: 2.015
+Revision: 31
+Description: Perl interface to zlib compression library
+Type: perl (5.8.6 5.8.8)
+License: Artistic/GPL
+Maintainer: Daniel Macks <dmacks@netspace.org>
+
+Depends: perl%type_pkg[perl]-core
+
+Source: mirror:cpan:modules/by-module/Compress/Compress-Raw-Zlib-%v.tar.gz
+Source-MD5: 6680d7ee3fbfd5171ccf239328c284fd
+
+UseMaxBuildJobs: true
+
+UpdatePOD: True
+InstallScript: <<
+	%{default_script}
+	mv %i/share/man %i/lib/perl5/%type_raw[perl]
+<<
+DocFiles: Changes README
+
+Homepage: http://search.cpan.org/dist/Compress-Raw-Zlib
+DescPackaging: <<
+	Build own zlib because Apple's (on 10.4, fixed on 10.5)
+	doesn't have expected ABI for its claimed version (0x1230 but
+	deflateTune, crc32_combine, and adler32_combine are not
+	public).
+<<
+<<
+

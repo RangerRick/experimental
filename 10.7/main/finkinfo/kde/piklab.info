@@ -1,0 +1,88 @@
+Package: piklab
+Version: 0.8.0
+Revision: 33
+Description: KDE - PIC microcontroller IDE
+License: GPL
+Maintainer: Benjamin Reed <piklab@fink.raccoonfink.com>
+
+Depends: <<
+	kdelibs3-unified-shlibs (>= 3.5.10-10),
+	gputils,
+	libusb-shlibs
+<<
+BuildDepends: <<
+	arts-dev (>= 1.5.10-10),
+	autoconf (>= 2.63-1),
+	automake1.9,
+	cctools-single-module,
+	expat1,
+	fink (>= 0.30.0-1),
+	freetype219 (>= 2.4.4-2),
+	kdelibs3-unified-dev (>= 3.5.10-10),
+	libart2 (>= 2.3.20-1),
+	libidn,
+	libpng15 (>= 1.5.2-1),
+	libusb,
+	pkgconfig (>= 0.23-1),
+	qt3 (>= 3.3.8-2000),
+	x11-dev
+<<
+BuildConflicts: unsermake
+GCC: 3.3
+
+CustomMirror: <<
+	Primary: http://www.finkproject.org/~ranger/distfiles
+	eur-NL: http://www.finkproject.org/~ranger/distfiles
+	nam-US: http://ranger.befunk.com/fink
+<<
+Source: mirror:sourceforge:%n/%n-%v.tar.bz2
+Source-MD5: 4f00796daa16ce471ac199c5ce801fe0
+Source2: mirror:custom:kde-admindir/kde-admindir-29cde0f.tar.bz2
+Source2-MD5: 40e5462e2d292c468358f8d001594519
+Source2ExtractDir: %n-%v
+
+NoSetCPPFLAGS: true
+NoSetLDFLAGS: true
+UseMaxBuildJobs: true
+ConfigureParams: --prefix=%p --with-qt-dir=%p --with-qt-includes=%p/include/qt --with-extra-libs=%p/lib --with-extra-includes=%p/include --enable-mt --with-pic --enable-rpath --enable-shared=yes --enable-static=no --mandir=%i/share/man --with-xinerama --disable-final --disable-dependency-tracking
+CompileScript: <<
+	#!/bin/sh -ev
+	
+	export PREFIX="%p"
+	. ./environment-helper.sh
+	
+	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
+	./build-helper.sh configure %N %v %r ./configure %c
+	./build-helper.sh make      %N %v %r make
+<<
+
+InstallScript: <<
+#!/bin/sh -ev
+
+	export PREFIX="%p"
+	. ./environment-helper.sh
+
+	./build-helper.sh install %N %v %r make -j1 install DESTDIR=%d
+
+	mkdir -p %i/share/doc/installed-packages
+	touch %i/share/doc/installed-packages/%N
+
+	install -d -m 755 %i/share/doc/%N
+	mv docs/lplab %i/share/doc/%N/
+<<
+DocFiles: COPYING ChangeLog README TODO docs/*.txt
+
+PostInstScript: <<
+	env KDEDIR= KDEDIRS= HOME=/tmp XDG_CACHE_HOME=/tmp/kb/cache XDG_CONFIG_HOME=/tmp/kb/config \
+		XDG_DATA_HOME=/tmp/kb/share HISTFILE=/tmp/kb/.bash_history USER=root LOGNAME=root \
+		%p/bin/kbuildsycoca --global --noincremental --nosignal >/dev/null 2>&1 || :
+<<
+
+DescDetail: <<
+Piklab is an integrated development environment for applications based on PIC and
+dsPIC microcontrollers similar to Microchip MPLAB software.  The GNU PIC Utilities
+are used for compiling assembler files.  Microchip programmers (currently only
+ICD2) and several direct programmers are supported.  A command-line programmer is
+also included.
+<<
+

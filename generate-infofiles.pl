@@ -422,8 +422,8 @@ sub handle_file {
 			my $outfilename = $filename;
 			$outfilename =~ s/^\.//;
 
-			if ($tree >= 10.7 and $outfilename =~ /-10\.6\.info$/) {
-				$outfilename =~ s/-10\.6\.info$/.info/;
+			if ($tree >= 10.7 and $outfilename =~ /-10\.6\.info(\.in)?$/) {
+				$outfilename =~ s/-10\.6(\.info(\.in)?)$/$1/;
 			}
 
 			if (open (FILEOUT, '>' . $todir . '/' . $outfilename)) {

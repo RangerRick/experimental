@@ -1,0 +1,77 @@
+Package: boson
+Version: 0.13
+Revision: 31
+Description: Real-time strategy game
+License: GPL
+Maintainer: Benjamin Reed <boson@fink.raccoonfink.com>
+
+BuildDepends: <<
+	arts-dev (>= 1.5.10-10),
+	cctools-single-module,
+	cmake (>= 2.8.2-1),
+	expat1,
+	fink (>= 0.30.0-1),
+	freetype219 (>= 2.4.4-2),
+	gettext-tools,
+	kdelibs3-unified-dev (>= 3.5.10-10),
+	lib3ds,
+	libart2 (>= 2.3.20-1),
+	libgettext8-dev,
+	libiconv-dev,
+	libidn,
+	libjpeg8,
+	libpng15 (>= 1.5.2-1),
+	pcre,
+	pkgconfig (>= 0.23-1),
+	qt3 (>= 3.3.8-2000),
+	x11-dev
+<<
+GCC: 3.3
+
+CustomMirror: <<
+	Primary: http://www.finkproject.org/~ranger/distfiles
+	eur-NL: http://www.finkproject.org/~ranger/distfiles
+	nam-US: http://ranger.befunk.com/fink
+<<
+Source: mirror:sourceforge:%n/%n-all-%v.tar.bz2
+Source-MD5: 1b91bbdda1ff81d4d60f80c8175d974b
+Source2: mirror:custom:kde-admindir/kde-admindir-29cde0f.tar.bz2
+Source2-MD5: 40e5462e2d292c468358f8d001594519
+Source2ExtractDir: %n-all-%v
+Patch: %n.patch
+
+NoSetCPPFLAGS: true
+NoSetLDFLAGS: true
+UseMaxBuildJobs: true
+ConfigureParams: --with-distribution='Fink/Mac OS X'
+CompileScript: <<
+	#!/bin/sh -e
+	
+	export PREFIX="%p"
+	. ./environment-helper.sh
+	
+	mkdir build
+	pushd build
+	../build-helper.sh cmake %N %v %r cmake -DCMAKE_INSTALL_PREFIX='%p' ..
+	perl -pi -e 's,/usr/include,/usr/X11R6/include,g' CMakeCache.txt
+	../build-helper.sh make  %N %v %r make
+	popd
+<<
+
+InstallScript: <<
+#!/bin/sh -e
+
+	export PREFIX="%p"
+	. ./environment-helper.sh
+
+	pushd build
+	../build-helper.sh install %N %v %r make -j1 install DESTDIR="%d"
+	popd
+<<
+DocFiles: code/AUTHORS code/COPYING code/ChangeLog code/INSTALL* code/README code/boson/TODO
+
+DescDetail: <<
+Boson is an OpenGL real-time strategy game, with the feeling
+of Command and Conquer(tm) or StarCraft(tm).
+<<
+

@@ -1,0 +1,28 @@
+Package: libdaemon-doc
+Version: 0.10
+Revision: 31
+Description: Easy way to write UNIX daemons (documentation)
+License: LGPL
+Maintainer: Benjamin Reed <libdaemon-doc@fink.raccoonfink.com>
+
+BuildDepends: doxygen
+
+Source: http://0pointer.de/lennart/projects/libdaemon/libdaemon-%{v}.tar.gz
+Source-MD5: 6812a5e4063b5016f25e9a0cebbd3dd9
+
+UseMaxBuildJobs: true
+ConfigureParams: --with-extra-libs=%{p}/lib --with-extra-includes=%{p}/include --disable-dependency-tracking
+CompileScript: <<
+	./configure %c
+	make doxygen
+<<
+
+InstallScript: <<
+	install -d -m 755 %i/share/man %i/share/doc/%N
+	mv doc/reference/man/* %i/share/man
+	mv doc/reference/html/* %i/share/doc/%N/
+<<
+DocFiles: LICENSE README
+
+Homepage: http://0pointer.de/lennart/projects/libdaemon/
+

@@ -1,0 +1,41 @@
+Package: libopcodes-dev
+Version: 2.18
+Revision: 31
+Description: Instruction decoding library
+License: GPL
+Maintainer: Benjamin Reed <libopcodes@fink.raccoonfink.com>
+
+BuildDepends: <<
+	texinfo,
+	libgettext8-dev,
+	libiconv-dev,
+	libiberty-dev,
+	libbfd-dev
+<<
+BuildDependsOnly: true
+
+Source: mirror:gnu:binutils/binutils-%v.tar.bz2
+Source-MD5: 9d22ee4dafa3a194457caf4706f9cf01
+SourceDirectory: binutils-%v/opcodes
+
+SetCPPFLAGS: -I%p/lib/libiberty/include -I%p/lib/libbfd/include
+SetLIBS: -L%p/lib/libiberty/lib -L%p/lib/libbfd/lib
+UseMaxBuildJobs: true
+CompileScript: <<
+	#!/bin/sh -ev
+	
+	./configure --prefix=%p/lib/libopcodes --enable-install-libopcodes --enable-install-libbfd --mandir=%p/share/man --infodir=%p/share/info
+	make BFD_H=%p/lib/libbfd/include/bfd.h
+<<
+
+InstallScript: make install DESTDIR=%d BFD_H=%p/lib/libbfd/include/bfd.h
+DocFiles: MAINTAINERS ChangeLog
+
+Homepage: http://www.gnu.org/software/binutils/
+DescDetail: <<
+The opcode library (libopcodes.a) provides instruction decoders for
+a large variety of instruction sets, callable with an identical
+interface, for making instruction-processing programs more independent
+of the instruction set being processed.
+<<
+

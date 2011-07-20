@@ -1,0 +1,650 @@
+diff -uNr boson-all-0.13/cmake/modules/boson/FindKDE3.cmake boson-all-0.13-new/cmake/modules/boson/FindKDE3.cmake
+--- boson-all-0.13/cmake/modules/boson/FindKDE3.cmake	2006-07-28 10:13:15.000000000 -0400
++++ boson-all-0.13-new/cmake/modules/boson/FindKDE3.cmake	2006-11-17 16:14:32.000000000 -0500
+@@ -6,10 +6,6 @@
+ # KDE3_INCLUDE_DIRS        - the KDE and the Qt include directory, for use with INCLUDE_DIRECTORIES()
+ # KDE3_LIB_DIR             - the directory where the KDE libraries are installed, for use with LINK_DIRECTORIES()
+ # QT_AND_KDECORE_LIBS      - this contains both the Qt and the kdecore library
+-# QT_AND_KDECORE_KDEUI_LIBS - this contains the Qt, kdecore and kdeui
+-#                             libraries
+-# QT_AND_KDECORE_KDEUI_KIO_LIBS - this contains the Qt, kdecore, kdeui and
+-#                                 kio libraries
+ # KDE3_DCOPIDL_EXECUTABLE  - the dcopidl executable
+ # KDE3_DCOPIDL2CPP_EXECUTABLE - the dcopidl2cpp executable
+ # KDE3_KCFGC_EXECUTABLE    - the kconfig_compiler executable
+@@ -79,9 +75,7 @@
+ FIND_PACKAGE(X11 REQUIRED)
+ 
+ 
+-SET(QT_AND_KDECORE_LIBS kdecore ${QT_LIBRARIES})
+-SET(QT_AND_KDECORE_KDEUI_LIBS kdeui ${QT_AND_KDECORE_LIBS})
+-SET(QT_AND_KDECORE_KDEUI_KIO_LIBS kio ${QT_AND_KDECORE_KDEUI_LIBS})
++SET(QT_AND_KDECORE_LIBS ${QT_LIBRARIES} kdecore)
+ 
+ #add some KDE specific stuff
+ SET(KDE3_DEFINITIONS -DQT_CLEAN_NAMESPACE -D_GNU_SOURCE)
+@@ -89,37 +83,47 @@
+ #only on linux, but NOT e.g. on FreeBSD:
+ IF(CMAKE_SYSTEM_NAME MATCHES "Linux")
+    SET (KDE3_DEFINITIONS ${KDE3_DEFINITIONS} -D_XOPEN_SOURCE=500 -D_BSD_SOURCE)
+-   SET ( CMAKE_C_FLAGS     "${CMAKE_C_FLAGS} -Wno-long-long -ansi -Wundef -Wcast-align -Wconversion -Wchar-subscripts -Wall -W -Wpointer-arith -Wwrite-strings -O2 -Wformat-security -Wmissing-format-attribute -fno-common")
+-   SET ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Wno-long-long -ansi -Wundef -Wcast-align -Wconversion -Wchar-subscripts -Wall -W -Wpointer-arith -Wwrite-strings -O2 -Wformat-security -fno-exceptions -fno-check-new -fno-common")
++   SET ( CMAKE_C_FLAGS     "${CMAKE_C_FLAGS} -Wno-long-long -ansi -Wundef -Wcast-align -Wconversion -Wchar-subscripts -Wall -W -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -fno-common")
++   SET ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Wno-long-long -ansi -Wundef -Wcast-align -Wconversion -Wchar-subscripts -Wall -W -Wpointer-arith -Wwrite-strings -Wformat-security -fno-exceptions -fno-check-new -fno-common")
+ ENDIF(CMAKE_SYSTEM_NAME MATCHES "Linux")
+ 
+ # works on FreeBSD, NOT tested on NetBSD and OpenBSD
+ IF (CMAKE_SYSTEM_NAME MATCHES BSD)
+-   SET ( CMAKE_C_FLAGS     "${CMAKE_C_FLAGS} -Wno-long-long -ansi -Wundef -Wcast-align -Wconversion -Wchar-subscripts -Wall -W -Wpointer-arith -Wwrite-strings -O2 -Wformat-security -Wmissing-format-attribute -fno-common")
+-   SET ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Wno-long-long -Wundef -Wcast-align -Wconversion -Wchar-subscripts -Wall -W -Wpointer-arith -Wwrite-strings -O2 -Wformat-security -Wmissing-format-attribute -fno-exceptions -fno-check-new -fno-common")
++   SET ( CMAKE_C_FLAGS     "${CMAKE_C_FLAGS} -Wno-long-long -ansi -Wundef -Wcast-align -Wconversion -Wchar-subscripts -Wall -W -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -fno-common")
++   SET ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Wno-long-long -Wundef -Wcast-align -Wconversion -Wchar-subscripts -Wall -W -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -fno-exceptions -fno-check-new -fno-common")
+ ENDIF (CMAKE_SYSTEM_NAME MATCHES BSD)
+ 
++# if no special buildtype is selected, add -O2 as default optimization
++IF (NOT CMAKE_BUILD_TYPE)
++   SET ( CMAKE_C_FLAGS     "${CMAKE_C_FLAGS} -O2")
++   SET ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
++ENDIF (NOT CMAKE_BUILD_TYPE)
++
+ 
+ #SET(CMAKE_SHARED_LINKER_FLAGS "-avoid-version -module -Wl,--no-undefined -Wl,--allow-shlib-undefined")
+ #SET(CMAKE_SHARED_LINKER_FLAGS "-Wl,--fatal-warnings -avoid-version -Wl,--no-undefined -lc")
+ #SET(CMAKE_MODULE_LINKER_FLAGS "-Wl,--fatal-warnings -avoid-version -Wl,--no-undefined -lc")
+ 
+-#now try to find some kde stuff
+-# AB: note we search in 2 passes:
+-#       1. search in "often used" directories, and in particular in $KDEDIR.
+-#       2. if not found by 1.: search again, but only in the standard cmake dirs.
+-#     this ensures, that if $KDEDIR is set to a special directory, we'll pick up
+-#     that one, instead of e.g. /usr/lib from standard cmake dirs.
++# all calls to FIND_PROGRAM/PATH/LIBRARY() follow the same scheme:
++# at first try some special paths with the argument "NO_DEFAULT_PATH"
++# so only these paths are checked
++# this is followed by a second call to FIND_PROGRAM/PATH/LIBRARY()
++# but this time without any paths and without NO_DEFAULT_PATH
++# this second call will do nothing if the first call already found
++# what it was looking for, if not, it will search only in the default
++# directories (/usr, /usr/local, etc.)
+ 
+-FIND_PROGRAM(KDECONFIG_EXECUTABLE NAMES kde-config
+-  PATHS
+-  $ENV{KDEDIR}/bin
+-  ${KDE3PREFIX}/include
+-  /opt/kde/bin
++#now try to find some kde stuff
++FIND_PROGRAM(KDECONFIG_EXECUTABLE NAMES kde-config PATHS
++   $ENV{KDEDIR}/bin
+   /opt/kde3/bin
++  /opt/kde/bin
+   NO_DEFAULT_PATH
+-)
+-FIND_PROGRAM(KDECONFIG_EXECUTABLE NAMES kde-config)
++  )
++
++
++FIND_PROGRAM(KDECONFIG_EXECUTABLE kde-config)
++
+ 
+ SET(KDE3PREFIX)
+ IF(KDECONFIG_EXECUTABLE)
+@@ -132,25 +136,23 @@
+                         OUTPUT_VARIABLE kdedir )
+       STRING(REGEX REPLACE "\n" "" KDE3PREFIX "${kdedir}")
+ 
+-
+-      message(STATUS "kde3prefix: ${KDE3PREFIX}")
+     ENDIF (${kde_version} MATCHES "KDE: 3\\.")
+ ENDIF(KDECONFIG_EXECUTABLE)
+ 
+ 
++
++# at first the KDE include direcory
+ # kpassdlg.h comes from kdeui and doesn't exist in KDE4 anymore
+ FIND_PATH(KDE3_INCLUDE_DIR kpassdlg.h
+-  PATHS
+   $ENV{KDEDIR}/include
+   ${KDE3PREFIX}/include
+-  /opt/kde/include
+   /opt/kde3/include
+-  /usr/local/include
+-  /usr/include/
++  /opt/kde/include
+   /usr/include/kde
+   /usr/local/include/kde
+   NO_DEFAULT_PATH
+-)
++  )
++
+ FIND_PATH(KDE3_INCLUDE_DIR kpassdlg.h)
+ 
+ #now the KDE library directory
+@@ -158,55 +160,45 @@
+   PATHS
+   $ENV{KDEDIR}/lib
+   ${KDE3PREFIX}/lib
+-  /opt/kde/lib
+   /opt/kde3/lib
+-  /usr/lib
+-  /usr/local/lib
++  /opt/kde/lib
+   NO_DEFAULT_PATH
+ )
++
+ FIND_LIBRARY(KDE3_KDECORE_LIBRARY NAMES kdecore)
+ 
+ GET_FILENAME_COMPONENT(KDE3_LIB_DIR ${KDE3_KDECORE_LIBRARY} PATH )
+ 
+-#now the KDE service types directory
+-#FIND_PATH(KDE3_SERVICETYPES_DIR ktexteditor.desktop
+-#  $ENV{KDEDIR}/share/servicetypes/
+-#  ${KDE3PREFIX}/share/servicetypes/
+-#  /opt/kde/share/servicetypes/
+-#  /opt/kde3/share/servicetypes/
+-#)
+-
+ #now search for the dcop utilities
+-FIND_PROGRAM(KDE3_DCOPIDL_EXECUTABLE NAMES dcopidl
+-  PATHS
++FIND_PROGRAM(KDE3_DCOPIDL_EXECUTABLE NAMES dcopidl PATHS
+   $ENV{KDEDIR}/bin
+   ${KDE3PREFIX}/bin
+-  /opt/kde/bin
+   /opt/kde3/bin
++  /opt/kde/bin
+   NO_DEFAULT_PATH
+-)
++  )
++
+ FIND_PROGRAM(KDE3_DCOPIDL_EXECUTABLE NAMES dcopidl)
+ 
+-FIND_PROGRAM(KDE3_DCOPIDL2CPP_EXECUTABLE NAMES dcopidl2cpp
+-  PATHS
++FIND_PROGRAM(KDE3_DCOPIDL2CPP_EXECUTABLE NAMES dcopidl2cpp PATHS
+   $ENV{KDEDIR}/bin
+   ${KDE3PREFIX}/bin
+-  /opt/kde/bin
+   /opt/kde3/bin
++  /opt/kde/bin
+   NO_DEFAULT_PATH
+-)
++  )
++
+ FIND_PROGRAM(KDE3_DCOPIDL2CPP_EXECUTABLE NAMES dcopidl2cpp)
+ 
+-FIND_PROGRAM(KDE3_KCFGC_EXECUTABLE NAMES kconfig_compiler
+-  PATHS
++FIND_PROGRAM(KDE3_KCFGC_EXECUTABLE NAMES kconfig_compiler PATHS
+   $ENV{KDEDIR}/bin
+   ${KDE3PREFIX}/bin
+-  /opt/kde/bin
+   /opt/kde3/bin
++  /opt/kde/bin
+   NO_DEFAULT_PATH
+-)
+-FIND_PROGRAM(KDE3_KCFGC_EXECUTABLE NAMES kconfig_compiler)
++  )
+ 
++FIND_PROGRAM(KDE3_KCFGC_EXECUTABLE NAMES kconfig_compiler)
+ 
+ # KDE3Macros.cmake contains all the KDE specific macros
+ INCLUDE(KDE3Macros)
+diff -uNr boson-all-0.13/cmake/modules/boson/KDE3Macros.cmake boson-all-0.13-new/cmake/modules/boson/KDE3Macros.cmake
+--- boson-all-0.13/cmake/modules/boson/KDE3Macros.cmake	2006-06-24 08:35:16.000000000 -0400
++++ boson-all-0.13-new/cmake/modules/boson/KDE3Macros.cmake	2006-11-17 16:14:32.000000000 -0500
+@@ -1,4 +1,4 @@
+-
++#
+ 
+ # See FindKDE3.cmake for documentation.
+ #
+@@ -36,9 +36,10 @@
+ 
+           ADD_CUSTOM_COMMAND(OUTPUT ${_kidl}
+           COMMAND ${KDE3_DCOPIDL_EXECUTABLE}
+-          ARGS ${CMAKE_CURRENT_SOURCE_DIR}/${_current_FILE} > ${_kidl}
++          ARGS ${_tmp_FILE} > ${_kidl}
+           DEPENDS ${_tmp_FILE}
+          )
++         
+        ENDIF (NOT HAVE_${_basename}_KIDL_RULE)
+ 
+       IF (NOT HAVE_${_basename}_SKEL_RULE)
+@@ -75,8 +76,8 @@
+ 
+         ADD_CUSTOM_COMMAND(OUTPUT ${_kidl}
+            COMMAND ${KDE3_DCOPIDL_EXECUTABLE}
+-           ARGS ${tmp_FILE} > ${_kidl}
+-           DEPENDS ${tmp_FILE}
++           ARGS ${_tmp_FILE} > ${_kidl}
++           DEPENDS ${_tmp_FILE}
+            )
+ 
+       ENDIF (NOT HAVE_${_basename}_KIDL_RULE)
+@@ -163,15 +164,15 @@
+ 
+       ADD_CUSTOM_COMMAND(OUTPUT ${_header}
+          COMMAND ${QT_UIC_EXECUTABLE}
+-         ARGS  -nounload -o ${_header} ${CMAKE_CURRENT_SOURCE_DIR}/${_current_FILE}
++         ARGS  -L ${KDE3_LIB_DIR}/kde3/plugins/designer -nounload -o ${_header} ${CMAKE_CURRENT_SOURCE_DIR}/${_current_FILE}
+          DEPENDS ${_tmp_FILE}
+       )
+ 
+       ADD_CUSTOM_COMMAND(OUTPUT ${_src}
+          COMMAND ${CMAKE_COMMAND}
+          ARGS
++         -DKDE_UIC_PLUGIN_DIR:FILEPATH=${KDE3_LIB_DIR}/kde3/plugins/designer
+          -DKDE_UIC_EXECUTABLE:FILEPATH=${QT_UIC_EXECUTABLE}
+-         -DKDE_UIC_PLUGIN_DIR:PATH=${KDE3_LIB_DIR}/kde3/plugins/designer
+          -DKDE_UIC_FILE:FILEPATH=${_tmp_FILE}
+          -DKDE_UIC_CPP_FILE:FILEPATH=${_src}
+          -DKDE_UIC_H_FILE:FILEPATH=${_header}
+@@ -237,49 +238,64 @@
+    ENDFOREACH (_current_FILE)
+ ENDMACRO(KDE3_AUTOMOC)
+ 
++# only used internally by KDE3_INSTALL_ICONS
++MACRO (_KDE3_ADD_ICON_INSTALL_RULE _install_SCRIPT _install_PATH _group _orig_NAME _install_NAME)
+ 
+-MACRO(KDE3_INSTALL_ICONS _theme)
+-   ADD_CUSTOM_TARGET(install_icons )
+-   SET_TARGET_PROPERTIES(install_icons PROPERTIES POST_INSTALL_SCRIPT ${CMAKE_CURRENT_BINARY_DIR}/install_icons.cmake )
+-   FILE(WRITE ${CMAKE_CURRENT_BINARY_DIR}/install_icons.cmake "# icon installations rules\n")
+-   FILE(APPEND ${CMAKE_CURRENT_BINARY_DIR}/install_icons.cmake "SET(CMAKE_BACKWARDS_COMPATIBILITY \"2.2\") \n")
+-
+-   FILE(GLOB _icons *.png)
+-   FOREACH(_current_ICON ${_icons} )
+-      STRING(REGEX REPLACE "^.*/[a-zA-Z]+([0-9]+)\\-([a-z]+)\\-(.+\\.png)$" "\\1" _size "${_current_ICON}")
+-      STRING(REGEX REPLACE "^.*/[a-zA-Z]+([0-9]+)\\-([a-z]+)\\-(.+\\.png)$" "\\2" _group "${_current_ICON}")
+-      STRING(REGEX REPLACE "^.*/[a-zA-Z]+([0-9]+)\\-([a-z]+)\\-(.+\\.png)$" "\\3" _name "${_current_ICON}")
+-
++   # if the string doesn't match the pattern, the result is the full string, so all three have the same content
++   IF (NOT ${_group} STREQUAL ${_install_NAME} )
+       SET(_icon_GROUP "actions")
+ 
+-      IF(${_group} STREQUAL "mime")
++      IF (${_group} STREQUAL "mime")
+          SET(_icon_GROUP  "mimetypes")
+-      ENDIF(${_group} STREQUAL "mime")
++      ENDIF (${_group} STREQUAL "mime")
+ 
+-      IF(${_group} STREQUAL "filesys")
++      IF (${_group} STREQUAL "filesys")
+          SET(_icon_GROUP  "filesystems")
+-      ENDIF(${_group} STREQUAL "filesys")
++      ENDIF (${_group} STREQUAL "filesys")
+ 
+-      IF(${_group} STREQUAL "device")
++      IF (${_group} STREQUAL "device")
+          SET(_icon_GROUP  "devices")
+-      ENDIF(${_group} STREQUAL "device")
++      ENDIF (${_group} STREQUAL "device")
+ 
+-      IF(${_group} STREQUAL "app")
++      IF (${_group} STREQUAL "app")
+          SET(_icon_GROUP  "apps")
+-      ENDIF(${_group} STREQUAL "app")
++      ENDIF (${_group} STREQUAL "app")
+ 
+-      IF(${_group} STREQUAL "action")
++      IF (${_group} STREQUAL "action")
+          SET(_icon_GROUP  "actions")
+-      ENDIF(${_group} STREQUAL "action")
++      ENDIF (${_group} STREQUAL "action")
+ 
+ #      message(STATUS "icon: ${_current_ICON} size: ${_size} group: ${_group} name: ${_name}" )
+-      SET(_ICON_INSTALL_NAME ${CMAKE_INSTALL_PREFIX}/share/icons/${_theme}/${_size}x${_size}/${_icon_GROUP}/${_name})
+-      FILE(APPEND ${CMAKE_CURRENT_BINARY_DIR}/install_icons.cmake "message(STATUS \"Installing ${_ICON_INSTALL_NAME}\") \n")
+-      FILE(APPEND ${CMAKE_CURRENT_BINARY_DIR}/install_icons.cmake "CONFIGURE_FILE( ${_current_ICON} ${_ICON_INSTALL_NAME} COPYONLY) \n")
++   INSTALL(FILES ${_orig_NAME} DESTINATION ${_install_PATH}/${_icon_GROUP}/ RENAME ${_install_NAME} )
++   ENDIF (NOT ${_group} STREQUAL ${_install_NAME} )
++
++ENDMACRO (_KDE3_ADD_ICON_INSTALL_RULE)
++
++
++MACRO (KDE3_INSTALL_ICONS _theme )
++   SET(_defaultpath "${CMAKE_INSTALL_PREFIX}/share/icons")
++   # first the png icons
++   FILE(GLOB _icons *.png)
++   FOREACH (_current_ICON ${_icons} )
++      STRING(REGEX REPLACE "^.*/[a-zA-Z]+([0-9]+)\\-([a-z]+)\\-(.+\\.png)$" "\\1" _size  "${_current_ICON}")
++      STRING(REGEX REPLACE "^.*/[a-zA-Z]+([0-9]+)\\-([a-z]+)\\-(.+\\.png)$" "\\2" _group "${_current_ICON}")
++      STRING(REGEX REPLACE "^.*/[a-zA-Z]+([0-9]+)\\-([a-z]+)\\-(.+\\.png)$" "\\3" _name  "${_current_ICON}")
++      _KDE3_ADD_ICON_INSTALL_RULE(${CMAKE_CURRENT_BINARY_DIR}/install_icons.cmake
++         ${_defaultpath}/${_theme}/${_size}x${_size}
++         ${_group} ${_current_ICON} ${_name})
++   ENDFOREACH (_current_ICON)
+ 
++   # and now the svg icons
++   FILE(GLOB _icons *.svgz)
++   FOREACH (_current_ICON ${_icons} )
++      STRING(REGEX REPLACE "^.*/crsc\\-([a-z]+)\\-(.+\\.svgz)$" "\\1" _group "${_current_ICON}")
++      STRING(REGEX REPLACE "^.*/crsc\\-([a-z]+)\\-(.+\\.svgz)$" "\\2" _name "${_current_ICON}")
++      _KDE3_ADD_ICON_INSTALL_RULE(${CMAKE_CURRENT_BINARY_DIR}/install_icons.cmake
++                                 ${_defaultpath}/${_theme}/scalable
++                                 ${_group} ${_current_ICON} ${_name})
+    ENDFOREACH (_current_ICON)
+-ENDMACRO(KDE3_INSTALL_ICONS)
+ 
++ENDMACRO (KDE3_INSTALL_ICONS)
+ 
+ MACRO(KDE3_INSTALL_LIBTOOL_FILE _target)
+    GET_TARGET_PROPERTY(_target_location ${_target} LOCATION)
+diff -uNr boson-all-0.13/code/bodebug/CMakeLists.txt boson-all-0.13-new/code/bodebug/CMakeLists.txt
+--- boson-all-0.13/code/bodebug/CMakeLists.txt	2006-07-03 13:38:04.000000000 -0400
++++ boson-all-0.13-new/code/bodebug/CMakeLists.txt	2006-11-17 16:49:43.000000000 -0500
+@@ -29,5 +29,4 @@
+ kde3_automoc( ${bodebug_sources} )
+ 
+ boson_add_library(bodebug STATIC ${bodebug_sources})
+-
+-
++target_link_libraries(bodebug DCOP)
+diff -uNr boson-all-0.13/code/bogl/CMakeLists.txt boson-all-0.13-new/code/bogl/CMakeLists.txt
+--- boson-all-0.13/code/bogl/CMakeLists.txt	2006-09-23 18:34:43.000000000 -0400
++++ boson-all-0.13-new/code/bogl/CMakeLists.txt	2006-11-17 14:22:51.000000000 -0500
+@@ -3,7 +3,7 @@
+ include_directories(
+ 	${CMAKE_SOURCE_DIR}/bodebug
+ 	${QT_INCLUDE_DIR}
+-	${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}
++	${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${X11_X11_INCLUDE_PATH}
+ )
+ 
+ set(bogl_SRCS
+diff -uNr boson-all-0.13/code/boson/CMakeLists.txt boson-all-0.13-new/code/boson/CMakeLists.txt
+--- boson-all-0.13/code/boson/CMakeLists.txt	2006-09-27 12:15:54.000000000 -0400
++++ boson-all-0.13-new/code/boson/CMakeLists.txt	2006-11-17 17:18:17.000000000 -0500
+@@ -32,7 +32,7 @@
+ 	${CMAKE_CURRENT_SOURCE_DIR}/boufo
+ 	${CMAKE_CURRENT_SOURCE_DIR}/gameengine
+ 	${KDE3_INCLUDE_DIRS}
+-	${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}
++	${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${X11_X11_INCLUDE_PATH}
+ )
+ 
+ 
+diff -uNr boson-all-0.13/code/boson/boufo/CMakeLists.txt boson-all-0.13-new/code/boson/boufo/CMakeLists.txt
+--- boson-all-0.13/code/boson/boufo/CMakeLists.txt	2006-07-03 13:38:04.000000000 -0400
++++ boson-all-0.13-new/code/boson/boufo/CMakeLists.txt	2006-11-17 14:54:13.000000000 -0500
+@@ -9,7 +9,7 @@
+   ${CMAKE_SOURCE_DIR}/bogl
+   ${CMAKE_SOURCE_DIR}/ufo/include
+   ${QT_INCLUDE_DIR}
+-  ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}
++  ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${X11_X11_INCLUDE_PATH}
+ )
+ 
+ 
+diff -uNr boson-all-0.13/code/boson/boufo/designer/CMakeLists.txt boson-all-0.13-new/code/boson/boufo/designer/CMakeLists.txt
+--- boson-all-0.13/code/boson/boufo/designer/CMakeLists.txt	2006-07-03 13:38:04.000000000 -0400
++++ boson-all-0.13-new/code/boson/boufo/designer/CMakeLists.txt	2006-11-17 15:01:18.000000000 -0500
+@@ -6,7 +6,7 @@
+   ${CMAKE_SOURCE_DIR}/ufo/include
+   ${CMAKE_SOURCE_DIR}/boson/boufo
+   ${QT_INCLUDE_DIR}
+-  ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}
++  ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${X11_X11_INCLUDE_PATH}
+ )
+ 
+ 
+diff -uNr boson-all-0.13/code/boson/boufo/test/CMakeLists.txt boson-all-0.13-new/code/boson/boufo/test/CMakeLists.txt
+--- boson-all-0.13/code/boson/boufo/test/CMakeLists.txt	2006-07-03 13:38:04.000000000 -0400
++++ boson-all-0.13-new/code/boson/boufo/test/CMakeLists.txt	2006-11-17 15:05:29.000000000 -0500
+@@ -6,7 +6,7 @@
+   ${CMAKE_SOURCE_DIR}/ufo/include
+   ${CMAKE_SOURCE_DIR}/boson/boufo
+   ${QT_INCLUDE_DIR}
+-  ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}
++  ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${X11_X11_INCLUDE_PATH}
+ )
+ 
+ 
+diff -uNr boson-all-0.13/code/boson/gameengine/script/CMakeLists.txt boson-all-0.13-new/code/boson/gameengine/script/CMakeLists.txt
+--- boson-all-0.13/code/boson/gameengine/script/CMakeLists.txt	2006-07-03 13:38:04.000000000 -0400
++++ boson-all-0.13-new/code/boson/gameengine/script/CMakeLists.txt	2006-11-17 14:39:33.000000000 -0500
+@@ -6,7 +6,7 @@
+ 	${CMAKE_SOURCE_DIR}/bogl
+ 	${QT_INCLUDE_DIR}
+ 	${PYTHON_INCLUDE_PATH}
+-	${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}
++	${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${X11_X11_INCLUDE_PATH}
+ )
+ 
+ set(script_SRCS
+diff -uNr boson-all-0.13/code/boson/gameview/plugin/CMakeLists.txt boson-all-0.13-new/code/boson/gameview/plugin/CMakeLists.txt
+--- boson-all-0.13/code/boson/gameview/plugin/CMakeLists.txt	2006-07-03 13:38:04.000000000 -0400
++++ boson-all-0.13-new/code/boson/gameview/plugin/CMakeLists.txt	2006-11-17 14:51:04.000000000 -0500
+@@ -4,7 +4,7 @@
+ 	${CMAKE_SOURCE_DIR}/bogl
+ 	${CMAKE_CURRENT_SOURCE_DIR}/gameengine
+ 	${QT_INCLUDE_DIR}
+-	${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}
++	${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${X11_X11_INCLUDE_PATH}
+ )
+ 
+ set(gameviewplugin_SRCS
+diff -uNr boson-all-0.13/code/boson/groundrenderer/CMakeLists.txt boson-all-0.13-new/code/boson/groundrenderer/CMakeLists.txt
+--- boson-all-0.13/code/boson/groundrenderer/CMakeLists.txt	2006-07-03 13:38:04.000000000 -0400
++++ boson-all-0.13-new/code/boson/groundrenderer/CMakeLists.txt	2006-11-17 14:58:50.000000000 -0500
+@@ -4,7 +4,7 @@
+ 	${CMAKE_SOURCE_DIR}/bogl
+ 	${CMAKE_CURRENT_SOURCE_DIR}/gameengine
+ 	${QT_INCLUDE_DIR}
+-	${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}
++	${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${X11_X11_INCLUDE_PATH}
+ )
+ 
+ set(groundrenderer_SRCS
+diff -uNr boson-all-0.13/code/boson/info/CMakeLists.txt boson-all-0.13-new/code/boson/info/CMakeLists.txt
+--- boson-all-0.13/code/boson/info/CMakeLists.txt	2006-07-03 13:38:04.000000000 -0400
++++ boson-all-0.13-new/code/boson/info/CMakeLists.txt	2006-11-17 14:48:57.000000000 -0500
+@@ -2,7 +2,7 @@
+ 	${CMAKE_SOURCE_DIR}/bodebug
+ 	${CMAKE_SOURCE_DIR}/bogl
+ 	${QT_INCLUDE_DIR}
+-	${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}
++	${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${X11_X11_INCLUDE_PATH}
+ )
+ 
+ CHECK_INCLUDE_FILE( sys/stat.h HAVE_SYS_STAT_H )
+diff -uNr boson-all-0.13/code/boson/info/boinfo.cpp boson-all-0.13-new/code/boson/info/boinfo.cpp
+--- boson-all-0.13/code/boson/info/boinfo.cpp	2005-07-26 17:53:07.000000000 -0400
++++ boson-all-0.13-new/code/boson/info/boinfo.cpp	2006-11-17 15:49:55.000000000 -0500
+@@ -58,7 +58,7 @@
+ // OS dependant stuff
+ #ifdef __linux__
+ #include "boinfo_linux.cpp"
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__APPLE__)
+ #include "boinfo_freebsd.cpp"
+ #else
+ #include "boinfo_generic.cpp"
+diff -uNr boson-all-0.13/code/boson/info/boinfo_freebsd.cpp boson-all-0.13-new/code/boson/info/boinfo_freebsd.cpp
+--- boson-all-0.13/code/boson/info/boinfo_freebsd.cpp	2005-07-01 15:43:12.000000000 -0400
++++ boson-all-0.13-new/code/boson/info/boinfo_freebsd.cpp	2006-11-17 15:51:00.000000000 -0500
+@@ -18,6 +18,7 @@
+ */
+ 
+ #include "boinfo.h"
++#include "bocurrentinfo.h"
+ 
+ #include "bodebug.h"
+ #include "../../bomemory/bodummymemory.h"
+@@ -39,9 +40,11 @@
+ #include <sys/sysctl.h>
+ #include <sys/user.h>
+ #include <sys/errno.h>
++#ifndef __APPLE__
+ #include <sys/linker.h>
++#endif
+ 
+-
++#warning building freebsd
+ 
+ /* cut-n-paste from boinfo_linux.cpp file */
+ QString readFile(const char* fileName)
+@@ -110,6 +113,7 @@
+         insert(OSVersionString, QString(osrelease));
+     }
+ 
++#ifndef __APPLE__
+     /* See which modules are loaded in the kernel */
+     kldfind(nvModule.latin1());
+     if (errno != ENOENT)
+@@ -117,6 +121,7 @@
+         /* module is loaded */
+         insert(BoInfo::KernelModuleNVidiaString, nvModule);
+     }
++#endif
+ }
+ 
+ float BoInfo::cpuSpeed() const
+@@ -134,6 +139,26 @@
+     }
+ }
+ 
++bool BoCurrentInfo::memoryInUse(QString* vmSize, QString* vmLck, QString* vmRSS,
++                QString* vmData, QString* vmStk, QString* vmExe, QString* vmLib,
++                QString* vmPTE) const
++{
++ Q_UNUSED(vmSize);
++ Q_UNUSED(vmLck);
++ Q_UNUSED(vmRSS);
++ Q_UNUSED(vmData);
++ Q_UNUSED(vmStk);
++ Q_UNUSED(vmExe);
++ Q_UNUSED(vmLib);
++ Q_UNUSED(vmPTE);
++ return false;
++}
++
++bool BoCurrentInfo::cpuTime(unsigned long int* utime, unsigned long int* stime, long int* cutime, long int* cstime) const
++{
++ return false;
++}
++
+ bool BoInfo::haveMtrr() const
+ {
+  return false;
+diff -uNr boson-all-0.13/code/boson/modelrendering/meshrenderer/CMakeLists.txt boson-all-0.13-new/code/boson/modelrendering/meshrenderer/CMakeLists.txt
+--- boson-all-0.13/code/boson/modelrendering/meshrenderer/CMakeLists.txt	2006-07-03 13:38:04.000000000 -0400
++++ boson-all-0.13-new/code/boson/modelrendering/meshrenderer/CMakeLists.txt	2006-11-17 14:57:32.000000000 -0500
+@@ -4,7 +4,7 @@
+ 	${CMAKE_SOURCE_DIR}/bogl
+ 	${CMAKE_CURRENT_SOURCE_DIR}/gameengine
+ 	${QT_INCLUDE_DIR}
+-	${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}
++	${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${X11_X11_INCLUDE_PATH}
+ )
+ 
+ set(meshrenderer_SRCS
+diff -uNr boson-all-0.13/code/boson/programs/CMakeLists.txt boson-all-0.13-new/code/boson/programs/CMakeLists.txt
+--- boson-all-0.13/code/boson/programs/CMakeLists.txt	2006-09-26 13:26:22.000000000 -0400
++++ boson-all-0.13-new/code/boson/programs/CMakeLists.txt	2006-11-17 15:57:50.000000000 -0500
+@@ -8,7 +8,7 @@
+ 	${CMAKE_SOURCE_DIR}/boson/gameengine
+ 	${CMAKE_SOURCE_DIR}/boson/boufo
+ 	${QT_INCLUDE_DIR}
+-	${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}
++	${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${X11_X11_INCLUDE_PATH}
+ )
+ 
+ 
+@@ -32,6 +32,7 @@
+ boson_target_link_libraries(boson
+ 	bosongamelib
+ 	${LIB_BOMEMORY}
++	"kdefx"
+ )
+ 
+ 
+diff -uNr boson-all-0.13/code/boson/sound/bosound/openal/bosonaudioal.cpp boson-all-0.13-new/code/boson/sound/bosound/openal/bosonaudioal.cpp
+--- boson-all-0.13/code/boson/sound/bosound/openal/bosonaudioal.cpp	2005-08-30 09:47:12.000000000 -0400
++++ boson-all-0.13-new/code/boson/sound/bosound/openal/bosonaudioal.cpp	2006-11-17 15:12:38.000000000 -0500
+@@ -28,8 +28,13 @@
+ #include <qfile.h>
+ #include <qfileinfo.h>
+ 
++#ifdef __APPLE__
++#include <OpenAL/al.h>
++#include <OpenAL/alc.h>
++#else
+ #include <AL/al.h>
+ #include <AL/alc.h>
++#endif
+ 
+ bool BosonAudioAL::mCreated = false;
+ 
+diff -uNr boson-all-0.13/code/boson/sound/bosound/openal/bosonaudioal.h boson-all-0.13-new/code/boson/sound/bosound/openal/bosonaudioal.h
+--- boson-all-0.13/code/boson/sound/bosound/openal/bosonaudioal.h	2006-03-26 15:03:47.000000000 -0500
++++ boson-all-0.13-new/code/boson/sound/bosound/openal/bosonaudioal.h	2006-11-17 15:12:38.000000000 -0500
+@@ -21,7 +21,11 @@
+ 
+ #include "../bosonaudio.h"
+ 
++#ifdef __APPLE__
++#include <OpenAL/al.h>
++#else
+ #include <AL/al.h>
++#endif
+ 
+ class QString;
+ class BosonMusic;
+diff -uNr boson-all-0.13/code/boson/sound/bosound/openal/bosonmusic.cpp boson-all-0.13-new/code/boson/sound/bosound/openal/bosonmusic.cpp
+--- boson-all-0.13/code/boson/sound/bosound/openal/bosonmusic.cpp	2004-08-17 11:09:16.000000000 -0400
++++ boson-all-0.13-new/code/boson/sound/bosound/openal/bosonmusic.cpp	2006-11-17 15:12:38.000000000 -0500
+@@ -25,7 +25,11 @@
+ 
+ #include <kapplication.h>
+ 
++#ifdef __APPLE__
++#include <OpenAL/al.h>
++#else
+ #include <AL/al.h>
++#endif
+ 
+ #include <qtimer.h>
+ 
+diff -uNr boson-all-0.13/code/boson/sound/bosound/openal/bosonsound.cpp boson-all-0.13-new/code/boson/sound/bosound/openal/bosonsound.cpp
+--- boson-all-0.13/code/boson/sound/bosound/openal/bosonsound.cpp	2004-08-14 20:14:10.000000000 -0400
++++ boson-all-0.13-new/code/boson/sound/bosound/openal/bosonsound.cpp	2006-11-17 15:12:38.000000000 -0500
+@@ -26,7 +26,11 @@
+ 
+ #include <qintdict.h>
+ 
++#ifdef __APPLE__
++#include <OpenAL/al.h>
++#else
+ #include <AL/al.h>
++#endif
+ 
+ class BoPlayObject
+ {
+diff -uNr boson-all-0.13/code/boson/sound/bosound/openal/bosonsound.h boson-all-0.13-new/code/boson/sound/bosound/openal/bosonsound.h
+--- boson-all-0.13/code/boson/sound/bosound/openal/bosonsound.h	2006-03-26 15:03:47.000000000 -0500
++++ boson-all-0.13-new/code/boson/sound/bosound/openal/bosonsound.h	2006-11-17 15:12:38.000000000 -0500
+@@ -24,7 +24,11 @@
+ #include <qptrlist.h>
+ #include <qmap.h>
+ 
++#ifdef __APPLE__
++#include <OpenAL/al.h>
++#else
+ #include <AL/al.h>
++#endif
+ 
+ class BoPlayObject;
+ class BosonAudioAL;
+diff -uNr boson-all-0.13/code/ufo/src/CMakeLists.txt boson-all-0.13-new/code/ufo/src/CMakeLists.txt
+--- boson-all-0.13/code/ufo/src/CMakeLists.txt	2006-07-03 13:38:04.000000000 -0400
++++ boson-all-0.13-new/code/ufo/src/CMakeLists.txt	2006-11-17 14:11:46.000000000 -0500
+@@ -4,7 +4,7 @@
+ include_directories(
+   ${CMAKE_SOURCE_DIR}/bogl
+   ${CMAKE_SOURCE_DIR}/ufo/include
+-  ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}
++  ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${X11_X11_INCLUDE_PATH}
+ )
+ 
+ 

@@ -1,0 +1,31 @@
+Package: mib2opennms
+Version: 0.3.2
+Revision: 31
+Epoch: 1
+Description: Tool to create OpenNMS trap events
+License: GPL
+Maintainer: Benjamin Reed <mib2opennms@fink.raccoonfink.com>
+
+Depends: libsmi-shlibs (>= 0.4.8-1)
+BuildDepends: libsmi (>= 0.4.8-1)
+
+Source: mirror:sourceforge:opennms/%n-%v.tar.gz
+Source-MD5: d03bd9208e6f753e368644ef0f6ee68c
+
+UseMaxBuildJobs: true
+ConfigureParams: --disable-dependency-tracking
+
+InstallScript: make -j1 install DESTDIR='%d'
+DocFiles: AUTHORS COPYING ChangeLog NEWS README
+
+Homepage: http://www.opennms.org/index.php/Converting_MIBs_Using_mib2opennms
+DescDetail: <<
+OpenNMS has the ability to receive SNMP traps; In order to
+do that, OpenNMS must know how to treat each event (thus
+requires a description for each OID that it receives).
+
+This tool reads a MIB file and creates a relevant OpenNMS
+event xml file, which enables it to receive traps more
+specifically.
+<<
+

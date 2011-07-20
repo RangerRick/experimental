@@ -1,0 +1,40 @@
+Package: log4j-jmx
+Version: 1.2.14
+Revision: 31
+Description: Java logging (JMX APIs)
+Type: java(1.4)
+License: BSD
+Maintainer: Benjamin Reed <log4j-jmx@fink.raccoonfink.com>
+
+Depends: <<
+	log4j (>= %v-1),
+	mx4j,
+	system-java (>= 1.4-1)
+<<
+BuildDepends: <<
+	ant-base,
+	fink (>= 0.30.0-1),
+	mx4j,
+	system-java-dev (>= 1.4-1)
+<<
+Replaces: log4j
+
+Source: mirror:apache:logging/log4j/%v/logging-log4j-%v.tar.gz
+Source-MD5: 7d8d02888b93e6f8d67b8e5f746196ae
+Patch: %n.patch
+
+UseMaxBuildJobs: true
+CompileScript: ant jar -Djavac.source=1.4 -Djavac.target=1.4
+
+JarFiles: dist/lib/*.jar
+DocFiles: INSTALL LICENSE*
+
+Homepage: http://logging.apache.org/log4j/
+DescDetail: <<
+In case of problems with an application, it is helpful to enable logging so
+that the problem can be located.  With log4j it is possible to enable
+logging at runtime without modifying the application binary.
+
+This
+<<
+

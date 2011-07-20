@@ -1,0 +1,40 @@
+Package: libbfd-dev
+Version: 2.18
+Revision: 31
+Description: Binary File Descripto library from GNU binutils
+License: GPL
+Maintainer: Benjamin Reed <libbfd@fink.raccoonfink.com>
+
+BuildDepends: <<
+	libgettext8-dev,
+	libiconv-dev,
+	texinfo
+<<
+BuildDependsOnly: true
+
+Source: mirror:gnu:binutils/binutils-%v.tar.bz2
+Source-MD5: 9d22ee4dafa3a194457caf4706f9cf01
+SourceDirectory: binutils-%v/bfd
+
+UseMaxBuildJobs: true
+CompileScript: <<
+	#!/bin/sh -ev
+	
+	./configure --prefix=%p/lib/libbfd --enable-install-libbfd --mandir=/sw/share/man --infodir=/sw/share/info
+	make
+<<
+
+InstallScript: make -j1 install DESTDIR="%d"
+DocFiles: COPYING ChangeLog MAINTAINERS PORTING README TODO
+
+InfoDocs: bfd.info
+
+Homepage: http://www.gnu.org/software/binutils/
+DescDetail: <<
+BFD is an object file library.  It permits applications to use the
+same routines to process object files regardless of their format.
+
+BFD is used by the GNU debugger, assembler, linker, and the binary
+utilities.
+<<
+

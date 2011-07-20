@@ -1,0 +1,230 @@
+diff -Nurd koffice-2.1.1/kchart/kdchart/kdablibfakes/src/KDABLibFakes.h koffice-2.1.1-new/kchart/kdchart/kdablibfakes/src/KDABLibFakes.h
+--- koffice-2.1.1/kchart/kdchart/kdablibfakes/src/KDABLibFakes.h	2010-01-08 05:42:50.000000000 -0500
++++ koffice-2.1.1-new/kchart/kdchart/kdablibfakes/src/KDABLibFakes.h	2010-02-10 10:34:27.000000000 -0500
+@@ -43,7 +43,7 @@
+ #ifndef KDAB_LIB_FAKES_H
+ #define KDAB_LIB_FAKES_H
+ 
+-#if defined Q_OS_DARWIN
++#if defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
+ /* On Mac OS X, ensure that <cmath> will define std::isnan */
+ #define _GLIBCPP_USE_C99 1
+ #endif
+@@ -72,7 +72,7 @@
+ #include <float.h>
+ #define ISNAN(x ) _isnan(x )
+ #define ISINF(x ) (!(_finite(x ) + _isnan(x ) ) )
+-#elif defined (Q_OS_DARWIN) || defined (Q_OS_CYGWIN)
++#elif defined (Q_OS_DARWIN) || defined(Q_OS_MAC) || defined (Q_OS_CYGWIN)
+ #define ISNAN(x) std::isnan(x)
+ #define ISINF(x) std::isinf(x)
+ #else
+diff -Nurd koffice-2.1.1/krita/image/CMakeLists.txt koffice-2.1.1-new/krita/image/CMakeLists.txt
+--- koffice-2.1.1/krita/image/CMakeLists.txt	2010-01-08 05:41:43.000000000 -0500
++++ koffice-2.1.1-new/krita/image/CMakeLists.txt	2010-02-10 10:35:23.000000000 -0500
+@@ -46,6 +46,7 @@
+                      ${CMAKE_SOURCE_DIR}/krita/image/metadata
+                      ${KOMAIN_INCLUDES}
+                      ${KOBASE_INCLUDES}
++                     ${OPENGL_INCLUDE_DIR}
+ )
+ 
+ set(kritaimage_LIB_SRCS
+diff -Nurd koffice-2.1.1/krita/image/brushengine/kis_paintop_settings.h koffice-2.1.1-new/krita/image/brushengine/kis_paintop_settings.h
+--- koffice-2.1.1/krita/image/brushengine/kis_paintop_settings.h	2010-01-08 05:41:39.000000000 -0500
++++ koffice-2.1.1-new/krita/image/brushengine/kis_paintop_settings.h	2010-02-10 10:41:42.000000000 -0500
+@@ -34,8 +34,12 @@
+ #if defined(_WIN32) || defined(_WIN64)
+ # include <windows.h>
+ #endif
++#ifdef Q_WS_MAC
++#include <OpenGL/gl.h>
++#else
+ #include <GL/gl.h>
+ #endif
++#endif
+ 
+ 
+ class KoPointerEvent;
+diff -Nurd koffice-2.1.1/krita/plugins/tools/defaulttools/kis_tool_ellipse.cc koffice-2.1.1-new/krita/plugins/tools/defaulttools/kis_tool_ellipse.cc
+--- koffice-2.1.1/krita/plugins/tools/defaulttools/kis_tool_ellipse.cc	2010-01-08 05:39:06.000000000 -0500
++++ koffice-2.1.1-new/krita/plugins/tools/defaulttools/kis_tool_ellipse.cc	2010-02-10 11:46:09.000000000 -0500
+@@ -43,8 +43,12 @@
+ #include <config-opengl.h>
+ 
+ #ifdef HAVE_OPENGL
++#ifdef Q_WS_MAC
++#include <OpenGL/gl.h>
++#else
+ #include <GL/gl.h>
+ #endif
++#endif
+ 
+ 
+ 
+diff -Nurd koffice-2.1.1/krita/plugins/tools/defaulttools/kis_tool_gradient.cc koffice-2.1.1-new/krita/plugins/tools/defaulttools/kis_tool_gradient.cc
+--- koffice-2.1.1/krita/plugins/tools/defaulttools/kis_tool_gradient.cc	2010-01-08 05:39:06.000000000 -0500
++++ koffice-2.1.1-new/krita/plugins/tools/defaulttools/kis_tool_gradient.cc	2010-02-10 10:34:27.000000000 -0500
+@@ -23,6 +23,7 @@
+ #include "kis_tool_gradient.h"
+ 
+ #if defined(HAVE_OPENGL) && defined(HAVE_GLEW)
++#define __APPLE_X11_COMPATIBLE 1
+ #include <GL/glew.h>
+ #include <QGLWidget>
+ #endif
+diff -Nurd koffice-2.1.1/krita/plugins/tools/defaulttools/kis_tool_line.cc koffice-2.1.1-new/krita/plugins/tools/defaulttools/kis_tool_line.cc
+--- koffice-2.1.1/krita/plugins/tools/defaulttools/kis_tool_line.cc	2010-01-08 05:39:06.000000000 -0500
++++ koffice-2.1.1-new/krita/plugins/tools/defaulttools/kis_tool_line.cc	2010-02-10 11:31:09.000000000 -0500
+@@ -50,8 +50,12 @@
+ #include <config-opengl.h>
+ 
+ #ifdef HAVE_OPENGL
++#ifdef Q_WS_MAC
++#include <OpenGL/gl.h>
++#else
+ #include <GL/gl.h>
+ #endif
++#endif
+ 
+ #include <KoCanvasController.h>
+ 
+diff -Nurd koffice-2.1.1/krita/plugins/tools/defaulttools/kis_tool_rectangle.cc koffice-2.1.1-new/krita/plugins/tools/defaulttools/kis_tool_rectangle.cc
+--- koffice-2.1.1/krita/plugins/tools/defaulttools/kis_tool_rectangle.cc	2010-01-08 05:39:06.000000000 -0500
++++ koffice-2.1.1-new/krita/plugins/tools/defaulttools/kis_tool_rectangle.cc	2010-02-10 11:41:14.000000000 -0500
+@@ -42,8 +42,12 @@
+ #include <config-opengl.h>
+ 
+ #ifdef HAVE_OPENGL
++#ifdef Q_WS_MAC
++#include <OpenGL/gl.h>
++#else
+ #include <GL/gl.h>
+ #endif
++#endif
+ 
+ #include <KoCanvasController.h>
+ 
+diff -Nurd koffice-2.1.1/krita/plugins/tools/tool_polygon/kis_tool_polygon.cc koffice-2.1.1-new/krita/plugins/tools/tool_polygon/kis_tool_polygon.cc
+--- koffice-2.1.1/krita/plugins/tools/tool_polygon/kis_tool_polygon.cc	2010-01-08 05:38:58.000000000 -0500
++++ koffice-2.1.1-new/krita/plugins/tools/tool_polygon/kis_tool_polygon.cc	2010-02-10 11:52:05.000000000 -0500
+@@ -44,8 +44,12 @@
+ #include <config-opengl.h>
+ 
+ #ifdef HAVE_OPENGL
++#ifdef Q_WS_MAC
++#include <OpenGL/gl.h>
++#else
+ #include <GL/gl.h>
+ #endif
++#endif
+ 
+ 
+ KisToolPolygon::KisToolPolygon(KoCanvasBase *canvas)
+diff -Nurd koffice-2.1.1/krita/plugins/tools/tool_polyline/kis_tool_polyline.cc koffice-2.1.1-new/krita/plugins/tools/tool_polyline/kis_tool_polyline.cc
+--- koffice-2.1.1/krita/plugins/tools/tool_polyline/kis_tool_polyline.cc	2010-01-08 05:38:58.000000000 -0500
++++ koffice-2.1.1-new/krita/plugins/tools/tool_polyline/kis_tool_polyline.cc	2010-02-10 12:03:07.000000000 -0500
+@@ -46,8 +46,12 @@
+ #include <config-opengl.h>
+ 
+ #ifdef HAVE_OPENGL
++#ifdef Q_WS_MAC
++#include <OpenGL/gl.h>
++#else
+ #include <GL/gl.h>
+ #endif
++#endif
+ 
+ #define PREVIEW_LINE_WIDTH 1
+ 
+diff -Nurd koffice-2.1.1/krita/plugins/tools/tool_star/kis_tool_star.cc koffice-2.1.1-new/krita/plugins/tools/tool_star/kis_tool_star.cc
+--- koffice-2.1.1/krita/plugins/tools/tool_star/kis_tool_star.cc	2010-01-08 05:39:06.000000000 -0500
++++ koffice-2.1.1-new/krita/plugins/tools/tool_star/kis_tool_star.cc	2010-02-10 12:14:19.000000000 -0500
+@@ -47,8 +47,12 @@
+ #include <config-opengl.h>
+ 
+ #ifdef HAVE_OPENGL
++#ifdef Q_WS_MAC
++#include <OpenGL/gl.h>
++#else
+ #include <GL/gl.h>
+ #endif
++#endif
+ 
+ 
+ KisToolStar::KisToolStar(KoCanvasBase * canvas)
+diff -Nurd koffice-2.1.1/krita/ui/canvas/kis_canvas2.h koffice-2.1.1-new/krita/ui/canvas/kis_canvas2.h
+--- koffice-2.1.1/krita/ui/canvas/kis_canvas2.h	2010-01-08 05:42:26.000000000 -0500
++++ koffice-2.1.1-new/krita/ui/canvas/kis_canvas2.h	2010-02-10 10:34:27.000000000 -0500
+@@ -19,6 +19,8 @@
+ #ifndef KIS_CANVAS_H
+ #define KIS_CANVAS_H
+ 
++#define __APPLE_X11_COMPATIBLE 1
++
+ #include <QObject>
+ #include <QWidget>
+ #include <QSize>
+diff -Nurd koffice-2.1.1/krita/ui/kis_3d_object_model.h koffice-2.1.1-new/krita/ui/kis_3d_object_model.h
+--- koffice-2.1.1/krita/ui/kis_3d_object_model.h	2010-01-08 05:42:41.000000000 -0500
++++ koffice-2.1.1-new/krita/ui/kis_3d_object_model.h	2010-02-10 11:03:10.000000000 -0500
+@@ -34,8 +34,12 @@
+ #if defined(_WIN32) || defined(_WIN64)
+ # include <windows.h>
+ #endif
++#ifdef Q_WS_MAC
++#include <OpenGL/gl.h>
++#else
+ #include <GL/gl.h>
+ #endif
++#endif
+ 
+ struct Material {
+     KisVector3D Ka; // ambient
+diff -Nurd koffice-2.1.1/krita/ui/opengl/kis_opengl.h koffice-2.1.1-new/krita/ui/opengl/kis_opengl.h
+--- koffice-2.1.1/krita/ui/opengl/kis_opengl.h	2010-01-08 05:42:21.000000000 -0500
++++ koffice-2.1.1-new/krita/ui/opengl/kis_opengl.h	2010-02-10 10:34:27.000000000 -0500
+@@ -24,6 +24,7 @@
+ 
+ #ifdef HAVE_OPENGL
+ 
++#define __APPLE_X11_COMPATIBLE 1
+ #include "krita_export.h"
+ 
+ class QGLWidget;
+diff -Nurd koffice-2.1.1/krita/ui/tool/kis_tool_freehand.cc koffice-2.1.1-new/krita/ui/tool/kis_tool_freehand.cc
+--- koffice-2.1.1/krita/ui/tool/kis_tool_freehand.cc	2010-01-08 05:42:34.000000000 -0500
++++ koffice-2.1.1-new/krita/ui/tool/kis_tool_freehand.cc	2010-02-10 11:04:33.000000000 -0500
+@@ -72,9 +72,14 @@
+ #include <config-opengl.h>
+ 
+ #ifdef HAVE_OPENGL
++#ifdef Q_WS_MAC
++#include <OpenGL/gl.h>
++#include <OpenGL/glu.h>
++#else
+ #include <GL/gl.h>
+ #include <GL/glu.h>
+ #endif
++#endif
+ 
+ 
+ // #define ENABLE_RECORDING
+diff -Nurd koffice-2.1.1/krita/ui/tool/kis_tool_freehand.h koffice-2.1.1-new/krita/ui/tool/kis_tool_freehand.h
+--- koffice-2.1.1/krita/ui/tool/kis_tool_freehand.h	2010-01-08 05:42:34.000000000 -0500
++++ koffice-2.1.1-new/krita/ui/tool/kis_tool_freehand.h	2010-02-10 11:00:47.000000000 -0500
+@@ -32,9 +32,14 @@
+ #if defined(_WIN32) || defined(_WIN64)
+ # include <windows.h>
+ #endif
++#ifdef Q_WS_MAC
++#include <OpenGL/gl.h>
++#include <OpenGL/glu.h>
++#else
+ #include <GL/gl.h>
+ #include <GL/glu.h>
+ #endif
++#endif
+ 
+ 
+ class KoPointerEvent;

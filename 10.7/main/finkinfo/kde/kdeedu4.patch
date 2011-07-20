@@ -1,0 +1,96 @@
+diff -Nurd kdeedu-4.5.2/cantor/src/CMakeLists.txt kdeedu-4.5.2-new/cantor/src/CMakeLists.txt
+--- kdeedu-4.5.2/cantor/src/CMakeLists.txt	2010-06-08 06:10:25.000000000 -0400
++++ kdeedu-4.5.2-new/cantor/src/CMakeLists.txt	2010-10-13 14:29:33.000000000 -0400
+@@ -3,7 +3,10 @@
+ #########################################################################
+ add_subdirectory(lib)
+ 
+-include_directories( lib ${CMAKE_CURRENT_BINARY_DIR}/lib)
++set(GENERIC_LIB_VERSION "0.0.1")
++set(GENERIC_LIB_SOVERSION "0")
++
++include_directories( lib ${CMAKE_CURRENT_BINARY_DIR}/lib ${LIBATTICA_INCLUDE_DIR} )
+ if(LIBSPECTRE_FOUND)
+    include_directories(${LIBSPECTRE_INCLUDE_DIR})
+ endif(LIBSPECTRE_FOUND)
+@@ -16,6 +19,8 @@
+ target_link_libraries( cantor_config ${KDE4_KDEUI_LIBS} ${KDE4_KPARTS_LIBS} ${KDE4_KNEWSTUFF3_LIBS} )
+ install( TARGETS cantor_config  ${INSTALL_TARGETS_DEFAULT_ARGS} )
+ 
++set_target_properties( cantor_config PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
++
+ set(cantor_SRCS
+    main.cpp
+    cantor.cpp
+diff -Nurd kdeedu-4.5.2/cantor/src/lib/CMakeLists.txt kdeedu-4.5.2-new/cantor/src/lib/CMakeLists.txt
+--- kdeedu-4.5.2/cantor/src/lib/CMakeLists.txt	2010-06-08 06:10:24.000000000 -0400
++++ kdeedu-4.5.2-new/cantor/src/lib/CMakeLists.txt	2010-10-13 14:29:33.000000000 -0400
+@@ -1,5 +1,5 @@
+ set(GENERIC_LIB_VERSION "0.0.2")
+-set(GENERIC_LIB_SOVERSION "1")
++set(GENERIC_LIB_SOVERSION "0")
+ 
+ set( cantor_LIB_SRCS
+   session.cpp
+@@ -26,6 +26,8 @@
+      backend_macros.h
+ )
+ 
++include_directories( ${LIBATTICA_INCLUDE_DIR} )
++
+ kde4_add_kcfg_files(cantor_LIB_SRCS settings.kcfgc)
+ install(FILES cantor_libs.kcfg DESTINATION ${KCFG_INSTALL_DIR})
+ 
+diff -Nurd kdeedu-4.5.2/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt kdeedu-4.5.2-new/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt
+--- kdeedu-4.5.2/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt	2010-09-30 17:21:44.000000000 -0400
++++ kdeedu-4.5.2-new/marble/src/plugins/positionprovider/gpsd/CMakeLists.txt	2010-10-13 14:29:33.000000000 -0400
+@@ -5,6 +5,7 @@
+  ${CMAKE_BINARY_DIR}/src/plugins/positionprovider/gpsd
+  ${QT_INCLUDE_DIR}
+  ${LIBGPS_INCLUDE_DIR}
++ ${libgps_INCLUDEDIR}
+ )
+ 
+ include(${QT_USE_FILE})
+@@ -15,6 +16,6 @@
+  GpsdThread.cpp
+ )
+ 
+-set( GpsdPositionProviderPlugin_LIBS ${LIBGPS_LIBRARIES} )
++set( GpsdPositionProviderPlugin_LIBS ${LIBGPS_LIBRARIES} ${libgps_LDFLAGS} )
+ 
+ marble_add_plugin( GpsdPositionProviderPlugin ${gpsd_SRCS} )
+diff -Nurd kdeedu-4.5.2/marble/src/plugins/positionprovider/gpsd/GpsdPositionProviderPlugin.cpp kdeedu-4.5.2-new/marble/src/plugins/positionprovider/gpsd/GpsdPositionProviderPlugin.cpp
+--- kdeedu-4.5.2/marble/src/plugins/positionprovider/gpsd/GpsdPositionProviderPlugin.cpp	2010-09-30 17:21:44.000000000 -0400
++++ kdeedu-4.5.2-new/marble/src/plugins/positionprovider/gpsd/GpsdPositionProviderPlugin.cpp	2010-10-13 14:33:19.000000000 -0400
+@@ -13,6 +13,7 @@
+ #include "GpsdThread.h"
+ #include "MarbleDebug.h"
+ 
++using namespace std;
+ using namespace Marble;
+ 
+ QString GpsdPositionProviderPlugin::name() const
+diff -Nurd kdeedu-4.5.2/step/step/CMakeLists.txt kdeedu-4.5.2-new/step/step/CMakeLists.txt
+--- kdeedu-4.5.2/step/step/CMakeLists.txt	2010-06-08 06:11:49.000000000 -0400
++++ kdeedu-4.5.2-new/step/step/CMakeLists.txt	2010-10-13 14:29:33.000000000 -0400
+@@ -41,6 +41,7 @@
+ 
+ if(STEPCORE_WITH_GSL)
+     add_definitions(-DSTEPCORE_WITH_GSL)
++    include_directories(${GSL_INCLUDE_DIR} ${GSL_INCLUDE_DIR}/..)
+ endif(STEPCORE_WITH_GSL)
+ 
+ if(STEP_WITH_QALCULATE)
+diff -Nurd kdeedu-4.5.2/step/stepcore/CMakeLists.txt kdeedu-4.5.2-new/step/stepcore/CMakeLists.txt
+--- kdeedu-4.5.2/step/stepcore/CMakeLists.txt	2010-06-08 06:11:49.000000000 -0400
++++ kdeedu-4.5.2-new/step/stepcore/CMakeLists.txt	2010-10-13 14:29:33.000000000 -0400
+@@ -23,7 +23,7 @@
+ 
+ if(STEPCORE_WITH_GSL)
+     add_definitions(-DSTEPCORE_WITH_GSL)
+-    include_directories(${GSL_INCLUDE_DIR})
++    include_directories(${GSL_INCLUDE_DIR} ${GSL_INCLUDE_DIR}/..)
+     set(stepcore_use_LIBS ${stepcore_use_LIBS} ${GSL_LIBRARIES})
+     set(stepcore_SRCS ${stepcore_SRCS} gslsolver.cc)
+ endif(STEPCORE_WITH_GSL)

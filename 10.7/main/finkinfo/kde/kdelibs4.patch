@@ -1,0 +1,1325 @@
+diff --git a/cmake/modules/FindFAM.cmake b/cmake/modules/FindFAM.cmake
+index 7a598fd..e26d56a 100644
+--- a/cmake/modules/FindFAM.cmake
++++ b/cmake/modules/FindFAM.cmake
+@@ -10,6 +10,7 @@
+ # Redistribution and use is allowed according to the terms of the BSD license.
+ # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+ 
++IF (NOT APPLE)
+ 
+ FIND_PATH(FAM_INCLUDE_DIR fam.h)
+ 
+@@ -20,3 +21,4 @@ FIND_PACKAGE_HANDLE_STANDARD_ARGS(FAM DEFAULT_MSG FAM_INCLUDE_DIR FAM_LIBRARIES
+ 
+ MARK_AS_ADVANCED(FAM_INCLUDE_DIR FAM_LIBRARIES)
+ 
++ENDIF (NOT APPLE)
+diff --git a/cmake/modules/FindSoprano.cmake b/cmake/modules/FindSoprano.cmake
+index 662f1b7..eed4289 100644
+--- a/cmake/modules/FindSoprano.cmake
++++ b/cmake/modules/FindSoprano.cmake
+@@ -46,7 +46,7 @@
+ include(FindLibraryWithDebug)
+ 
+ find_program(SOPRANO_SOPRANOCMD_EXECUTABLE
+-  NAMES sopranocmd 
++  NAMES sopranocmd-@KDETYPE@
+   HINTS
+   ${BIN_INSTALL_DIR}
+   ${KDE4_BIN_INSTALL_DIR}
+@@ -54,7 +54,7 @@ find_program(SOPRANO_SOPRANOCMD_EXECUTABLE
+ 
+ if(NOT WINCE)
+ find_program(SOPRANO_ONTO2VOCABULARYCLASS_EXECUTABLE
+-  NAMES onto2vocabularyclass
++  NAMES onto2vocabularyclass-@KDETYPE@
+   HINTS
+   ${BIN_INSTALL_DIR}
+   ${KDE4_BIN_INSTALL_DIR}
+diff --git a/config.h.cmake b/config.h.cmake
+index e659f7d..0b7ec01 100644
+--- a/config.h.cmake
++++ b/config.h.cmake
+@@ -92,7 +92,9 @@
+ #cmakedefine   HAVE_GETMNTINFO 1
+ #cmakedefine   HAVE_GETPAGESIZE 1
+ #cmakedefine   HAVE_INITGROUPS 1
++#ifndef __APPLE__
+ #cmakedefine   HAVE_FDATASYNC 1
++#endif
+ #cmakedefine   HAVE_MADVISE 1
+ #cmakedefine   HAVE_MMAP 1
+ #cmakedefine   HAVE_MKSTEMPS 1
+diff --git a/kde4-check-sycoca.sh b/kde4-check-sycoca.sh
+new file mode 100644
+index 0000000..ed54543
+--- /dev/null
++++ b/kde4-check-sycoca.sh
+@@ -0,0 +1,18 @@
++#!/bin/sh
++
++if [ `id -u` -eq 0 ] || [ `id -un | grep -c -E '^fink-bld$'` -gt 0 ]; then
++	# skip root and fink build account
++	exit 0
++fi
++
++FULLPREFIX="@KDEPREFIX@/opt/kde4/@KDETYPE@"
++GLOBAL_SYCOCA_DIR="$FULLPREFIX/var/fink"
++LOCAL_SYCOCA_DIR="$HOME/.cache/kde4-@KDETYPE@-fink"
++TOUCHFILE="kbuildsycoca-updated"
++
++mkdir -p "$LOCAL_SYCOCA_DIR"
++
++if [ ! -e "$LOCAL_SYCOCA_DIR/$TOUCHFILE" ] || [ "$GLOBAL_SYCOCA_DIR/$TOUCHFILE" -nt "$LOCAL_SYCOCA_DIR/$TOUCHFILE" ];then
++	echo "* you've installed KDE4 (@KDETYPE@) applications since last time you ran init -- updating desktop cache"
++	("$FULLPREFIX/bin/kbuildsycoca4" >"$LOCAL_SYCOCA_DIR/kbuildsycoca4.log" 2>&1 && touch "$LOCAL_SYCOCA_DIR/$TOUCHFILE") &
++fi
+diff --git a/kde4-postinst.sh b/kde4-postinst.sh
+new file mode 100644
+index 0000000..30ac128
+--- /dev/null
++++ b/kde4-postinst.sh
+@@ -0,0 +1,81 @@
++#!/bin/sh
++
++if [ `id -u` -ne 0 ]; then
++	echo "you must run this as root!"
++	exit 1
++fi
++
++PREFIX="@KDEPREFIX@"
++TYPE="@KDETYPE@"
++FULLPREFIX="@KDEPREFIX@/opt/kde4/@KDETYPE@"
++KDE4RCFILE="$FULLPREFIX/etc/kde4rc"
++TEMPPATH="/tmp/kb$$"
++LOGFILE="$TEMPPATH/kde4-postinst.log"
++
++mkdir -p "$TEMPPATH"
++cd "$TEMPPATH"
++
++echo >$LOGFILE
++
++echo "== figuring out KDE directories from $KDE4RCFILE ==" >>$LOGFILE
++PREFIXES=`grep '^prefixes=' "$KDE4RCFILE" | cut -d= -f2-`
++orig_IFS=$IFS
++IFS=","
++for PRE in $PREFIXES; do
++	export _KDEDIRS="$_KDEDIRS:$PRE"
++	export _XDG_DATA_DIRS="$_XDG_DATA_DIRS:$PRE/share"
++	export _XDG_CONFIG_DIRS="$_XDG_CONFIG_DIRS:$PRE/etc/xdg"
++done
++IFS=$orig_IFS
++
++KDEDIRS=`echo $_KDEDIRS:$KDEDIRS | sed -e 's,^:,,' -e 's,:$,,'`
++XDG_DATA_DIRS=`echo $_XDG_DATA_DIRS:$XDG_DATA_DIRS | sed -e 's,^:,,' -e 's,:$,,'`
++XDG_CONFIG_DIRS=`echo $_XDG_CONFIG_DIRS:$XDG_CONFIG_DIRS | sed -e 's,^:,,' -e 's,:$,,'`
++export KDEDIRS XDG_DATA_DIRS XDG_CONFIG_DIRS
++
++echo "KDEDIRS=$KDEDIRS" >>$LOGFILE
++echo "XDG_DATA_DIRS=$XDG_DATA_DIRS" >>$LOGFILE
++echo "XDG_CONFIG_DIRS=$XDG_CONFIG_DIRS" >>$LOGFILE
++
++echo "== marking sycoca database as dirty ==" >>$LOGFILE 2>&1
++mkdir -p "$FULLPREFIX/var/fink"
++touch "$FULLPREFIX/var/fink/kbuildsycoca-updated"
++
++echo "== running update-desktop-database ==" >>$LOGFILE 2>&1
++"$PREFIX/bin/update-desktop-database" --verbose `echo $KDEDIRS: | sed -e 's,:,/share/applications ,g'` >>$LOGFILE 2>&1
++
++IFS=":"
++for DIR in $KDEDIRS; do
++	if [ -d "$DIR/share/mime" ]; then
++		echo "== running update-mime-database on $DIR ==" >>$LOGFILE 2>&1
++		"$PREFIX/bin/update-mime-database" -V "$DIR/share/mime" >>$LOGFILE 2>&1
++	fi
++done
++IFS=$orig_IFS
++
++[ -z "$DO_SYMLINK_UPDATE" ] && export DO_SYMLINK_UPDATE=1
++
++if [ $DO_SYMLINK_UPDATE -eq 1 ]; then
++	mkdir -p "$PREFIX/share/dbus-1/interfaces"
++
++	IFS=":"
++	for DIR in $KDEDIRS; do
++		if [ -d "$DIR/share/dbus-1/interfaces" ] && [ "$DIR" != "$PREFIX" ]; then
++			cd "$DIR/share/dbus-1/interfaces"
++			for file in *.xml; do
++				ln -sf "$DIR/share/dbus-1/interfaces/$file" "$PREFIX/share/dbus-1/interfaces/$file"
++			done
++		fi
++	done
++	IFS=$orig_IFS
++	for file in "$PREFIX/share/dbus-1/interfaces"/*.xml; do
++		if [ ! -f "$file" ]; then
++			rm -rf "$file"
++		fi
++	done
++fi
++
++echo ""
++echo "== KDE4 Applications Have Been Updated =="
++echo "You should start a new shell, or run $FULLPREFIX/bin/kde4-check-sycoca.sh to update the KDE4 application database."
++echo ""
+diff --git a/kdecore/CMakeLists.txt b/kdecore/CMakeLists.txt
+index f78c115..a2320e8 100644
+--- a/kdecore/CMakeLists.txt
++++ b/kdecore/CMakeLists.txt
+@@ -89,7 +89,7 @@ if (APPLE)
+       localization/klocale_mac.cpp
+    )
+ 
+-   set(kdecore_OPTIONAL_LIBS ${kdecore_OPTIONAL_LIBS} ${CARBON_LIBRARY})
++   set(kdecore_OPTIONAL_LIBS ${kdecore_OPTIONAL_LIBS} "-framework CoreFoundation")
+ endif (APPLE)
+ 
+ if (WIN32)
+@@ -402,7 +402,7 @@ if(WIN32)
+   set(kdecore_LINK_INTERFACE_LIBRARIES  ${QT_QTDBUS_LIBRARY} ${QT_QTCORE_LIBRARY} ${KDEWIN_LIBRARIES})
+ else(WIN32)
+   if(APPLE)
+-    set(kdecore_LINK_INTERFACE_LIBRARIES ${QT_QTDBUS_LIBRARY} ${QT_QTCORE_LIBRARY} ${CARBON_LIBRARY})
++    set(kdecore_LINK_INTERFACE_LIBRARIES ${QT_QTDBUS_LIBRARY} ${QT_QTCORE_LIBRARY} "-framework CoreFoundation")
+   else(APPLE)
+     set(kdecore_LINK_INTERFACE_LIBRARIES ${QT_QTDBUS_LIBRARY} ${QT_QTCORE_LIBRARY} )
+   endif(APPLE)
+diff --git a/kdecore/config/kconfig.cpp b/kdecore/config/kconfig.cpp
+index 35eb7a3..8b2aa92 100644
+--- a/kdecore/config/kconfig.cpp
++++ b/kdecore/config/kconfig.cpp
+@@ -70,7 +70,7 @@ KConfigPrivate::KConfigPrivate(const KComponentData &componentData_, KConfig::Op
+ #ifdef Q_WS_WIN
+             QFile::decodeName( qgetenv("WINDIR") + "/kde4rc" );
+ #else
+-            QLatin1String("/etc/kde4rc");
++            QLatin1String("@KDEPREFIX@/lib/@KDETYPE@/etc/kde4rc");
+ #endif
+         if (!KStandardDirs::checkAccess(etc_kderc, R_OK)) {
+             etc_kderc.clear();
+diff --git a/kdecore/kernel/kkernel_mac.cpp b/kdecore/kernel/kkernel_mac.cpp
+index 9753651..08cfca1 100644
+--- a/kdecore/kernel/kkernel_mac.cpp
++++ b/kdecore/kernel/kkernel_mac.cpp
+@@ -21,7 +21,7 @@
+ 
+ #include <config.h>
+ 
+-#ifdef Q_OS_MACX
++#if defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
+ 
+ #include <unistd.h>
+ #include <string.h>
+@@ -142,7 +142,7 @@ void mac_initialize_dbus()
+ 		return;
+ 	}
+ 
+-	dbusVar = QFile::decodeName(qgetenv("DBUS_LAUNCHD_SESSION_BUS_SOCKET"));
++	dbusVar = QFile::decodeName(qgetenv("DBUS_FINK_SESSION_BUS_SOCKET"));
+ 	if (mac_set_dbus_address(dbusVar)) {
+ 		dbus_initialized = true;
+ 		return;
+@@ -164,7 +164,7 @@ void mac_initialize_dbus()
+                 QProcess qp;
+                 qp.setTextModeEnabled(true);
+ 
+-		qp.start(externalProc, QStringList() << QLatin1String("getenv") << QLatin1String("DBUS_LAUNCHD_SESSION_BUS_SOCKET"));
++		qp.start(externalProc, QStringList() << QLatin1String("getenv") << QLatin1String("DBUS_FINK_SESSION_BUS_SOCKET"));
+                 if (!qp.waitForFinished(timeout)) {
+                     kDebug() << "error running" << externalProc << qp.errorString();
+                     return;
+diff --git a/kdecore/kernel/kkernel_mac.h b/kdecore/kernel/kkernel_mac.h
+index ef594c0..7061760 100644
+--- a/kdecore/kernel/kkernel_mac.h
++++ b/kdecore/kernel/kkernel_mac.h
+@@ -19,9 +19,9 @@
+ #ifndef KKERNEL_MAC_H
+ #define KKERNEL_MAC_H
+ 
+-#include <QtCore/qglobal.h> // defines Q_OS_MACX
++#include <QtCore/qglobal.h> // defines Q_OS_MAC
+ 
+-#ifdef Q_OS_MACX
++#if defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
+ 
+ #include <kdecore_export.h>
+ #include <QtCore/QString>
+@@ -57,5 +57,5 @@ KDECORE_EXPORT void mac_initialize_dbus();
+   */
+ KDECORE_EXPORT QString mac_app_filename();
+ 
+-#endif  // Q_OS_MACX
++#endif  // Q_OS_DARWIN || Q_OS_MAC
+ #endif  // KKERNEL_MAC_H
+diff --git a/kdecore/localization/klocale.cpp b/kdecore/localization/klocale.cpp
+index cb75e68..b96291f 100644
+--- a/kdecore/localization/klocale.cpp
++++ b/kdecore/localization/klocale.cpp
+@@ -25,7 +25,7 @@
+ #include "klocale.h"
+ #if defined Q_WS_WIN
+     #include "klocale_win_p.h"
+-#elif defined Q_OS_MAC
++#elif defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
+     #include "klocale_mac_p.h"
+ #else
+     #include "klocale_unix_p.h"
+@@ -48,7 +48,7 @@
+ KLocale::KLocale(const QString &catalog, KSharedConfig::Ptr config)
+ #if defined Q_WS_WIN
+         : d(new KLocaleWindowsPrivate(this, catalog, config))
+-#elif defined Q_OS_MAC
++#elif defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
+         : d(new KLocaleMacPrivate(this, catalog, config))
+ #else
+         : d(new KLocaleUnixPrivate(this, catalog, config))
+@@ -59,7 +59,7 @@ KLocale::KLocale(const QString &catalog, KSharedConfig::Ptr config)
+ KLocale::KLocale(const QString& catalog, const QString &language, const QString &country, KConfig *config)
+ #if defined Q_WS_WIN
+         : d(new KLocaleWindowsPrivate(this, catalog, language, country, config))
+-#elif defined Q_OS_MAC
++#elif defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
+         : d(new KLocaleMacPrivate(this, catalog, language, country, config))
+ #else
+         : d(new KLocaleUnixPrivate(this, catalog, language, country, config))
+diff --git a/kdecore/tests/kconfigtest.cpp b/kdecore/tests/kconfigtest.cpp
+index 1668b79..8031c4d 100644
+--- a/kdecore/tests/kconfigtest.cpp
++++ b/kdecore/tests/kconfigtest.cpp
+@@ -458,7 +458,7 @@ void KConfigTest::testPath()
+   QCOMPARE(group.readPathEntry("homePath2", QString()), QString("file://") + HOMEPATH );
+   QVERIFY(group.hasKey("URL"));
+   QCOMPARE(group.readEntry("URL", QString()), QString("file://") + HOMEPATH );
+-#if !defined(Q_OS_WIN32) && !defined(Q_OS_MAC)
++#if !defined(Q_OS_WIN32) && !defined(Q_OS_DARWIN) && !defined(Q_OS_MAC)
+   // I don't know if this will work on windows
+   // This test hangs on OS X
+   QVERIFY(group.hasKey("hostname"));
+diff --git a/kdeui/CMakeLists.txt b/kdeui/CMakeLists.txt
+index 337653b..6eea7a4 100644
+--- a/kdeui/CMakeLists.txt
++++ b/kdeui/CMakeLists.txt
+@@ -207,7 +207,6 @@ set(kdeui_LIB_SRCS
+  util/kpixmapcache.cpp
+  util/kpixmapprovider.cpp
+  util/kstandardguiitem.cpp
+- util/kwallet.cpp
+  util/kwordwrap.cpp
+  util/kxerrorhandler.cpp
+  util/kxmessages.cpp
+@@ -289,6 +288,17 @@ set(kdeui_LIB_SRCS
+ )
+ endif(NOT KDE_NO_DEPRECATED)
+ 
++option(MAC_USE_OSXKEYCHAIN "On OS X, use the keychain as backend for kwallet, instead of kwalletd.")
++
++if (Q_WS_MAC AND MAC_USE_OSXKEYCHAIN)
++    FIND_LIBRARY(SECURITY_LIBRARY Security)
++    set(kdeui_LIB_SRCS ${kdeui_LIB_SRCS} util/kwallet_mac.cpp)
++else(Q_WS_MAC AND MAC_USE_OSXKEYCHAIN)
++     set(kdeui_LIB_SRCS ${kdeui_LIB_SRCS} util/kwallet.cpp)
++else(Q_WS_MAC AND MAC_USE_OSXKEYCHAIN)
++  set(kdeui_LIB_SRCS ${kdeui_LIB_SRCS} util/kwallet.cpp)
++endif(Q_WS_MAC AND MAC_USE_OSXKEYCHAIN)
++
+ if(NOT WINCE)
+ set(kdeui_LIB_SRCS
+  ${kdeui_LIB_SRCS}
+@@ -409,6 +419,9 @@ endif(MINGW)
+ 
+ if(Q_WS_MAC)
+    target_link_libraries(kdeui ${CARBON_LIBRARY})
++   if (MAC_USE_OSXKEYCHAIN)
++     target_link_libraries(kdeui ${SECURITY_LIBRARY})
++   endif (MAC_USE_OSXKEYCHAIN)
+ endif(Q_WS_MAC)
+ 
+ if(X11_XTest_FOUND)
+diff --git a/kdeui/kernel/kapplication.cpp b/kdeui/kernel/kapplication.cpp
+index a58ff55..c68b698 100644
+--- a/kdeui/kernel/kapplication.cpp
++++ b/kdeui/kernel/kapplication.cpp
+@@ -97,6 +97,9 @@
+ #include <Carbon/Carbon.h>
+ #include <QImage>
+ #include <ksystemtrayicon.h>
++#endif
++
++#if defined(Q_OS_DARWIN) || defined (Q_OS_MAC)
+ #include <kkernel_mac.h>
+ #endif
+ 
+@@ -460,7 +463,7 @@ void KApplicationPrivate::init(bool GUIenabled)
+      ::exit(127);
+   }
+ 
+-#ifdef Q_WS_MAC
++#if defined(Q_OS_DARWIN) || defined (Q_OS_MAC)
+   mac_initialize_dbus();
+ #endif
+ 
+diff --git a/kdeui/util/kpassivepopup.cpp b/kdeui/util/kpassivepopup.cpp
+index 7e5637c..0fd1532 100644
+--- a/kdeui/util/kpassivepopup.cpp
++++ b/kdeui/util/kpassivepopup.cpp
+@@ -49,7 +49,11 @@
+ 
+ static const int DEFAULT_POPUP_TYPE = KPassivePopup::Boxed;
+ static const int DEFAULT_POPUP_TIME = 6*1000;
++#ifdef __APPLE__
++static const Qt::WindowFlags POPUP_FLAGS = Qt::Dialog | Qt::X11BypassWindowManagerHint | Qt::WindowStaysOnTopHint | Qt::FramelessWindowHint;
++#else
+ static const Qt::WindowFlags POPUP_FLAGS = Qt::Tool | Qt::X11BypassWindowManagerHint | Qt::WindowStaysOnTopHint | Qt::FramelessWindowHint;
++#endif
+ 
+ class KPassivePopup::Private
+ {
+@@ -127,6 +131,10 @@ void KPassivePopup::init( WId window )
+     if( d->popupStyle == Boxed )
+     {
+         setFrameStyle( QFrame::Box| QFrame::Plain );
++#ifdef Q_OS_MAC
++        setAttribute( Qt::WA_ShowWithoutActivating );
++        setAttribute( Qt::WA_MacAlwaysShowToolWindow );
++#endif
+         setLineWidth( 2 );
+     }
+     else if( d->popupStyle == Balloon )
+diff --git a/kdeui/util/kwallet.cpp b/kdeui/util/kwallet.cpp
+index ccff197..cfabcf8 100644
+--- a/kdeui/util/kwallet.cpp
++++ b/kdeui/util/kwallet.cpp
+@@ -838,6 +838,10 @@ void Wallet::emitWalletAsyncOpenError() {
+     emit walletOpened(false);
+ }
+ 
++void Wallet::emitWalletOpened() {
++  emit walletOpened(true);
++}
++
+ bool Wallet::folderDoesNotExist(const QString& wallet, const QString& folder)
+ {
+     QDBusReply<bool> r = walletLauncher->getInterface().folderDoesNotExist(wallet, folder);
+diff --git a/kdeui/util/kwallet.h b/kdeui/util/kwallet.h
+index a3299f4..d33ed1c 100644
+--- a/kdeui/util/kwallet.h
++++ b/kdeui/util/kwallet.h
+@@ -497,6 +497,12 @@ class KDEUI_EXPORT Wallet : public QObject
+ 		 */
+ 		void emitWalletAsyncOpenError();
+ 
++		/**
++		 *  @internal
++		 *  Emits wallet opening success.
++		 */
++		void emitWalletOpened();
++
+ 	private:
+ 		class WalletPrivate;
+ 		WalletPrivate* const d;
+diff --git a/kdeui/util/kwallet_mac.cpp b/kdeui/util/kwallet_mac.cpp
+new file mode 100644
+index 0000000..ab93af5
+--- /dev/null
++++ b/kdeui/util/kwallet_mac.cpp
+@@ -0,0 +1,688 @@
++/* This file is part of the KDE project
++ *
++ * Copyright (C) 2002-2004 George Staikos <staikos@kde.org>
++ * Copyright (C) 2008 Michael Leupold <lemma@confuego.org>
++ * Copyright (C) 2010 Frank Osterfeld <osterfeld@kde.org>
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Library General Public
++ * License as published by the Free Software Foundation; either
++ * version 2 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Library General Public License for more details.
++ *
++ * You should have received a copy of the GNU Library General Public License
++ * along with this library; see the file COPYING.LIB.  If not, write to
++ * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
++ * Boston, MA 02110-1301, USA.
++ */
++
++#include "kwallet.h"
++#include <ksharedconfig.h>
++#include <kdebug.h>
++#include <kdeversion.h>
++#include <QtGui/QApplication>
++#include <QtCore/QPointer>
++#include <QtGui/QWidget>
++#include <ktoolinvocation.h>
++
++#include <kglobal.h>
++#include <kcomponentdata.h>
++#include <kaboutdata.h>
++#include <kconfiggroup.h>
++
++#include <cassert>
++
++#include <Carbon/Carbon.h>
++#include <Security/Security.h>
++#include <Security/SecKeychain.h>
++
++using namespace KWallet;
++
++typedef QMap<QString, QString> StringStringMap;
++Q_DECLARE_METATYPE(StringStringMap)
++typedef QMap<QString, StringStringMap> StringToStringStringMapMap;
++Q_DECLARE_METATYPE(StringToStringStringMapMap)
++typedef QMap<QString, QByteArray> StringByteArrayMap;
++Q_DECLARE_METATYPE(StringByteArrayMap)
++
++namespace {
++    template <typename T>
++    struct CFReleaser {
++        explicit CFReleaser( const T& r ) : ref( r ) {}
++        ~CFReleaser() { CFRelease( ref ); }
++        T ref;
++    };
++}
++
++static QString asQString( CFStringRef sr ) {
++    return QString::fromLatin1( CFStringGetCStringPtr( sr, NULL ) ); //TODO Latin1 correct?
++}
++
++static QString errorString( OSStatus s ) {
++    const CFReleaser<CFStringRef> ref( SecCopyErrorMessageString( s, NULL ) );
++    return asQString( ref.ref );
++}
++
++static bool isError( OSStatus s, QString* errMsg ) {
++    if ( errMsg )
++        *errMsg = errorString( s );
++    return s != 0;
++}
++
++static QString appid()
++{
++    KComponentData cData = KGlobal::mainComponent();
++    if (cData.isValid()) {
++        const KAboutData* aboutData = cData.aboutData();
++        if (aboutData) {
++            return aboutData->programName();
++        }
++        return cData.componentName();
++    }
++    return qApp->applicationName();
++}
++
++
++const QString Wallet::LocalWallet() {
++    KConfigGroup cfg(KSharedConfig::openConfig("kwalletrc")->group("Wallet"));
++    if (!cfg.readEntry("Use One Wallet", true)) {
++        QString tmp = cfg.readEntry("Local Wallet", "localwallet");
++        if (tmp.isEmpty()) {
++            return "localwallet";
++        }
++        return tmp;
++    }
++
++    QString tmp = cfg.readEntry("Default Wallet", "kdewallet");
++    if (tmp.isEmpty()) {
++        return "kdewallet";
++    }
++    return tmp;
++}
++
++const QString Wallet::NetworkWallet() {
++    KConfigGroup cfg(KSharedConfig::openConfig("kwalletrc")->group("Wallet"));
++
++    QString tmp = cfg.readEntry("Default Wallet", "kdewallet");
++    if (tmp.isEmpty()) {
++        return "kdewallet";
++    }
++    return tmp;
++}
++
++const QString Wallet::PasswordFolder() {
++    return "Passwords";
++}
++
++const QString Wallet::FormDataFolder() {
++    return "Form Data";
++}
++
++class Wallet::WalletPrivate
++{
++public:
++    explicit WalletPrivate(const QString &n)
++     : name(n)
++    {}
++
++    // needed for compilation reasons
++    void walletServiceUnregistered() {
++    }
++
++    QString name;
++    QString folder;
++};
++
++Wallet::Wallet(int handle, const QString& name)
++    : QObject(0L), d(new WalletPrivate(name)) {
++    Q_UNUSED(handle);
++}
++
++Wallet::~Wallet() {
++    delete d;
++}
++
++
++QStringList Wallet::walletList() {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    return walletLauncher->getInterface().wallets();
++#else
++    return QStringList();
++#endif
++}
++
++
++void Wallet::changePassword(const QString& name, WId w) {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    if( w == 0 )
++        kDebug(285) << "Pass a valid window to KWallet::Wallet::changePassword().";
++    walletLauncher->getInterface().changePassword(name, (qlonglong)w, appid());
++#endif
++}
++
++
++bool Wallet::isEnabled() {
++    //PENDING(frank) check
++    return true;
++}
++
++
++bool Wallet::isOpen(const QString& name) {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    return walletLauncher->getInterface().isOpen(name); // default is false
++#else
++    return true;
++#endif
++}
++
++
++int Wallet::closeWallet(const QString& name, bool force) {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    QDBusReply<int> r = walletLauncher->getInterface().close(name, force);
++    return r.isValid() ? r : -1;
++#else
++    return 0;
++#endif
++}
++
++
++int Wallet::deleteWallet(const QString& name) {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    QDBusReply<int> r = walletLauncher->getInterface().deleteWallet(name);
++    return r.isValid() ? r : -1;
++#else
++    return -1;
++#endif
++}
++
++
++Wallet *Wallet::openWallet(const QString& name, WId w, OpenType ot) {
++    Q_UNUSED(w);
++    Q_UNUSED(ot);
++    Wallet *wallet = new Wallet(-1, name);
++    QMetaObject::invokeMethod( wallet, "emitWalletOpenend", Qt::QueuedConnection );
++    return wallet;
++}
++
++
++bool Wallet::disconnectApplication(const QString& wallet, const QString& app) {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    return walletLauncher->getInterface().disconnectApplication(wallet, app); // default is false
++#else
++    return true;
++#endif
++}
++
++
++QStringList Wallet::users(const QString& name) {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    return walletLauncher->getInterface().users(name); // default is QStringList()
++#else
++    return QStringList();
++#endif
++}
++
++
++int Wallet::sync() {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    if (d->handle == -1) {
++        return -1;
++    }
++
++    walletLauncher->getInterface().sync(d->handle, appid());
++#endif
++    return 0;
++}
++
++
++int Wallet::lockWallet() {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    if (d->handle == -1) {
++        return -1;
++    }
++
++    QDBusReply<int> r = walletLauncher->getInterface().close(d->handle, true, appid());
++    d->handle = -1;
++    d->folder.clear();
++    d->name.clear();
++    if (r.isValid()) {
++        return r;
++    }
++#endif
++    return -1;
++}
++
++
++const QString& Wallet::walletName() const {
++    return d->name;
++}
++
++
++bool Wallet::isOpen() const {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    return d->handle != -1;
++#else
++    return true;
++#endif
++}
++
++
++void Wallet::requestChangePassword(WId w) {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    if( w == 0 )
++        kDebug(285) << "Pass a valid window to KWallet::Wallet::requestChangePassword().";
++    if (d->handle == -1) {
++        return;
++    }
++
++    walletLauncher->getInterface().changePassword(d->name, (qlonglong)w, appid());
++#endif
++}
++
++
++void Wallet::slotWalletClosed(int handle) {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    if (d->handle == handle) {
++        d->handle = -1;
++        d->folder.clear();
++        d->name.clear();
++        emit walletClosed();
++    }
++#endif
++}
++
++
++QStringList Wallet::folderList() {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    if (d->handle == -1) {
++        return QStringList();
++    }
++
++    QDBusReply<QStringList> r = walletLauncher->getInterface().folderList(d->handle, appid());
++    return r;
++#else
++    return QStringList();
++#endif
++}
++
++
++QStringList Wallet::entryList() {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    if (d->handle == -1) {
++        return QStringList();
++    }
++
++    QDBusReply<QStringList> r = walletLauncher->getInterface().entryList(d->handle, d->folder, appid());
++    return r;
++#else
++    return QStringList();
++#endif
++}
++
++
++bool Wallet::hasFolder(const QString& f) {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    if (d->handle == -1) {
++        return false;
++    }
++
++    QDBusReply<bool> r = walletLauncher->getInterface().hasFolder(d->handle, f, appid());
++    return r; // default is false
++#else
++    return true;
++#endif
++}
++
++
++bool Wallet::createFolder(const QString& f) {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    if (d->handle == -1) {
++        return false;
++    }
++
++    if (!hasFolder(f)) {
++        QDBusReply<bool> r = walletLauncher->getInterface().createFolder(d->handle, f, appid());
++        return r;
++    }
++
++    return true;				// folder already exists
++#else
++    return true;
++#endif
++}
++
++
++bool Wallet::setFolder(const QString& f) {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    bool rc = false;
++
++    if (d->handle == -1) {
++        return rc;
++    }
++
++    // Don't do this - the folder could have disappeared?
++#if 0
++    if (f == d->folder) {
++        return true;
++    }
++#endif
++
++    if (hasFolder(f)) {
++        d->folder = f;
++        rc = true;
++    }
++
++    return rc;
++#else
++    return true;
++#endif
++}
++
++
++bool Wallet::removeFolder(const QString& f) {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    if (d->handle == -1) {
++        return false;
++    }
++
++    QDBusReply<bool> r = walletLauncher->getInterface().removeFolder(d->handle, f, appid());
++    if (d->folder == f) {
++        setFolder(QString());
++    }
++
++    return r;					// default is false
++#else
++    return true;
++#endif
++}
++
++
++const QString& Wallet::currentFolder() const {
++    return d->folder;
++}
++
++
++int Wallet::readEntry(const QString& key, QByteArray& value) {
++    const QByteArray serviceName( walletName().toUtf8() );
++    const QByteArray accountName( key.toUtf8() );
++    UInt32 passwordSize = 0;
++    void* passwordData = 0;
++    QString errMsg;
++    if ( isError( SecKeychainFindGenericPassword( NULL, serviceName.size(), serviceName.constData(), accountName.size(), accountName.constData(), &passwordSize, &passwordData, NULL ), &errMsg ) ) {
++        qWarning() << "Could not retrieve password:"  << qPrintable(errMsg);
++        return -1;
++    }
++
++    value = QByteArray( reinterpret_cast<const char*>( passwordData ), passwordSize );
++    SecKeychainItemFreeContent( NULL, passwordData );
++    return 0;
++}
++
++
++int Wallet::readEntryList(const QString& key, QMap<QString, QByteArray>& value) {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    registerTypes();
++
++    int rc = -1;
++
++    if (d->handle == -1) {
++        return rc;
++    }
++
++    QDBusReply<QVariantMap> r = walletLauncher->getInterface().readEntryList(d->handle, d->folder, key, appid());
++    if (r.isValid()) {
++        rc = 0;
++        // convert <QString, QVariant> to <QString, QByteArray>
++        const QVariantMap val = r.value();
++        for( QVariantMap::const_iterator it = val.begin(); it != val.end(); ++it ) {
++            value.insert(it.key(), it.value().toByteArray());
++        }
++    }
++
++    return rc;
++#else
++    return -1;
++#endif
++}
++
++
++int Wallet::renameEntry(const QString& oldName, const QString& newName) {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    int rc = -1;
++
++    if (d->handle == -1) {
++        return rc;
++    }
++
++    QDBusReply<int> r = walletLauncher->getInterface().renameEntry(d->handle, d->folder, oldName, newName, appid());
++    if (r.isValid()) {
++        rc = r;
++    }
++
++    return rc;
++#else
++    return -1;
++#endif
++}
++
++
++int Wallet::readMap(const QString& key, QMap<QString,QString>& value) {
++    QByteArray v;
++    const int ret = readEntry( key, v );
++    if ( ret != 0 )
++        return ret;
++    if ( !v.isEmpty() ) {
++        QDataStream ds( &v, QIODevice::ReadOnly );
++        ds >> value;
++    }
++    return 0;
++}
++
++
++int Wallet::readMapList(const QString& key, QMap<QString, QMap<QString, QString> >& value) {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    registerTypes();
++
++    int rc = -1;
++
++    if (d->handle == -1) {
++        return rc;
++    }
++
++    QDBusReply<QVariantMap> r =
++        walletLauncher->getInterface().readMapList(d->handle, d->folder, key, appid());
++    if (r.isValid()) {
++        rc = 0;
++        const QVariantMap val = r.value();
++        for( QVariantMap::const_iterator it = val.begin(); it != val.end(); ++it ) {
++            QByteArray mapData = it.value().toByteArray();
++            if (!mapData.isEmpty()) {
++                QDataStream ds(&mapData, QIODevice::ReadOnly);
++                QMap<QString,QString> v;
++                ds >> v;
++                value.insert(it.key(), v);
++            }
++        }
++    }
++
++    return rc;
++#else
++    return -1;
++#endif
++}
++
++
++int Wallet::readPassword(const QString& key, QString& value) {
++    QByteArray ba;
++    const int ret = readEntry( key, ba );
++    if ( ret == 0 )
++        value = QString::fromUtf8( ba.constData() );
++    return ret;
++}
++
++
++int Wallet::readPasswordList(const QString& key, QMap<QString, QString>& value) {
++    return -1;
++}
++
++
++int Wallet::writeEntry(const QString& key, const QByteArray& password, EntryType entryType) {
++    const QByteArray serviceName( walletName().toUtf8() );
++    const QByteArray accountName( key.toUtf8() );
++    QString errMsg;
++    if ( isError( SecKeychainAddGenericPassword( NULL, serviceName.size(), serviceName.constData(), accountName.size(), accountName.constData(), password.size(), password.constData(), NULL ), &errMsg ) ) {
++        kWarning() << "Could not store password in keychain: " << qPrintable(errMsg);
++        return -1;
++    }
++    return 0;
++}
++
++
++int Wallet::writeEntry(const QString& key, const QByteArray& value) {
++    const QByteArray serviceName( walletName().toUtf8() );
++    const QByteArray accountName( key.toUtf8() );
++    QString errMsg;
++    if ( isError( SecKeychainAddGenericPassword( NULL, serviceName.size(), serviceName.constData(), accountName.size(), accountName.constData(), value.size(), value.constData(), NULL ), &errMsg ) ) {
++        kWarning() << "Could not store password in keychain: " << qPrintable(errMsg);
++        return -1;
++    }
++    return 0;
++}
++
++
++int Wallet::writeMap(const QString& key, const QMap<QString,QString>& value) {
++    QByteArray mapData;
++    QDataStream ds(&mapData, QIODevice::WriteOnly);
++    ds << value;
++    return writeEntry( key, mapData );
++}
++
++
++int Wallet::writePassword(const QString& key, const QString& value) {
++    return writeEntry( key, value.toUtf8() );
++}
++
++
++bool Wallet::hasEntry(const QString& key) {
++    const QByteArray serviceName( walletName().toUtf8() );
++    const QByteArray accountName( key.toUtf8() );
++    return !isError( SecKeychainFindGenericPassword( NULL, serviceName.size(), serviceName.constData(), accountName.size(), accountName.constData(), NULL, NULL, NULL ), 0 );
++}
++
++
++int Wallet::removeEntry(const QString& key) {
++    const QByteArray serviceName( walletName().toUtf8() );
++    const QByteArray accountName( key.toUtf8() );
++    SecKeychainItemRef itemRef;
++    QString errMsg;
++    if ( isError( SecKeychainFindGenericPassword( NULL, serviceName.size(), serviceName.constData(), accountName.size(), accountName.constData(), NULL, NULL, &itemRef ), &errMsg ) ) {
++        qWarning() << "Could not retrieve password:"  << qPrintable(errMsg);
++        return -1;
++    }
++    const CFReleaser<SecKeychainItemRef> itemReleaser( itemRef );
++    if ( isError( SecKeychainItemDelete( itemRef ), &errMsg ) ) {
++        qWarning() << "Could not delete password:"  << qPrintable(errMsg);
++        return -1;
++    }
++    return 0;
++}
++
++
++Wallet::EntryType Wallet::entryType(const QString& key) {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    int rc = 0;
++
++    if (d->handle == -1) {
++        return Wallet::Unknown;
++    }
++
++    QDBusReply<int> r = walletLauncher->getInterface().entryType(d->handle, d->folder, key, appid());
++    if (r.isValid()) {
++        rc = r;
++    }
++
++    return static_cast<EntryType>(rc);
++#else
++    return Wallet::Unknown;
++#endif
++}
++
++
++void Wallet::slotFolderUpdated(const QString& wallet, const QString& folder) {
++    if (d->name == wallet) {
++        emit folderUpdated(folder);
++    }
++}
++
++
++void Wallet::slotFolderListUpdated(const QString& wallet) {
++    if (d->name == wallet) {
++        emit folderListUpdated();
++    }
++}
++
++
++void Wallet::slotApplicationDisconnected(const QString& wallet, const QString& application) {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    if (d->handle >= 0
++        && d->name == wallet
++        && application == appid()) {
++        slotWalletClosed(d->handle);
++    }
++#endif
++}
++
++void Wallet::walletAsyncOpened(int tId, int handle) {
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    // ignore responses to calls other than ours
++    if (d->transactionId != tId || d->handle != -1) {
++        return;
++    }
++    
++    // disconnect the async signal
++    disconnect(this, SLOT(walletAsyncOpened(int, int)));
++    
++    d->handle = handle;
++    emit walletOpened(handle > 0);
++#endif
++}
++
++void Wallet::emitWalletAsyncOpenError() {
++    emit walletOpened(false);
++}
++
++void Wallet::emitWalletOpened() {
++  emit walletOpened(true);
++}
++
++
++bool Wallet::folderDoesNotExist(const QString& wallet, const QString& folder)
++{
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    QDBusReply<bool> r = walletLauncher->getInterface().folderDoesNotExist(wallet, folder);
++    return r;
++#else
++    return false;
++#endif
++}
++
++
++bool Wallet::keyDoesNotExist(const QString& wallet, const QString& folder, const QString& key)
++{
++#ifdef OSX_KEYCHAIN_PORT_DISABLED
++    QDBusReply<bool> r = walletLauncher->getInterface().keyDoesNotExist(wallet, folder, key);
++    return r;
++#else
++    return false;
++#endif
++}
++
++void Wallet::virtual_hook(int, void*) {
++    //BASE::virtual_hook( id, data );
++}
++
++#include "kwallet.moc"
+diff --git a/kdeui/windowmanagement/kwindowinfo_mac.cpp b/kdeui/windowmanagement/kwindowinfo_mac.cpp
+index 0059f0f..99b2fe5 100644
+--- a/kdeui/windowmanagement/kwindowinfo_mac.cpp
++++ b/kdeui/windowmanagement/kwindowinfo_mac.cpp
+@@ -59,14 +59,14 @@ void KWindowInfo::Private::updateData()
+ {
+     ProcessInfoRec pinfo;
+     char processName[512];
+-#ifdef Q_OS_MAC32
++#if (defined(Q_OS_DARWIN32) || defined(Q_OS_MAC32))
+     FSSpec appSpec;
+ #else
+     FSRef ref;
+ #endif
+     pinfo.processInfoLength = sizeof pinfo;
+     pinfo.processName = (unsigned char*) processName;
+-#ifdef Q_OS_MAC32
++#if (defined(Q_OS_DARWIN32) || defined(Q_OS_MAC32))
+     pinfo.processAppSpec = &appSpec;
+ #else
+     pinfo.processAppRef = &ref;
+@@ -82,7 +82,7 @@ void KWindowInfo::Private::updateData()
+         }
+     }
+ 
+-#ifdef Q_OS_MAC32
++#if (defined(Q_OS_DARWIN32) || defined(Q_OS_MAC32))
+     iconSpec = appSpec;
+ 
+     FSRef ref;
+@@ -100,7 +100,7 @@ void KWindowInfo::Private::updateData()
+         ref = parentRef;
+         FSGetCatalogInfo(&ref, kFSCatInfoNone, 0, &name, 0, &parentRef);
+         if (QString::fromUtf16(name.unicode, name.length) == "Contents") {
+-#ifdef Q_OS_MAC32
++#if (defined(Q_OS_DARWIN32) || defined(Q_OS_MAC32))
+             FSSpec spec;
+             ref = parentRef;
+             FSGetCatalogInfo(&ref, kFSCatInfoNone, 0, &name, &spec, &parentRef);
+diff --git a/kdeui/windowmanagement/kwindowinfo_mac_p.h b/kdeui/windowmanagement/kwindowinfo_mac_p.h
+index 2f3c3a5..a20f2f1 100644
+--- a/kdeui/windowmanagement/kwindowinfo_mac_p.h
++++ b/kdeui/windowmanagement/kwindowinfo_mac_p.h
+@@ -43,7 +43,7 @@ struct KWindowInfo::Private
+     pid_t pid() const { return m_pid; }
+     void setProcessSerialNumber(const ProcessSerialNumber& psn);
+     QString name;
+-#ifdef Q_OS_MAC32
++#if (defined(Q_OS_DARWIN32) || defined(Q_OS_MAC32))
+     FSSpec iconSpec;
+ #else
+     FSRef iconSpec;
+diff --git a/kdeui/windowmanagement/kwindowsystem_mac.cpp b/kdeui/windowmanagement/kwindowsystem_mac.cpp
+index a08b443..0939c3f 100644
+--- a/kdeui/windowmanagement/kwindowsystem_mac.cpp
++++ b/kdeui/windowmanagement/kwindowsystem_mac.cpp
+@@ -141,7 +141,7 @@ KWindowSystemPrivate::KWindowSystemPrivate()
+ 
+     m_noEmit = false;
+ 
+-#ifdef Q_OS_MAC32
++#if (defined(Q_OS_DARWIN32) || defined(Q_OS_MAC32))
+     // register callbacks for application launches/quits
+     m_eventTarget = GetApplicationEventTarget();
+     m_eventHandler = NewEventHandlerUPP(applicationEventHandler);
+@@ -158,7 +158,7 @@ KWindowSystemPrivate::KWindowSystemPrivate()
+ }
+ 
+ void KWindowSystemPrivate::applicationLaunched(const ProcessSerialNumber& psn) {
+-#ifdef Q_OS_MAC32
++#if (defined(Q_OS_DARWIN32) || defined(Q_OS_MAC32))
+     kDebug(240) << "new app: " << psn.lowLongOfPSN << ":" << psn.highLongOfPSN;
+     ProcessInfoRec pinfo;
+     FSSpec appSpec;
+@@ -425,7 +425,7 @@ QPixmap KWindowSystem::icon( WId win, int width, int height, bool scale )
+         }
+         IconRef icon;
+         SInt16 label;
+-#ifdef Q_OS_MAC32
++#if (defined(Q_OS_DARWIN32) || defined(Q_OS_MAC32))
+         OSErr err = GetIconRefFromFile(&info.d->iconSpec, &icon, &label);
+ #else
+         OSStatus err = GetIconRefFromFileInfo(&info.d->iconSpec, 0, 0,
+@@ -473,7 +473,7 @@ void KWindowSystem::setIcons( WId win, const QPixmap& icon, const QPixmap& miniI
+ 
+ void KWindowSystem::setType( WId winid, NET::WindowType windowType )
+ {
+-#ifdef Q_OS_MAC32
++#if (defined(Q_OS_DARWIN32) || defined(Q_OS_MAC32))
+     // not supported for 'global' windows; only for windows in the current process
+     if (hasWId(winid)) return;
+ 
+diff --git a/kimgio/CMakeLists.txt b/kimgio/CMakeLists.txt
+index 087b23f..97b069e 100644
+--- a/kimgio/CMakeLists.txt
++++ b/kimgio/CMakeLists.txt
+@@ -104,7 +104,7 @@ if(OPENEXR_FOUND)
+     add_definitions(${OPENEXR_DEFINITIONS})
+     set(kimg_exr_LIB_SRCS exr.cpp)
+     kde4_add_plugin(kimg_exr ${kimg_exr_LIB_SRCS})
+-    target_link_libraries(kimg_exr ${KDE4_KDECORE_LIBS} ${QT_QTGUI_LIBRARY} ${OPENEXR_LIBRARIES} )
++    target_link_libraries(kimg_exr ${KDE4_KDECORE_LIBS} ${QT_QTGUI_LIBRARY} ${OPENEXR_LIBRARIES} z )
+ 
+ install(TARGETS kimg_exr  DESTINATION ${PLUGIN_INSTALL_DIR}/plugins/imageformats/ )
+ install( FILES exr.desktop DESTINATION  ${SERVICES_INSTALL_DIR}/qimageioplugins/ )
+diff --git a/kio/kfile/kfsprocess.cpp b/kio/kfile/kfsprocess.cpp
+index 7fef6e2..ea0aa27 100644
+--- a/kio/kfile/kfsprocess.cpp
++++ b/kio/kfile/kfsprocess.cpp
+@@ -83,7 +83,7 @@ KfsProcessController::KfsProcessController()
+ 
+ KfsProcessController::~KfsProcessController()
+ {
+-#ifndef Q_OS_MAC
++#if !defined(Q_OS_DARWIN) && !defined(Q_OS_MAC)
+ /* not sure why, but this is causing lockups */
+   close( m_fd[0] );
+   close( m_fd[1] );
+diff --git a/kio/kfile/kpropertiesdialog.cpp b/kio/kfile/kpropertiesdialog.cpp
+index 6c278c1..a01c2d6 100644
+--- a/kio/kfile/kpropertiesdialog.cpp
++++ b/kio/kfile/kpropertiesdialog.cpp
+@@ -1811,7 +1811,7 @@ KFilePermissionsPropsPlugin::KFilePermissionsPropsPlugin( KPropertiesDialog *_pr
+ #ifdef HAVE_GETGROUPLIST
+     // pick the groups to which the user belongs
+     int groupCount = 0;
+-#ifdef Q_OS_MAC
++#if defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
+     QVarLengthArray<int> groups;
+ #else
+     QVarLengthArray<gid_t> groups;
+diff --git a/kio/kio/kfileitemdelegate.cpp b/kio/kio/kfileitemdelegate.cpp
+index cb3939d..41507ac 100644
+--- a/kio/kio/kfileitemdelegate.cpp
++++ b/kio/kio/kfileitemdelegate.cpp
+@@ -618,7 +618,7 @@ QPixmap KFileItemDelegate::Private::transition(const QPixmap &from, const QPixma
+     color.setAlphaF(amount);
+ 
+ // FIXME: Somehow this doesn't work on Mac OS..
+-#if defined(Q_OS_MAC)
++#if defined(Q_WS_MAC)
+     const bool usePixmap = false;
+ #else
+     const bool usePixmap = from.paintEngine()->hasFeature(QPaintEngine::PorterDuff) &&
+diff --git a/kpty/kptydevice.cpp b/kpty/kptydevice.cpp
+index 1579780..7b988bb 100644
+--- a/kpty/kptydevice.cpp
++++ b/kpty/kptydevice.cpp
+@@ -44,7 +44,7 @@
+ # include <sys/time.h>
+ #endif
+ 
+-#if defined(Q_OS_FREEBSD) || defined(Q_OS_MAC)
++#if defined(Q_OS_FREEBSD) || defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
+   // "the other end's output queue size" - kinda braindead, huh?
+ # define PTY_BYTES_AVAILABLE TIOCOUTQ
+ #elif defined(TIOCINQ)
+diff --git a/kross/qts/CMakeLists.txt b/kross/qts/CMakeLists.txt
+index d8cb4a5..a439c40 100644
+--- a/kross/qts/CMakeLists.txt
++++ b/kross/qts/CMakeLists.txt
+@@ -8,7 +8,7 @@ if (NOT CYGWIN)
+     set_target_properties(krossqtsplugin PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION})
+ endif (NOT CYGWIN)
+ 
+-install(TARGETS krossqtsplugin DESTINATION ${PLUGIN_INSTALL_DIR}/plugins/script)
++install(TARGETS krossqtsplugin EXPORT kdelibsLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
+ 
+ ########### next target ###############
+ 
+diff --git a/kutils/CMakeLists.txt b/kutils/CMakeLists.txt
+index ca63e3d..79d3ec4 100644
+--- a/kutils/CMakeLists.txt
++++ b/kutils/CMakeLists.txt
+@@ -58,7 +58,7 @@ endif (Q_WS_X11)
+ 
+ kde4_add_library(kidletime ${LIBRARY_TYPE} ${kidletime_LIB_SRCS})
+ target_link_libraries(kidletime LINK_INTERFACE_LIBRARIES kdecore kdeui ${QT_QTGUI_LIBRARY})
+-target_link_libraries(kidletime ${KDE4_KDEUI_LIBS})
++target_link_libraries(kidletime ${KDE4_KDEUI_LIBS} ${CARBON_LIBRARY})
+ 
+ if (Q_WS_X11)
+    if (HAVE_XSCREENSAVER)
+diff --git a/solid/solid/managerbase.cpp b/solid/solid/managerbase.cpp
+index fb5a67c..3ab88de 100644
+--- a/solid/solid/managerbase.cpp
++++ b/solid/solid/managerbase.cpp
+@@ -21,13 +21,13 @@
+ #include "managerbase_p.h"
+ 
+ #include <stdlib.h>
+-#if !defined (Q_WS_WIN) && !defined (Q_OS_MAC)
++#if !defined (Q_WS_WIN) && !defined (Q_OS_DARWIN) && !defined (Q_OS_MAC)
+ #include <config-solid.h>
+ #endif
+ 
+ #include "backends/fakehw/fakemanager.h"
+ 
+-#if defined (Q_OS_MAC)
++#if defined (Q_OS_DARWIN) || defined (Q_OS_MAC)
+ #include "backends/iokit/iokitmanager.h"
+ #elif defined (Q_OS_UNIX)
+ #include "backends/hal/halmanager.h"
+@@ -65,7 +65,7 @@ void Solid::ManagerBasePrivate::loadBackends()
+     if (!solidFakeXml.isEmpty()) {
+         m_backends << new Solid::Backends::Fake::FakeManager(0, solidFakeXml);
+     } else {
+-#        if defined(Q_OS_MAC)
++#        if defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
+             m_backends << new Solid::Backends::IOKit::IOKitManager(0);
+ 
+ #        elif defined(Q_WS_WIN) && defined(HAVE_WBEM) && !defined(_WIN32_WCE)

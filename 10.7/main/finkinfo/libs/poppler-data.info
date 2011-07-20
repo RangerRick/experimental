@@ -1,0 +1,26 @@
+Package: poppler-data
+Version: 0.4.2
+Revision: 31
+Epoch: 1
+Description: Character-encoding files for poppler
+License: Restrictive/Distributable
+Maintainer: Benjamin Reed <poppler-data@fink.raccoonfink.com>
+
+Replaces: <<
+	poppler,
+	poppler1,
+	poppler1-data,
+	xpdf
+<<
+
+Source: http://poppler.freedesktop.org/%n-%v.tar.gz
+Source-MD5: 4b7598072bb95686f58bdadc4f09715c
+
+UseMaxBuildJobs: true
+CompileScript: #
+
+InstallScript: make -j1 install DESTDIR=%d prefix=%p
+DocFiles: COPYING README
+
+Homepage: http://poppler.freedesktop.org/
+

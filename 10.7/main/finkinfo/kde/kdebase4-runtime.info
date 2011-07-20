@@ -1,0 +1,129 @@
+Info3: <<
+Package: kdebase4-runtime-%type_pkg[kde]
+Version: 4.6.3
+Revision: 31
+Description: KDE4 - base applications and tools (runtime)
+Type: kde (x11 mac)
+License: GPL/LGPL
+Maintainer: Benjamin Reed <kdebase4-runtime@fink.raccoonfink.com>
+
+Depends: <<
+	dbus (>= 1.2.24-1),
+	kdepimlibs4-%type_pkg[kde] (>= 4.6.3-1),
+	libcanberra0-shlibs,
+	libknotifyplugin4-%type_pkg[kde]-shlibs (>= %v-%r),
+	libxine1-shlibs,
+	oxygen-icons-%type_pkg[kde] (>= 4.6.3-1),
+	strigi-gui-%type_pkg[kde] (>= 0.7.2-1)
+<<
+BuildDepends: <<
+	aspell-dev,
+	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
+	qimageblitz-unified-%type_pkg[kde] (>= 0.0.6-1),
+	bzip2-dev,
+	cmake (>= 2.8.2-1),
+	cups-dev,
+	cyrus-sasl2-dev,
+	dbus1.3-dev (>= 1.2.24-1),
+	expat1,
+	fink (>= 0.30.0-1),
+	fontconfig2-dev (>= 2.8.0-6),
+	freetype219 (>= 2.4.4-2),
+	gettext-tools,
+	giflib,
+	glib2-dev (>= 2.22.0-1),
+	kde4-buildenv (>= 4.6.0-1),
+	kdelibs4-%type_pkg[kde]-dev (>= 4.6.3-1),
+	kdepimlibs4-%type_pkg[kde]-dev (>= 4.6.3-1),
+	libcanberra0,
+	libgettext8-dev,
+	libjasper.1,
+	libjpeg8,
+	libpng15,
+	libtiff,
+	libxine1,
+	(%type_pkg[kde] = x11) libxklavier12,
+	libxml2,
+	libxslt,
+	openexr-dev,
+	openldap24-dev,
+	pcre,
+	pkgconfig (>= 0.23-1),
+	qt4-base-%type_pkg[kde] (>= 4.7.3-1),
+	strigi-dev (>= 0.6.3-1),
+	strigi-gui-%type_pkg[kde]-dev (>= 0.7.2-1),
+	(%type_pkg[kde] = x11) x11-dev,
+	system-openssl-dev
+<<
+Replaces: <<
+	kdebase4-%type_pkg[kde] (<< 4.3.0-1),
+	kdebase4-workspace-%type_pkg[kde] (<< 4.3.0-1),
+	kdebase4-workspace-%type_pkg[kde]-shlibs (<< 4.3.0-1)
+<<
+GCC: 3.3
+
+Source: mirror:kde:stable/%v/src/kdebase-runtime-%v.tar.bz2
+Source-MD5: a6f294900d73d92cd68ea93aea297ff0
+SourceDirectory: kdebase-runtime-%v
+PatchFile: kdebase4-runtime.patch
+PatchFile-MD5: b1ed2e79f20331caaaf984babea27c03
+
+UseMaxBuildJobs: true
+CompileScript: <<
+	#!/bin/sh -ev
+	
+	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[kde]"
+	. %p/sbin/kde4-buildenv.sh
+	
+	mkdir -p build
+	pushd build
+	cmake $KDE4_CMAKE_ARGS -DXINE_FOUND:BOOL=OFF ..
+	make VERBOSE=1
+	popd
+<<
+
+InstallScript: <<
+#!/bin/sh -ev
+
+	pushd build
+		make -j1 install/fast DESTDIR="%d"
+	popd
+	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libmolletnetwork.dylib
+	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libnepomuksync.dylib
+	rm -rf %i/opt/kde4/%type_pkg[kde]/lib/libkwalletbackend.dylib
+<<
+SplitOff: <<
+	Package: libknotifyplugin4-%type_pkg[kde]-dev
+	Description: KDE4 - Headers and libs for libknotifyplugin
+	Depends: libknotifyplugin4-%type_pkg[kde]-shlibs (>= %v-1)
+	BuildDependsOnly: true
+	Files: <<
+		opt/kde4/%type_pkg[kde]/include/knotify*
+		opt/kde4/%type_pkg[kde]/lib/libknotifyplugin.dylib
+	<<
+<<
+SplitOff2: <<
+	Package: libknotifyplugin4-%type_pkg[kde]-shlibs
+	Description: KDE4 - Plugin library for notifications
+	Depends: kdelibs4-%type_pkg[kde]-shlibs (>= 4.6.3-1)
+	Files: opt/kde4/%type_pkg[kde]/lib/libknotifyplugin.4*.dylib
+	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libknotifyplugin.4.dylib  4.0.0 %n (>= 4.6.1-1)
+<<
+Shlibs: <<
+	%p/opt/kde4/%type_pkg[kde]/lib/libmolletnetwork.4.dylib  4.0.0 %N (>= 4.3.0-1)
+	%p/opt/kde4/%type_pkg[kde]/lib/libnepomuksync.4.dylib    4.0.0 %N (>= 4.6.1-1)
+	%p/opt/kde4/%type_pkg[kde]/lib/libkwalletbackend.4.dylib 4.0.0 %N (>= 4.2.4-1)
+	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kcmshell4.dylib
+	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_khelpcenter.dylib
+	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kglobalaccel.dylib
+	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kuiserver.dylib
+	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_kwalletd.dylib
+	!%p/opt/kde4/%type_pkg[kde]/lib/libkdeinit4_nepomukserver.dylib
+	!%p/opt/kde4/%type_pkg[kde]/lib/libnepomukcommon.dylib
+<<
+
+PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
+
+DescDetail: Basic runtime tools for the K Desktop Environment.
+<<
+

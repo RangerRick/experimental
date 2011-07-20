@@ -1,0 +1,30 @@
+Package: remap-bad-apple-keys
+Version: 1.0
+Revision: 31
+Description: A utility to remap some bad keys in Apple's X11
+License: BSD
+Maintainer: Benjamin Reed <remap-bad-apple-keys@fink.raccoonfink.com>
+
+CustomMirror: <<
+	Primary: http://www.finkproject.org/~ranger/distfiles
+	eur-NL: http://www.finkproject.org/~ranger/distfiles
+	nam-US: http://ranger.befunk.com/fink
+<<
+NoSourceDirectory: true
+Source: mirror:custom:%n-%v.pl
+Source-MD5: 070a19892706d706b8c698bda9396789
+
+UseMaxBuildJobs: true
+CompileScript: echo "none needed"
+
+InstallScript: <<
+  install -d -m 755 %i/bin
+  install -c -m 755 %n-%v.pl %i/bin/%n.pl
+<<
+
+Homepage: http://ranger.befunk.com/fink/
+DescDetail: <<
+Some keys are incorrectly mapped in Apple's X11 (and possibly others),
+making it impossible to use navigation keys in some applications.
+<<
+

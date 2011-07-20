@@ -1,0 +1,82 @@
+Package: konversation
+Version: 1.0.1
+Revision: 33
+Description: KDE - User-friendly IRC client
+License: GPL
+Maintainer: Benjamin Reed <konversation@fink.raccoonfink.com>
+
+Depends: kdelibs3-unified (>= 3.5.10-10)
+BuildDepends: <<
+	arts-dev (>= 1.5.10-10),
+	autoconf (>= 2.63-1),
+	cctools-single-module,
+	expat1,
+	fink (>= 0.30.0-1),
+	freetype219 (>= 2.4.4-2),
+	gettext-tools,
+	kdelibs3-unified-dev (>= 3.5.10-10),
+	libart2 (>= 2.3.20-1),
+	libgettext8-dev,
+	libiconv-dev,
+	libidn,
+	libpng15 (>= 1.5.2-1),
+	pkgconfig (>= 0.23-1),
+	qt3 (>= 3.3.8-2000),
+	unsermake (>= 0.4-0.20060316.1),
+	x11-dev
+<<
+GCC: 3.3
+
+CustomMirror: <<
+	Primary: http://www.finkproject.org/~ranger/distfiles
+	eur-NL: http://www.finkproject.org/~ranger/distfiles
+	nam-US: http://ranger.befunk.com/fink
+<<
+Source: http://download.berlios.de/%n/%n-%v.tar.bz2
+Source-MD5: 60c2c5f94d4a916055db09728304b19f
+Source2: mirror:custom:kde-admindir/kde-admindir-29cde0f.tar.bz2
+Source2-MD5: 40e5462e2d292c468358f8d001594519
+Source2ExtractDir: %n-%v
+PatchScript: <<
+	perl -pi -e 's,-O2,-Os,g; s,doc/HTML,doc/kde,g; s,/usr/share/doc/packages/qt3/html,%p/share/doc/qt3/html,g' admin/*.*
+	echo "KDE_ENABLE_HIDDEN_VISIBILITY" >> configure.in.in
+<<
+
+SetMAKEFLAGS: -j1
+NoSetCPPFLAGS: true
+NoSetLDFLAGS: true
+NoSetMAKEFLAGS: true
+UseMaxBuildJobs: false
+ConfigureParams: --with-distribution='Fink/Mac OS X'
+CompileScript: <<
+	#!/bin/sh -ev
+	
+	export PREFIX="%p" USE_UNSERMAKE=1
+	. ./environment-helper.sh
+	
+	./build-helper.sh cvs       %N %v %r make -f admin/Makefile.common cvs
+	./build-helper.sh configure %N %v %r ./configure %c $CONFIGURE_PARAMS
+	./build-helper.sh make      %N %v %r unsermake $UNSERMAKEFLAGS
+<<
+
+InstallScript: <<
+#!/bin/sh -ev
+
+	export PREFIX="%p" USE_UNSERMAKE=1
+	. ./environment-helper.sh
+
+	./build-helper.sh install %N %v %r unsermake -p -j1 install DESTDIR=%d LN_S='ln -sf'
+
+	mkdir -p %i/share/doc/installed-packages
+	touch %i/share/doc/installed-packages/%N
+<<
+DocFiles: AUTHORS COPYING ChangeLog INSTALL* README TODO
+
+PostInstScript: <<
+	if [ -x "%p/bin/kde-update-caches.sh" ]; then
+		%p/bin/kde-update-caches.sh >/dev/null 2>&1 || :
+	fi
+<<
+
+DescDetail: Konversation is a simple, straightforward, user-friendly IRC client.
+

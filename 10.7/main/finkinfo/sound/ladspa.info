@@ -1,0 +1,50 @@
+Package: ladspa
+Version: 1.13
+Revision: 31
+Description: Linux Audio Developer's Simple Plugin API
+License: LGPL
+Maintainer: Benjamin Reed <ladspa@fink.raccoonfink.com>
+
+BuildDepends: fink (>= 0.30.0-1)
+GCC: 3.3
+
+Source: http://www.ladspa.org/download/ladspa_sdk_%v.tgz
+Source-MD5: 671be3e1021d0722cadc7fb27054628e
+SourceDirectory: %N_sdk
+PatchScript: sed -e 's,@PREFIX@,%p,g' %{PatchFile} | patch -p1
+PatchFile: %n.patch
+PatchFile-MD5: 718eb20ebabad6f8d88e8bb3037266bd
+
+UseMaxBuildJobs: true
+CompileScript: <<
+	#!/bin/sh -ev
+	pushd src && \
+	make targets && \
+	popd
+<<
+
+InstallScript: <<
+#!/bin/sh -ev
+  install -d -m 755 %i/lib/ladspa && \
+  install -d -m 755 %i/include && \
+  install -d -m 755 %i/bin && \
+  install -m 755 plugins/* %i/lib/ladspa/ && \
+  install -m 644 src/ladspa.h %i/include/ && \
+  install -m 755 bin/* %i/bin/ && exit 0
+  exit 1
+<<
+DocFiles: README doc/*
+RuntimeVars:   LADSPA_PATH: %p/lib/ladspa
+SplitOff: <<
+	Package: %N-dev
+	Description: Development files for LADSPA
+	Depends: %N
+	Files: include
+<<
+
+DescDetail: <<
+Many audio synthesis and recording packages are in use or in development on
+Linux.  These work in many different ways.  LADSPA provides a standard way
+for `plugin' audio processors to be used with a wide range of these packages.
+<<
+

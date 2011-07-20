@@ -45,7 +45,7 @@ for my $file (@ARGV)
 	if ($file =~ /\.(info|info\.in|patch)$/)
 	{
 		system('./generate-infofiles.pl', 'common/' . $file) == 0 or die "could not generate infofiles for 'common/$file'";
-		for my $release ('10.4')
+		for my $release ('10.4', '10.7')
 		{
 			my ($releasefile, $fromfile, $tofile);
 			if ($file =~ s/\.info\.in$//)

@@ -1,0 +1,36 @@
+Info4: <<
+Package: bundle-kde4-x11
+Version: 4.6.3
+Revision: 31
+Description: KDE4 - convenience package: KDE 4.6 (X11)
+Type: bundle
+Maintainer: Benjamin Reed <bundle-kde4@fink.raccoonfink.com>
+
+Depends: <<
+	kdeaccessibility4-x11 (>= %v-1),
+	kdeadmin4-x11 (>= %v-1),
+	kdeartwork4-x11 (>= %v-1),
+	kdebase4-runtime-x11 (>= 4.6.3-1),
+	kdebase4-workspace-x11 (>= 4.6.3-1),
+	kdeedu4-x11 (>= 4.6.3-1),
+	kdegraphics4-x11 (>= 4.6.3-1),
+	kdemultimedia4-x11 (>= 4.6.3-1),
+	kdenetwork4-x11 (>= %v-1),
+	kdepim4-x11 (>= 4.4.7-1),
+	kdepim4-runtime-x11 (>= 4.4.7-1),
+	kdesdk4-x11 (>= %v-1),
+	kdetoys4-x11 (>= %v-1),
+	kdeutils4-x11 (>= %v-1),
+	kdewebdev4-x11 (>= %v-1)
+<<
+BuildDepends: fink
+
+UseMaxBuildJobs: true
+
+Homepage: http://www.kde.org/
+DescDetail: <<
+This package doesn't install any files of itself, but makes sure that
+you have a fully-functional KDE 4.6.x system through dependencies.
+<<
+<<
+

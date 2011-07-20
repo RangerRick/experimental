@@ -1,0 +1,48 @@
+Package: fltk
+Version: 1.1.6
+Revision: 31
+Description: Graphical user interface toolkit (Aqua graphics)
+License: LGPL
+Maintainer: Sylvain Cuaz <zauc@users.sourceforge.net>
+
+Depends: <<
+	libjpeg8-shlibs,
+	libpng15-shlibs,
+	macosx
+<<
+BuildDepends: <<
+	libjpeg8,
+	libpng15
+<<
+GCC: 3.3
+
+Source: mirror:sourceforge:fltk/fltk-%v-source.tar.bz2
+Source-MD5: 95d340977d13edea12e98d787a668b32
+SourceDirectory: %n-%v
+PatchScript: <<
+	#!/bin/sh -e
+	
+	mv Makefile Makefile.old
+	sed 's/src fluid test documentation/src fluid documentation/' < Makefile.old > Makefile
+	mv fltk-config.in fltk-config.in.old
+	sed 's: prefix=$optarg: prefix=$optarg ; includedir=${prefix}/include:' < fltk-config.in.old > fltk-config.in
+	mv fluid/Makefile fluid/Makefile.old
+	sed 's;$(bindir)/fltk-config;$(bindir)/fltk-config --prefix=$(prefix);' < fluid/Makefile.old > fluid/Makefile
+	mv src/Fl_Preferences.cxx src/Fl_Preferences.cxx.old
+	sed 's|Carbon.H|Carbon.h|g' < src/Fl_Preferences.cxx.old > src/Fl_Preferences.cxx
+<<
+
+SetCXXFLAGS: -I%p/include
+UseMaxBuildJobs: true
+ConfigureParams: --mandir=%p/share/man
+
+DocFiles: CHANGES COPYING CREDITS README README.mac
+
+Homepage: http://www.fltk.org/
+DescDetail: <<
+  FLTK (pronounced "fulltick") is a LGPL'd C++ graphical user interface toolkit
+  for OS X, UNIX, OpenGL, and WIN32 (Microsoft(R) Windows(R) 95, 98, ME, NT 4.0, and 2000).
+  It is currently maintained by a small group of developers across the world
+  with a central repository on SourceForge.
+<<
+

@@ -1,0 +1,38 @@
+Info2: <<
+Package: activesupport-rb%type_pkg[ruby]
+Version: 2.1.0
+Revision: 31
+Description: Utility classes for Rails
+Type: ruby (1.8)
+License: BSD
+Maintainer: Benjamin Reed <activesupport-rb@fink.raccoonfink.com>
+
+Depends: <<
+	libgems-rb%type_pkg[ruby] (>= 0.9.5-2),
+	ruby%type_pkg[ruby]
+<<
+BuildDepends: <<
+	rubygems-rb%type_pkg[ruby] (>= 0.9.5-2),
+	ruby%type_pkg[ruby]-dev
+<<
+
+NoSourceDirectory: true
+Source: http://rubyforge.org/frs/download.php/37753/activesupport-%v.gem
+Source-MD5: 31131db1ddbe595511b0a4ce60dd93e2
+
+UseMaxBuildJobs: true
+CompileScript: echo ""
+
+InstallScript: <<
+	install -d -m 755 %i/var/lib/gems/%type_raw[ruby]
+	%p/bin/gem install --local --install-dir %i/var/lib/gems/%type_raw[ruby] --rdoc activesupport-%v.gem
+	rm -rf %i/var/lib/gems/%type_raw[ruby]/cache
+<<
+
+Homepage: http://rubyforge.org/projects/activesupport/
+DescDetail: <<
+	Utility classes and extension to the standard library
+	that were required by Rails, but found of general use.
+<<
+<<
+

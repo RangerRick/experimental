@@ -1,0 +1,34 @@
+Package: xliquid-gtk2
+Version: 1.0
+Revision: 31
+Description: "Liquid" lookalike pixmap theme for GTK+2
+License: GPL
+Maintainer: Benjamin Reed <xliquid-gtk2@fink.raccoonfink.com>
+
+Depends: gtk+2-shlibs (>= 2.18.0-1)
+
+CustomMirror: <<
+	Primary: http://www.finkproject.org/~ranger/distfiles
+	eur-NL: http://www.finkproject.org/~ranger/distfiles
+	nam-US: http://ranger.befunk.com/fink
+<<
+NoSourceDirectory: true
+Source: mirror:custom:XLiquid-Gtk2.tar.gz
+Source-MD5: b5f5f142c0d2cb4b511d7c2fe2452783
+
+UseMaxBuildJobs: true
+CompileScript: echo "no compile neede"
+
+InstallScript: <<
+  install -d -m 755 %i/share/themes
+  tar -cf - . | (cd %i/share/themes; tar -xf -)
+<<
+
+Homepage: http://www.kde-look.org/content/show.php?content=4863
+DescDetail: <<
+A GTK+2 pixmap theme that looks like Mosfet's "Liquid" theme
+for KDE.  New releases may or may not appear at:
+
+  http://diorama.cz/
+<<
+

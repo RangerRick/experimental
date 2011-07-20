@@ -1,0 +1,51 @@
+Package: jbigkit
+Version: 1.6
+Revision: 31
+Description: JBIG graphics library
+License: GPL
+Maintainer: Benjamin Reed <jbigkit@fink.raccoonfink.com>
+
+Source: http://www.cl.cam.ac.uk/~mgk25/download/%n-%v.tar.gz
+Source-MD5: ce196e45f293d40ba76af3dc981ccfd7
+SourceDirectory: %n
+
+UseMaxBuildJobs: true
+CompileScript: make
+
+InstallScript: <<
+#!/bin/sh -ev
+
+	install -d -m 755 %i/bin %i/include %i/lib %i/share/man/man1 %i/share/doc/%N-dev
+
+	install -c -m 644 libjbig/jbig.h    %i/include/
+	install -c -m 644 libjbig/libjbig.a %i/lib/
+
+	install -c -m 755 pbmtools/jbgtopbm %i/bin/
+	install -c -m 755 pbmtools/pbmtojbg %i/bin/
+
+	install -c -m 644 pbmtools/jbgtopbm.1 %i/share/man/man1/
+	install -c -m 644 pbmtools/pbmtojbg.1 %i/share/man/man1/
+
+	mv examples %i/share/doc/%N-dev/
+<<
+DocFiles: ANNOUNCE CHANGES COPYING TODO
+SplitOff: <<
+	Package: %N-dev
+	BuildDependsOnly: true
+	DocFiles: COPYING libjbig/jbig.doc pbmtools/*.5
+	Files: <<
+		include
+		lib/libjbig.a
+	<<
+<<
+
+Homepage: http://www.cl.cam.ac.uk/~mgk25/jbigkit/
+DescDetail: <<
+JBIG-KIT implements a highly effective data compression algorithm
+for bi-level high-resolution images such as fax pages or scanned
+documents.
+
+Note that this library is GPL, not LGPL, so if you intend to link
+against it, make sure it is OK to link against a pure-GPL library.
+<<
+

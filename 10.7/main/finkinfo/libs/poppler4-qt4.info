@@ -1,0 +1,112 @@
+Info3: <<
+Package: poppler4-qt4-%type_pkg[qt]
+Version: 0.10.7
+Revision: 34
+Description: PDF rendering library (Qt4 binding)
+Type: qt (x11 mac)
+License: GPL
+Maintainer: Benjamin Reed <poppler4-qt4@fink.raccoonfink.com>
+
+Depends: %N-shlibs (>= %v-1)
+BuildDepends: <<
+	expat1,
+	fink (>= 0.30.0-1),
+	fink-package-precedence (>= 0.7-1),
+	fontconfig2-dev (>= 2.8.0-6),
+	freetype219 (>= 2.4.4-2),
+	(%type_pkg[qt] = x11) glib2-dev,
+	glitz,
+	kde4-buildenv (>= 4.6.0-1),
+	(%type_pkg[qt] = x11) libgettext8-dev,
+	libiconv-dev,
+	libjpeg8,
+	libopenjpeg,
+	(%type_pkg[qt] = x11) libpng15,
+	libxml2,
+	pkgconfig (>= 0.23-1),
+	poppler4 (>= %v-1),
+	qt4-%type_pkg[qt] (>= 4.7.3-1),
+	(%type_pkg[qt] = x11) x11-dev
+<<
+Conflicts: <<
+	poppler-qt4-x11,
+	poppler-qt4-mac,
+	poppler2-qt4-x11,
+	poppler2-qt4-mac,
+	poppler3-qt4-x11,
+	poppler3-qt4-mac
+<<
+Replaces: <<
+	poppler-qt4-x11,
+	poppler-qt4-mac,
+	poppler2-qt4-x11,
+	poppler2-qt4-mac,
+	poppler3-qt4-x11,
+	poppler3-qt4-mac
+<<
+BuildDependsOnly: true
+GCC: 3.3
+
+Source: http://poppler.freedesktop.org/poppler-%v.tar.gz
+Source-MD5: ba120e49a82567d85d00e159011ebe67
+PatchFile: poppler4.patch
+PatchFile-MD5: fedaec5cc0d9fb044e2d189e84d181da
+
+UseMaxBuildJobs: true
+CompileScript: <<
+	#!/bin/sh -ev
+	
+	export KDE4_PREFIX="%p" KDE4_TYPE="%type_pkg[qt]"
+	. %p/sbin/kde4-buildenv.sh
+	
+	./configure \
+	--prefix=$KDE4_INSTALL_PREFIX \
+	--mandir=%p/share/man \
+	--enable-dependency-tracking --disable-static \
+	--enable-zlib --enable-libopenjpeg --enable-cairo-output \
+	--disable-poppler-glib --disable-gdk --disable-gtk-test \
+	--disable-poppler-qt --enable-poppler-qt4 \
+	--disable-splash-output
+	pushd qt4
+	make -j1
+	popd
+	make -j1 poppler-qt4.pc
+	fink-package-precedence --prohibit-bdep %n .
+<<
+
+InstallScript: <<
+#!/bin/sh -ev
+
+	pushd qt4
+		make -j1 install DESTDIR=%d
+	popd
+	make -j1 install-pkgconfigDATA DESTDIR=%d pkgconfig_DATA=poppler-qt4.pc
+	perl -pi -e 's,%b/build,%p,g' %i/opt/kde4/%type_pkg[qt]/lib/*.la %i/opt/kde4/%type_pkg[qt]/lib/pkgconfig/*.pc
+<<
+DocFiles: AUTHORS COPYING ChangeLog NEWS README README-XPDF TODO
+SplitOff: <<
+	Package: %N-shlibs
+	Depends: <<
+		expat1-shlibs,
+		fontconfig2-shlibs (>= 2.8.0-6),
+		freetype219-shlibs (>= 2.4.4-2),
+		(%type_pkg[qt] = x11) glib2-shlibs,
+		glitz-shlibs,
+		(%type_pkg[qt] = x11) libgettext8-shlibs,
+		libiconv,
+		libjpeg8-shlibs,
+		libopenjpeg-shlibs,
+		(%type_pkg[qt] = x11) libpng15-shlibs,
+		libxml2-shlibs,
+		poppler4-shlibs (>= %v-1),
+		qt4-%type_pkg[qt]-gui-shlibs (>= 4.7.3-1),
+		(%type_pkg[qt] = x11) x11
+	<<
+	Files: opt/kde4/%type_pkg[qt]/lib/libpoppler-qt4.3*.dylib
+	Shlibs: %p/opt/kde4/%type_pkg[qt]/lib/libpoppler-qt4.3.dylib 5.0.0 %n (>= 0.10.5-2)
+<<
+
+Homepage: http://poppler.freedesktop.org/
+DescDetail: Poppler is a PDF rendering library based on the xpdf-3.0 code base.
+<<
+

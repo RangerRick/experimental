@@ -1,0 +1,41 @@
+Info2: <<
+Package: mac-growl-pm%type_pkg[perl]
+Version: 1.1.4
+Revision: 31
+Description: Perl module for GROWL notification system
+Type: perl (5.8.6 5.8.8)
+License: Artistic
+Maintainer: Justin F. Hallett <thesin@users.sourceforge.net>
+
+Depends: <<
+	macosx,
+	perl%type_pkg[perl]-core,
+	growl (>= 1.1.4-1),
+	mac-glue-pm%type_pkg[perl] (>= 0.24-1),
+	mac-glue-pm%type_pkg[perl]-bin (>= 0.24-1)
+<<
+BuildDepends: fink (>= 0.30.0-1)
+Suggests: mac-glue-pm%type_pkg[perl]
+
+Source: mirror:sourceforge:fink/Mac-Growl-%v.tar.bz2
+Source-MD5: 5ab0b975bf66e507386a8582db7278af
+SourceDirectory: Mac-Growl
+
+UseMaxBuildJobs: true
+
+UpdatePOD: true
+InstallScript: <<
+  %{default_script}
+  mv %i/share/man %i/lib/perl5/%type_raw[perl]
+<<
+NoPerlTests: true
+DocFiles: Changes README
+
+Homepage: http://growl.info/
+DescDetail: <<
+  Mac::Growl provides an interface for perl scripts to connect to Growl,
+  allowing them to register with it, and send it notifications to be
+  displayed.
+<<
+<<
+

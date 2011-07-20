@@ -1,0 +1,32 @@
+diff -uNr kdebindings-3.5.4/qtruby/bin/Makefile.am kdebindings-3.5.4-new/qtruby/bin/Makefile.am
+--- kdebindings-3.5.4/qtruby/bin/Makefile.am	2005-09-10 04:16:10.000000000 -0400
++++ kdebindings-3.5.4-new/qtruby/bin/Makefile.am	2006-08-01 23:56:48.000000000 -0400
+@@ -1,9 +1,9 @@
+ INCLUDES = $(all_includes) -I$(RUBY_ARCHDIR)
+ 
+ bin_PROGRAMS = qtrubyinit
+-qtrubyinit_LDFLAGS = -module $(all_libraries) -version-info 0:0:0 -L$(top_srcdir)/smoke/qt/ -L$(RUBY_LIBDIR)
++qtrubyinit_LDFLAGS = -module $(all_libraries) -version-info 0:0:0 -L$(RUBY_LIBDIR)
+ qtrubyinit_METASOURCES = AUTO
+ qtrubyinit_SOURCES = qtrubyinit.cpp
+-qtrubyinit_LDADD = $(LIB_QT) $(RUBY_LIBRUBYARG) $(top_builddir)/smoke/qt/libsmokeqt.la $(top_builddir)/qtruby/rubylib/qtruby/libqtrubyinternal.la
++qtrubyinit_LDADD = $(LIB_QT) $(RUBY_LIBRUBYARG) -lsmokeqt $(top_builddir)/qtruby/rubylib/qtruby/libqtrubyinternal.la
+ 
+ bin_SCRIPTS = rbqtapi rbqtsh
+diff -uNr kdebindings-3.5.4/qtruby/rubylib/qtruby/Makefile.am kdebindings-3.5.4-new/qtruby/rubylib/qtruby/Makefile.am
+--- kdebindings-3.5.4/qtruby/rubylib/qtruby/Makefile.am	2005-09-10 04:16:12.000000000 -0400
++++ kdebindings-3.5.4-new/qtruby/rubylib/qtruby/Makefile.am	2006-08-01 23:57:08.000000000 -0400
+@@ -1,4 +1,4 @@
+-INCLUDES = -I$(top_srcdir)/smoke $(all_includes) -I$(RUBY_ARCHDIR)
++INCLUDES = $(all_includes) -I$(RUBY_ARCHDIR)
+ 
+ noinst_HEADERS = qtruby.h marshall.h smokeruby.h extconf.rb 
+ 
+@@ -10,6 +10,6 @@
+ rubylib_LTLIBRARIES = qtruby.la
+ qtruby_la_SOURCES = 
+ qtruby_la_LDFLAGS = -module $(all_libraries) -version-info 0:0:0
+-qtruby_la_LIBADD = libqtrubyinternal.la $(LIB_QT) $(top_builddir)/smoke/qt/libsmokeqt.la
++qtruby_la_LIBADD = libqtrubyinternal.la $(LIB_QT) -lsmokeqt
+ 
+ SUBDIRS = lib 
