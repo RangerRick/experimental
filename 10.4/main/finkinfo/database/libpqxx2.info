@@ -2,6 +2,7 @@ Package: libpqxx2
 Version: 2.6.9
 Revision: 1
 Epoch: 1
+Distribution: 10.4, 10.5, 10.6
 Description: PostgreSQL C++ interface
 License: BSD
 Maintainer: Benjamin Reed <libpqxx2@fink.raccoonfink.com>

@@ -5,6 +5,7 @@ Revision: 2
 Description: PostgreSQL Perl tools
 Type: perl(0)
 License: BSD
+Distribution: 10.4, 10.5, 10.6
 Maintainer: Benjamin Reed <postgresql-perl@fink.raccoonfink.com>
 
 Depends: <<

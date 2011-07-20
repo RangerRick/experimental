@@ -407,8 +407,8 @@ sub handle_file {
 			$treeproperties->{'Tree'} = $tree;
 
 			if (exists $treeproperties->{'Distribution'}) {
-				my @dists = split(/ +/, $treeproperties->{'Distribution'});
-				next unless grep {/^${tree}$/} @dists;
+				my @dists = split(/\s*,\s*/, $treeproperties->{'Distribution'});
+				next unless grep {/\b${tree}$/} @dists;
 			}
 
 			$treeproperties = transform_fields($treeproperties, clone($treeproperties), 1);
@@ -422,8 +422,11 @@ sub handle_file {
 			my $outfilename = $filename;
 			$outfilename =~ s/^\.//;
 
-			if ($tree >= 10.7 and $outfilename =~ /-10\.6\.info(\.in)?$/) {
-				$outfilename =~ s/-10\.6(\.info(\.in)?)$/$1/;
+			if ($tree < 10.7 and $outfilename =~ /-10\.[789]\.info(\.in)?$/) {
+				next;
+			}
+			if ($tree >= 10.7 and $outfilename =~ /-10\.[6789]\.info(\.in)?$/) {
+				$outfilename =~ s/-10\.[6789](\.info(\.in)?)$/$1/;
 			}
 
 			if (open (FILEOUT, '>' . $todir . '/' . $outfilename)) {
@@ -436,6 +439,17 @@ sub handle_file {
 		for my $tree (@TREES) {
 			next if ($file =~ /postgresql73/ and $tree ne "10.3");
 
+			if (open (FILEIN, $file)) {
+				my $header = <FILEIN>;
+				chomp($header);
+				close(FILEIN);
+				if ($header =~ /^\s*Distribution:\s*(.*?)\s*$/) {
+					my $dists = $1;
+					if (not grep {/^${tree}$/} split(/\s*,\s*/, $dists)) {
+						next;
+					}
+				}
+			}
 			my $todir = $dir;
 			$todir =~ s#/common/#/${tree}/#;
 			$todir =~ s#/3rdparty/common/#/3rdparty/${tree}/#;

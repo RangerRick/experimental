@@ -1,8 +1,9 @@
 Info3: <<
-Package: iplike-pg%type_pkg[postgresql]
+Package: iplike-pg%type_pkg[pg]
 Version: 2.0.2
-Revision: 1
-Type: postgresql(8.0 8.1 8.2 8.3 8.4 9.0)
+Revision: 2
+Type: pg(8.0 8.1 8.2 8.3 8.4 9.0)
+Distribution: 10.4, 10.5, 10.6
 
 Conflicts: opennms-pgsql74, opennms-pgsql80, opennms-pgsql81, opennms-pgsql82
 Replaces: opennms-pgsql74, opennms-pgsql80, opennms-pgsql81, opennms-pgsql82
@@ -15,22 +16,22 @@ BuildDepends: <<
 	automake1.11,
 	fink (>= 0.28.0-1),
 	libtool2,
-	(%type_raw[postgresql] <= 8.0) postgresql%type_pkg[postgresql]-unified-dev,
-	(%type_raw[postgresql] >= 8.1) postgresql%type_pkg[postgresql]-dev,
+	(%type_raw[pg] <= 8.0) postgresql%type_pkg[pg]-unified-dev,
+	(%type_raw[pg] >= 8.1) postgresql%type_pkg[pg]-dev,
 <<
 Depends: <<
-	(%type_raw[postgresql] <= 7.4) postgresql%type_pkg[postgresql]-unified-shlibs,
-	(%type_raw[postgresql] >= 8.1) postgresql%type_pkg[postgresql]-shlibs,
+	(%type_raw[pg] <= 7.4) postgresql%type_pkg[pg]-unified-shlibs,
+	(%type_raw[pg] >= 8.1) postgresql%type_pkg[pg]-shlibs,
 <<
 
 PatchScript: <<
 #!/bin/sh -ev
 
-	IPLIKE_VERSION=`echo %type_raw[postgresql] | sed -e 's,\.,_,g'`
+	IPLIKE_VERSION=`echo %type_raw[pg] | sed -e 's,\.,_,g'`
 	perl -pi -e "s,iplike_la,iplike_${IPLIKE_VERSION}_la,g" Makefile.am
-	perl -pi -e 's,iplike[^_]la,iplike-%type_raw[postgresql].la,g' Makefile.am install_iplike.sh.in
-	if [ "%type_pkg[postgresql]" -lt 84 ]; then
-		perl -pi -e 's,/psql,/psql-%type_raw[postgresql],' install_iplike.sh.in
+	perl -pi -e 's,iplike[^_]la,iplike-%type_raw[pg].la,g' Makefile.am install_iplike.sh.in
+	if [ "%type_pkg[pg]" -lt 84 ]; then
+		perl -pi -e 's,/psql,/psql-%type_raw[pg],' install_iplike.sh.in
 	fi
 	perl -pi -e 's,AM_RPM_INIT,,' configure.ac
 
@@ -41,10 +42,10 @@ ConfigureParams: --disable-dependency-tracking (%m != x86_64) --with-jvm-arch=32
 CompileScript: <<
 #!/bin/sh -ex
 
-	if [ "%type_pkg[postgresql]" -ge 84 ]; then
-		EXTRA_ARGS="--with-pgsql=%p/opt/postgresql-%type_raw[postgresql]/bin/pg_config"
+	if [ "%type_pkg[pg]" -ge 84 ]; then
+		EXTRA_ARGS="--with-pgsql=%p/opt/postgresql-%type_raw[pg]/bin/pg_config"
 	else
-		EXTRA_ARGS="--with-pgsql=%p/bin/pg_config-%type_raw[postgresql]"
+		EXTRA_ARGS="--with-pgsql=%p/bin/pg_config-%type_raw[pg]"
 	fi
 	./configure %c $EXTRA_ARGS
 	make
@@ -52,7 +53,7 @@ CompileScript: <<
 
 InstallScript: <<
 	make install DESTDIR="%d"
-	mv %i/sbin/install_iplike.sh %i/sbin/install_iplike_%type_pkg[postgresql].sh
+	mv %i/sbin/install_iplike.sh %i/sbin/install_iplike_%type_pkg[pg].sh
 <<
 
 PostInstScript: <<
@@ -60,9 +61,9 @@ PostInstScript: <<
 *** NOTE ***
 
 WARNING: this package will not work until you run
-%p/sbin/install_iplike_%type_pkg[postgresql].sh with the appropriate options.
+%p/sbin/install_iplike_%type_pkg[pg].sh with the appropriate options.
 
-See \`%p/sbin/install_iplike_%type_pkg[postgresql].sh -h\` for more information.
+See \`%p/sbin/install_iplike_%type_pkg[pg].sh -h\` for more information.
 
 END
 <<

@@ -1,6 +1,7 @@
 Package: libpqxx3
 Version: 3.1
 Revision: 1
+Distribution: 10.4, 10.5, 10.6
 Description: PostgreSQL C++ interface
 License: BSD
 Maintainer: Benjamin Reed <libpqxx3@fink.raccoonfink.com>

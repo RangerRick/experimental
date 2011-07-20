@@ -1,3 +1,4 @@
+Distribution: 10.4, 10.5, 10.6
 diff -Nurd postgis-1.5.2/README.postgis postgis-1.5.2-new/README.postgis
 --- postgis-1.5.2/README.postgis	2010-09-27 11:16:58.000000000 -0400
 +++ postgis-1.5.2-new/README.postgis	2010-12-29 09:59:20.000000000 -0500

@@ -4,6 +4,7 @@ Revision: 1
 Conflicts: %N-bin
 Replaces: %N-bin
 Depends: librrd2-shlibs (>= %v-%r)
+Distribution: 10.4, 10.5, 10.6
 BuildDepends: <<
 	freetype219,
 	intltool40,

@@ -57,7 +57,7 @@ GCC: 4.0
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
 Source-MD5: 6ea1097fd4a57102ec023bc5cca7a35e
 PatchFile: %n.patch
-PatchFile-MD5: e9ccf99481c187524edf8205ffa6a083
+PatchFile-MD5: 2493cc242ef996af30cb06d6fdc5b605
 PatchScript: sed -e 's|@BUILDDIR@|%b|g' -e 's|@INSTPREFIX@|%p|g' < %{PatchFile} | patch -p1
 
 SetMAKEFLAGS: -j1

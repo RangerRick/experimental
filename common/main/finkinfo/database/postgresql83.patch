@@ -1,3 +1,4 @@
+Distribution: 10.4, 10.5, 10.6
 diff -Nurd postgresql-8.3.10/contrib/Makefile postgresql-8.3.10-new/contrib/Makefile
 --- postgresql-8.3.10/contrib/Makefile	2008-05-08 11:49:47.000000000 -0500
 +++ postgresql-8.3.10-new/contrib/Makefile	2010-03-18 23:01:05.000000000 -0500

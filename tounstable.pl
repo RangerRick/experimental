@@ -51,7 +51,11 @@ for my $file (@ARGV)
 			if ($file =~ s/\.info\.in$//)
 			{
 				$fromfile = "$release/" . $file;
-				$tofile = "$PREFIX/fink/$release/unstable/$file";
+				if ($release >= 10.7) {
+					$tofile = "$PREFIX/fink/$release/stable/$file";
+				} else {
+					$tofile = "$PREFIX/fink/$release/unstable/$file";
+				}
 				for ("mac", "x11")
 				{
 					copy_file($fromfile . "-$_.info", $tofile . "-$_.info");
@@ -67,8 +71,14 @@ for my $file (@ARGV)
 				else
 				{
 					$fromfile = "common/" . $file;
+					print "skipping $fromfile\n";
+					next;
 				}
-				$tofile = "$PREFIX/fink/$release/unstable/" . $file;
+				if ($release >= 10.7) {
+					$tofile = "$PREFIX/fink/$release/stable/" . $file;
+				} else {
+					$tofile = "$PREFIX/fink/$release/unstable/" . $file;
+				}
 				copy_file($fromfile, $tofile);
 			}
 		}
