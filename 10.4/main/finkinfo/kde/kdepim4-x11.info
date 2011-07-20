@@ -210,7 +210,6 @@ SplitOff3: <<
 SplitOff4: <<
 	Package: %N-wizards
 	Description: KDE4 - PIM wizards
-	Depends: 
 	Files: <<
 		opt/kde4/%type_pkg[kde]/bin/*wizard*
 		opt/kde4/%type_pkg[kde]/share/applications/kde4/*wizard*

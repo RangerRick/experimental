@@ -1,15 +1,19 @@
 Package: gmm
-Version: 4.0.0
+Version: 4.1
 Revision: 1
 Source: http://download.gna.org/getfem/stable/%n-%v.tar.gz
-Source-MD5: b62bced3e8975292ffd83f2cb8b331f8
+Source-MD5: fcd2a94927a38922c566ebdfdb5b6b76
+PatchFile: %n.patch
+PatchFile-MD5: 16b905e020fe1ec83dc19badb1af092c
 BuildDependsOnly: true
+BuildDepends: fink (>= 0.24.12)
 InfoTest: TestScript: make check || exit 2
 GCC: 4.0
 CompileScript: <<
 #!/bin/sh -ev
-
-	if [ -x /usr/bin/gcc-4.2 ]; then
+	if [[ $(sw_vers -productVersion) > 10.6 ]]; then
+		export CC=clang CXX=clang++ CPP="clang++ -E"
+	elif [ -x /usr/bin/gcc-4.2 ]; then
 		export CC=gcc-4.2 CXX=g++-4.2 CPP=cpp-4.2
 	else
 		export CC=gcc-4.0 CXX=g++-4.0 CPP=cpp-4.0

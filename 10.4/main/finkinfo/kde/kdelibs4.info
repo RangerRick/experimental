@@ -307,7 +307,11 @@ Shlibs: <<
 <<
 
 PostInstScript: %p/opt/kde4/%type_pkg[kde]/bin/kde4-postinst.sh || :
-PostRmScript: update-alternatives --remove "applications.menu" "%p/opt/kde4/%type_pkg[kde]/etc/xdg/menus/applications.menu"
+PreRmScript: <<
+if [ upgrade != "$1" ]; then
+	update-alternatives --remove "applications.menu" "%p/opt/kde4/%type_pkg[kde]/etc/xdg/menus/applications.menu"
+fi
+<<
 
 DescDetail: Libraries for the K Desktop Environment.
 <<

@@ -4,7 +4,7 @@ Revision: 2
 Epoch: 1
 Description: Command-line completions for bash
 License: GPL
-Maintainer: Benjamin Reed <bash-completion@fink.racoonfink.com>
+Maintainer: Benjamin Reed <bash-completion@fink.raccoonfink.com>
 
 BuildDepends: fink (>= 0.30.0-1)
 

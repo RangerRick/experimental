@@ -3,9 +3,9 @@ Package: perlqt-pm%type_pkg[perl]
 Version: 3.009
 Revision: 1031
 Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
-Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
+Distribution: (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6, (%type_pkg[perl] = 5123) 10.7
 Description: Qt language bindings for Perl
-Type: perl(5.8.1 5.8.4 5.8.6 5.8.8 5.10.0)
+Type: perl(5.8.1 5.8.4 5.8.6 5.8.8 5.10.0 5.12.3)
 License: GPL
 Maintainer: Benjamin Reed <perlqt@fink.raccoonfink.com>
 
@@ -125,13 +125,15 @@ PostInstScript: <<
 		update-alternatives --install %p/share/man/man1/$file $file %p/share/man/man1/$file-%type_raw[perl] %type_pkg[perl]
 	done
 <<
-PostRmScript: <<
-	for file in pqtapi pqtsh puic; do
-		update-alternatives --remove $file %p/bin/$file-%type_raw[perl]
-	done
-	for file in puic; do
-		update-alternatives --remove $file %p/share/man/man1/$file-%type_raw[perl]
-	done
+PreRmScript: <<
+	if [ "upgrade" != "$1" ]; then
+		for file in pqtapi pqtsh puic; do
+			update-alternatives --remove $file %p/bin/$file-%type_raw[perl]
+		done
+		for file in puic; do
+			update-alternatives --remove $file %p/share/man/man1/$file-%type_raw[perl]
+		done
+	fi
 <<
 
 DescDetail: <<

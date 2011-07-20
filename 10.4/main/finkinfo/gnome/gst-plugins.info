@@ -4,7 +4,7 @@ Version: 0.8.12
 Revision: 1036
 Description: Streaming-media framework plugins
 License: Restrictive
-Maintainer: Benjamin Reed <gst-plugins@fink.racoonfink.com>
+Maintainer: Benjamin Reed <gst-plugins@fink.raccoonfink.com>
 
 Depends: <<
 	%N-shlibs (= %v-%r),
@@ -248,7 +248,7 @@ if [ configure = "$1" ]; then
 	done
 fi
 <<
-PostRmScript: <<
+PreRmScript: <<
 if [ upgrade != "$1" ]; then
 	echo "" > /tmp/gst-plugins-postrm.log
 	for command in "gst-register-0.8 --gst-mask=0"; do

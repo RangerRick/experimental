@@ -946,7 +946,7 @@ fi
 update-alternatives --install "%p/etc/xdg/menus/applications.menu" "applications.menu" "%p/etc/xdg/menus/kde-applications.menu" 10
 %p/bin/kde-update-caches.sh >/dev/null 2>&1 || :
 <<
-PostRmScript: <<
+PreRmScript: <<
 if [ -e "%p/etc/xdg/menus/applications.menu" ] && [ ! -L "%p/etc/xdg/menus/applications.menu" ]; then
 	mv "%p/etc/xdg/menus/applications.menu" "%p/etc/xdg/menus/applications.menu.bak"
 fi

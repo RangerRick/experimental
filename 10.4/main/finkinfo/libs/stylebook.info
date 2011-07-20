@@ -4,7 +4,7 @@ Revision: 0.b3.5
 Description: XML-based documentation generator
 Type: java
 License: BSD
-Maintainer: Benjamin Reed <stylebook@fink.racoonfink.com>
+Maintainer: Benjamin Reed <stylebook@fink.raccoonfink.com>
 
 Depends: <<
 	xalan-j (>= 2.7.1-1),

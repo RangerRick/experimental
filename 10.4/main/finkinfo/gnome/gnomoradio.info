@@ -88,7 +88,6 @@ SplitOff2: <<
 		orbit2-shlibs
 	<<
 	Files: lib
-	Shlibs: 
 <<
 
 Homepage: http://www.gnomoradio.org/

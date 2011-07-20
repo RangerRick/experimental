@@ -217,7 +217,7 @@ my @KEYS = (
 	'Homepage', 'DescDetail', 'DescUsage', 'DescPackaging', 'DescPort',
 );
 
-my @TREES = qw( 10.4 );
+my @TREES = qw( 10.4 10.7 );
 
 my $APPEND_USAGE = '^arts|kde\S+3|kdevelop$|koffice$|koffice-|bundle-kde$|bundle-kde-|kgpg';
 
@@ -406,6 +406,11 @@ sub handle_file {
 			my $treeproperties = clone($properties);
 			$treeproperties->{'Tree'} = $tree;
 
+			if (exists $treeproperties->{'Distribution'}) {
+				my @dists = split(/ +/, $treeproperties->{'Distribution'});
+				next unless grep {/^${tree}$/} @dists;
+			}
+
 			$treeproperties = transform_fields($treeproperties, clone($treeproperties), 1);
 
 			my $todir = $dir;
@@ -416,6 +421,11 @@ sub handle_file {
 			my $info = serialize_to_info($treeproperties) . "\n";
 			my $outfilename = $filename;
 			$outfilename =~ s/^\.//;
+
+			if ($tree >= 10.7 and $outfilename =~ /-10\.6\.info$/) {
+				$outfilename =~ s/-10\.6\.info$/.info/;
+			}
+
 			if (open (FILEOUT, '>' . $todir . '/' . $outfilename)) {
 				print FILEOUT $info;
 				close (FILEOUT);
@@ -470,6 +480,9 @@ sub transform_fields {
 			$properties->{$field} = transform_fields($packagehash, $contents);
 		} elsif (defined &{"transform_$lcfield"}) {
 			$properties->{$field} = &{"transform_$lcfield"}($packagehash, $properties->{$field});
+			if ($properties->{$field} eq "") {
+				delete $properties->{$field};
+			}
 		} else {
 			#warn "unhandled field: $field\n";
 		}
@@ -492,7 +505,7 @@ sub transform_fields {
 		if (exists $properties->{'Distribution'}) {
 			die "type = perl, but distribution is already set!\n";
 		} else {
-			$properties->{'Distribution'} = '(%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6';
+			$properties->{'Distribution'} = '(%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6, (%type_pkg[perl] = 5123) 10.7';
 		}
 	}
 
@@ -679,6 +692,14 @@ sub prettify_field_name {
 	return $field;
 }
 
+sub transform_architecture {
+	my $tree = shift->{'Tree'};
+	my $arch = shift;
+
+	return undef if ($tree >= 10.7);
+	return $arch;
+}
+
 sub transform_builddepends {
 	return transform_depends(@_);
 }
@@ -850,6 +871,14 @@ sub transform_descusage {
 	return $descusage;
 }
 
+sub transform_distribution {
+	my $tree = shift->{'Tree'};
+	my $distribution = shift;
+
+	return undef if ($tree >= 10.7);
+	return $distribution;
+}
+
 sub transform_enhances {
 	return transform_depends(@_);
 }
@@ -881,6 +910,14 @@ sub transform_gcc {
 	}
 
 	return $gcc;
+}
+
+sub transform_maintainer {
+	my $tree = shift;
+	my $text = shift;
+
+	$text =~ s/racoonfink.com/raccoonfink.com/g;
+	return $text;
 }
 
 sub transform_patch {
@@ -928,6 +965,8 @@ sub transform_revision {
 		$revision = revision_add($revision, 0);
 	} elsif ($tree eq '10.5') {
 		$revision = revision_add($revision, 20);
+	} elsif ($tree eq '10.7') {
+		$revision = revision_add($revision, 30);
 	} else {
 		warn "unhandled tree '$tree'\n";
 	}
@@ -1009,7 +1048,7 @@ sub transform_type {
 		if ($tree =~ /^10.3/) {
 			@versions = qw(5.6.0 5.8.0 5.8.1 5.8.4 5.8.6);
 		} elsif ($tree =~ /^10.4/) {
-			@versions = qw(5.8.1 5.8.4 5.8.6 5.8.8 5.10.0);
+			@versions = qw(5.8.1 5.8.4 5.8.6 5.8.8 5.10.0 5.12.3);
 		}
 		$type =~ s/perl\s*\(0\)/perl(@versions)/;
 	} elsif ($type =~ /^python\s*\(0\)/i) {

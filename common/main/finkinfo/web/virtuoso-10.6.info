@@ -6,7 +6,7 @@ Source: mirror:sourceforge:%n/%n-opensource-%v.tar.gz
 Source-MD5: 0519e1f104428e0c8b25fad89e3c57ef
 PatchFile: %n.patch
 PatchFile-MD5: dd21aa1a461f52a915d0cdbcc4e9229a
-Distribution: 10.6
+Distribution: 10.6, 10.7
 Type: java(1.6)
 DocFiles: AUTHORS COPYING CREDITS ChangeLog INSTALL LICENSE NEWS README*
 BuildDepends: <<

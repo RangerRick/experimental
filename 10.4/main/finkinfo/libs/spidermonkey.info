@@ -5,7 +5,7 @@ Revision: 2
 Epoch: 1
 Description: Mozilla JavaScript-C Engine
 License: OSI-Approved
-Maintainer: Benjamin Reed <spidermonkey@fink.racoonfink.com>
+Maintainer: Benjamin Reed <spidermonkey@fink.raccoonfink.com>
 
 Depends: %N-shlibs (= %e:%v-%r)
 BuildDepends: <<

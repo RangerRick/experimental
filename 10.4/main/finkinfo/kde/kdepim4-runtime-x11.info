@@ -7,7 +7,6 @@ Type: kde (x11)
 License: GPL/LGPL
 Maintainer: Benjamin Reed <kdepim4@fink.raccoonfink.com>
 
-Depends: 
 BuildDepends: <<
 	akonadi-%type_pkg[kde]-dev (>= 1.5.1-1),
 	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
