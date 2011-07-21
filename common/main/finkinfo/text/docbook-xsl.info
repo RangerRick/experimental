@@ -86,6 +86,6 @@ Adding proper prefix to rm, cp, cat, and install so that there is no
 problem with other versions of those tools installed elsewhere.
 Added documentation
 <<
-Maintainer: None <fink-devel@lists.sourceforge.net>
+Maintainer: Benjamin Reed <docbook-xsl@fink.raccoonfink.com>
 License: BSD
 Homepage: http://sourceforge.net/projects/docbook/

@@ -1,5 +1,5 @@
 Package: libdatrie1
-Version: 0.2.2
+Version: 0.2.4
 Revision: 1
 Description: Double-array trie
 License: LGPL
@@ -10,7 +10,7 @@ Depends: <<
 	libiconv
 <<
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	libiconv-dev
 <<
 Conflicts: libdatrie
@@ -18,7 +18,7 @@ Replaces: libdatrie
 BuildDependsOnly: true
 
 Source: mirror:debian:pool/main/libd/libdatrie/libdatrie_%v.orig.tar.gz
-Source-MD5: d1c93faf0c0d63e620c525c561940fdd
+Source-MD5: 7f7d592114f98db9e4c7171c3f2befc5
 SourceDirectory: libdatrie-%v
 
 SetMAKEFLAGS: -j1
@@ -33,7 +33,7 @@ SplitOff: <<
 	Description: Shared libraries for libdatrie
 	DocFiles: COPYING
 	Files: lib/libdatrie.*.dylib
-	Shlibs: %p/lib/libdatrie.1.dylib 2.0.0 %N-shlibs (>= 0.2.2-1)
+	Shlibs: %p/lib/libdatrie.1.dylib 3.0.0 %N-shlibs (>= 0.2.4-1)
 <<
 
 Homepage: http://linux.thai.net/~thep/datrie/datrie.html

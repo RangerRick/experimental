@@ -1,6 +1,6 @@
 Package: glitz
 Version: 0.5.6
-Revision: 32
+Revision: 33
 Description: OpenGL compositing library
 License: BSD
 Maintainer: Benjamin Reed <glitz@fink.raccoonfink.com>
@@ -25,17 +25,16 @@ Source: http://cairographics.org/snapshots/%n-%v.tar.gz
 Source-MD5: c507f140ecccc06aed8888c958edda4c
 
 SetCPPFLAGS: -I/usr/X11R6/include
-SetMAKEFLAGS: -j1
+SetLDFLAGS: -Wl,-dylib_file,/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
 NoSetLDFLAGS: true
-NoSetMAKEFLAGS: true
 UseMaxBuildJobs: false
-ConfigureParams: --disable-dependency-tracking --disable-egl --enable-glx
+ConfigureParams: --disable-dependency-tracking --disable-egl --x-includes=/usr/X11R6/include --x-libraries=/usr/X11R6/lib
 CompileScript: <<
 	AGL_LIBS="-Wl,-framework,Carbon -Wl,-framework,OpenGL -Wl,-framework,AGL" ./configure %c
 	make
 <<
 
-InstallScript: make install DESTDIR=%d
+InstallScript: make -j1 install DESTDIR=%d
 DocFiles: AUTHORS COPYING ChangeLog* INSTALL NEWS README TODO
 SplitOff: <<
 	Package: %N-shlibs
