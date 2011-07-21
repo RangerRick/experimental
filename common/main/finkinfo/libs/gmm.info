@@ -1,6 +1,6 @@
 Package: gmm
 Version: 4.1
-Revision: 1
+Revision: 2
 Source: http://download.gna.org/getfem/stable/%n-%v.tar.gz
 Source-MD5: fcd2a94927a38922c566ebdfdb5b6b76
 PatchFile: %n.patch

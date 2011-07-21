@@ -1,7 +1,7 @@
 Info4: <<
 Package: postgresql90
 Version: 9.0.4
-Revision: 3
+Revision: 4
 Description: PostgreSQL open-source database
 License: BSD
 Maintainer: Benjamin Reed <postgresql90@fink.raccoonfink.com>

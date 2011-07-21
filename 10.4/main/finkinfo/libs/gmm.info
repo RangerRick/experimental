@@ -1,6 +1,6 @@
 Package: gmm
 Version: 4.1
-Revision: 1
+Revision: 2
 Description: C++ template library for matrices
 License: LGPL
 Maintainer: Benjamin Reed <gmm@fink.raccoonfink.com>
