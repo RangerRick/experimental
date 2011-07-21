@@ -1,12 +1,15 @@
-Info3: <<
+Info4: <<
 Package: rrdtool-java
 Version: 1.0.4
-Revision: 1
+Revision: 2
 Type: java(1.5)
 
 Source: mirror:sourceforge:opennms/jrrd-%v.tar.gz
 Source-MD5: 75f9e7566bfde33c77dae16da55e5b32
+PatchFile: rrdtool-java.patch
+PatchFile-MD5: 0bea03f4cd2ca14fb5eab1fabcaa8c25
 PatchScript: <<
+	patch -p1 < %{PatchFile}
 	perl -pi -e 's,1\.4,1.5,g' configure.ac
 	autoreconf -fvi
 <<
@@ -14,6 +17,7 @@ PatchScript: <<
 BuildDepends: <<
 	autoconf2.6,
 	automake1.11,
+	fink (>= 1.2.3-1),
 	freetype219 (>= 2.3.7-7),
 	intltool40,
 	libart2 (>= 2.3.19-1),
@@ -28,6 +32,8 @@ ConfigureParams: --disable-dependency-tracking (%m != x86_64) --with-jvm-arch=32
 CompileScript: <<
 #!/bin/sh -ev
 
+	# let configure find an appropriate one
+	unset JAVA_HOME
 	case `sw_vers -productVersion` in
 		10.[01234]*)
 			;;
