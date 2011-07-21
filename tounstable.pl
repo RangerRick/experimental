@@ -47,14 +47,15 @@ for my $file (@ARGV)
 		system('./generate-infofiles.pl', 'common/' . $file) == 0 or die "could not generate infofiles for 'common/$file'";
 		for my $release ('10.4', '10.7')
 		{
+			my $filename = $file;
 			my ($releasefile, $fromfile, $tofile);
-			if ($file =~ s/\.info\.in$//)
+			if ($filename =~ s/\.info\.in$//)
 			{
-				$fromfile = "$release/" . $file;
+				$fromfile = "$release/" . $filename;
 				if ($release >= 10.7) {
-					$tofile = "$PREFIX/fink/$release/stable/$file";
+					$tofile = "$PREFIX/fink/$release/stable/$filename";
 				} else {
-					$tofile = "$PREFIX/fink/$release/unstable/$file";
+					$tofile = "$PREFIX/fink/$release/unstable/$filename";
 				}
 				for ("mac", "x11")
 				{
@@ -63,21 +64,21 @@ for my $file (@ARGV)
 			}
 			else
 			{
-				$releasefile = "$release/" . $file;
+				$releasefile = "$release/" . $filename;
 				if (-f $releasefile)
 				{
 					$fromfile = $releasefile;
 				}
 				else
 				{
-					$fromfile = "common/" . $file;
+					$fromfile = "common/" . $filename;
 					print "skipping $fromfile\n";
 					next;
 				}
 				if ($release >= 10.7) {
-					$tofile = "$PREFIX/fink/$release/stable/" . $file;
+					$tofile = "$PREFIX/fink/$release/stable/" . $filename;
 				} else {
-					$tofile = "$PREFIX/fink/$release/unstable/" . $file;
+					$tofile = "$PREFIX/fink/$release/unstable/" . $filename;
 				}
 				copy_file($fromfile, $tofile);
 			}
