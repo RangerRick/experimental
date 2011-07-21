@@ -12,7 +12,7 @@ BuildDepends: <<
 	fink (>= 0.30.0-1),
 	kde4-buildenv (>= 4.6.0-1),
 	kdelibs4-%type_pkg[blitz] (>= 4.6.3-1),
-	qt4-base-%type_pkg[blitz] (>= 4.7.3-1)
+	qt4-base-%type_pkg[blitz] (>= 4.7.3-2)
 <<
 Replaces: <<
 	blitz-%type_pkg[blitz]-dev (<< 0.0.4-2000),

@@ -52,7 +52,7 @@ BuildDepends: <<
 	python25,
 	qca2-%type_pkg[kde] (>= 2.0.3-1),
 	qgpgme1-%type_pkg[kde] (>= 4.6.3-1),
-	qt4-base-%type_pkg[kde] (>= 4.7.3-1),
+	qt4-base-%type_pkg[kde] (>= 4.7.3-2),
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	speex3,
 	strigi-dev (>= 0.6.3-1),
@@ -171,7 +171,7 @@ SplitOff: <<
 	Description: KDE4 - PIM libraries
 	Depends: <<
 		kdepimlibs4-%type_pkg[kde]-shlibs (>= 4.6.3-1),
-		qt4-base-%type_pkg[kde]-qtdesigner-shlibs (>= 4.7.3-1)
+		qt4-base-%type_pkg[kde]-qtdesigner-shlibs (>= 4.7.3-2)
 	<<
 	Files: opt/kde4/%type_pkg[kde]/lib/libkdepim.4*.dylib
 	Shlibs: %p/opt/kde4/%type_pkg[kde]/lib/libkdepim.4.dylib 4.0.0 %n (>= 4.2.4-1)

@@ -2,6 +2,7 @@ Info4: <<
 Package: net-snmp-unified
 Version: 5.6.1
 Revision: 42
+Distribution: 10.6, 10.7
 Description: SNMP tools and libraries
 License: BSD
 Maintainer: Benjamin Reed <net-snmp@fink.raccoonfink.com>

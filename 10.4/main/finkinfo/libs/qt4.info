@@ -11,7 +11,7 @@ Depends: <<
 	fink (>= 0.30.0-1),
 	fink-obsolete-packages,
 	phonon-%type_pkg[qt] (>= 4.5.0-1),
-	qt4-base-%type_pkg[qt] (>= 4.7.3-1),
+	qt4-base-%type_pkg[qt] (>= 4.7.3-2),
 	qtassistant-compat-%type_pkg[qt] (>= 4.6.3-1),
 	qtassistant-compat-%type_pkg[qt]-bin (>= 4.6.3-1),
 	qtwebkit-%type_pkg[qt] (>= 2.0.0-4)
@@ -48,15 +48,15 @@ SplitOff: <<
 	Package: %N-gui-shlibs
 	Depends: <<
 		fink-obsolete-packages,
-		qt4-base-%type_pkg[qt]-qt3support-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qt]-qtdbus-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qt]-qtdeclarative-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qt]-qtgui-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qt]-qthelp-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qt]-qtmultimedia-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qt]-qtopengl-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qt]-qtscripttools-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qt]-qtsvg-shlibs (>= 4.7.3-1),
+		qt4-base-%type_pkg[qt]-qt3support-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qt]-qtdbus-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qt]-qtdeclarative-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qt]-qtgui-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qt]-qthelp-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qt]-qtmultimedia-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qt]-qtopengl-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qt]-qtscripttools-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qt]-qtsvg-shlibs (>= 4.7.3-2),
 		phonon-%type_pkg[qt]-shlibs (>= 4.5.0-1),
 		phonon-%type_pkg[qt]-backend (>= 4.5.0-1),
 		qtassistant-compat-%type_pkg[qt]-shlibs (>= 4.6.3-1),
@@ -68,16 +68,16 @@ SplitOff2: <<
 	Package: %N-core-shlibs
 	Depends: <<
 		fink-obsolete-packages,
-		qt4-base-%type_pkg[qt]-qtcore-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qt]-qtdesigner-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qt]-qtdesignercomponents-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qt]-qtclucene-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qt]-qtnetwork-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qt]-qtscript-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qt]-qtsql-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qt]-qttest-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qt]-qtxml-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qt]-qtxmlpatterns-shlibs (>= 4.7.3-1)
+		qt4-base-%type_pkg[qt]-qtcore-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qt]-qtdesigner-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qt]-qtdesignercomponents-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qt]-qtclucene-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qt]-qtnetwork-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qt]-qtscript-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qt]-qtsql-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qt]-qttest-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qt]-qtxml-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qt]-qtxmlpatterns-shlibs (>= 4.7.3-2)
 	<<
 	Files: share/doc/installed-packages/%N-core-shlibs
 <<
@@ -85,7 +85,7 @@ SplitOff3: <<
 	Package: %N-designer
 	Depends: <<
 		fink-obsolete-packages,
-		qt4-base-%type_pkg[qt]-designer (>= 4.7.3-1)
+		qt4-base-%type_pkg[qt]-designer (>= 4.7.3-2)
 	<<
 	Files: share/doc/installed-packages/%N-designer
 <<
@@ -93,7 +93,7 @@ SplitOff4: <<
 	Package: %N-designer-shlibs
 	Depends: <<
 		fink-obsolete-packages,
-		qt4-base-%type_pkg[qt]-qtdesigner-shlibs (>= 4.7.3-1)
+		qt4-base-%type_pkg[qt]-qtdesigner-shlibs (>= 4.7.3-2)
 	<<
 	Files: share/doc/installed-packages/%N-designer-shlibs
 <<
@@ -101,7 +101,7 @@ SplitOff5: <<
 	Package: %N-linguist
 	Depends: <<
 		fink-obsolete-packages,
-		qt4-base-%type_pkg[qt]-linguist (>= 4.7.3-1)
+		qt4-base-%type_pkg[qt]-linguist (>= 4.7.3-2)
 	<<
 	Files: share/doc/installed-packages/%N-linguist
 <<
@@ -109,7 +109,7 @@ SplitOff6: <<
 	Package: %N-doc
 	Depends: <<
 		fink-obsolete-packages,
-		qt4-base-%type_pkg[qt]-doc (>= 4.7.3-1)
+		qt4-base-%type_pkg[qt]-doc (>= 4.7.3-2)
 	<<
 	Files: share/doc/installed-packages/%N-doc
 <<

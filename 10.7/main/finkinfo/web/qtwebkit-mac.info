@@ -17,7 +17,7 @@ BuildDepends: <<
 	phonon-%type_pkg[qtwebkit],
 	sqlite3-dev (>= 3.7.6.2-1),
 	system-openssl-dev,
-	qt4-base-%type_pkg[qtwebkit] (>= 4.7.3-1)
+	qt4-base-%type_pkg[qtwebkit] (>= 4.7.3-2)
 <<
 Replaces: qt4-%type_pkg[qtwebkit] (<< 4.7.3-1)
 GCC: 4.0
@@ -98,14 +98,14 @@ SplitOff: <<
 	Depends: <<
 		libpng15-shlibs (>= 1.5.2-1),
 		phonon-%type_pkg[qtwebkit]-shlibs (>= 4.5.0-1),
-		qt4-base-%type_pkg[qtwebkit]-qtcore-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qtwebkit]-qtdeclarative-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qtwebkit]-qtgui-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qtwebkit]-qtnetwork-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qtwebkit]-qtscript-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qtwebkit]-qtsql-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qtwebkit]-qtsvg-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[qtwebkit]-qtxmlpatterns-shlibs (>= 4.7.3-1),
+		qt4-base-%type_pkg[qtwebkit]-qtcore-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qtwebkit]-qtdeclarative-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qtwebkit]-qtgui-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qtwebkit]-qtnetwork-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qtwebkit]-qtscript-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qtwebkit]-qtsql-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qtwebkit]-qtsvg-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[qtwebkit]-qtxmlpatterns-shlibs (>= 4.7.3-2),
 		sqlite3-shlibs (>= 3.7.6.2-1)
 	<<
 	Replaces: <<

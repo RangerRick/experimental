@@ -7,13 +7,13 @@ Type: automoc (x11 mac)
 License: LGPL
 Maintainer: Benjamin Reed <automoc@fink.raccoonfink.com>
 
-Depends: qt4-base-%type_pkg[automoc]-qtcore-shlibs (>= 4.7.3-1)
+Depends: qt4-base-%type_pkg[automoc]-qtcore-shlibs (>= 4.7.3-2)
 BuildDepends: <<
 	cmake (>= 2.8.2-1),
 	fink (>= 0.30.0-1),
 	kde4-buildenv (>= 4.6.0-1),
 	system-openssl-dev,
-	qt4-base-%type_pkg[automoc] (>= 4.7.3-1)
+	qt4-base-%type_pkg[automoc] (>= 4.7.3-2)
 <<
 GCC: 4.0
 

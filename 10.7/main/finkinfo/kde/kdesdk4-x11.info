@@ -45,7 +45,7 @@ BuildDepends: <<
 	libxml2,
 	pkgconfig (>= 0.23-1),
 	python25,
-	qt4-base-%type_pkg[kde] (>= 4.7.3-1),
+	qt4-base-%type_pkg[kde] (>= 4.7.3-2),
 	soprano-%type_pkg[kde]-dev (>= 2.6.0-1),
 	strigi-dev (>= 0.6.3-1),
 	(%type_pkg[kde] = x11) x11-dev,
@@ -254,7 +254,7 @@ SplitOff7: <<
 	Package: kuiviewer4-%type_pkg[kde]
 	Description: KDE4 - Qt Designer interface viewer
 	Depends: <<
-		qt4-base-%type_pkg[kde]-qtdesigner-shlibs (>= 4.7.3-1),
+		qt4-base-%type_pkg[kde]-qtdesigner-shlibs (>= 4.7.3-2),
 		%N-base (>= %v-%r)
 	<<
 	Files: <<

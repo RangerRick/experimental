@@ -2,6 +2,7 @@ Info4: <<
 Package: virtuoso
 Version: 6.1.2
 Revision: 31
+Distribution: 10.6, 10.7
 Description: SQL/RDF/XML data management server
 Type: java(1.6)
 License: GPL

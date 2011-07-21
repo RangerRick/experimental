@@ -2,6 +2,7 @@ Info4: <<
 Package: gstreamer
 Version: 0.8.12
 Revision: 1060
+Distribution: 10.6, 10.7
 Description: Streaming-media framework
 License: GPL
 Maintainer: Benjamin Reed <gstreamer@fink.raccoonfink.com>

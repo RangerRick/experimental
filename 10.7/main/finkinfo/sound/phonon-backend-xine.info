@@ -10,9 +10,9 @@ Maintainer: Benjamin Reed <phonon@fink.raccoonfink.com>
 Depends: <<
 	libxine1-shlibs (>= 1.1.19-1),
 	phonon-mac-shlibs (>= 4.5.0-1),
-	qt4-base-mac-qtcore-shlibs (>= 4.7.3-1),
-	qt4-base-mac-qtdbus-shlibs (>= 4.7.3-1),
-	qt4-base-mac-qtgui-shlibs (>= 4.7.3-1)
+	qt4-base-mac-qtcore-shlibs (>= 4.7.3-2),
+	qt4-base-mac-qtdbus-shlibs (>= 4.7.3-2),
+	qt4-base-mac-qtgui-shlibs (>= 4.7.3-2)
 <<
 BuildDepends: <<
 	automoc-%type_pkg[phonon] (>= 0.9.89-0.999999.1),
@@ -22,7 +22,7 @@ BuildDepends: <<
 	libxine1 (>= 1.1.19-1),
 	system-openssl-dev,
 	phonon-%type_pkg[phonon] (>= 4.5.0-1),
-	qt4-base-%type_pkg[phonon] (>= 4.7.3-1)
+	qt4-base-%type_pkg[phonon] (>= 4.7.3-2)
 <<
 Replaces: qt4-%type_pkg[phonon] (<< 4.7.3-1)
 GCC: 4.0

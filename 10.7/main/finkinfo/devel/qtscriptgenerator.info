@@ -8,14 +8,14 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <qtscriptgenerator@fink.raccoonfink.com>
 
 Depends: <<
-	qt4-%type_pkg[qt]-designer-shlibs (>= 4.7.3-1),
-	qt4-%type_pkg[qt]-gui-shlibs (>= 4.7.3-1),
+	qt4-%type_pkg[qt]-designer-shlibs (>= 4.7.3-2),
+	qt4-%type_pkg[qt]-gui-shlibs (>= 4.7.3-2),
 	%N-runtime (>= %v-%r)
 <<
 BuildDepends: <<
 	fink (>= 0.30.0-1),
 	kde4-buildenv (>= 4.6.0-1),
-	qt4-%type_pkg[qt] (>= 4.7.3-1),
+	qt4-%type_pkg[qt] (>= 4.7.3-2),
 	(%type_pkg[qt] = x11) x11-dev
 <<
 GCC: 4.0

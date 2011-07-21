@@ -1,26 +1,29 @@
 Info4: <<
 Package: postgis%type_pkg[postgresql]
-Version: 1.5.2
+Version: 1.5.3
 Revision: 1
 Description: PostgreSQL geographic object support
 Type: postgresql (8.4 9.0)
-Distribution: (%type_pkg[postgresql] = 84) 10.4, (%type_pkg[postgresql] = 84) 10.5, (%type_pkg[postgresql] = 84) 10.6, 10.7
+Distribution: <<
+	(%type_pkg[postgresql] = 84) 10.4, (%type_pkg[postgresql] = 84) 10.5, (%type_pkg[postgresql] = 84) 10.6,
+	(%type_pkg[postgresql] = 90) 10.4, (%type_pkg[postgresql] = 90) 10.5, (%type_pkg[postgresql] = 90) 10.6, (%type_pkg[postgresql] = 90) 10.7
+<<
 License: BSD
 Maintainer: Benjamin Reed <postgis@fink.raccoonfink.com>
 
 Depends: <<
-	libgeos3.2.2-shlibs (>= 3.2.2-3),
+	libgeos3.3.0-shlibs (>= 3.3.0-1),
 	libxml2-shlibs,
-	postgresql%type_pkg[postgresql]-shlibs,
+	postgresql%type_pkg[postgresql]-shlibs (>= 9.0.4-4),
 	proj-shlibs
 <<
 BuildDepends: <<
 	fink (>= 0.28.0-1),
 	jts,
-	libgeos3.2.2 (>= 3.2.2-3),
+	libgeos3.3.0 (>= 3.3.0-1),
 	libiconv-dev,
 	libxml2,
-	postgresql%type_pkg[postgresql]-dev,
+	postgresql%type_pkg[postgresql]-dev (>= 9.0.4-4),
 	postgresql-java (>= %type_raw[postgresql]-1),
 	proj,
 	system-openssl-dev,
@@ -29,26 +32,34 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: http://postgis.refractions.net/download/postgis-%v.tar.gz
-Source-MD5: 772ec1d0f04d6800cd7e2420a97a7483
+Source-MD5: 05a61df5e1b78bf51c9ce98bea5526fc
 PatchFile: postgis.patch
-PatchFile-MD5: 57273045b6cdbd49466a7da03f21a9e5
+PatchFile-MD5: 57494eeeb1e9036ca4ca1d994f880230
 
+UseMaxBuildJobs: false
 SetCPPFLAGS: -I%p/lib/system-openssl/include -DHAVE_OPTRESET -fno-common
 NoSetCPPFLAGS: true
 SetLDFLAGS: -L%p/lib/system-openssl/lib
 NoSetLDFLAGS: true
-ConfigureParams: --with-pgconfig=%p/opt/postgresql-%type_raw[postgresql]/bin/pg_config --with-geosconfig=%p/opt/libgeos3.2.2/bin/geos-config --with-projdir=%p --with-xml2config=%p/bin/xml2-config
+ConfigureParams: --with-pgconfig=%p/opt/postgresql-%type_raw[postgresql]/bin/pg_config --with-geosconfig=%p/opt/libgeos3.3.0/bin/geos-config --with-projdir=%p --with-xml2config=%p/bin/xml2-config
 CompileScript: <<
 #!/bin/sh -ev
+
+	if [ -x /usr/bin/gcc-4.2 ]; then
+		SQL_CPP="gcc-4.2 -E"
+	else
+		SQL_CPP="gcc -E"
+	fi
 
 	export lt_cv_sys_max_cmd_len=65536
 	export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home"
 	export PATH="/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home/bin:$PATH"
 
 	./configure %c
-	make
+
+	make SQL_CPP="$SQL_CPP"
 	pushd java/jdbc
-	make
+		make
 	popd
 <<
 

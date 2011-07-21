@@ -889,7 +889,7 @@ sub transform_distribution {
 	my $tree = shift->{'Tree'};
 	my $distribution = shift;
 
-	return undef if ($tree >= 10.7);
+	# return undef if ($tree >= 10.7);
 	return $distribution;
 }
 

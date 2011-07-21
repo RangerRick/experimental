@@ -36,7 +36,7 @@ BuildDepends: <<
 	sqlite3-dev,
 	system-java-dev (>= 1.5.0-1),
 	system-openssl-dev,
-	qt4-base-%type_pkg[soprano] (>= 4.7.3-1),
+	qt4-base-%type_pkg[soprano] (>= 4.7.3-2),
 	virtuoso (>= 6.1.2-1)
 <<
 GCC: 4.0
@@ -90,10 +90,10 @@ SplitOff: <<
 	Depends: <<
 		clucene-core-shlibs (>= 0.9.20-1),
 		dbus1.3-shlibs (>= 1.2.24-1),
-		qt4-base-%type_pkg[soprano]-qtcore-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[soprano]-qtdbus-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[soprano]-qtnetwork-shlibs (>= 4.7.3-1),
-		qt4-base-%type_pkg[soprano]-qtxml-shlibs (>= 4.7.3-1),
+		qt4-base-%type_pkg[soprano]-qtcore-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[soprano]-qtdbus-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[soprano]-qtnetwork-shlibs (>= 4.7.3-2),
+		qt4-base-%type_pkg[soprano]-qtxml-shlibs (>= 4.7.3-2),
 		system-java (>= 1.5.0-1),
 		virtuoso (>= 6.1.2-1)
 	<<

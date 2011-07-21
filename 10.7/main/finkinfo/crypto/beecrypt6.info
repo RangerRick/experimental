@@ -1,6 +1,7 @@
 Package: beecrypt6
 Version: 4.1.2
 Revision: 41
+Distribution: 10.5, 10.6, 10.7
 Description: Fast Cryptographic Toolkit
 License: GPL/LGPL
 Maintainer: Benjamin Reed <beecrypt6@fink.raccoonfink.com>

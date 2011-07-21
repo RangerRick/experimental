@@ -13,7 +13,7 @@ BuildDepends: setuptools-py%type_pkg[python]
 GCC: 4.0
 
 Source: http://pypi.python.org/packages/source/S/SQLAlchemy/SQLAlchemy-%v.tar.gz
-Source-MD5: 76e2e1e48b8047f1ca7023f143374aef
+Source-MD5: f422e5979c83da65641b33f90ec1964a
 
 UseMaxBuildJobs: true
 CompileScript:  echo Skipping build

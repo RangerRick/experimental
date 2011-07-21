@@ -12,9 +12,9 @@ Depends: <<
 	gst-plugins-base-0.10-shlibs (>= 0.10.34-1),
 	gstreamer-0.10-shlibs (>= 0.10.34-1),
 	phonon-mac-shlibs (>= 4.5.0-1),
-	qt4-base-mac-qtcore-shlibs (>= 4.7.3-1),
-	qt4-base-mac-qtgui-shlibs (>= 4.7.3-1),
-	qt4-base-mac-qtopengl-shlibs (>= 4.7.3-1)
+	qt4-base-mac-qtcore-shlibs (>= 4.7.3-2),
+	qt4-base-mac-qtgui-shlibs (>= 4.7.3-2),
+	qt4-base-mac-qtopengl-shlibs (>= 4.7.3-2)
 <<
 BuildDepends: <<
 	automoc-%type_pkg[phonon] (>= 0.9.89-0.999999.1),
@@ -27,7 +27,7 @@ BuildDepends: <<
 	libxml2 (>= 2.6.32-1),
 	system-openssl-dev,
 	phonon-%type_pkg[phonon] (>= 4.5.0-1),
-	qt4-base-%type_pkg[phonon] (>= 4.7.3-1)
+	qt4-base-%type_pkg[phonon] (>= 4.7.3-2)
 <<
 Replaces: qt4-%type_pkg[phonon] (<< 4.7.3-1)
 GCC: 4.0
