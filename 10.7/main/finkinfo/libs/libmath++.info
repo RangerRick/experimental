@@ -11,7 +11,7 @@ BuildDepends: <<
 	doxygen,
 	libtool2
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: http://www.surakware.net/pub/projects/releases/%n/%n-%v.tar.gz
 Source-MD5: ef2933a45df4def2d0a37f560399c9ad

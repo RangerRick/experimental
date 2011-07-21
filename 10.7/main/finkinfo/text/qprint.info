@@ -7,7 +7,7 @@ License: BSD
 Maintainer: Benjamin Reed <qprint@fink.raccoonfink.com>
 
 BuildDepends: fink (>= 0.30.0-1)
-GCC: 3.3
+GCC: 4.0
 
 Source: http://www.fourmilab.ch/webtools/%n/%n-%v.tar.gz
 Source-MD5: 6dc7931376370d5be9223d0d43bec7d0

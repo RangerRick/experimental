@@ -33,7 +33,7 @@ Replaces: <<
 	poppler4-qt4-mac
 <<
 BuildDependsOnly: true
-GCC: 3.3
+GCC: 4.0
 
 Source: http://poppler.freedesktop.org/poppler-%v.tar.gz
 Source-MD5: 13d12ca4e349574cfbbcf4a9b2b3ae52

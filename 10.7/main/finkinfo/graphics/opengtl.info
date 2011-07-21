@@ -16,7 +16,7 @@ BuildDepends: <<
 	libpng15 (>= 1.5.2-1),
 	llvm27
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: http://download.opengtl.org/OpenGTL-%v.tar.bz2
 Source-MD5: 900aef54c76ce7120f8ff586b3e8af6f

@@ -18,7 +18,7 @@ BuildDepends: <<
 <<
 Replaces: qt4-%type_pkg[qt] (<< 4.7.3-1)
 BuildDependsOnly: true
-GCC: 3.3
+GCC: 4.0
 
 Source: ftp://ftp.qt.nokia.com/qt/source/qt-assistant-qassistantclient-library-compat-src-%v.tar.gz
 Source-MD5: a20148e0488d5c12ab35ccc107dcc64d

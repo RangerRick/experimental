@@ -13,7 +13,7 @@ BuildDepends: <<
 	qt3 (>= 3.3.8-2000)
 <<
 BuildDependsOnly: true
-GCC: 3.3
+GCC: 4.0
 
 Source: http://delta.affinix.com/qca/qca-%v.tar.bz2
 Source-MD5: ee44022eb0e5b8b5df64c62630f6e6b6

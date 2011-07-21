@@ -16,7 +16,7 @@ Replaces: <<
 	kdepim4-%type_pkg[kde]-base (<< 4.4.1-1),
 	step4-%type_pkg[kde] (<< 4.3.0-1)
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/oxygen-icons-%v.tar.bz2
 Source-MD5: 3390ae73d1a0c70c121f69b556757fdd

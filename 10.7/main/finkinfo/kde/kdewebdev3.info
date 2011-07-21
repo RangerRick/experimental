@@ -19,7 +19,7 @@ BuildDepends: <<
 	cctools-single-module,
 	expat1,
 	fink (>= 0.30.0-1),
-	freetype219 (>= 2.4.4-2),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	kdelibs3-unified-dev (>= 3.5.10-10),
 	kdesdk3-dev (>= 3.5.10-10),
@@ -40,7 +40,7 @@ BuildDepends: <<
 <<
 Conflicts: %N (<< %v-%r)
 Replaces: %N (<< %v-%r)
-GCC: 3.3
+GCC: 4.0
 
 CustomMirror: <<
 	Primary: http://www.finkproject.org/~ranger/distfiles

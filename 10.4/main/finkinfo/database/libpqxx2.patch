@@ -1,3 +1,4 @@
+Distribution: 10.4, 10.5, 10.6
 diff -Nurd libpqxx-2.6.9/Makefile.in libpqxx-2.6.9-new/Makefile.in
 --- libpqxx-2.6.9/Makefile.in	2007-02-01 05:09:58.000000000 -0500
 +++ libpqxx-2.6.9-new/Makefile.in	2009-07-19 22:41:59.000000000 -0400

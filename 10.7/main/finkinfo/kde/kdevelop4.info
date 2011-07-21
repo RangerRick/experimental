@@ -20,7 +20,7 @@ BuildDepends: <<
 	enchant1-dev,
 	expat1,
 	fink (>= 0.30.0-1),
-	freetype219 (>= 2.4.4-2),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	giflib,
 	hspell,
@@ -47,7 +47,7 @@ BuildDepends: <<
 	system-openssl-dev,
 	xmkmf
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:kde:unstable/kdevelop/%v/kdevelop-%v.tar.bz2
 Source-MD5: f5c5f042ccc34fb877c6080ae2ff8bc5

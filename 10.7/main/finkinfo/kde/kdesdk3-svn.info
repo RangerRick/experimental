@@ -27,7 +27,7 @@ BuildDepends: <<
 	expat1,
 	fink (>= 0.30.0-1),
 	flex-devel (>= 2.5.31-1),
-	freetype219 (>= 2.4.4-2),
+	freetype219 (>= 2.3.12-1),
 	gdbm3,
 	libgettext8-dev,
 	gettext-tools,
@@ -53,7 +53,7 @@ Replaces: <<
 	kdesdk3-svn-ssl,
 	kdesdk3-extra-ioslaves
 <<
-GCC: 3.3
+GCC: 4.0
 
 CustomMirror: <<
 	Primary: http://www.finkproject.org/~ranger/distfiles

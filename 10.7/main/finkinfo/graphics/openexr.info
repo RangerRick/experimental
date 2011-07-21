@@ -15,7 +15,7 @@ BuildDepends: <<
 	fltk-x11,
 	x11-dev
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: http://download.savannah.nongnu.org/releases/%n/%n-%v.tar.gz
 Source-MD5: 11951f164f9c872b183df75e66de145a

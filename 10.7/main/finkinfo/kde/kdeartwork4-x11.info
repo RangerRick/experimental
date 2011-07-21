@@ -23,8 +23,8 @@ BuildDepends: <<
 	dbus1.3-dev (>= 1.2.24-1),
 	eigen2,
 	fink (>= 0.30.0-1),
-	fontconfig2-dev (>= 2.8.0-6),
-	freetype219 (>= 2.4.4-2),
+	fontconfig2-dev (>= 2.8.0-4),
+	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),
 	kde4-buildenv (>= 4.6.0-1),
 	kdebase4-workspace-%type_pkg[kde]-dev (>= 4.6.3-1),
@@ -39,7 +39,7 @@ BuildDepends: <<
 	system-openssl-dev,
 	(%type_pkg[kde] = x11) xscreensaver
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdeartwork-%v.tar.bz2
 Source-MD5: f45a8ed91c578275056c86f7022695ee

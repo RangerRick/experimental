@@ -27,7 +27,7 @@ BuildDepends: <<
 	fink (>= 0.30.0-1),
 	fink-package-precedence (>= 0.7-1),
 	#	fontconfig2-dev (>= 2.4.1-1),
-	freetype219 (>= 2.4.4-2),
+	freetype219 (>= 2.3.12-1),
 	libgettext8-dev,
 	gettext-tools,
 	glib2-dev (>= 2.22.0-1),
@@ -72,7 +72,7 @@ Replaces: <<
 	kdeedu3 (<< 3.4.0-1)
 <<
 Suggests: krename
-GCC: 3.3
+GCC: 4.0
 
 CustomMirror: <<
 	Primary: http://www.finkproject.org/~ranger/distfiles

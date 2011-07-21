@@ -12,7 +12,7 @@ BuildDepends: <<
 	libtool2,
 	libgnugetopt
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: http://www.audiocoding.com/snapshot/%N-18102004.tar.gz
 Source-MD5: 6051e5831aea16848822163b30d9456b

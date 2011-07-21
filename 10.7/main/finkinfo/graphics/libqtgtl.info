@@ -16,7 +16,7 @@ BuildDepends: <<
 	qt4-%type_pkg[qt] (>= 4.7.3-1)
 <<
 BuildDependsOnly: true
-GCC: 3.3
+GCC: 4.0
 
 Source: http://download.opengtl.org/libQtGTL-%v.tar.bz2
 Source-MD5: 8a4e694762495652e8d704e1226523e1

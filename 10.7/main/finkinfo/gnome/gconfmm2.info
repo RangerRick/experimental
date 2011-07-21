@@ -20,7 +20,7 @@ BuildDepends: <<
 	pkgconfig
 <<
 BuildDependsOnly: true
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:gnome:sources/gconfmm/2.0/gconfmm-%v.tar.bz2
 Source-MD5: df7ea83c13c192e03bcae747afea396b

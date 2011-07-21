@@ -25,7 +25,7 @@ BuildDepends: <<
 Conflicts: dbd-pg-pm
 Replaces: dbd-pg-pm
 Suggests: postgresql90
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:cpan:authors/id/T/TU/TURNSTEP/DBD-Pg-%v.tar.gz
 Source-MD5: 1f4a837b3d79789ad6854443fce7a901

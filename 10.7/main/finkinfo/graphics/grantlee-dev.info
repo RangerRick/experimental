@@ -17,7 +17,7 @@ BuildDepends: <<
 	qt4-base-%type_pkg[grantlee] (>= 4.7.3-1)
 <<
 BuildDependsOnly: true
-GCC: 3.3
+GCC: 4.0
 
 Source: http://downloads.grantlee.org/grantlee-%v.tar.gz
 Source-MD5: 67c24d9eb6be66997ac5d0803bde06de

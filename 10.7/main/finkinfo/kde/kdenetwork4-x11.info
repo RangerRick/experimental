@@ -21,8 +21,8 @@ BuildDepends: <<
 	dbus1.3-dev (>= 1.2.24-1),
 	libgadu3-dev,
 	fink (>= 0.30.0-1),
-	fontconfig2-dev (>= 2.8.0-6),
-	freetype219 (>= 2.4.4-2),
+	fontconfig2-dev (>= 2.8.0-4),
+	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),
 	gmp,
 	kde4-buildenv (>= 4.6.0-1),
@@ -51,7 +51,7 @@ BuildDepends: <<
 	system-openssl-dev,
 	xmms
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdenetwork-%v.tar.bz2
 Source-MD5: 0fd1a35dd3c820d840ca2e11c51b1215

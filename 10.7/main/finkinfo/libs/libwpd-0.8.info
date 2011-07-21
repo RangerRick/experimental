@@ -19,7 +19,7 @@ BuildDepends: <<
 <<
 Conflicts: libwpd-1
 Replaces: libwpd-1
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:sourceforge:libwpd/libwpd-%v.tar.bz2
 Source-MD5: 974784f0cf067900bb8836b4d107101b

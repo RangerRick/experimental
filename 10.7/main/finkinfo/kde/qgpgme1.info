@@ -21,7 +21,7 @@ BuildDepends: <<
 	dbus1.3-dev (>= 1.2.24-1),
 	expat1,
 	fink (>= 0.30.0-1),
-	freetype219 (>= 2.4.4-2),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	giflib,
 	gpgme11,
@@ -48,7 +48,7 @@ BuildDepends: <<
 	system-openssl-dev
 <<
 Replaces: kdepimlibs4-%type_pkg[kde]-dev (<< 4.2.1-2)
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdepimlibs-%v.tar.bz2
 Source-MD5: 0b0fc8d9fea0a6f26e705460a2865e18

@@ -13,7 +13,7 @@ BuildDepends: <<
 	libwpd-0.8-dev,
 	pkgconfig (>= 0.23-1)
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:sourceforge:libwpg/libwpg-%v.tar.bz2
 Source-MD5: 1069ad84fdf65f1c47b63b639137613f

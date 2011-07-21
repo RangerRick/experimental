@@ -17,7 +17,7 @@ BuildDepends: <<
 	system-openssl-dev
 <<
 BuildDependsOnly: true
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:sourceforge:qjson/qjson-%v.tar.bz2
 Source-MD5: 5a833ad606c164ed8aa69f0873366ace

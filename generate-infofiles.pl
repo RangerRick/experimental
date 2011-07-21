@@ -82,8 +82,8 @@ my $version_lookup = {
 		'^fink-package-precedence$'           => [ '0.7',          '1'    ],
 		'^flag-dedup$'                        => [ '0.2',          '1'    ],
 		'^flag-sort$'                         => [ '0.4',          '1'    ],
-		'^freetype219(-shlibs)?$'             => [ '2.4.4',        '2'    ],
-		'^fontconfig2(-dev|-shlibs)?$'        => [ '2.8.0',        '6'    ],
+		'^freetype219(-shlibs)?$'             => [ '2.3.12',       '1'    ],
+		'^fontconfig2(-dev|-shlibs)?$'        => [ '2.8.0',        '4'    ],
 		'^gecko-sharp(-firefox.|-seamonkey)?$'=> [ '2.0',          '1044' ],
 		'^gecko-sharp1(-firefox.|-seamonkey)?$'=> [ '0.6',         '1033' ],
 		'^gettext-tools$'                     => [ '0.17',         '1'    ],
@@ -517,7 +517,7 @@ sub transform_fields {
 			$properties->{'Architecture'} = '(%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc';
 		}
 		if (exists $properties->{'Distribution'}) {
-			die "type = perl, but distribution is already set!\n";
+			warn "type = perl, but distribution is already set!\n";
 		} else {
 			$properties->{'Distribution'} = '(%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5, (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6, (%type_pkg[perl] = 5123) 10.7';
 		}
@@ -917,7 +917,7 @@ sub transform_gcc {
 	my $tree = shift->{'Tree'};
 	my $gcc  = shift;
 
-	if ($tree eq "10.4") {
+	if ($tree ge "10.4") {
 		$gcc = "4.0";
 	} else {
 		$gcc = "3.3";

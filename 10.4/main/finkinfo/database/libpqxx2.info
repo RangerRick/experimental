@@ -34,7 +34,7 @@ GCC: 4.0
 Source: http://pqxx.org/download/software/libpqxx/libpqxx-%v.tar.gz
 Source-MD5: 0b0c64af41dfdeea8556dc359994e1cb
 PatchFile: %n.patch
-PatchFile-MD5: 8f1f0d651be532a77d2130eeb04c1b8c
+PatchFile-MD5: a025fff0ef5e49df7615e9d8bfdf7c81
 
 UseMaxBuildJobs: true
 ConfigureParams: --mandir=%p/share/man --enable-shared --disable-dependency-tracking

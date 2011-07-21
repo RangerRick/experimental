@@ -11,8 +11,8 @@ BuildDepends: <<
 	cairo (>= 1.8.10-3),
 	cairomm1,
 	expat1,
-	fontconfig2-dev (>= 2.8.0-6),
-	freetype219 (>= 2.4.4-2),
+	fontconfig2-dev (>= 2.8.0-4),
+	freetype219 (>= 2.3.12-1),
 	gconf2-dev (>= 2.20.0-1),
 	gettext-tools,
 	glib2-dev (>= 2.22.0-1),
@@ -32,7 +32,7 @@ BuildDepends: <<
 	xft2-dev
 <<
 BuildDependsOnly: true
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:gnome:sources/gconfmm/2.20/gconfmm-%v.tar.bz2
 Source-MD5: 24d7e01104394229f28e32a1dc17c819

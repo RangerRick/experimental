@@ -12,7 +12,7 @@ BuildDepends: <<
 	fink (>= 0.30.0-1)
 <<
 BuildDependsOnly: true
-GCC: 3.3
+GCC: 4.0
 
 CustomMirror: <<
 	Primary: http://www.finkproject.org/~ranger/distfiles

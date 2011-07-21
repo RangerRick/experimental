@@ -18,8 +18,8 @@ BuildDepends: <<
 	cups-dev,
 	fink (>= 0.30.0-1),
 	fink-package-precedence (>= 0.7-1),
-	fontconfig2-dev (>= 2.8.0-6),
-	freetype219 (>= 2.4.4-2),
+	fontconfig2-dev (>= 2.8.0-4),
+	freetype219 (>= 2.3.12-1),
 	libgl-dev,
 	libpng15,
 	libjpeg8,
@@ -48,7 +48,7 @@ Suggests: <<
 	%N-postgresql (>= %v-1)
 <<
 BuildDependsOnly: true
-GCC: 3.3
+GCC: 4.0
 
 CustomMirror: <<
 	Primary: ftp://ftp.trolltech.com/qt/source
@@ -324,8 +324,8 @@ SplitOff: <<
 	Package: %N-shlibs
 	Depends: <<
 		fink (>= 0.30.0-1),
-		fontconfig2-shlibs (>= 2.8.0-6),
-		freetype219-shlibs (>= 2.4.4-2),
+		fontconfig2-shlibs (>= 2.8.0-4),
+		freetype219-shlibs (>= 2.3.12-1),
 		libgl-shlibs,
 		libpng15-shlibs,
 		libjpeg8-shlibs,

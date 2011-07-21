@@ -14,7 +14,7 @@ BuildDepends: <<
 	libtiff
 <<
 BuildConflicts: vigra
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:sourceforge:%n/%n-%v.tar.gz
 Source-MD5: d760e27fa1fa0395c07cc9d1bb1ea3cc

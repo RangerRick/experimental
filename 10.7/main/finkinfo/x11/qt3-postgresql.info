@@ -18,7 +18,7 @@ Replaces: <<
 	qt3,
 	qt3-shlibs
 <<
-GCC: 3.3
+GCC: 4.0
 
 CustomMirror: <<
 	Primary: ftp://ftp.trolltech.com/qt/source

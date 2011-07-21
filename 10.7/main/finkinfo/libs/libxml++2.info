@@ -16,7 +16,7 @@ BuildDepends: <<
 	pkgconfig (>= 0.23-1)
 <<
 BuildDependsOnly: True
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:gnome:sources/libxml++/2.24/libxml++-%v.tar.bz2
 Source-MD5: 532ccd3520a84b7f6b04c6bfa8ae11fd

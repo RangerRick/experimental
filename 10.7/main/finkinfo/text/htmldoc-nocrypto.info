@@ -17,7 +17,7 @@ BuildDepends: <<
 	libjpeg8,
 	system-openssl-dev
 <<
-GCC: 3.3
+GCC: 4.0
 
 CustomMirror: <<
 	nam-US: ftp://ftp2.easysw.com/pub

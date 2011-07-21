@@ -10,8 +10,8 @@ Maintainer: Benjamin Reed <pycairo-py@fink.raccoonfink.com>
 Depends: <<
 	cairo-shlibs (>= 1.8.10-3),
 	expat1-shlibs,
-	fontconfig2-shlibs (>= 2.8.0-6),
-	freetype219-shlibs (>= 2.4.4-2),
+	fontconfig2-shlibs (>= 2.8.0-4),
+	freetype219-shlibs (>= 2.3.12-1),
 	glitz-shlibs (>= 0.5.6-1),
 	libpng15-shlibs,
 	python%type_pkg[python]
@@ -19,8 +19,8 @@ Depends: <<
 BuildDepends: <<
 	cairo (>= 1.8.10-3),
 	expat1,
-	fontconfig2-dev (>= 2.8.0-6),
-	freetype219 (>= 2.4.4-2),
+	fontconfig2-dev (>= 2.8.0-4),
+	freetype219 (>= 2.3.12-1),
 	glitz (>= 0.5.6-1),
 	pkgconfig (>= 0.23-1),
 	libgl-dev,

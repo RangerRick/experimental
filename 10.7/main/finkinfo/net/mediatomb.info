@@ -28,7 +28,7 @@ BuildDepends: <<
 	sqlite3-dev,
 	taglib
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:sourceforge:%n/%n-%v.tar.gz
 Source-MD5: 661f08933830d920de21436fe122fb15

@@ -27,8 +27,8 @@ BuildDepends: <<
 	dbus1.3-dev (>= 1.2.24-1),
 	expat1,
 	fink (>= 0.30.0-1),
-	fontconfig2-dev (>= 2.8.0-6),
-	freetype219 (>= 2.4.4-2),
+	fontconfig2-dev (>= 2.8.0-4),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	giflib,
 	glib2-dev (>= 2.22.0-1),
@@ -60,7 +60,7 @@ Replaces: <<
 	kdebase4-workspace-%type_pkg[kde] (<< 4.3.0-1),
 	kdebase4-workspace-%type_pkg[kde]-shlibs (<< 4.3.0-1)
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdebase-runtime-%v.tar.bz2
 Source-MD5: a6f294900d73d92cd68ea93aea297ff0

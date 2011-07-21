@@ -8,7 +8,7 @@ License: BSD
 Maintainer: Benjamin Reed <phonon-backend@fink.raccoonfink.com>
 
 Depends: phonon-%type_pkg[phonon]-backend-gstreamer (>= 4.5.1-1) | phonon-%type_pkg[phonon]-backend-xine (>= 4.4.4-1)
-GCC: 3.3
+GCC: 4.0
 
 CustomMirror: <<
 	Primary: http://www.finkproject.org/~ranger/distfiles

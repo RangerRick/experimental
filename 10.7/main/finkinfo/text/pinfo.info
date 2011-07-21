@@ -20,7 +20,7 @@ BuildDepends: <<
 	libncurses5,
 	readline5
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: http://alioth.debian.org/download.php/1498/%n-%v.tar.bz2
 Source-MD5: e0c788467945f5f97fbacad55863e5b8

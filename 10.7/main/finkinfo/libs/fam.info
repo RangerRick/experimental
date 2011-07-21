@@ -11,7 +11,7 @@ BuildDepends: <<
 	autoconf2.6,
 	automake1.11
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: ftp://oss.sgi.com/projects/%n/download/stable/%n-%v.tar.gz
 Source-MD5: 1bf3ae6c0c58d3201afc97c6a4834e39

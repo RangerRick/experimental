@@ -24,8 +24,8 @@ BuildDepends: <<
 	dbus1.3-dev (>= 1.2.24-1),
 	eigen2,
 	fink (>= 0.30.0-1),
-	fontconfig2-dev (>= 2.8.0-6),
-	freetype219 (>= 2.4.4-2),
+	fontconfig2-dev (>= 2.8.0-4),
+	freetype219 (>= 2.3.12-1),
 	glew (>= 1.5.1-1),
 	glib2-dev (>= 2.22.0-1),
 	gmm,
@@ -58,7 +58,7 @@ BuildDepends: <<
 	system-openssl-dev,
 	wv2.4
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:kde:stable/koffice-%v/koffice-%v.tar.bz2
 Source-MD5: f987ef488888311db04f313ef2c1ed74

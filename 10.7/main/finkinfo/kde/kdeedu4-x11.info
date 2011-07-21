@@ -35,8 +35,8 @@ BuildDepends: <<
 	cmake (>= 2.8.2-1),
 	dbus1.3-dev (>= 1.2.24-1),
 	fink (>= 0.30.0-1),
-	fontconfig2-dev (>= 2.8.0-6),
-	freetype219 (>= 2.4.4-2),
+	fontconfig2-dev (>= 2.8.0-4),
+	freetype219 (>= 2.3.12-1),
 	eigen2 (>= 2.0.11-1),
 	glib2-dev (>= 2.22.0-1),
 	gmm,
@@ -62,7 +62,7 @@ BuildDepends: <<
 	system-openssl-dev,
 	(%type_pkg[kde] = x11) xscreensaver
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdeedu-%v.tar.bz2
 Source-MD5: 259ba3e733fecd145c4389f10bee5ad1

@@ -7,7 +7,7 @@ Maintainer: Benjamin Reed <pbzip2@fink.raccoonfink.com>
 
 Depends: bzip2-shlibs
 BuildDepends: bzip2-dev
-GCC: 3.3
+GCC: 4.0
 
 Source: http://compression.ca/%n/%n-%v.tar.gz
 Source-MD5: b354422759da7113da366aad1876ed5d

@@ -7,7 +7,7 @@ Type: nosource
 License: OSI-Approved
 Maintainer: Benjamin Reed <coreutils-default@fink.raccoonfink.com>
 
-GCC: 3.3
+GCC: 4.0
 
 UseMaxBuildJobs: true
 CompileScript: echo none

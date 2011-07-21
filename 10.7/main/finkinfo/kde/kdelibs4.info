@@ -29,7 +29,7 @@ BuildDepends: <<
 	expat1,
 	fink (>= 0.30.0-1),
 	flex-devel (>= 2.5.35-1),
-	freetype219 (>= 2.4.4-2),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	giflib,
 	grantlee-%type_pkg[kde]-dev (>= 0.1.8-1),
@@ -62,7 +62,7 @@ BuildDepends: <<
 <<
 BuildConflicts: gamin-dev
 Replaces: %N-shlibs (<< %v-%r)
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdelibs-%v.tar.bz2
 Source-MD5: 923a7e8f89aa504647e14472b24b8c0a

@@ -28,7 +28,7 @@ BuildDepends: <<
 	tcltk-dev
 <<
 Provides: postgresql-server
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
 Source-MD5: 80390514d568a7af5ab61db1cda27e29

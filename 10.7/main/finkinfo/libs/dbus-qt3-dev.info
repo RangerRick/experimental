@@ -17,7 +17,7 @@ BuildDepends: <<
 	x11-dev
 <<
 BuildDependsOnly: true
-GCC: 3.3
+GCC: 4.0
 
 Source: http://finch.finkproject.org/~ranger/distfiles/dbus-qt3-%v.tar.bz2
 Source-MD5: 9a8d4a4d560b49fb5ad034abfd3e3db5

@@ -18,9 +18,9 @@ BuildDepends: <<
 	cairo (>= 1.8.10-3),
 	expat1,
 	fink (>= 0.30.0-1),
-	fontconfig2-dev (>= 2.8.0-6),
+	fontconfig2-dev (>= 2.8.0-4),
 	freeglut,
-	freetype219 (>= 2.4.4-2),
+	freetype219 (>= 2.3.12-1),
 	giflib,
 	glib2-dev (>= 2.22.0-1),
 	glitz,
@@ -36,7 +36,7 @@ BuildDepends: <<
 	x11-dev,
 	xft2-dev
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:sourceforge:%n/%n-%v.tar.gz
 Source-MD5: 5dca0369ca64fa3c006b616b72b5e1cf

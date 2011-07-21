@@ -10,7 +10,7 @@ BuildDepends: <<
 	cmake (>= 2.8.2-1),
 	fink (>= 0.30.0-1)
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:sourceforge:oscaf/%n/0.6/%n-%v.tar.bz2
 Source-MD5: 2651122ac27de95e91973ed6b88ccf94

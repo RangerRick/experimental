@@ -26,7 +26,7 @@ BuildDepends: <<
 	esound,
 	expat1,
 	fink (>= 0.30.0-1),
-	freetype219 (>= 2.4.4-2),
+	freetype219 (>= 2.3.12-1),
 	gettext-bin,
 	gettext-tools,
 	glib2-dev (>= 2.22.0-1),

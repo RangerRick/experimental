@@ -1,3 +1,4 @@
+Distribution: 10.4, 10.5, 10.6
 diff -Nurd postgresql-8.4.0/pgsql.sh postgresql-8.4.0-patched/pgsql.sh
 --- postgresql-8.4.0/pgsql.sh	1969-12-31 19:00:00.000000000 -0500
 +++ postgresql-8.4.0-patched/pgsql.sh	2009-07-17 14:14:41.000000000 -0400

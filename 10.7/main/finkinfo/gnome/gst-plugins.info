@@ -24,8 +24,8 @@ BuildDepends: <<
 	expat1,
 	faac-dev,
 	fink (>= 0.30.0-1),
-	fontconfig2-dev (>= 2.8.0-6),
-	freetype219 (>= 2.4.4-2),
+	fontconfig2-dev (>= 2.8.0-4),
+	freetype219 (>= 2.3.12-1),
 	gconf2-dev (>= 2.20.0-1),
 	gettext-tools,
 	glib2-dev (>= 2.22.0-1),
@@ -95,7 +95,7 @@ BuildDepends: <<
 	xvidcore
 <<
 BuildConflicts: libquicktime0 (<< 0.9.4-13), libvisual
-GCC: 3.3
+GCC: 4.0
 
 Source: http://gstreamer.freedesktop.org/src/%n/%n-%v.tar.bz2
 Source-MD5: c5cb7312d96fe008763b3ac56e665ca5
@@ -149,7 +149,7 @@ SplitOff: <<
 		expat1-shlibs,
 		faac-shlibs,
 		fontconfig2-shlibs,
-		freetype219-shlibs (>= 2.4.4-2),
+		freetype219-shlibs (>= 2.3.12-1),
 		gconf2-shlibs (>= 2.20.0-1),
 		glib2-shlibs (>= 2.22.0-1),
 		glitz-shlibs,

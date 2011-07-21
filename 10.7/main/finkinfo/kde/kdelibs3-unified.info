@@ -32,8 +32,8 @@ BuildDepends: <<
 	fink (>= 0.30.0-1),
 	fink-package-precedence (>= 0.7-1),
 	flex-devel,
-	fontconfig2-dev (>= 2.8.0-6),
-	freetype219 (>= 2.4.4-2),
+	fontconfig2-dev (>= 2.8.0-4),
+	freetype219 (>= 2.3.12-1),
 	libgettext8-dev,
 	gettext-tools,
 	glib2-dev (>= 2.22.0-1),
@@ -88,7 +88,7 @@ Replaces: <<
 	ktts (<< 3.5.0-1)
 <<
 Recommends: mplayer
-GCC: 3.3
+GCC: 4.0
 
 CustomMirror: <<
 	Primary: http://ranger.users.finkproject.org/distfiles
@@ -196,7 +196,7 @@ SplitOff: <<
 		dbus-qt3-shlibs (>= 0.70-1023),
 		esound-shlibs,
 		expat1-shlibs,
-		freetype219-shlibs (>= 2.4.4-2),
+		freetype219-shlibs (>= 2.3.12-1),
 		glib2-shlibs (>= 2.22.0-1),
 		libart2-shlibs (>= 2.3.20-1),
 		libgettext8-shlibs,

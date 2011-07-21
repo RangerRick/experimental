@@ -11,7 +11,7 @@ BuildDepends: <<
 	cmake (>= 2.8.2-1),
 	expat1,
 	fink (>= 0.30.0-1),
-	freetype219 (>= 2.4.4-2),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	kdelibs3-unified-dev (>= 3.5.10-10),
 	lib3ds,
@@ -26,7 +26,7 @@ BuildDepends: <<
 	qt3 (>= 3.3.8-2000),
 	x11-dev
 <<
-GCC: 3.3
+GCC: 4.0
 
 CustomMirror: <<
 	Primary: http://www.finkproject.org/~ranger/distfiles

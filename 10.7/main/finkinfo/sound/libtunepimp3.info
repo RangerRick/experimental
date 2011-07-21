@@ -22,7 +22,7 @@ BuildDepends: <<
 Conflicts: libtunepimp2
 Replaces: libtunepimp2
 BuildDependsOnly: true
-GCC: 3.3
+GCC: 4.0
 
 CustomMirror: <<
 	nam-US: http://ftp.musicbrainz.org/pub/musicbrainz

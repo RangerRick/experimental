@@ -16,8 +16,8 @@ BuildDepends: <<
 	expat1,
 	fink (>= 0.30.0-1),
 	fink-package-precedence (>= 0.7-1),
-	fontconfig2-dev (>= 2.8.0-6),
-	freetype219 (>= 2.4.4-2),
+	fontconfig2-dev (>= 2.8.0-4),
+	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),
 	glitz,
 	gettext-bin,
@@ -52,7 +52,7 @@ Replaces: <<
 	poppler5-glib
 <<
 BuildDependsOnly: True
-GCC: 3.3
+GCC: 4.0
 
 Source: http://poppler.freedesktop.org/poppler-%v.tar.gz
 Source-MD5: 8d1ac008614c0e413bcac95b8102fa07

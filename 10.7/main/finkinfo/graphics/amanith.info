@@ -7,7 +7,7 @@ Maintainer: Benjamin Reed <amanith@fink.raccoonfink.com>
 
 Depends: %N-shlibs (= %v-%r)
 BuildDepends: <<
-	freetype219 (>= 2.4.4-2),
+	freetype219 (>= 2.3.12-1),
 	glew,
 	libgl-dev,
 	libjpeg8,
@@ -16,7 +16,7 @@ BuildDepends: <<
 	x11-dev
 <<
 BuildDependsOnly: true
-GCC: 3.3
+GCC: 4.0
 
 Source: http://www.amanith.org/download/files/%n_03.tar.gz
 Source-MD5: 392e79d36cc2d57921c7fefacbc4d4a3

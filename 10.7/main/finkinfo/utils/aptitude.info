@@ -25,7 +25,7 @@ BuildDepends: <<
 	pkgconfig (>= 0.23-1),
 	sed
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: http://ftp.debian.org/debian/pool/main/a/%n/%n_%v.orig.tar.gz
 Source-MD5: ad8be14b875417a6ff8773741889b243

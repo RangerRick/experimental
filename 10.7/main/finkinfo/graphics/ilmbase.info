@@ -7,7 +7,7 @@ Maintainer: Benjamin Reed <ilmbase@fink.raccoonfink.com>
 
 Replaces: openexr-dev
 BuildDependsOnly: true
-GCC: 3.3
+GCC: 4.0
 InfoTest: TestScript: make check || exit 2
 
 Source: http://download.savannah.nongnu.org/releases/openexr/%n-%v.tar.gz

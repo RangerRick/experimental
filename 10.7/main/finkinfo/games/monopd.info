@@ -15,7 +15,7 @@ BuildDepends: <<
 	libmath++-dev (>= 0.0.4-1001),
 	daemonic
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: http://www.robertjohnkaper.com/downloads/atlantik/%n-%v.tar.bz2
 Source-MD5: d0c4876bb24e8c961012a8ef4894fe2d

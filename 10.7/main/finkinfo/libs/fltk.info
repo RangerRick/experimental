@@ -14,7 +14,7 @@ BuildDepends: <<
 	libjpeg8,
 	libpng15
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:sourceforge:fltk/fltk-%v-source.tar.bz2
 Source-MD5: 95d340977d13edea12e98d787a668b32

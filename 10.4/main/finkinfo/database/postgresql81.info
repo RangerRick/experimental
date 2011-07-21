@@ -52,7 +52,7 @@ PatchScript: <<
 	perl -pi -e 's,^enum,static enum,' contrib/pgcrypto/pgp.h
 <<
 PatchFile: %n.patch
-PatchFile-MD5: f062e01947c637f635ff08b961a272f0
+PatchFile-MD5: b2ec57498aa6ea086aa4e03d86a97a27
 
 SetMAKEFLAGS: -j1
 NoSetMAKEFLAGS: true

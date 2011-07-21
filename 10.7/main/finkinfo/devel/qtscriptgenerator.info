@@ -18,7 +18,7 @@ BuildDepends: <<
 	qt4-%type_pkg[qt] (>= 4.7.3-1),
 	(%type_pkg[qt] = x11) x11-dev
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: http://qtscriptgenerator.googlecode.com/files/qtscriptgenerator-src-%v.tar.gz
 Source-MD5: ca4046ad4bda36cd4e21649d4b98886d

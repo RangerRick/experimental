@@ -20,7 +20,7 @@ Replaces: <<
 	qimageblitz (<< 0.0.4-2000)
 <<
 BuildDependsOnly: true
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:kde:stable/qimageblitz/qimageblitz-%v.tar.bz2
 Source-MD5: 0ae2f7d4e0876764a97ca73799f61df4

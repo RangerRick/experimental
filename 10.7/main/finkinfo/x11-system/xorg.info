@@ -26,7 +26,7 @@ Replaces: <<
 	system-xfree86,
 	xfree86
 <<
-GCC: 3.3
+GCC: 4.0
 
 CustomMirror: <<
 	Primary: http://www2.x.org/pub/X11R%v/src-single

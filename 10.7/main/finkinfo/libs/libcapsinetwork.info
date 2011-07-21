@@ -11,7 +11,7 @@ BuildDepends: <<
 	automake1.11,
 	libtool2
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: http://ftp.debian.org/pool/main/libc/libcapsinetwork/libcapsinetwork_0.3.0.orig.tar.gz
 Source-MD5: 9e6e221fdd1ec53c518b2ca61830e8cf

@@ -18,7 +18,7 @@ BuildDepends: <<
 	system-openssl-dev,
 	qt4-base-%type_pkg[qca] (>= 4.7.3-1)
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: http://delta.affinix.com/download/qca/2.0/qca-%v.tar.bz2
 Source-MD5: fc15bd4da22b8096c51fcfe52d2fa309

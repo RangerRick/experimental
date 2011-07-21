@@ -17,8 +17,8 @@ BuildDepends: <<
 	dbus1.3-dev (>= 1.2.24-1),
 	expat1,
 	fink (>= 0.30.0-1),
-	fontconfig2-dev (>= 2.8.0-6),
-	freetype219 (>= 2.4.4-2),
+	fontconfig2-dev (>= 2.8.0-4),
+	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),
 	gtk+2-dev (>= 2.18.0-1),
 	kde4-buildenv (>= 4.6.0-1),
@@ -46,7 +46,7 @@ BuildDepends: <<
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:sourceforge:kipi/kipi-plugins-%v.tar.bz2
 Source-MD5: a3200b0ce90251bc631fa90ff0818dc0

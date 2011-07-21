@@ -52,7 +52,7 @@ PatchScript: <<
 	perl -pi -e 's,^enum,static enum,' contrib/pgcrypto/pgp.h
 <<
 PatchFile: %n.patch
-PatchFile-MD5: 964107a0f601e15937e79df17ffea814
+PatchFile-MD5: 8dcf3a46114deb9dc7ddc301a236f41b
 
 UseMaxBuildJobs: true
 ConfigureParams: --prefix=%p --libdir=%p/lib/postgresql-8.2 --with-docdir=%p/share/doc --mandir=%p/share/man --enable-multibyte --enable-recode --with-CXX --without-perl --without-python --with-openssl --with-libraries=%p/lib --with-includes=%p/include --without-tcl --without-tk --without-java --enable-odbc --with-pam --with-bonjour --enable-syslog --with-krb5 --enable-thread-safety

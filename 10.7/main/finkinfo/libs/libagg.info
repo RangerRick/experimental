@@ -10,14 +10,14 @@ BuildDepends: <<
 	autoconf2.6,
 	automake1.11,
 	fink (>= 0.30.0-1),
-	freetype219 (>= 2.4.4-2),
+	freetype219 (>= 2.3.12-1),
 	libtool2,
 	pkgconfig (>= 0.23-1),
 	sdl (>= 1.2.13-1),
 	x11-dev,
 	xmkmf
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: http://www.antigrain.com/agg-%v.tar.gz
 Source-MD5: 0229a488bc47be10a2fee6cf0b2febd6
@@ -52,7 +52,7 @@ SplitOff: <<
 	Package: %N-shlibs
 	Description: shared libraries for the AGG rendering engine
 	Depends: <<
-		freetype219-shlibs (>= 2.4.4-2),
+		freetype219-shlibs (>= 2.3.12-1),
 		sdl-shlibs (>= 1.2.13-1),
 		x11-shlibs
 	<<

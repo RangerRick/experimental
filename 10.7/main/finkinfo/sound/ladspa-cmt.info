@@ -10,7 +10,7 @@ BuildDepends: <<
 	ladspa-dev (>= 1.13-0),
 	fink (>= 0.30.0-1)
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: http://www.ladspa.org/download/cmt_src_%v.tgz
 Source-MD5: 15a875e5aaf79c209c223babfb41cb1c

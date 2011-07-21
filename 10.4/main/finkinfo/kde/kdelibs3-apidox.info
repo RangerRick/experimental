@@ -20,7 +20,7 @@ BuildDepends: <<
 	expat1,
 	fink (>= 0.30.0-1),
 	flex-devel,
-	freetype219 (>= 2.4.4-2),
+	freetype219 (>= 2.3.12-1),
 	libgettext8-dev,
 	gettext-tools,
 	glib2-dev (>= 2.22.0-1),

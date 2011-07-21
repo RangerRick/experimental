@@ -14,8 +14,8 @@ BuildDepends: <<
 	cmake (>= 2.8.2-1),
 	dbus1.3-dev (>= 1.2.24-1),
 	fink (>= 0.30.0-1),
-	fontconfig2-dev (>= 2.8.0-6),
-	freetype219 (>= 2.4.4-2),
+	fontconfig2-dev (>= 2.8.0-4),
+	freetype219 (>= 2.3.12-1),
 	glib2-dev (>= 2.22.0-1),
 	gpgme11,
 	gnokii3-dev,
@@ -41,7 +41,7 @@ BuildDepends: <<
 	(%type_pkg[kde] = x11) x11-dev,
 	system-openssl-dev
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:kde:stable/kdepim-%v/src/kdepim-runtime-%v.tar.bz2
 Source-MD5: c408db0e6b9531e68cfac041aaaaa1e4

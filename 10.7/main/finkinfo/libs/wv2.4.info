@@ -27,7 +27,7 @@ Replaces: <<
 	wv2
 <<
 BuildDependsOnly: true
-GCC: 3.3
+GCC: 4.0
 InfoTest: <<
 	TestScript: <<
 		#!/bin/sh -ev

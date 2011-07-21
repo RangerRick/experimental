@@ -21,7 +21,7 @@ BuildDepends: <<
 	x11,
 	x11-dev
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:sourceforge:cheesetronic/%n-%v.tar.gz
 Source-MD5: d2cb55cd35eaaaef48454a5aad41a08d

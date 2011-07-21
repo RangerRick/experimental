@@ -17,8 +17,8 @@ BuildDepends: <<
 	cairomm1,
 	esound (>= 0.2.38-1),
 	expat1,
-	fontconfig2-dev (>= 2.8.0-6),
-	freetype219 (>= 2.4.4-2),
+	fontconfig2-dev (>= 2.8.0-4),
+	freetype219 (>= 2.3.12-1),
 	gconf2-dev (>= 2.20.0-1),
 	gconfmm2.6 (>= 2.20.0-1),
 	glib2-dev (>= 2.22.0-1),
@@ -43,7 +43,7 @@ BuildDepends: <<
 	x11-dev,
 	xft2-dev
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: http://savannah.nongnu.org/download/%n/%n-%v.tar.gz
 Source-MD5: 1ca31f4e9fb77adb5e7261e190ecb20a

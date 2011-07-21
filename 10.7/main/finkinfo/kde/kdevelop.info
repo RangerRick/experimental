@@ -25,7 +25,7 @@ BuildDepends: <<
 	expat1,
 	fink (>= 0.30.0-1),
 	flex-devel (>= 2.5.35-2),
-	freetype219 (>= 2.4.4-2),
+	freetype219 (>= 2.3.12-1),
 	graphviz,
 	kdelibs3-unified-dev (>= 3.5.10-10),
 	kdelibs3-apidox (>= 3.5.10-10),
@@ -49,7 +49,7 @@ BuildDepends: <<
 BuildConflicts: unsermake, flex
 Recommends: kdiff3
 BuildDependsOnly: false
-GCC: 3.3
+GCC: 4.0
 
 CustomMirror: <<
 	Primary: http://www.finkproject.org/~ranger/distfiles

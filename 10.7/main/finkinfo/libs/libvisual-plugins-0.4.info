@@ -18,7 +18,7 @@ BuildDepends: <<
 	dbus1.3-dev (>= 1.2.24-1),
 	dbus-glib1.2-dev (>= 0.84-1),
 	esound (>= 0.2.34-1),
-	freetype219 (>= 2.4.4-2),
+	freetype219 (>= 2.3.12-1),
 	gconf2-dev (>= 2.20.1-1),
 	gettext-tools,
 	glib2-dev (>= 2.22.0-1),

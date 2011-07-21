@@ -16,7 +16,7 @@ Depends: <<
 	qtassistant-compat-%type_pkg[qt]-bin (>= 4.6.3-1),
 	qtwebkit-%type_pkg[qt] (>= 2.0.0-4)
 <<
-GCC: 3.3
+GCC: 4.0
 
 CustomMirror: <<
 	Primary: http://www.finkproject.org/~ranger/distfiles

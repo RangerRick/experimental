@@ -14,7 +14,7 @@ BuildDepends: <<
 	cmake (>= 2.8.2-1),
 	dbus1.3-dev (>= 1.2.24-1),
 	fink (>= 0.30.0-1),
-	freetype219 (>= 2.4.4-2),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	giflib,
 	kde4-buildenv (>= 4.6.0-1),
@@ -33,7 +33,7 @@ BuildDepends: <<
 <<
 Conflicts: taglib-extras1-%type_pkg[kde]
 Replaces: taglib-extras1-%type_pkg[kde]
-GCC: 3.3
+GCC: 4.0
 
 Source: http://www.kollide.net/~jefferai/taglib-extras-%v.tar.gz
 Source-MD5: 44c15bc5c1b183117909163f9dbc159f

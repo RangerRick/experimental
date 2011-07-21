@@ -24,7 +24,7 @@ BuildDepends: <<
 	libmusicbrainz4,
 	libtunepimp3
 <<
-GCC: 3.3
+GCC: 4.0
 
 CustomMirror: <<
 	Primary: http://www.finkproject.org/~ranger/distfiles

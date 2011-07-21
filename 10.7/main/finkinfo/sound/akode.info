@@ -21,7 +21,7 @@ BuildDepends: <<
 	speex3
 <<
 BuildDependsOnly: true
-GCC: 3.3
+GCC: 4.0
 
 Source: http://carewolf.com/%n/%n-%v.tar.bz2
 Source-MD5: 659ced0c9c735cb3e55b9138ff02342c

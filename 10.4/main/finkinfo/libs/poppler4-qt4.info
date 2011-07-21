@@ -12,8 +12,8 @@ BuildDepends: <<
 	expat1,
 	fink (>= 0.30.0-1),
 	fink-package-precedence (>= 0.7-1),
-	fontconfig2-dev (>= 2.8.0-6),
-	freetype219 (>= 2.4.4-2),
+	fontconfig2-dev (>= 2.8.0-4),
+	freetype219 (>= 2.3.12-1),
 	(%type_pkg[qt] = x11) glib2-dev,
 	glitz,
 	kde4-buildenv (>= 4.6.0-1),
@@ -88,8 +88,8 @@ SplitOff: <<
 	Package: %N-shlibs
 	Depends: <<
 		expat1-shlibs,
-		fontconfig2-shlibs (>= 2.8.0-6),
-		freetype219-shlibs (>= 2.4.4-2),
+		fontconfig2-shlibs (>= 2.8.0-4),
+		freetype219-shlibs (>= 2.3.12-1),
 		(%type_pkg[qt] = x11) glib2-shlibs,
 		glitz-shlibs,
 		(%type_pkg[qt] = x11) libgettext8-shlibs,

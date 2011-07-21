@@ -24,8 +24,8 @@ BuildDepends: <<
 	dbus1.3-dev (>= 1.2.24-1),
 	expat1,
 	fink (>= 0.30.0-1),
-	fontconfig2-dev (>= 2.8.0-6),
-	freetype219 (>= 2.4.4-2),
+	fontconfig2-dev (>= 2.8.0-4),
+	freetype219 (>= 2.3.12-1),
 	gettext-tools,
 	giflib,
 	glib2-dev (>= 2.22.0-1),
@@ -58,7 +58,7 @@ BuildDepends: <<
 	xmms,
 	system-openssl-dev
 <<
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:kde:stable/%v/src/kdebase-workspace-%v.tar.bz2
 Source-MD5: 1e481727c3a5c2e4b751b9c56bd56583

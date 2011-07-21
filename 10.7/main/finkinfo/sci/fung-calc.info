@@ -23,7 +23,7 @@ BuildDepends: <<
 	unsermake,
 	x11-dev
 <<
-GCC: 3.3
+GCC: 4.0
 
 CustomMirror: <<
 	Primary: http://www.finkproject.org/~ranger/distfiles

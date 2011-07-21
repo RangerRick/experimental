@@ -10,7 +10,7 @@ BuildDepends: glut (>= 3.7-1025)
 Conflicts: glui-aqua
 Replaces: glui-aqua
 BuildDependsOnly: True
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:sourceforge:glui/glui_v2_2.tgz
 Source-MD5: 2f14c1aaf0b295b3370e10bc6fefbcf9

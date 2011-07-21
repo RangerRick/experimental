@@ -11,8 +11,8 @@ BuildDepends: <<
 	expat1,
 	fink (>= 0.30.0-1),
 	fink-package-precedence (>= 0.7-1),
-	fontconfig2-dev (>= 2.8.0-6),
-	freetype219 (>= 2.4.4-2),
+	fontconfig2-dev (>= 2.8.0-4),
+	freetype219 (>= 2.3.12-1),
 	glitz,
 	gettext-bin,
 	gettext-tools,
@@ -42,7 +42,7 @@ Replaces: <<
 	poppler5
 <<
 BuildDependsOnly: True
-GCC: 3.3
+GCC: 4.0
 
 Source: http://poppler.freedesktop.org/poppler-%v.tar.gz
 Source-MD5: ba120e49a82567d85d00e159011ebe67
@@ -76,8 +76,8 @@ SplitOff: <<
 	Depends: <<
 		poppler-data (>= 1:0.2.1-1),
 		expat1-shlibs,
-		fontconfig2-shlibs (>= 2.8.0-6),
-		freetype219-shlibs (>= 2.4.4-2),
+		fontconfig2-shlibs (>= 2.8.0-4),
+		freetype219-shlibs (>= 2.3.12-1),
 		libiconv,
 		libopenjpeg-shlibs,
 		libjpeg8-shlibs,
@@ -93,8 +93,8 @@ SplitOff2: <<
 		%N-shlibs (>= %v-%r),
 		poppler-data (>= 1:0.2.1-1),
 		expat1-shlibs,
-		fontconfig2-shlibs (>= 2.8.0-6),
-		freetype219-shlibs (>= 2.4.4-2),
+		fontconfig2-shlibs (>= 2.8.0-4),
+		freetype219-shlibs (>= 2.3.12-1),
 		libiconv,
 		libjpeg8-shlibs,
 		libopenjpeg-shlibs,

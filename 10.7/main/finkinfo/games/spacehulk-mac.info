@@ -7,7 +7,7 @@ Maintainer: Benjamin Reed <spacehulk@fink.raccoonfink.com>
 
 Depends: qt3mac-shlibs
 BuildDepends: qt3mac
-GCC: 3.3
+GCC: 4.0
 
 CustomMirror: <<
 	Primary: http://www.finkproject.org/~ranger/distfiles

@@ -39,7 +39,7 @@ Replaces: <<
 	qt3-linguist
 <<
 BuildDependsOnly: true
-GCC: 3.3
+GCC: 4.0
 
 Source: mirror:sourceforge:fink/qt-x11-%v.tar.gz
 Source-MD5: 8b74c7bd9ff0c4752a009f2e5a6482e4

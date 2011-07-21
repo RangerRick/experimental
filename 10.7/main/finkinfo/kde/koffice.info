@@ -77,7 +77,7 @@ Replaces: <<
 	%N-common (<< %v-%r),
 	%N-dev (<< %v-%r)
 <<
-GCC: 3.3
+GCC: 4.0
 
 CustomMirror: <<
 	Primary: http://ranger.users.finkproject.org/distfiles
