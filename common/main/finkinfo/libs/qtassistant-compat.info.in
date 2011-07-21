@@ -1,6 +1,6 @@
 Info4: <<
 Version: 4.6.3
-Revision: 1
+Revision: 2
 #ifdef TYPE_X11
 Package: qtassistant-compat-x11
 Type: qt (x11)
@@ -40,6 +40,7 @@ CompileScript: <<
 	. %p/sbin/kde4-buildenv.sh
 
 	pushd lib
+		ln -s . QtAssistant
 		%p/lib/qt4-%type_pkg[qt]/bin/qmake
 		make
 	popd

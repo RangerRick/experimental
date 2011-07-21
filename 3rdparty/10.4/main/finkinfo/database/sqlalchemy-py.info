@@ -1,6 +1,6 @@
 Info2: <<
 Package: sqlalchemy-py%type_pkg[python]
-Version: 0.6.7
+Version: 0.7.1
 Revision: 1
 Distribution: (%type_pkg[python] = 24) 10.4, (%type_pkg[python] = 24) 10.5
 Description: Python interface to databases
@@ -13,7 +13,7 @@ BuildDepends: setuptools-py%type_pkg[python]
 GCC: 4.0
 
 Source: http://pypi.python.org/packages/source/S/SQLAlchemy/SQLAlchemy-%v.tar.gz
-Source-MD5: e87e91440d3e4f3a62c477295e1547d1
+Source-MD5: 76e2e1e48b8047f1ca7023f143374aef
 
 UseMaxBuildJobs: true
 CompileScript:  echo Skipping build

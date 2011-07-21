@@ -1,6 +1,6 @@
 Info4: <<
 Package: flexget
-Version: 1.0r2238
+Version: 1.0r2275
 Revision: 1
 Description: Multipurpose download automation tool
 Type: python(2.6)
@@ -17,7 +17,7 @@ Depends: <<
 	nzb-py%type_pkg[python],
 	progressbar-py%type_pkg[python],
 	rss2gen-py%type_pkg[python],
-	sqlalchemy-py%type_pkg[python] (>= 0.6.7-1),
+	sqlalchemy-py%type_pkg[python] (>= 0.7.0-1),
 	transmissionrpc-py%type_pkg[python],
 	yaml-py%type_pkg[python]
 <<
@@ -28,7 +28,7 @@ BuildDepends: <<
 
 NoSourceDirectory: true
 Source: http://download.flexget.com/unstable/FlexGet-%v-py%type_raw[python].egg
-Source-MD5: bdef82de4ed876f2238deeccca5d5da0
+Source-MD5: fe18d972c6b529b7c81fdd965c069929
 
 UseMaxBuildJobs: true
 CompileScript: echo "none needed"
