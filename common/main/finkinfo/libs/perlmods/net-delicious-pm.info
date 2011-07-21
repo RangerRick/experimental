@@ -1,7 +1,7 @@
 Info2: <<
 Package: net-delicious-pm%type_pkg[perl]
 Version: 1.13
-Revision: 1
+Revision: 2
 Depends: <<
 	config-simple-pm,
 	crypt-ssleay-pm%type_pkg[perl],
@@ -22,20 +22,7 @@ Source: mirror:cpan:modules/by-module/Net/Net-Delicious-%v.tar.gz
 Source-MD5: 3f45a7e235fbbca82dbf2c51f4a6535c
 Type: perl(0)
 UpdatePOD: true
-CompileScript: <<
-#!/bin/sh -ex
-  exec 2>&1
-  perlversion=%type_raw[perl]
-  eval "`perl$perlversion -V:archname`"
-  perl$perlversion Build.PL \
-    --install_path arch=%i/lib/perl5/$perlversion/$archname \
-    --install_path bin=%i/bin \
-    --install_path bindoc=%i/lib/perl5/$perlversion/man/man1 \
-    --install_path lib=%i/lib/perl5/$perlversion \
-    --install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
-    --install_path script=%i/bin
-  ./Build
-<<
+DefaultScript: ModuleBuild
 InstallScript: <<
 	./Build install
 	find %d -name .packlist -exec rm -rf {} \;

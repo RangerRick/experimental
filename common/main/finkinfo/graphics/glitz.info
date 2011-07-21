@@ -12,7 +12,7 @@ NoSetLDFLAGS: true
 SetCPPFLAGS: -I/usr/X11R6/include
 NoSetMAKEFLAGS: true
 SetMAKEFLAGS: -j1
-ConfigureParams: --disable-dependency-tracking --disable-egl
+ConfigureParams: --disable-dependency-tracking --disable-egl --enable-glx
 CompileScript: <<
 	AGL_LIBS="-Wl,-framework,Carbon -Wl,-framework,OpenGL -Wl,-framework,AGL" ./configure %c
 	make

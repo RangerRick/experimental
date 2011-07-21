@@ -1,7 +1,7 @@
 Info2: <<
 Package: test-mockobject-pm%type_pkg[perl]
 Version: 1.09
-Revision: 1
+Revision: 2
 Description: Emulate troublesome interfaces
 Depends: <<
 	perl%type_pkg[perl]-core,
@@ -24,20 +24,7 @@ Source: mirror:cpan:modules/by-module/Test/Test-MockObject-%v.tar.gz
 Source-MD5: 3c9c2842d40fa8c389563c227804d7d8
 
 DocFiles: Changes MANIFEST README
-CompileScript: <<
-#!/bin/sh -ex
-	exec 2>&1
-	perlversion=%type_raw[perl]
-	eval "`perl$perlversion -V:archname`"
-	perl$perlversion Build.PL \
-		--install_path arch=%i/lib/perl5/$perlversion/$archname \
-		--install_path bin=%i/bin \
-		--install_path bindoc=%i/lib/perl5/$perlversion/man/man1 \
-		--install_path lib=%i/lib/perl5/$perlversion \
-		--install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
-		--install_path script=%i/bin
-	./Build
-<<
+DefaultScript: ModuleBuild
 InstallScript: <<
 	./Build install
 	find %d -name .packlist -exec rm -rf {} \;

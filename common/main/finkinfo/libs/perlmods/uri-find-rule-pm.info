@@ -1,7 +1,7 @@
 Info4: <<
 Package: uri-find-rule-pm%type_pkg[perl]
 Version: 0.8
-Revision: 3
+Revision: 4
 Depends: <<
 	perl%type_pkg[perl]-core,
 	uri-find-pm%type_pkg[perl],
@@ -26,20 +26,7 @@ Source-MD5: 36a5b9d1e11202582aee0b76c9bbfc71
 SourceDirectory: URI-Find-Rule-%v
 Type: perl(0)
 UpdatePOD: true
-CompileScript: <<
-#!/bin/sh -ex
-  exec 2>&1
-  perlversion=%type_raw[perl]
-  eval "`perl$perlversion -V:archname`"
-  perl$perlversion Build.PL \
-    --install_path arch=%i/lib/perl5/$perlversion/$archname \
-    --install_path bin=%i/bin \
-    --install_path bindoc=%i/lib/perl5/$perlversion/man/man1 \
-    --install_path lib=%i/lib/perl5/$perlversion \
-    --install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
-    --install_path script=%i/bin
-  ./Build
-<<
+DefaultScript: ModuleBuild
 InstallScript: <<
 	./Build install
 	find %d -name .packlist -exec rm -rf {} \;

@@ -23,7 +23,7 @@ Depends: <<
 	time-clock-pm (>= 1.00-1)
 <<
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	test-simple-pm%type_pkg[perl]
 <<
 

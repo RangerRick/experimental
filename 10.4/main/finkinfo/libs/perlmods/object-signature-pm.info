@@ -18,7 +18,7 @@ Depends: <<
 BuildDepends: <<
 	digest-md5-pm%type_pkg[perl],
 	file-spec-pm%type_pkg[perl],
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	perl%type_pkg[perl]-core,
 	test-simple-pm%type_pkg[perl]
 <<

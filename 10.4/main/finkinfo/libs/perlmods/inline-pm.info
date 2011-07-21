@@ -15,7 +15,7 @@ Depends: <<
 	perl%type_pkg[perl]-core,
 	rec-descent-pm (>= 1.80-16)
 <<
-BuildDepends: fink (>= 0.30.0-1)
+BuildDepends: fink (>= 0.30.2-1)
 Replaces: <<
 	inline-pm (<= 0.43-3),
 	inline-pm560,

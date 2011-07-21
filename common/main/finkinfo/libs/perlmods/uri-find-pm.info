@@ -1,7 +1,7 @@
 Info4: <<
 Package: uri-find-pm%type_pkg[perl]
 Version: 20100505
-Revision: 1
+Revision: 2
 Depends: <<
 	perl%type_pkg[perl]-core,
 	uri-pm%type_pkg[perl] (>= 1.00-1),
@@ -15,20 +15,7 @@ Source: mirror:cpan:modules/by-module/URI/URI-Find-%v.tar.gz
 Source-MD5: d470e33f31986839cd49a77a08133520
 SourceDirectory: URI-Find-%v
 Type: perl(0)
-CompileScript: <<
-#!/bin/sh -ex
-	exec 2>&1
-	perlversion=%type_raw[perl]
-	eval "`perl$perlversion -V:archname`"
-	perl$perlversion Build.PL \
-		--install_path arch=%i/lib/perl5/$perlversion/$archname \
-		--install_path bin=%i/bin \
-		--install_path bindoc=%i/lib/perl5/$perlversion/man/man1 \
-		--install_path lib=%i/lib/perl5/$perlversion \
-		--install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
-		--install_path script=%i/bin
-	./Build
-<<
+DefaultScript: ModuleBuild
 InstallScript: <<
 	./Build install
 	find %d -name .packlist -exec rm -rf {} \;

@@ -1,7 +1,7 @@
 Info2: <<
 Package: class-factory-util-pm
 Version: 1.7
-Revision: 1053
+Revision: 1054
 Description: Provide utility methods for factory classes
 Type: perl
 License: Artistic
@@ -18,18 +18,7 @@ Source: mirror:cpan:modules/by-module/Class/Class-Factory-Util-%v.tar.gz
 Source-MD5: aebd79da361b676a7ecd3245fc3d1b3f
 
 UseMaxBuildJobs: true
-CompileScript: <<
-	#!/bin/sh -ex
-	exec 2>&1
-	/usr/bin/perl Build.PL \
-	--install_path arch=%i/lib/perl5 \
-	--install_path bin=%i/bin \
-	--install_path bindoc=%i/share/man/man1 \
-	--install_path lib=%i/lib/perl5 \
-	--install_path libdoc=%i/share/man/man3 \
-	--install_path script=%i/bin
-	./Build
-<<
+DefaultScript: ModuleBuild
 
 InstallScript: <<
 	./Build install

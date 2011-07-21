@@ -7,7 +7,7 @@ Type: perl
 License: Artistic
 Maintainer: Benjamin Reed <io-null-pm@fink.raccoonfink.com>
 
-BuildDepends: fink (>= 0.30.0-1)
+BuildDepends: fink (>= 0.30.2-1)
 
 Source: mirror:cpan:modules/by-module/IO/IO-Null-%v.tar.gz
 Source-MD5: 54d6084398f8b4e7062660b9ccc835a8

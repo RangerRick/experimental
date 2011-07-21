@@ -11,13 +11,13 @@ Maintainer: Benjamin Reed <rose-conf-pm@fink.raccoonfink.com>
 
 Depends: <<
 	file-spec-pm%type_pkg[perl],
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	perl%type_pkg[perl]-core,
 	rose-object-pm%type_pkg[perl]
 <<
 BuildDepends: <<
 	file-spec-pm%type_pkg[perl],
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	perl%type_pkg[perl]-core,
 	rose-object-pm%type_pkg[perl]
 <<

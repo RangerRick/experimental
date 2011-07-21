@@ -10,11 +10,11 @@ License: Artistic
 Maintainer: Benjamin Reed <variable-magic-pm@fink.raccoonfink.com>
 
 Depends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	perl%type_pkg[perl]-core
 <<
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	perl%type_pkg[perl]-core
 <<
 

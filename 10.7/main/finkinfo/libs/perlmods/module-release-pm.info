@@ -19,7 +19,7 @@ Depends: <<
 	test-without-module-pm,
 	uri-pm%type_pkg[perl]
 <<
-BuildDepends: fink (>= 0.30.0-1)
+BuildDepends: fink (>= 0.30.2-1)
 InfoTest: <<
 TestScript: <<
 	#!/bin/sh -ev

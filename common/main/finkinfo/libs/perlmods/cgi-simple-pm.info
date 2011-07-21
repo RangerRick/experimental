@@ -1,7 +1,7 @@
 Info3: <<
 Package: cgi-simple-pm%type_pkg[perl]
 Version: 1.112
-Revision: 1
+Revision: 2
 
 Source: mirror:cpan:modules/by-module/CGI/CGI-Simple-%v.tar.gz
 Source-MD5: 6a59dd252317b94fffe0aa3fdae206c7
@@ -20,20 +20,7 @@ Type: perl(0)
 
 DocFiles: Changes META.yml README
 
-CompileScript: <<
-#!/bin/sh -ex
-	exec 2>&1
-	perlversion=%type_raw[perl]
-	eval "`perl$perlversion -V:archname`"
-	perl$perlversion Build.PL \
-		--install_path arch=%i/lib/perl5/$perlversion/$archname \
-		--install_path bin=%i/bin \
-		--install_path bindoc=%i/lib/perl5/$perlversion/man/man1 \
-		--install_path lib=%i/lib/perl5/$perlversion \
-		--install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
-		--install_path script=%i/bin
-	./Build
-<<
+DefaultScript: ModuleBuild
 InstallScript: <<
 	./Build install
 	find %d -name .packlist -exec rm -rf {} \;

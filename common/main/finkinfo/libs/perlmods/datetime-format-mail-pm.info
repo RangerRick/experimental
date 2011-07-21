@@ -1,7 +1,7 @@
 Info2: <<
 Package: datetime-format-mail-pm%type_pkg[perl]
 Version: 0.3001
-Revision: 1
+Revision: 2
 Description: Convert between DateTime and RFC2822/822
 Depends: <<
 	fink (>= 0.20.1-1),
@@ -28,20 +28,7 @@ Source-MD5: 15e36249e866463bd0237262a8e43b16
 
 UpdatePOD: true
 DocFiles: AUTHORS COPYING CREDITS Changes META.yml README
-CompileScript: <<
-#!/bin/sh -ex
-	exec 2>&1
-	perlversion=%type_raw[perl]
-	eval "`perl$perlversion -V:archname`"
-	perl$perlversion Build.PL \
-		--install_path arch=%i/lib/perl5/$perlversion/$archname \
-		--install_path bin=%i/bin \
-		--install_path bindoc=%i/lib/perl5/$perlversion/man/man1 \
-		--install_path lib=%i/lib/perl5/$perlversion \
-		--install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
-		--install_path script=%i/bin
-	./Build
-<<
+DefaultScript: ModuleBuild
 InstallScript: <<
 	./Build install
 	find %d -name .packlist -exec rm -rf {} \;

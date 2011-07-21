@@ -1,7 +1,7 @@
 Info2: <<
 Package: datetime-timezone-pm%type_pkg[perl]
 Version: 1.19
-Revision: 1
+Revision: 2
 Description: Time zone object base class and factory
 Depends: <<
 	class-singleton-pm (>= 1.03-1),
@@ -26,20 +26,7 @@ Source-MD5: 2ed65ed36f32b2e68da1a0517484e366
 
 UpdatePOD: true
 DocFiles: Changes LICENSE* MANIFEST MANIFEST.base README
-CompileScript: <<
-#!/bin/sh -ex
-	exec 2>&1
-	perlversion=%type_raw[perl]
-	eval "`perl$perlversion -V:archname`"
-	perl$perlversion Build.PL \
-		--install_path arch=%i/lib/perl5/$perlversion/$archname \
-		--install_path bin=%i/bin \
-		--install_path bindoc=%i/lib/perl5/$perlversion/man/man1 \
-		--install_path lib=%i/lib/perl5/$perlversion \
-		--install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
-		--install_path script=%i/bin
-	./Build
-<<
+DefaultScript: ModuleBuild
 InstallScript: <<
 	./Build install
 	find %d -name .packlist -exec rm -rf {} \;

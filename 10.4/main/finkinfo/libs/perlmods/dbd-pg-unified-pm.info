@@ -16,7 +16,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	dbi-pm%type_pkg[perl] (>= 1.52-1),
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	perl%type_pkg[perl]-core,
 	postgresql90-dev,
 	test-simple-pm%type_pkg[perl] (>= 0.61-1),

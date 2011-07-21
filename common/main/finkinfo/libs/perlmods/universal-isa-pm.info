@@ -1,7 +1,7 @@
 Info4: <<
 Package: universal-isa-pm%type_pkg[perl]
 Version: 1.03
-Revision: 1
+Revision: 2
 Description: UNIVERSAL::isa module hack
 Depends: <<
 	perl%type_pkg[perl]-core,
@@ -20,20 +20,7 @@ Source: mirror:cpan:modules/by-module/UNIVERSAL/UNIVERSAL-isa-%v.tar.gz
 Source-MD5: 0643f2e04cd0b5739fc0908af291c609
 
 DocFiles: Changes README
-CompileScript: <<
-#!/bin/sh -ex
-	exec 2>&1
-	perlversion=%type_raw[perl]
-	eval "`perl$perlversion -V:archname`"
-	perl$perlversion Build.PL \
-		--install_path arch=%i/lib/perl5/$perlversion/$archname \
-		--install_path bin=%i/bin \
-		--install_path bindoc=%i/lib/perl5/$perlversion/man/man1 \
-		--install_path lib=%i/lib/perl5/$perlversion \
-		--install_path libdoc=%i/lib/perl5/$perlversion/man/man3 \
-		--install_path script=%i/bin
-	./Build
-<<
+DefaultScript: ModuleBuild
 InstallScript: <<
 	./Build install
 	find %d -name .packlist -exec rm -rf {} \;

@@ -12,11 +12,11 @@ Maintainer: Benjamin Reed <image-size-pm@fink.raccoonfink.com>
 Depends: <<
 	compress-zlib-pm%type_pkg[perl] (>= 2.0-1),
 	file-spec-pm%type_pkg[perl],
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	perl%type_pkg[perl]-core
 <<
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	module-build-pm%type_pkg[perl]
 <<
 Recommends: perlmagick-pm%type_pkg[perl]

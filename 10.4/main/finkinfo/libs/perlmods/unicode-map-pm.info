@@ -10,7 +10,7 @@ License: Artistic
 Maintainer: Benjamin Reed <unicode-map-pm@fink.raccoonfink.com>
 
 Depends: perl%type_pkg[perl]-core
-BuildDepends: fink (>= 0.30.0-1)
+BuildDepends: fink (>= 0.30.2-1)
 Conflicts: %N-man
 Replaces: %N-man
 

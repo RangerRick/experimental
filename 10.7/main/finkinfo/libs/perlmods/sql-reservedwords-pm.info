@@ -10,12 +10,12 @@ License: Artistic
 Maintainer: Benjamin Reed <sql-reservedwords-pm@fink.raccoonfink.com>
 
 Depends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	perl%type_pkg[perl]-core,
 	sub-exporter-pm%type_pkg[perl]
 <<
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	perl%type_pkg[perl]-core,
 	sub-exporter-pm%type_pkg[perl]
 <<

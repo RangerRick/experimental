@@ -12,7 +12,7 @@ Depends: <<
 	system-perl
 <<
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	g95,
 	system-perl
 <<
