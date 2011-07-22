@@ -38,15 +38,18 @@ $finkpath = dirname(dirname(abs_path($finkpath))) . "/fink/10.4";
 
 my $packages = {};
 
-my @files = @ARGV;
+my @files = qw();
 
-if (not @files) {
-	find({ 
-		wanted => sub {
-			push(@files, $File::Find::name) if ($File::Find::name =~ /\.info$/);
-		},
-	}, $path, $finkpath);
+if (not @ARGV) {
+	push(@ARGV, $path, $finkpath);
 }
+
+find({ 
+	wanted => sub {
+		push(@files, $File::Find::fullname) if ($File::Find::name =~ /\.info$/);
+	},
+	follow => 1,
+}, @ARGV);
 
 FILELOOP: for my $file (@files) {
 	my ($dir, $filename) = (dirname($file), basename($file));

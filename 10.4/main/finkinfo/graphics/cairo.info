@@ -1,6 +1,6 @@
 Package: cairo
 Version: 1.8.10
-Revision: 3
+Revision: 4
 Description: Vector graphics library
 License: BSD
 Maintainer: Benjamin Reed <cairo@fink.raccoonfink.com>
@@ -10,7 +10,7 @@ Depends: <<
 	pkgconfig (>= 0.23-1)
 <<
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	fink-package-precedence (>= 0.7-1),
 	fontconfig2-dev (>= 2.8.0-4),
 	freetype219 (>= 2.3.12-1),
@@ -47,12 +47,14 @@ PatchScript: <<
 PatchFile: %n.patch
 PatchFile-MD5: c0035b1abb5c8a39fd0d111e3e1f4aff
 
-SetCFLAGS: -Os
+SetCFLAGS: -Os -isystem /usr/include
 UseMaxBuildJobs: true
 ConfigureParams: --build=%m-apple-darwin`uname -r|sed 's/\\..*//'` --disable-xcb --enable-dependency-tracking --disable-gtk-doc --enable-quartz --enable-quartz-font --disable-quartz-image --enable-png --enable-glitz --enable-ps --enable-pdf --disable-atsui --mandir=%p/share/man --disable-static
 CompileScript: <<
 	#!/bin/sh -ex
-	if [ -x /usr/bin/gcc-4.2 ]; then
+	if [ -x /usr/bin/clang ]; then
+	export CC="clang"
+	elif [ -x /usr/bin/gcc-4.2 ]; then
 	export CC="gcc-4.2"
 	fi
 	
