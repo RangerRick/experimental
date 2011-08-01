@@ -7,7 +7,7 @@ Maintainer: Benjamin Reed <kde4-buildenv@fink.raccoonfink.com>
 
 Depends: <<
 	cmake (>= 2.8.2-1),
-	fink (>= 0.30.0-1)
+	fink (>= 0.30.2-1)
 <<
 
 CustomMirror: <<

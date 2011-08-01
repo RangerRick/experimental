@@ -774,7 +774,7 @@ sub transform_depends {
 	for my $dep (@$depends) {
 		my @newdep;
 		for my $pkg (@$dep) {
-			my $newdep = transform_dependency($packagehash->{'Tree'}, $pkg);
+			my $newdep = transform_dependency($packagehash, $pkg);
 			push(@newdep, $newdep) if (defined $newdep);
 		}
 		push(@newdepends, \@newdep);
@@ -786,9 +786,10 @@ sub transform_depends {
 }
 
 sub transform_dependency {
-	my $tree     = shift;
-	my $dep_spec = shift;
-	my $delete   = 0;
+	my $packagehash = shift;
+	my $dep_spec    = shift;
+	my $delete      = 0;
+	my $tree        = $packagehash->{'Tree'};
 
 	my ($prefix, $package, $comparator, $version, $revision);
 	if ($dep_spec =~ s/^\s*\(([^\)]+)\)\s+//) {
@@ -927,23 +928,21 @@ sub transform_gcc {
 }
 
 sub transform_maintainer {
-	my $tree = shift;
-	my $text = shift;
+	my $packagehash = shift;
+	my $text        = shift;
 
 	$text =~ s/racoonfink.com/raccoonfink.com/g;
 	return $text;
 }
 
 sub transform_patch {
-	my $tree = shift;
+	my $tree = shift->{'Tree'};
 	my $text = shift;
 
 	if ($tree eq "10.4") {
 		$text =~ s/g(cc|\+\+)-3\.3/g$1-4.0/gi;
 		$text =~ s/-fno-coalesce//gs;
 	}
-
-	#$text =~ s/(^|[\r\n]+)diff -uN[^\r\n]*//gs;
 
 	return $text;
 }
@@ -969,16 +968,19 @@ sub transform_replaces {
 }
 
 sub transform_revision {
-	my $tree     = shift;
-	my $revision = shift;
-	$tree = $tree->{'Tree'} if (ref $tree eq "HASH");
+	my $packagehash = shift;
+	my $revision    = shift;
+	my $tree        = $packagehash->{'Tree'};
+
+	if ($revision =~ /notransform/i) {
+		$revision =~ s/\s*notransform:\s*//i;
+		return $revision;
+	}
 
 	if ($tree eq '10.3') {
 		$revision = revision_add($revision, 10);
 	} elsif ($tree eq '10.4') {
 		$revision = revision_add($revision, 0);
-	} elsif ($tree eq '10.5') {
-		$revision = revision_add($revision, 20);
 	} elsif ($tree eq '10.7') {
 		$revision = revision_add($revision, 30);
 	} else {
