@@ -1,5 +1,5 @@
 Package: libexif12
-Version: 0.6.16
+Version: 0.6.20
 Revision: 31
 Description: EXIF Tag Parsing Library
 License: BSD
@@ -17,7 +17,7 @@ Replaces: libexif-dev
 BuildDependsOnly: true
 
 Source: mirror:sourceforge:libexif/libexif-%v.tar.bz2
-Source-MD5: deee153b1ded5a944ea05d041d959eca
+Source-MD5: 19844ce6b5d075af16f0d45de1e8a6a3
 PatchScript: <<
 	# um no, CPPFLAGS and AM_CPPFLAGS have quite different meanings
 	perl -ni -e 'print unless /AM_CPPFLAGS="\$CPPFLAGS"/' configure
@@ -51,7 +51,7 @@ SplitOff: <<
 	Replaces: %N (<< 0.6.13-5)
 	DocFiles: AUTHORS COPYING ChangeLog INSTALL NEWS README
 	Files: lib/libexif.*.dylib share/locale
-	Shlibs: %p/lib/libexif.12.dylib 15.0.0 libexif12 (>= 0.6.16-1)
+	Shlibs: %p/lib/libexif.12.dylib 16.0.0 libexif12 (>= 0.6.20-1)
 <<
 
 Homepage: http://home.bawue.de/~lutz/
