@@ -6,7 +6,7 @@ License: GPL/LGPL
 Maintainer: Benjamin Reed <libcapsinetwork@fink.raccoonfink.com>
 
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	autoconf (>= 2.63-1),
 	automake1.11,
 	libtool2

@@ -12,7 +12,7 @@ Depends: <<
 <<
 BuildDepends: <<
 	ecj,
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	glib2-dev (>= 2.22.0-1),
 	libgettext8-dev,
 	mono-dev (>= 2.6.2-1),

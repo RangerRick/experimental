@@ -8,7 +8,7 @@ Maintainer: Benjamin Reed <jzlib@fink.raccoonfink.com>
 
 Depends: system-java (>= 1.4-1)
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	fink-mirrors (>= 0.22.1.1-1),
 	system-java-dev (>= 1.5-1)
 <<

@@ -11,7 +11,7 @@ Depends: koffice2-%type_pkg[kde]-base (>= %v-1)
 BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
 	cmake (>= 2.8.2-1),
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	gettext-tools (>= 0.17-1),
 	koffice2-%type_pkg[kde]-dev (>= %v-1),
 	libgettext8-dev

@@ -12,7 +12,7 @@ Depends: <<
 	tcltk
 <<
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	fink-mirrors (>= 0.28.7.1-2),
 	tcltk,
 	tcltk-dev,

@@ -18,7 +18,7 @@ BuildDepends: <<
 	commons-digester (>= 2.1-1),
 	commons-logging (>= 1.1.1-1),
 	mx4j (>= 2.1.1-1),
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	fink-mirrors (>= 0.22.1.1-1),
 	junit (>= 3.8.1-1),
 	system-java-dev (>= 1.5-1)

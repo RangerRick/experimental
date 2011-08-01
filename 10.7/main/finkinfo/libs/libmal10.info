@@ -8,7 +8,7 @@ Maintainer: Benjamin Reed <libmal10@fink.raccoonfink.com>
 
 Depends: %N-shlibs (>= %e:%v-%r)
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	pilot-link09,
 	libiconv-dev,
 	libncurses5 (>= 5.4-20041023-1006),

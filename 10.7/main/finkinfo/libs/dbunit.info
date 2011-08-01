@@ -11,7 +11,7 @@ Depends: <<
 	system-java (>= 1.5-1)
 <<
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	system-java-dev (>= 1.5-1)
 <<
 

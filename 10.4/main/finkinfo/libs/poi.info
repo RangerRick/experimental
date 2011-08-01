@@ -11,7 +11,7 @@ Depends: <<
 	commons-collections (>= 3.2.1-1),
 	commons-lang (>= 2.5-1),
 	commons-logging (>= 1.1.1-1),
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	log4j (>= 1.2.8-1),
 	system-java-dev (>= 1.4-1),
 	xerces-j (>= 2.10.0-1)
@@ -25,7 +25,7 @@ BuildDepends: <<
 	commons-collections (>= 3.2.1-1),
 	commons-lang (>= 2.5-1),
 	commons-logging (>= 1.1.1-1),
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	jdepend,
 	junit (>= 3.8.1-1),
 	log4j (>= 1.2.9-4),

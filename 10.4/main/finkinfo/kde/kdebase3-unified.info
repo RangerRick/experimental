@@ -24,7 +24,7 @@ BuildDepends: <<
 	dbus-qt3-dev (>= 1.0-1),
 	esound,
 	expat1,
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	fink-package-precedence (>= 0.7-1),
 	#	fontconfig2-dev (>= 2.4.1-1),
 	freetype219 (>= 2.3.12-1),
@@ -364,7 +364,7 @@ SplitOff3: <<
 	Package: kdebase3
 	Depends: <<
 		%N (= %v-%r),
-		fink (>= 0.30.0-1),
+		fink (>= 0.30.2-1),
 		fink-obsolete-packages
 	<<
 	Files: share/doc/installed-packages/%n
@@ -428,7 +428,7 @@ SplitOff4: <<
 	Package: kdebase3-dev
 	Depends: <<
 		%N-dev (= %v-%r),
-		fink (>= 0.30.0-1),
+		fink (>= 0.30.2-1),
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
@@ -493,7 +493,7 @@ SplitOff5: <<
 	Package: kdebase3-shlibs
 	Depends: <<
 		%N-shlibs (= %v-%r),
-		fink (>= 0.30.0-1),
+		fink (>= 0.30.2-1),
 		fink-obsolete-packages
 	<<
 	Files: share/doc/installed-packages/%n
@@ -557,7 +557,7 @@ SplitOff6: <<
 	Package: kdebase3-ssl
 	Depends: <<
 		%N (= %v-%r),
-		fink (>= 0.30.0-1),
+		fink (>= 0.30.2-1),
 		fink-obsolete-packages
 	<<
 	Files: share/doc/installed-packages/%n
@@ -621,7 +621,7 @@ SplitOff7: <<
 	Package: kdebase3-ssl-dev
 	Depends: <<
 		%N-dev (= %v-%r),
-		fink (>= 0.30.0-1),
+		fink (>= 0.30.2-1),
 		fink-obsolete-packages
 	<<
 	BuildDependsOnly: true
@@ -686,7 +686,7 @@ SplitOff8: <<
 	Package: kdebase3-ssl-shlibs
 	Depends: <<
 		%N-shlibs (= %v-%r),
-		fink (>= 0.30.0-1),
+		fink (>= 0.30.2-1),
 		fink-obsolete-packages
 	<<
 	Files: share/doc/installed-packages/%n

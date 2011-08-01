@@ -7,7 +7,7 @@ Maintainer: Benjamin Reed <id3v2@fink.raccoonfink.com>
 
 Depends: id3lib4-shlibs (>= 3.8.3-1014)
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	id3lib4-dev (>= 3.8.3-1014)
 <<
 GCC: 4.0

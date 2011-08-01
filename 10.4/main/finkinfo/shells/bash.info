@@ -11,7 +11,7 @@ Depends: <<
 	libiconv
 <<
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	gettext-bin,
 	gettext-tools,
 	libgettext8-dev,

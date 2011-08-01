@@ -11,7 +11,7 @@ BuildDepends: <<
 	autoconf2.6,
 	automake1.11,
 	bison (>= 1.35-1),
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	fink-package-precedence (>= 0.7-1),
 	flex-devel (>= 2.5.31-1),
 	glib2-dev (>= 2.22.0-1),

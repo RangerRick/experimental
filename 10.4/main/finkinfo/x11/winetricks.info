@@ -10,7 +10,7 @@ Depends: <<
 	cabextract,
 	wine
 <<
-BuildDepends: fink (>= 0.30.0-1)
+BuildDepends: fink (>= 0.30.2-1)
 
 CustomMirror: <<
 	Primary: http://www.finkproject.org/~ranger/distfiles

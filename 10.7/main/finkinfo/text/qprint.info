@@ -6,7 +6,7 @@ Description: Encode and decode Quoted-Printable files
 License: BSD
 Maintainer: Benjamin Reed <qprint@fink.raccoonfink.com>
 
-BuildDepends: fink (>= 0.30.0-1)
+BuildDepends: fink (>= 0.30.2-1)
 GCC: 4.0
 
 Source: http://www.fourmilab.ch/webtools/%n/%n-%v.tar.gz

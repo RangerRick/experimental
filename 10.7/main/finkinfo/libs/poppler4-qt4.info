@@ -10,7 +10,7 @@ Maintainer: Benjamin Reed <poppler4-qt4@fink.raccoonfink.com>
 Depends: %N-shlibs (>= %v-1)
 BuildDepends: <<
 	expat1,
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	fink-package-precedence (>= 0.7-1),
 	fontconfig2-dev (>= 2.8.0-4),
 	freetype219 (>= 2.3.12-1),

@@ -9,7 +9,7 @@ Maintainer: Benjamin Reed <opensync@fink.raccoonfink.com>
 Depends: libopensync1-shlibs (>= %v-%r)
 BuildDepends: <<
 	cmake (>= 2.8.2-1),
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	gettext-bin,
 	gettext-tools,
 	glib2-dev (>= 2.22.0-1),

@@ -13,7 +13,7 @@ Depends: <<
 	perl%type_pkg[perl]-core,
 	carp-clan-pm
 <<
-BuildDepends: fink (>= 0.30.0-1)
+BuildDepends: fink (>= 0.30.2-1)
 Conflicts: %N-man (<< 6.4-1)
 Replaces: %N-man (<< 6.4-1)
 InfoTest: <<

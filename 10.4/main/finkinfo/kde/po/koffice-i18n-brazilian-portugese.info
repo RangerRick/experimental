@@ -11,7 +11,7 @@ Depends: <<
 	koffice-base (>= 1.6.3-1)
 <<
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	arts-dev,
 	kdebase3-unified-dev (>= 3.5.10-10),
 	kdelibs3-unified-dev (>= 3.5.10-10),

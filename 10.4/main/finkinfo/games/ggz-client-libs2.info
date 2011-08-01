@@ -10,7 +10,7 @@ Depends: <<
 	libggzmod4-shlibs (>= %v-%r)
 <<
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	libggz2
 <<
 BuildConflicts: libgcrypt

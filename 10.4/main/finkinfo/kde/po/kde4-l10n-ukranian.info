@@ -14,7 +14,7 @@ Depends: <<
 BuildDepends: <<
 	automoc-%type_pkg[kde] (>= 0.9.89-0.999999.1),
 	cmake (>= 2.8.2-1),
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	gettext-tools (>= 0.17-1),
 	kdelibs4-%type_pkg[kde]-dev (>= 4.6.3-1),
 	libgettext8-dev,

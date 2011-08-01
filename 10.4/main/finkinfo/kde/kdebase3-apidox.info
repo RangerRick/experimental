@@ -21,7 +21,7 @@ BuildDepends: <<
 	doxygen1.3,
 	esound,
 	expat1,
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	freetype219 (>= 2.3.12-1),
 	libgettext8-dev,
 	gettext-tools,

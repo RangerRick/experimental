@@ -7,7 +7,7 @@ Maintainer: Benjamin Reed <qca@fink.raccoonfink.com>
 
 Depends: %N-shlibs
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	cyrus-sasl2-dev,
 	system-openssl-dev,
 	qt3 (>= 3.3.8-2000)

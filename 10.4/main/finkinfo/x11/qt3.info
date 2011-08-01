@@ -16,7 +16,7 @@ Depends: <<
 BuildDepends: <<
 	cctools (>= 446-0) | cctools-single-module,
 	cups-dev,
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	fink-package-precedence (>= 0.7-1),
 	fontconfig2-dev (>= 2.8.0-4),
 	freetype219 (>= 2.3.12-1),
@@ -323,7 +323,7 @@ DocFiles: FAQ INSTALL LICENSE* MANIFEST PLATFORMS README* bin/findtr bin/qt20fix
 SplitOff: <<
 	Package: %N-shlibs
 	Depends: <<
-		fink (>= 0.30.0-1),
+		fink (>= 0.30.2-1),
 		fontconfig2-shlibs (>= 2.8.0-4),
 		freetype219-shlibs (>= 2.3.12-1),
 		libgl-shlibs,

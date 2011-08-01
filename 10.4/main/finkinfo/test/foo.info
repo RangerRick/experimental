@@ -7,7 +7,7 @@ License: BSD
 Maintainer: Benjamin Reed <foo@fink.raccoonfink.com>
 
 Depends: bzip2-shlibs
-BuildDepends: fink (>= 0.30.0-1)
+BuildDepends: fink (>= 0.30.2-1)
 Provides: bar
 Conflicts: baz
 Replaces: foo (<< 0.9-1)

@@ -8,7 +8,7 @@ Maintainer: Benjamin Reed <imlib2_loaders@fink.raccoonfink.com>
 
 Depends: imlib2-shlibs (>= %v-1)
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	imlib2 (>= %v-1),
 	libgettext8-dev,
 	gettext-bin,

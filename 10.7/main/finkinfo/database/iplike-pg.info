@@ -12,7 +12,7 @@ Depends: postgresql%type_pkg[pg]-shlibs
 BuildDepends: <<
 	autoconf2.6,
 	automake1.11,
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	libtool2,
 	postgresql%type_pkg[pg]-dev
 <<

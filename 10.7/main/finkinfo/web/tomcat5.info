@@ -12,7 +12,7 @@ Depends: <<
 	daemonic
 <<
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	passwd (>= 20070108-1)
 <<
 Provides: tomcat

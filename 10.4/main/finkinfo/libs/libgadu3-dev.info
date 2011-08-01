@@ -9,7 +9,7 @@ Maintainer: Benjamin Reed <libgadu3@fink.raccoonfink.com>
 Depends: libgadu3-shlibs (>= %v-%r)
 BuildDepends: <<
 	system-openssl-dev,
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	pkgconfig (>= 0.23-1),
 	bind9-ssl-dev | bind9-dev
 <<

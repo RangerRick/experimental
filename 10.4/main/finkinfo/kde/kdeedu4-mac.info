@@ -34,7 +34,7 @@ BuildDepends: <<
 	cfitsio,
 	cmake (>= 2.8.2-1),
 	dbus1.3-dev (>= 1.2.24-1),
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	fontconfig2-dev (>= 2.8.0-4),
 	freetype219 (>= 2.3.12-1),
 	eigen2 (>= 2.0.11-1),

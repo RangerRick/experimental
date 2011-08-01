@@ -21,10 +21,10 @@ BuildDepends: <<
 	system-openssl-dev,
 	readline5 (>= 5.0-1004),
 	sed,
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	pkgconfig,
 	libbind6-dev,
-	fink (>= 0.30.0-1)
+	fink (>= 0.30.2-1)
 <<
 Replaces: <<
 	ekg (<< %v-%r),

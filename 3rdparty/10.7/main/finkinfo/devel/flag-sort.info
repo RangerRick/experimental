@@ -5,7 +5,7 @@ Description: Wrapper that sorts compiler flags
 License: GPL
 Maintainer: Daniel Macks <dmacks@netspace.org>
 
-BuildDepends: fink (>= 0.30.0-1)
+BuildDepends: fink (>= 0.30.2-1)
 
 Source: none
 PatchScript: sed 's,@PREFIX@,%p,' < %{PatchFile} | patch -p1

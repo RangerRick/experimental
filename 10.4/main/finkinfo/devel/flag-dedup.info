@@ -5,7 +5,7 @@ Description: Remove duplicate compiler flags
 License: GPL
 Maintainer: Benjamin Reed <flag-dedup@fink.raccoonfink.com>
 
-BuildDepends: fink (>= 0.30.0-1)
+BuildDepends: fink (>= 0.30.2-1)
 
 Source: none
 PatchFile: %n.patch

@@ -18,7 +18,7 @@ Depends: <<
 	webkit-sharp
 <<
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	glib2-dev (>= 2.22.0-1),
 	gnome-desktop-sharp2 (>= 2.24.0-1),
 	gnome-sharp2 (>= 2.24.0-1),

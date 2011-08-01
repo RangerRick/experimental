@@ -6,7 +6,7 @@ Description: Command-line completions for bash
 License: GPL
 Maintainer: Benjamin Reed <bash-completion@fink.raccoonfink.com>
 
-BuildDepends: fink (>= 0.30.0-1)
+BuildDepends: fink (>= 0.30.2-1)
 
 Source: http://bash-completion.alioth.debian.org/files/%n-%v.tar.bz2
 Source-MD5: a1262659b4bbf44dc9e59d034de505ec

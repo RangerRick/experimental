@@ -8,7 +8,7 @@ Maintainer: Benjamin Reed <glew@fink.raccoonfink.com>
 Depends: %N-shlibs (= %v-%r)
 BuildDepends: <<
 	dos2unix,
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	libgl-dev,
 	x11-dev
 <<

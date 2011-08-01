@@ -15,7 +15,7 @@ BuildDepends: <<
 	autoconf (>= 2.63-1),
 	cctools-single-module,
 	expat1,
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	freetype219 (>= 2.3.12-1),
 	gettext-bin,
 	gettext-tools,

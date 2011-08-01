@@ -20,7 +20,7 @@ BuildDepends: <<
 	esound (>= 0.2.38-1),
 	expat1,
 	faac-dev,
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	fink-package-precedence (>= 0.7-1),
 	ffmpeg-dev,
 	fontconfig2-dev (>= 2.8.0-4),

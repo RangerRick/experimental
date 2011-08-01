@@ -9,7 +9,7 @@ Maintainer: Benjamin Reed <blitz@fink.raccoonfink.com>
 
 Depends: qimageblitz-unified-%type_pkg[blitz]-shlibs (= %v-%r)
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	kde4-buildenv (>= 4.6.0-1),
 	kdelibs4-%type_pkg[blitz] (>= 4.6.3-1),
 	qt4-base-%type_pkg[blitz] (>= 4.7.3-2)
@@ -86,7 +86,7 @@ SplitOff10: <<
 	Depends: <<
 		qimageblitz-unified-%type_pkg[blitz] (>= %v-%r),
 		fink-obsolete-packages,
-		fink (>= 0.30.0-1)
+		fink (>= 0.30.2-1)
 	<<
 	BuildDependsOnly: true
 	DocFiles: README*
@@ -97,7 +97,7 @@ SplitOff11: <<
 	Depends: <<
 		qimageblitz-unified-%type_pkg[blitz] (>= %v-%r),
 		fink-obsolete-packages,
-		fink (>= 0.30.0-1)
+		fink (>= 0.30.2-1)
 	<<
 	BuildDependsOnly: true
 	DocFiles: README*
@@ -114,7 +114,7 @@ SplitOff20: <<
 	Depends: <<
 		qimageblitz-unified-%type_pkg[blitz]-shlibs (>= %v-%r),
 		fink-obsolete-packages,
-		fink (>= 0.30.0-1)
+		fink (>= 0.30.2-1)
 	<<
 	DocFiles: README*
 <<
@@ -124,7 +124,7 @@ SplitOff21: <<
 	Depends: <<
 		qimageblitz-unified-%type_pkg[blitz]-shlibs (>= %v-%r),
 		fink-obsolete-packages,
-		fink (>= 0.30.0-1)
+		fink (>= 0.30.2-1)
 	<<
 	BuildDependsOnly: true
 	DocFiles: README*

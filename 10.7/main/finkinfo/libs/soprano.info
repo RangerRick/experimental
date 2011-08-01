@@ -18,7 +18,7 @@ BuildDepends: <<
 	cmake (>= 2.8.2-1),
 	db48-aes | db48,
 	dbus1.3-dev (>= 1.2.24-1),
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	fink-package-precedence (>= 0.7-1),
 	gmp5 (>= 5.0.1-8),
 	kde4-buildenv (>= 4.6.0-1),

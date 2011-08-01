@@ -11,7 +11,7 @@ Depends: grantlee-%type_pkg[grantlee]-shlibs (= %v-%r)
 BuildDepends: <<
 	cmake (>= 2.8.2-1),
 	doxygen (>= 1.5-1),
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	fink-package-precedence (>= 0.7-1),
 	kde4-buildenv (>= 4.6.0-1),
 	qt4-base-%type_pkg[grantlee] (>= 4.7.3-2)

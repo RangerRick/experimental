@@ -9,7 +9,7 @@ Maintainer: Benjamin Reed <log4j@fink.raccoonfink.com>
 Depends: system-java (>= 1.4-1)
 BuildDepends: <<
 	ant-base,
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	system-java-dev (>= 1.4-1)
 <<
 

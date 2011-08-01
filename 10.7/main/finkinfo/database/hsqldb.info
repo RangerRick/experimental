@@ -7,7 +7,7 @@ License: BSD
 Maintainer: Benjamin Reed <hsqldb@fink.raccoonfink.com>
 
 Depends: system-java (>= 1.5-1)
-BuildDepends: fink (>= 0.30.0-1)
+BuildDepends: fink (>= 0.30.2-1)
 
 Source: mirror:sourceforge:%n/%n_1_8_1_1.zip
 Source-MD5: 4114ba2e6aba58e6bfd3fa283d7dbc37

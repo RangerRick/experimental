@@ -12,7 +12,7 @@ Depends: <<
 	readline5-shlibs
 <<
 BuildDepends: <<
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	net-snmp-unified15-dev (>= 5.4.2.1-4),
 	postgresql82-dev,
 	readline5,

@@ -831,7 +831,7 @@ sub transform_dependency {
 					#print "transform_dependency[$dep_spec]: $package matches $key\n";
 					my ($newversion, $newrevision) = @{$version_lookup->{$tree_iterator}->{$key}};
 					if (defined $version and defined $revision and $revision ne '%r' and $newrevision eq '+') {
-						$revision = transform_revision( $tree, $revision );
+						$revision = transform_revision( $packagehash, $revision );
 					} elsif (defined $newversion and defined $newrevision and $revision ne '%r') {
 						$version  = $newversion;
 						$revision = $newrevision;
@@ -936,7 +936,8 @@ sub transform_maintainer {
 }
 
 sub transform_patch {
-	my $tree = shift->{'Tree'};
+	# transform_patch doesn't get a $packagehash, just the tree
+	my $tree = shift;
 	my $text = shift;
 
 	if ($tree eq "10.4") {
@@ -1028,8 +1029,9 @@ sub transform_setcxxflags {
 }
 
 sub transform_shlibs {
-	my $tree   = shift->{'Tree'};
-	my $shlibs = shift;
+	my $packagehash = shift;
+	my $shlibs      = shift;
+	my $tree        = $packagehash->{'Tree'};
 	my @newlines;
 
 	for my $line (split(/\r?\n/, $shlibs)) {
@@ -1041,7 +1043,7 @@ sub transform_shlibs {
 		my $newline;
 		while ($line =~ /\G(.+?\(\S+\s+\S+\-)([^\-]+)\)/gsi) {
 			my ($rest, $revision) = ($1, $2);
-			$newline .= $rest . transform_revision( $tree, $revision ) . ')';
+			$newline .= $rest . transform_revision( $packagehash, $revision ) . ')';
 		}
 		$line =~ /\G\(.*$/;
 		$newline .= $1;

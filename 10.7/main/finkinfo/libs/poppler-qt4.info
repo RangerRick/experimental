@@ -12,7 +12,7 @@ BuildDepends: <<
 	(%type_raw[qt4] = -x11) qt4-x11,
 	(%type_raw[qt4] = -x11) x11-dev,
 	(%type_raw[qt4] = -mac) qt4-mac,
-	fink (>= 0.30.0-1),
+	fink (>= 0.30.2-1),
 	fink-package-precedence (>= 0.7-1),
 	freetype219 (>= 2.3.12-1),
 	libjpeg8,

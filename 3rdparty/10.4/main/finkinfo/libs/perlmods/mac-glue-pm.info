@@ -18,7 +18,7 @@ Depends: <<
 	time-epoch-pm,
 	uri-pm%type_pkg[perl]
 <<
-BuildDepends: fink (>= 0.30.0-1)
+BuildDepends: fink (>= 0.30.2-1)
 
 Source: mirror:cpan:authors/id/C/CN/CNANDOR/Mac-Glue-%v.tar.gz
 Source-MD5: b98b8687fe928063ba2cc6d3a906945f
