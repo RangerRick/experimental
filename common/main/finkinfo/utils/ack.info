@@ -1,5 +1,5 @@
 Package: ack
-Version: 1.92
+Version: 1.94
 Revision: 1
 Description: Grep-like text finder
 Depends: file-next-pm, system-perl
@@ -9,12 +9,11 @@ Type: perl
 License: Artistic
 UpdatePOD: true
 Maintainer: Benjamin Reed <ack@fink.raccoonfink.com>
-NoPerlTests: true
 
 Source: mirror:cpan:modules/by-module/App/%n-%v.tar.gz
-Source-MD5: c25b5a16d0a27386a75c91d531b86cea
+Source-MD5: dcf68e56bab0d394370fa102c7f08cb0
 
-DocFiles: Changes MANIFEST META.yml README TODO
+DocFiles: Changes MANIFEST META.yml README* TODO
 
 DescDetail: <<
 ack is a tool like grep, aimed at programmers with large

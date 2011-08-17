@@ -1,5 +1,5 @@
 Package: ack
-Version: 1.92
+Version: 1.94
 Revision: 1
 Description: Grep-like text finder
 Type: perl
@@ -16,13 +16,12 @@ BuildDepends: <<
 <<
 
 Source: mirror:cpan:modules/by-module/App/%n-%v.tar.gz
-Source-MD5: c25b5a16d0a27386a75c91d531b86cea
+Source-MD5: dcf68e56bab0d394370fa102c7f08cb0
 
 UseMaxBuildJobs: true
 
 UpdatePOD: true
-NoPerlTests: true
-DocFiles: Changes MANIFEST META.yml README TODO
+DocFiles: Changes MANIFEST META.yml README* TODO
 
 Homepage: http://search.cpan.org/dist/ack
 DescDetail: <<

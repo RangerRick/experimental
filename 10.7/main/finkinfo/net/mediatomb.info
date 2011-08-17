@@ -1,6 +1,6 @@
 Package: mediatomb
 Version: 0.12.1
-Revision: 31
+Revision: 32
 Description: UPnP Media Server w/ Web Interface
 License: GPL
 Maintainer: Benjamin Reed <mediatomb@fink.raccoonfink.com>
@@ -9,6 +9,9 @@ Depends: <<
 	file,
 	file-shlibs,
 	expat1-shlibs,
+	libavcodec53-shlibs,
+	libavfilter2-shlibs,
+	libavutil51-shlibs,
 	libcurl4-shlibs,
 	libexif12-shlibs,
 	libiconv,
@@ -21,6 +24,9 @@ BuildDepends: <<
 	file-dev,
 	fink (>= 0.30.2-1),
 	expat1,
+	libavcodec53-dev,
+	libavfilter2-dev,
+	libavutil51-dev,
 	libcurl4,
 	libexif12,
 	libiconv-dev,
