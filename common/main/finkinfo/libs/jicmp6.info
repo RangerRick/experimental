@@ -1,7 +1,7 @@
 Info3: <<
 Package: jicmp6
 Version: 1.0.1
-Revision: 1
+Revision: 2
 Type: java(1.5)
 
 Source: mirror:sourceforge:opennms/%n-%v.tar.gz
@@ -9,7 +9,19 @@ Source-MD5: e32269ce242da2098100353a888b2746
 SourceDirectory: %n-%v
 
 Depends: system-java (>= 1.5-1)
-BuildDepends: system-sdk-10.4-universal | system-sdk-10.5 | system-sdk-10.6 | system-sdk-10.7
+BuildDepends: <<
+	fink (>= 0.1-1),
+	autoconf2.6,
+	automake1.11,
+	libtool2,
+	system-sdk-10.4-universal | system-sdk-10.5 | system-sdk-10.6 | system-sdk-10.7
+<<
+PatchFile: %n.patch
+PatchFile-MD5: 4ffc554d96429bb0b3671f718625f14d
+PatchScript: <<
+	%{default_script}
+	autoreconf -fvi
+<<
 
 ConfigureParams: --disable-dependency-tracking
 CompileScript: <<
