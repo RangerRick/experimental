@@ -36,8 +36,8 @@ BuildDepends: <<
 	dbus1.3-dev (>= 1.2.24-1),
 	expat1,
 	fink (>= 0.30.2-1),
-	fontconfig2-dev (>= 2.8.0-4),
-	freetype219 (>= 2.3.12-1),
+	fontconfig2-dev (>= 2.8.0-6),
+	freetype219 (>= 2.4.4-2),
 	glib2-dev (>= 2.22.0-1),
 	kde4-buildenv (>= 4.6.0-1),
 	libgettext8-dev,
@@ -51,7 +51,7 @@ BuildDepends: <<
 	sqlite3-dev,
 	system-openssl-dev
 <<
-BuildConflicts: kdelibs3-dev, kdelibs3-ssl-dev, kdelibs3-unified-dev, libevent2, clucene-core
+BuildConflicts: kdelibs3-dev, kdelibs3-ssl-dev, kdelibs3-unified-dev, clucene-core
 Replaces: qt4-%type_pkg[qt] (<< 4.7.3-1)
 BuildDependsOnly: true
 GCC: 4.0

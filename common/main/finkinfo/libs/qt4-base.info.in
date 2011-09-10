@@ -81,7 +81,7 @@ BuildDepends: <<
 #endif
 <<
 Replaces: qt4-%type_pkg[qt] (<< 4.7.3-1)
-BuildConflicts: kdelibs3-dev, kdelibs3-ssl-dev, kdelibs3-unified-dev, libevent2, clucene-core
+BuildConflicts: kdelibs3-dev, kdelibs3-ssl-dev, kdelibs3-unified-dev, clucene-core
 BuildDependsOnly: true
 NoSetLDFLAGS: true
 CompileScript: <<
