@@ -1,30 +1,28 @@
 Package: opennms
-Version: 1.8.4
+Version: 1.8.13
 Revision: 1
 
 Source: http://sourceforge.net/projects/%n/files/OpenNMS-Source/stable-%v/%n-source-%v-1.tar.gz
-Source-MD5: f82ba49377114b97f42e690474be6d20
+Source-MD5: 4a27930afc7efec6902695c4076ad3a4
 SourceDirectory: %n-%v-1/source
-Source2: http://sourceforge.net/projects/%n/files/miscellaneous/%n-maven/%n-maven-dependencies-1.8.1.tar.bz2
-Source2-MD5: 56e21520b197e04f55d2c56199e1899f
-Source3: http://sourceforge.net/projects/%n/files/miscellaneous/%n-maven/%n-maven-dependencies-1.8.1-to-1.8.3-2.tar.bz2
-Source3-MD5: 8d2250305383ab99e2d153439ad9ad63
+Source2: http://sourceforge.net/projects/%n/files/miscellaneous/%n-maven/%n-maven-dependencies-%v.tar.bz2
+Source2-MD5: ba991c0c060f1815f467051f3bd02177
 PatchFile: %n.patch
-PatchFile-MD5: f2b7a45973ef70db4d50d4df5cdb0284
+PatchFile-MD5: ae29bc6cba4233f2c765b8f2cb4ea919
 
 Recommends: mib2opennms
 
 Type: java(1.5)
 BuildDepends: <<
 	fink (>= 0.26.0-1),
-	passwd (>= 20030202-1)
+	passwd-opennms | passwd (>= 20030202-1)
 <<
 Depends: <<
 	daemonic,
 	fink (>= 0.26.0-1),
 	jicmp,
 	opennms-pgsql,
-	passwd (>= 20030202-1),
+	passwd-opennms | passwd (>= 20030202-1),
 	postgresql-server,
 	rrdtool (>= 1.2.0-1),
 	rrdtool-java
@@ -108,6 +106,9 @@ ConfFiles: <<
 	%p/var/opennms/etc/events/Clarent.events.xml
 	%p/var/opennms/etc/events/Clarinet.events.xml
 	%p/var/opennms/etc/events/Colubris.events.xml
+	%p/var/opennms/etc/events/Compuware.events.xml
+	%p/var/opennms/etc/events/ComtechEFData.events.xml
+	%p/var/opennms/etc/events/Concord.events.xml
 	%p/var/opennms/etc/events/Covergence.events.xml
 	%p/var/opennms/etc/events/Cricket.events.xml
 	%p/var/opennms/etc/events/Crossbeam.events.xml
@@ -201,8 +202,10 @@ ConfFiles: <<
 	%p/var/opennms/etc/events/SonicWall.events.xml
 	%p/var/opennms/etc/events/Sonus.events.xml
 	%p/var/opennms/etc/events/Standard.events.xml
+	%p/var/opennms/etc/events/SunILOM.events.xml
 	%p/var/opennms/etc/events/SwissQual.events.xml
 	%p/var/opennms/etc/events/Symbol.events.xml
+	%p/var/opennms/etc/events/Syslog.external.events.xml
 	%p/var/opennms/etc/events/Syslogd.events.xml
 	%p/var/opennms/etc/events/SystemEdge.events.xml
 	%p/var/opennms/etc/events/TUT.events.xml
@@ -263,10 +266,57 @@ ConfFiles: <<
 	%p/var/opennms/etc/poller-configuration.xml
 	%p/var/opennms/etc/provisiond-configuration.xml
 	%p/var/opennms/etc/rancid-configuration.xml
+	%p/var/opennms/etc/report-templates/AvailabilitySummary.jrxml
+	%p/var/opennms/etc/report-templates/AvailabilitySummary_LastMonth.jrxml
+	%p/var/opennms/etc/report-templates/AvailabilitySummary_ThisMonth.jrxml
+	%p/var/opennms/etc/report-templates/AvailabilitySummary_ThisYear.jrxml
+	%p/var/opennms/etc/report-templates/AveragePeakTrafficRates.jrxml
+	%p/var/opennms/etc/report-templates/AveragePeakTrafficRates_LastMonth.jrxml
+	%p/var/opennms/etc/report-templates/AveragePeakTrafficRates_ThisMonth.jrxml
 	%p/var/opennms/etc/report-templates/Early-Morning-Report.jrxml
+	%p/var/opennms/etc/report-templates/EventAnalysis.jrxml
+	%p/var/opennms/etc/report-templates/InterfaceAvailabilityReport.jrxml
+	%p/var/opennms/etc/report-templates/NodeAvailabilityReport.jrxml
+	%p/var/opennms/etc/report-templates/NodeAvailabilityReport_LastMonth.jrxml
+	%p/var/opennms/etc/report-templates/NodeAvailabilityReport_ThisMonth.jrxml
+	%p/var/opennms/etc/report-templates/NodeAvailabilityReport_ThisYear.jrxml
+	%p/var/opennms/etc/report-templates/ResponseTime.jrxml
+	%p/var/opennms/etc/report-templates/ResponseTimeCharts.jrxml
+	%p/var/opennms/etc/report-templates/ResponseTimeSummary.jrxml
+	%p/var/opennms/etc/report-templates/ResponseTimeSummary_LastMonth.jrxml
+	%p/var/opennms/etc/report-templates/ResponseTimeSummary_ThisMonth.jrxml
+	%p/var/opennms/etc/report-templates/ResponseTimeSummary_ThisYear.jrxml
+	%p/var/opennms/etc/report-templates/ResponseTime_LastMonth.jrxml
+	%p/var/opennms/etc/report-templates/ResponseTime_ThisMonth.jrxml
+	%p/var/opennms/etc/report-templates/ResponseTime_ThisYear.jrxml
+	%p/var/opennms/etc/report-templates/SerialInterfaceUtilizationSummary.jrxml
+	%p/var/opennms/etc/report-templates/SerialInterfaceUtilizationSummary_LastMonth.jrxml
+	%p/var/opennms/etc/report-templates/SerialInterfaceUtilizationSummary_ThisMonth.jrxml
+	%p/var/opennms/etc/report-templates/SerialInterfaceUtilizationSummary_ThisYear.jrxml
+	%p/var/opennms/etc/report-templates/SnmpInterfaceOperAvailabilityReport.jrxml
+	%p/var/opennms/etc/report-templates/TotalBytesTransferredByInterface.jrxml
+	%p/var/opennms/etc/report-templates/TotalBytesTransferredByInterface_LastMonth.jrxml
+	%p/var/opennms/etc/report-templates/TotalBytesTransferredByInterface_ThisMonth.jrxml
+	%p/var/opennms/etc/report-templates/assets/images/company-logo.png
+	%p/var/opennms/etc/report-templates/assets/styles/defaultStyles.jrtx
+	%p/var/opennms/etc/report-templates/assets/styles/styles.jrtx
 	%p/var/opennms/etc/report-templates/leaf_banner_green.png
 	%p/var/opennms/etc/report-templates/opennms-logo.png
+	%p/var/opennms/etc/report-templates/parameter-test.jrxml
 	%p/var/opennms/etc/report-templates/sample-report.jrxml
+	%p/var/opennms/etc/report-templates/subreports/95thPercentileTrafficRate_subreport.jrxml
+	%p/var/opennms/etc/report-templates/subreports/AvailabilitySummaryChart_subreport.jrxml
+	%p/var/opennms/etc/report-templates/subreports/InterfaceAvailabilityReport_subreport1.jrxml
+	%p/var/opennms/etc/report-templates/subreports/NodeId_to_NodeLabel_subreport.jrxml
+	%p/var/opennms/etc/report-templates/subreports/PeakTraffic_subreport.jrxml
+	%p/var/opennms/etc/report-templates/subreports/ResponseTimeAvg_subreport.jrxml
+	%p/var/opennms/etc/report-templates/subreports/ResponseTimeSummary_Availability_Offenders_subreport.jrxml
+	%p/var/opennms/etc/report-templates/subreports/ResponseTimeSummary_Availability_subreport.jrxml
+	%p/var/opennms/etc/report-templates/subreports/ResponseTimeSummary_Response_Offenders_subreport.jrxml
+	%p/var/opennms/etc/report-templates/subreports/ResponseTimeSummary_subreport.jrxml
+	%p/var/opennms/etc/report-templates/subreports/ResponseTime_subreport1.jrxml
+	%p/var/opennms/etc/report-templates/subreports/Top25PercentDown_subreport.jrxml
+	%p/var/opennms/etc/report-templates/subreports/TotalBytesTransferredByInterface_subreport1.jrxml
 	%p/var/opennms/etc/report-templates/trivial-report.jrxml
 	%p/var/opennms/etc/reportd-configuration.xml
 	%p/var/opennms/etc/reports/HTMLAvailReport.xsl
@@ -297,6 +347,7 @@ ConfFiles: <<
 	%p/var/opennms/etc/snmp-graph.properties
 	%p/var/opennms/etc/snmp-interface-poller-configuration.xml
 	%p/var/opennms/etc/statsd-configuration.xml
+	%p/var/opennms/etc/support.properties
 	%p/var/opennms/etc/surveillance-views.xml
 	%p/var/opennms/etc/syslogd-configuration.xml
 	%p/var/opennms/etc/threshd-configuration.xml
@@ -328,7 +379,23 @@ PatchScript: <<
 END
 <<
 
-CompileScript: echo "none needed"
+CompileScript: <<
+#!/bin/sh -ev
+
+	case `sw_vers -productVersion` in
+		10.[012345]*)
+			;;
+		*)
+			ARCH_ARGS="-d32"
+			if [ "%m" = "x86_64" ]; then
+				ARCH_ARGS="-d64"
+			fi
+			;;
+	esac
+
+	export MAVEN_OPTS="-Xmx1g $ARCH_ARGS"
+	./compile.pl -e -s `pwd`/settings.xml clean install
+<<
 InstallScript: <<
 #!/bin/sh -ev
 
@@ -345,7 +412,7 @@ InstallScript: <<
 
 	# main install
 	export MAVEN_OPTS="-Xmx1g $ARCH_ARGS"
-	sh ./build.sh -e -s `pwd`/settings.xml -Djava.awt.headless=true -Ddist.name=opennms -Ddist.dir=%i/var -Dopennms.home=%p/var/opennms install assembly:directory-inline
+	./assemble.pl -e -s `pwd`/settings.xml -Djava.awt.headless=true -Ddist.name=opennms -Ddist.dir=%i/var -Dopennms.home=%p/var/opennms -Dbuild.profile=dir install
 
 	# some convenience symlinks
 	/usr/bin/install -d -m 755 %i/bin %i/etc %i/var/log

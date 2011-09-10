@@ -1,6 +1,6 @@
 Package: postgresql-java
 Version: 9.0
-Revision: 801.32
+Revision: 801.2
 Description: PostgreSQL Java library
 Type: java(1.5)
 License: BSD

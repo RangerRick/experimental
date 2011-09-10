@@ -7,14 +7,14 @@ Package: qt4-base-mac
 Type: qt (mac)
 #endif
 Version: 4.7.3
-Revision: 2
+Revision: 3
 GCC: 4.0
 CustomMirror: RangerMirror
 Source: mirror:custom:qt/qt-%v-mac-0cc7b7e.tar.gz
 Source-MD5: 26281f4bab98f2600cbf71e10aad1e0c
 SourceDirectory: qt-kde-qt-mac
 PatchFile: qt4-base.patch
-PatchFile-MD5: ac6ba07393f4e001076db6f64ddd2d70
+PatchFile-MD5: bb502349b3ac2c3f3bf90675aee70fb9
 PatchScript: <<
 	sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | patch -p1 --fuzz=4
 	perl -pi -e 's,const char,char,g' config.tests/unix/*iconv/*.cpp
@@ -81,11 +81,17 @@ BuildDepends: <<
 #endif
 <<
 Replaces: qt4-%type_pkg[qt] (<< 4.7.3-1)
-BuildConflicts: kdelibs3-dev, kdelibs3-ssl-dev, kdelibs3-unified-dev, libevent1, clucene-core
+BuildConflicts: kdelibs3-dev, kdelibs3-ssl-dev, kdelibs3-unified-dev, libevent2, clucene-core
 BuildDependsOnly: true
 NoSetLDFLAGS: true
 CompileScript: <<
 #!/bin/sh -ev
+
+	if [[ $(sw_vers -productVersion | cut -d. -f1-2) > 10.6 ]]; then
+		export PATH="/Developer/usr/bin:/usr/llvm-gcc-4.2:$PATH"
+		export CC=llvm-gcc-4.2
+		export CXX=llvm-g++-4.2
+	fi
 
 	EXTRA_ARGS="-confirm-license -verbose -no-separate-debug-info"
 	for DBPLUGIN in db2 ibase mysql oci odbc psql sqlite2 sqlite_symbian tds; do

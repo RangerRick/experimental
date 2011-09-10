@@ -1,7 +1,7 @@
 Info4: <<
 Package: qt4-base-mac
 Version: 4.7.3
-Revision: 32
+Revision: 33
 Description: Cross-Platform framework (%type_pkg[qt])
 Type: qt (mac)
 License: LGPL
@@ -51,7 +51,7 @@ BuildDepends: <<
 	sqlite3-dev,
 	system-openssl-dev
 <<
-BuildConflicts: kdelibs3-dev, kdelibs3-ssl-dev, kdelibs3-unified-dev, libevent1, clucene-core
+BuildConflicts: kdelibs3-dev, kdelibs3-ssl-dev, kdelibs3-unified-dev, libevent2, clucene-core
 Replaces: qt4-%type_pkg[qt] (<< 4.7.3-1)
 BuildDependsOnly: true
 GCC: 4.0
@@ -70,12 +70,18 @@ PatchScript: <<
 	perl -pi -e 's,CFG_MAC_XARCH=auto,CFG_MAC_XARCH=no,g' configure
 <<
 PatchFile: qt4-base.patch
-PatchFile-MD5: ac6ba07393f4e001076db6f64ddd2d70
+PatchFile-MD5: bb502349b3ac2c3f3bf90675aee70fb9
 
 NoSetLDFLAGS: true
 UseMaxBuildJobs: true
 CompileScript: <<
 	#!/bin/sh -ev
+	
+	if [[ $(sw_vers -productVersion | cut -d. -f1-2) > 10.6 ]]; then
+	export PATH="/Developer/usr/bin:/usr/llvm-gcc-4.2:$PATH"
+	export CC=llvm-gcc-4.2
+	export CXX=llvm-g++-4.2
+	fi
 	
 	EXTRA_ARGS="-confirm-license -verbose -no-separate-debug-info"
 	for DBPLUGIN in db2 ibase mysql oci odbc psql sqlite2 sqlite_symbian tds; do
