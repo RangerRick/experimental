@@ -34,8 +34,8 @@ GCC: 4.0
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
 Source-MD5: 0497b9da1d7c380c340a9a87ba5500fe
 PatchFile: %n.patch
-PatchFile-MD5: 7c9ccbc8a0c66027b7bf6d0f5df6ad5a
-PatchScript: sed -e 's|@BUILDDIR@|%b|g' -e 's|@INSTPREFIX@|%p|g' < %{PatchFile} | patch -p1
+PatchFile-MD5: ca800eba11497ef264f1ca93f9509f46
+PatchScript: sed -e 's|@BUILDDIR@|%b|g' -e 's|@INSTPREFIX@|%p|g' -e 's|@PGVERSION@|9.1|g' < %{PatchFile} | patch -p1
 
 SetCPPFLAGS: -I%p/lib/system-openssl/include -DHAVE_OPTRESET -fno-common
 SetLDFLAGS: -L%p/lib/system-openssl/lib -F/System/Library/Frameworks
