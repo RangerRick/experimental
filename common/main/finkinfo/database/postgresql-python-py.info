@@ -41,7 +41,7 @@ Source-MD5: 24197cc7546d6c17d81c707a07e19394
 Source2: ftp://ftp.pygresql.org/pub/distrib/PyGreSQL-4.0.tgz
 Source2-MD5: 1aca50e59ff4cc56abe9452a9a49c5ff
 PatchFile: postgresql82.patch
-PatchFile-MD5: 57e7c10652ebc459560b5a2dfe97f2f8
+PatchFile-MD5: e1f72a3ee037e9d7b2c8b2b977f7bcde
 PatchScript: sed -e 's|@INSTPREFIX@|%p|g' -e 's|python2.1|python%type_raw[python]|g' < %{PatchFile} | patch -p1
 
 SetCPPFLAGS: -DHAVE_OPTRESET -I%p/include/postgresql -I%p/include

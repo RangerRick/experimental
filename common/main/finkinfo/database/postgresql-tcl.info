@@ -36,7 +36,7 @@ Source-MD5: 24197cc7546d6c17d81c707a07e19394
 Source2: http://pgfoundry.org/frs/download.php/2151/libpgtcl-1.7.tar.gz
 Source2-MD5: e71ed886d5de5f5f455bc02136494448
 PatchFile: postgresql82.patch
-PatchFile-MD5: 964107a0f601e15937e79df17ffea814
+PatchFile-MD5: e1f72a3ee037e9d7b2c8b2b977f7bcde
 PatchScript: sed 's|@INSTPREFIX@|%p|g' < %{PatchFile} | patch -p1
 
 SetCPPFLAGS: -I%p/include/postgresql -I%p/include
