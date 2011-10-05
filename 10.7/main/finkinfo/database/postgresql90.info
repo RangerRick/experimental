@@ -1,7 +1,7 @@
 Info4: <<
 Package: postgresql90
-Version: 9.0.4
-Revision: 34
+Version: 9.0.5
+Revision: 31
 Description: PostgreSQL open-source database
 License: BSD
 Maintainer: Benjamin Reed <postgresql90@fink.raccoonfink.com>
@@ -31,7 +31,7 @@ Provides: postgresql-server
 GCC: 4.0
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: 80390514d568a7af5ab61db1cda27e29
+Source-MD5: 86816eb8a8513532957b96045abdfef9
 PatchScript: sed -e 's|@BUILDDIR@|%b|g' -e 's|@INSTPREFIX@|%p|g' < %{PatchFile} | patch -p1
 PatchFile: %n.patch
 PatchFile-MD5: 7c9ccbc8a0c66027b7bf6d0f5df6ad5a

@@ -16,7 +16,7 @@ BuildDepends: <<
 	autoconf (>= 2.63-1),
 	cctools-single-module,
 	expat1,
-	freetype219 (>= 2.3.12-1),
+	freetype219 (>= 2.4.4-2),
 	gettext-bin,
 	gettext-tools,
 	libgettext8-dev,

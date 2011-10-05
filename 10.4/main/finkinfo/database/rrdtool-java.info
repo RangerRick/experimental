@@ -12,7 +12,7 @@ BuildDepends: <<
 	autoconf2.6,
 	automake1.11,
 	fink (>= 0.30.2-1),
-	freetype219 (>= 2.3.12-1),
+	freetype219 (>= 2.4.4-2),
 	intltool40,
 	libart2 (>= 2.3.20-1),
 	libtool2,

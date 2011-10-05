@@ -1,7 +1,7 @@
 Info2: <<
 Package: postgresql83-python-py%type_pkg[python]
-Version: 8.3.7
-Revision: 3
+Version: 8.3.16
+Revision: 1
 Distribution: (%type_pkg[python] = 23) 10.4, (%type_pkg[python] = 24) 10.4, (%type_pkg[python] = 24) 10.5, 10.6
 Description: PostgreSQL Python tools
 Type: python(2.3 2.4 2.5 2.6)
@@ -25,7 +25,7 @@ BuildDepends: <<
 <<
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: 7b7e91a2221e55fe1b167e663217a96d
+Source-MD5: 92004b0494b646748a1f562cea7d695e
 
 SetCPPFLAGS: -DHAVE_OPTRESET -I%p/include/postgresql -I%p/include
 SetLIBS: -L%p/lib

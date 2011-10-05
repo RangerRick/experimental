@@ -1,7 +1,7 @@
 Info4: <<
 Package: postgresql84
-Version: 8.4.8
-Revision: 2
+Version: 8.4.9
+Revision: 1
 Description: PostgreSQL open-source database
 Distribution: 10.4, 10.5, 10.6
 License: BSD
@@ -33,7 +33,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: 4603e8ea30cee97189b62b39022f2043
+Source-MD5: d50b1e2bd2b2284ffc3c7009e70b3d08
 PatchFile: %n.patch
 PatchFile-MD5: d118eccada3197aa325d534adc2cff7e
 PatchScript: sed -e 's|@BUILDDIR@|%b|g' -e 's|@INSTPREFIX@|%p|g' < %{PatchFile} | patch -p1

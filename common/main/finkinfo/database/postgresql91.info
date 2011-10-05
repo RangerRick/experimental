@@ -1,6 +1,6 @@
 Info4: <<
 Package: postgresql91
-Version: 9.1.0
+Version: 9.1.1
 Revision: 1
 Description: PostgreSQL open-source database
 License: BSD
@@ -32,7 +32,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: 0497b9da1d7c380c340a9a87ba5500fe
+Source-MD5: 061a9f17323117c9358ed60f33ecff78
 PatchFile: %n.patch
 PatchFile-MD5: ca800eba11497ef264f1ca93f9509f46
 PatchScript: sed -e 's|@BUILDDIR@|%b|g' -e 's|@INSTPREFIX@|%p|g' -e 's|@PGVERSION@|9.1|g' < %{PatchFile} | patch -p1

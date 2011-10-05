@@ -13,7 +13,7 @@ BuildDepends: <<
 	cctools-single-module,
 	expat1,
 	fink (>= 0.30.2-1),
-	freetype219 (>= 2.3.12-1),
+	freetype219 (>= 2.4.4-2),
 	gettext-tools,
 	kdelibs3-unified-dev (>= 3.5.10-10),
 	libart2 (>= 2.3.20-1),

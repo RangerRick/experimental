@@ -1,6 +1,6 @@
 Package: postgresql-java
-Version: 9.0
-Revision: 801.2
+Version: 9.1
+Revision: 901.1
 Description: PostgreSQL Java library
 Type: java(1.5)
 License: BSD
@@ -24,11 +24,11 @@ Replaces: <<
 <<
 Recommends: postgresql90
 
-Source: http://jdbc.postgresql.org/download/postgresql-jdbc-%v-801.src.tar.gz
-Source-MD5: 32188109251f8da2766da77b174232bc
-Source2: http://jdbc.postgresql.org/download/postgresql-9.0-801.jdbc3.jar
-Source2-MD5: 9eaf3ea9f5b975195db127dc24fca9a0
-SourceDirectory: postgresql-jdbc-%v-801.src
+Source: http://jdbc.postgresql.org/download/postgresql-jdbc-%v-901.src.tar.gz
+Source-MD5: eab20a5cd5344a21f33a1768dd3f4f96
+Source2: http://jdbc.postgresql.org/download/postgresql-%v-901.jdbc3.jar
+Source2-MD5: 633012ecafbdf680f4f7488d99952818
+SourceDirectory: postgresql-jdbc-%v-901.src
 
 UseMaxBuildJobs: true
 CompileScript: <<

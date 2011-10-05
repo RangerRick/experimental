@@ -22,7 +22,7 @@ BuildDepends: <<
 	dbus-glib1.2-dev (>= 0.84-1),
 	esound,
 	expat1,
-	freetype219 (>= 2.3.12-1),
+	freetype219 (>= 2.4.4-2),
 	gconf2-dev (>= 2.20.1-1),
 	glib2-dev (>= 2.22.0-1),
 	gnome-keyring-dev (>= 0.8.1-1),
