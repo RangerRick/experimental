@@ -1,33 +1,31 @@
 Package: dbus1.3-shlibs
-Version: 1.2.28
-Revision: 3
+Version: 1.4.16
+Revision: 1
 Description: Message bus system for applications
 License: OSI-Approved
 Maintainer: Benjamin Reed <dbus@fink.raccoonfink.com>
 
 Depends: <<
 	expat1-shlibs,
-	passwd (>= 20060201-1)
+	passwd-messagebus | passwd (>= 20060201-1)
 <<
 BuildDepends: <<
-	autoconf2.6,
-	automake1.11,
 	expat1,
 	fink (>= 0.30.2-1),
-	libtool2,
 	pkgconfig (>= 0.23-1)
 <<
 Replaces: dbus-shlibs
 
 Source: http://dbus.freedesktop.org/releases/dbus/dbus-%v.tar.gz
-Source-MD5: 8c12fc6af7538c5c8ff12ba683f9d80b
+Source-MD5: 44a2a10678e7e50460879c3eb4453a65
 PatchScript: <<
-	/usr/bin/sed -e 's,org.freedesktop.dbus-session,org.finkproject.dbus-session,g' -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | /usr/bin/patch -p1
-	perl -pi -e 's,DBUS_LAUNCHD_SESSION_BUS_SOCKET,DBUS_FINK_SESSION_BUS_SOCKET,g; s,org.freedesktop.dbus-session,org.finkproject.dbus-session,g' README* *.in bus/*.in bus/*.am dbus/*.c dbus/*.h
-	autoreconf -fvi
+	/usr/bin/sed -e 's,@FINKPREFIX@,%p,g' %{PatchFile} | /usr/bin/patch -p1
+	perl -pi -e 's,DBUS_LAUNCHD_SESSION_BUS_SOCKET,DBUS_FINK_SESSION_BUS_SOCKET,g' README* bus/*.in configure dbus/*.c dbus/*.h doc/*specification*
+	perl -pi -e 's,org.freedesktop.dbus-session,org.finkproject.dbus-session,g'    README* bus/*.in configure dbus/*.c dbus/*.h
+	mv bus/org.freedesktop.dbus-session.plist.in bus/org.finkproject.dbus-session.plist.in
 <<
 PatchFile: %n.patch
-PatchFile-MD5: 4b25c8daa5b286b65a1cdc3c159a8cf2
+PatchFile-MD5: a8e5f759eecc17bf9e6bcc36ee6ca14c
 
 SetCFLAGS: -Os -g
 UseMaxBuildJobs: true
@@ -93,8 +91,6 @@ InstallScript: <<
 
 	install -d -m 755 %i/share/dbus
 	mv %i/bin/dbus-uuidgen %i/share/dbus
-
-	rmdir %i/sbin/dbus-1
 <<
 DocFiles: AUTHORS COPYING ChangeLog HACKING NEWS README*
 SplitOff: <<
@@ -122,7 +118,7 @@ SplitOff2: <<
 		dbus1.3-shlibs (>= %v-%r),
 		daemonic,
 		expat1-shlibs,
-		passwd (>= 20060201-1),
+		passwd-messagebus | passwd (>= 20060201-1),
 		xinitrc
 	<<
 	DocFiles: AUTHORS COPYING ChangeLog HACKING NEWS README*
@@ -166,10 +162,9 @@ chmod 4750            %p/sbin/dbus-daemon-launch-helper
 
 %p/bin/start-system-bus.sh >/tmp/dbus-postinst.log 2>&1 || :
 	<<
-	PostRmScript: <<
+	PreRmScript: <<
 if [ "$1" = "remove" ]; then
-	if [ ! -x "%p/bin/daemonic" ]; then
-		%p/bin/daemonic disable dbus >/dev/null 2>&1 || :
+	if [ -x "%p/bin/daemonic" ]; then
 		%p/bin/daemonic remove  dbus >/dev/null 2>&1 || :
 	fi
 fi
@@ -190,7 +185,7 @@ by touching the file %p/etc/dbus-1/disable-dbus -- the D-Bus
 startup scripts will then do nothing.
 	<<
 <<
-Shlibs: %p/lib/libdbus-1.3.dylib 8.0.0 %n (>= 1.2.16-101)
+Shlibs: %p/lib/libdbus-1.3.dylib 9.0.0 %n (>= 1.4.0-1)
 
 PostInstScript: <<
 echo ""
