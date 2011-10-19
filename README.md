@@ -2,14 +2,14 @@
 \ \      / / \  |  _ \| \ | |_ _| \ | |/ ___| |
  \ \ /\ / / _ \ | |_) |  \| || ||  \| | |  _| |
   \ V  V / ___ \|  _ &lt;| |\  || || |\  | |_| |_|
-   \_/\_/_/   \_\_| \_\_| \_|___|_| \_|\____(_)
+   \_/\_/_/   \_\_| \_\_| \_|___|_| \_|\____(_)</pre>
 
 THIS IS CALLED "EXPERIMENTAL" FOR A REASON.  DO NOT TELL RANGER RICK ABOUT BUGS IN PACKAGES HERE
 UNLESS YOU ARE EXPLICITLY ASKED FOR FEEDBACK.  SERIOUSLY.
 
-Yes, this means you!
+Yes, this means *you*!
 
- ____  _____ ____  ___ ___  _   _ ____  _  __   ___ 
+<pre> ____  _____ ____  ___ ___  _   _ ____  _  __   ___ 
 / ___|| ____|  _ \|_ _/ _ \| | | / ___|| | \ \ / / |
 \___ \|  _| | |_) || | | | | | | \___ \| |  \ V /| |
  ___) | |___|  _ &lt; | | |_| | |_| |___) | |___| | |_|
@@ -17,7 +17,8 @@ Yes, this means you!
 
 ;)
 
-===================================================================================================
+OK
+==
 
 Now that that's finished, let's continue.
 
