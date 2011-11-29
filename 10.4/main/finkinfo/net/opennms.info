@@ -1,5 +1,5 @@
 Package: opennms
-Version: 1.8.13
+Version: 1.8.16
 Revision: 1
 Description: Network Management System
 Type: java(1.5)
@@ -23,9 +23,9 @@ BuildDepends: <<
 Recommends: mib2opennms
 
 Source: http://sourceforge.net/projects/%n/files/OpenNMS-Source/stable-%v/%n-source-%v-1.tar.gz
-Source-MD5: 4a27930afc7efec6902695c4076ad3a4
+Source-MD5: 945308e6cf4c42a04f34a11ecd70ab18
 Source2: http://sourceforge.net/projects/%n/files/miscellaneous/%n-maven/%n-maven-dependencies-%v.tar.bz2
-Source2-MD5: ba991c0c060f1815f467051f3bd02177
+Source2-MD5: 9b9e3f58f8566f069fc79322966e5317
 SourceDirectory: %n-%v-1/source
 PatchScript: <<
 #!/bin/sh -ev
@@ -39,7 +39,7 @@ PatchScript: <<
 END
 <<
 PatchFile: %n.patch
-PatchFile-MD5: ae29bc6cba4233f2c765b8f2cb4ea919
+PatchFile-MD5: 5b4dfa6a5be6eb89b7f85a69b1557de3
 
 UseMaxBuildJobs: true
 CompileScript: <<
@@ -172,6 +172,7 @@ ConfFiles: <<
 	%p/var/opennms/etc/events/3Com.events.xml
 	%p/var/opennms/etc/events/ADIC-v2.events.xml
 	%p/var/opennms/etc/events/AIX.events.xml
+	%p/var/opennms/etc/events/AKCP.events.xml
 	%p/var/opennms/etc/events/APC.Best.events.xml
 	%p/var/opennms/etc/events/APC.Exide.events.xml
 	%p/var/opennms/etc/events/APC.events.xml
