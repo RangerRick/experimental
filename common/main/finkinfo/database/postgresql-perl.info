@@ -64,7 +64,7 @@ CompileScript: <<
 	pushd ../Pg-2.1.1
 		POSTGRES_INCLUDE=%p/include/postgresql POSTGRES_LIB=%p/lib INC="-I%i/include/postgresql -I%i/include -I%p/include/postgresql -I%p/include" LIBS="-L%p/lib" perl%type_raw[perl] Makefile.PL PREFIX=%p INSTALLPRIVLIB=%p/lib/perl5/%type_raw[perl] INSTALLARCHLIB=%p/lib/perl5/%type_raw[perl]/darwin INSTALLSITELIB=%p/lib/perl5/%type_raw[perl] INSTALLSITEARCH=%p/lib/perl5/%type_raw[perl]/darwin INSTALLMAN1DIR=%p/share/man/man1 INSTALLMAN3DIR=%p/share/man/man3 INSTALLSITEMAN1DIR=%p/share/man/man1 INSTALLVENDORMAN1DIR=%p/share/man/man1 MAN1EXT=1 INSTALLMAN3DIR=%p/share/man/man3 INSTALLSITEMAN3DIR=%p/share/man/man3 INSTALLVENDORMAN3DIR=%p/share/man/man3 MAN3EXT=3 
 		perl -pi -e 's,-arch i386,,g; s,-arch ppc,,g' *Makefile
-		make BE_DLLLIBS="-bundle_loader %p/bin/postgres"
+		make BE_DLLLIBS="-bundle_loader %p/bin/postgres-8.2"
 	popd
 <<
 

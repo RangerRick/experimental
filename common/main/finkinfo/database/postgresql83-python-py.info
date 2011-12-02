@@ -26,6 +26,13 @@ BuildDepends: <<
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
 Source-MD5: cedfbcdb153291c0762492ef34fa7b41
+PatchFile: postgresql83.patch
+PatchFile-MD5: 57e4f50932cfbc6369e8a15c68ca618b
+PatchScript: <<
+	sed -e 's|@INSTPREFIX@|%p|g' -e 's|python2.1|python%type_raw[python]|g' < %{PatchFile} | patch -p1
+	grep -v -E '^override python' src/pl/plpython/Makefile > src/pl/plpython/Makefile.tmp
+	mv src/pl/plpython/Makefile.tmp src/pl/plpython/Makefile
+<<
 
 SetCPPFLAGS: -DHAVE_OPTRESET -I%p/include/postgresql -I%p/include
 SetLIBS: -L%p/lib
@@ -42,7 +49,7 @@ CompileScript: <<
 	./configure %c
 
 	pushd src/pl/plpython
-	make BE_DLLLIBS="-bundle_loader %p/bin/postgres"
+		make BE_DLLLIBS="-bundle_loader %p/bin/postgres-8.3"
 	popd
 
 <<
@@ -50,12 +57,13 @@ CompileScript: <<
 InstallScript: <<
 #!/bin/sh -ev
 
+	mkdir -p %i/lib/postgresql-8.3
+
 	pushd src/pl/plpython
-	make install DESTDIR=%d INSTALLSITEMAN3DIR=%i/share/man/man3
+	make -j1 install DESTDIR=%d INSTALLSITEMAN3DIR=%i/share/man/man3
 	popd
 
-  mkdir %i/lib/postgresql-8.3
-	mv %i/lib/postgresql/plpython.so %i/lib/postgresql-8.3/plpython-%type_pkg[python].so
+	mv %i/lib/postgresql-8.3/plpython.so %i/lib/postgresql-8.3/plpython-%type_pkg[python].so
 <<
 DocFiles: COPYRIGHT HISTORY INSTALL README
 SplitOff: <<
