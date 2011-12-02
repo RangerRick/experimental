@@ -57,7 +57,7 @@ CompileScript: <<
 
 	# pl/perl
 	pushd src/pl/plperl
-		make shared_libperl=yes BE_DLLLIBS="-bundle_loader %p/bin/postgres-8.2"
+		make shared_libperl=yes BE_DLLLIBS="-bundle_loader %p/bin/postgres-8.2" shlib='plperl.so' shlib_major='plperl.so'
 	popd
 
 	# Pg perl module
@@ -73,7 +73,7 @@ InstallScript: <<
 
 	# pl/perl
 	pushd src/pl/plperl
-		make -j1 install DESTDIR=%d INSTALLSITEMAN3DIR=%i/share/man/man3
+		make -j1 install DESTDIR=%d INSTALLSITEMAN3DIR=%i/share/man/man3 shared_libperl=yes shlib='plperl.so' shlib_major='plperl.so'
 	popd
 
 	# Pg perl module
