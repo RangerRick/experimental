@@ -1,5 +1,5 @@
 Package: postgresql-tcl
-Version: 8.2.22
+Version: 8.2.23
 Revision: 1
 Description: PostgreSQL TCL tools
 Distribution: 10.4, 10.5, 10.6
@@ -32,7 +32,7 @@ Replaces: <<
 <<
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: 24197cc7546d6c17d81c707a07e19394
+Source-MD5: 7ecc63c517a8e79b86cd680214ec14fc
 Source2: http://pgfoundry.org/frs/download.php/2151/libpgtcl-1.7.tar.gz
 Source2-MD5: e71ed886d5de5f5f455bc02136494448
 PatchFile: postgresql82.patch

@@ -1,6 +1,6 @@
 Info2: <<
 Package: postgresql-python-py%type_pkg[python]
-Version: 8.2.22
+Version: 8.2.23
 Revision: 1
 Distribution: (%type_pkg[python] = 23) 10.3, (%type_pkg[python] = 23) 10.4, (%type_pkg[python] = 24) 10.5, 10.6
 Description: PostgreSQL Python tools
@@ -37,7 +37,7 @@ Replaces: <<
 <<
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: 24197cc7546d6c17d81c707a07e19394
+Source-MD5: 7ecc63c517a8e79b86cd680214ec14fc
 Source2: ftp://ftp.pygresql.org/pub/distrib/PyGreSQL-4.0.tgz
 Source2-MD5: 1aca50e59ff4cc56abe9452a9a49c5ff
 PatchScript: sed -e 's|@INSTPREFIX@|%p|g' -e 's|python2.1|python%type_raw[python]|g' < %{PatchFile} | patch -p1

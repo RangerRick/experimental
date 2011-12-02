@@ -1,6 +1,6 @@
 Info4: <<
 Package: postgresql84
-Version: 8.4.9
+Version: 8.4.10
 Revision: 1
 Description: PostgreSQL open-source database
 Distribution: 10.4, 10.5, 10.6
@@ -11,7 +11,7 @@ Depends: <<
 	daemonic (>= 20010902-1),
 	libxml2-shlibs,
 	libxslt-shlibs,
-	passwd (>= 20030906-1),
+	passwd-postgres,
 	readline5-shlibs,
 	%N-shlibs (>= %v-%r)
 <<
@@ -22,7 +22,7 @@ BuildDepends: <<
 	fink-mirrors (>= 0.28.7.1-2),
 	libxml2,
 	libxslt,
-	passwd (>= 20030906-1),
+	passwd-postgres,
 	readline5,
 	system-openssl-dev,
 	system-perl,
@@ -33,7 +33,7 @@ BuildDepends: <<
 GCC: 4.0
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: d50b1e2bd2b2284ffc3c7009e70b3d08
+Source-MD5: fb3cdbe74de64cf66faf32e837602aa0
 PatchFile: %n.patch
 PatchFile-MD5: d118eccada3197aa325d534adc2cff7e
 PatchScript: sed -e 's|@BUILDDIR@|%b|g' -e 's|@INSTPREFIX@|%p|g' < %{PatchFile} | patch -p1
@@ -208,7 +208,7 @@ PreInstScript: <<
 	PG_ID=`id -u postgres 2>/dev/null || true`
 	if [ -z "$PG_ID" ]; then
 		echo "Whoa there!  You must have a postgres user to install this package."
-		echo "Please do a 'fink reinstall passwd' and make sure you hit 'y' when it"
+		echo "Please do a 'fink reinstall passwd-postgres' and make sure you hit 'y' when it"
 		echo "asks if you want to update your users."
 		exit 1
 	fi
@@ -233,7 +233,7 @@ SplitOff: <<
 		PG_ID=`id -u postgres 2>/dev/null || true`
 		if [ -z "$PG_ID" ]; then
 			echo "Whoa there!  You must have a postgres user to install this package."
-			echo "Please do a 'fink reinstall passwd' and make sure you hit 'y' when it"
+			echo "Please do a 'fink reinstall passwd-postgres' and make sure you hit 'y' when it"
 			echo "asks if you want to update your users."
 			exit 1
 		fi

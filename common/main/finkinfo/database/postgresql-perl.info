@@ -1,6 +1,6 @@
 Info2: <<
 Package: postgresql-perl-%type_pkg[perl]
-Version: 8.2.22
+Version: 8.2.23
 Revision: 1
 Description: PostgreSQL Perl tools
 Type: perl(0)
@@ -35,7 +35,7 @@ Replaces: <<
 <<
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: 24197cc7546d6c17d81c707a07e19394
+Source-MD5: 7ecc63c517a8e79b86cd680214ec14fc
 Source2: ftp://gborg.postgresql.org/pub/pgperl/stable/Pg-2.1.1.tar.gz
 Source2-MD5: c11c0abd99b8e1f50ba5dbdb922c2e61
 PatchFile: postgresql82.patch

@@ -10,7 +10,7 @@ Depends: <<
 	daemonic (>= 20010902-1),
 	libxml2-shlibs,
 	libxslt-shlibs,
-	passwd (>= 20030906-1),
+	passwd-postgres,
 	readline5-shlibs,
 	%N-shlibs (>= %v-%r)
 <<
@@ -20,7 +20,7 @@ BuildDepends: <<
 	fink-mirrors (>= 0.28.7.1-2),
 	libxml2,
 	libxslt,
-	passwd (>= 20030906-1),
+	passwd-postgres,
 	readline5,
 	system-openssl-dev
 <<
@@ -289,7 +289,7 @@ SplitOff: <<
 PG_ID=`id -u postgres 2>/dev/null || true`
 if [ -z "$PG_ID" ]; then
 	echo "Whoa there!  You must have a postgres user to install this package."
-	echo "Please do a 'fink reinstall passwd' and make sure you hit 'y' when it"
+	echo "Please do a 'fink reinstall passwd-postgres' and make sure you hit 'y' when it"
 	echo "asks if you want to update your users."
 	exit 1
 fi
@@ -330,7 +330,7 @@ PreInstScript: <<
 	PG_ID=`id -u postgres 2>/dev/null || true`
 	if [ -z "$PG_ID" ]; then
 		echo "Whoa there!  You must have a postgres user to install this package."
-		echo "Please do a 'fink reinstall passwd' and make sure you hit 'y' when it"
+		echo "Please do a 'fink reinstall passwd-postgres' and make sure you hit 'y' when it"
 		echo "asks if you want to update your users."
 		exit 1
 	fi
