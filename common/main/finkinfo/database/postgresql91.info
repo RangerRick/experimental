@@ -1,7 +1,8 @@
 Info4: <<
 Package: postgresql91
-Version: 9.1.2
+Version: 9.1.13
 Revision: 1
+Epoch: 1
 Description: PostgreSQL open-source database
 License: BSD
 Maintainer: Benjamin Reed <postgresql91@fink.raccoonfink.com>
@@ -11,71 +12,82 @@ Depends: <<
 	libxml2-shlibs,
 	libxslt-shlibs,
 	passwd-postgres,
-	readline5-shlibs,
-	%N-shlibs (>= %v-%r)
+	readline6-shlibs,
+	%N-shlibs (>= 1:%v-%r)
 <<
-Provides: postgresql-server
 BuildDepends: <<
 	bison,
-	fink (>= 0.29.7-1),
+	fink (>= 0.30.2-1),
 	fink-mirrors (>= 0.28.7.1-2),
 	libxml2,
 	libxslt,
-	passwd-postgres,
-	readline5,
+	readline6,
 	system-openssl-dev,
 	system-perl,
 	tcltk,
-	tcltk-dev,
+	tcltk-dev
 <<
-
+Provides: postgresql-server
 GCC: 4.0
 
 Source: mirror:postgresql:source/v%v/postgresql-%v.tar.bz2
-Source-MD5: 7dbff52221954c46595313eb7f92c3e0
+Source-MD5: f50e201b4ef7e0581bf32a1a32c9f14c
+PatchScript: <<
+	#!/bin/sh -ex
+	
+	sed -e 's|@BUILDDIR@|%b|g' -e 's|@INSTPREFIX@|%p|g' -e 's|@PGVERSION@|9.1|g' < %{PatchFile} | patch -p1
+	
+	# If we have fink ExtUtils::ParseXS, it is early in PERL5LIB;
+	# therefore we need the xsubpp program (also part of that
+	# pkg). Handcoded makefiles for perl modules are bad, m'kay?
+	fink_XSUBPP="%p/lib/perl5/ExtUtils/xsubpp"
+	if [ -x $fink_XSUBPP ]; then
+	perl -pi -e "s,\S+xsubpp,${fink_XSUBPP},g" src/pl/plperl/GNUmakefile
+	fi
+<<
 PatchFile: %n.patch
 PatchFile-MD5: ca800eba11497ef264f1ca93f9509f46
-PatchScript: sed -e 's|@BUILDDIR@|%b|g' -e 's|@INSTPREFIX@|%p|g' -e 's|@PGVERSION@|9.1|g' < %{PatchFile} | patch -p1
 
 SetCPPFLAGS: -I%p/lib/system-openssl/include -DHAVE_OPTRESET -fno-common
 SetLDFLAGS: -L%p/lib/system-openssl/lib -F/System/Library/Frameworks
+UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -xe
-
+	#!/bin/sh -xe
+	
 	if [[ $(sw_vers -productVersion | cut -d. -f1-2) > 10.6 ]]; then
-		export CC=clang
-		export CXX=clang++
+	export CC=clang
+	export CXX=clang++
 	elif [ -x /usr/bin/gcc-4.2 ]; then
-		export CC=gcc-4.2
-		export CXX=g++-4.2
+	export CC=gcc-4.2
+	export CXX=g++-4.2
 	fi
-
+	
 	export PERL=/usr/bin/perl
 	export PYTHON=/usr/bin/python
-
+	
 	./configure \
-		--prefix='%p/opt/postgresql-9.1' \
-		--docdir='%p/share/doc/%N' \
-		--mandir='${prefix}/share/man' \
-		--infodir='${prefix}/share/info' \
-		--with-libraries=%p/lib \
-		--with-includes=%p/include \
-		\
-		--with-perl \
-		--with-python \
-		--with-tcl \
-		--with-tclconfig=%p/lib \
-		\
-		--enable-thread-safety \
-		--with-openssl \
-		--with-pam \
-		--with-bonjour \
-		--with-krb5 \
-		--with-gssapi \
-		\
-		--with-libxml \
-		--with-libxslt
-
+	--prefix='%p/opt/postgresql-9.1' \
+	--docdir='%p/share/doc/%N' \
+	--mandir='${prefix}/share/man' \
+	--infodir='${prefix}/share/info' \
+	--with-libraries=%p/lib \
+	--with-includes=%p/include \
+	\
+	--with-perl \
+	--with-python \
+	--with-tcl \
+	--with-tclconfig=%p/lib \
+	\
+	--enable-thread-safety \
+	--with-openssl \
+	--with-pam \
+	--with-bonjour \
+	--with-krb5 \
+	--with-gssapi \
+	\
+	--with-libxml \
+	--with-libxslt
+	
 	perl -pi -e 's,-arch x86_64,,g; s,-arch i386,,g; s,-arch ppc,,g' src/Makefile.global
 	make
 	make -C contrib
@@ -182,33 +194,26 @@ END
 	chmod 755 %i/var/postgresql-9.1/*.sh
 	perl -pi -e 's,^%d,,' %i/bin/pg_config*
 <<
-#InfoTest: <<
-#	TestScript: <<
-#		#!/bin/sh -ev
-#		if [ `id -u` -eq 0 ]; then
-#			sudo chown -R fink-bld .
-#			sudo -u fink-bld make check MAX_CONNECTIONS=2 || exit 2
-#		else
-#			make check MAX_CONNECTIONS=2 || exit 2
-#		fi
-#	<<
-#<<
 DocFiles: COPYRIGHT HISTORY INSTALL README
-
-PreInstScript: <<
-	PG_ID=`id -u postgres 2>/dev/null || true`
-	if [ -z "$PG_ID" ]; then
-		echo "Whoa there!  You must have a postgres user to install this package."
-		echo "Please do a 'fink reinstall passwd-postgres' and make sure you hit"
-		echo "'y' when it asks if you want to update your users."
-		exit 1
-	fi
-<<
-
 SplitOff: <<
 	Package: %N-dev
 	Description: PostgreSQL development headers and libraries
-	Depends: %N (>= %v-%r)
+	Depends: %N (>= 1:%v-%r)
+	# Even though the files are all buried to prevent filename
+	# collisions and require special -I/-L to make them visible,
+	# update-alternatives exposes them (and therefore maybe *other
+	# libversions of them*) in default (visible) locations, which
+	# would often lead to the compiler mixing both together!
+	# --dmacks, as of Epoch 1, cleaning up u-a set by RangerRick
+	# as of postgresql84 (only have >= 90 in 10.7 tree)
+	Conflicts: <<
+		postgresql90-dev,
+		postgresql92-dev
+	<<
+	Replaces: <<
+		postgresql90-dev,
+		postgresql92-dev
+	<<
 	BuildDependsOnly: true
 	Files: <<
 		opt/postgresql-9.1/bin/pg_config*
@@ -220,13 +225,13 @@ SplitOff: <<
 		opt/postgresql-9.1/lib/libpq.dylib
 	<<
 	PreInstScript: <<
-		PG_ID=`id -u postgres 2>/dev/null || true`
-		if [ -z "$PG_ID" ]; then
-			echo "Whoa there!  You must have a postgres user to install this package."
-			echo "Please do a 'fink reinstall passwd-postgres' and make sure you hit"
-			echo "'y' when it asks if you want to update your users."
-			exit 1
-		fi
+PG_ID=`id -u postgres 2>/dev/null || true`
+if [ -z "$PG_ID" ]; then
+	echo "Whoa there!  You must have a postgres user to install this package."
+	echo "Please do a 'fink reinstall passwd-postgres' and make sure you hit"
+	echo "'y' when it asks if you want to update your users."
+	exit 1
+fi
 	<<
 	PostInstScript: [ -x %p/var/postgresql-9.1/update-alternatives.sh ] && %p/var/postgresql-9.1/update-alternatives.sh
 	PreRmScript: if [ "$1" != "upgrade" ]; then [ -x %p/var/postgresql-9.1/remove-alternatives.sh ] && %p/var/postgresql-9.1/remove-alternatives.sh; fi
@@ -245,12 +250,19 @@ SplitOff2: <<
 		%p/opt/postgresql-9.1/lib/libpgtypes.3.dylib     3.0.0 postgresql91-shlibs (>= 9.1.0-1)
 		%p/opt/postgresql-9.1/lib/libpq.5.dylib          5.0.0 postgresql91-shlibs (>= 9.1.0-1)
 	<<
-	PostInstScript: <<
-		[ -x %p/var/postgresql-9.1/update-alternatives.sh ] && %p/var/postgresql-9.1/update-alternatives.sh
-	<<
+	PostInstScript: [ -x %p/var/postgresql-9.1/update-alternatives.sh ] && %p/var/postgresql-9.1/update-alternatives.sh
 	PreRmScript: if [ "$1" != "upgrade" ]; then [ -x %p/var/postgresql-9.1/remove-alternatives.sh ] && %p/var/postgresql-9.1/remove-alternatives.sh; fi
 <<
 
+PreInstScript: <<
+PG_ID=`id -u postgres 2>/dev/null || true`
+if [ -z "$PG_ID" ]; then
+	echo "Whoa there!  You must have a postgres user to install this package."
+	echo "Please do a 'fink reinstall passwd-postgres' and make sure you hit"
+	echo "'y' when it asks if you want to update your users."
+	exit 1
+fi
+<<
 PostInstScript: <<
 INSTALL_PHASE="$1"
 
@@ -324,16 +336,16 @@ if [ $1 != "upgrade" ]; then
 fi
 <<
 DaemonicFile: <<
-	<service>
-	<description>PostgreSQL database server</description>
-	<message> PostgreSQL database server</message>
-	
-	<daemon name="%N">
-		<executable background="no">%p/bin/pgsql.sh-9.1</executable>
-		<parameters>start</parameters>
-	</daemon>
-	
-	</service>
+<service>
+<description>PostgreSQL database server</description>
+<message> PostgreSQL database server</message>
+
+<daemon name="%N">
+	<executable background="no">%p/bin/pgsql.sh-9.1</executable>
+	<parameters>start</parameters>
+</daemon>
+
+</service>
 <<
 
 Homepage: http://www.postgresql.org/
@@ -369,3 +381,4 @@ Darwin, including making proper dylibs (instead of bundles, which
 ended up creating static binaries).
 <<
 <<
+

@@ -1,6 +1,6 @@
 Package: postgresql-java
-Version: 9.1
-Revision: NoTransform: 901.1
+Version: 9.3
+Revision: 1101.1
 Description: PostgreSQL Java library
 Type: java(1.5)
 License: BSD
@@ -9,7 +9,7 @@ Maintainer: Benjamin Reed <postgresql-java@fink.raccoonfink.com>
 Depends: system-java (>= 1.5-1)
 BuildDepends: <<
 	ant,
-	fink (>= 0.28.0-1),
+	fink (>= 0.32),
 	system-java-dev (>= 1.5-1)
 <<
 Conflicts: <<
@@ -22,17 +22,18 @@ Replaces: <<
 	postgresql-ssl (<< 7.3-1),
 	postgresql-java-ssl (<< %v-%r)
 <<
-Recommends: postgresql90
+Recommends: postgresql91
 
-Source: http://jdbc.postgresql.org/download/postgresql-jdbc-%v-901.src.tar.gz
-Source-MD5: eab20a5cd5344a21f33a1768dd3f4f96
-SourceDirectory: postgresql-jdbc-%v-901.src
-Source2: http://jdbc.postgresql.org/download/postgresql-%v-901.jdbc3.jar
-Source2-MD5: 633012ecafbdf680f4f7488d99952818
+Source: http://jdbc.postgresql.org/download/postgresql-jdbc-%v-1101.src.tar.gz
+Source-MD5: 667569bbe5b0dcfb46d2bae92cafab04
+Source2: http://jdbc.postgresql.org/download/postgresql-%v-1101.jdbc3.jar
+Source2-MD5: 90635c47d95e5b50b3892c4b959dcd38
+SourceDirectory: postgresql-jdbc-%v-1101.src
 
+UseMaxBuildJobs: true
 CompileScript: <<
-#!/bin/sh -ev
-
+	#!/bin/sh -ev
+	
 	export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home
 	export CLASSPATH=`pwd`/jars/postgresql.jar
 	ant publicapi privateapi
@@ -46,12 +47,13 @@ InstallScript: <<
 	mv ../*.jar jars/postgresql.jar
 <<
 JarFiles: jars/postgresql.jar
-DocFiles: LICENSE README
+DocFiles: LICENSE README.md
 SplitOff: <<
 	Package: postgresql-ssl-java
-	Description: Upgrade package for postgresql-ssl-java
+	Description: OBSOLETE: use %N instead
 	Depends: %N (>= %v-%r)
-	DocFiles: LICENSE README
+	RuntimeDepends: fink-obsolete-packages
+	DocFiles: LICENSE README.md
 <<
 
 Homepage: http://jdbc.postgresql.org/

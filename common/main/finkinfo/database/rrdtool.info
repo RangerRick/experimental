@@ -1,7 +1,7 @@
 Info4: <<
 Package: rrdtool
 Version: 1.4.4
-Revision: 2
+Revision: NoTransform: 2
 Conflicts: %N-bin
 Replaces: %N-bin
 Depends: librrd4-shlibs (>= %v-%r)

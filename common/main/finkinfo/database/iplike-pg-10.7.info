@@ -1,13 +1,13 @@
 Info3: <<
 Package: iplike-pg%type_pkg[pg]
-Version: 2.0.2
-Revision: 2
-Type: pg(9.0 9.1)
-Distribution: 10.7
+Version: 2.0.3
+Revision: 1
+Type: pg(9.0 9.1 9.2)
+Distribution: 10.7, 10.8, 10.9
 
 Provides: opennms-pgsql
 Source: mirror:sourceforge:opennms/iplike-%v.tar.gz
-Source-MD5: 89a7760f22ccc60a7d07ce85a2cdad55
+Source-MD5: dbc62f721c61292097de8060a9a5234a
 
 BuildDepends: <<
 	autoconf2.6,

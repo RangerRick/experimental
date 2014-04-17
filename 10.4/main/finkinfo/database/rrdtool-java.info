@@ -1,6 +1,6 @@
 Info4: <<
 Package: rrdtool-java
-Version: 1.0.5
+Version: 1.0.6
 Revision: 1
 Description: Java Interface to RRDTool
 Type: java(1.5)
@@ -16,13 +16,13 @@ BuildDepends: <<
 	intltool40,
 	libart2 (>= 2.3.20-1),
 	libtool2,
-	libpng15,
+	libpng16,
 	rrdtool-dev (>= 1.4.4-1),
 	system-java (>= 1.5-1)
 <<
 
 Source: mirror:sourceforge:opennms/jrrd-%v.tar.gz
-Source-MD5: 1708361f91bc2b80cdc6a2681434bbab
+Source-MD5: 175e6e416c4811ddc7d02449ba12af1b
 PatchScript: <<
 	perl -pi -e 's,1\.4,1.5,g' configure.ac
 	autoreconf -fvi
